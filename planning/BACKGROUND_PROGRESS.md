@@ -1,5 +1,17 @@
 # Background continuation progress
 
+## User-authorized archive, integration and Git - 12 October 2026
+
+The user asked whether declared sources could supply fresh inputs, then requested a ZIP of old files, consolidation and Git setup. Actual fresh Yahoo/FNSPID/Alpaca requests were attempted under the inherited normal network configuration; all failed before HTTP with WinError10061. Known Alpaca credentials are absent. Original FinBERT is identified as ProsusAI/finbert, but pinned file bytes/weights remain unverified. No data/weights were transferred, proxies changed or withdrawn variants restored. The acquisition receipts/reusable probe are in `evidence/market_reacquisition_20261012`.
+
+Verified pre-merge backup: parent `_archives/Investify_before_merge_20261012T115813Z.zip`, 1,030 entries, 75,437,161 bytes; SHA256 `661d799baa652c349ec7bd8c53fcfbcc606d7327671c0b5e5ed71965b9b2484a`. All archive entries and source hashes were checked before integration. The originals and their Git histories remain unchanged; all 224 protected originals still match.
+
+Active project is now `E:\Uni_Stuff\FYP\Investify`. Integration verifies 706 copied files; 25 differing original code files take the revised versions, with no original-only tracked code missing. Historic FYP materials and prior archive copies remain local. `MERGE_MANIFEST.json` records the copy-time hashes/lineage; later deliberate documentation/tooling edits are tracked by Git. Frozen code/data bytes retain their captured identities, including 199 code-file hashes verified against Git blobs. The mutable AI replay receipt was retained under a new date and its copied original receipt restored byte-for-byte.
+
+Git is initialized locally on `main`: initial integration commit `28d0c93`, follow-through commit `9b2a359`. No remote or push. Root CI is adapted for the code subdirectory and new outputs, with official Action versions verified; remote CI has not run. Integrated verification passes 165 portable tests, the unchanged 200/117 AI-reference and six-teacher replays, and 372 saved records. Git fresh-clone validation was attempted, including an explicit filesystem-local route; Git's `sh.exe` failed to create a signal pipe (Win32 error5). That limitation is retained in `integrated_local_git_checkout_20261012.json`; no further route or permissions bypass was attempted. Successful Git initialization/commits/blob verification are distinct from this unexecuted clone test.
+
+Continue development in this canonical folder. The preceding GPT_MIDEVAL is preserved, not a second active writer. First-mid readiness remains approximately 72% and the 90% target remains unmet; actual source acquisition/runtime/model study and institutional rendering/review are still required. No specific task needs Astra. QLoRA remains later.
+
 ## Current execution ownership - 12 October 2026, 10:33 UTC
 
 ### Current verified implementation snapshot
