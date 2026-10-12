@@ -9,15 +9,23 @@ LABELS = {'horizon': 'When will you need this money?', 'buffer': 'Emergency expe
 
 def render_profile():
     st.caption('Project prototype. These questions, weights and caps are not a validated risk instrument.')
-    st.markdown('**Capacity: ability to absorb loss**')
-    capacity = {name: st.selectbox(LABELS[name], list(options), index=None,
-                                   placeholder='Select an answer', key=f'profile_{name}')
-                for name, options in CAPACITY_OPTIONS.items()}
-    st.markdown('**Tolerance: willingness to accept risk**')
-    tolerance = []
-    for index, (question, options) in enumerate(TOLERANCE_QUESTIONS):
-        answer = st.radio(question, options, index=None, key=f'profile_tolerance_{index}')
-        tolerance.append(options.index(answer) if answer is not None else None)
+    from app.demo_flow import example_profile, reset_profile
+    buttons = st.columns(3)
+    buttons[0].button('Example: cautious', key='profile_example_cautious', on_click=example_profile, args=(0,))
+    buttons[1].button('Example: higher tolerance', key='profile_example_tolerant', on_click=example_profile, args=(2,))
+    buttons[2].button('Clear answers', key='clear_profile', on_click=reset_profile)
+    if st.session_state.get('demo_profile_example'):
+        st.caption('Fictional demonstration answers | ' + st.session_state['demo_profile_example'] + '. You can change any answer below.')
+    with st.expander('Edit the eight profile answers', expanded=not bool(st.session_state.get('demo_profile_example'))):
+        st.markdown('**Capacity: ability to absorb loss**')
+        capacity = {name: st.selectbox(LABELS[name], list(options), index=None,
+                                       placeholder='Select an answer', key=f'profile_{name}')
+                    for name, options in CAPACITY_OPTIONS.items()}
+        st.markdown('**Tolerance: willingness to accept risk**')
+        tolerance = []
+        for index, (question, options) in enumerate(TOLERANCE_QUESTIONS):
+            answer = st.radio(question, options, index=None, key=f'profile_tolerance_{index}')
+            tolerance.append(options.index(answer) if answer is not None else None)
     if any(answer is None for answer in capacity.values()) or None in tolerance:
         st.info('Complete all eight answers to calculate the prototype profile. No middle answers are assumed.')
         return None

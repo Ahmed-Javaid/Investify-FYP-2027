@@ -1,2 +1,5 @@
 # Frozen source and research evidence use byte hashes across checkouts.
 * -text
+
+# Preserve this raw compiler log verbatim; captured spaces are evidence bytes.
+evidence/report_compilation_20261013_run08.log -whitespace

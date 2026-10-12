@@ -1,14 +1,36 @@
-\chapter{Repository and Contribution Evidence}
-The independent code copy is on \texttt{gpt/mid-eval} and retains original history. Evidence JSON identifies exact verification revisions and hashes. A 224-file manifest checks original preservation.
-Local commits \texttt{a99de5f}, \texttt{20dfff9}, \texttt{3650d0c}, \texttt{efb428f} and latest \texttt{0a27ed1} record verifier/demo, complete-guided/risk/social tools, Git-free handover, offline inference and complete/partial study UI checks. They are attributed to tool-assisted development. Nothing has been pushed; commits do not establish student authorship or remote CI completion.
+\chapter{Repository and Reproduction}
+\section{Active Workspace}
+Work in \path{E:/Uni_Stuff/FYP/Investify}; run Python commands from its \path{code} directory. The local branch is \texttt{main}, with no configured remote. The original checkout and source archives remain separate. Local commit \texttt{93d0d60} records the fresh scientific checkpoint; subsequent source and artifact changes retain dated receipts.
 
-The earlier AI review ZIP is a dated historical snapshot: its extracted standard-library-only environment passed 103 portable tests, 62 live HTTP checks and 372 record validations. The then-selected viewer suite had 136 passes and 13 AppTest cases. Those receipts do not validate later source changes. The earlier clean-commit ZIP and its 92-test receipt also remain preserved. New continuation bundles identify their own exact archive/source hashes, uncommitted contents and base HEAD; use the matching current handover receipt. Third-party corpus data is not approved for public redistribution.
-\section*{Portable reproduction}
-From the code directory:
+\section{Guided Demo and Historical-Record Demonstration}
+The current Streamlit app has a Start here route, fresh corrected results as defaults and three decision stages. Run from the code directory:
+\begin{quote}\small
 \begin{verbatim}
-python -B -m unittest discover -s tests -p "test_mideval*.py" -v
-python -B scripts/serve_mideval_demo.py
+python -B -m streamlit run app/streamlit_app.py `
+  --server.address=127.0.0.1 --server.port=8507 `
+  --server.headless=true
 \end{verbatim}
-Open the printed loopback URL. The live-check script can run from a second shell with output under the evidence folder. This tests recorded decisions and verification, not scientific retraining or LLM generation.
-\section*{Pending process evidence}
-Remote branch/PR/workflow results, agreed owners, actual member contributions, meeting records, delivery target and confirmed assessment date remain pending. Historical authorship is not reassigned.
+\end{quote}
+Open the printed loopback URL. Fictional profile examples are explicit user actions; no participant data is assumed. The original portable interface remains available separately below.
+Use the restored viewer environment or the code's portable Python path:
+\begin{quote}\small
+\begin{verbatim}
+python -B scripts/serve_mideval_demo.py --port 8768
+\end{verbatim}
+\end{quote}
+Open the printed loopback address. The demonstration validates historical records and explanations; it does not fetch prices, retrain models or generate unconfigured LLM output.
+
+\section{Executed Fresh Scientific Snapshot}
+The separately identified snapshot lives under
+\path{code/artifacts/scientific_runs/alpaca_revision_conservative_20261012_run01}.
+It retains configuration, a new price store, corpus manifest, all-arm results, both calibration-mode records/traces and execution logs. FinBERT scores are cached on E: under the same run identity. Original September bytes and the exact scientific lock are not reproduced.
+
+Use \path{code/scripts/prepare_fresh_alpaca_science.py} for new receipt-verified input preparation, \path{code/scripts/prepare_scientific_recovery.py} for preflight/execution and \path{code/scripts/verify_fresh_science_run.py} for actual model/calibration/native-TreeSHAP replay. Each new execution must use new output/cache/receipt identities. The current scientific Python 3.11 environment is separate from the historical viewer lock.
+
+\section{Original Social-Classifiers}
+The original V3 benchmark, label freeze and chronology remain unchanged.
+\path{code/artifacts/mid_eval/social_study_20261013_run02}
+contains the new source-bound plan, both original-classifier bundles and their recomputed comparison. Its complete publisher catalog is retained in the preceding preparation directory. Weights and the disclosed lossless Cardiff serialization remain on E: caches. The recorded viewer uses \path{social_latest_study.json}; it recomputes receipt-bound agreement scores rather than inferring new predictions.
+
+\section{Report and Handover Limits}
+The supplied institutional class and logo retain their original bytes. Main-source compatibility settings allow the portable Tectonic engine to compile the draft without changing that class. Compiler/cache/build identities and layout checks are recorded separately. Required institutional facts, applicable signatures and actual team review remain open. Existing ZIPs and receipts prove their own dated snapshots; no remote CI, deployment, student ownership or final submission is inferred from local checks.

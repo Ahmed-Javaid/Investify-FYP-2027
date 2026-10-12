@@ -1,22 +1,28 @@
+% The supplied class sets a pdfTeX-only compression parameter.
+% Keep its bytes unchanged; XeTeX uses its own PDF compression defaults.
+\ifdefined\pdfcompresslevel\else
+  \newcount\pdfcompresslevel
+\fi
 \documentclass{fast-nuces-bs}
 %\documentclass{article}
 
 \usepackage{blindtext}
 \usepackage{mathptmx}% Times Roman font
 \usepackage[T1]{fontenc}
-\usepackage{lipsum} 
+\usepackage{lipsum}
 \usepackage{sectsty}
 \usepackage{tikz-uml}
 \usepackage{titlesec}
 \usepackage{longtable}
 \usepackage{booktabs}
-\usepackage{url}
+\usepackage{xurl}
+\hypersetup{ocgcolorlinks=false,pageanchor=false}
 \usetikzlibrary{positioning}
 
-% Information about the Thesis 
+% Information about the Thesis
 % -----------------------------------------------------------------------------
 % (All are compulsory, do not delete any line other than author Information)
-% For e.g., usually there are 3 students in a group, so leave authorone, 
+% For e.g., usually there are 3 students in a group, so leave authorone,
 % authortwo, and authorthree, and delete authorfour.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \department{FAST School of Computing}
@@ -38,7 +44,7 @@
 % Names are metadata; no approval or signature is implied.
 \directorname{Dr. Waseem Shahzad}
 \hodname{Dr. Atif Aftab Ahmed Jilani}
-\fypcoordinatorname{Name of FYP Coordinator}
+\fypcoordinatorname{Pending team confirmation}
 \title{Investify}
 % Bridge the report front matter to the official class's existing metadata.
 \makeatletter
@@ -51,6 +57,24 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Former document starts below this
+% Resolve the supplied class's mixed numeric/author-year natbib options.
+\setcitestyle{numbers,square,comma}
+\setlength{\headheight}{16pt}
+
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{3pt}
+% The class title includes lists; defer them to the authored front matter.
+\let\institutionalmaketitle\maketitle
+\renewcommand{\maketitle}{%
+  \begingroup
+  \let\tableofcontents\relax
+  \let\listoffigures\relax
+  \let\listoftables\relax
+  \institutionalmaketitle
+  \endgroup
+}
+
+
 \begin{document}
 
 %\begin{acknowledgements}
@@ -63,15 +87,20 @@
 
 \cleardoublepage
 \pagenumbering{roman}
+\hypersetup{pageanchor=true}
 \input{chapters/01_students_submission}
 \input{chapters/02_anti_plagiarism}
 \input{chapters/03_authors_declaration}
 \input{chapters/04_abstract}
 \input{chapters/05_acknowledgments}
 \input{chapters/06_executive_summary}
+\cleardoublepage
 \tableofcontents
+\cleardoublepage
 \listoffigures
+\cleardoublepage
 \listoftables
+\cleardoublepage
 \input{chapters/07_abbreviations}
 
 \cleardoublepage
@@ -98,4 +127,3 @@
 \bibliographystyle{IEEEtran}
 \bibliography{references/references}
 \end{document}
-

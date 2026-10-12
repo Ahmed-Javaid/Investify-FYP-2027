@@ -1,5 +1,33 @@
 > Current workspace and document versions: [current status](../planning/CURRENT_STATUS.md). Work in `E:\Uni_Stuff\FYP\Investify`; old copies are in the parent `_archives`. Earlier dated sections below retain their original scope.
 
+## Latest checkpoint - guided demo and reviewed report, 13 October 2026
+
+Planning completion is **85.75%, approximately 86%**; see the
+[unchanged-weight ledger](../planning/MID_EVAL_READINESS.md). The 89-page
+[unsigned working report](../deliverables/Investify_FYP1_Mid_Report_Working_Draft_20261013.pdf)
+is compiled and layout checked. Required institutional facts, signatures and
+actual team review remain open.
+
+The Streamlit app now opens with **Start here**, next/previous navigation,
+fresh corrected experiment defaults and **three decision stages**. Explicit
+fictional profiles make the separate comparator change Hold to Sell on the
+21 December case while the recorded classifier stays fixed. Advanced tables,
+feature detail and historical reruns are tucked into expanders. **28 focused
+checks pass**, including 24 real AppTest cases; this is an overlapping scope,
+not an addition to earlier suite totals. Browser visual QA remains unavailable.
+
+Launch from the canonical project root with
+`& '.\tools\start_guided_demo.ps1'`; the current session's guided server is
+http://127.0.0.1:8507. Read the [six-minute guide](../deliverables/DEMO_AND_DEFENCE_GUIDE.md).
+The portable interface and prior ZIPs retain their own older evidence snapshots.
+
+Slide content is reconciled, but PPTX export needs the unavailable bundled
+presentation runtime. Next work is browser/projector inspection, deck export,
+confirmed cover facts, genuine contributions/review/rehearsal, agreed adequacy
+criteria and a matching current handover. September raw bytes/exact-lock
+reproduction and broader model usefulness remain distinct unresolved limits.
+All sections below describe earlier dated checkpoints unless stated otherwise.
+
 # Investify mid-evaluation working source handover
 
 ## Recovery review snapshot - 12 October 2026

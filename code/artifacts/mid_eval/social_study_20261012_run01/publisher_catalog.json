@@ -1,0 +1,119 @@
+{
+  "schema": "investify-classifier-publisher-catalog-v1",
+  "status": "complete_original_file_metadata",
+  "acquisition_receipt_sha256": "46dee98041c746bfb67383d93901c054c28a6f71a7f49d8a67296538a4a1a959",
+  "models": [
+    {
+      "model_id": "ElKulako/cryptobert",
+      "revision": "9e37c910fe87727cb842a9ac55c6388256fe0f15",
+      "status": "complete_original_file_metadata",
+      "files": [
+        {
+          "filename": "config.json",
+          "sha256": "b8692615f3f78d0f074c82c9c0708fd5130caa9ce252bcfd448c25fb5b1eafcb",
+          "expected_bytes": 932,
+          "source_url": "https://huggingface.co/ElKulako/cryptobert/blob/9e37c910fe87727cb842a9ac55c6388256fe0f15/config.json",
+          "publisher_git_blob_sha1": "723dd384da42401971156cac32c4fd15fbd2f9f6"
+        },
+        {
+          "filename": "merges.txt",
+          "sha256": "fe36cab26d4f4421ed725e10a2e9ddb7f799449c603a96e7f29b5a3c82a95862",
+          "expected_bytes": 456356,
+          "source_url": "https://huggingface.co/ElKulako/cryptobert/blob/9e37c910fe87727cb842a9ac55c6388256fe0f15/merges.txt",
+          "publisher_git_blob_sha1": "6636bda4a1fd7a63653dffb22683b8162c8de956"
+        },
+        {
+          "filename": "special_tokens_map.json",
+          "sha256": "8293ae960b0a0852d4d3813118030a1149a3ed9fe37bc2e1e7b3c2e62eb2d4b7",
+          "expected_bytes": 957,
+          "source_url": "https://huggingface.co/ElKulako/cryptobert/blob/9e37c910fe87727cb842a9ac55c6388256fe0f15/special_tokens_map.json",
+          "publisher_git_blob_sha1": "06a55849fa69a91e7179d909e373179ff7467d8c"
+        },
+        {
+          "filename": "tokenizer.json",
+          "sha256": "783c7e86aedf79dd0aae603805c9591f397ca4475620b58f9a9b78151e2cfb7c",
+          "expected_bytes": 2108586,
+          "source_url": "https://huggingface.co/ElKulako/cryptobert/blob/9e37c910fe87727cb842a9ac55c6388256fe0f15/tokenizer.json",
+          "publisher_git_blob_sha1": "ae7b71057f722dae9b8574855f92736ad85b509d"
+        },
+        {
+          "filename": "tokenizer_config.json",
+          "sha256": "e6d01bdb677a7b1b487070e0666a68da88922ff87ccb95999dbd5e23b8718360",
+          "expected_bytes": 1346,
+          "source_url": "https://huggingface.co/ElKulako/cryptobert/blob/9e37c910fe87727cb842a9ac55c6388256fe0f15/tokenizer_config.json",
+          "publisher_git_blob_sha1": "5c54fd8c7dfa3fe0ea34ce7f9571c72e43154453"
+        },
+        {
+          "filename": "vocab.json",
+          "sha256": "ed19656ea1707df69134c4af35c8ceda2cc9860bf2c3495026153a133670ab5e",
+          "expected_bytes": 798293,
+          "source_url": "https://huggingface.co/ElKulako/cryptobert/blob/9e37c910fe87727cb842a9ac55c6388256fe0f15/vocab.json",
+          "publisher_git_blob_sha1": "4ebe4bb3f3114daf2e4cc349f24873a1175a35d7"
+        },
+        {
+          "filename": "model.safetensors",
+          "sha256": "fe34ba09b3d701ff2b4ee69205e42c8143fcee1f89fe3a0cf10444988634a3c9",
+          "expected_bytes": 498620100,
+          "source_url": "https://huggingface.co/ElKulako/cryptobert/blob/9e37c910fe87727cb842a9ac55c6388256fe0f15/model.safetensors",
+          "publisher_git_blob_sha1": "b95222f22318ac3540295263386605723dbad63c"
+        }
+      ],
+      "publisher_metadata_url": "https://huggingface.co/api/models/ElKulako/cryptobert/revision/9e37c910fe87727cb842a9ac55c6388256fe0f15?blobs=true",
+      "publisher_metadata_sha256": "f61f16fd8e116b8b30c1856168e176aa0075782649d16eba7b62efd712a4c06d",
+      "serialization": "original_publisher_safetensors",
+      "snapshot_directory": "E:\\AI-Tools\\Cache\\social-models-original\\20261012_run01\\cryptobert\\9e37c910fe87727cb842a9ac55c6388256fe0f15"
+    },
+    {
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "revision": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+      "status": "complete_original_file_metadata",
+      "files": [
+        {
+          "filename": "config.json",
+          "sha256": "d2fba19997da698157196ba16f5fcb30a97a7551cef6845a0f3d743ee19c6129",
+          "expected_bytes": 929,
+          "source_url": "https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest/blob/3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7/config.json",
+          "publisher_git_blob_sha1": "baae943f01ad3371bc9d543de3229512dfe27cb8"
+        },
+        {
+          "filename": "merges.txt",
+          "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+          "expected_bytes": 456318,
+          "source_url": "https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest/blob/3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7/merges.txt",
+          "publisher_git_blob_sha1": "226b0752cac7789c48f0cb3ec53eda48b7be36cc"
+        },
+        {
+          "filename": "special_tokens_map.json",
+          "sha256": "378eb3bf733eb16e65792d7e3fda5b8a4631387ca04d2015199c4d4f22ae554d",
+          "expected_bytes": 239,
+          "source_url": "https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest/blob/3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7/special_tokens_map.json",
+          "publisher_git_blob_sha1": "2ea7ad0e45a9d1d1591782ba7e29a703d0758831"
+        },
+        {
+          "filename": "vocab.json",
+          "sha256": "06b4d46c8e752d410213d9548eb27a54db70fda0319b6271fb8d59dead5e1cab",
+          "expected_bytes": 898822,
+          "source_url": "https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest/blob/3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7/vocab.json",
+          "publisher_git_blob_sha1": "0a39732b2d8be8e493cab3da68b68cc3e28221de"
+        },
+        {
+          "filename": "model.safetensors",
+          "sha256": "9efebad6b828ab4a1d1a33d55bd2b9623d1904f157b16921c0f31a41806939c8",
+          "expected_bytes": 500982668,
+          "source_url": "https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest/blob/3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7/pytorch_model.bin"
+        }
+      ],
+      "publisher_metadata_url": "https://huggingface.co/api/models/cardiffnlp/twitter-roberta-base-sentiment-latest/revision/3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7?blobs=true",
+      "publisher_metadata_sha256": "460c3f48809313c5e6773d0e2536490e8bd6a41831386bed280abf56de33440b",
+      "serialization": "verified_lossless_project_conversion",
+      "snapshot_directory": "E:\\AI-Tools\\Cache\\social-models-converted\\20261012_run01\\cardiff\\3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+      "conversion": {
+        "source_bin_sha256": "4d24a3e32a88ed1c4e5b789fc6644e2e767500554e954b27dccf52a8e762cbae",
+        "original_bin_path": "E:\\AI-Tools\\Cache\\social-models-original\\20261012_run01\\cardiff\\3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7\\pytorch_model.bin",
+        "receipt_path": "E:\\AI-Tools\\Cache\\social-models-converted\\20261012_run01\\cardiff\\3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7\\conversion_receipt.json",
+        "receipt_sha256": "1377493e3022a866a3e78b78cbe26dbdfafb7ad4286aa659c593de88e5eaafe4"
+      }
+    }
+  ],
+  "scope": "New complete pinned publisher-byte catalog; original V3 candidates, reference labels and chronology unchanged. Cardiff has disclosed lossless serialization only."
+}

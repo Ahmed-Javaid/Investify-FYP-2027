@@ -26,7 +26,9 @@ from investify.demo_readiness import harness_missing_inputs  # noqa: E402
 ARTIFACTS = REPO_ROOT / "artifacts"
 CONFIG_PATH = REPO_ROOT / "config" / "spike.yaml"
 
+FRESH_RUN = ARTIFACTS / 'scientific_runs/alpaca_revision_conservative_20261012_run01/recovery01'
 CORPUS_LABELS = {
+    'fresh_alpaca': ('Fresh Alpaca | corrected experiment', '6,768 headlines; conservative revision timestamps; historical availability unproven'),
     "results": ("FNSPID", "11,708 headlines, 0.22% genuinely timestamped"),
     "results_alpaca": ("Alpaca / Benzinga", "6,767 headlines, 100% genuinely timestamped"),
 }
@@ -34,7 +36,8 @@ CORPUS_LABELS = {
 
 @st.cache_data
 def load_results(prefix: str) -> dict | None:
-    path = ARTIFACTS / f"{prefix}.json"
+    path = (FRESH_RUN / 'harness_alpaca/results_alpaca.json' if prefix == 'fresh_alpaca'
+            else ARTIFACTS / f'{prefix}.json')
     if not path.exists():
         return None
     return json.loads(path.read_text())
@@ -46,7 +49,8 @@ def load_config() -> dict:
 
 
 def _available_corpora() -> list[str]:
-    return [p for p in CORPUS_LABELS if (ARTIFACTS / f"{p}.json").exists()]
+    return [p for p in CORPUS_LABELS if (FRESH_RUN / 'harness_alpaca/results_alpaca.json'
+             if p == 'fresh_alpaca' else ARTIFACTS / f'{p}.json').exists()]
 
 
 def _fmt_ci(row: pd.Series) -> str:
@@ -92,13 +96,19 @@ def render() -> None:
     payload = load_results(prefix)
     results = pd.DataFrame(payload["results"])
     provenance = payload["provenance"]
-    st.info("Saved historical experiment results. This table is replayed from artifacts; "
-            "a fresh scientific run has not been performed by opening this view.")
-    st.warning("The historical splitter used a calendar-day purge for trading-session labels. "
-               "A correction now uses each label's actual endpoint before the test session. "
-               "Calibration outcomes are also restricted to those available before evaluation. "
-               "The saved results have not been rerun with that correction; its effect on "
-               "historical performance is unmeasured.")
+    if prefix == 'fresh_alpaca':
+        st.info('Recorded fresh experiment | 12 October 2026. Six expanding folds use actual trading-session label endpoints. '
+                'Opening this view replays saved results; it does not fit a model.')
+        st.caption('Fresh inputs and original FinBERT weights were verified. Conservative revised-news timestamps '
+                   'do not prove point-in-time availability or reproduce the September data vintage.')
+    else:
+        st.info("Saved historical experiment results. This table is replayed from artifacts; "
+                "a fresh scientific run has not been performed by opening this view.")
+        st.warning("The historical splitter used a calendar-day purge for trading-session labels. "
+                   "A correction now uses each label's actual endpoint before the test session. "
+                   "Calibration outcomes are also restricted to those available before evaluation. "
+                   "The saved results have not been rerun with that correction; its effect on "
+                   "historical performance is unmeasured.")
 
     primary = cfg["labels"]["primary_horizon_days"]
     at_primary = results[results["horizon_days"] == primary].set_index("arm")
@@ -129,14 +139,15 @@ def render() -> None:
                 "A_CLEAN — the control",
                 f"{clean['lift']:+.3f}",
                 clean["verdict"],
-                "The historically designated clean arm is below its stratified-random "
+                "The designated clean arm is below its stratified-random "
                 "comparator in this saved experiment. This does not identify "
                 "the cause or establish useful predictive signal.",
             ),
             unsafe_allow_html=True,
         )
     with cols[2]:
-        gloss = (
+        gloss = ('A news-lag ablation with a strict-prior join. Its difference does not prove a publication-time leak.'
+                 if prefix == 'fresh_alpaca' else (
             "Text mapped to the session it published in. On this corpus the "
             "arm is measurable — 749 rows (11.1%) genuinely disagree between "
             "the two rules — and it tracks the clean arm. A real null result."
@@ -144,7 +155,7 @@ def render() -> None:
             else "Not measurable on FNSPID: 26 of 11,708 headlines carry a real "
                  "time of day and exactly 1 maps differently. Absence of "
                  "evidence, not evidence of absence."
-        )
+        ))
         st.markdown(
             theme.readout(
                 "E_SAMEBAR_TEXT — the point of the spike",
@@ -170,91 +181,97 @@ def render() -> None:
     st.caption("E_SAMEBAR_TEXT retains a strict-prior as-of join. The bucket change can alter "
                "news lag; the saved difference is not by itself proof of using text before publication.")
 
-    # --- the full table
-    st.markdown("## Every arm, both horizons")
+    with st.expander('All twelve arm/horizon results and chart'):
+        # --- the full table
+        st.markdown("## Every arm, both horizons")
 
-    table = results.copy()
-    table["macro-F1"] = table.apply(
-        lambda r: f"{r['macro_f1']:.4f} ± {r['macro_f1_sd']:.4f}", axis=1
-    )
-    table["95% CI on lift"] = table.apply(_fmt_ci, axis=1)
-    table["lift"] = table["lift"].map(lambda v: f"{v:+.4f}")
-    table["chance"] = table["chance"].map(lambda v: f"{v:.4f}")
-    display = table[
-        ["arm", "horizon_days", "macro-F1", "chance", "lift", "95% CI on lift",
-         "verdict", "n_rows", "changes"]
-    ].rename(columns={"horizon_days": "horizon (d)", "n_rows": "rows", "changes": "what it changes"})
+        table = results.copy()
+        table["macro-F1"] = table.apply(
+            lambda r: f"{r['macro_f1']:.4f} ± {r['macro_f1_sd']:.4f}", axis=1
+        )
+        table["95% CI on lift"] = table.apply(_fmt_ci, axis=1)
+        table["lift"] = table["lift"].map(lambda v: f"{v:+.4f}")
+        table["chance"] = table["chance"].map(lambda v: f"{v:.4f}")
+        display = table[
+            ["arm", "horizon_days", "macro-F1", "chance", "lift", "95% CI on lift",
+             "verdict", "n_rows", "changes"]
+        ].rename(columns={"horizon_days": "horizon (d)", "n_rows": "rows", "changes": "what it changes"})
 
-    st.dataframe(
-        display.style.apply(_verdict_style, subset=["verdict"]),
-        width='stretch',
-        hide_index=True,
-        height=460,
-    )
+        st.dataframe(
+            display.style.apply(_verdict_style, subset=["verdict"]),
+            width='stretch',
+            hide_index=True,
+            height=460,
+        )
 
-    # --- the chart
-    chart_name = "arms_lift.png" if prefix == "results" else "arms_lift_alpaca.png"
-    chart_path = ARTIFACTS / chart_name
-    if chart_path.exists():
-        st.image(str(chart_path), width='stretch')
+        # --- the chart
+        chart_name = "arms_lift.png" if prefix == "results" else "arms_lift_alpaca.png"
+        chart_path = FRESH_RUN / 'harness_alpaca/arms_lift_alpaca.png' if prefix == 'fresh_alpaca' else ARTIFACTS / chart_name
+        if chart_path.exists():
+            st.image(str(chart_path), width='stretch')
+        else:
+            st.warning(f"Chart {chart_name} not found. Re-run the harness to regenerate it.")
+
+    if prefix == 'fresh_alpaca':
+        st.caption('The fresh scientific replay, retained models and native SHAP checks are recorded in the dated evidence receipts. '
+                   'For a short live demonstration, use the labelled feature checks below.')
     else:
-        st.warning(f"Chart {chart_name} not found. Re-run the harness to regenerate it.")
-
-    # --- watch the leak appear
-    st.markdown("## Watch the leak appear")
-    st.write(
-        f"Rebuilds `D_CENTRED` at the {primary}-day horizon from the historical "
-        f"price/news store and cached sentiment scores, then fits six folds "
-        f"with the same seed. Duration depends on the restored environment. "
-        f"The result is calculated separately from the saved table."
-    )
-
-    corpus = provenance.get("corpus", cfg.get("default_corpus", "fnspid"))
-    missing = harness_missing_inputs(cfg, corpus, REPO_ROOT)
-    if missing:
-        st.warning("The live experiment is unavailable until its historical data "
-                   "and training environment are restored. Saved results remain available.")
-        with st.expander("Re-run prerequisites"):
-            st.code("\n".join(missing), language=None)
-    st.caption("The prerequisite check inspects file presence/readability and Parquet signatures, "
-               "and discovers runtime modules. It does not validate dataset rows, cache coverage "
-               "or compatibility with the scientific lock.")
-    if st.button("Re-run D_CENTRED now", type="primary", disabled=bool(missing)):
-        with st.status("Running six expanding purged folds…", expanded=True) as status:
-            try:
-                from investify.harness.arms import (
-                    ARMS,
-                    build_all_matrices,
-                    clean_row_mask,
-                    run_arm,
-                )
-
-                corpus = provenance.get("corpus", cfg.get("default_corpus", "fnspid"))
-                st.write(f"Building feature matrices for corpus `{corpus}`…")
-                matrices = build_all_matrices(cfg, corpus=corpus)
-                row_mask = clean_row_mask(matrices["A_CLEAN"], primary, cfg)
-                st.write("Fitting D_CENTRED across folds…")
-                live = run_arm(ARMS["D_CENTRED"], matrices["D_CENTRED"], row_mask, primary, cfg)
-                status.update(label="Done", state="complete", expanded=False)
-            except (ImportError, OSError, ValueError, TypeError, RuntimeError) as error:
-                live = None
-                status.update(label="Scientific re-run failed", state="error", expanded=True)
-                st.error("Scientific re-run failed. No new experiment result is reported; the saved table remains historical.")
-                st.code(str(error), language=None)
-
-        if live is not None:
-            colour = theme.VERDICT_COLORS.get(live["verdict"], theme.INK)
-            st.markdown(
-                f"Live result — lift "
-                f"<span style='color:{colour};font-weight:600'>{live['lift']:+.4f}</span>, "
-                f"95% CI [{live['ci_lo']:+.4f}, {live['ci_hi']:+.4f}], verdict "
-                f"<span style='color:{colour};font-weight:600'>{live['verdict']}</span>.",
-                unsafe_allow_html=True,
+        with st.expander('Advanced: re-run the historical canary'):
+            # --- watch the leak appear
+            st.markdown("## Watch the leak appear")
+            st.write(
+                f"Rebuilds `D_CENTRED` at the {primary}-day horizon from the historical "
+                f"price/news store and cached sentiment scores, then fits six folds "
+                f"with the same seed. Duration depends on the restored environment. "
+                f"The result is calculated separately from the saved table."
             )
-            st.caption(
-                f"Per-fold macro-F1: "
-                + ", ".join(f"{v:.3f}" for v in live["per_fold_f1"])
-            )
+
+            corpus = provenance.get("corpus", cfg.get("default_corpus", "fnspid"))
+            missing = harness_missing_inputs(cfg, corpus, REPO_ROOT)
+            if missing:
+                st.warning("The live experiment is unavailable until its historical data "
+                           "and training environment are restored. Saved results remain available.")
+                with st.expander("Re-run prerequisites"):
+                    st.code("\n".join(missing), language=None)
+            st.caption("The prerequisite check inspects file presence/readability and Parquet signatures, "
+                       "and discovers runtime modules. It does not validate dataset rows, cache coverage "
+                       "or compatibility with the scientific lock.")
+            if st.button("Re-run D_CENTRED now", type="primary", disabled=bool(missing)):
+                with st.status("Running six expanding purged folds…", expanded=True) as status:
+                    try:
+                        from investify.harness.arms import (
+                            ARMS,
+                            build_all_matrices,
+                            clean_row_mask,
+                            run_arm,
+                        )
+
+                        corpus = provenance.get("corpus", cfg.get("default_corpus", "fnspid"))
+                        st.write(f"Building feature matrices for corpus `{corpus}`…")
+                        matrices = build_all_matrices(cfg, corpus=corpus)
+                        row_mask = clean_row_mask(matrices["A_CLEAN"], primary, cfg)
+                        st.write("Fitting D_CENTRED across folds…")
+                        live = run_arm(ARMS["D_CENTRED"], matrices["D_CENTRED"], row_mask, primary, cfg)
+                        status.update(label="Done", state="complete", expanded=False)
+                    except (ImportError, OSError, ValueError, TypeError, RuntimeError) as error:
+                        live = None
+                        status.update(label="Scientific re-run failed", state="error", expanded=True)
+                        st.error("Scientific re-run failed. No new experiment result is reported; the saved table remains historical.")
+                        st.code(str(error), language=None)
+
+                if live is not None:
+                    colour = theme.VERDICT_COLORS.get(live["verdict"], theme.INK)
+                    st.markdown(
+                        f"Live result — lift "
+                        f"<span style='color:{colour};font-weight:600'>{live['lift']:+.4f}</span>, "
+                        f"95% CI [{live['ci_lo']:+.4f}, {live['ci_hi']:+.4f}], verdict "
+                        f"<span style='color:{colour};font-weight:600'>{live['verdict']}</span>.",
+                        unsafe_allow_html=True,
+                    )
+                    st.caption(
+                        f"Per-fold macro-F1: "
+                        + ", ".join(f"{v:.3f}" for v in live["per_fold_f1"])
+                    )
 
     st.markdown("## Feature-level causality demonstration")
     st.info("Labelled synthetic fixtures only. This optional check runs the actual feature, "
@@ -280,26 +297,27 @@ def render() -> None:
         with st.expander("Feature check scope and source identity"):
             st.json(fixture_result)
 
-    # --- provenance
-    st.markdown("## Provenance")
-    versions = ", ".join(f"{k} {v}" for k, v in provenance["package_versions"].items())
-    manifest = provenance.get("corpus_manifest", {})
-    manifest_hash = ""
-    if isinstance(manifest, dict):
-        for key in ("sha256", "file_sha256"):
-            if key in manifest:
-                manifest_hash = manifest[key]
-                break
-    st.markdown(
-        f"""
-        <div class="provenance">
-        seed {provenance['seed']} &nbsp;|&nbsp; git {provenance['git_commit'][:12]}<br>
-        corpus {provenance.get('corpus', 'fnspid')} &nbsp;|&nbsp;
-        {provenance['splits']['n_folds']} folds, {provenance['splits']['embargo_days']}-day embargo<br>
-        {versions}<br>
-        corpus manifest sha256 {manifest_hash[:32] if manifest_hash else 'see artifacts/corpus_manifest.json'}<br>
-        run completed {provenance['run_completed_utc']}
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+    with st.expander('Experiment provenance'):
+        # --- provenance
+        st.markdown("## Provenance")
+        versions = ", ".join(f"{k} {v}" for k, v in provenance["package_versions"].items())
+        manifest = provenance.get("corpus_manifest", {})
+        manifest_hash = ""
+        if isinstance(manifest, dict):
+            for key in ("sha256", "file_sha256"):
+                if key in manifest:
+                    manifest_hash = manifest[key]
+                    break
+        st.markdown(
+            f"""
+            <div class="provenance">
+            seed {provenance['seed']} &nbsp;|&nbsp; git {provenance['git_commit'][:12]}<br>
+            corpus {provenance.get('corpus', 'fnspid')} &nbsp;|&nbsp;
+            {provenance['splits']['n_folds']} folds, {provenance['splits']['embargo_days']}-day embargo<br>
+            {versions}<br>
+            corpus manifest sha256 {manifest_hash[:32] if manifest_hash else 'see artifacts/corpus_manifest.json'}<br>
+            run completed {provenance['run_completed_utc']}
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )

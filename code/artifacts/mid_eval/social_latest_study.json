@@ -1,0 +1,9 @@
+{
+  "schema": "investify-recorded-social-study-v1",
+  "catalog": "social_study_20261012_run01/publisher_catalog.json",
+  "plan": "social_study_20261013_run02/plan.json",
+  "bundles": [
+    "social_study_20261013_run02/cryptobert_run02/bundle.json",
+    "social_study_20261013_run02/cardiff_run02/bundle.json"
+  ]
+}

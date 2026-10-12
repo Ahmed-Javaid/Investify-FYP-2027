@@ -7,7 +7,8 @@ param(
 $ErrorActionPreference = 'Stop'
 $sourcePath = [IO.Path]::GetFullPath($PdfPath)
 $outputPath = [IO.Path]::GetFullPath($OutputDirectory)
-if (-not $sourcePath.StartsWith('E:\Uni_Stuff\FYP\GPT_MIDEVAL\', [StringComparison]::OrdinalIgnoreCase)) {
+$projectPrefix = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..')) + [IO.Path]::DirectorySeparatorChar
+if (-not ($sourcePath.StartsWith($projectPrefix, [StringComparison]::OrdinalIgnoreCase) -or $sourcePath.StartsWith('E:\AI-Tools\Temp\investify-report-build-', [StringComparison]::OrdinalIgnoreCase))) {
     throw 'Render only this project''s reference or deliverable PDFs.'
 }
 if (-not $outputPath.StartsWith('E:\AI-Tools\Temp\', [StringComparison]::OrdinalIgnoreCase)) {
@@ -41,7 +42,8 @@ function Wait-Action($Operation) {
 
 $storageFile = Wait-Operation ([Windows.Storage.StorageFile]::GetFileFromPathAsync($sourcePath)) ([Windows.Storage.StorageFile])
 $document = Wait-Operation ([Windows.Data.Pdf.PdfDocument]::LoadFromFileAsync($storageFile)) ([Windows.Data.Pdf.PdfDocument])
-New-Item -ItemType Directory -Path $outputPath -Force | Out-Null
+if (Test-Path -LiteralPath $outputPath) { throw 'Preserve prior QA images; choose a new output directory.' }
+New-Item -ItemType Directory -Path $outputPath | Out-Null
 $count = $document.PageCount
 if ($MaxPages -gt 0) { $count = [Math]::Min($count, $MaxPages) }
 for ($index = 0; $index -lt $count; $index++) {

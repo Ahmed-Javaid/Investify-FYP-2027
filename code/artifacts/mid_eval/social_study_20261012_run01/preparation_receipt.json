@@ -1,0 +1,51 @@
+{
+  "schema": "investify-complete-original-social-preparation-v1",
+  "checked_utc": "2026-10-12T18:47:35.104721+00:00",
+  "status": "catalog_and_plan_frozen",
+  "catalog_sha256": "8ca9aad5bc06035444e6b59819e75fad811af79a3f0699cd785316102298011e",
+  "plan_sha256": "9250c07b447dfc1fa286309fd184fac988aabd5cf20dc56705d1da45869ab017",
+  "parent_plan_sha256": "8fb3cf4a8748101f2ed7e94fb0779cc0545d1c5877bf9573518afc4a05b24294",
+  "benchmark_sha256": "4ee137070c0c90e16503c34d3ed9245a094c658213ed7d0a8cc0aa8fbb05fe2d",
+  "candidate_checkpoints": [
+    {
+      "model_id": "ElKulako/cryptobert",
+      "revision": "9e37c910fe87727cb842a9ac55c6388256fe0f15",
+      "preprocessing": "{\"text_policy\":\"raw\",\"max_length\":128,\"label_mapping\":{\"0\":\"negative\",\"1\":\"neutral\",\"2\":\"positive\"}}"
+    },
+    {
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "revision": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+      "preprocessing": "{\"text_policy\":\"tweet_mentions_urls\",\"max_length\":128,\"label_mapping\":{\"0\":\"negative\",\"1\":\"neutral\",\"2\":\"positive\"}}"
+    }
+  ],
+  "heldout_post_ids": [
+    "565172414448144384",
+    "565193755066912769",
+    "565229779981320194",
+    "565253469406502912",
+    "565261472104992768",
+    "565378174440472577",
+    "565803539788611584",
+    "565854345401737216",
+    "565906887443767298",
+    "566228099797229568",
+    "566257506092318721",
+    "566270940452245504",
+    "566341933220372481",
+    "566408899482628097",
+    "567030285632409601",
+    "567085142909669377",
+    "567345625961103360",
+    "567653454332825600",
+    "567822635800764417",
+    "568736557852549120",
+    "568938769442869249",
+    "569844202235949056",
+    "570029183616851970",
+    "570211539354984449"
+  ],
+  "model_inference_calls": 0,
+  "output_directory": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\mid_eval\\social_study_20261012_run01",
+  "script_sha256": "81f0d5cad799709b08f26da02e14e787d1d9fb28ddc496018ec21a9980c79aac",
+  "scope": "Original candidate weights/config/tokenizers and verified lossless Cardiff serialization. No candidate predictions or deployment decision."
+}

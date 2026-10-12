@@ -9,10 +9,10 @@ Select a historical corpus/session, inspect the decision/probabilities, read eve
 The frozen decision record remains the prediction source. A new builder combines its facts with reviewed definitions and implementation limitations. Streamlit and the standalone explorer reuse that context. Existing template verification remains the baseline.
 
 \section{Implementation}
-The active consolidated repository is on \texttt{main}; the earlier isolated branch is preserved in history. New code in \texttt{src/investify/explain/context.py} covers every feature, handles missing values, rejects non-finite attributions/probabilities, and identifies unreviewed definitions. The Decision tab renders the context; the exporter uses the same records.
+The active consolidated repository is on \texttt{main}; the earlier isolated branch is preserved in history. New code in \nolinkurl{src/investify/explain/context.py} covers every feature, handles missing values, rejects non-finite attributions/probabilities, and identifies unreviewed definitions. The Decision tab renders the context; the exporter uses the same records.
 
 \section{Completed Features / Module}
-The context, artifact tools, complete-guided verifier, report-retaining fallback, both live interfaces, prototype profile and separate retrospective risk comparator are implemented. Actual Streamlit widget tests pass. Six actual teacher explanations are saved and replayed in Teacher Study. Live LLM inference, candidate social-model comparison, social features, personalized classifier predictions and remote GitHub execution remain pending.
+The context, artifact tools, complete-guided verifier, report-retaining fallback, both live interfaces, prototype profile and separate retrospective risk comparator are implemented. Actual Streamlit widget tests pass. Six actual teacher explanations are saved and replayed in Teacher Study. Original social-candidate comparison now executes with recorded results in Chapter~\ref{chap:testing}. Live LLM inference, social features in the saved predictor, personalized classifier predictions and remote GitHub execution remain pending.
 
 \section{Technical Implementation Details}
 Feature values and predicted-class SHAP contributions are separate. Family totals retain raw-score units. The verifier checks prose and JSON independently, including feature values and attribution targets. Displayed-text coverage, essential disclosures and hard contradiction gates prevent a correct payload from hiding an incorrect display. Strict mode rejects unsupported sentences. Evidence tools check schemas/context/templates/distributions/additivity and record artifact/runtime/source hashes.
@@ -35,6 +35,7 @@ Original scientific source/results are preserved. Cache joins refuse duplicate d
 The increment improves evidence coverage and transparency over the top-k numeric template and supplies a tested LLM input contract. It does not yet establish LLM usefulness, predictive skill, complete mid readiness, or deployment.
 
 \section{Recorded Assistant Teacher Construction Pilot}
+\label{sec:teacher-pilot}
 Under the user's latest direction, the current assistant supplies teacher examples before an alternative API is considered. The planned student remains Phi-3-mini; no additional Qwen teacher download is required. Six actual explanations were written from frozen historical NVDA records, and all six pass the current strict verifier. Input packets contain facts, reviewed definitions and controlled sentence patterns without a completed reference answer.
 
 The supervision is hybrid: prose is actually assistant-generated, while the factual JSON payload is assembled deterministically from the original record. Both are checked, but the payload is not claimed as a teacher completion. Exact serving model ID/revision, decoding, token usage and per-example inference latency are unavailable and recorded as null.
@@ -49,7 +50,7 @@ On 12 October 2026 a separately identified, genuine Alpaca experiment executed
 the corrected pipeline. All 1,509 requested NYSE price sessions were present.
 The 6,768 revision-conservative news rows contain 5,748 distinct headlines,
 scored offline with original ProsusAI/finbert revision
-\texttt{0bc2ac10dda6929bcb1f77ccc43c7ec5c424f031}.
+\nolinkurl{0bc2ac10dda6929bcb1f77ccc43c7ec5c424f031}.
 The selected price basis is current-vintage SIP split adjustment, without cash
 dividend adjustment. News availability uses the later creation/update timestamp.
 Neither policy proves historical vendor availability. No FNSPID was downloaded;
@@ -86,6 +87,10 @@ decisions. Before calibration, the frozen model predicts Buy 40, Hold 51 and
 Sell 95. Its fitted isotonic mappings make Buy largest on every evaluation row.
 Raw held-out macro-F1 is 0.3182 in frozen mode and 0.3116 in refit mode;
 calibration reduces both to 0.2238 despite improving Brier.
+A fixed class-prior comparator estimated from the 181 available calibration
+labels has Brier 0.6095 on the same evaluation rows, versus frozen 0.6105 and
+refit 0.6078. This descriptive comparison does not establish a useful learned
+forecast; its probabilities use no evaluation labels.
 Thus classifier refitting is not necessary for the observed fresh-run collapse.
 This is an observation about the current experiment, not proof of the historical
 cause. Lower Brier and all-Buy classifications must be reported together.
@@ -98,9 +103,9 @@ Calibration, labels/endpoints and metric replay pass. Complete guided
 explanations verify on all 372 new records, separately from the historical 372.
 
 The current source/input/runtime identities and execution logs are retained in
-\texttt{code/artifacts/scientific\_runs/} and dated evidence receipts.
+\nolinkurl{code/artifacts/scientific_runs/} and dated evidence receipts.
 The restored Python 3.11 runtime satisfies declared dependency ranges; it is
-not exact restoration of \texttt{uv.lock}. Engineering contracts record
+not exact restoration of \nolinkurl{uv.lock}. Engineering contracts record
 179 passes and six legacy-input skips, with eight separate admission-refusal
 passes. No independently validated social accuracy, trading return, human
 benefit, student training or institutional approval is established.

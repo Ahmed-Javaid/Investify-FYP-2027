@@ -41,6 +41,7 @@ class StreamlitMidEvalTests(unittest.TestCase):
     def test_missing_harness_inputs_disable_the_rerun(self):
         with patch('app.tabs.leakage_lab.harness_missing_inputs', return_value=['missing fixture input']):
             app = self.app()
+            app.radio(key='leakage_corpus').set_value('results_alpaca').run()
             buttons = [b for b in app.button if b.label == 'Re-run D_CENTRED now']
             self.assertEqual(len(buttons), 1)
             self.assertTrue(buttons[0].disabled)
@@ -57,6 +58,7 @@ class StreamlitMidEvalTests(unittest.TestCase):
 
     def test_actual_fixture_causality_button_detects_centred_mutations_without_claiming_a_market_run(self):
         app = self.app()
+        app.radio(key='leakage_corpus').set_value('results_alpaca').run()
         app.button(key='run_fixture_causality').click().run()
         self.assertFalse(app.exception)
         self.assertTrue(any('9/9 passed; 4 deliberately centred' in x.value for x in app.success))
@@ -66,6 +68,7 @@ class StreamlitMidEvalTests(unittest.TestCase):
     def test_failed_scientific_import_after_preflight_has_a_visible_failure_without_a_fake_result(self):
         with patch('app.tabs.leakage_lab.harness_missing_inputs', return_value=[]):
             app = self.app()
+            app.radio(key='leakage_corpus').set_value('results_alpaca').run()
             button = next(b for b in app.button if b.label == 'Re-run D_CENTRED now')
             button.click().run()
             self.assertFalse(app.exception)
@@ -129,6 +132,18 @@ class StreamlitMidEvalTests(unittest.TestCase):
         self.assertFalse(app.exception)
         self.assertTrue(any('scaling-development block' in x.value for x in app.info))
         self.assertFalse(any('Profile blend comparator' in m.label for m in app.metric))
+
+    def test_recorded_original_candidate_scores_show_reference_limits_and_download(self):
+        app = self.app()
+        self.assertTrue(any('recorded metrics' in x.value.lower() or 'recorded original-publisher inference' in x.value.lower() for x in app.caption))
+        self.assertTrue(any('independent human validation is unmeasured' in x.value for x in app.warning))
+        tables = [x.value for x in app.dataframe if 'model' in x.value.columns and 'macro_F1' in x.value.columns]
+        self.assertEqual(len(tables), 1)
+        rows = tables[0].set_index('model')
+        self.assertAlmostEqual(rows.loc['ElKulako/cryptobert', 'macro_F1'], 0.25641025641025644)
+        self.assertAlmostEqual(rows.loc['cardiffnlp/twitter-roberta-base-sentiment-latest', 'macro_F1'], 0.6015873015873016)
+        self.assertTrue(all(rows['coverage'] == 1.0))
+        self.assertTrue(any(button.key == 'download_social_study' for button in app.get('download_button')))
 
     def test_social_study_discloses_missing_real_benchmark_without_quality_scores(self):
         with patch('app.tabs.social_study.read_json', side_effect=FileNotFoundError('labelled missing benchmark')):
@@ -217,6 +232,48 @@ class StreamlitMidEvalTests(unittest.TestCase):
             self.assertFalse(any('Benchmark leaders:' in x.value for x in app.markdown))
             self.assertTrue(any(button.key == 'download_social_study' for button in app.get('download_button')))
             self.assertTrue(any(button.key == 'download_generative_study' for button in app.get('download_button')))
+
+    def test_guided_navigation_keeps_the_selected_case_and_profile(self):
+        app = self.app()
+        self.assertEqual(app.session_state['demo_section'], 'Start here')
+        self.assertEqual(app.radio(key='decision_corpus').value, 'fresh_frozen')
+        self.assertEqual(app.radio(key='leakage_corpus').value, 'fresh_alpaca')
+        app.button(key='start_walkthrough').click().run()
+        self.assertEqual(app.session_state['demo_section'], 'Decision')
+        app.button(key='profile_example_cautious').click().run()
+        self.assertTrue(any(m.label == 'Profile blend comparator (R = 0.000)' and m.value == 'Hold' for m in app.metric))
+        session = app.select_slider(key='decision_session').value
+        app.button(key='demo_next').click().run()
+        self.assertEqual(app.session_state['demo_section'], 'Leakage Lab')
+        app.button(key='demo_previous').click().run()
+        self.assertEqual(app.session_state['demo_section'], 'Decision')
+        self.assertEqual(app.select_slider(key='decision_session').value, session)
+        self.assertEqual(app.selectbox(key='profile_horizon').value, '5+ years')
+        self.assertFalse(app.exception)
+
+    def test_fictional_examples_change_comparator_then_clear_all_answers(self):
+        app = self.app()
+        app.button(key='profile_example_cautious').click().run()
+        saved = next(m.value for m in app.metric if 'day view' in m.label)
+        app.button(key='profile_example_tolerant').click().run()
+        self.assertTrue(any(m.label == 'Profile blend comparator (R = 1.000)' and m.value == 'Sell' for m in app.metric))
+        self.assertEqual(saved, next(m.value for m in app.metric if 'day view' in m.label))
+        self.assertTrue(any('Fictional demonstration answers' in c.value for c in app.caption))
+        app.button(key='clear_profile').click().run()
+        self.assertTrue(all(app.selectbox(key=f'profile_{name}').value is None for name in ('horizon','buffer','stability','dependants','age')))
+        self.assertFalse(any('Profile blend comparator' in m.label for m in app.metric))
+        self.assertFalse(app.exception)
+
+    def test_both_fresh_calibration_modes_show_current_identity(self):
+        app = self.app()
+        for corpus in ('fresh_frozen', 'fresh_refit'):
+            app.radio(key='decision_corpus').set_value(corpus).run()
+            self.assertFalse(app.exception)
+            self.assertTrue(any('availability-safe calibration' in v.value for v in app.info))
+            self.assertTrue(any('learned isotonic maps' in v.value for v in app.markdown))
+            self.assertTrue(any(m.value == 'Buy' for m in app.metric if 'day view' in m.label))
+        self.assertTrue(any('actual trading-session label endpoints' in v.value for v in app.info))
+        self.assertFalse(any(b.label == 'Re-run D_CENTRED now' for b in app.button))
 
     def test_invalid_response_timeout_refuses_generator_configuration_before_a_request(self):
         with patch.dict(os.environ, {'INVESTIFY_LLM_TIMEOUT': 'invalid fixture value'}):

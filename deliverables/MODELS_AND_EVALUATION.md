@@ -1,5 +1,41 @@
 # Investify model and evaluation inventory
 
+## Completed original-classifier study - 13 October 2026
+
+The original CryptoBERT and Cardiff candidates now complete **24/24 held-out
+posts each**, without errors or missing predictions. Both publisher snapshots
+and every tokenizer/config file are verified. Original Cardiff BIN serialization
+preserves all 204 keys/dtypes/shapes/raw bytes; the loader retains its unused
+native pooler and proves bitwise classifier-logit parity with/without it.
+
+| Candidate | Macro-F1 agreement | Exact AI-reference agreement | Observed limit |
+| --- | ---: | ---: | --- |
+| CryptoBERT | 0.256410 | 15/24 (62.5%) | All 24 predictions neutral; positive/negative recall zero |
+| Cardiff | 0.601587 | 16/24 (66.7%) | Positive recall 4/7; neutral 11/15; negative 1/2 |
+
+Cardiff is the **exploratory benchmark leader**, not a deployment-approved winner.
+The held-out references are AI-generated and contain only two negatives.
+No independently human-validated accuracy, significance, NVDA transfer or useful
+return prediction follows from these results. Adequacy criteria and genuine
+review remain unclosed; deployment_selection stays null.
+
+The Social Study view now recomputes the comparison from the actual raw
+output/receipt bundles, with AI-reference/exploratory disclosures. It performs
+no model inference. Latest viewer checks: **25 passes, zero skips**, including
+21 Streamlit cases and four recorded-selector checks, plus five subtest checks.
+Current native-pooler/loader gates have 37 passes plus nine subtests.
+The earlier Cardiff refusal and failed viewer receipt remain preserved.
+Repeated actual CryptoBERT outputs are identical.
+
+[Current paired review](../evidence/social_study_review_20261013.json) and
+[raw comparison](../code/artifacts/mid_eval/social_study_20261013_run02/comparison/comparison.json).
+
+Readiness is now **83.75%, approximately 84%**. Original weights are unchanged;
+social alone rises from 50% to 85%, while other areas retain their preceding
+estimates. The report/deck still require compilation/export, visual QA and
+institutional/team review. No student training or new teacher-model choice
+occurred. The current assistant/Phi-3-mini/Mistral roles remain unchanged.
+
 ## Fresh scientific execution - 12 October 2026
 
 The new **Alpaca revision-conservative experiment has completed and passed actual

@@ -1,0 +1,577 @@
+{
+  "schema": "investify-original-social-acquisition-v1",
+  "started_utc": "2026-10-12T18:41:36.960515+00:00",
+  "status": "both_original_snapshots_verified",
+  "download_requested": true,
+  "models": [
+    {
+      "key": "cryptobert",
+      "model_id": "ElKulako/cryptobert",
+      "revision": "9e37c910fe87727cb842a9ac55c6388256fe0f15",
+      "weight_filename": "model.safetensors",
+      "files": [
+        {
+          "filename": "config.json",
+          "sha256": "b8692615f3f78d0f074c82c9c0708fd5130caa9ce252bcfd448c25fb5b1eafcb",
+          "expected_bytes": 932,
+          "source_url": "https://huggingface.co/ElKulako/cryptobert/blob/9e37c910fe87727cb842a9ac55c6388256fe0f15/config.json",
+          "publisher_git_blob_sha1": "723dd384da42401971156cac32c4fd15fbd2f9f6"
+        },
+        {
+          "filename": "merges.txt",
+          "sha256": "fe36cab26d4f4421ed725e10a2e9ddb7f799449c603a96e7f29b5a3c82a95862",
+          "expected_bytes": 456356,
+          "source_url": "https://huggingface.co/ElKulako/cryptobert/blob/9e37c910fe87727cb842a9ac55c6388256fe0f15/merges.txt",
+          "publisher_git_blob_sha1": "6636bda4a1fd7a63653dffb22683b8162c8de956"
+        },
+        {
+          "filename": "special_tokens_map.json",
+          "sha256": "8293ae960b0a0852d4d3813118030a1149a3ed9fe37bc2e1e7b3c2e62eb2d4b7",
+          "expected_bytes": 957,
+          "source_url": "https://huggingface.co/ElKulako/cryptobert/blob/9e37c910fe87727cb842a9ac55c6388256fe0f15/special_tokens_map.json",
+          "publisher_git_blob_sha1": "06a55849fa69a91e7179d909e373179ff7467d8c"
+        },
+        {
+          "filename": "tokenizer.json",
+          "sha256": "783c7e86aedf79dd0aae603805c9591f397ca4475620b58f9a9b78151e2cfb7c",
+          "expected_bytes": 2108586,
+          "source_url": "https://huggingface.co/ElKulako/cryptobert/blob/9e37c910fe87727cb842a9ac55c6388256fe0f15/tokenizer.json",
+          "publisher_git_blob_sha1": "ae7b71057f722dae9b8574855f92736ad85b509d"
+        },
+        {
+          "filename": "tokenizer_config.json",
+          "sha256": "e6d01bdb677a7b1b487070e0666a68da88922ff87ccb95999dbd5e23b8718360",
+          "expected_bytes": 1346,
+          "source_url": "https://huggingface.co/ElKulako/cryptobert/blob/9e37c910fe87727cb842a9ac55c6388256fe0f15/tokenizer_config.json",
+          "publisher_git_blob_sha1": "5c54fd8c7dfa3fe0ea34ce7f9571c72e43154453"
+        },
+        {
+          "filename": "vocab.json",
+          "sha256": "ed19656ea1707df69134c4af35c8ceda2cc9860bf2c3495026153a133670ab5e",
+          "expected_bytes": 798293,
+          "source_url": "https://huggingface.co/ElKulako/cryptobert/blob/9e37c910fe87727cb842a9ac55c6388256fe0f15/vocab.json",
+          "publisher_git_blob_sha1": "4ebe4bb3f3114daf2e4cc349f24873a1175a35d7"
+        },
+        {
+          "filename": "model.safetensors",
+          "sha256": "fe34ba09b3d701ff2b4ee69205e42c8143fcee1f89fe3a0cf10444988634a3c9",
+          "expected_bytes": 498620100,
+          "source_url": "https://huggingface.co/ElKulako/cryptobert/blob/9e37c910fe87727cb842a9ac55c6388256fe0f15/model.safetensors",
+          "publisher_git_blob_sha1": "b95222f22318ac3540295263386605723dbad63c"
+        }
+      ],
+      "metadata_url": "https://huggingface.co/api/models/ElKulako/cryptobert/revision/9e37c910fe87727cb842a9ac55c6388256fe0f15?blobs=true",
+      "metadata_sha256": "f61f16fd8e116b8b30c1856168e176aa0075782649d16eba7b62efd712a4c06d",
+      "primary_metadata": {
+        "_id": "62afdb861f7044b25f1b629a",
+        "id": "ElKulako/cryptobert",
+        "private": false,
+        "pipeline_tag": "text-classification",
+        "library_name": "transformers",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "safetensors",
+          "roberta",
+          "text-classification",
+          "cryptocurrency",
+          "crypto",
+          "BERT",
+          "sentiment classification",
+          "NLP",
+          "bitcoin",
+          "ethereum",
+          "shib",
+          "social media",
+          "sentiment analysis",
+          "cryptocurrency sentiment analysis",
+          "en",
+          "dataset:ElKulako/stocktwits-crypto",
+          "license:mit",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "deploy:azure",
+          "region:us"
+        ],
+        "downloads": 471947,
+        "likes": 195,
+        "modelId": "ElKulako/cryptobert",
+        "author": "ElKulako",
+        "sha": "9e37c910fe87727cb842a9ac55c6388256fe0f15",
+        "lastModified": "2025-05-26T11:52:00.000Z",
+        "gated": false,
+        "disabled": false,
+        "mask_token": "<mask>",
+        "widgetData": [
+          {
+            "text": "I like you. I love you"
+          }
+        ],
+        "model-index": null,
+        "config": {
+          "architectures": [
+            "RobertaForSequenceClassification"
+          ],
+          "model_type": "roberta",
+          "tokenizer_config": {
+            "bos_token": {
+              "__type": "AddedToken",
+              "content": "<s>",
+              "lstrip": false,
+              "normalized": true,
+              "rstrip": false,
+              "single_word": false
+            },
+            "cls_token": {
+              "__type": "AddedToken",
+              "content": "<s>",
+              "lstrip": false,
+              "normalized": true,
+              "rstrip": false,
+              "single_word": false
+            },
+            "eos_token": {
+              "__type": "AddedToken",
+              "content": "</s>",
+              "lstrip": false,
+              "normalized": true,
+              "rstrip": false,
+              "single_word": false
+            },
+            "mask_token": {
+              "__type": "AddedToken",
+              "content": "<mask>",
+              "lstrip": true,
+              "normalized": true,
+              "rstrip": false,
+              "single_word": false
+            },
+            "pad_token": {
+              "__type": "AddedToken",
+              "content": "<pad>",
+              "lstrip": false,
+              "normalized": true,
+              "rstrip": false,
+              "single_word": false
+            },
+            "sep_token": {
+              "__type": "AddedToken",
+              "content": "</s>",
+              "lstrip": false,
+              "normalized": true,
+              "rstrip": false,
+              "single_word": false
+            },
+            "unk_token": {
+              "__type": "AddedToken",
+              "content": "<unk>",
+              "lstrip": false,
+              "normalized": true,
+              "rstrip": false,
+              "single_word": false
+            }
+          }
+        },
+        "cardData": {
+          "datasets": [
+            "ElKulako/stocktwits-crypto"
+          ],
+          "language": [
+            "en"
+          ],
+          "tags": [
+            "cryptocurrency",
+            "crypto",
+            "BERT",
+            "sentiment classification",
+            "NLP",
+            "bitcoin",
+            "ethereum",
+            "shib",
+            "social media",
+            "sentiment analysis",
+            "cryptocurrency sentiment analysis"
+          ],
+          "license": "mit"
+        },
+        "transformersInfo": {
+          "auto_model": "AutoModelForSequenceClassification",
+          "pipeline_tag": "text-classification",
+          "processor": "AutoTokenizer"
+        },
+        "siblings": [
+          {
+            "rfilename": ".gitattributes",
+            "blobId": "4a6f8b4e86851998a84353598f557e78c6a947de",
+            "size": 1227
+          },
+          {
+            "rfilename": "README.md",
+            "blobId": "67fcdd9940d5cb4358d9f2fcc124e87035269be8",
+            "size": 3698
+          },
+          {
+            "rfilename": "config.json",
+            "blobId": "723dd384da42401971156cac32c4fd15fbd2f9f6",
+            "size": 932
+          },
+          {
+            "rfilename": "merges.txt",
+            "blobId": "6636bda4a1fd7a63653dffb22683b8162c8de956",
+            "size": 456356
+          },
+          {
+            "rfilename": "model.safetensors",
+            "blobId": "b95222f22318ac3540295263386605723dbad63c",
+            "size": 498620100,
+            "lfs": {
+              "sha256": "fe34ba09b3d701ff2b4ee69205e42c8143fcee1f89fe3a0cf10444988634a3c9",
+              "size": 498620100,
+              "pointerSize": 134
+            }
+          },
+          {
+            "rfilename": "pytorch_model.bin",
+            "blobId": "07faf72d1af85667c0bdceb7ea1495e46284992e",
+            "size": 498663405,
+            "lfs": {
+              "sha256": "80aaa3c6d754b07e5dd23e4dbe93d7adf9d053d4f132ef556ec14668e371743d",
+              "size": 498663405,
+              "pointerSize": 134
+            }
+          },
+          {
+            "rfilename": "special_tokens_map.json",
+            "blobId": "06a55849fa69a91e7179d909e373179ff7467d8c",
+            "size": 957
+          },
+          {
+            "rfilename": "tokenizer.json",
+            "blobId": "ae7b71057f722dae9b8574855f92736ad85b509d",
+            "size": 2108586
+          },
+          {
+            "rfilename": "tokenizer_config.json",
+            "blobId": "5c54fd8c7dfa3fe0ea34ce7f9571c72e43154453",
+            "size": 1346
+          },
+          {
+            "rfilename": "vocab.json",
+            "blobId": "4ebe4bb3f3114daf2e4cc349f24873a1175a35d7",
+            "size": 798293
+          }
+        ],
+        "spaces": [
+          "tardellirs/model-pulse",
+          "Really-amin/Datasourceforcryptocurrency-2",
+          "jlevin/ElKulako-cryptobert",
+          "Mrttbn/CryptoNews",
+          "DJ-Goanna-Coding/citadel-agentic-swarm",
+          "newbia/test",
+          "digx/ElKulako-cryptobert",
+          "weisu/ElKulako-cryptobert",
+          "migorengxyz/crypto-trade-1",
+          "mrevaasion/ElKulako-cryptobert",
+          "nadzo/crypto-sentiment",
+          "S-Dreamer/CryptoBERT-Assist",
+          "Haseeb-001/demo-crypto",
+          "Really-amin/Datasourceforcryptocurrency",
+          "Really-amin/Datasourceforcryptocurrency-4",
+          "Really-amin/crypto-platform-v2",
+          "Really-amin/terstr",
+          "Really-amin/datasourceforcryptocurrency-fixed",
+          "Really-amin/Datasourceforcryptocurrency-5",
+          "minhtrucnguyen0709/trading-ai",
+          "joshworksit/bot",
+          "Dvd15/web3-whatsapp-bot",
+          "dien2112/cryptobert",
+          "DJ-Goanna-Coding/oppo-node",
+          "DJ-Goanna-Coding/citadel-vortex",
+          "kamus61/v4-crypto-signals",
+          "Really-amin/Datasourceforcryptocurrency-2-backup-20260607",
+          "Really-amin/Datasourceforcryptocurrency-1",
+          "skymmano/Datasourceforcryptocurrency-2"
+        ],
+        "createdAt": "2022-06-20T02:29:26.000Z",
+        "safetensors": {
+          "parameters": {
+            "I64": 514,
+            "F32": 124647939
+          },
+          "total": 124648453
+        },
+        "usedStorage": 1496145180
+      },
+      "status": "downloaded_original_bytes_verified",
+      "snapshot_directory": "E:\\AI-Tools\\Cache\\social-models-original\\20261012_run01\\cryptobert\\9e37c910fe87727cb842a9ac55c6388256fe0f15"
+    },
+    {
+      "key": "cardiff",
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "revision": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+      "weight_filename": "pytorch_model.bin",
+      "files": [
+        {
+          "filename": "config.json",
+          "sha256": "d2fba19997da698157196ba16f5fcb30a97a7551cef6845a0f3d743ee19c6129",
+          "expected_bytes": 929,
+          "source_url": "https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest/blob/3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7/config.json",
+          "publisher_git_blob_sha1": "baae943f01ad3371bc9d543de3229512dfe27cb8"
+        },
+        {
+          "filename": "merges.txt",
+          "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+          "expected_bytes": 456318,
+          "source_url": "https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest/blob/3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7/merges.txt",
+          "publisher_git_blob_sha1": "226b0752cac7789c48f0cb3ec53eda48b7be36cc"
+        },
+        {
+          "filename": "special_tokens_map.json",
+          "sha256": "378eb3bf733eb16e65792d7e3fda5b8a4631387ca04d2015199c4d4f22ae554d",
+          "expected_bytes": 239,
+          "source_url": "https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest/blob/3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7/special_tokens_map.json",
+          "publisher_git_blob_sha1": "2ea7ad0e45a9d1d1591782ba7e29a703d0758831"
+        },
+        {
+          "filename": "vocab.json",
+          "sha256": "06b4d46c8e752d410213d9548eb27a54db70fda0319b6271fb8d59dead5e1cab",
+          "expected_bytes": 898822,
+          "source_url": "https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest/blob/3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7/vocab.json",
+          "publisher_git_blob_sha1": "0a39732b2d8be8e493cab3da68b68cc3e28221de"
+        },
+        {
+          "filename": "pytorch_model.bin",
+          "sha256": "4d24a3e32a88ed1c4e5b789fc6644e2e767500554e954b27dccf52a8e762cbae",
+          "expected_bytes": 501045531,
+          "source_url": "https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest/blob/3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7/pytorch_model.bin",
+          "publisher_git_blob_sha1": "3ddc7f0c242a885b017a03ad8c1ea1a2bd8e89ee"
+        }
+      ],
+      "metadata_url": "https://huggingface.co/api/models/cardiffnlp/twitter-roberta-base-sentiment-latest/revision/3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7?blobs=true",
+      "metadata_sha256": "460c3f48809313c5e6773d0e2536490e8bd6a41831386bed280abf56de33440b",
+      "primary_metadata": {
+        "_id": "622fea36174feb5439c2e4be",
+        "id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        "private": false,
+        "pipeline_tag": "text-classification",
+        "library_name": "transformers",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "tf",
+          "roberta",
+          "text-classification",
+          "en",
+          "dataset:tweet_eval",
+          "arxiv:2202.03829",
+          "license:cc-by-4.0",
+          "endpoints_compatible",
+          "deploy:azure",
+          "region:us"
+        ],
+        "downloads": 2553472,
+        "likes": 842,
+        "modelId": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        "author": "cardiffnlp",
+        "sha": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+        "lastModified": "2025-08-04T07:58:29.000Z",
+        "gated": false,
+        "disabled": false,
+        "mask_token": "<mask>",
+        "widgetData": [
+          {
+            "text": "Covid cases are increasing fast!"
+          }
+        ],
+        "model-index": null,
+        "config": {
+          "architectures": [
+            "RobertaForSequenceClassification"
+          ],
+          "model_type": "roberta"
+        },
+        "cardData": {
+          "language": "en",
+          "widget": [
+            {
+              "text": "Covid cases are increasing fast!"
+            }
+          ],
+          "datasets": [
+            "tweet_eval"
+          ],
+          "license": "cc-by-4.0"
+        },
+        "transformersInfo": {
+          "auto_model": "AutoModelForSequenceClassification",
+          "pipeline_tag": "text-classification",
+          "processor": "AutoTokenizer"
+        },
+        "siblings": [
+          {
+            "rfilename": ".gitattributes",
+            "blobId": "6d34772f5ca361021038b404fb913ec8dc0b1a5a",
+            "size": 1175
+          },
+          {
+            "rfilename": "README.md",
+            "blobId": "861003a793b518d38e44733da4c713d2c625b636",
+            "size": 4328
+          },
+          {
+            "rfilename": "config.json",
+            "blobId": "baae943f01ad3371bc9d543de3229512dfe27cb8",
+            "size": 929
+          },
+          {
+            "rfilename": "merges.txt",
+            "blobId": "226b0752cac7789c48f0cb3ec53eda48b7be36cc",
+            "size": 456318
+          },
+          {
+            "rfilename": "pytorch_model.bin",
+            "blobId": "3ddc7f0c242a885b017a03ad8c1ea1a2bd8e89ee",
+            "size": 501045531,
+            "lfs": {
+              "sha256": "4d24a3e32a88ed1c4e5b789fc6644e2e767500554e954b27dccf52a8e762cbae",
+              "size": 501045531,
+              "pointerSize": 134
+            }
+          },
+          {
+            "rfilename": "special_tokens_map.json",
+            "blobId": "2ea7ad0e45a9d1d1591782ba7e29a703d0758831",
+            "size": 239
+          },
+          {
+            "rfilename": "tf_model.h5",
+            "blobId": "92c1ee865bf994f4b4e348bb2013d66c0c1b0ad2",
+            "size": 498845224,
+            "lfs": {
+              "sha256": "682358ffb3869b08a144d5e59325534335729720fe64d5f2b3a543f8e5d14a9e",
+              "size": 498845224,
+              "pointerSize": 134
+            }
+          },
+          {
+            "rfilename": "vocab.json",
+            "blobId": "0a39732b2d8be8e493cab3da68b68cc3e28221de",
+            "size": 898822
+          }
+        ],
+        "spaces": [
+          "tardellirs/model-pulse",
+          "embedl/hfviewer",
+          "zama-fhe/encrypted_sentiment_analysis",
+          "Gresekxnol/clipyr",
+          "eduagarcia/multilingual-tokenizer-leaderboard",
+          "jmparejaz/Audio_to_text_classification",
+          "giskardai/giskard-evaluator",
+          "ELCA-SA/sketch-to-BPMN",
+          "Really-amin/Datasourceforcryptocurrency-2",
+          "groupproj/Neuronews-Group-01",
+          "Agents-MCP-Hackathon/iykyk-product-validation-agent",
+          "Kiro0o/Sentiment",
+          "hamel88/x402-fast-payout-demo",
+          "axrzce/Comp-I",
+          "Jatin290/Flipkart-ai",
+          "Margaret/mazzuma-sentiment-engine",
+          "rizam/rakeeb_text-classification",
+          "poiiii/clefourrier-graphormer-base-pcqm4mv1",
+          "KunaalNaik/SentmentAnalysis_HF1",
+          "834188divi/cardiffnlp-twitter-roberta-base-sentiment-latest",
+          "Charles95/gradio-tasks",
+          "F00KEN/e-motion",
+          "uni-adelaide-team23j/Early_Depression_Detection_V2",
+          "kesavaprasad/sentiment_analysis",
+          "f-URY/ResuMeister",
+          "Ashkchamp/StockFinanceAgent",
+          "harao-ml/QuickPulse",
+          "UKURIKIYEYEZU/Sentimental_Analysis",
+          "chiragvispute/education-news-digest",
+          "Agrannya/Product_review_model",
+          "abhilash88/newsscope-ai",
+          "valmarrugel302/irtaza",
+          "Mikey31/SentimentAnalysis",
+          "AUT-FelixPhilip/Aotearoa-New_Zealand-X-Engagement",
+          "IndAlok/HexaCiph",
+          "Fatima1228/sentiment-analyzer",
+          "aradhyapavan/nlp-ultimate-tutor",
+          "Jason4Cheese/quantum-alchemist",
+          "PJ2005/chat-mood-analyzer-ultimate",
+          "karim323/nlp-analysis-api",
+          "BATUTO-ART/Batuto_Hybrid",
+          "Faffio/Sentiment-Analysis",
+          "Satyam-Srivastava/sentiment-analysis",
+          "ehsanshahid522/aml_project",
+          "subhankarmannayfy/sentiment_analysis",
+          "komyt/Customer_Analyzer",
+          "Pikeras/Equitia-evaluation-tool",
+          "Besoxjr/3in-el-balad",
+          "guardianrobot/screencomply_documents",
+          "itzrolex4951/sentiment-analysis",
+          "Anas-Zafar-AI/Sentify",
+          "Shruthi1215/guvi-document-api",
+          "gyaneshrai/CrossFakeNet",
+          "mohitluthra/brandpulse-ai",
+          "DJ-Goanna-Coding/citadel-agentic-swarm",
+          "flipova-app/flippa-ai",
+          "Avijitda369/Twitter-AI-Engine",
+          "ChuaJeromeFlutterFirebase/flutterapp",
+          "John-7S/pm-meeting-summarizer",
+          "Jainparshvi/xai-forensics-backend",
+          "anotheruserishere/Bertographer",
+          "Patricksang/Errt",
+          "harman-2004/Teacher-Feedback-Analytics",
+          "Dhruv1974/NLP-TRANSFORMER",
+          "nafees369/Technostress",
+          "tag-01123/DataAnalyzer",
+          "VLADYMIR2/Mojarra_IA_Ayudante",
+          "ThankGod/text-classification",
+          "rizam/rakeeb_tweet_sentiment",
+          "bradarrML/encrypted_sentiment_analysis",
+          "FrancescoBerg/cardiffnlp-twitter-roberta-base-sentiment-latest",
+          "dajayk12/cardiffnlp-twitter-roberta-base-sentiment-latest",
+          "mattaylor/embedding",
+          "quni/cardiffnlp-twitter-roberta-base-sentiment-latest",
+          "dvilasuero/gradio-argilla-logger",
+          "Daniton/cardiffnlp-twitter-roberta-base-sentiment-latest",
+          "Daniton/cardiffnlp-twitter-drobertam-basedd-sentiddment-latestd",
+          "Daniton/cardiffnlp-twitter-roberta-base-sentidment-latestd",
+          "Daniton/cardiffnlp-twitter-roberta-based-sentidment-latestd",
+          "Daniton/cardiffnlp-twitter-drobertam-based-sentiddment-latestd",
+          "Daniton/cardiffnlp-twitter-robertam-based-sentidment-latestd",
+          "Daniton/cardiffnlp-twitter-robertam-based-sentiddment-latestd",
+          "Daniton/cardiffnlp-twitter-roberta-base-sentiment-latestd",
+          "lsacy/menduChat",
+          "cscan/Audio_to_text_classification",
+          "pranjal065/process_fest",
+          "JulianHame/sentiment-analysis-app",
+          "Pruthul/CS482-104-Milestone2",
+          "metaknightccc/sentiment-analysis-app",
+          "alpha-hp/cardiffnlp-twitter-roberta-base-sentiment-latest",
+          "alpha-hp/twitter-s",
+          "JKJanosko/Toxicity-Analysis",
+          "kya5/CS482-Milestone2",
+          "bobrooos/cardiffnlp-twitter-roberta-base-sentiment-latest",
+          "zox47/cardiffnlp-twitter-roberta-base-sentiment-latest",
+          "MikeJeong/apppp",
+          "MikeJeong/CSProject",
+          "MikeJeong/CS482-FineTune",
+          "Mahipal/nlp_dashboard",
+          "prlabs2023/text-sentiment-1"
+        ],
+        "createdAt": "2022-03-15T01:21:58.000Z",
+        "usedStorage": 1999747098
+      },
+      "status": "downloaded_original_bytes_verified",
+      "snapshot_directory": "E:\\AI-Tools\\Cache\\social-models-original\\20261012_run01\\cardiff\\3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7"
+    }
+  ],
+  "model_inference_calls": 0,
+  "labels_modified": false,
+  "fnspid_requests": 0,
+  "routing_settings_changed": false,
+  "script_sha256": "f2a71bebd3ac54c0c6012287aa01f7e81e917e341715b02682891f5208439285",
+  "completed_utc": "2026-10-12T18:44:13.140990+00:00"
+}

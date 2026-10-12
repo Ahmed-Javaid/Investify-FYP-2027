@@ -1,0 +1,2344 @@
+{
+  "protocol": "mideval-social-receipt-gate-v4",
+  "purpose": "research",
+  "execution_kind": "local_original_classifier",
+  "plan_sha256": "bb74116d65167a7240e456ec8d1be7c9ad6d5fffc3de9faf0f41c4254a4259e1",
+  "publisher_verification": {
+    "manifest_sha256": "9715e61f520e53bc831aeb456f627b129a8817d2c2038f95d35269b8a60eb45a",
+    "input_files_sha256": {
+      "config.json": "d2fba19997da698157196ba16f5fcb30a97a7551cef6845a0f3d743ee19c6129",
+      "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+      "special_tokens_map.json": "378eb3bf733eb16e65792d7e3fda5b8a4631387ca04d2015199c4d4f22ae554d",
+      "vocab.json": "06b4d46c8e752d410213d9548eb27a54db70fda0319b6271fb8d59dead5e1cab",
+      "model.safetensors": "9efebad6b828ab4a1d1a33d55bd2b9623d1904f157b16921c0f31a41806939c8"
+    },
+    "observed_file_bytes": {
+      "config.json": 929,
+      "merges.txt": 456318,
+      "special_tokens_map.json": 239,
+      "vocab.json": 898822,
+      "model.safetensors": 500982668
+    },
+    "scope": "Matches declared trusted publisher bytes; no independent execution attestation",
+    "conversion_receipt_sha256": "1377493e3022a866a3e78b78cbe26dbdfafb7ad4286aa659c593de88e5eaafe4",
+    "conversion_verification": {
+      "protocol": "original-cardiff-lossless-safetensors-v1",
+      "purpose": "research",
+      "source_bin_sha256": "4d24a3e32a88ed1c4e5b789fc6644e2e767500554e954b27dccf52a8e762cbae",
+      "source_bin_bytes": 501045531,
+      "converted_sha256": "9efebad6b828ab4a1d1a33d55bd2b9623d1904f157b16921c0f31a41806939c8",
+      "converted_bytes": 500982668,
+      "python": "3.11.9",
+      "torch": "2.14.0+cpu",
+      "safetensors": "0.8.0",
+      "state_dict_keys": 204,
+      "tensor_equality": [
+        {
+          "key": "classifier.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "0893568eee9a3d8e6ade95c594ab394bdd07f0cdfcd2a5e8b077de95b9432654"
+        },
+        {
+          "key": "classifier.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "d989e1acaa62b435e8c90e0ef671f5d39d9b6c1ae27a6bf6c8bce956f2d97fbc"
+        },
+        {
+          "key": "classifier.out_proj.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            3
+          ],
+          "raw_bytes_sha256": "d85f6d212c6358abaf3028b8b3b21d6ff94a2c1224ed522be25bd32d05651338"
+        },
+        {
+          "key": "classifier.out_proj.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            3,
+            768
+          ],
+          "raw_bytes_sha256": "6081ea13e394dda62a0efca2e60e1dedf720669b9c4e34a7575f12426b1d909a"
+        },
+        {
+          "key": "roberta.embeddings.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "3fdf8938df346a1218a40057522ffa0a3c1d85548743e0cdf2b299a0ae83e3c2"
+        },
+        {
+          "key": "roberta.embeddings.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "80457db21fddf98b2036023224415397292eb88bf2c867bddec36c70bb01f473"
+        },
+        {
+          "key": "roberta.embeddings.position_embeddings.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            514,
+            768
+          ],
+          "raw_bytes_sha256": "2966b4b82244941a19750677227103d472516b2767401500c1e2bbc421231c00"
+        },
+        {
+          "key": "roberta.embeddings.position_ids",
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            514
+          ],
+          "raw_bytes_sha256": "67cddbd6f620b2f430208cfa70fd7bdc85f04f7f11fec0cbe6388fa1c1e0f357"
+        },
+        {
+          "key": "roberta.embeddings.token_type_embeddings.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            768
+          ],
+          "raw_bytes_sha256": "99fbb65f91805b47269190b1b1b947625a20e3564f01f3b451d3ce7d4a857d96"
+        },
+        {
+          "key": "roberta.embeddings.word_embeddings.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            50265,
+            768
+          ],
+          "raw_bytes_sha256": "3d1389e58bf1d3085feef23d592df057475dfec3f5e574deb338bffb412e80de"
+        },
+        {
+          "key": "roberta.encoder.layer.0.attention.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "a738234097493de6c7bebd5f9aebb5b4c09faf2562e1792b3dd82f337a89e4ad"
+        },
+        {
+          "key": "roberta.encoder.layer.0.attention.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "02be5380cb8a784de5ad8ff1904006ddb07ef3af7e45309200a043f3ad801049"
+        },
+        {
+          "key": "roberta.encoder.layer.0.attention.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "8cab98a48205ca54ea2a6be76eab1fef8cbdccca6a15cb01eb106131844e3739"
+        },
+        {
+          "key": "roberta.encoder.layer.0.attention.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "049d943fab805a21b8a8bce7626a477c60b9fc3ecd910b26b1eaf47b41b5f38c"
+        },
+        {
+          "key": "roberta.encoder.layer.0.attention.self.key.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "63c64a2b40665d5bd85f696f55a1e7f2113b5e2a002bedf5fbd976bedf17af5c"
+        },
+        {
+          "key": "roberta.encoder.layer.0.attention.self.key.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "74d5cf01559e2dc6891aa0b80d3b0efa442990a4cbf42993d14090ae556a1c22"
+        },
+        {
+          "key": "roberta.encoder.layer.0.attention.self.query.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "1b81a14b3a3b6af81d5e0e58b72e6394474c0012f72ce46b4360a00c7f9ffe0d"
+        },
+        {
+          "key": "roberta.encoder.layer.0.attention.self.query.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "d60df3b888a49cf6372d8a665c44552f89a3eca58a1c5b43f03263f49a876c81"
+        },
+        {
+          "key": "roberta.encoder.layer.0.attention.self.value.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "009e50aca155eb87b1f554f7162bb8b82b8f2f244cc77833db825d22742a86f6"
+        },
+        {
+          "key": "roberta.encoder.layer.0.attention.self.value.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "63ee2e36e9ff695afbf743e1f8241080a84e2a6efe8bea8058780ad0de0ed2eb"
+        },
+        {
+          "key": "roberta.encoder.layer.0.intermediate.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            3072
+          ],
+          "raw_bytes_sha256": "fa11121b6fc043fea20609a95e569d92e5e78a0cc49eddf4c681906df059d286"
+        },
+        {
+          "key": "roberta.encoder.layer.0.intermediate.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            3072,
+            768
+          ],
+          "raw_bytes_sha256": "6ac149615e4d0e56d1ff917b5aa931948489607e9ef2ddf1996a31e785e430c5"
+        },
+        {
+          "key": "roberta.encoder.layer.0.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "4726b42ce9bae2de2a34f719c482c4c03dc7ea17b735488507f093a409b4c7f1"
+        },
+        {
+          "key": "roberta.encoder.layer.0.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "9e76265f1a0411770e62b342dc986cef5d98cb3a319d8daab9d66116dd0b089b"
+        },
+        {
+          "key": "roberta.encoder.layer.0.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "9bae5816021462f8259b3fe5bb7c1d107219424b6402ebe39d479d32a1f20353"
+        },
+        {
+          "key": "roberta.encoder.layer.0.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            3072
+          ],
+          "raw_bytes_sha256": "34ac97a6d10f69cb38a25e1078ad1ef67cc6d2934a42049c4145d8c0a3e0bd21"
+        },
+        {
+          "key": "roberta.encoder.layer.1.attention.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "e0b06e08230c642ecfc5f50a66e0909ed69061b4e3339eb7ef8d1f4364861ac5"
+        },
+        {
+          "key": "roberta.encoder.layer.1.attention.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "31e35e00d92cd8d4e1ce504273f64f8a8b58de9179452d6d190f9983fdadd8c5"
+        },
+        {
+          "key": "roberta.encoder.layer.1.attention.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "4c9169b9c4b47c727a5d5a0aed3dfeab88a1482ea55a29d52db7800b541c1b7e"
+        },
+        {
+          "key": "roberta.encoder.layer.1.attention.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "c415ad277acb9448316f2d46d30e336b3191d16137881e4e67c4d44bb576c209"
+        },
+        {
+          "key": "roberta.encoder.layer.1.attention.self.key.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "9876f85bd56dd51e7ac99f861d83f64850875ece7680c9d96983225c977410ab"
+        },
+        {
+          "key": "roberta.encoder.layer.1.attention.self.key.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "b9043d0f21ed01f120dd399dcf669e8d00f5219563a472d54729369c07a9a991"
+        },
+        {
+          "key": "roberta.encoder.layer.1.attention.self.query.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "d0e16bda77360135f6d2e1e3ce1b65f07df55b81ca2797f6a1e374e3e525bc5a"
+        },
+        {
+          "key": "roberta.encoder.layer.1.attention.self.query.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "fc9ad65dd6fa7983bd15b25032c0c8de36f1f7ae404cf422404b05ff73bc360c"
+        },
+        {
+          "key": "roberta.encoder.layer.1.attention.self.value.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "b6a575c76aedb3bf95a025713b1062a784283d23a669136cfdb01d813e6dad2e"
+        },
+        {
+          "key": "roberta.encoder.layer.1.attention.self.value.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "b97e1d35c8efea049eeccef583d2fd328021b7fe5d198d06ec87cc21a1f20f28"
+        },
+        {
+          "key": "roberta.encoder.layer.1.intermediate.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            3072
+          ],
+          "raw_bytes_sha256": "022ce0d244033463ccdb1f8482f98ef669b866f9f1c2d924ab87a6fecfd66d36"
+        },
+        {
+          "key": "roberta.encoder.layer.1.intermediate.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            3072,
+            768
+          ],
+          "raw_bytes_sha256": "2bbc027cdcade0e33b7b57c307f1e2ba719a1e4a515797943ab3ee75db3edd98"
+        },
+        {
+          "key": "roberta.encoder.layer.1.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "08feace69741e7bd094d3f60a5c1e6eb2099559175c26e6e5a64c6c0024a502f"
+        },
+        {
+          "key": "roberta.encoder.layer.1.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "810b0862f8f29911660c1dbdc506d4651db99237276038ca2898f5c546011d77"
+        },
+        {
+          "key": "roberta.encoder.layer.1.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "5f7dadd27b0c68700896a1258e5a584a8beed93083109353608d90f153fb790d"
+        },
+        {
+          "key": "roberta.encoder.layer.1.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            3072
+          ],
+          "raw_bytes_sha256": "746c1757b30f1e2e683c72961dcfd6117b190a7184b43400e95b2e116c068607"
+        },
+        {
+          "key": "roberta.encoder.layer.10.attention.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "cdac01ba9055ec62a0cdd41431cd64f6750999b450e819fbcbca2df68673718c"
+        },
+        {
+          "key": "roberta.encoder.layer.10.attention.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "1cb7bbbdf01fb6f52a860aad24541c02287be947717f7b62d8f1827a412e5aab"
+        },
+        {
+          "key": "roberta.encoder.layer.10.attention.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "80ff1ea37ff173b06b46acb5c83304a78188abc4c2f5d8f215415b0ff264f0bc"
+        },
+        {
+          "key": "roberta.encoder.layer.10.attention.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "1d82d1ff82f86b383804391196230d05ccff8e5d1236b89750625dd6cfec4ea5"
+        },
+        {
+          "key": "roberta.encoder.layer.10.attention.self.key.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "c41ff50d9cec3063bc411df56083eea2e9a6aeb01c69ee7c2f5b68097f8e9d2e"
+        },
+        {
+          "key": "roberta.encoder.layer.10.attention.self.key.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "fbc5fbb2996f30d5c9ea383119dbba3ac6324fdaf25a5e7460cb3b1ac2f26a82"
+        },
+        {
+          "key": "roberta.encoder.layer.10.attention.self.query.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "97a6d68360151de013606eb50c12855f4716a7404f87bfd48b57b5da38ae5f68"
+        },
+        {
+          "key": "roberta.encoder.layer.10.attention.self.query.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "4fdf8d12a9fa702cd2feb4afa4c7c33daa1268ebb63a5111fd755ef92fc8d10a"
+        },
+        {
+          "key": "roberta.encoder.layer.10.attention.self.value.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "5a77cb6852182319ff8c9de641a1610dd90f6b55d7d99a7d39a937d99ee0ac12"
+        },
+        {
+          "key": "roberta.encoder.layer.10.attention.self.value.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "ce8feed0d6395a0b60351a4d400a65a161423889d3be62ffd60436ce91ae5d4c"
+        },
+        {
+          "key": "roberta.encoder.layer.10.intermediate.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            3072
+          ],
+          "raw_bytes_sha256": "a3c2f1dd151ef155b8a23dd794ef49d702904b2a8b42acb0f83f786f93f7eb40"
+        },
+        {
+          "key": "roberta.encoder.layer.10.intermediate.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            3072,
+            768
+          ],
+          "raw_bytes_sha256": "aeed60be78b00632cbafdfd0cecf312f8eee73afa8e42db30b67efac451f39cf"
+        },
+        {
+          "key": "roberta.encoder.layer.10.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "0f0fbb1869e716006b3db7c574dbff3fb00aa1f33648bc5bbb2a65df4777db48"
+        },
+        {
+          "key": "roberta.encoder.layer.10.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "337c240468a7d2837d92e53dddf90d13d4ca3e03d93836f368b7738a61fb67ed"
+        },
+        {
+          "key": "roberta.encoder.layer.10.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "5ae82d23260ba02b416ca5fa123931097003b0d66561cf82b760cb3e392e3666"
+        },
+        {
+          "key": "roberta.encoder.layer.10.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            3072
+          ],
+          "raw_bytes_sha256": "8c699b0c5769d488e03bc2cc1711e00e49fae79093dba32578b33fc041713ea3"
+        },
+        {
+          "key": "roberta.encoder.layer.11.attention.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "8c2983c4277f3c3b647a68c10b35f53777c31f57de5d80a5dc7bc741c5b7987d"
+        },
+        {
+          "key": "roberta.encoder.layer.11.attention.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "16689f5f89989640e097cc0564a29112c5895d077b7f9523d859088fbec696ac"
+        },
+        {
+          "key": "roberta.encoder.layer.11.attention.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "c1d14b6dd16ab6895ae15d957cc3ff68c4bb4164bafc2cf89cd8880a02fd8fde"
+        },
+        {
+          "key": "roberta.encoder.layer.11.attention.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "c1cbf7b3b0078952e08134132823a74e69e09dd5a39678da08c5a5a1ee85799d"
+        },
+        {
+          "key": "roberta.encoder.layer.11.attention.self.key.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "6a3d72bc6cbfa1012dd88baa288834a8f5dc0f4f19f785f52fa797e04cb8fd43"
+        },
+        {
+          "key": "roberta.encoder.layer.11.attention.self.key.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "873922efa61a0c66293379ab01a1e2cf404976b24fcf6073362bfd94f0b6bc5f"
+        },
+        {
+          "key": "roberta.encoder.layer.11.attention.self.query.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "c3eb78f9986d72920fa3f4dc829299761a3002b7be64ccfe194f5111001621d6"
+        },
+        {
+          "key": "roberta.encoder.layer.11.attention.self.query.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "66b2b682bdd8c357140bf34e0f9525e8f1ec3f32d5972e91d8eddfd005ed6c6a"
+        },
+        {
+          "key": "roberta.encoder.layer.11.attention.self.value.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "9013f7a28d320e47bd84c7739b8e901f2128f3cef447741549e2a9954ac736cb"
+        },
+        {
+          "key": "roberta.encoder.layer.11.attention.self.value.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "0c70b0ec1a09bc49b1dcec2f803adee2cf5b87f0cabb34388df5d98a57515962"
+        },
+        {
+          "key": "roberta.encoder.layer.11.intermediate.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            3072
+          ],
+          "raw_bytes_sha256": "2d6cb425dc5151e1de64a00c332d68e413a3e907a1d5ad12907beb0c7309bb78"
+        },
+        {
+          "key": "roberta.encoder.layer.11.intermediate.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            3072,
+            768
+          ],
+          "raw_bytes_sha256": "ccab33cf7f75f1743679721263fbc92e90544302c6c765a2d7735bc98260c361"
+        },
+        {
+          "key": "roberta.encoder.layer.11.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "c2c4659e5c54ff9c9b4e52ffc8e610bf1077c0ab78f470f2181d086fc76c2724"
+        },
+        {
+          "key": "roberta.encoder.layer.11.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "3ad5bcbeccf1f590ea7897fe1de15f9402d63769f4b7e7da181a9c295a4bcdcb"
+        },
+        {
+          "key": "roberta.encoder.layer.11.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "e5b1c2a1a1a30c6d55c0a9d19d6c1cd613420e803ea74839473935a0ed5f78d3"
+        },
+        {
+          "key": "roberta.encoder.layer.11.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            3072
+          ],
+          "raw_bytes_sha256": "d005bf85e172e3f335bc7da5125eaa0bf7d3aff4255b57d15526b4a5bdb67e25"
+        },
+        {
+          "key": "roberta.encoder.layer.2.attention.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "a4d80bea885b25f2d6b4d802086ebc52d656b7cc20c47997f026b825b10586b3"
+        },
+        {
+          "key": "roberta.encoder.layer.2.attention.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "f6a652da695353edde038279de1de90b48931b30e8d789ea6cdef41e0af10e3f"
+        },
+        {
+          "key": "roberta.encoder.layer.2.attention.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "510dfe0f3a210b12a03d70380964d627fb20e21fdd598112cdc1950679ffc3d2"
+        },
+        {
+          "key": "roberta.encoder.layer.2.attention.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "4dc48a0407f9d2394f2cc2dc75cf1bed521f7b4484d09f77476ae88c907bf7a1"
+        },
+        {
+          "key": "roberta.encoder.layer.2.attention.self.key.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "a17e4a5a77ac6d2802a1852c3f6b35855033bc8d95237a9ab8f4006b0eda4bd1"
+        },
+        {
+          "key": "roberta.encoder.layer.2.attention.self.key.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "e8c20662abae0ad3171d045dab3fc3ade7d814eab81be02a6041512c39d79c83"
+        },
+        {
+          "key": "roberta.encoder.layer.2.attention.self.query.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "caa924898e7782cb3e60d17dd6b0bf9552bf845e491ade79bb8e5c1b0dda2e9c"
+        },
+        {
+          "key": "roberta.encoder.layer.2.attention.self.query.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "f6b8f45396eade00a9bfd9dc8cf5f198db0af250a37c333b76064a4c49502d24"
+        },
+        {
+          "key": "roberta.encoder.layer.2.attention.self.value.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "79809719e9920777d87baf0313ca9403849398412ecdfededfe2a6b7419f4fa4"
+        },
+        {
+          "key": "roberta.encoder.layer.2.attention.self.value.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "32bbbe783c981e0e4b9a75dabb49b584b136208e118316b971349753d43f2807"
+        },
+        {
+          "key": "roberta.encoder.layer.2.intermediate.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            3072
+          ],
+          "raw_bytes_sha256": "a42a7ee28032c1f19217ddcfbc0098291e7adf624c1d3a22399df50f27857f2a"
+        },
+        {
+          "key": "roberta.encoder.layer.2.intermediate.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            3072,
+            768
+          ],
+          "raw_bytes_sha256": "9de87beb0b4703c286ab5e2b8a5bd9e13794d70fc9dd019e3f3bb68154cf1d22"
+        },
+        {
+          "key": "roberta.encoder.layer.2.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "ce398cca9bfb6776c05c26a8b75254e53b332bc1fc67b098842b1813eb250945"
+        },
+        {
+          "key": "roberta.encoder.layer.2.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "0529d7cd98abf52493d47565e8b5f8ea9dd37b0646f2965da1ab7599f31ad86d"
+        },
+        {
+          "key": "roberta.encoder.layer.2.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "9676a7bbb32638d7342d1f2edb86bd4435ddcbed387204175cdee4e04e6ff20a"
+        },
+        {
+          "key": "roberta.encoder.layer.2.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            3072
+          ],
+          "raw_bytes_sha256": "c43242a455a25a5d46937ee0cfcf0d5763a304ab606caca797c0e239f4cf9f79"
+        },
+        {
+          "key": "roberta.encoder.layer.3.attention.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "de53f0736b003e17c852c5569d7b732294939eb96a9bd2cb6832545b1c026237"
+        },
+        {
+          "key": "roberta.encoder.layer.3.attention.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "e9937d172b70aa55174ad2ae1693df47aac6d29caa6992c0b068b3ebb8774bd1"
+        },
+        {
+          "key": "roberta.encoder.layer.3.attention.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "f2f74abd2c5244f74acd0ca6fce1ce4b04397c1105663d44ad2d0c0959e6ae64"
+        },
+        {
+          "key": "roberta.encoder.layer.3.attention.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "7524b086adaf52c5e30d71f08e3fe96fc708e1cdea10d64738eadc2c015b01bc"
+        },
+        {
+          "key": "roberta.encoder.layer.3.attention.self.key.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "3f4f451740a2e268cd9815d119eed45ca78ef3d29d4d9205cd7637194ab1f275"
+        },
+        {
+          "key": "roberta.encoder.layer.3.attention.self.key.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "327379dc006b987ed00700b0a45778bf82c7d8a5a6b8985862c6b718893a3139"
+        },
+        {
+          "key": "roberta.encoder.layer.3.attention.self.query.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "283d4a4fcd87f08bbe08af6ec54b07ab2cccb43db1bd0c364dc3f11848f37027"
+        },
+        {
+          "key": "roberta.encoder.layer.3.attention.self.query.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "a21b8a0b3c4840668ed7ffdd467a8bf067b98309dbdec5bbe1da2f7cd42215b8"
+        },
+        {
+          "key": "roberta.encoder.layer.3.attention.self.value.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "3e2cfc924f3b8d4f061a6980d9db3a2d73aac6e12a1e2fcedc8eb73ceff4e50f"
+        },
+        {
+          "key": "roberta.encoder.layer.3.attention.self.value.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "368b455aebdcc359b865c5f56f815dec610225b1c113319b7fb72d62be9d987e"
+        },
+        {
+          "key": "roberta.encoder.layer.3.intermediate.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            3072
+          ],
+          "raw_bytes_sha256": "7393ae3556687569fd67fced2a1fc8b649e8a999c521e629a31972520a3fd298"
+        },
+        {
+          "key": "roberta.encoder.layer.3.intermediate.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            3072,
+            768
+          ],
+          "raw_bytes_sha256": "91e819c1ef612f7dd66883f995ea8714d8f75afbd00fbe5e2b54189641869c20"
+        },
+        {
+          "key": "roberta.encoder.layer.3.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "3e89a25ffb1db8e2ae03007825f1d8183cd8c593f806c8be8dca356c9db42910"
+        },
+        {
+          "key": "roberta.encoder.layer.3.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "2ef90bcfc24457cd120ae49dd437c7fe1454b8d39a9dd65055cbccada9de5cd6"
+        },
+        {
+          "key": "roberta.encoder.layer.3.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "16b6f539d36d263ddae3668bf4589e7bbf546cd0f195aa76331ffd2fffa9f804"
+        },
+        {
+          "key": "roberta.encoder.layer.3.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            3072
+          ],
+          "raw_bytes_sha256": "e6a2a657d64b1ac38c79d8d083402f0b043c2e06f9f5b3a8ded4c47f34c3b504"
+        },
+        {
+          "key": "roberta.encoder.layer.4.attention.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "81e4a607fa8388ed186b81b5b5eee51f4bde32fabc4280def7f44e6ecc42a750"
+        },
+        {
+          "key": "roberta.encoder.layer.4.attention.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "cd48daf1cf87eff2be91da3f01f5c4c635e3352c83fced7f21c87e71afe53664"
+        },
+        {
+          "key": "roberta.encoder.layer.4.attention.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "7eea104a796953bf6ddb1100cd007330a8d35b6faf91361250795f0a82311412"
+        },
+        {
+          "key": "roberta.encoder.layer.4.attention.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "1758cbcb5ff517592bb709d54e218bb20205b38e148a1e57a95c3ce43745b80c"
+        },
+        {
+          "key": "roberta.encoder.layer.4.attention.self.key.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "4953782a3c3e94b05ca3eedf1ca9575821cfccd5ead4a2b8c5356f810b36e7ea"
+        },
+        {
+          "key": "roberta.encoder.layer.4.attention.self.key.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "6b822f912ae9661650f04027c39982f6e5b61325a6a16809b011d2840aa810af"
+        },
+        {
+          "key": "roberta.encoder.layer.4.attention.self.query.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "e2f9d49c356df87d4512016f9e58503f64681f4341a7ac413b8cfc71c6b5f748"
+        },
+        {
+          "key": "roberta.encoder.layer.4.attention.self.query.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "528715941f7113301224b31d548e1f647bea0009814ea506cdbc2bb09ec5acf0"
+        },
+        {
+          "key": "roberta.encoder.layer.4.attention.self.value.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "e7f7a914465b6dde096057f544b887cf5237b1a5f8c885076b8f94776bc91f18"
+        },
+        {
+          "key": "roberta.encoder.layer.4.attention.self.value.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "12f254e0acfe0571e66020de8f012c84ee03f602f167952884a0088f180eb6c7"
+        },
+        {
+          "key": "roberta.encoder.layer.4.intermediate.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            3072
+          ],
+          "raw_bytes_sha256": "9819cffb96b2ef8eb92480ebbf51cc4a5c71db16732433e3cd408bca13b702c6"
+        },
+        {
+          "key": "roberta.encoder.layer.4.intermediate.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            3072,
+            768
+          ],
+          "raw_bytes_sha256": "8869533da07154bd2c2c010370e16adbc096f856f1feb1871eb521b63500895d"
+        },
+        {
+          "key": "roberta.encoder.layer.4.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "50543d1156660fbb6d8d3255e993695d4cc00d06c594b5b5b6ae6697468861c5"
+        },
+        {
+          "key": "roberta.encoder.layer.4.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "0e3abfce10ccc9c7e3e37468a501aa54be4a91b3f9bc5ad0418cdf5afa178bbc"
+        },
+        {
+          "key": "roberta.encoder.layer.4.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "51e4c8583b279346ec42daea27def3ae685ac50fad8b99e915dd534a326053c5"
+        },
+        {
+          "key": "roberta.encoder.layer.4.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            3072
+          ],
+          "raw_bytes_sha256": "0cc4cbda4d93286a53a4012f089994e112b0789e1a9b09bbcd00689e2094cc6a"
+        },
+        {
+          "key": "roberta.encoder.layer.5.attention.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "938df6acc32c26c9e297f5338a02d4099ba6a1efd483387f0b4f191028e1203a"
+        },
+        {
+          "key": "roberta.encoder.layer.5.attention.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "d0e712342b31542a3719be879ff6afd7ca86d4df6ba48f37328191341717f04f"
+        },
+        {
+          "key": "roberta.encoder.layer.5.attention.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "f7b5b56c8eb6bb49ad345412ff5320a3b3c218c09d6e0a24a0685b6e7ef2b8a0"
+        },
+        {
+          "key": "roberta.encoder.layer.5.attention.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "d06adba06f260f0240898d4fb3ca9717db247c5f2f1216403a413f412b19c472"
+        },
+        {
+          "key": "roberta.encoder.layer.5.attention.self.key.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "ff729f0939d5d38947e8027b6f45ead57e359a5e10f1c3e49cac0bcdf4897392"
+        },
+        {
+          "key": "roberta.encoder.layer.5.attention.self.key.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "069fd762b5e23892f676f08406cd08280babdd8d4b93d61f399c2605cef4ebac"
+        },
+        {
+          "key": "roberta.encoder.layer.5.attention.self.query.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "b6f17ca0bdb1671ef339040bb50daa6e03ac69094a6fe411123285fcfbc1a76f"
+        },
+        {
+          "key": "roberta.encoder.layer.5.attention.self.query.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "b94bce27618543c64a1bda893401977f9a4aea272cbb59b791fee4d758ad12ee"
+        },
+        {
+          "key": "roberta.encoder.layer.5.attention.self.value.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "4259a2b7088d74692296c6166fedbea68fe83df99b31d3c07d3b64d6d74a3bfb"
+        },
+        {
+          "key": "roberta.encoder.layer.5.attention.self.value.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "cad478e434b67da5cd9b895bc458f216a96fe04cde15a4f66f1dd11d7e3fe449"
+        },
+        {
+          "key": "roberta.encoder.layer.5.intermediate.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            3072
+          ],
+          "raw_bytes_sha256": "32b013437fca3709b4885f050ccb54ab05fa073998824be07bf2035267f06181"
+        },
+        {
+          "key": "roberta.encoder.layer.5.intermediate.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            3072,
+            768
+          ],
+          "raw_bytes_sha256": "3bfa9f20ad47d4a344e3c19016b4fd42d109e3f6a1e8cdc7b8f5e8ed53fdc4d5"
+        },
+        {
+          "key": "roberta.encoder.layer.5.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "4bb0755ee82e79066c3b091edec36e7060f72079539017e4dccd349f8417239e"
+        },
+        {
+          "key": "roberta.encoder.layer.5.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "a94d506a03bb52df17fb0e818c95a4f5e5efaadd6b642e2d086fdac0ea93291c"
+        },
+        {
+          "key": "roberta.encoder.layer.5.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "f1636d93daae25a28370cb4b437222e1297b24f837b51f8ceca11a014a49c5f9"
+        },
+        {
+          "key": "roberta.encoder.layer.5.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            3072
+          ],
+          "raw_bytes_sha256": "5bc77cf1103e640ba0480d210d69278e8bc39edb9d4bb21d2f28cadd4682a636"
+        },
+        {
+          "key": "roberta.encoder.layer.6.attention.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "d8c151dc36d2e2e4d8c369a91d63bf2cb0cf3157f1a335fa547c96f28a6cde6a"
+        },
+        {
+          "key": "roberta.encoder.layer.6.attention.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "eea1726cbec59d0dcb13c8e9acb995bf27bcd531a6162c44477560ecb1f0de09"
+        },
+        {
+          "key": "roberta.encoder.layer.6.attention.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "7287958aca7dd1e2dd605115dc7db0c73caba4f1eccfc2b90aa0f6f24017dced"
+        },
+        {
+          "key": "roberta.encoder.layer.6.attention.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "f2d95e1fc4c92e19c766e2bc877b7780db7a16e8bd85d8c52275a973a71e3517"
+        },
+        {
+          "key": "roberta.encoder.layer.6.attention.self.key.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "28316c576db557c0d0861298ba2412dd8814e6f85a6611881785582aa02c5912"
+        },
+        {
+          "key": "roberta.encoder.layer.6.attention.self.key.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "16f48795da186235330fef6bbe5af0d2d56a8e59bdc20bd675abd81e05b12f59"
+        },
+        {
+          "key": "roberta.encoder.layer.6.attention.self.query.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "b7c288f843548ed562fc4574697afd15296dcf8a278a800862d0ba1b1cb6f20e"
+        },
+        {
+          "key": "roberta.encoder.layer.6.attention.self.query.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "8f9ab3a72a4cfff884e87503117f57d18c32860ba651f1aa03faec0893b732c3"
+        },
+        {
+          "key": "roberta.encoder.layer.6.attention.self.value.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "bb5eb0691f102050cbb275e04ddd3fa8943a9136518e59479961b68a3bff9c8d"
+        },
+        {
+          "key": "roberta.encoder.layer.6.attention.self.value.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "146b9cfb22e0eac39490f42213005be57c5634900ff1b97fd37c8ddcaa9ae1bc"
+        },
+        {
+          "key": "roberta.encoder.layer.6.intermediate.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            3072
+          ],
+          "raw_bytes_sha256": "6201957e548f17eabd437854e8a4c9e6aa6bf1b3dbb3a5bf02443e2baa948c21"
+        },
+        {
+          "key": "roberta.encoder.layer.6.intermediate.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            3072,
+            768
+          ],
+          "raw_bytes_sha256": "cee3d6d35c8839af9672dcbac7b0e1eb748ef82b87b38d26dfd9352b338e91a1"
+        },
+        {
+          "key": "roberta.encoder.layer.6.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "bc32580c6af92d7719bdee0d11faf7a455b6e1d7fe26aa29efb41aa912011a5a"
+        },
+        {
+          "key": "roberta.encoder.layer.6.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "24f879d1aa25c49f70f152bab54ce11c27d2f6b2d74a5b0abb9a75c26939758b"
+        },
+        {
+          "key": "roberta.encoder.layer.6.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "db11d4a0988bd9de9b28dcef5d76748b79afdacf3f95bb227b420916cebdab2b"
+        },
+        {
+          "key": "roberta.encoder.layer.6.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            3072
+          ],
+          "raw_bytes_sha256": "ca66b79d7fe2782a3b61cfad8fbe0381b69bf42a6aea4567e2c13140c534647d"
+        },
+        {
+          "key": "roberta.encoder.layer.7.attention.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "5ab691474d6f46288d6ab47751c14c5197282fa16b9040a301c3a01bc1bc84a7"
+        },
+        {
+          "key": "roberta.encoder.layer.7.attention.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "1907bf69ad92ed8dabf563ea60efefdcdb1b3d3b64df600113d02a4faa812bb2"
+        },
+        {
+          "key": "roberta.encoder.layer.7.attention.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "a207fd4bbf7c472d53ee33b4341c525494696a9d3f9748e5e055ffecac847c45"
+        },
+        {
+          "key": "roberta.encoder.layer.7.attention.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "37c96c40dc441feaae69a078ca289c6d27c99118fb2641417b8d2fd96cf06d1c"
+        },
+        {
+          "key": "roberta.encoder.layer.7.attention.self.key.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "542e75cc3355ba5c5567f4cbecd45bd09745e5c99b81ccca671a16fbe6bbfa17"
+        },
+        {
+          "key": "roberta.encoder.layer.7.attention.self.key.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "57295b6bea10ca6834056178bf0fb823378470b4541a4dd9b47957cffbe8d3da"
+        },
+        {
+          "key": "roberta.encoder.layer.7.attention.self.query.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "fa289430b344a6c757ab02bce489ff6d5d4b4020f086a45b7b7efa5afdb81da4"
+        },
+        {
+          "key": "roberta.encoder.layer.7.attention.self.query.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "2b5861367834b701ac48440cb13d7bceb9fcb41c7855bf952e435492ba07a646"
+        },
+        {
+          "key": "roberta.encoder.layer.7.attention.self.value.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "fb6f497e7f1aaeb92040eb70569481bc05a26fd478b9d286d0023ea479decff2"
+        },
+        {
+          "key": "roberta.encoder.layer.7.attention.self.value.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "c81e27e7de14675cae1cfe2308a4663d6402a361e0087b98465e4891ee601920"
+        },
+        {
+          "key": "roberta.encoder.layer.7.intermediate.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            3072
+          ],
+          "raw_bytes_sha256": "1537e388dc4d4e4c449902466b7a9568efebf985da22319358bc467989d484ed"
+        },
+        {
+          "key": "roberta.encoder.layer.7.intermediate.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            3072,
+            768
+          ],
+          "raw_bytes_sha256": "8196bc97778b07428b3a932c457e3a73b76bebeb097c8fe9e9af4a924f9ed602"
+        },
+        {
+          "key": "roberta.encoder.layer.7.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "ea74dc6a25074a82769e06e0bdc8f4e0f2bd55bb2e21f9a79a5b96a59fcfe675"
+        },
+        {
+          "key": "roberta.encoder.layer.7.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "dafa850f62fd74fa7c58841cff9d00afb0e4bd9a72424116bb61d9256b76e0c8"
+        },
+        {
+          "key": "roberta.encoder.layer.7.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "05e38420b5eecca8143702da73f0207ef86e6eed6577d58090a7df3edd2aca34"
+        },
+        {
+          "key": "roberta.encoder.layer.7.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            3072
+          ],
+          "raw_bytes_sha256": "4373effbb7fa4e56dcda00794fee8a4c45c54f88b95cbeeb0da36b66466401e4"
+        },
+        {
+          "key": "roberta.encoder.layer.8.attention.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "108c2e334ef0a91048a54bd84391751d32146452a4f0e78440e19f7591bb2a00"
+        },
+        {
+          "key": "roberta.encoder.layer.8.attention.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "5960577674588663027e86420357ee0a62afaf074b1d502d050ee9beed4e8a1c"
+        },
+        {
+          "key": "roberta.encoder.layer.8.attention.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "5bd15dbbbdc229599d42f53b2fc28dc77c95b427659595a6f671a671b6982fcb"
+        },
+        {
+          "key": "roberta.encoder.layer.8.attention.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "c8345ddeed1b02e4c87da62d61dbf9b980b7f3f0a42ecd7362ef107fa53c0ca8"
+        },
+        {
+          "key": "roberta.encoder.layer.8.attention.self.key.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "bc401863516680426caec10fd196de167e73fbb1b9b0333c82e6783d44846a18"
+        },
+        {
+          "key": "roberta.encoder.layer.8.attention.self.key.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "973dedf4d54c68ee4a27ebc481d11b7419f5e02e6a15e593a499e703e93fd961"
+        },
+        {
+          "key": "roberta.encoder.layer.8.attention.self.query.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "f170d353dea309a275655b761ef5f7f75492984303cf8334a63754c5cefea367"
+        },
+        {
+          "key": "roberta.encoder.layer.8.attention.self.query.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "91f14f51d74fa759543cf356b1ac692b958c00089bce958816797ae4cfc4cdea"
+        },
+        {
+          "key": "roberta.encoder.layer.8.attention.self.value.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "34c7d0682a2da76cf2936f4c15614a337205f1046e9cc3946df462cfd52b7d28"
+        },
+        {
+          "key": "roberta.encoder.layer.8.attention.self.value.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "1b704c1e14f78b21d9c96e18c3ed903a8e2a825dc473b3e17060df26a41f386b"
+        },
+        {
+          "key": "roberta.encoder.layer.8.intermediate.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            3072
+          ],
+          "raw_bytes_sha256": "badc89a5c466c2926b95d4b509f433756991473bd9e309b2b1b1c593ae4298e5"
+        },
+        {
+          "key": "roberta.encoder.layer.8.intermediate.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            3072,
+            768
+          ],
+          "raw_bytes_sha256": "48278fb743ecdc3e94fb8d111bdbfcc7e7823a9f437a0e0f218ad895820e49cb"
+        },
+        {
+          "key": "roberta.encoder.layer.8.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "2a6aff708c0ff9fa05cede91efa5506855f3c24aaeacc7025a39d027e7dc917f"
+        },
+        {
+          "key": "roberta.encoder.layer.8.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "e9e3244c3bf4b69755d97a1388ec9657df3fb0182169a5fb8916ab2753ec82a1"
+        },
+        {
+          "key": "roberta.encoder.layer.8.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "3a74a49021ef20475fb214a5e07811cc7474a9165b3a381e3612ff4757ed8337"
+        },
+        {
+          "key": "roberta.encoder.layer.8.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            3072
+          ],
+          "raw_bytes_sha256": "ac410269a14cb5cd5a34edbecfe1620c8cd83fcbfa0f803f8d145ca8a12c89d0"
+        },
+        {
+          "key": "roberta.encoder.layer.9.attention.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "5558872332fcecb29e8753130450f99f7ff0312216422014e1149a767f1c21c7"
+        },
+        {
+          "key": "roberta.encoder.layer.9.attention.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "52d2d61520bfe3bd443680a4aa3a4217359939815fea54bfb13c9d80f29ac392"
+        },
+        {
+          "key": "roberta.encoder.layer.9.attention.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "0f9c70f07a9a6f65be1bfc20097690f3254ba480b59dfa5ba42fc718490c034e"
+        },
+        {
+          "key": "roberta.encoder.layer.9.attention.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "9cc835599bdfdbb62c98dccb959c1f381fe0337af01dc7b64c3131b2c553f887"
+        },
+        {
+          "key": "roberta.encoder.layer.9.attention.self.key.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "c21c4f2a6fde3beab562389e82403ad229c1a6308582a86400dcea119aec523c"
+        },
+        {
+          "key": "roberta.encoder.layer.9.attention.self.key.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "654615504db559365cbb3442d5f2857515f20336006e89a137f0c21f0038af97"
+        },
+        {
+          "key": "roberta.encoder.layer.9.attention.self.query.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "86861105a7592af2d01d928e3cf54a050d914cddf98dcad9e680cd0b94f731ce"
+        },
+        {
+          "key": "roberta.encoder.layer.9.attention.self.query.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "d1598a43f82a9c345ded732b0b909af8479cbbd45ac50bac9a1fb00480fe99fb"
+        },
+        {
+          "key": "roberta.encoder.layer.9.attention.self.value.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "04f1d5137a09a68a76a72e65fbe1a2defe773c7d5921ec76814f31c5dfe96f19"
+        },
+        {
+          "key": "roberta.encoder.layer.9.attention.self.value.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "f047191c55972c2c116d264b4fe9df1e0ad8e44c1a6d0f5227fbebee2ded2490"
+        },
+        {
+          "key": "roberta.encoder.layer.9.intermediate.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            3072
+          ],
+          "raw_bytes_sha256": "ab48dcc8f5a6aa720817955838d6894a7d919633efbd54691970e74973954995"
+        },
+        {
+          "key": "roberta.encoder.layer.9.intermediate.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            3072,
+            768
+          ],
+          "raw_bytes_sha256": "385cef485dc6cc163f4e5d2a9e017da221f27ff9cba258efececf6e9471186d2"
+        },
+        {
+          "key": "roberta.encoder.layer.9.output.LayerNorm.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "b490c7e544660dee33a231b82eb977dfd01cd72114d01862bf14ed6d0cb2acb9"
+        },
+        {
+          "key": "roberta.encoder.layer.9.output.LayerNorm.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "a00d70c27e93fb0201facec3d42ab277b8a78fd55b2f36f8c34d72a2e3d95ace"
+        },
+        {
+          "key": "roberta.encoder.layer.9.output.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "d649c75463f19f449e47ccbc15fc83e3876409471a02f91fc7c96c8f4a76485e"
+        },
+        {
+          "key": "roberta.encoder.layer.9.output.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            3072
+          ],
+          "raw_bytes_sha256": "5618f3ab7ae6e9228dd4a2e16fa8a5fba06685e444f86a45edf3112d504c80eb"
+        },
+        {
+          "key": "roberta.pooler.dense.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            768
+          ],
+          "raw_bytes_sha256": "e80232b4d18d0bb7e794be263ba937626f383f9917d4b8a737ba893a8f752293"
+        },
+        {
+          "key": "roberta.pooler.dense.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            768,
+            768
+          ],
+          "raw_bytes_sha256": "5bd59091d10da328a075e0962cab3bf548d662a2af98d42c2b98c7d218c0d924"
+        }
+      ],
+      "all_keys_dtype_shape_raw_bytes_equal": true,
+      "weights_only": true,
+      "dtype_casts": 0,
+      "keys_dropped": 0,
+      "model_inference_calls": 0,
+      "converter_sha256": "5ba20c88032443839a0bc0972e5876622304c7f41c82199bffcc68e7a0525595",
+      "scope": "Lossless file serialization only; no independent execution attestation, model score or tokenizer/config authentication"
+    }
+  },
+  "run": {
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "revision": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+    "preprocessing": "{\"text_policy\":\"tweet_mentions_urls\",\"max_length\":128,\"label_mapping\":{\"0\":\"negative\",\"1\":\"neutral\",\"2\":\"positive\"}}",
+    "plan_sha256": "8fb3cf4a8748101f2ed7e94fb0779cc0545d1c5877bf9573518afc4a05b24294",
+    "benchmark_sha256": "4ee137070c0c90e16503c34d3ed9245a094c658213ed7d0a8cc0aa8fbb05fe2d",
+    "run_started_utc": "2026-10-12T19:20:01.460440+00:00",
+    "run_completed_utc": "2026-10-12T19:20:02.951459+00:00",
+    "outputs": [
+      {
+        "post_id": "565172414448144384",
+        "probabilities": {
+          "negative": 0.026794192099199046,
+          "neutral": 0.9050616832423838,
+          "positive": 0.06814412465841714
+        }
+      },
+      {
+        "post_id": "565193755066912769",
+        "probabilities": {
+          "negative": 0.012354332157571256,
+          "neutral": 0.5290965997642098,
+          "positive": 0.458549068078219
+        }
+      },
+      {
+        "post_id": "565229779981320194",
+        "probabilities": {
+          "negative": 0.003786048525863071,
+          "neutral": 0.2136216106825098,
+          "positive": 0.7825923407916272
+        }
+      },
+      {
+        "post_id": "565253469406502912",
+        "probabilities": {
+          "negative": 0.024912970342331565,
+          "neutral": 0.9254776806654434,
+          "positive": 0.04960934899222498
+        }
+      },
+      {
+        "post_id": "565261472104992768",
+        "probabilities": {
+          "negative": 0.7977090960962774,
+          "neutral": 0.18704564859228764,
+          "positive": 0.015245255311435
+        }
+      },
+      {
+        "post_id": "565378174440472577",
+        "probabilities": {
+          "negative": 0.3761839173151925,
+          "neutral": 0.542762411069842,
+          "positive": 0.08105367161496548
+        }
+      },
+      {
+        "post_id": "565803539788611584",
+        "probabilities": {
+          "negative": 0.005375372728663203,
+          "neutral": 0.7670286368690254,
+          "positive": 0.2275959904023113
+        }
+      },
+      {
+        "post_id": "565854345401737216",
+        "probabilities": {
+          "negative": 0.12772714782103523,
+          "neutral": 0.8307919774358397,
+          "positive": 0.04148087474312509
+        }
+      },
+      {
+        "post_id": "565906887443767298",
+        "probabilities": {
+          "negative": 0.07634329198520007,
+          "neutral": 0.5756310663453287,
+          "positive": 0.3480256416694713
+        }
+      },
+      {
+        "post_id": "566228099797229568",
+        "probabilities": {
+          "negative": 0.002131930385690787,
+          "neutral": 0.019245484325229423,
+          "positive": 0.9786225852890797
+        }
+      },
+      {
+        "post_id": "566257506092318721",
+        "probabilities": {
+          "negative": 0.011768581321535482,
+          "neutral": 0.10566581825950488,
+          "positive": 0.8825656004189597
+        }
+      },
+      {
+        "post_id": "566270940452245504",
+        "probabilities": {
+          "negative": 0.0069559110362313655,
+          "neutral": 0.9313323543555166,
+          "positive": 0.061711734608251925
+        }
+      },
+      {
+        "post_id": "566341933220372481",
+        "probabilities": {
+          "negative": 0.061228623222833456,
+          "neutral": 0.7711861949702343,
+          "positive": 0.16758518180693213
+        }
+      },
+      {
+        "post_id": "566408899482628097",
+        "probabilities": {
+          "negative": 0.006747383833857102,
+          "neutral": 0.6599446622082782,
+          "positive": 0.3333079539578647
+        }
+      },
+      {
+        "post_id": "567030285632409601",
+        "probabilities": {
+          "negative": 0.0036361936749821394,
+          "neutral": 0.06661277021571971,
+          "positive": 0.9297510361092982
+        }
+      },
+      {
+        "post_id": "567085142909669377",
+        "probabilities": {
+          "negative": 0.0028323491821896562,
+          "neutral": 0.16238596754548945,
+          "positive": 0.8347816832723208
+        }
+      },
+      {
+        "post_id": "567345625961103360",
+        "probabilities": {
+          "negative": 0.012502051849562455,
+          "neutral": 0.7822715459137298,
+          "positive": 0.20522640223670774
+        }
+      },
+      {
+        "post_id": "567653454332825600",
+        "probabilities": {
+          "negative": 0.01099913863472815,
+          "neutral": 0.827747063500385,
+          "positive": 0.161253797864887
+        }
+      },
+      {
+        "post_id": "567822635800764417",
+        "probabilities": {
+          "negative": 0.004858441763574181,
+          "neutral": 0.5514681698493898,
+          "positive": 0.44367338838703607
+        }
+      },
+      {
+        "post_id": "568736557852549120",
+        "probabilities": {
+          "negative": 0.0066530251636957435,
+          "neutral": 0.7718097362154492,
+          "positive": 0.22153723862085506
+        }
+      },
+      {
+        "post_id": "568938769442869249",
+        "probabilities": {
+          "negative": 0.510983161799801,
+          "neutral": 0.261669933758405,
+          "positive": 0.22734690444179398
+        }
+      },
+      {
+        "post_id": "569844202235949056",
+        "probabilities": {
+          "negative": 0.0039494174044242365,
+          "neutral": 0.17088107784866938,
+          "positive": 0.8251695047469063
+        }
+      },
+      {
+        "post_id": "570029183616851970",
+        "probabilities": {
+          "negative": 0.008167718787138725,
+          "neutral": 0.6349485592105362,
+          "positive": 0.35688372200232515
+        }
+      },
+      {
+        "post_id": "570211539354984449",
+        "probabilities": {
+          "negative": 0.004367780527172025,
+          "neutral": 0.402172520948013,
+          "positive": 0.593459698524815
+        }
+      }
+    ]
+  },
+  "receipt": {
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "revision": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+    "plan_sha256": "8fb3cf4a8748101f2ed7e94fb0779cc0545d1c5877bf9573518afc4a05b24294",
+    "run_sha256": "7ccd17c5ee5c5ee191b6c7a1bf05865f628f15e3dd312378bb639046ecd3e9b7",
+    "backend": {
+      "backend_kind": "transformers_local_v4",
+      "python": "3.11.9",
+      "torch": "2.14.0+cpu",
+      "transformers": "5.17.0",
+      "tokenizers": "0.23.2",
+      "safetensors": "0.8.0",
+      "config_sha256": "d2fba19997da698157196ba16f5fcb30a97a7551cef6845a0f3d743ee19c6129",
+      "input_files_sha256": {
+        "config.json": "d2fba19997da698157196ba16f5fcb30a97a7551cef6845a0f3d743ee19c6129",
+        "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+        "special_tokens_map.json": "378eb3bf733eb16e65792d7e3fda5b8a4631387ca04d2015199c4d4f22ae554d",
+        "vocab.json": "06b4d46c8e752d410213d9548eb27a54db70fda0319b6271fb8d59dead5e1cab",
+        "model.safetensors": "9efebad6b828ab4a1d1a33d55bd2b9623d1904f157b16921c0f31a41806939c8"
+      },
+      "observed_file_bytes": {
+        "config.json": 929,
+        "merges.txt": 456318,
+        "special_tokens_map.json": 239,
+        "vocab.json": 898822,
+        "model.safetensors": 500982668
+      },
+      "id2label": {
+        "0": "negative",
+        "1": "neutral",
+        "2": "positive"
+      },
+      "label2id": {
+        "negative": 0,
+        "neutral": 1,
+        "positive": 2
+      },
+      "num_labels": 3,
+      "loading_info": {
+        "missing_keys": [],
+        "unexpected_keys": [],
+        "mismatched_keys": [],
+        "error_msgs": []
+      },
+      "loading_info_container_types": {
+        "missing_keys": "set",
+        "unexpected_keys": "set",
+        "mismatched_keys": "set",
+        "error_msgs": "list"
+      },
+      "pooler_preservation": {
+        "policy": "retain_original_unused_native_pooler",
+        "retained_parameter_keys": [
+          "roberta.pooler.dense.weight",
+          "roberta.pooler.dense.bias"
+        ],
+        "retained_parameter_raw_sha256": {
+          "roberta.pooler.dense.weight": "5bd59091d10da328a075e0962cab3bf548d662a2af98d42c2b98c7d218c0d924",
+          "roberta.pooler.dense.bias": "e80232b4d18d0bb7e794be263ba937626f383f9917d4b8a737ba893a8f752293"
+        },
+        "probe_kind": "fixed_loader_parity_fixture_not_reference_scoring",
+        "probe_text_sha256": "4874474d89a3862ce61feaaebd027cd708b486a4cdb5eaf05bcb465281b057d6",
+        "with_pooler_logits": [
+          -2.4273810386657715,
+          2.149109363555908,
+          -0.14224490523338318
+        ],
+        "without_pooler_logits": [
+          -2.4273810386657715,
+          2.149109363555908,
+          -0.14224490523338318
+        ],
+        "logits_bitwise_equal": true
+      },
+      "local_files_only": true,
+      "trust_remote_code": false,
+      "use_safetensors": true,
+      "tokenizer_use_fast": true,
+      "attn_implementation": "eager",
+      "device": "cpu",
+      "head_weights_complete": true
+    },
+    "preprocessing": {
+      "text_policy": "tweet_mentions_urls",
+      "max_length": 128,
+      "label_mapping": {
+        "0": "negative",
+        "1": "neutral",
+        "2": "positive"
+      }
+    },
+    "details": [
+      {
+        "post_id": "565172414448144384",
+        "processed_text_sha256": "92982a4406d33f8831ba5918c8965f691e87882a2eaa031f84337ac2f307d35c",
+        "logits": [
+          -1.5736674070358276,
+          1.946150541305542,
+          -0.6402276158332825
+        ],
+        "input_tokens": 35,
+        "truncated": false,
+        "elapsed_seconds": 0.06928059999972902
+      },
+      {
+        "post_id": "565193755066912769",
+        "processed_text_sha256": "69c7117781359c52978524f6349fe02468b3dc08af290d01a3f475850a0b27bc",
+        "logits": [
+          -2.5138494968414307,
+          1.2433147430419922,
+          1.1002110242843628
+        ],
+        "input_tokens": 36,
+        "truncated": false,
+        "elapsed_seconds": 0.06657280000035826
+      },
+      {
+        "post_id": "565229779981320194",
+        "processed_text_sha256": "b670032c9dbc3e462743b4df0d8f764a290fb83ad709deb760ef678a58390d49",
+        "logits": [
+          -3.119637966156006,
+          0.913245439529419,
+          2.211651086807251
+        ],
+        "input_tokens": 23,
+        "truncated": false,
+        "elapsed_seconds": 0.053650500000003376
+      },
+      {
+        "post_id": "565253469406502912",
+        "processed_text_sha256": "67d0aff8a99f19ee102599d1ab166120040bcd0f403dfdac1a5b96fb7471f998",
+        "logits": [
+          -1.4931689500808716,
+          2.1217525005340576,
+          -0.8043782114982605
+        ],
+        "input_tokens": 24,
+        "truncated": false,
+        "elapsed_seconds": 0.054184499999792024
+      },
+      {
+        "post_id": "565261472104992768",
+        "processed_text_sha256": "404052ca37ae824f73998f7f52d18470c090f6994c6c7b487ad0da48045bf74a",
+        "logits": [
+          1.6328463554382324,
+          0.18245506286621094,
+          -2.324629306793213
+        ],
+        "input_tokens": 30,
+        "truncated": false,
+        "elapsed_seconds": 0.05255639999995765
+      },
+      {
+        "post_id": "565378174440472577",
+        "processed_text_sha256": "03c59f6fe8b4d8fd9e92d94d9a3642722e789eaf5738aca78d04df95b01db2a0",
+        "logits": [
+          0.3130258619785309,
+          0.6796193718910217,
+          -1.2219407558441162
+        ],
+        "input_tokens": 27,
+        "truncated": false,
+        "elapsed_seconds": 0.056636100000105216
+      },
+      {
+        "post_id": "565803539788611584",
+        "processed_text_sha256": "dce6bc12ecf04bdcc63194b30c21a2f3e70af268228fed20ee3009138e08f4c2",
+        "logits": [
+          -2.9504265785217285,
+          2.0102696418762207,
+          0.7953175902366638
+        ],
+        "input_tokens": 35,
+        "truncated": false,
+        "elapsed_seconds": 0.07089009999981499
+      },
+      {
+        "post_id": "565854345401737216",
+        "processed_text_sha256": "95e8c51c790b69b45a248155792b593551645322d9e21303352a84300a0f1fea",
+        "logits": [
+          -0.2901030480861664,
+          1.5823800563812256,
+          -1.4147669076919556
+        ],
+        "input_tokens": 39,
+        "truncated": false,
+        "elapsed_seconds": 0.07322959999964951
+      },
+      {
+        "post_id": "565906887443767298",
+        "processed_text_sha256": "73cc745ab8faf6e708b8a7f4a7d7995729d95ab9d5e49b1e68743aadbf1415fd",
+        "logits": [
+          -1.308369517326355,
+          0.711857259273529,
+          0.20866647362709045
+        ],
+        "input_tokens": 43,
+        "truncated": false,
+        "elapsed_seconds": 0.07225229999949079
+      },
+      {
+        "post_id": "566228099797229568",
+        "processed_text_sha256": "ea63aeef4b42e46d47d43363a26164ac210bc743ead65ab5e24b5dc851efe4f8",
+        "logits": [
+          -2.8108067512512207,
+          -0.6105581521987915,
+          3.3183114528656006
+        ],
+        "input_tokens": 39,
+        "truncated": false,
+        "elapsed_seconds": 0.07046360000003915
+      },
+      {
+        "post_id": "566257506092318721",
+        "processed_text_sha256": "416ff23fe3f583467f6b805681d5a610f9259bda066ed64d5178bb05f8f6edaf",
+        "logits": [
+          -2.236896514892578,
+          -0.042048439383506775,
+          2.080503225326538
+        ],
+        "input_tokens": 45,
+        "truncated": false,
+        "elapsed_seconds": 0.07873219999964931
+      },
+      {
+        "post_id": "566270940452245504",
+        "processed_text_sha256": "832fb27dee3bea8fe959d20f9e9f47ca140072ffff8a0d1bae37c5b6987cdfc8",
+        "logits": [
+          -2.3533389568328857,
+          2.5436854362487793,
+          -0.170456662774086
+        ],
+        "input_tokens": 29,
+        "truncated": false,
+        "elapsed_seconds": 0.05861840000034135
+      },
+      {
+        "post_id": "566341933220372481",
+        "processed_text_sha256": "889b4b06b8993d03050575a32fd7f95a8a3aa1a38d856d65e1cd96ffad8e5904",
+        "logits": [
+          -1.2227319478988647,
+          1.3105831146240234,
+          -0.2158549576997757
+        ],
+        "input_tokens": 29,
+        "truncated": false,
+        "elapsed_seconds": 0.057762299999922107
+      },
+      {
+        "post_id": "566408899482628097",
+        "processed_text_sha256": "4542a795ea590361ccdbebe609193763de8318a3a6a7d4cf6858446fcc5e4c08",
+        "logits": [
+          -2.831387519836426,
+          1.7516136169433594,
+          1.0685244798660278
+        ],
+        "input_tokens": 24,
+        "truncated": false,
+        "elapsed_seconds": 0.050534699999843724
+      },
+      {
+        "post_id": "567030285632409601",
+        "processed_text_sha256": "cf2493273672a2e7f5825d078b45dd6aba4c23e563b0dc390f3f060a885314ea",
+        "logits": [
+          -2.9210052490234375,
+          -0.0130463857203722,
+          2.622974157333374
+        ],
+        "input_tokens": 19,
+        "truncated": false,
+        "elapsed_seconds": 0.04843650000020716
+      },
+      {
+        "post_id": "567085142909669377",
+        "processed_text_sha256": "d006e4f2ba9a2b363ec9f90ae9d5dc77999501e5e1b172b59165ae5be11e73b9",
+        "logits": [
+          -3.187486171722412,
+          0.8613833785057068,
+          2.49857759475708
+        ],
+        "input_tokens": 27,
+        "truncated": false,
+        "elapsed_seconds": 0.058022499999424326
+      },
+      {
+        "post_id": "567345625961103360",
+        "processed_text_sha256": "6a978790bc701e94d90271abb64048ab2bf2c43f9cbaf59bbb0858e9c368265c",
+        "logits": [
+          -2.3614485263824463,
+          1.7748606204986572,
+          0.4367724657058716
+        ],
+        "input_tokens": 32,
+        "truncated": false,
+        "elapsed_seconds": 0.0545615999999427
+      },
+      {
+        "post_id": "567653454332825600",
+        "processed_text_sha256": "131ef560126a3da2d4803aee1a197905c99e33133f4384347b233488000ebc17",
+        "logits": [
+          -2.3874151706695557,
+          1.9334754943847656,
+          0.2977473735809326
+        ],
+        "input_tokens": 56,
+        "truncated": false,
+        "elapsed_seconds": 0.08473780000076658
+      },
+      {
+        "post_id": "567822635800764417",
+        "processed_text_sha256": "d97604ab4234f108e654fa0ce9d300e270136c0fac967831aa6bf15cb2c4add6",
+        "logits": [
+          -3.0805182456970215,
+          1.6513481140136719,
+          1.4338526725769043
+        ],
+        "input_tokens": 32,
+        "truncated": false,
+        "elapsed_seconds": 0.06227429999944434
+      },
+      {
+        "post_id": "568736557852549120",
+        "processed_text_sha256": "17e1de4a63e460fba9ad4388c99bdc7e4a3196a8704178c6b9db1a3fea966d89",
+        "logits": [
+          -2.7262845039367676,
+          2.0273818969726562,
+          0.7792345285415649
+        ],
+        "input_tokens": 28,
+        "truncated": false,
+        "elapsed_seconds": 0.05602970000018104
+      },
+      {
+        "post_id": "568938769442869249",
+        "processed_text_sha256": "08ec213871ee77c7a4e2313becfa5e86972053a26b6cb10f07a6205f1df1ed07",
+        "logits": [
+          0.3409675359725952,
+          -0.32828518748283386,
+          -0.46889203786849976
+        ],
+        "input_tokens": 17,
+        "truncated": false,
+        "elapsed_seconds": 0.05004060000010213
+      },
+      {
+        "post_id": "569844202235949056",
+        "processed_text_sha256": "86c50ba2633c059cb98f4784d3f58c26ba61163806e6db47988530703194d0cd",
+        "logits": [
+          -3.0515990257263184,
+          0.7158007621765137,
+          2.290421724319458
+        ],
+        "input_tokens": 21,
+        "truncated": false,
+        "elapsed_seconds": 0.04915960000016639
+      },
+      {
+        "post_id": "570029183616851970",
+        "processed_text_sha256": "1008b1bea4acc9069fa368c39df6f81be3502aa91e370a6c547f12144f557bc1",
+        "logits": [
+          -2.7503035068511963,
+          1.6030508279800415,
+          1.0269168615341187
+        ],
+        "input_tokens": 23,
+        "truncated": false,
+        "elapsed_seconds": 0.05617069999971136
+      },
+      {
+        "post_id": "570211539354984449",
+        "processed_text_sha256": "a106006f04a095b0656c87ee5e0b109414250d9b2b4c7c8a22559824bd76de1c",
+        "logits": [
+          -3.02500057220459,
+          1.4976255893707275,
+          1.8867137432098389
+        ],
+        "input_tokens": 49,
+        "truncated": false,
+        "elapsed_seconds": 0.0775445999997828
+      }
+    ],
+    "model_downloads": 0,
+    "scope": "Whole-post sentiment baseline scored against the declared reference method; target-specific and human-validated performance are separate questions."
+  }
+}

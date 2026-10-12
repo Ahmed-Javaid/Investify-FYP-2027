@@ -1,0 +1,20 @@
+{
+  "schema": "investify-official-report-compiler-v1",
+  "checked_utc": "2026-10-12T19:30:01.473669+00:00",
+  "status": "downloaded_verified_version_checked",
+  "release_url": "https://github.com/tectonic-typesetting/tectonic/releases/tag/tectonic%400.17.0",
+  "archive_sha256": "f61ce51f0b0ade1015b7de7ef368541c5424e9756ecbd0d7af97d6d48030845f",
+  "archive_bytes": 21060223,
+  "extracted_files": {
+    "tectonic.exe": {
+      "bytes": 51538432,
+      "sha256": "99ffcfdbf1ebf8bdda9e791942e3d06aedb12463fddc33f07de6f5211c8bf08d"
+    }
+  },
+  "executable": "E:\\AI-Tools\\Cache\\tectonic-0.17.0\\tectonic.exe",
+  "version_output": "Tectonic 0.17.0",
+  "cache_directory": "E:/AI-Tools/Cache/tectonic-data",
+  "system_installation": false,
+  "report_compiled": false,
+  "script_sha256": "27006a22715fb81d713e48b95bbc5e0b8f41faec7359bccb0728e7509bba075a"
+}

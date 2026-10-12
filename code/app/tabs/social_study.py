@@ -22,7 +22,26 @@ def read_json(path):
     return json.loads(raw, parse_constant=invalid)
 
 
-def render_generative(benchmark, parent_plan):
+def recorded_receipt_comparison(benchmark, parent_plan, pointer):
+    """Resolve an explicit recorded study entirely inside the study directory."""
+    if (not isinstance(pointer, dict) or set(pointer) != {'schema', 'catalog', 'plan', 'bundles'}
+            or pointer['schema'] != 'investify-recorded-social-study-v1'
+            or not isinstance(pointer['bundles'], list) or len(pointer['bundles']) != 2):
+        raise ValueError('A complete recorded two-candidate study pointer is required')
+    def resolve(relative):
+        if not isinstance(relative, str) or Path(relative).is_absolute():
+            raise ValueError('Study references must be relative project study paths')
+        path = (STUDY / relative).resolve()
+        if not path.is_relative_to(STUDY.resolve()) or not path.is_file():
+            raise ValueError('Recorded study reference is missing or escapes the study directory')
+        return path
+    catalog = read_json(resolve(pointer['catalog']))
+    receipt_plan = read_json(resolve(pointer['plan']))
+    bundles = [read_json(resolve(relative)) for relative in pointer['bundles']]
+    return compare_bundles(benchmark, parent_plan, catalog, receipt_plan, bundles)
+
+
+def render_generative(benchmark, parent_plan, *, classifier_ready=False):
     st.markdown('### Local generative sentiment agreement')
     try:
         plan = read_json(STUDY / 'generative_sentiment_plan.json')
@@ -36,7 +55,8 @@ def render_generative(benchmark, parent_plan):
         with st.expander('Supplementary study validation details'):
             st.code(str(error), language=None)
         return
-    st.caption('Hard-label predictions against the same frozen AI references. The CryptoBERT/Cardiff classifier study remains pending.')
+    st.caption('This supplementary generative study is separate from the recorded original-classifier comparison.'
+               if classifier_ready else 'Hard-label predictions against the same frozen AI references. The CryptoBERT/Cardiff classifier study remains pending.')
     if any(run.get('execution_kind') == 'unit_fixture' for run in runs):
         st.warning('Explicit unit-fixture inputs are being displayed; these are not actual research outcomes.')
     rows = []
@@ -99,7 +119,14 @@ def render():
                 bundles = read_json(STUDY / 'social_model_bundles_v4.json')
             except FileNotFoundError:
                 bundles = []
-            if bundles:
+            try:
+                pointer = read_json(STUDY / 'social_latest_study.json')
+            except FileNotFoundError:
+                pointer = None
+            if pointer is not None:
+                result = recorded_receipt_comparison(benchmark, plan, pointer)
+                st.caption('Recorded original-publisher inference: the displayed metrics are recomputed from hash-bound output/receipt bundles; no model runs in this viewer.')
+            elif bundles:
                 receipt_plan = read_json(STUDY / 'social_receipt_plan_v4.json')
                 catalog = read_json(STUDY / 'social_publisher_catalog_v4.json')
                 result = compare_bundles(benchmark, plan, catalog, receipt_plan, bundles)
@@ -138,4 +165,4 @@ def render():
     st.caption(result['limitation'])
     st.download_button('Download study comparison evidence', json.dumps(result, indent=2, allow_nan=False),
                        file_name='social_selection_results.json', mime='application/json', key='download_social_study')
-    render_generative(benchmark, plan)
+    render_generative(benchmark, plan, classifier_ready=result['comparison_ready'])

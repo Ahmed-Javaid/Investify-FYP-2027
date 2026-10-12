@@ -26,15 +26,10 @@ VERDICT_COLORS = {
 }
 
 VERDICT_MEANING = {
-    "PASS": "within threshold, CI overlaps zero",
-    "LEAK": "scores above a random baseline — evidence of look-ahead",
-    "BELOW_CHANCE": "scores below a random baseline — no signal, not leakage",
+    "PASS": "does not breach the configured lift and confidence-interval alert rule",
+    "LEAK": "above the positive alert threshold; investigate timing",
+    "BELOW_CHANCE": "below the negative alert threshold; useful predictive signal unestablished",
 }
-
-FONT_IMPORT = (
-    "https://fonts.googleapis.com/css2"
-    "?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
-)
 
 
 def inject() -> None:
@@ -42,12 +37,21 @@ def inject() -> None:
     st.markdown(
         f"""
         <style>
-          @import url('{FONT_IMPORT}');
+
 
           html, body, [class*="css"] {{
             font-family: 'IBM Plex Sans', system-ui, sans-serif;
           }}
           .stApp {{ background: {PAPER}; }}
+          .block-container {{ max-width: 1320px; padding-top: 1.8rem; }}
+          .investify-banner {{ background: #fff; border: 1px solid {RULE};
+            border-left: 4px solid {VERDICT_COLORS['BELOW_CHANCE']};
+            border-radius: 6px; padding: .65rem 1rem; margin: .7rem 0 1rem;
+            font-size: .9rem; line-height: 1.5; }}
+          .stTabs [role="tab"] {{ font-size: 1rem; font-weight: 600; min-height: 3rem; }}
+          .stButton button {{ min-height: 2.7rem; }}
+          .stCode pre {{ white-space: pre-wrap; overflow-wrap: anywhere; }}
+
           h1, h2, h3, h4 {{
             font-family: 'IBM Plex Sans', system-ui, sans-serif;
             color: {INK};

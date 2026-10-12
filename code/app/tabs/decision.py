@@ -37,9 +37,12 @@ ARTIFACTS = REPO_ROOT / "artifacts"
 # Alpaca first: it is the corpus with genuine publication times, so it is the
 # one the decision path should demonstrate. FNSPID stays selectable because
 # both are reported -- neither replaces the other.
+FRESH_RUN = ARTIFACTS / 'scientific_runs/alpaca_revision_conservative_20261012_run01/recovery01'
 CORPUS_RECORDS = {
-    "alpaca": ("Alpaca / Benzinga", ARTIFACTS / "decision_records_alpaca.json"),
-    "fnspid": ("FNSPID", ARTIFACTS / "decision_records.json"),
+    'fresh_frozen': ('Fresh Alpaca | frozen classifier', FRESH_RUN / 'engine_frozen_alpaca/decision_records.json'),
+    'fresh_refit': ('Fresh Alpaca | refit classifier', FRESH_RUN / 'engine_refit_alpaca/decision_records.json'),
+    "alpaca": ("Historical Alpaca / Benzinga", ARTIFACTS / "decision_records_alpaca.json"),
+    "fnspid": ("Historical FNSPID", ARTIFACTS / "decision_records.json"),
 }
 
 # The five the verifier rejects outright. vague_unverifiable is kept
@@ -118,7 +121,7 @@ def _render_evidence_context(record: DecisionRecord, corpus_label: str) -> None:
         rows = [r for r in context["features"] if r["family"] == family]
         if not rows:
             continue
-        with st.expander(family, expanded=True):
+        with st.expander(family, expanded=False):
             for row in rows:
                 value = f"{row['value']:.4g}" if row["value_available"] else "missing"
                 st.markdown(f"**{row['label']} — {value}**")
@@ -265,18 +268,22 @@ def render() -> None:
     brier_before = f"{metrics['brier_before']:.3f}" if "brier_before" in metrics else "—"
     brier_after = f"{metrics['brier_after']:.3f}" if "brier_after" in metrics else "—"
 
+    if corpus.startswith('fresh_'):
+        st.info('Recorded fresh experiment | 12 October 2026 | observed label-end purge and availability-safe calibration. '
+                'News revisions use max(created_at, updated_at); historical availability is unproven. No training runs on this screen.')
     if only_class:
+        detail = ('The fresh replay attributes the collapse to the learned isotonic maps: Buy is highest on every evaluation row. '
+                  'Refitting is not required for the collapse. This does not establish the cause of the older saved runs.'
+                  if corpus.startswith('fresh_') else
+                  'These preserved historical metrics have not been recomputed by this viewer; their original collapse cause is unestablished.')
         st.markdown(
             f"""
             <div class="caveat">
               <b>This model is degenerate, and the demo shows it on purpose.</b>
               All {len(records)} decisions in the evaluation fold are
-              <b>{next(iter(decisions))}</b>. The inherited run reports a Brier
-              change ({brier_before} → {brier_after}); those performance figures
-              have not been recomputed in this viewer. Both stored news-corpus
-              experiments have constant-Buy calibrated decisions; the cause
-              has not been established. The clean
-              pipeline has no demonstrated predictive signal at this horizon —
+              <b>{next(iter(decisions))}</b>. Recorded Brier score:
+              {brier_before} to {brier_after}. {detail}
+              The clean pipeline has no demonstrated predictive signal at this horizon;
               see the Leakage Lab tab.
               <br><br>
               What this tab demonstrates is the <b>decision plumbing</b> — attribution,
@@ -287,154 +294,159 @@ def render() -> None:
             unsafe_allow_html=True,
         )
 
-    left, right = st.columns([1, 2], gap="large")
+    profile_stage, evidence_stage, explanation_stage = st.tabs(['1. Profile + decision', '2. Evidence', '3. Explanation + verification'])
+    with profile_stage:
+        left, right = st.columns([1, 2], gap="large")
 
-    with left:
-        st.markdown("## Risk profile")
-        st.caption(
-            "The profile controls a separate linear comparator. It does not condition "
-            "the saved classifier or its calibrated probabilities."
-        )
-        profile = risk_profile_form.render_profile()
-
-    with right:
-        st.markdown("## Decision")
-        dates = sorted(by_date)
-        chosen = st.select_slider(
-            f"Session date ({len(dates)} sessions in the evaluation fold)",
-            options=dates,
-            key="decision_session",
-            value=dates[-1],
-        )
-        record = by_date[chosen]
-
-        head = st.columns([1, 1, 2])
-        head[0].metric(f"{record.ticker} — {horizon}-day view", record.decision)
-        head[1].metric("Calibrated probability", f"{record.confidence:.1%}")
-        head[2].markdown(
-            "Probability breakdown  \n"
-            + "  \n".join(
-                f"`{cls:<5}` {p:.1%}" for cls, p in record.probabilities.items()
+        with left:
+            st.markdown("## Risk profile")
+            st.caption(
+                "The profile controls a separate linear comparator. It does not condition "
+                "the saved classifier or its calibrated probabilities."
             )
-        )
+            profile = risk_profile_form.render_profile()
 
-        st.markdown("### What drove it")
-        contributions = pd.DataFrame(
-            [
-                {
-                    "feature": c.name,
-                    "contribution": c.shap_value,
-                    "value": c.value,
-                    "direction": c.direction,
-                }
-                for c in record.top_k
-            ]
-        )
-        st.caption(
-            f"TreeSHAP contributions toward the predicted class "
-            f"(**{record.decision}**), ranked by magnitude. Base value "
-            f"{record.base_value:+.4f}; contributions and base value sum to the "
-            f"raw model output {record.raw_model_output:+.4f}."
-        )
-        st.bar_chart(
-            contributions.set_index("feature")["contribution"],
-            horizontal=True,
-            color=theme.VERDICT_COLORS["PASS"],
-        )
-        st.dataframe(contributions, hide_index=True, width='stretch')
-
-    st.divider()
-
-    _render_risk_comparator(record, corpus, profile)
-    _render_evidence_context(record, CORPUS_RECORDS[corpus][0])
-    st.divider()
-    _render_guided_explanation(record, corpus)
-    st.divider()
-
-    # --- explanation + verification
-    st.markdown("## Explanation, and whether it can be trusted")
-    strict_prose = st.toggle(
-        "Reject unsupported sentences", value=True, key="strict_prose",
-        help="Only supported claim sentences are accepted. When disabled, the "
-             "existing unverifiable-claim rate threshold applies.",
-    )
-
-    corrupt_it = st.toggle(
-        "Corrupt this explanation",
-        key="corrupt_explanation",
-        help="Injects a specific error and runs it through the same emit path.",
-    )
-
-    if corrupt_it:
-        kind = st.selectbox(
-            "Error to inject",
-            list(CORRUPTION_KINDS) + ["text_only_probability"],
-            key="corruption_kind",
-            index=CORRUPTION_KINDS.index(DETECTABLE_KINDS[2])
-            if DETECTABLE_KINDS[2] in CORRUPTION_KINDS
-            else 0,
-            format_func=lambda k: KIND_LABELS.get(k, k),
-        )
-        clean = render_template(record)
-        if kind == "text_only_probability":
-            candidate = Explanation(
-                text=clean.text.replace(f"{record.confidence * 100:.2f}%", "1.00%", 1),
-                payload=clean.payload,
+        with right:
+            st.markdown("## Decision")
+            dates = sorted(by_date)
+            chosen = st.select_slider(
+                f"Session date ({len(dates)} sessions in the evaluation fold)",
+                options=dates,
+                key="decision_session",
+                value=dates[-1],
             )
+            record = by_date[chosen]
+
+            head = st.columns([1, 1, 2])
+            head[0].metric(f"{record.ticker} — {horizon}-day view", record.decision)
+            head[1].metric("Calibrated probability", f"{record.confidence:.1%}")
+            head[2].markdown(
+                "Probability breakdown  \n"
+                + "  \n".join(
+                    f"`{cls:<5}` {p:.1%}" for cls, p in record.probabilities.items()
+                )
+            )
+
+            st.markdown("### Why the model produced this class")
+            contributions = pd.DataFrame(
+                [
+                    {
+                        "feature": c.name,
+                        "contribution": c.shap_value,
+                        "value": c.value,
+                        "direction": c.direction,
+                    }
+                    for c in record.top_k
+                ]
+            )
+            st.caption(
+                f"TreeSHAP contributions toward the predicted class "
+                f"(**{record.decision}**), ranked by magnitude. Base value "
+                f"{record.base_value:+.4f}; contributions and base value sum to the "
+                f"raw model output {record.raw_model_output:+.4f}."
+            )
+            st.bar_chart(
+                contributions.set_index("feature")["contribution"],
+                horizontal=True,
+                color=theme.VERDICT_COLORS["PASS"],
+            )
+            with st.expander('Exact feature values and contributions'):
+                st.dataframe(contributions, hide_index=True, width='stretch')
+
+        st.divider()
+
+        _render_risk_comparator(record, corpus, profile)
+    with evidence_stage:
+        _render_evidence_context(record, CORPUS_RECORDS[corpus][0])
+        st.divider()
+    with explanation_stage:
+        _render_guided_explanation(record, corpus)
+        st.divider()
+
+        # --- explanation + verification
+        st.markdown("## Explanation, and whether it can be trusted")
+        strict_prose = st.toggle(
+            "Reject unsupported sentences", value=True, key="strict_prose",
+            help="Only supported claim sentences are accepted. When disabled, the "
+                 "existing unverifiable-claim rate threshold applies.",
+        )
+
+        corrupt_it = st.toggle(
+            "Corrupt this explanation",
+            key="corrupt_explanation",
+            help="Injects a specific error and runs it through the same emit path.",
+        )
+
+        if corrupt_it:
+            kind = st.selectbox(
+                "Error to inject",
+                list(CORRUPTION_KINDS) + ["text_only_probability"],
+                key="corruption_kind",
+                index=CORRUPTION_KINDS.index(DETECTABLE_KINDS[2])
+                if DETECTABLE_KINDS[2] in CORRUPTION_KINDS
+                else 0,
+                format_func=lambda k: KIND_LABELS.get(k, k),
+            )
+            clean = render_template(record)
+            if kind == "text_only_probability":
+                candidate = Explanation(
+                    text=clean.text.replace(f"{record.confidence * 100:.2f}%", "1.00%", 1),
+                    payload=clean.payload,
+                )
+            else:
+                candidate = corrupt(record, clean, kind, np.random.default_rng(record.seed)).explanation
+            emitted = emit(record, candidate=candidate, strict_prose=strict_prose)
+
+            if emitted.replaced_by_template:
+                st.markdown(
+                    f"<span style='color:{theme.VERDICT_COLORS['LEAK']};font-weight:600'>"
+                    f"Rejected.</span> The corrupted explanation failed verification "
+                    f"({', '.join(emitted.rejected_verification.failed_metrics)}) "
+                    f"and was replaced by the deterministic template. The emitted explanation "
+                    f"below is the verified fallback; the rejected text remains available for review.",
+                    unsafe_allow_html=True,
+                )
+            else:
+                st.markdown(
+                    f"<span style='color:{theme.VERDICT_COLORS['BELOW_CHANCE']};font-weight:600'>"
+                    f"Not rejected — and this is a real limitation, shown honestly.</span> "
+                    f"The injected sentence <i>is</i> correctly classified as an unverifiable "
+                    f"claim, but alongside the supported concrete claims it gives an "
+                    f"unverifiable rate of {emitted.verification.unverifiable_rate:.2f}, under "
+                    f"the 0.15 threshold. The verifier bounds how much of an explanation can be "
+                    f"ungrounded; it does not certify that every sentence earns its place.",
+                    unsafe_allow_html=True,
+                )
+
+            with st.expander("The corrupted text that was checked", expanded=False):
+                st.code(candidate.text, language=None)
         else:
-            candidate = corrupt(record, clean, kind, np.random.default_rng(record.seed)).explanation
-        emitted = emit(record, candidate=candidate, strict_prose=strict_prose)
+            emitted = emit(record)
 
+        st.markdown("### What is shown to the user")
+        st.code(emitted.text, language=None)
+
+        st.markdown("### Candidate verifier report" if corrupt_it else "### Verifier report")
+        shown_report = emitted.rejected_verification or emitted.verification
+        _metric_row(shown_report)
         if emitted.replaced_by_template:
-            st.markdown(
-                f"<span style='color:{theme.VERDICT_COLORS['LEAK']};font-weight:600'>"
-                f"Rejected.</span> The corrupted explanation failed verification "
-                f"({', '.join(emitted.rejected_verification.failed_metrics)}) "
-                f"and was replaced by the deterministic template. The emitted explanation "
-                f"below is the verified fallback; the rejected text remains available for review.",
-                unsafe_allow_html=True,
-            )
-        else:
-            st.markdown(
-                f"<span style='color:{theme.VERDICT_COLORS['BELOW_CHANCE']};font-weight:600'>"
-                f"Not rejected — and this is a real limitation, shown honestly.</span> "
-                f"The injected sentence <i>is</i> correctly classified as an unverifiable "
-                f"claim, but alongside the supported concrete claims it gives an "
-                f"unverifiable rate of {emitted.verification.unverifiable_rate:.2f}, under "
-                f"the 0.15 threshold. The verifier bounds how much of an explanation can be "
-                f"ungrounded; it does not certify that every sentence earns its place.",
-                unsafe_allow_html=True,
-            )
+            st.caption("These scores describe the rejected candidate. The displayed fallback passed verification.")
+        st.caption(
+            "All four are reported. Coverage comes from displayed prose; numeric "
+            "and directional scores use the worse result of prose and JSON. Known "
+            "contradictions always fail. This checks supported claims, not arbitrary market prose."
+        )
 
-        with st.expander("The corrupted text that was checked", expanded=False):
-            st.code(candidate.text, language=None)
-    else:
-        emitted = emit(record)
+        table = shown_report.as_table()
+        claims = pd.DataFrame(table) if not isinstance(table, pd.DataFrame) else table
+        st.dataframe(
+            _round_for_display(claims),
+            hide_index=True,
+            width='stretch',
+            height=320,
+        )
 
-    st.markdown("### What is shown to the user")
-    st.code(emitted.text, language=None)
-
-    st.markdown("### Candidate verifier report" if corrupt_it else "### Verifier report")
-    shown_report = emitted.rejected_verification or emitted.verification
-    _metric_row(shown_report)
-    if emitted.replaced_by_template:
-        st.caption("These scores describe the rejected candidate. The displayed fallback passed verification.")
-    st.caption(
-        "All four are reported. Coverage comes from displayed prose; numeric "
-        "and directional scores use the worse result of prose and JSON. Known "
-        "contradictions always fail. This checks supported claims, not arbitrary market prose."
-    )
-
-    table = shown_report.as_table()
-    claims = pd.DataFrame(table) if not isinstance(table, pd.DataFrame) else table
-    st.dataframe(
-        _round_for_display(claims),
-        hide_index=True,
-        width='stretch',
-        height=320,
-    )
-
-    st.caption(
-        f"Model {provenance.get('model_version', 'unknown')}, seed {record.seed}. "
-        f"{record.non_advice_notice}"
-    )
+        st.caption(
+            f"Model {provenance.get('model_version', 'unknown')}, seed {record.seed}. "
+            f"{record.non_advice_notice}"
+        )

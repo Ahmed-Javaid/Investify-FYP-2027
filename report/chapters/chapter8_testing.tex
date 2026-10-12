@@ -1,12 +1,13 @@
 \chapter{Testing and Early Validation}
+\label{chap:testing}
 \section{Testing Strategy}
 Positive acceptance and labelled corruptions are both tested. Actual saved decisions support integration checks. Missing-input and corruption fixtures are test inputs, not synthetic substitutes for historical news or real LLM generations.
 \section{Test Levels and Techniques}
 Unit checks cover claim/schema validation, strict mode and fallback. Integration checks cover all 372 records. Local HTTP checks exercise the actual server and verification endpoint. Separate Streamlit AppTest cases exercise real widgets when its runtime is installed \cite{streamlit_apptest}.
 \section{Test Cases}
-Important cases include correct JSON beside wrong displayed confidence/direction/value/class, correct prose beside wrong JSON, omitted essential claims, malformed/non-finite payloads, padding around a contradiction, unsupported sentences, and missing data/runtime. The appendix maps groups to requirements.
+Important cases include correct JSON beside wrong displayed confidence, direction, value or class, correct prose beside wrong JSON, omitted essential claims, malformed/non-finite payloads, padding around a contradiction, unsupported sentences, and missing data/runtime. The appendix maps groups to requirements.
 \section{Test Results}
-Separate continuation core contracts have 153 passes with three shuffled-KFold cases excluded in the Python 3.11 viewer runtime. They use explicitly labelled fixtures, including actual temporary Parquet writes and mocked model seams; they are not a full scientific or original-data suite. Six real-corpus loader cases remain skipped because their CSVs are absent. New V4 byte/receipt refusal and CPU tensor-serialization tests retain their own dated scopes; no original model conversion or inference occurred.
+Separate continuation core contracts have 153 passes with three shuffled-KFold cases excluded in the Python 3.11 viewer runtime. They use explicitly labelled fixtures, including actual temporary Parquet writes and mocked model seams; they are not a full scientific or original-data suite. Six real-corpus loader cases remain skipped because their CSVs are absent. New V4 byte/receipt refusal and CPU tensor-serialization tests retain their own dated scopes; those earlier fixture receipts did not execute original weights; the genuine comparison below is separate.
 On 12 October 2026, the selected suite completed with \textbf{212 passed and zero skipped}, including 20 actual Streamlit AppTest cases. All 372 records retain schema/context/numeric-template and complete-guided-template acceptance. The live HTTP run passed 62 checks, including explanation and separate risk/refusal probes. The comparator audit passed 228 arithmetic/chronology/immutability checks on 76 actual held-out rows and three labelled profile scenarios. Runtime/source hashes and duration are in evidence JSON. This is not the complete scientific suite, a participant study or predictor-performance evaluation.
 
 The default-mode fixture study has 112 cases: 80 corruptions rejected, 16 clean cases accepted, 16 vague-sentence cases accepted, and zero clean cases rejected. Vague-sentence acceptance remains a rate-threshold limitation. Strict mode rejects unsupported sentences but restricts accepted prose to the supported grammar.
@@ -20,14 +21,14 @@ Correct JSON cannot hide empty text, an omitted decision or missing notice. Inva
 Additional regressions expose the calendar-day/session-label purge mismatch, calibration outcomes reaching evaluation, Pandas 3 join-key resolution skew, in-batch duplicate persistence, delimiter-hash ambiguity, start-only news-bound exclusion, implicit UTC assumptions, cache-key row expansion, RSI all-rising missing values and stale portable reports. Corrections preserve historical source and raw/frozen evidence. Current package and trace receipts must match their exact source snapshot; earlier passing XML is not proof for later edits.
 New regressions reproduced payload-over-prose acceptance, unchecked feature values/target class, payload-supplied display coverage, and dilution by repeated correct claims. Independent checking and hard gates correct these defects. The old test requiring correct JSON to override wrong prose was replaced with the corrected regression. Rejection reporting now retains the failed candidate's metrics instead of showing fallback success as the rejection reason.
 \section{Current Validation Status}
-Nine social-selection unit tests use explicitly generated fixtures. They check declared post/annotation provenance, exclusions, chronological freezing, code/data/model identity, initial-label agreement, full paired outputs and null metrics on failures. The actual AI reference pilot contains 200 real MSFT tweets: 117 usable labels (31 positive, 67 neutral, 19 negative) and 83 explicit exclusions. Its frozen split is 93 development/24 held out, with only two negative held-out references. One session pass is recorded with full prompt/input/raw-output/timing and declared model-identity provenance; agreement/kappa are null and independent human validation is absent. Candidate inference remains blocked with null metrics. These tests are not sentiment-model study results, and schema validation cannot authenticate human independence.
+Nine social-selection unit tests use explicitly generated fixtures. They check declared post/annotation provenance, exclusions, chronological freezing, code/data/model identity, initial-label agreement, full paired outputs and null metrics on failures. The actual AI reference pilot contains 200 real MSFT tweets: 117 usable labels (31 positive, 67 neutral, 19 negative) and 83 explicit exclusions. Its frozen split is 93 development/24 held out, with only two negative held-out references. One session pass is recorded with full prompt/input/raw-output/timing and declared model-identity provenance; agreement/kappa are null and independent human validation is absent. The later original-publisher paired comparison is recorded below. These tests are not sentiment-model study results, and schema validation cannot authenticate human independence.
 
-Eight offline-inference tests use a labelled backend fixture. They check actual held-out text routing without human labels, declared preprocessing/class mapping, stable softmax, rejected incomplete/mismatched heads, unknown plans/models, missing weights and retained errors/truncation. The real Transformers/PyTorch loading branch remains unexecuted; its input-file hashes and loading flags are prepared, not measured real-model results.
+Eight offline-inference tests use a labelled backend fixture. They check actual held-out text routing without human labels, declared preprocessing/class mapping, stable softmax, rejected incomplete/mismatched heads, unknown plans/models, missing weights and retained errors/truncation. Those early fixtures did not execute original weights; actual publisher-byte-bound Torch/Transformers inference now completes both candidates, as recorded below.
 
-Python 3.11.9 and an isolated viewer environment were used, not the locked scientific environment. The viewer was restored from existing E: cached wheels plus two unchanged vendor pure-Python dependency sources/fallbacks, with provenance/licenses retained. Streamlit 1.63.0, NumPy 2.4.6 and Pandas 3.0.6 are frozen separately; dependency consistency passes. Scientific raw/store inputs are absent. Local model probes returned no available identifier/completion; no LLM or scientific retraining is claimed. The report is uncompiled and visually uninspected. Both saved classifier folds remain constant-Buy.
+Python 3.11.9 and an isolated viewer environment were used, not the locked scientific environment. The viewer was restored from existing E: cached wheels plus two unchanged vendor pure-Python dependency sources/fallbacks, with provenance/licenses retained. Streamlit 1.63.0, NumPy 2.4.6 and Pandas 3.0.6 are frozen separately; dependency consistency passes. The original September raw/store inputs remain absent; a separately identified fresh Alpaca experiment now executes on restored genuine inputs. Local model probes returned no available identifier/completion; no LLM generation is claimed by those probes. The separate fresh science and original social-classifier runs retain actual execution evidence. The report is compiled as an unsigned working draft with layout inspection recorded separately; institutional review is incomplete. Both saved classifier folds remain constant-Buy.
 
 \section{AI Reference Pilot and Saved Calibration Audit}
-The actual AI reference pilot contains 200 real MSFT tweets: 117 usable labels (31 positive, 67 neutral, 19 negative) and 83 explicit exclusions. Its frozen split is 93 development/24 held out, with only two negative held-out references. One session pass is recorded with full prompt/input/raw-output/timing and declared model-identity provenance; agreement/kappa are null and independent human validation is absent. Candidate inference remains blocked with null metrics.
+The actual AI reference pilot contains 200 real MSFT tweets: 117 usable labels (31 positive, 67 neutral, 19 negative) and 83 explicit exclusions. Its frozen split is 93 development/24 held out, with only two negative held-out references. One session pass is recorded with full prompt/input/raw-output/timing and declared model-identity provenance; agreement/kappa are null and independent human validation is absent. The later original-publisher paired comparison is recorded below.
 Ten additional annotation/import unit tests use labelled fixtures to check raw packet coverage, input/prompt tampering, single-pass null agreement, optional cross-checks and explicit exclusions. The actual raw-label batches are separate research artifacts. The Social Study widget also checks the AI-reference disclosure and missing-inference state.
 
 The saved-artifact audit independently summarizes the preserved 372 historical
@@ -43,13 +44,55 @@ five-day score is below its random baseline, while the deliberate centred
 feature canary fires. Chapter 6 records exact metrics, input/runtime limits and
 the distinction from September results.
 
-The frozen-reference evaluability audit selects neutral as the development-majority comparator, obtaining 15/24 exact held-out AI-reference agreement and macro-F1 0.256410, with zero positive/negative recall. This deterministic comparator is not candidate inference or independently human-validated accuracy. One held-out prediction changes exact agreement by 4.17 percentage points; negative recall moves in 50-point steps. No pair meets the declared token-Jaccard 0.8/minimum five-token heuristic, which does not establish independence or exclude shared events/pretraining overlap. Reference and split hashes are unchanged. Original-publisher replacement generation remains pending verified weights and available access.
+The frozen-reference evaluability audit selects neutral as the development-majority comparator, obtaining 15/24 exact held-out AI-reference agreement and macro-F1 0.256410, with zero positive/negative recall. This deterministic comparator is not candidate inference or independently human-validated accuracy. One held-out prediction changes exact agreement by 4.17 percentage points; negative recall moves in 50-point steps. No pair meets the declared token-Jaccard 0.8/minimum five-token heuristic, which does not establish independence or exclude shared events/pretraining overlap. Reference and split hashes are unchanged. The separate generative-model replacement remains pending verified weights and available access; the original-classifier study below is complete.
 
-\section{Recorded Assistant Teacher Construction Pilot}
-Under the user's latest direction, the current assistant supplies teacher examples before an alternative API is considered. The planned student remains Phi-3-mini; no additional Qwen teacher download is required. Six actual explanations were written from frozen historical NVDA records, and all six pass the current strict verifier. Input packets contain facts, reviewed definitions and controlled sentence patterns without a completed reference answer.
+\section{Teacher Pilot Evidence}
+The six recorded examples, four-training/two-validation split, serving-identity limitations and untrained Phi-3-mini student are documented once in Section~\ref{sec:teacher-pilot}. No training efficacy or human-comprehension result is inferred.
 
-The supervision is hybrid: prose is actually assistant-generated, while the factual JSON payload is assembled deterministically from the original record. Both are checked, but the payload is not claimed as a teacher completion. Exact serving model ID/revision, decoding, token usage and per-example inference latency are unavailable and recorded as null.
+\section{Executed Original-Publisher Social Comparison}
+On 13 October 2026 both pinned original classifiers completed the same 24
+chronologically held-out MSFT posts. The frozen reference contains 7 positive,
+15 neutral and 2 negative AI labels. Source posts, reference labels, exclusions,
+candidate identities, preprocessing and the original V3 split are unchanged.
 
-Both corpora share date groups: 118 training dates, 30 validation dates and 38 preserved held-out test dates. The actual pilot has four training and two validation examples; test records are excluded. All saved source decisions are Buy, so neither class generalization nor adequate QLoRA data is established. Some held-out examples were previously explored; no first-ever untouched-test claim is made. Copied evidence replays original hash-bound raw persistence times and exact exports.
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Candidate & Macro-F1 & Exact agreement & Positive recall & Negative recall \\
+\midrule
+CryptoBERT & 0.2564 & 15/24 & 0/7 & 0/2 \\
+Cardiff & 0.6016 & 16/24 & 4/7 & 1/2 \\
+\bottomrule
+\end{tabular}
+\caption{Agreement with frozen AI reference labels; not independently human-validated accuracy.}
+\end{table}
 
-Original-student inference, QLoRA training, student quality and user understanding remain unmeasured. The inspected GPU has 10,240 MiB; the proposal's 16 GB envelope does not establish current-machine feasibility. Required training libraries, exact student checkpoint/tokenizer and measured token/VRAM budgets remain pending. Earlier Qwen-specific local pilot choices are inactive for the selected teacher/student workflow.
+CryptoBERT predicts neutral on all 24 posts, matching the development-majority
+neutral comparator. Cardiff is the exploratory benchmark leader. A single
+prediction changes exact agreement by 4.17 percentage points, and negative
+recall changes in 50-point steps. Public-post pretraining overlap and shared
+events remain unexcluded. These results do not establish NVDA transfer, return
+prediction, significance, suitability or deployment readiness.
+No predeclared adequacy threshold exists in the retained plan, and the
+deployment selection remains unset pending actual criteria and review.
+
+Both original publisher revisions, weight hashes and all loading-affecting
+tokenizer/config files are verified. Original Cardiff BIN weights were
+losslessly serialized: all 204 tensor keys, dtypes, shapes and raw bytes match.
+Its two unused native pooler parameters are retained during modern loading,
+with exact classifier-logit parity verified. No classifier head is missing,
+mismatched, substituted or randomly initialized. Modern set-valued loader
+diagnostics are normalized for recording; nonempty diagnostics still refuse
+inference.
+
+The first Cardiff loading refusal is retained. Both models reran under a new
+source-bound plan, retaining per-post raw logits, processed-text hashes,
+token counts, truncation, runtime identity and probability outputs.
+Independent receipt/logit comparison reproduces the reported table; repeated
+CryptoBERT outputs are identical. The Social Study view displays recomputed
+recorded scores with AI-reference limitations and download evidence.
+The earlier recorded-social scope has 25 viewer/selector passes, including 21 Streamlit cases; the later guided-demo scope has 28 passes, including 24 AppTest cases. These are overlapping suites;
+37 current loader/pooler checks and nine subtests pass on their declared scopes.
+These scopes overlap earlier evidence and are not summed as a full-suite total.

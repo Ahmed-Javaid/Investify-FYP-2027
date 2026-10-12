@@ -1,5 +1,69 @@
 # Mid-evaluation readiness estimate - 12 October 2026
 
+## Current checkpoint - reviewed report and guided demo, 13 October 2026
+
+Current weighted planning completion is **85.75%, approximately 86%**.
+The original weights stay fixed. Report completion rises from 80% to 90% after
+successful compilation and layout review of the 89-page unsigned working draft.
+The new guided UI is tested; UI and presentation estimates are held unchanged
+because browser/projector review, exported slides and genuine rehearsal remain.
+
+| Work area | Weight | Completion judgement | Contribution |
+| --- | ---: | ---: | ---: |
+| Scientific pipeline, baseline and leakage | 25% | 85% | 21.25% |
+| Interface, explanation and transparency | 20% | 95% | 19.00% |
+| Social-sentiment selection | 15% | 85% | 12.75% |
+| Report, requirements and design | 20% | 90% | 18.00% |
+| Committee responses, inventory and metrics | 10% | 85% | 8.50% |
+| Handover, repository and contributions | 5% | 70% | 3.50% |
+| Presentation, demo and defence | 5% | 55% | 2.75% |
+
+This is a first-mid planning estimate, not an institutional grade or full-FYP
+completion. Negative model findings are preserved. No student review, training,
+university approval or successful remote CI is inferred from engineering tests.
+
+One concrete route to **90.00%**, with science/UI/social estimates unchanged:
+
+| Required closure | New estimate | Added weighted completion |
+| --- | ---: | ---: |
+| Confirm cover facts and complete genuine report review/applicable signatures | Report 95% | +1.00% |
+| Export/inspect slides, inspect browser/projector UI and rehearse the demo/defence | Presentation 90% | +1.75% |
+| Record real member contributions, create a matching current handover and resolve repository/CI expectations | Handover 90% | +1.00% |
+| Review committee responses with the team/supervisor and record genuine closure | Committee 90% | +0.50% |
+
+These are conditional planning judgements; creating files alone does not earn
+human-review or rehearsal credit. The required presentation runtime and browser
+surface are unavailable here. Cover metadata is awaiting the requested facts;
+actual contributions and agreed social/risk adequacy criteria remain open.
+
+Evidence: [report delivery](../evidence/report_delivery_20261013_run02.json),
+[guided demo](../evidence/guided_demo_review_20261013.json),
+[UI checks](../evidence/guided_demo_ui_tests_20261013_run02.xml).
+
+## Completed original-classifier study - 13 October 2026
+
+Current weighted planning completion is **83.75%, approximately 84%**.
+All original weights are unchanged; this supersedes 78.5% below.
+
+| Work area | Weight | Completion judgement | Contribution |
+| --- | ---: | ---: | ---: |
+| Scientific pipeline, baseline and leakage | 25% | 85% | 21.25% |
+| Interface, explanation and transparency | 20% | 95% | 19.00% |
+| Social-sentiment selection | 15% | 85% | 12.75% |
+| Report, requirements and design | 20% | 80% | 16.00% |
+| Committee responses, inventory and metrics | 10% | 85% | 8.50% |
+| Handover, repository and contributions | 5% | 70% | 3.50% |
+| Presentation, demo and defence | 5% | 55% | 2.75% |
+
+Social moves from 50% to 85% after genuine pinned candidate execution and paired
+receipt/logit replay on the unchanged 24 AI references. Cardiff leads the
+exploratory benchmark. Predeclared adequacy criteria, larger independent
+validation, final selection and genuine review remain open. No report/deck
+rendering or human-review credit is added from candidate scores alone.
+
+[Actual paired evidence](../evidence/social_study_review_20261013.json).
+The estimate is not an institutional grade. The 90% target remains unmet.
+
 ## Latest readiness - actual scientific execution
 
 Current planning completion is **78.5%, approximately 79%**. It supersedes the

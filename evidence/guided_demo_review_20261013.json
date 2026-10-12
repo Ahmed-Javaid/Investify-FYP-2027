@@ -1,0 +1,60 @@
+{
+  "schema": "investify-guided-demo-review-v1",
+  "checked_utc": "2026-10-12T22:02:12.242636+00:00",
+  "ui_tests": {
+    "receipt": "evidence/guided_demo_ui_tests_20261013_run02.xml",
+    "passed": 28,
+    "skipped": 0,
+    "streamlit_apptest_cases": 24,
+    "selector_cases": 4,
+    "scope": "Focused overlapping scope; not summed with historical suites"
+  },
+  "server": {
+    "url": "http://127.0.0.1:8507",
+    "task_owned_pid": 27172,
+    "health": {
+      "status": 200,
+      "body": "ok"
+    },
+    "source": "code/app/streamlit_app.py",
+    "unattended_hosting_guaranteed": false
+  },
+  "browser_visual_qa": {
+    "available_surfaces": 0,
+    "iab_open_result": "Browser is not available: iab",
+    "performed": false
+  },
+  "defaults": {
+    "section": "Start here",
+    "decision_source": "fresh_frozen",
+    "leakage_source": "fresh_alpaca",
+    "session": "2023-12-21"
+  },
+  "demonstration_profiles": {
+    "source": "Explicit fictional button-triggered answers",
+    "cautious_R": 0,
+    "higher_tolerance_R": 1,
+    "comparator_actions": [
+      "Hold",
+      "Sell"
+    ],
+    "classifier_unchanged": true,
+    "participant_evidence": false
+  },
+  "tests_precede_final_caption_only_change": true,
+  "source_sha256": {
+    "code/app/demo_flow.py": "6e5af2cb0d1e1db0a6b630bfa5ec64044b55d7d2ca4ad3d79f9c666057f52301",
+    "code/app/risk_profile_form.py": "bdc4284cbf8c0765578153d4cd5fcc8f416db0c07644d554101b1e5d1862c71b",
+    "code/app/risk_quiz.py": "6f838ab5eeaf70c792b40e58abd35dc3890c2747f5dccf248dd47cfd973b34e1",
+    "code/app/streamlit_app.py": "e50f590789f2581716e6e029338a25d96fd310d9caf5372e2df209f85e0c73bf",
+    "code/app/theme.py": "a8c8a685b1349f9af0eb90f34d141e58155492c640d4259e0cc9d4c98d029a7d",
+    "code/app/tabs/decision.py": "2092f1db48ef7a5da4d5ec8f5fa118eb96299fb97022fa6179102a784c6c5746",
+    "code/app/tabs/leakage_lab.py": "4fe58d05ba3e188e769b910648491815959b9e84bdcdcf8b1ae5ac49899b4f34",
+    "code/app/tabs/social_study.py": "af3a367726fd315ff353af73e22880a70e481f1533e359c904c60a44681c341d",
+    "code/app/tabs/teacher_study.py": "798be34417a4a6db83e13da0621a1d1106028583a9bf9e3f36c3203a408c9c7a",
+    "code/app/tabs/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "report_receipt": "evidence/report_delivery_20261013.json",
+  "presentation_exported": false,
+  "runtime_blocker": "Required load_workspace_dependencies and bundled @oai/artifact-tool are not exposed; connected PowerPoint session absent."
+}

@@ -1,0 +1,556 @@
+{
+  "protocol": "mideval-equity-social-selection-v3",
+  "status": "complete",
+  "plan_sha256": "8fb3cf4a8748101f2ed7e94fb0779cc0545d1c5877bf9573518afc4a05b24294",
+  "benchmark_sha256": "4ee137070c0c90e16503c34d3ed9245a094c658213ed7d0a8cc0aa8fbb05fe2d",
+  "heldout_posts": 24,
+  "annotation_agreement": {
+    "initial_exact_agreement": null,
+    "initial_disagreements": null,
+    "cohens_kappa": null,
+    "note": "Single AI pass; no cross-check agreement or independent human validation measured."
+  },
+  "annotation_method": "model_generated",
+  "reference_scope": "Model-generated reference labels; candidate scores measure agreement with AI labels, not independently human-validated accuracy.",
+  "annotation_models": [
+    {
+      "run_id": "codex-session-msft-20261012-pass1",
+      "provider": "OpenAI / Codex session",
+      "model_id": "GPT-6.1 Sol",
+      "model_revision": null,
+      "identity_source": "session_configuration",
+      "identity_evidence": "Project handoff reports GPT-6.1 Sol Xhigh; the current assistant system describes an agent based on GPT-6. No provider model-ID endpoint or exact serving revision is exposed. This identity is declared configuration, not independently authenticated.",
+      "prompt_version": "mideval-target-equity-ai-reference-v1",
+      "prompt_sha256": "0e3f074255572d4eb901a8c5c3b863f0a17e7d7a06944b749640f5b1c04f36d9",
+      "candidate_predictions_visible": false
+    }
+  ],
+  "annotation_candidate_overlap": [],
+  "results": [
+    {
+      "model_id": "ElKulako/cryptobert",
+      "revision": "9e37c910fe87727cb842a9ac55c6388256fe0f15",
+      "completed_posts": 24,
+      "error_posts": 0,
+      "missing_posts": 0,
+      "coverage": 1.0,
+      "status": "complete",
+      "raw_run_sha256": "8b5199382152a67075ee6e3872660ccd7b9053d7bfc7b7ddf67d5cf775ae9b99",
+      "quality_metrics": {
+        "macro_f1": 0.25641025641025644,
+        "per_class": {
+          "positive": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 7,
+            "f1": 0.0
+          },
+          "neutral": {
+            "precision": 0.625,
+            "recall": 1.0,
+            "support": 15,
+            "f1": 0.7692307692307693
+          },
+          "negative": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2,
+            "f1": 0.0
+          }
+        },
+        "confusion_matrix_gold_rows": {
+          "positive": {
+            "positive": 0,
+            "neutral": 7,
+            "negative": 0
+          },
+          "neutral": {
+            "positive": 0,
+            "neutral": 15,
+            "negative": 0
+          },
+          "negative": {
+            "positive": 0,
+            "neutral": 2,
+            "negative": 0
+          }
+        },
+        "convention": "Unweighted macro over all three classes; zero denominators -> zero."
+      }
+    },
+    {
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "revision": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+      "completed_posts": 24,
+      "error_posts": 0,
+      "missing_posts": 0,
+      "coverage": 1.0,
+      "status": "complete",
+      "raw_run_sha256": "7ccd17c5ee5c5ee191b6c7a1bf05865f628f15e3dd312378bb639046ecd3e9b7",
+      "quality_metrics": {
+        "macro_f1": 0.6015873015873016,
+        "per_class": {
+          "positive": {
+            "precision": 0.5714285714285714,
+            "recall": 0.5714285714285714,
+            "support": 7,
+            "f1": 0.5714285714285714
+          },
+          "neutral": {
+            "precision": 0.7333333333333333,
+            "recall": 0.7333333333333333,
+            "support": 15,
+            "f1": 0.7333333333333333
+          },
+          "negative": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "support": 2,
+            "f1": 0.5
+          }
+        },
+        "confusion_matrix_gold_rows": {
+          "positive": {
+            "positive": 4,
+            "neutral": 3,
+            "negative": 0
+          },
+          "neutral": {
+            "positive": 3,
+            "neutral": 11,
+            "negative": 1
+          },
+          "negative": {
+            "positive": 0,
+            "neutral": 1,
+            "negative": 1
+          }
+        },
+        "convention": "Unweighted macro over all three classes; zero denominators -> zero."
+      }
+    }
+  ],
+  "comparison_ready": true,
+  "benchmark_leaders": [
+    {
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "revision": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+      "macro_f1": 0.6015873015873016
+    }
+  ],
+  "deployment_selection": null,
+  "selection_decision": "Adequacy threshold, news-only fallback and final selection require predeclared criteria and human review.",
+  "raw_model_runs": [
+    {
+      "model_id": "ElKulako/cryptobert",
+      "revision": "9e37c910fe87727cb842a9ac55c6388256fe0f15",
+      "preprocessing": "{\"text_policy\":\"raw\",\"max_length\":128,\"label_mapping\":{\"0\":\"negative\",\"1\":\"neutral\",\"2\":\"positive\"}}",
+      "plan_sha256": "8fb3cf4a8748101f2ed7e94fb0779cc0545d1c5877bf9573518afc4a05b24294",
+      "benchmark_sha256": "4ee137070c0c90e16503c34d3ed9245a094c658213ed7d0a8cc0aa8fbb05fe2d",
+      "run_started_utc": "2026-10-12T19:19:43.526755+00:00",
+      "run_completed_utc": "2026-10-12T19:19:45.293404+00:00",
+      "outputs": [
+        {
+          "post_id": "565172414448144384",
+          "probabilities": {
+            "negative": 0.0029156271540969215,
+            "neutral": 0.771890688808923,
+            "positive": 0.22519368403698015
+          }
+        },
+        {
+          "post_id": "565193755066912769",
+          "probabilities": {
+            "negative": 0.0013031737819983555,
+            "neutral": 0.7483562374735131,
+            "positive": 0.2503405887444885
+          }
+        },
+        {
+          "post_id": "565229779981320194",
+          "probabilities": {
+            "negative": 0.0026700126631979096,
+            "neutral": 0.7683710072165879,
+            "positive": 0.22895898012021418
+          }
+        },
+        {
+          "post_id": "565253469406502912",
+          "probabilities": {
+            "negative": 0.00013405043497121584,
+            "neutral": 0.683190765540196,
+            "positive": 0.3166751840248328
+          }
+        },
+        {
+          "post_id": "565261472104992768",
+          "probabilities": {
+            "negative": 0.004166383055152688,
+            "neutral": 0.5055287807274521,
+            "positive": 0.4903048362173952
+          }
+        },
+        {
+          "post_id": "565378174440472577",
+          "probabilities": {
+            "negative": 0.000377470050035056,
+            "neutral": 0.7761407818832764,
+            "positive": 0.22348174806668847
+          }
+        },
+        {
+          "post_id": "565803539788611584",
+          "probabilities": {
+            "negative": 0.0003559652318590972,
+            "neutral": 0.6673101578710783,
+            "positive": 0.3323338768970627
+          }
+        },
+        {
+          "post_id": "565854345401737216",
+          "probabilities": {
+            "negative": 0.0006373148301860683,
+            "neutral": 0.7273822923319655,
+            "positive": 0.2719803928378485
+          }
+        },
+        {
+          "post_id": "565906887443767298",
+          "probabilities": {
+            "negative": 0.00015731396859096822,
+            "neutral": 0.6145992274284254,
+            "positive": 0.3852434586029836
+          }
+        },
+        {
+          "post_id": "566228099797229568",
+          "probabilities": {
+            "negative": 0.0007964191106157596,
+            "neutral": 0.861780612949301,
+            "positive": 0.13742296794008332
+          }
+        },
+        {
+          "post_id": "566257506092318721",
+          "probabilities": {
+            "negative": 0.0002234175031808258,
+            "neutral": 0.7127599558786395,
+            "positive": 0.28701662661817967
+          }
+        },
+        {
+          "post_id": "566270940452245504",
+          "probabilities": {
+            "negative": 0.0003207179897554503,
+            "neutral": 0.7455177060855768,
+            "positive": 0.25416157592466776
+          }
+        },
+        {
+          "post_id": "566341933220372481",
+          "probabilities": {
+            "negative": 0.0004150942634194727,
+            "neutral": 0.7253728691333692,
+            "positive": 0.2742120366032113
+          }
+        },
+        {
+          "post_id": "566408899482628097",
+          "probabilities": {
+            "negative": 0.000951293313276101,
+            "neutral": 0.7182576582751103,
+            "positive": 0.2807910484116136
+          }
+        },
+        {
+          "post_id": "567030285632409601",
+          "probabilities": {
+            "negative": 0.26225753026869036,
+            "neutral": 0.6093622149260582,
+            "positive": 0.12838025480525142
+          }
+        },
+        {
+          "post_id": "567085142909669377",
+          "probabilities": {
+            "negative": 0.0002317034139434842,
+            "neutral": 0.7942839123479295,
+            "positive": 0.20548438423812704
+          }
+        },
+        {
+          "post_id": "567345625961103360",
+          "probabilities": {
+            "negative": 0.009489948679336807,
+            "neutral": 0.9045692910600669,
+            "positive": 0.08594076026059624
+          }
+        },
+        {
+          "post_id": "567653454332825600",
+          "probabilities": {
+            "negative": 0.00011993944479788721,
+            "neutral": 0.8080120704390766,
+            "positive": 0.1918679901161255
+          }
+        },
+        {
+          "post_id": "567822635800764417",
+          "probabilities": {
+            "negative": 0.00039558753166464496,
+            "neutral": 0.7198529476798528,
+            "positive": 0.2797514647884826
+          }
+        },
+        {
+          "post_id": "568736557852549120",
+          "probabilities": {
+            "negative": 0.00045093462562117385,
+            "neutral": 0.8227310754086056,
+            "positive": 0.1768179899657733
+          }
+        },
+        {
+          "post_id": "568938769442869249",
+          "probabilities": {
+            "negative": 0.00019586896180996512,
+            "neutral": 0.6075539221811226,
+            "positive": 0.3922502088570675
+          }
+        },
+        {
+          "post_id": "569844202235949056",
+          "probabilities": {
+            "negative": 0.0006322998005981299,
+            "neutral": 0.5761967396863806,
+            "positive": 0.4231709605130212
+          }
+        },
+        {
+          "post_id": "570029183616851970",
+          "probabilities": {
+            "negative": 0.0003694303750259124,
+            "neutral": 0.8212694969175782,
+            "positive": 0.17836107270739573
+          }
+        },
+        {
+          "post_id": "570211539354984449",
+          "probabilities": {
+            "negative": 0.0011927163111309124,
+            "neutral": 0.9067931632641484,
+            "positive": 0.09201412042472071
+          }
+        }
+      ]
+    },
+    {
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "revision": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+      "preprocessing": "{\"text_policy\":\"tweet_mentions_urls\",\"max_length\":128,\"label_mapping\":{\"0\":\"negative\",\"1\":\"neutral\",\"2\":\"positive\"}}",
+      "plan_sha256": "8fb3cf4a8748101f2ed7e94fb0779cc0545d1c5877bf9573518afc4a05b24294",
+      "benchmark_sha256": "4ee137070c0c90e16503c34d3ed9245a094c658213ed7d0a8cc0aa8fbb05fe2d",
+      "run_started_utc": "2026-10-12T19:20:01.460440+00:00",
+      "run_completed_utc": "2026-10-12T19:20:02.951459+00:00",
+      "outputs": [
+        {
+          "post_id": "565172414448144384",
+          "probabilities": {
+            "negative": 0.026794192099199046,
+            "neutral": 0.9050616832423838,
+            "positive": 0.06814412465841714
+          }
+        },
+        {
+          "post_id": "565193755066912769",
+          "probabilities": {
+            "negative": 0.012354332157571256,
+            "neutral": 0.5290965997642098,
+            "positive": 0.458549068078219
+          }
+        },
+        {
+          "post_id": "565229779981320194",
+          "probabilities": {
+            "negative": 0.003786048525863071,
+            "neutral": 0.2136216106825098,
+            "positive": 0.7825923407916272
+          }
+        },
+        {
+          "post_id": "565253469406502912",
+          "probabilities": {
+            "negative": 0.024912970342331565,
+            "neutral": 0.9254776806654434,
+            "positive": 0.04960934899222498
+          }
+        },
+        {
+          "post_id": "565261472104992768",
+          "probabilities": {
+            "negative": 0.7977090960962774,
+            "neutral": 0.18704564859228764,
+            "positive": 0.015245255311435
+          }
+        },
+        {
+          "post_id": "565378174440472577",
+          "probabilities": {
+            "negative": 0.3761839173151925,
+            "neutral": 0.542762411069842,
+            "positive": 0.08105367161496548
+          }
+        },
+        {
+          "post_id": "565803539788611584",
+          "probabilities": {
+            "negative": 0.005375372728663203,
+            "neutral": 0.7670286368690254,
+            "positive": 0.2275959904023113
+          }
+        },
+        {
+          "post_id": "565854345401737216",
+          "probabilities": {
+            "negative": 0.12772714782103523,
+            "neutral": 0.8307919774358397,
+            "positive": 0.04148087474312509
+          }
+        },
+        {
+          "post_id": "565906887443767298",
+          "probabilities": {
+            "negative": 0.07634329198520007,
+            "neutral": 0.5756310663453287,
+            "positive": 0.3480256416694713
+          }
+        },
+        {
+          "post_id": "566228099797229568",
+          "probabilities": {
+            "negative": 0.002131930385690787,
+            "neutral": 0.019245484325229423,
+            "positive": 0.9786225852890797
+          }
+        },
+        {
+          "post_id": "566257506092318721",
+          "probabilities": {
+            "negative": 0.011768581321535482,
+            "neutral": 0.10566581825950488,
+            "positive": 0.8825656004189597
+          }
+        },
+        {
+          "post_id": "566270940452245504",
+          "probabilities": {
+            "negative": 0.0069559110362313655,
+            "neutral": 0.9313323543555166,
+            "positive": 0.061711734608251925
+          }
+        },
+        {
+          "post_id": "566341933220372481",
+          "probabilities": {
+            "negative": 0.061228623222833456,
+            "neutral": 0.7711861949702343,
+            "positive": 0.16758518180693213
+          }
+        },
+        {
+          "post_id": "566408899482628097",
+          "probabilities": {
+            "negative": 0.006747383833857102,
+            "neutral": 0.6599446622082782,
+            "positive": 0.3333079539578647
+          }
+        },
+        {
+          "post_id": "567030285632409601",
+          "probabilities": {
+            "negative": 0.0036361936749821394,
+            "neutral": 0.06661277021571971,
+            "positive": 0.9297510361092982
+          }
+        },
+        {
+          "post_id": "567085142909669377",
+          "probabilities": {
+            "negative": 0.0028323491821896562,
+            "neutral": 0.16238596754548945,
+            "positive": 0.8347816832723208
+          }
+        },
+        {
+          "post_id": "567345625961103360",
+          "probabilities": {
+            "negative": 0.012502051849562455,
+            "neutral": 0.7822715459137298,
+            "positive": 0.20522640223670774
+          }
+        },
+        {
+          "post_id": "567653454332825600",
+          "probabilities": {
+            "negative": 0.01099913863472815,
+            "neutral": 0.827747063500385,
+            "positive": 0.161253797864887
+          }
+        },
+        {
+          "post_id": "567822635800764417",
+          "probabilities": {
+            "negative": 0.004858441763574181,
+            "neutral": 0.5514681698493898,
+            "positive": 0.44367338838703607
+          }
+        },
+        {
+          "post_id": "568736557852549120",
+          "probabilities": {
+            "negative": 0.0066530251636957435,
+            "neutral": 0.7718097362154492,
+            "positive": 0.22153723862085506
+          }
+        },
+        {
+          "post_id": "568938769442869249",
+          "probabilities": {
+            "negative": 0.510983161799801,
+            "neutral": 0.261669933758405,
+            "positive": 0.22734690444179398
+          }
+        },
+        {
+          "post_id": "569844202235949056",
+          "probabilities": {
+            "negative": 0.0039494174044242365,
+            "neutral": 0.17088107784866938,
+            "positive": 0.8251695047469063
+          }
+        },
+        {
+          "post_id": "570029183616851970",
+          "probabilities": {
+            "negative": 0.008167718787138725,
+            "neutral": 0.6349485592105362,
+            "positive": 0.35688372200232515
+          }
+        },
+        {
+          "post_id": "570211539354984449",
+          "probabilities": {
+            "negative": 0.004367780527172025,
+            "neutral": 0.402172520948013,
+            "positive": 0.593459698524815
+          }
+        }
+      ]
+    }
+  ],
+  "limitation": "A small held-out sentiment selection study does not establish equity-return prediction, significance, suitability or deployment readiness.",
+  "receipt_protocol": "mideval-social-receipt-gate-v4",
+  "receipt_plan_sha256": "bb74116d65167a7240e456ec8d1be7c9ad6d5fffc3de9faf0f41c4254a4259e1",
+  "execution_kind": "receipt_bound_local_study",
+  "independently_authenticated_execution": false
+}

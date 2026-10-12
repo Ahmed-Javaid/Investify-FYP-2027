@@ -49,6 +49,19 @@ def expected_labels(model_id):
     return ORIGINAL_LABELS.get(model_id, {'0': 'negative', '1': 'neutral', '2': 'positive'})
 
 
+def normalize_loading_info(info):
+    """Preserve every diagnostic while adapting Transformers set containers."""
+    if not isinstance(info, dict) or any(key not in info for key in LOADING_FIELDS):
+        raise ValueError('Complete actual checkpoint loading diagnostics are required')
+    normalized = {}
+    for key in LOADING_FIELDS:
+        values = info[key]
+        if not isinstance(values, (list, tuple, set, frozenset)):
+            raise ValueError('Loading diagnostic fields must be explicit collections')
+        normalized[key] = sorted(values, key=repr) if isinstance(values, (set, frozenset)) else list(values)
+    return normalized
+
+
 def validate_class_metadata(config, loading_info, labels, mapping):
     """Stricter V4-only semantics; the source-bound V3 validator stays intact."""
     id2label = getattr(config, 'id2label', None)
@@ -79,6 +92,70 @@ def validate_original_config(snapshot, manifest, mapping):
     return labels
 
 
+CARDIFF_MODEL_ID = 'cardiffnlp/twitter-roberta-base-sentiment-latest'
+CARDIFF_POOLER_KEYS = ('roberta.pooler.dense.weight', 'roberta.pooler.dense.bias')
+
+
+def original_cardiff_model_class():
+    """Retain the publisher's unused native pooler without changing the head."""
+    from transformers.models.roberta.modeling_roberta import RobertaForSequenceClassification, RobertaPooler
+
+    class OriginalCardiffClassifier(RobertaForSequenceClassification):
+        def __init__(self, config):
+            super().__init__(config)
+            self.roberta.pooler = RobertaPooler(config)
+
+    return OriginalCardiffClassifier
+
+
+def preserve_cardiff_pooler(model, tokenizer, snapshot, torch):
+    """Prove original pooler bytes loaded and that they do not affect logits."""
+    from safetensors import safe_open
+    parameter_hashes = {}
+    state = model.state_dict()
+    with safe_open(str(Path(snapshot) / 'model.safetensors'), framework='pt', device='cpu') as original:
+        for key in CARDIFF_POOLER_KEYS:
+            value = original.get_tensor(key)
+            if key not in state or not torch.equal(state[key].detach().cpu(), value):
+                raise ValueError('Original Cardiff pooler tensor was not loaded exactly')
+            parameter_hashes[key] = hashlib.sha256(value.contiguous().numpy().tobytes()).hexdigest()
+    text = 'A company reported its quarterly results.'
+    encoded = tokenizer(text, return_tensors='pt', truncation=True, max_length=128)
+    with torch.inference_mode():
+        retained = model(**encoded).logits.detach().cpu()
+        pooler = model.roberta.pooler
+        try:
+            model.roberta.pooler = None
+            without = model(**encoded).logits.detach().cpu()
+        finally:
+            model.roberta.pooler = pooler
+    if not torch.equal(retained, without):
+        raise ValueError('Retaining the original pooler changed classification logits')
+    return {'policy': 'retain_original_unused_native_pooler',
+            'retained_parameter_keys': list(CARDIFF_POOLER_KEYS),
+            'retained_parameter_raw_sha256': parameter_hashes,
+            'probe_kind': 'fixed_loader_parity_fixture_not_reference_scoring',
+            'probe_text_sha256': hashlib.sha256(text.encode()).hexdigest(),
+            'with_pooler_logits': retained[0].tolist(), 'without_pooler_logits': without[0].tolist(),
+            'logits_bitwise_equal': True}
+
+
+def validate_pooler_preservation(value):
+    if (not isinstance(value, dict) or value.get('policy') != 'retain_original_unused_native_pooler'
+            or value.get('retained_parameter_keys') != list(CARDIFF_POOLER_KEYS)
+            or value.get('probe_kind') != 'fixed_loader_parity_fixture_not_reference_scoring'
+            or value.get('logits_bitwise_equal') is not True
+            or not re.fullmatch('[0-9a-f]{64}', value.get('probe_text_sha256', ''))):
+        raise ValueError('Original Cardiff pooler preservation and exact logit parity are required')
+    hashes = value.get('retained_parameter_raw_sha256', {})
+    left, right = value.get('with_pooler_logits'), value.get('without_pooler_logits')
+    if (not isinstance(hashes, dict) or set(hashes) != set(CARDIFF_POOLER_KEYS)
+            or any(not re.fullmatch('[0-9a-f]{64}', item) for item in hashes.values())
+            or not isinstance(left, list) or not isinstance(right, list) or len(left) != 3 or left != right
+            or any(type(item) not in (int, float) or not math.isfinite(item) for item in left + right)):
+        raise ValueError('Cardiff pooler hashes and parity logits are incomplete or inconsistent')
+
+
 class ReceiptClassifier(LocalClassifier):
     """Actual V4 loader retaining complete semantics/runtime/loading metadata."""
     def __init__(self, snapshot, manifest, spec, verification):
@@ -92,12 +169,16 @@ class ReceiptClassifier(LocalClassifier):
         self.tokenizer = transformers.AutoTokenizer.from_pretrained(str(snapshot), **common, use_fast=True)
         if getattr(self.tokenizer, 'is_fast', False) is not True:
             raise ValueError('The declared fast original tokenizer policy was not loaded')
-        self.model, info = transformers.AutoModelForSequenceClassification.from_pretrained(
+        model_class = original_cardiff_model_class() if manifest['model_id'] == CARDIFF_MODEL_ID else transformers.AutoModelForSequenceClassification
+        self.model, info = model_class.from_pretrained(
             str(snapshot), **common, use_safetensors=True, output_loading_info=True,
             ignore_mismatched_sizes=False, attn_implementation='eager')
+        raw_container_types = {key: type(info.get(key)).__name__ for key in LOADING_FIELDS}
+        info = normalize_loading_info(info)
         validate_class_metadata(self.model.config, info, labels, spec['label_mapping'])
         self.model.to('cpu')
         self.model.eval()
+        pooler = preserve_cardiff_pooler(self.model, self.tokenizer, snapshot, torch) if manifest['model_id'] == CARDIFF_MODEL_ID else None
         self.torch = torch
         self.metadata = {'backend_kind': 'transformers_local_v4', 'python': platform.python_version(),
                          'torch': torch.__version__, 'transformers': transformers.__version__,
@@ -107,6 +188,8 @@ class ReceiptClassifier(LocalClassifier):
                          'observed_file_bytes': verification['observed_file_bytes'],
                          'id2label': labels, 'label2id': {value: int(key) for key, value in labels.items()},
                          'num_labels': 3, 'loading_info': {key: list(info[key]) for key in LOADING_FIELDS},
+                         'loading_info_container_types': raw_container_types,
+                         'pooler_preservation': pooler,
                          'local_files_only': True, 'trust_remote_code': False, 'use_safetensors': True,
                          'tokenizer_use_fast': True, 'attn_implementation': 'eager',
                          'device': 'cpu', 'head_weights_complete': True}
@@ -125,6 +208,8 @@ def validate_backend_metadata(backend, manifest, verification, mapping):
                    (('local_files_only', True), ('trust_remote_code', False), ('use_safetensors', True),
                     ('tokenizer_use_fast', True), ('head_weights_complete', True)))):
         raise ValueError('Complete actual local loader/runtime and publisher-file provenance are required')
+    if manifest['model_id'] == CARDIFF_MODEL_ID:
+        validate_pooler_preservation(backend.get('pooler_preservation'))
     validate_class_metadata(SimpleNamespace(num_labels=backend.get('num_labels'), id2label=backend.get('id2label'),
                            label2id=backend.get('label2id')), backend.get('loading_info'),
                             expected_labels(manifest['model_id']), mapping)

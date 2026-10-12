@@ -1,7 +1,7 @@
 {
   "title": "Investify: FYP-1 mid evaluation",
-  "status": "Fresh real Alpaca science and calibration findings incorporated; institutional PPTX export/render and genuine team review remain pending.",
-  "date_prepared": "2026-10-12",
+  "status": "Fresh science, original classifier comparison, compiled working report and guided demo incorporated; PPTX export/render and genuine rehearsal/review remain pending.",
+  "date_prepared": "2026-10-13",
   "assessment_date": null,
   "team": [
     "Ahmed Javaid (22I-2530)",
@@ -17,7 +17,7 @@
         "FYP-1 mid-evaluation working draft",
         "Educational equity decisions with recorded evidence and checked explanations"
       ],
-      "speaker_notes": "Introduce the team and supervisor. The preparation date is 12 October 2026, not a confirmed assessment date. Present the actual implementation and disclose the historical model limitation.",
+      "speaker_notes": "Introduce the team and supervisor. The preparation date is 13 October 2026, not a confirmed assessment date. Present the actual implementation and disclose the historical model limitation.",
       "sources": [
         "planning/CHECKPOINT.md",
         "sources/PROJECT_STATUS.md"
@@ -269,23 +269,24 @@
     {
       "title": "Live demonstration",
       "body": [
-        "Select a corpus/session and inspect technical/news evidence.",
-        "Show rejection and fallback for wrong prose beside correct JSON.",
-        "Request the complete guided explanation and show actual model/fallback status.",
-        "Complete the prototype profile and compare separate blends on a held-out date."
+        "Start here: a guided six-minute route with next/previous navigation.",
+        "Profile + decision: explicit fictional examples change the separate blend; the saved classifier stays fixed.",
+        "Evidence: inspect one technical and one news feature.",
+        "Explanation + verification: wrong visible probability beside correct JSON is rejected; verified fallback is shown.",
+        "Leakage, Social and Teacher views replay actual experiments with their limitations."
       ],
-      "speaker_notes": "Start the portable server before the presentation and use its printed loopback URL. The current default has no configured LLM, so its guided result is explicitly deterministic. Use real generation only after model access is restored and its results are recorded. The Leakage Lab optional labelled feature check runs nine checks and detects four centred mutations without fitting a classifier. Keep its synthetic-fixture scope visible. Show the separate completed fresh experiment and its actual canary chart alongside the historical-record UI; this does not turn its fixture button into a model run. For portable recovery, show Retry selected record, Refresh sources and Retry profile questions if a dependency fails. Source refresh keeps a still-available selection; accepted empty sources remove stale records/reports. Profile retry requires new explicit answers. Verification returns a candidate rejection and verified fallback separately; its successful checking operation uses HTTP 200. The numeric verification fallback and complete guided comparator have distinct coverage.",
+      "speaker_notes": "Launch the current Streamlit guide with tools/start_guided_demo.ps1; this session uses localhost:8507. Keep Fresh Alpaca frozen and 2023-12-21. Example cautious gives R=0/Hold; higher tolerance gives R=1/Sell in the separate comparator, while the classifier remains Buy. These are fictional demonstration answers. Open the Evidence stage, then Explanation + verification. With no LLM configured, Explain selected record is deterministic. Corrupt visible probability beside correct JSON to show rejection and the separate checked fallback. Next opens the fresh leakage readouts, then the recorded 24-post original-classifier comparison and six-example teacher pilot. Opening a research view does not train or infer a model. Optional causality checks are explicitly synthetic fixtures. Browser/projector review and genuine rehearsal have not happened.",
       "sources": [
-        "code/scripts/serve_mideval_demo.py",
-        "code/docs/mideval_increment.md",
         "deliverables/DEMO_AND_DEFENCE_GUIDE.md",
-        "code/tests/test_demo_handlers.mjs"
+        "code/app/demo_flow.py",
+        "code/app/streamlit_app.py",
+        "evidence/guided_demo_ui_tests_20261013_run02.xml"
       ]
     },
     {
       "title": "Remaining work",
       "body": [
-        "Complete original-publisher social candidate acquisition/comparison and configured LLM evaluation.",
+        "Agree social-model acceptance criteria, review the exploratory comparison and preserve the news-only core until integration is justified.",
         "Review the completed fresh science; preserve weak prediction/all-Buy findings and study calibration using development data only.",
         "Evaluate real generations on the frozen chronological selection.",
         "Run candidate inference against the frozen AI references and review profile/blend semantics.",
@@ -299,49 +300,35 @@
       ]
     },
     {
-      "title": "AI sentiment reference pilot",
+      "title": "Original sentiment comparison",
       "table": {
         "columns": [
-          "Reference",
-          "Usable posts",
-          "Held out"
+          "Original candidate",
+          "Macro-F1 agreement",
+          "Exact agreement"
         ],
         "rows": [
           [
-            "Positive",
-            "31",
-            "7"
+            "CryptoBERT",
+            "0.2564",
+            "15/24"
           ],
           [
-            "Neutral",
-            "67",
-            "15"
-          ],
-          [
-            "Negative",
-            "19",
-            "2"
-          ],
-          [
-            "Total",
-            "117",
-            "24"
+            "Cardiff",
+            "0.6016",
+            "16/24"
           ]
         ]
       },
       "body": [
-        "200 real MSFT tweets; 83 explicit exclusions.",
-        "One AI pass; independent human validation unmeasured.",
-        "Candidate inference pending; no model-quality score.",
-        "Development-majority neutral reference comparator: 15/24 agreement, macro-F1 0.256410; candidate inference remains pending."
+        "Both original candidates complete the same 24 frozen MSFT posts.",
+        "CryptoBERT predicts only neutral. Cardiff leads this exploratory benchmark.",
+        "AI-reference agreement, with only two negative examples. Final deployment selection remains open."
       ],
-      "speaker_notes": "Sampling was amended from unavailable NVDA to MSFT before acquiring tweet contents. StockNet source revision and original Git blobs are retained. Exact session model identity is configuration-declared, not provider-authenticated. The 24 held-out references include only two negatives and may overlap public pretraining. These labels cannot establish NVDA transfer or return prediction. Candidate weights/runtime are unavailable. The proposal action register still has open items. One held-out prediction changes exact agreement by 4.17 points; negative recall moves in 50-point increments. Token-similarity screening flags zero pairs under the declared heuristic, which does not establish independence.",
+      "speaker_notes": "117 usable AI references come from 200 real posts, with 83 exclusions and a frozen 93/24 split. The labels are not independently human validated; one held-out prediction changes agreement by 4.17 points and negative recall by 50 points. Original publisher bytes are verified. Lossless Cardiff serialization preserves all keys, dtypes, shapes and raw bytes; its native unused pooler has exact logit parity. No predeclared adequacy threshold exists, so the deployment choice stays unset. These results do not establish NVDA transfer or return prediction.",
       "sources": [
-        "deliverables/AI_SENTIMENT_PILOT.md",
-        "evidence/social_pilot/annotation_freeze_receipt.json",
-        "https://github.com/yumoxu/stocknet-dataset",
-        "https://aclanthology.org/P18-1183/",
-        "evidence/reference_evaluability_20261012.json"
+        "evidence/social_study_review_20261013.json",
+        "code/artifacts/mid_eval/social_study_20261013_run02/comparison/comparison.json"
       ]
     }
   ]

@@ -27,9 +27,9 @@ MID-FR-11 & Check every feature's value, SHAP magnitude/direction/target, family
 MID-FR-12 & Require all profile answers; expose capacity/tolerance reconciliation and matched/binding project caps. & Implemented prototype\\
 MID-FR-13 & Fit comparator scaling on earlier development rows; refuse development-session decisions and missing technical inputs. & Implemented\\
 MID-FR-14 & Show the profile-dependent blend beside a fixed reference, preserving saved classifier probabilities and disclosing unvalidated assumptions. & Implemented prototype\\
-MID-FR-15 & Validate social-post provenance, declared AI or human initial labels and annotation provenance, adjudication/exclusions and a frozen chronological study plan. & AI reference pilot frozen; candidate inference pending\\
-MID-FR-16 & Require matching code/data/checkpoint/preprocessing and complete paired held-out outputs for sentiment comparison; preserve failures/raw runs. & Tool tested; real study pending\\
-MID-FR-17 & Run a declared social classifier only from existing local weights with explicit class/text/token mapping; retain logits, truncation and failures. & Runner fixture-tested; real load pending\\
+MID-FR-15 & Validate social-post provenance, declared AI or human initial labels and annotation provenance, adjudication/exclusions and a frozen chronological study plan. & Frozen AI reference; paired runs recorded\\
+MID-FR-16 & Require matching code/data/checkpoint/preprocessing and complete paired held-out outputs for sentiment comparison; preserve failures/raw runs. & Actual paired study; review pending\\
+MID-FR-17 & Run a declared social classifier only from existing local weights with explicit class/text/token mapping; retain logits, truncation and failures. & Both original classifiers executed\\
 MID-FR-18 & Retain actual teacher prose and provenance; verify it independently of assembled JSON; exclude test dates and export training/validation separately. & Six-example construction pilot; student pending\\
 \bottomrule
 \end{longtable}
@@ -50,8 +50,8 @@ The local adapter's 20-second default socket timeout, configurable upper bound a
 
 \begin{longtable}{p{0.15\textwidth}p{0.51\textwidth}p{0.23\textwidth}}
 \toprule Scoped ID & Testable increment acceptance & Evidence/status\\\midrule
-MID-NFR-01 & Preserve rejected-candidate reporting and verify fallback independently. & Verifier/emission/HTTP regressions\\
-MID-NFR-02 & Show explicit unavailable-data/refusal states without fabricated decisions or experiment results. & Record/readiness/widget tests\\
+MID-NFR-01 & Preserve rejected-candidate reporting and verify fallback independently. & Verifier, emission and HTTP regressions\\
+MID-NFR-02 & Show explicit unavailable-data/refusal states without fabricated decisions or experiment results. & Record, readiness and widget tests\\
 MID-NFR-03 & Local generator requests use loopback, bounded attempts/socket timeouts and retain failures. & Transport/adapter fixtures; whole deadline unmeasured\\
 MID-NFR-04 & Expose only declared local routes, reject malformed/nonfinite/oversized requests and redact credentials. & HTTP/transport tests; prototype scope\\
 MID-NFR-05 & Git-free delivery verifies included inventory and reports uncommitted identity explicitly. & Source/handover tests and archive receipts\\
