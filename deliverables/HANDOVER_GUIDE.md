@@ -1,5 +1,28 @@
 > Current workspace and document versions: [current status](../planning/CURRENT_STATUS.md). Work in `E:\Uni_Stuff\FYP\Investify`; old copies are in the parent `_archives`. Earlier dated sections below retain their original scope.
 
+## Verified current source review archive - 13 October 2026
+
+The [guided review ZIP](../deliverables/investify_mideval_guided_review_20261013.zip)
+contains **650 files** and identifies clean snapshot **309bc6e**. It includes
+the current guided UI, fresh scientific artifacts, original-classifier output
+bundles, dated receipts and the reviewed unsigned report. Publisher model
+weights, E: caches and ignored raw acquisition inputs remain external training/
+inference prerequisites; they are not represented as embedded dependencies.
+
+[Actual extraction verification](../evidence/guided_review_20261013_clean_host_verification.json)
+passes **165 portable tests, 62 live HTTP checks and 372 historical records**
+on the isolated standard-library host. Six teacher examples replay, and the
+frozen AI pilot is independently checked. No scientific/UI packages or model
+calls run on that clean host. The separate 28-check Streamlit scope remains its
+own evidence. The ZIP hash/inventory is verified and contains no local credential
+values or environment file. This is a private review bundle; third-party corpus
+is not approved for public redistribution.
+
+The archive certifies its own snapshot; these later handover notes are a separate
+documentation increment. Team contributions, institutional acceptance, browser/
+projector inspection and deck export/rehearsal remain open. The planning estimate
+is held at **85.75% (about 86%)** pending that genuine closure.
+
 ## Latest checkpoint - guided demo and reviewed report, 13 October 2026
 
 Planning completion is **85.75%, approximately 86%**; see the

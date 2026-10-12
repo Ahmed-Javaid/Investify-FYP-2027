@@ -1,0 +1,24 @@
+{
+  "schema": "investify-guided-handover-review-v1",
+  "checked_utc": "2026-10-12T22:14:02.162217+00:00",
+  "archive": "deliverables/investify_mideval_guided_review_20261013.zip",
+  "archive_sha256": "1754562c85537f6625700491441ecf9979302799f216c99a531f233af377208d",
+  "archive_bytes": 10114535,
+  "archive_files": 650,
+  "archive_commit": "309bc6e9d9924f80ee8f06ea0dda68512cbf5704",
+  "clean_host_receipt": "evidence/guided_review_20261013_clean_host_verification.json",
+  "portable_tests_passed": 165,
+  "live_checks_passed": 62,
+  "records_validated": 372,
+  "environment_files_in_archive": 0,
+  "local_credential_value_hits": 0,
+  "included_report_hash_verified": true,
+  "external_packages_present": {
+    "numpy": false,
+    "streamlit": false,
+    "torch": false,
+    "pytest": false
+  },
+  "streamlit_visual_review_performed": false,
+  "student_or_institutional_acceptance_claimed": false
+}

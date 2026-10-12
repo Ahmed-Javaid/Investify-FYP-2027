@@ -18,6 +18,8 @@ because browser/projector review, exported slides and genuine rehearsal remain.
 | Handover, repository and contributions | 5% | 70% | 3.50% |
 | Presentation, demo and defence | 5% | 55% | 2.75% |
 
+The later current source handover passes 165 portable tests, 62 live HTTP checks and 372 historical records on an isolated standard-library host. Its scoped archive/receipt does not add human-review credit; the estimate is held unchanged.
+
 This is a first-mid planning estimate, not an institutional grade or full-FYP
 completion. Negative model findings are preserved. No student review, training,
 university approval or successful remote CI is inferred from engineering tests.
@@ -28,7 +30,7 @@ One concrete route to **90.00%**, with science/UI/social estimates unchanged:
 | --- | ---: | ---: |
 | Confirm cover facts and complete genuine report review/applicable signatures | Report 95% | +1.00% |
 | Export/inspect slides, inspect browser/projector UI and rehearse the demo/defence | Presentation 90% | +1.75% |
-| Record real member contributions, create a matching current handover and resolve repository/CI expectations | Handover 90% | +1.00% |
+| Record real member contributions and resolve repository/CI expectations; the current source handover is now verified | Handover 90% | +1.00% |
 | Review committee responses with the team/supervisor and record genuine closure | Committee 90% | +0.50% |
 
 These are conditional planning judgements; creating files alone does not earn
