@@ -35,7 +35,15 @@ $alpaca = $report.results | Where-Object { $_.source -eq 'Alpaca/Benzinga' }
 if ($alpaca.status -eq 'response_received') {
     Write-Output 'Alpaca returned a response. Connectivity and access to this bounded news request are verified; full historical coverage is a separate check.'
 } elseif ($alpaca.status -eq 'http_error') {
-    Write-Output ('Alpaca returned HTTP ' + $alpaca.http_status + '. Network access now reaches the provider; check the matching authentication/access response in the Alpaca documentation.')
+    Write-Output ('Alpaca returned HTTP ' + $alpaca.http_status + '. Network access now reaches the provider.')
+    if ($alpaca.http_status -in @(401, 403)) {
+        Write-Output 'Next step for paper-account keys: run tools\check_alpaca_auth.ps1 in this terminal to compare paper-account and market-news access with the same pair.'
+    } else {
+        Write-Output 'Next step: check the provider status and response classification before retrying.'
+    }
+}
+if (@($report.results | Where-Object { $_.source -eq 'Yahoo Finance' -and $_.http_status -eq 429 }).Count -gt 0) {
+    Write-Output 'Yahoo throttled this request. Wait before retrying; use cached prices or a verified alternative provider as a separately identified new snapshot.'
 }
 if (-not $report.credentials.alpaca_pair_present) {
     Write-Output 'Next step: set both ALPACA_API_KEY and ALPACA_API_SECRET in the project code\.env, then rerun.'

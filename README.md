@@ -39,13 +39,21 @@ Open `http://127.0.0.1:8768`. This runs verification over saved historical decis
 
 Alpaca keys belong in Git-ignored `code/.env` as `ALPACA_API_KEY` and `ALPACA_API_SECRET`. The bounded acquisition tool now reads that file; inherited shell values take precedence. Never copy the keys into reports, bundles or chat.
 
-For the current network blocker, run [tools/check_market_access.ps1](tools/check_market_access.ps1)
+For provider access checks, run [tools/check_market_access.ps1](tools/check_market_access.ps1)
 from your normal PowerShell terminal. It preserves the existing network settings,
 stores a new dated result and suggests the next step. From this project folder:
 
 ```powershell
 .\tools\check_market_access.ps1
 ```
+
+The user's normal-terminal result reaches all providers: FNSPID metadata returns
+200, Yahoo returns 429 and Alpaca news returns 401. For the confirmed paper-account
+key pair, run `tools/check_alpaca_auth.ps1` in that terminal. It compares read-only
+paper-account access with news access, retains only statuses and gives the next
+step; account response details and credential values are discarded. Paper trading
+uses `paper-api.alpaca.markets`, while paper-account market data uses
+`data.alpaca.markets`, per [Alpaca authentication](https://docs.alpaca.markets/us/docs/authentication).
 
 ## Old material
 

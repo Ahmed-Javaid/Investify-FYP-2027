@@ -18,6 +18,8 @@ The local `.env` pair is detected and remains Git-ignored. [The new acquisition 
 
 ## Current documents and remaining work
 
+**Later host-terminal check:** [the user's normal-terminal receipt](../evidence/market_reacquisition_20261012/normal_terminal_20261012T140203797Z/probe.json) has no configured proxy and reaches all three providers: FNSPID metadata 200, Yahoo 429, Alpaca news 401. This establishes provider connectivity in that terminal; the agent session remains restricted. The FNSPID revision/file metadata is retained, not the full corpus. The user confirms the keys came from the paper account's API Keys tab. Use `tools/check_alpaca_auth.ps1` in the normal terminal to compare paper-account and news access with the same pair; both key validity and news access remain unresolved until that check. If the pair is rejected by both endpoints, recopy the matching active ID/secret or replace a revoked/lost pair in the paper dashboard. For Yahoo 429, delay retries and retain/cache successful fresh price snapshots.
+
 - Report: [../report/main.tex](../report/main.tex), editable institutional draft, not yet compiled or reviewed.
 - Slides: [../deliverables/presentation_outline.json](../deliverables/presentation_outline.json), current content and notes, no exported mid PPTX.
 - Requirements and demo: [document guide](../deliverables/README.md), current working write-ups.

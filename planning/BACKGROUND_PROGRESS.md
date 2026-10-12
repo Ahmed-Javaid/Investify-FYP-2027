@@ -2,6 +2,14 @@
 
 # Background continuation progress
 
+## Host connectivity and paper-key diagnostic - 12 October 2026
+
+The user ran `tools/check_market_access.ps1` in normal PowerShell. The retained `normal_terminal_20261012T140203797Z/probe.json` confirms no proxy and actual HTTP replies: FNSPID metadata 200, Yahoo 429, Alpaca news 401. This resolves connectivity for that terminal; it does not change the agent's restricted proxy. FNSPID metadata pins publisher revision/file identities but no full 23GB corpus was downloaded. No prices or news were acquired.
+
+The user confirms the key/secret originate in Profile settings -> Manage account -> Paper accounts -> API Keys, with paper trading base `https://paper-api.alpaca.markets/v2`. Official authentication documentation confirms paper market data uses `data.alpaca.markets`; the existing news host and header names are correct. Keys load from `.env`; validity/exact rejection cause remains unresolved. No credentials were displayed or altered.
+
+Prepared `tools/check_alpaca_auth.ps1` and its standard-library Python diagnostic for the user's normal terminal. It makes two read-only GETs to paper account and market news, discards raw account/news bodies, retains only sanitized statuses, and recommends next steps. Syntax, plan-only execution and six labelled response-classification cases pass; real diagnostic provider requests remain zero here. The generic market-check wrapper now suggests this specific check for 401/403 and delayed/cache-aware handling for Yahoo 429. Current status/handoff/README distinguish host results from agent network limits. `evidence/host_provider_access_review_20261012.json` binds the actual user receipt and diagnostic scope. Readiness remains unchanged and actual scientific/candidate runs are still pending.
+
 ## Folder clarity and local credential recovery - 12 October 2026
 
 Current continuation observed the preceding coordinator as `notLoaded` with its latest turn interrupted, then took over the integrated project. The user requested clearer folder/document organization. Root now contains only `Investify`, `_archives` and `START_HERE.txt`. Seventeen entries/877 files were moved into `_archives/workspaces/GPT_MIDEVAL` and `_archives/legacy_fyp_20261012`; before/after sizes and hashes all match. The existing pre-merge ZIP and original source checkout remain unchanged. The unchanged protected-original manifest is checked through an explicit relocation receipt: all 224 originals pass, including 65 now archived.
