@@ -65,8 +65,40 @@ def probe(specification):
         else:
             row.update(status='response_received', response_sha256=hashlib.sha256(body).hexdigest(), raw_bytes=body)
     except HTTPError as error:
+        # Status alone cannot distinguish provider authentication/policy failures.
+        # Keep only bounded diagnostic fields, redacting credentials before output.
+        diagnostic = {}
+        try:
+            raw_error = error.read(8193)
+            diagnostic['body_truncated'] = len(raw_error) > 8192
+            error_text = raw_error[:8192].decode('utf-8', errors='replace')
+            for name, value in specification.get('headers', {}).items():
+                if name.upper() in ('APCA-API-KEY-ID', 'APCA-API-SECRET-KEY', 'AUTHORIZATION') and value:
+                    error_text = error_text.replace(value, '[REDACTED]')
+            try:
+                error_payload = json.loads(error_text)
+            except ValueError:
+                error_payload = None
+            if isinstance(error_payload, dict):
+                for name in ('code', 'message', 'error', 'error_description'):
+                    value = error_payload.get(name)
+                    if isinstance(value, (str, int, float)):
+                        diagnostic[name] = str(value)[:1024]
+            else:
+                diagnostic['message'] = error_text[:1024]
+            if error.headers:
+                for header, name in (('X-Request-ID', 'request_id'), ('Retry-After', 'retry_after')):
+                    value = error.headers.get(header)
+                    if value:
+                        for secret_name, secret in specification.get('headers', {}).items():
+                            if secret_name.upper() in ('APCA-API-KEY-ID', 'APCA-API-SECRET-KEY', 'AUTHORIZATION') and secret:
+                                value = value.replace(secret, '[REDACTED]')
+                        diagnostic[name] = value[:128]
+        except (OSError, ValueError):
+            diagnostic['body_read_failed'] = True
         row.update(status='http_error', http_status=error.code,
-                   error_type=type(error).__name__, detail='Provider rejected the normal inherited-network request')
+                   error_type=type(error).__name__, provider_diagnostic=diagnostic,
+                   detail='Provider rejected the normal inherited-network request')
     except (URLError, OSError, TimeoutError) as error:
         reason = getattr(error, 'reason', error)
         row.update(status='connection_failed', error_type=type(error).__name__, reason_type=type(reason).__name__,

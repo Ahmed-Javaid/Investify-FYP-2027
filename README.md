@@ -55,6 +55,14 @@ step; account response details and credential values are discarded. Paper tradin
 uses `paper-api.alpaca.markets`, while paper-account market data uses
 `data.alpaca.markets`, per [Alpaca authentication](https://docs.alpaca.markets/us/docs/authentication).
 
+FNSPID recovery is independent of Alpaca: `tools/acquire_fnspid.ps1` checks at
+most 1 MiB of the actual publisher CSV; `-Full` downloads/verifies the 23.2 GB
+file in E: cache and extracts a new ticker subset. This restores the original
+NVDA baseline only. The original probe found missing AAPL/TSLA years, sparse
+NVDA daily coverage and about 99.78% midnight-defaulted NVDA timestamps.
+FNSPID cannot replace Alpaca/Benzinga for the publication-timing experiment.
+See [the recorded original-source review](evidence/fnspid_source_review_20261012.json).
+
 ## Old material
 
 The former `GPT_MIDEVAL` workspace is now [../_archives/workspaces/GPT_MIDEVAL](../_archives/workspaces/GPT_MIDEVAL/). The older loose FYP files are in [../_archives/legacy_fyp_20261012](../_archives/legacy_fyp_20261012/). All 877 moved files retain their sizes and SHA256 hashes. [The archive index](../_archives/ARCHIVE_INDEX.txt) explains the backups.

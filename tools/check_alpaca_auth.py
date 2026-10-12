@@ -23,7 +23,7 @@ def interpretation(results):
     if any(row['status'] == 'connection_failed' for row in results):
         return 'network_prevents_complete_diagnosis', 'Run in normal network-enabled PowerShell. Check its expected proxy/VPN configuration if connections also fail there.'
     if all(row.get('http_status') in (401, 403) for row in results):
-        return 'credentials_or_account_rejected', 'Recopy the active key ID and matching secret from the same paper-account API Keys generation into code/.env. If the secret is unavailable or that pair was revoked/reset, generate a replacement pair in that account and update code/.env. If a confirmed active pair still fails, contact Alpaca support with the endpoint/status and no secret.'
+        return 'credentials_or_account_rejected', 'Review the redacted provider error code/message and request ID. Audit parsing, endpoint and request headers against an independent client before changing credentials. Continue the original NVDA FNSPID baseline independently; it does not replace the precise-timestamp experiment.'
     return 'provider_responses_need_review', 'Review both endpoint statuses. Rate limits or provider failures require a delayed retry; an authentication rejection requires checking the matching key pair/account.'
 
 
@@ -56,7 +56,7 @@ def main():
     for row in raw_results:
         # Even successful account/news response bytes are discarded, not written to a receipt.
         row.pop('raw_bytes', None)
-        keep = ('source', 'url', 'status', 'http_status', 'winerror', 'elapsed_seconds')
+        keep = ('source', 'url', 'status', 'http_status', 'winerror', 'elapsed_seconds', 'provider_diagnostic')
         results.append({key: row[key] for key in keep if key in row})
     status, next_step = interpretation(results)
     report = {'schema': 'investify-paper-news-auth-diagnosis-v1',

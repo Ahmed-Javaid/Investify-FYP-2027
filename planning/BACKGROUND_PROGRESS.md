@@ -2,6 +2,14 @@
 
 # Background continuation progress
 
+## Original FNSPID limitations and diagnostic correction - 12 October 2026
+
+The user rejected repeated key-replacement advice and asked to try the other news source, then explicitly requested the original repo README's explanation of FNSPID gaps. Re-read the untouched original README, POC_REPORT and Phase 0/1/Alpaca reports. FNSPID's smaller CSV stops June2020; its larger file misses AAPL2018/2019/2021 and TSLA2018/2021. NVDA has every target year, but sparse daily coverage; the original run had303/1509 price bars without attached sentiment. Only26/11708 usable NVDA headlines had genuine time-of-day. Alpaca/Benzinga was introduced to make the timing experiment measurable. FNSPID is suitable for restoring the original NVDA baseline with declared limits; it is not a complete substitute for the precise-timestamp experiment. Historical metrics remain unrerun.
+
+Audited actual local parsing/prepared headers without outputting credential values: both exactly match their local source lines. This does not establish the cause of401. A concrete diagnostic weakness was fixed: HTTPError bodies were previously discarded. The shared probe now retains bounded code/message/request-ID/retry-after fields, with credential redaction before output. A mocked401 containing labelled secret fixtures proves those values are removed. The auth helper no longer jumps directly from401/403 to key rotation.
+
+Prepared standard-library `tools/acquire_fnspid.ps1`/Python acquisition independently of Alpaca. Default access check caps actual publisher CSV bytes at1MiB; full mode explicitly downloads the23.2GB immutable publisher CSV into E:Cache with resumable exact-offset transfers and full SHA256 verification, then extracts a new AAPL/NVDA/TSLA raw snapshot with year/midnight audits. No historical paths are overwritten and precise-time quality is never claimed. Multiline/truncated/schema/date/redaction fixtures and plan-only invocation pass; actual CSV bytes acquired remain zero due the restricted agent network. The user's normal terminal is the demonstrated network-capable execution location. The source-review receipt binds original files/findings; originals and frozen code remain unchanged. No readiness credit or scientific result is added.
+
 ## Host connectivity and paper-key diagnostic - 12 October 2026
 
 The user ran `tools/check_market_access.ps1` in normal PowerShell. The retained `normal_terminal_20261012T140203797Z/probe.json` confirms no proxy and actual HTTP replies: FNSPID metadata 200, Yahoo 429, Alpaca news 401. This resolves connectivity for that terminal; it does not change the agent's restricted proxy. FNSPID metadata pins publisher revision/file identities but no full 23GB corpus was downloaded. No prices or news were acquired.

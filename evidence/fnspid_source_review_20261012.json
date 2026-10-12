@@ -1,0 +1,69 @@
+{
+  "schema": "investify-original-fnspid-review-v1",
+  "checked_utc": "2026-10-12T14:42:59.278461+00:00",
+  "original_repo": "E:\\Uni_Stuff\\investify_repo",
+  "sources_sha256": {
+    "README.md": "4f1f0280c395a5e4d3a5c470792229d548dbe5085a4fc4ca3f6bccd960913ce7",
+    "POC_REPORT.md": "642ad9288ca8381a34500dedf06d9254b982be6c1a09a1c83c709d3bf29aca53",
+    "artifacts/phase0_report.md": "95fd3fdd78860885e7bcbc8470c1185af9fa750e218cb2f3502dc5395be0c39b",
+    "artifacts/phase1_report.md": "3b35a3b39a72446d1bfd8b7977e4b90fcac43a2127f44aa60701ee761ebf6d6d",
+    "artifacts/alpaca_probe_report.md": "f6cdf27d09acbae46e3d35466028b92149c5a8729ecb3c925fd2c5b1b5d169a7"
+  },
+  "historical_findings": {
+    "smaller_csv_stops": "2020-06-10",
+    "larger_csv_missing_years": {
+      "AAPL": [
+        2018,
+        2019,
+        2021
+      ],
+      "TSLA": [
+        2018,
+        2021
+      ]
+    },
+    "nvda_all_target_years_present": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "nvda_usable_headlines": 11708,
+    "nvda_non_midnight_headlines": 26,
+    "price_bars": 1509,
+    "price_bars_without_attached_sentiment": 303,
+    "alpaca_added_for": "Publication-timing resolution; FNSPID lacks the resolution for the same-bar/next-session experiment"
+  },
+  "decision": "Restore original NVDA FNSPID baseline independently; retain need for a validated precise-timestamp corpus",
+  "frozen_historical_metrics_rerun": false,
+  "credential_audit": {
+    "local_line_matches_parser": true,
+    "prepared_urllib_headers_match_values": true,
+    "credential_values_logged": false,
+    "root_cause_of_401_established": false
+  },
+  "diagnostic_repair": "HTTP failure retains bounded provider message/code/request ID with credential redaction",
+  "acquisition_prepared": "tools/acquire_fnspid.ps1",
+  "acquisition_mode_executed": "plan_only",
+  "actual_csv_bytes_acquired": 0,
+  "fixture_checks": [
+    "multiline_quoted_csv",
+    "truncated_quoted_record_exclusion",
+    "truncated_unquoted_record_exclusion",
+    "schema_validation",
+    "year_and_midnight_counts",
+    "provider_error_credential_redaction"
+  ],
+  "fixture_checks_passed": true,
+  "bounded_cache_search": {
+    "roots": [
+      "E:/AI-Tools/Cache",
+      "E:/AI-Tools/Work",
+      "E:\\Uni_Stuff\\investify_repo"
+    ],
+    "matching_old_news_cache_found": false,
+    "exhaustive_disk_search": false
+  }
+}
