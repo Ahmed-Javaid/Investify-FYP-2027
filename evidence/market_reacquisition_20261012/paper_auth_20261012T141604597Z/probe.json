@@ -1,0 +1,30 @@
+{
+  "schema": "investify-paper-news-auth-diagnosis-v1",
+  "checked_utc": "2026-10-12T14:16:05.605270+00:00",
+  "credential_sources": {
+    "ALPACA_API_KEY": "local_env_file",
+    "ALPACA_API_SECRET": "local_env_file"
+  },
+  "credential_values_recorded": false,
+  "account_data_saved": false,
+  "requests_executed": 2,
+  "results": [
+    {
+      "source": "Paper account",
+      "url": "https://paper-api.alpaca.markets/v2/account",
+      "status": "http_error",
+      "http_status": 401,
+      "elapsed_seconds": 0.86
+    },
+    {
+      "source": "Market news",
+      "url": "https://data.alpaca.markets/v1beta1/news?symbols=NVDA&limit=1&include_content=false",
+      "status": "http_error",
+      "http_status": 401,
+      "elapsed_seconds": 0.875
+    }
+  ],
+  "status": "credentials_or_account_rejected",
+  "next_step": "Recopy the active key ID and matching secret from the same paper-account API Keys generation into code/.env. If the secret is unavailable or that pair was revoked/reset, generate a replacement pair in that account and update code/.env. If a confirmed active pair still fails, contact Alpaca support with the endpoint/status and no secret.",
+  "scope": "Two read-only provider requests. No trading, settings changes, raw account data, historical coverage or scientific run."
+}
