@@ -28,6 +28,7 @@ The last recorded readiness judgement is approximately **72%**, not the requeste
 ## Resume work
 
 1. Read `code/.env` locally for the declared Alpaca key pair through the acquisition tool; inherited environment values take precedence. Record new acquisition attempts separately from historical data.
+   The recommended connectivity check is `tools/check_market_access.ps1` in your normal PowerShell terminal. It uses the same provider requests and key handling, preserves network settings and saves a new dated result. If that terminal also fails, diagnose its expected proxy/VPN configuration and provider reachability; if Alpaca returns HTTP, use that response to investigate authentication/access separately.
 2. Restore genuine market/store/FinBERT inputs and the supported science runtime; run the existing recovery doctor before executing the pipeline.
 3. Restore original publisher candidate snapshots and complete the receipt-bound social comparison.
 4. Compile and inspect the institutional report, export/check the slides, and obtain genuine team review/contribution/rehearsal evidence.

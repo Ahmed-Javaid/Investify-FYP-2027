@@ -11,6 +11,12 @@ copies. Historical `code/CLAUDE.md`, old source briefs and archived handoffs
 describe the September spike; current user directions and this handoff govern
 the mid-evaluation continuation.
 
+When a blocker or hurdle appears, explain its cause and uncertainty, suggest
+concrete solutions, and recommend the next step. Continue independent authorized
+work while it is unresolved. If a step needs the user, provide the exact command
+or input needed instead of reporting the blocker alone. This is the user's
+standing preference for the continuation.
+
 Preserve original document bytes, frozen research inputs/labels/model
 identities, old ZIPs and dated verification receipts. Record fresh experiments
 under new identities. Engineering tests and fixtures do not establish actual
