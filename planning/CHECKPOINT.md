@@ -1,3 +1,7 @@
+Current continuation verification: 165 portable passes, 372 records, six teacher/117-reference replay and 62 HTTP checks on canonical port 8768. All 877 relocated files/224 protected originals/199 integrated code files retain their hashes. Local Alpaca keys are detected; all three declared providers still refuse connections before HTTP. See [current status](CURRENT_STATUS.md) and `../evidence/folder_cleanup_continuation_summary_20261012.json`. Earlier source/receipt snapshots below are retained.
+
+> Current workspace and document versions: [current status](CURRENT_STATUS.md). Work in `E:\Uni_Stuff\FYP\Investify`; old copies are in the parent `_archives`. Earlier dated sections below retain their original scope.
+
 # Investify mid evaluation checkpoint
 
 ## Active integrated workspace

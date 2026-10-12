@@ -1,5 +1,11 @@
 # Integrated Investify workspace
 
+Folder organization was clarified after integration. The old `GPT_MIDEVAL`
+copy is now `../_archives/workspaces/GPT_MIDEVAL`; earlier loose FYP material is
+`../_archives/legacy_fyp_20261012`. Their original bytes are preserved and checked
+through `evidence/workspace_reorganization_20261012.json`. Use [the current
+folder guide](README.md) and [document guide](deliverables/README.md).
+
 This is the active consolidated project at `E:\Uni_Stuff\FYP\Investify`.
 `code` contains the revised implementation; `report`, `deliverables`, `sources`,
 `evidence`, `planning` and `tools` retain its supporting material.

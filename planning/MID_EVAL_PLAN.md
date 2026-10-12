@@ -1,3 +1,5 @@
+> Current workspace and document versions: [current status](CURRENT_STATUS.md). Work in `E:\Uni_Stuff\FYP\Investify`; old copies are in the parent `_archives`. Earlier dated sections below retain their original scope.
+
 # Investify mid evaluation implementation plan
 
 ## Latest execution priorities - 12 October 2026

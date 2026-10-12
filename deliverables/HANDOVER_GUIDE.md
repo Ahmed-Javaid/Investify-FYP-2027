@@ -1,3 +1,5 @@
+> Current workspace and document versions: [current status](../planning/CURRENT_STATUS.md). Work in `E:\Uni_Stuff\FYP\Investify`; old copies are in the parent `_archives`. Earlier dated sections below retain their original scope.
+
 # Investify mid-evaluation working source handover
 
 ## Recovery review snapshot - 12 October 2026

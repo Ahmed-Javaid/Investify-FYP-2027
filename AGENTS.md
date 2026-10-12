@@ -1,0 +1,28 @@
+# Current Investify workspace
+
+Work in this consolidated repository. Start with `README.md`,
+`planning/CURRENT_STATUS.md`, `planning/HANDOFF_20261012.md` and
+`deliverables/README.md`. Code commands run from `code`; the Git root is here.
+
+The current report draft is `report/main.tex`; current mid-slide content is
+`deliverables/presentation_outline.json`. `sources` contains preserved reference
+documents, while `original_materials` and the parent `_archives` contain old
+copies. Historical `code/CLAUDE.md`, old source briefs and archived handoffs
+describe the September spike; current user directions and this handoff govern
+the mid-evaluation continuation.
+
+Preserve original document bytes, frozen research inputs/labels/model
+identities, old ZIPs and dated verification receipts. Record fresh experiments
+under new identities. Engineering tests and fixtures do not establish actual
+market performance, scientific reproduction, institutional review or student
+authorship. Do not change readiness weights to manufacture progress.
+
+Keep caches, temporary files and scratch under `E:\AI-Tools\Cache`, `Temp` and
+`Work`; deliverables belong here. Preserve existing Claude/Codex junctions and
+follow the user's storage/migration instructions. `code/.env` is local and
+Git-ignored; never print or package its credential values.
+
+The current assistant is teacher; Phi-3-mini is the planned student; Mistral is
+fallback. Use original publisher models. QLoRA remains later work. The previous
+native tasks and completed worker assignments are historical; do not restart
+them as competing writers or assume unattended execution is guaranteed.

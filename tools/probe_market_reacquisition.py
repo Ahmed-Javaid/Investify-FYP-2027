@@ -21,6 +21,33 @@ START = 1514764800  # 2018-01-01T00:00:00Z
 END = 1704067200  # 2024-01-01T00:00:00Z, exclusive
 
 
+def alpaca_credentials(environment, env_text):
+    """Read only the declared key pair; never log values or change the environment."""
+    names = ('ALPACA_API_KEY', 'ALPACA_API_SECRET')
+    values = {name: environment.get(name, '').strip() for name in names}
+    origins = {name: 'inherited_environment' if values[name] else 'missing' for name in names}
+    for line in env_text.splitlines():
+        line = line.strip()
+        if line.startswith('export '):
+            line = line[7:].lstrip()
+        name, separator, value = line.partition('=')
+        name = name.strip()
+        if not separator or name not in names or values[name]:
+            continue
+        value = value.strip()
+        if value.startswith(('"', "'")):
+            quote = value[0]
+            closing = value.find(quote, 1)
+            if closing < 0 or (value[closing + 1:].strip() and not value[closing + 1:].strip().startswith('#')):
+                raise ValueError('Malformed quoted Alpaca credential in local .env; values are not logged')
+            value = value[1:closing]
+        else:
+            value = value.partition(' #')[0].rstrip()
+        values[name] = value
+        origins[name] = 'local_env_file' if value else 'missing'
+    return values, origins
+
+
 def probe(specification):
     started = time.monotonic()
     row = {key: value for key, value in specification.items() if key != 'headers'}
@@ -57,9 +84,11 @@ def main():
     allowed = ROOT / 'evidence/market_reacquisition_20261012'
     if not output.is_relative_to(allowed) or output.exists():
         raise ValueError('Choose a new directory within evidence/market_reacquisition_20261012')
-    keys_present = bool(os.environ.get('ALPACA_API_KEY') and os.environ.get('ALPACA_API_SECRET'))
-    alpaca_headers = ({'APCA-API-KEY-ID': os.environ['ALPACA_API_KEY'],
-                       'APCA-API-SECRET-KEY': os.environ['ALPACA_API_SECRET']} if keys_present else {})
+    env_file = ROOT / 'code/.env'
+    credentials, origins = alpaca_credentials(os.environ, env_file.read_text(encoding='utf-8-sig') if env_file.is_file() else '')
+    keys_present = all(credentials.values())
+    alpaca_headers = ({'APCA-API-KEY-ID': credentials['ALPACA_API_KEY'],
+                       'APCA-API-SECRET-KEY': credentials['ALPACA_API_SECRET']} if keys_present else {})
     specifications = [
         {'source': 'Yahoo Finance', 'purpose': 'Bounded genuine NVDA daily-price snapshot request, not yfinance execution',
          'url': 'https://query1.finance.yahoo.com/v8/finance/chart/NVDA?' + urlencode(
@@ -105,7 +134,10 @@ def main():
               'source_script_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
               'declared_manifest_sha256': hashlib.sha256((ROOT / 'code/artifacts/corpus_manifest.json').read_bytes()).hexdigest(),
               'normal_configured_proxy_present': bool(getproxies()), 'routing_or_proxy_settings_changed': False,
-              'credentials': {'alpaca_inherited_environment_pair_present': keys_present, 'credential_values_recorded': False},
+              'credentials': {'alpaca_pair_present': keys_present,
+                              'alpaca_inherited_environment_pair_present': all(origin == 'inherited_environment' for origin in origins.values()),
+                              'credential_sources': origins, 'local_env_file_present': env_file.is_file(),
+                              'credential_values_recorded': False},
               'results': responses, 'large_corpus_transfer_attempted': False,
               'scope': 'Actual current bounded normal-network attempts. Source metadata/public response bytes are not '
                        'a historical reproduction, complete news acquisition, trained-model execution or scientific result.'}

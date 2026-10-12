@@ -1,4 +1,5 @@
 """Audit actual corpus/source/raw-label/freeze identities without generating data."""
+import argparse
 import hashlib
 import json
 import sys
@@ -17,6 +18,14 @@ from prepare_stocknet_pilot import prepare
 def read(path):
     return json.loads(path.read_text(encoding='utf-8'))
 
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--output', type=Path,
+                    default=ROOT / 'evidence/social_pilot/reference_evidence_verification.json')
+args = parser.parse_args()
+output = args.output.resolve()
+if not output.is_relative_to(ROOT / 'evidence'):
+    raise ValueError('AI-reference replay receipts must remain under project evidence')
 
 pilot = ROOT / 'evidence/social_pilot'
 source = ROOT / 'sources/stocknet'
@@ -54,5 +63,5 @@ report = {'checked_utc': datetime.now(timezone.utc).isoformat(), 'status': 'actu
           'actual_candidate_runs': len(read(ROOT / 'code/artifacts/mid_eval/social_model_runs.json')),
           'candidate_quality_metrics': None, 'independent_human_validation': False,
           'scope': 'Actual saved source/reference consistency audit, not independent verification of labels, serving-model identity, source rights or model performance.'}
-(pilot / 'reference_evidence_verification.json').write_text(json.dumps(report, indent=2, allow_nan=False), encoding='utf-8')
+output.write_text(json.dumps(report, indent=2, allow_nan=False), encoding='utf-8')
 print(f'Verified {len(corpus["posts"])} actual source posts, {len(usable)} usable AI references, source/raw-label/freeze identities; no candidate inference')

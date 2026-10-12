@@ -1,67 +1,48 @@
-# Investify mid evaluation workspace
+# Investify working project
 
-For the latest restart, read [the complete continuation handoff](planning/HANDOFF_20261012.md) and [next-chat prompt](planning/CONTINUATION_PROMPT.txt). The user requested development while away; verify the recorded native task status before starting another writer in this shared workspace. [Mid scope](planning/MID_EVAL_SCOPE.md) and [readiness](planning/MID_EVAL_READINESS.md) distinguish first-mid requirements from later QLoRA work.
+**Work here: `E:\Uni_Stuff\FYP\Investify`.** This is the consolidated project for F26-003-Investify. Start with [current status](planning/CURRENT_STATUS.md) and the [document guide](deliverables/README.md).
 
-Current teacher workflow: **this assistant is the teacher; Phi-3-mini remains the planned student**. Six actual explanations pass the verifier, with four training/two validation examples and excluded held-out test dates. No Qwen teacher download is required. No student inference/QLoRA has run. Read [the recorded teacher pilot](deliverables/ASSISTANT_TEACHER_PILOT.md). Current selected suite: 212 passes, zero skips, including 20 Streamlit cases. Earlier model-selection notes and the four-page evidence brief describe prior snapshots.
+## Folder guide
 
-Project **F26-003-Investify**. This is the separate working area for the FYP-1 mid evaluation. Current documents and the original Soban checkout are protected by the [original-file hash manifest](evidence/original_files.sha256.json).
+| Folder | What belongs here |
+| --- | --- |
+| [code](code/) | Active Python implementation, app, tests, configuration and frozen research artifacts. Run code commands from this folder. |
+| [report](report/) | Current institutional mid-report draft. Edit `main.tex` and `chapters/`. |
+| [deliverables](deliverables/README.md) | Current working write-ups, slide outline, demo preview, evidence PDFs and dated review bundles. |
+| [planning](planning/CURRENT_STATUS.md) | Current status, scope, readiness, work plan and continuation instructions. |
+| [sources](sources/) | Preserved proposals, official assessment/template material and research inputs. Reference originals rather than overwriting them. |
+| [evidence](evidence/) | Test results, hashes, provenance, execution failures and verification receipts. Dated receipts prove their own snapshots. |
+| [tools](tools/) | Project maintenance, reproduction, validation and packaging utilities. |
+| [original_materials](original_materials/) | Historical copies retained during integration. |
 
-The code in [code](code/) is an independent copy with its original Git history, on branch `gpt/mid-eval`. Its base is `1dc24e0e3962c6ea33fb1325f4590f52a49bb030`. Checking GitHub returned 404 through the connector and a blocked-network error through Git. A newer upstream version has not been verified; see [upstream status](evidence/upstream_status.json).
+## Which version to open
 
-## Start here
+| Purpose | Use this | Status |
+| --- | --- | --- |
+| Mid report | [report/main.tex](report/main.tex) | Current editable LaTeX draft; compilation and review remain open. |
+| Mid presentation | [presentation_outline.json](deliverables/presentation_outline.json) | Current twelve-slide content and speaker notes; PowerPoint export remains open. |
+| Proposal | [Investify_Proposal_Full.docx](sources/Investify_Proposal_Full.docx) | Latest preserved full proposal, revised 10 September. It is a proposal reference, not the mid report. |
+| Concept | [Investify_Concept.docx](sources/Investify_Concept.docx) | Latest preserved condensed proposal. September PDF exports predate these Word revisions. |
+| Assessment requirements | [Official mid rubric](sources/Mid_Eval/FYP-1-Mid-Assessment-Guidelines-and-Rubrics.pdf) | Institutional source. The supplied report-template PDF is a template example. |
+| Demo and defence | [DEMO_AND_DEFENCE_GUIDE.md](deliverables/DEMO_AND_DEFENCE_GUIDE.md) | Walkthrough of implemented behaviour and limitations. |
+| Progress and next work | [CURRENT_STATUS.md](planning/CURRENT_STATUS.md) | Current starting point; use dated logs for supporting history. |
 
-- [Original first-mid commitment traceability](deliverables/ORIGINAL_MID_TRACEABILITY.md) and [current engineering source/test anchors](deliverables/REQUIREMENTS_TRACEABILITY.md).
-- [Scientific corrections with unrerun historical-result boundaries](deliverables/SCIENCE_CORRECTIONS_20261012.md), [demo/defence walkthrough](deliverables/DEMO_AND_DEFENCE_GUIDE.md), and [receipt-bound social runbook](deliverables/SOCIAL_V4_RUNBOOK.md).
-
-- [Actual assistant teacher pilot and model roles](deliverables/ASSISTANT_TEACHER_PILOT.md).
-- [Current teacher review bundle](deliverables/investify_mideval_teacher_review_20261012_v2.zip) and [its clean-host receipt](evidence/teacher_review_20261012_v2_clean_host_verification.json). The preceding teacher archive passes 121 portable tests and replays all six teacher examples; older archives preserve their own snapshots.
-
-- [Current implementation checkpoint](planning/CHECKPOINT.md).
-- [Live local demo and reproduction instructions](code/docs/mideval_increment.md).
-- [Local LLM adapter, fallback and frozen evaluation](code/docs/local_llm_pilot.md).
-- [Prototype risk profile and separate comparator](code/docs/risk_comparator.md).
-- [AI/human social-study tooling](code/docs/social_selection.md) and the [actual AI reference pilot](deliverables/AI_SENTIMENT_PILOT.md); candidate inference remains pending.
-- [Working source handover guide](deliverables/HANDOVER_GUIDE.md), [source bundle](deliverables/investify_mideval_source.zip), and its [clean-host receipt](evidence/source_bundle_clean_host_verification.json).
-- [12 October uncommitted AI review bundle](deliverables/investify_mideval_ai_review_20261012_v2.zip) and [its clean-host receipt](evidence/ai_review_20261012_v2_clean_host_verification.json): 103 portable tests, 62 live checks, 372 records and the actual source/AI-label/freeze audit pass. The earlier clean-commit source bundle remains preserved.
-- [Corpus/source access review](deliverables/SOCIAL_CORPUS_ACCESS.md) and [report metadata checks](deliverables/REPORT_METADATA.md).
-- [Twelve-slide content and speaker-note draft](deliverables/presentation_outline.json), with PowerPoint export pending the required authoring runtime.
-- [Real social annotation protocol](deliverables/social_annotation_protocol.json), without invented posts or human labels.
-
-- [Work plan and time estimate](planning/MID_EVAL_PLAN.md).
-- [Proposal feedback and action register](sources/Mid_Eval/PROPOSAL_ACTION_REGISTER.md), copied from the existing materials.
-- [Problem statement and contribution draft](deliverables/PROBLEM_AND_CONTRIBUTION.md).
-- [LLM design and remaining implementation](deliverables/LLM_DESIGN.md).
-- [Model and evaluation inventory](deliverables/MODELS_AND_EVALUATION.md).
-- [Domain research notes](deliverables/DOMAIN_NOTES.md).
-- [Working report sources](report/).
-- [Rendered, visually checked working evidence brief](deliverables/mid_eval_evidence_brief_20261012.pdf), separate from the institutional report.
-- [Official publisher model policy](deliverables/OFFICIAL_MODEL_POLICY.md) and [reference-evaluability audit](evidence/reference_evaluability_20261012.json).
-- [Current official-policy review bundle](deliverables/investify_mideval_official_review_20261012_v2.zip) and [clean-host receipt](evidence/official_review_20261012_v2_clean_host_verification.json). The preceding official-policy archive passes 114 portable tests, 62 live checks and 372 records; each archive has a separate hash-bound receipt.
-- [Standalone evidence preview](deliverables/demo_preview.html).
-- [Verification evidence](evidence/demo_artifact_verification.json).
-
-## First implemented increment
-
-`code/src/investify/explain/context.py` builds a JSON-safe evidence description from each frozen decision record. It covers all five technical and six news features, their meanings and recorded attributions, missing values, available sources, and important coverage limitations. It supplies the input contract for the future LLM and a current user-facing explanation layer.
-
-The evidence section is wired into the Streamlit Decision tab. The standalone preview renders the same recorded context without installing the training stack. The live demos also offer an explicit prototype capacity/tolerance profile and separate risk-dependent linear comparator. The saved classifier probabilities and decisions remain unchanged.
-
-Subsequent work corrects the verifier's payload-over-prose gap, checks values/targets/ranks, requires essential visible claims, retains rejection reports and supports strict prose. The guided contract now checks all eleven feature contributions, both family totals, maintained definitions, missing/zero evidence and attribution scope in text and JSON. Malformed authoritative records are rejected before display. Both live interfaces run the actual code.
-
-The existing local validation receipt records **212 selected passes, zero skips**, including **20 Streamlit AppTest cases**; **372** records, **62** live HTTP and **228** separate comparator arithmetic checks pass. These checks validate engineering behaviour, not scientific quality. The [official publisher model policy](deliverables/OFFICIAL_MODEL_POLICY.md) now requires original models and matching publisher weight hashes. Replacement explainer and generative-sentiment runs are pending; withdrawn variant results are excluded. Scientific reproduction, browser visual QA, GitHub CI and deployment remain pending.
-
-## Run the portable checks
+## Run the local demo
 
 From `code`:
 
 ```powershell
-python -B -m unittest discover -s tests -p 'test_mideval*.py' -v
-python -B scripts/verify_demo_artifacts.py --output '../evidence/demo_artifact_verification.json'
-python -B scripts/export_mideval_preview.py --output '../deliverables/demo_preview.html'
+python -B scripts/serve_mideval_demo.py --port 8768
 ```
 
-For a live demonstration, run `python -B scripts/serve_mideval_demo.py` and open `http://127.0.0.1:8765`. The server serves historical decisions and executes Python verification on submitted explanations. Stop it with Ctrl+C.
+Open `http://127.0.0.1:8768`. This runs verification over saved historical decision records. The isolated viewer runtime is `E:\AI-Tools\Temp\investify-ui-py311`; dependency instructions are in [code/README.md](code/README.md).
 
-The isolated viewer/test runtime is under `E:\AI-Tools\Temp\investify-ui-py311`, frozen in `code/requirements-demo-runtime.txt`. Dependency-source/cache receipts are in `evidence`. Streamlit runs at `http://127.0.0.1:8501`; the portable demo is at `http://127.0.0.1:8765`. This viewer environment is not the locked scientific environment. New caches, environments, temporary files and scratch continue to use `E:\AI-Tools\Cache`, `Temp`, and `Work`.
+Alpaca keys belong in Git-ignored `code/.env` as `ALPACA_API_KEY` and `ALPACA_API_SECRET`. The bounded acquisition tool now reads that file; inherited shell values take precedence. Never copy the keys into reports, bundles or chat.
 
-The GitHub workflow configures portable checks, plan-only evidence generation/artifact retention and a separate Streamlit AppTest job on Windows/Linux, using verified official action release tags. It has not run remotely. Repository access still returns 404. The report now includes preliminary primary research, abstract/executive summary, current engineering/validation, action status, future plan and conclusion. Institutional metadata/signatures, deeper domain/closest-work review, compilation and visual QA remain incomplete.
+## Old material
+
+The former `GPT_MIDEVAL` workspace is now [../_archives/workspaces/GPT_MIDEVAL](../_archives/workspaces/GPT_MIDEVAL/). The older loose FYP files are in [../_archives/legacy_fyp_20261012](../_archives/legacy_fyp_20261012/). All 877 moved files retain their sizes and SHA256 hashes. [The archive index](../_archives/ARCHIVE_INDEX.txt) explains the backups.
+
+The original Soban checkout at `E:\Uni_Stuff\investify_repo` remains a historical reference. Earlier code documentation and archived handoffs describe their original dates and scope. [The current handoff](planning/HANDOFF_20261012.md) supersedes their workspace instructions.
+
+Local Git is on `main`, without a configured remote. Caches, temporary files and scratch belong under `E:\AI-Tools`; project deliverables stay here.

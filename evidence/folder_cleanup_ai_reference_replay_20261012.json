@@ -1,0 +1,80 @@
+{
+  "checked_utc": "2026-10-12T13:40:27.032481+00:00",
+  "status": "actual_reference_evidence_verified",
+  "checks": {
+    "source_git_blobs": 51,
+    "selected_original_posts": 200,
+    "raw_batches": 4,
+    "complete_input_bound_ai_annotations": 200,
+    "benchmark_and_plan_match": true,
+    "labels_frozen_before_candidate_plan": true
+  },
+  "benchmark_sha256": "4ee137070c0c90e16503c34d3ed9245a094c658213ed7d0a8cc0aa8fbb05fe2d",
+  "plan_sha256": "8fb3cf4a8748101f2ed7e94fb0779cc0545d1c5877bf9573518afc4a05b24294",
+  "annotation_method": "model_generated",
+  "usable_posts": 117,
+  "excluded_posts": 83,
+  "reference_labels": {
+    "positive": 31,
+    "neutral": 67,
+    "negative": 19
+  },
+  "development_posts": 93,
+  "heldout_posts": 24,
+  "heldout_labels": {
+    "neutral": 15,
+    "positive": 7,
+    "negative": 2
+  },
+  "annotation_agreement": {
+    "initial_exact_agreement": null,
+    "initial_disagreements": null,
+    "cohens_kappa": null,
+    "note": "Single AI pass; no cross-check agreement or independent human validation measured."
+  },
+  "majority_neutral_reference_comparator": {
+    "macro_f1": 0.25641025641025644,
+    "per_class": {
+      "positive": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 7,
+        "f1": 0.0
+      },
+      "neutral": {
+        "precision": 0.625,
+        "recall": 1.0,
+        "support": 15,
+        "f1": 0.7692307692307693
+      },
+      "negative": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 2,
+        "f1": 0.0
+      }
+    },
+    "confusion_matrix_gold_rows": {
+      "positive": {
+        "positive": 0,
+        "neutral": 7,
+        "negative": 0
+      },
+      "neutral": {
+        "positive": 0,
+        "neutral": 15,
+        "negative": 0
+      },
+      "negative": {
+        "positive": 0,
+        "neutral": 2,
+        "negative": 0
+      }
+    },
+    "convention": "Unweighted macro over all three classes; zero denominators -> zero."
+  },
+  "actual_candidate_runs": 0,
+  "candidate_quality_metrics": null,
+  "independent_human_validation": false,
+  "scope": "Actual saved source/reference consistency audit, not independent verification of labels, serving-model identity, source rights or model performance."
+}

@@ -1,4 +1,20 @@
+> Current workspace and document versions: [current status](CURRENT_STATUS.md). Work in `E:\Uni_Stuff\FYP\Investify`; old copies are in the parent `_archives`. Earlier dated sections below retain their original scope.
+
 # Background continuation progress
+
+## Folder clarity and local credential recovery - 12 October 2026
+
+Current continuation observed the preceding coordinator as `notLoaded` with its latest turn interrupted, then took over the integrated project. The user requested clearer folder/document organization. Root now contains only `Investify`, `_archives` and `START_HERE.txt`. Seventeen entries/877 files were moved into `_archives/workspaces/GPT_MIDEVAL` and `_archives/legacy_fyp_20261012`; before/after sizes and hashes all match. The existing pre-merge ZIP and original source checkout remain unchanged. The unchanged protected-original manifest is checked through an explicit relocation receipt: all 224 originals pass, including 65 now archived.
+
+A concise root README, document guide, current status, project map and current handoff identify the active report, preserved proposal, official rubric and current slide content. Superseded instructions were saved under `planning/history/before_folder_cleanup_20261012`. All 69 final guide links and 13 project-map references resolve. All 199 copied code files remain byte-identical to integration. The report appendix now names the integrated evidence path.
+
+The previous session's user-created `code/.env` is present and Git-ignored. `probe_market_reacquisition.py` now reads only the declared Alpaca pair, preserves shell precedence and never records key values. Four labelled credential scenarios pass (quoted/commented file, precedence, incomplete pair and malformed-value redaction). Actual new Yahoo/FNSPID/Alpaca requests still fail before HTTP with WinError10061; no bytes were acquired and no routing/security change was made. Credentials are detected, so they are no longer a missing-input claim.
+
+Actual new engineering checks: 165 standard-library portable passes/no skips/failures, 372 validated records, six teacher replays/four training/two validation, 200 acquired source-post/117 usable-reference replay, and 62 matching HTTP checks on the canonical demo `http://127.0.0.1:8768` (CLI session 4876). The fresh dependency audit still finds missing science inputs/packages, original candidate snapshots and LaTeX compilers. The running local demo depends on the host/session; no unattended guarantee or browser visual QA is claimed.
+
+Receipts: `workspace_reorganization_20261012.json`, `folder_cleanup_layout_verification_20261012.json`, `folder_cleanup_originals_20261012.json`, `folder_cleanup_portable_tests_20261012.txt`, `folder_cleanup_demo_artifacts_20261012.json`, `folder_cleanup_ai_reference_replay_20261012.json`, `folder_cleanup_live_demo_20261012.json`, `folder_cleanup_dependency_audit_20261012.json`, and `market_reacquisition_20261012/with_local_env_v1/probe.json`. `folder_cleanup_continuation_summary_20261012.json` records the aggregate scope. Earlier receipts and review ZIP bytes are preserved.
+
+No scientific/candidate/student run, institutional compilation or mid-PPTX export was completed. Approximately 72% readiness remains unchanged; 90% is unmet. No specific Astra task is identified. Current first-mid priorities remain genuine scientific/model execution and institutional rendering/review; QLoRA remains later.
 
 ## User-authorized archive, integration and Git - 12 October 2026
 
