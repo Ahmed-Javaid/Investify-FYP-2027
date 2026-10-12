@@ -1,5 +1,9 @@
 # Investify mid evaluation checkpoint
 
+## Active integrated workspace
+
+Continue in `E:\Uni_Stuff\FYP\Investify`. A verified 1,030-file pre-merge ZIP and hash receipt are in the parent `_archives` directory. Integration preserved old checkouts/history and imported revised code with 25 differing files taking precedence; 706 copies were verified. Local Git on `main` has initial commit `28d0c93`; no remote/push. Read INTEGRATION.md and MERGE_MANIFEST.json. Canonical verification passes 165 portable tests, both frozen pilot replays and 372 records. Fresh declared-source probes are blocked by WinError10061 and missing Alpaca credentials, not merely missing old local files. Current first-mid readiness remains approximately 72%, with 90% unmet.
+
 ## Active recovery - 12 October 2026, 10:33 UTC
 
 The recovery archive and extraction are now verified: 165 portable standard-library tests, 62 live checks, 372 records, six teacher outputs and eighteen anchors; see `recovery_review_20261012_clean_host_verification.json`. Latest doctor/declaration records still block actual science/social runs (25 both-corpus issues, zero commands; incomplete publisher metadata). Readiness is approximately 72% (72.25 weighted); 90% is unmet. All assigned implementation workers finished; the current coordinator owns follow-through, records and dependency recovery. The earlier native task remains failed and must not be restarted as another writer. No Astra task is identified.

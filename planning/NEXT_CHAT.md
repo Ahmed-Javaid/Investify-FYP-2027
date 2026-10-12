@@ -1,5 +1,9 @@
 # Continue Investify mid evaluation
 
+## Active folder after archive/merge/Git
+
+The active consolidated project is now `E:\Uni_Stuff\FYP\Investify`, with local Git branch `main` and initial commit `28d0c93`. Read its current handoff/checkpoint and INTEGRATION.md. The 1,030-file verified old-files ZIP is under the parent `_archives`; old originals and preceding GPT_MIDEVAL remain untouched. Subsequent code changes belong here. Fresh market-source acquisition is still blocked by connection refusal; retain genuine new snapshots/cache identities when access works. Do not restart the former context-failed writer or infer unattended running from old launch receipts.
+
 ## Latest recovery state - 12 October 2026
 
 The former native worker failed with `context_length_exceeded`; its MCP follow-up also failed. The current coordinator took over and completed three explicitly authorized parallel implementation assignments. Check coordinator thread `01a12d7f-b282-7942-8123-b612313155dc` before another takeover; BACKGROUND_LAUNCH.json preserves the failed/initial observations and assignment paths. Do not wake the failed worker as another writer.

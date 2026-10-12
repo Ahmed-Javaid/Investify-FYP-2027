@@ -33,7 +33,7 @@ def main():
     if args.working_tree:
         listing += ['--cached', '--others', '--exclude-standard']
     tracked = subprocess.check_output(listing).decode().split('\0')
-    tracked = [relative for relative in tracked if relative]
+    tracked = [relative for relative in tracked if relative and relative != 'source_revision.json']
     with tempfile.TemporaryDirectory(prefix='investify-package-', dir=SCRATCH) as directory:
         stage = Path(directory).resolve()
         if not stage.is_relative_to(SCRATCH) or not stage.name.startswith('investify-package-'):
