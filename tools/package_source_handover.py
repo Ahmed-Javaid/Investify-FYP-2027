@@ -22,7 +22,7 @@ def main():
     output = args.output.resolve()
     if not output.is_relative_to(ROOT / 'deliverables') or output.suffix != '.zip':
         raise ValueError('Deliverable ZIP must remain in this workspace deliverables directory')
-    receipt_path = ROOT / 'evidence' / (output.stem + '_receipt.json' if args.working_tree else 'source_bundle_receipt.json')
+    receipt_path = ROOT / 'evidence' / (output.stem + '_receipt.json' if args.working_tree or output.name != 'investify_mideval_source.zip' else 'source_bundle_receipt.json')
     if output.exists() or receipt_path.exists():
         raise ValueError('Preserve prior archives/receipts; choose a new dated output filename')
     dirty = subprocess.check_output(['git', '-C', str(CODE), 'status', '--porcelain'], text=True).strip()
@@ -120,6 +120,20 @@ def main():
             for source in sorted((ROOT / 'evidence').glob(pattern)):
                 if source.is_file() and source.suffix in ('.json', '.xml', '.txt'):
                     shutil.copyfile(source, bundle / 'evidence' / source.name)
+        # New completed studies and the reviewed institutional draft have their
+        # own dated scopes; retain them alongside the earlier evidence.
+        for pattern in ('fresh_*', 'social_*', 'guided_demo_*', 'calibration_class_prior_*', 'report_*'):
+            for source in sorted((ROOT / 'evidence').glob(pattern)):
+                if source.is_file() and source.suffix in ('.json', '.xml', '.txt', '.log'):
+                    shutil.copyfile(source, bundle / 'evidence' / source.name)
+        report_receipt = json.loads((ROOT / 'evidence/report_delivery_20261013_run02.json').read_text(encoding='utf-8'))
+        current_report = ROOT / report_receipt['output']
+        if (report_receipt['status'] != 'compiled_and_layout_reviewed_unsigned_working_draft'
+                or hashlib.sha256(current_report.read_bytes()).hexdigest() != report_receipt['pdf_sha256']):
+            raise ValueError('Current report must match its reviewed working-draft receipt')
+        shutil.copyfile(current_report, bundle / 'deliverables' / current_report.name)
+        shutil.copyfile(ROOT / 'README.md', bundle / 'README.md')
+        shutil.copyfile(ROOT / 'deliverables/README.md', bundle / 'deliverables/README.md')
         continuation = ROOT / 'deliverables/mid_eval_continuation_evidence_20261012.pdf'
         continuation_qa = json.loads((ROOT / 'evidence/background_continuation_pdf_verification_20261012.json').read_text(encoding='utf-8'))
         if not continuation_qa['all_pages_visually_checked'] or hashlib.sha256(continuation.read_bytes()).hexdigest() != continuation_qa['pdf_sha256']:
@@ -135,8 +149,8 @@ def main():
                  for path in sorted(bundle.rglob('*')) if path.is_file()}
         manifest = {'built_utc': datetime.now(timezone.utc).isoformat(), 'code_commit': commit,
                     'code_snapshot_kind': 'uncommitted_working_tree' if args.working_tree else 'clean_commit_snapshot',
-                    'files': files, 'scope': 'Uncommitted continuation source handover with temporal/ingestion repairs, receipt-bound original-publisher gates, actual unchanged AI references and six teacher examples. CPU classifier imports and labelled tensor serialization are verified; real scientific/candidate/student inference, institutional report/deck and human review remain pending. Current-role continuation brief is rendered/checked; the earlier brief is historical. Third-party corpus is not approved for public redistribution.',
-                    'rendered_visual_qa': False, 'working_evidence_brief_rendered_visual_qa': True}
+                    'files': files, 'scope': 'Current source handover with guided Streamlit flow, separately executed fresh Alpaca science, original CryptoBERT/Cardiff output bundles and six teacher examples. Dated receipts distinguish overlapping checks. The 89-page institutional report is a compiled/layout-reviewed unsigned working draft; PPTX, browser/projector review, student training and human/institutional acceptance remain open. Publisher weights, E: caches and ignored raw acquisition inputs are external prerequisites for fresh inference/training replay. Private review archive; third-party corpus is not approved for public redistribution.',
+                    'rendered_visual_qa': False, 'institutional_report_rendered_visual_qa': True, 'working_evidence_brief_rendered_visual_qa': True}
         (bundle / 'bundle_manifest.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8')
         output.parent.mkdir(parents=True, exist_ok=True)
         with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_DEFLATED) as archive:
