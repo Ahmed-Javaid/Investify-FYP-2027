@@ -1,0 +1,305 @@
+{
+  "prepared_utc": "2026-10-11T19:24:55.283441+00:00",
+  "status": "prepared_unannotated",
+  "corpus_sha256": "ffd9d3cee58d77e69b4a5a439da1ac988230a92f940fad470e78832bed591f7e",
+  "declaration_sha256": "9f6ada397c7ca621203f4523ec2828141e7377ab1087e2bdf6abf0a6d9ab7504",
+  "source_manifest_sha256": "aec00a130c42fd083aa68e64403a116ac8e749ab41fae9f199b7d1dc35b8d4ac",
+  "acquired_selected_posts": 200,
+  "source_files": [
+    {
+      "path": "tweet/raw/MSFT/2015-01-01",
+      "git_blob_sha": "5db0d0775774207045b054364dfcf20816c042ed",
+      "sha256": "49d524e304ee30f09f130518b5f32bf8bdcc875e3a7ac957b7378b3f4d5673e4"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-02",
+      "git_blob_sha": "fa4c8c7bf1100c70272b40e3a3fcf2b192d187b7",
+      "sha256": "cfc5ceca1bf267e259274bdcfbb33119298f5664339f3f0a180c6f18c50a1d04"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-03",
+      "git_blob_sha": "cb62d0444de802a7449e2aa4f9341a170753dc42",
+      "sha256": "e54f9ea4f4d6d4b27a51d0d30a414b9ec239c24ec6e9acee85f33e7c153e98a2"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-05",
+      "git_blob_sha": "ff6c3c1fe11354cff7fe591988990097dc6d30af",
+      "sha256": "a2d4d7b79d4b552fd4d5d95c7f139c5fef4dc6254c761f99e1c3970a6866fc43"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-06",
+      "git_blob_sha": "6c50cf08fc092dfc94d839f2f2d3614423f19381",
+      "sha256": "aa8da5647c4c77c5fde6c4c4bfd9b1aa85cbc8e21075dc3a06a337adc0095f1a"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-07",
+      "git_blob_sha": "9579799d47e3e848750d9bacff0a80ad8ea78ffd",
+      "sha256": "c589e9d3459c9442216893a26625b9456614655fff1072616296514bbb028e6a"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-08",
+      "git_blob_sha": "3e670a2069a282e9ebbb747363d3811d530ce6e6",
+      "sha256": "ac1b4f1c654e24c960d359726bab5020bc882bada606001dd4eb99ab9b0a6a4b"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-10",
+      "git_blob_sha": "0778ca9ff6b6ff4b39d836037ff449bcd2a32f0e",
+      "sha256": "917878f966a551c49206cd657747a6799c7c22b8dab8d60e15db50b417568c10"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-12",
+      "git_blob_sha": "0f0799e911de2f6fb5821a5ab82b158585d2d5a3",
+      "sha256": "14e1fae44023480d666c590049159b1253c91a23bbce846675c3b4e1f14c93d8"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-13",
+      "git_blob_sha": "8d7d4021a77a7dace86b138c58a510bc91877ffc",
+      "sha256": "d11b7af2ee584c41e5666ffd5ea7ff2469093ef8d416b68a068b130eab1a088a"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-14",
+      "git_blob_sha": "edd1ad33afd682ae68e47cf1329fb25a9bfd0b93",
+      "sha256": "abe8fc9a501a3374c903cca4aaf2bae906cc1e17fad8e24b1d0abb0a2b5a511f"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-15",
+      "git_blob_sha": "9d1b466de1c4d68266fa9efacc5ba16537bf2ec9",
+      "sha256": "87ce2267013583bcb832dc64c73a8df8c7084aa9be3bd2f573c96affdcac50f2"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-16",
+      "git_blob_sha": "f9cef1da7ccb1ea1a3aeacd462735c87de0fbb2a",
+      "sha256": "b4ce1dca0567d0f994f9af320760587c02dd7b107bb681f31970c3a2be9e6f75"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-17",
+      "git_blob_sha": "6b70f59ac7563b25bec39cab923c02eb5b9eeb35",
+      "sha256": "a98eb7af9ef5401af5f02b0beab91e35593a6b427c58e8632357cff15e759603"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-18",
+      "git_blob_sha": "959668c0f2dc25615bfca20198930869ec904462",
+      "sha256": "75c64601f278e215557c60abcbe98213fb3f53994e2a0df7ee4ea9ddc995d07b"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-19",
+      "git_blob_sha": "7e1b678ffd345f2030de6c46f9cb4ee60f2477f3",
+      "sha256": "eff44f1ea14a71b318117651462e1e57735251eef72f94d940e0490e9261943c"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-20",
+      "git_blob_sha": "1fc66a91c664f6e52b9fa8c5d7b2fd21241167ba",
+      "sha256": "25676ce41025f654b9a3f17b4758a378859bebd51c3bfd2260a80b38639b1066"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-22",
+      "git_blob_sha": "8fcfd9bc4c2af9e0e3692ba9ba4be44798cad651",
+      "sha256": "d0a346cf18a0a3aa643f9917384abdc77f31162acbe9d1c73543054feb75b97c"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-23",
+      "git_blob_sha": "392aa860eea46c501d5197543b69ac7d7a015b3d",
+      "sha256": "a2c066ce1e02d03d9acbbef7fa8e698ab13e0880c6683f672b16925ad9a0503f"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-24",
+      "git_blob_sha": "ea0e1d75432caeacb27be47e804679fdaf5b9a85",
+      "sha256": "610d4efd945c7e2197b808e8af031e237b88937afe8162cfec969f43bbed4ace"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-25",
+      "git_blob_sha": "a074b10e3c69bef5925da63252672fde058aa2d7",
+      "sha256": "4366a1c46050aa79acd72ed49d6a86b0ff3fe6d7d59e1f1faf9b6bd8246b28c5"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-26",
+      "git_blob_sha": "2b76bc7a5f8d2f50ce16b84da0f744ae3b034feb",
+      "sha256": "4862247535d146845d4a788f577bc7a4253083eec82c19172f36b02d9a2cd61c"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-27",
+      "git_blob_sha": "c1cf4f3cc1c162e169990a40efea60eb38f5445e",
+      "sha256": "206ec5c432729e55ceeba4c8122280d26d3c6fd8068e5a5ea49c230c28d601e4"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-28",
+      "git_blob_sha": "6ee8cf8382d13ceb55e52535c3ca7a46b3f53ffe",
+      "sha256": "8701dd702c47488fc26ee361ca7e1b35a3022aab95339d991d36747e2463a2d9"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-29",
+      "git_blob_sha": "64ddf053daddfd2a7ad2c969b1aaf664afe6665a",
+      "sha256": "1f5190f84e27fe51ba4ceee75eadd1847b56e9442f9aea29c2dfa5e6320e13cf"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-30",
+      "git_blob_sha": "1c6180d121e0644871a8e47dcb577fdac8ce94b2",
+      "sha256": "75ec7e9bd7416000e7fffba5cae9398f4e83f496e4b12622b86f792a60cd7c07"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-01-31",
+      "git_blob_sha": "0a65140dd017e57307cdd674df45f2115ded456f",
+      "sha256": "6dd550e3bb85dccd2dc6048e5ae2b2da5d48c107fb2d075c61c5c83b4c7b6b39"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-01",
+      "git_blob_sha": "fa30e3565a4bb13ea4786a565627f8989acfc63b",
+      "sha256": "e43e8dbf69e85a0b432b060c40e021512011b47ae4d8945d1a41141c0af38703"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-02",
+      "git_blob_sha": "f5e04f3086dad0c89bc1e69689b9b9fc49dd2dc1",
+      "sha256": "2ded10c0dc07286df183e621eba413025b83989d4b22608bc1d30930060fca36"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-03",
+      "git_blob_sha": "32b3f38b51cb8829ce48caf0cda160cac6a7c1b2",
+      "sha256": "202a67961f6b8bc39426e87aa1d95fd537afaa5b74f2607399349a922b010be5"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-04",
+      "git_blob_sha": "e3d05e7423abb286bdc2fed89eb83872b3163ef2",
+      "sha256": "9d88e141a04d4d38a98bfc48cfa2834f8a357ba9a30575ef9f85a8830460c331"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-05",
+      "git_blob_sha": "af67c0ff10a394edb41ddef4204fb9a8796d7d3a",
+      "sha256": "3a506cd4f8d54b3847fd2037c342c3c44cd7a9fb46f715654aef4e8383ea115b"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-06",
+      "git_blob_sha": "55992a0dde7efface30e1f689c2b7dc21f4eff4f",
+      "sha256": "bd682016d61ce4d19c902ee35451b29257c752a626dc6563b7e0c534206f6500"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-07",
+      "git_blob_sha": "1d2608766135cc99f4a3947ddceee6f211f2395e",
+      "sha256": "9425f414b1fd8902cb81e1f9d104ac972359578119b1f5179435dcc93963b3f2"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-08",
+      "git_blob_sha": "001d90305e16cb233fc9f486bbe4701bde530944",
+      "sha256": "1d4fcaaef894c24f22539edb556b07c4e663b8890e1e8d6275ade63f5e0b621b"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-09",
+      "git_blob_sha": "4806d0b843534ddef691bf2438ca5345d4a6910b",
+      "sha256": "c57d968578b75fa19933af267cd704cfb75e8e880a160dd3983bb8b889d11101"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-10",
+      "git_blob_sha": "3b8de6af4649773c633c707de200f26ab642f2bf",
+      "sha256": "7afa3c77ba527e87459913c6394fd5f604d255edc349f150e91c9a29ea7ebc08"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-11",
+      "git_blob_sha": "b3dd1db3f9321690f17306b6c91af6c2831101c3",
+      "sha256": "f95c9e4bbc8a75bd6bc1c2d0ccb353cba371f14a1f1eff2f57c81ef346f9fefc"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-12",
+      "git_blob_sha": "cc4f47b69397da8e3856f4d27698d2bacd72beab",
+      "sha256": "e3964ee9af061e7aaf4eb747e93ac3b0e32d112f866c17801c944034fd24b585"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-13",
+      "git_blob_sha": "1f429b6cc4f440d202e12470e32b0a083b5c196e",
+      "sha256": "e009d1c58e3c0af9a52d41d3661b76bccdb780ddbd5eaddd332b2ad4d1ee5fe2"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-14",
+      "git_blob_sha": "6c542d1a02d2ab045860ffd530ba67052faef34a",
+      "sha256": "0a59df937974899b13251143030fe5bc52116195985aa8f1f13887de94277ebe"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-15",
+      "git_blob_sha": "d4154995478a080f931f43f740f875f3aa4e1797",
+      "sha256": "a63f2ea42eaa67db0bceebb73bca0fb8448e299d4a944caa0ad4e641151eecee"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-16",
+      "git_blob_sha": "4135085df543cc774cdfd29daf2e164218d16296",
+      "sha256": "f2b2e534ba6fefb42f1493ebf7b655e94f137c2c2f0915ab3a99aca71b6f86dc"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-17",
+      "git_blob_sha": "62d5d0c44f8b9f4e8c5cc7b60f52aff3396a49fe",
+      "sha256": "f53726ba14028b2420c3f9390e230e1957353c2618d9315133da492476ab0fc7"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-18",
+      "git_blob_sha": "a7417aaff45637c78de5877e4c990dc1058fae72",
+      "sha256": "9d5346bd1fd9ffa489fadaa9682014bf260783205a01aaf0497a88503b9d2c95"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-19",
+      "git_blob_sha": "b3c3ec1c168a43f70eeac50c2d6683ee9e6225be",
+      "sha256": "07059bb74f41609fb3f524b6a2bcc4c6522c6a8662a5752ab9b7a209cb47a3cb"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-20",
+      "git_blob_sha": "76a18de6b90713a5748c35b0923450fea99c873b",
+      "sha256": "c181993279e571a201c1de37dc3a72a16e7b4f6e909b7e001820e6757b8f8a92"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-21",
+      "git_blob_sha": "bb42b07adb23da17542641e33eeeb5596b0a8fe9",
+      "sha256": "54df7192a4c20f0ea76adbab169894bdff18611b04b8b71fdf46144ae7bdb58e"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-22",
+      "git_blob_sha": "c93e79e3329d513db4518a816915799867c12103",
+      "sha256": "32e96638d80875720eae9f1968f4c4ae5d0c3462eaf61941e1e676d900daf85d"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-23",
+      "git_blob_sha": "bd535086e1cae16f96caef79043e10dfdcb6a11a",
+      "sha256": "097994549a7fe14ec9193b6a641070d388eb6198702fdd111d32b443ec3aa953"
+    },
+    {
+      "path": "tweet/raw/MSFT/2015-02-24",
+      "git_blob_sha": "6552ab76458d06b9dfab8aef095e8a79d5a2b93e",
+      "sha256": "dac8a1666df883a82ff04646aebc2234afc4753b4ab3d948642c24831ea4ebea"
+    }
+  ],
+  "preparation_exclusions": [
+    {
+      "post_id": "559822109942484992",
+      "path": "tweet/raw/MSFT/2015-01-26",
+      "reason": "duplicate ID or target/text"
+    },
+    {
+      "post_id": "563770233463533568",
+      "path": "tweet/raw/MSFT/2015-02-06",
+      "reason": "duplicate ID or target/text"
+    },
+    {
+      "post_id": "563770682275016704",
+      "path": "tweet/raw/MSFT/2015-02-06",
+      "reason": "duplicate ID or target/text"
+    },
+    {
+      "post_id": "563771437241348096",
+      "path": "tweet/raw/MSFT/2015-02-06",
+      "reason": "duplicate ID or target/text"
+    },
+    {
+      "post_id": "570304715843629060",
+      "path": "tweet/raw/MSFT/2015-02-24",
+      "reason": "after predeclared first-200 cutoff"
+    },
+    {
+      "post_id": "570339142682292227",
+      "path": "tweet/raw/MSFT/2015-02-24",
+      "reason": "after predeclared first-200 cutoff"
+    },
+    {
+      "post_id": "570352749012844545",
+      "path": "tweet/raw/MSFT/2015-02-24",
+      "reason": "after predeclared first-200 cutoff"
+    }
+  ],
+  "label_or_candidate_filtering": false,
+  "annotations_created": 0,
+  "source_scope": "Historical MSFT tweets from the released corpus, not a fresh platform scrape. Live source availability and pretrained-corpus overlap are unverified."
+}

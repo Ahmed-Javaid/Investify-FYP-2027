@@ -1,0 +1,96 @@
+{
+  "schema": "investify-ai-reference-evaluability-v1",
+  "checked_utc": "2026-10-11T22:07:13.732592+00:00",
+  "benchmark_sha256": "4ee137070c0c90e16503c34d3ed9245a094c658213ed7d0a8cc0aa8fbb05fe2d",
+  "parent_plan_sha256": "8fb3cf4a8748101f2ed7e94fb0779cc0545d1c5877bf9573518afc4a05b24294",
+  "source_files_sha256": {
+    "code\\artifacts\\mid_eval\\social_benchmark.json": "ede8fd3386ff0bf142553b69251f9ef7736b7fd517f4073be4f8b63b884b9f06",
+    "code\\artifacts\\mid_eval\\social_selection_plan.json": "1b65d2c4e635473aa3217e17e5f07e7c301130d2d924f5fddae7ee0dada95d80"
+  },
+  "audit_source_sha256": "c0b1629155fd66992d7978ba65e3410f6d83a1cb306279f84a4b0eb5f332f3b9",
+  "usable_posts": 117,
+  "excluded_posts": 83,
+  "development": {
+    "posts": 93,
+    "counts": {
+      "positive": 24,
+      "neutral": 52,
+      "negative": 17
+    }
+  },
+  "heldout": {
+    "posts": 24,
+    "counts": {
+      "positive": 7,
+      "neutral": 15,
+      "negative": 2
+    }
+  },
+  "same_calendar_dates_across_split": [],
+  "reference_agreement_granularity": {
+    "one_post_exact_agreement_step": 0.041666666666666664,
+    "per_class_recall_steps": {
+      "positive": 0.14285714285714285,
+      "neutral": 0.06666666666666667,
+      "negative": 0.5
+    }
+  },
+  "development_majority_reference_comparator": {
+    "selected_label": "neutral",
+    "selection_uses_heldout_labels": false,
+    "metrics": {
+      "macro_f1": 0.25641025641025644,
+      "per_class": {
+        "positive": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 7,
+          "f1": 0.0
+        },
+        "neutral": {
+          "precision": 0.625,
+          "recall": 1.0,
+          "support": 15,
+          "f1": 0.7692307692307693
+        },
+        "negative": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 2,
+          "f1": 0.0
+        }
+      },
+      "confusion_matrix_gold_rows": {
+        "positive": {
+          "positive": 0,
+          "neutral": 7,
+          "negative": 0
+        },
+        "neutral": {
+          "positive": 0,
+          "neutral": 15,
+          "negative": 0
+        },
+        "negative": {
+          "positive": 0,
+          "neutral": 2,
+          "negative": 0
+        }
+      },
+      "convention": "Unweighted macro over all three classes; zero denominators -> zero."
+    },
+    "scope": "Deterministic development-majority comparator against AI references; not a candidate-model inference result or human-validated accuracy."
+  },
+  "similarity_diagnostic": {
+    "normalization": "Lowercase; URLs replaced by URL token; sets of ASCII word/number tokens; diagnostic only.",
+    "minimum_distinct_tokens": 5,
+    "jaccard_threshold": 0.8,
+    "flagged_pairs": [],
+    "cross_split_pairs": 0,
+    "scope": "Heuristic review flags, not authenticated duplicate/news-event groups, independent observations or proof of pretraining leakage. Short posts below threshold are not assessed."
+  },
+  "reference_or_split_modified": false,
+  "candidate_inference_executed": false,
+  "independent_human_validation": false,
+  "statistical_independence_established": false
+}

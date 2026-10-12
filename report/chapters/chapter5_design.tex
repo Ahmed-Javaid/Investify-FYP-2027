@@ -1,0 +1,44 @@
+\chapter{System Design}
+\section{System Architecture}
+
+The recorded assistant teacher pipeline is separate from the user-facing student inference path. Six actual controlled-prose explanations have been checked and exported; original-student inference and QLoRA remain pending. No extra Qwen teacher download is required. The factual JSON target is assembled from original records, explicitly as hybrid supervision rather than a teacher-generated payload.
+\begin{figure}[htbp]\centering
+\input{figures/mideval_teacher_training}
+\caption{Actual teacher construction and verification, with pending Phi-3-mini training and comparison shown dashed. Both corpora share date groups and held-out test records are excluded.}
+\end{figure}
+The existing historical pipeline acquires and aligns prices/news, derives features, evaluates fixed models, and stores decisions/attributions. This increment operates downstream of those records and adds complete context, independent prose/payload checks, and a live local verification interface.
+\begin{figure}[htbp]\centering
+\input{figures/mideval_architecture}
+\caption{Explanation architecture with the implemented adapter and a pending official-publisher model run.}
+\end{figure}
+\section{Architectural Components}
+The validating decision schema supplies facts. The context builder adds reviewed definitions without changing predictions. The template renders supported sentences. The verifier checks both visible and structured claims. The emission pipeline accepts a candidate or verifies a fallback while retaining its rejection report. Streamlit and the portable HTTP interface expose these components.
+\section{Interfaces and Dependencies}
+The portable interface uses Python 3.11's standard library and explicit catalogue, record, explanation, profile-contract and comparator APIs. Streamlit uses the separately frozen, restored viewer runtime. Scientific re-runs require the original scientific stack and real price/news/sentiment-cache inputs; viewer restoration does not restore that environment.
+\begin{longtable}{p{0.28\textwidth}p{0.36\textwidth}p{0.25\textwidth}}
+\toprule Interface & Request / response contract & Failure contract\\\midrule
+GET /api/catalog & Available corpora/sessions plus unavailable and comparator-unavailable entries. & Partial availability is disclosed.\\
+GET /api/record & Corpus/session query returns authoritative context and numeric template. & Unknown/unavailable selection: 400, no substituted record.\\
+POST /api/verify & Text, optional payload and strict flag; candidate/emitted reports and replacement flag. & Factual rejection: 200 with candidate false, emitted true and replacement true.\\
+POST /api/explain & Corpus/session; complete guided output, status/reason and retained attempts. & Unconfigured model: labelled guide, zero model calls.\\
+GET /api/profile-contract & Five capacity and three tolerance controls, with no assumed answers. & No profile answers inferred.\\
+POST /api/risk-comparator & Exactly corpus/session/capacity/tolerance; separate profile/fixed blend and audit. & Incomplete/development/unavailable request: 400.\\
+GET /health & Process/data readiness and source hashes captured when the server starts. & HTTP 200 does not imply scientific or model readiness.\\
+\bottomrule\end{longtable}
+Recognized POST transport failures are 415 for a non-JSON content type, 413 for invalid/empty or over-131,072-byte declared bodies, and 400 for malformed/nonfinite JSON or invalid top-level requests. Undeclared routes return 404. A syntactically valid but factually wrong candidate selects verified fallback rather than becoming a transport error. Numeric verification fallback and the complete guided explanation comparator have different coverage contracts.
+
+For a valid request, the interface selects a validated record, builds evidence, submits current text/settings, verifies prose and JSON independently, and displays the accepted candidate/report. For rejection, the same path records candidate failures, verifies a numeric template independently and displays the fallback with the failed candidate report retained. Client edits invalidate the displayed verification report while preserving independent guide/profile output. Request ownership prevents obsolete catalogue, record, profile, guided and comparator responses from publishing or releasing a newer request's controls. An accepted empty catalogue clears the current record/reports. Source refresh preserves an available selection; separate record and profile retries recover failed requests without assuming answers or duplicating controls. Twelve controlled Node cases execute the real inline handlers with a limited DOM/deferred-fetch fixture, separately from eight pure-state assertions. They make no live server, model or browser request; browser visual review remains blocked.
+\section{Architecture Decisions and Rationale}
+The record is authoritative over both representations. Coverage comes from visible text. Numeric and directional scores use the worse result of prose and JSON; payload duplication cannot dilute a display error. Any known incorrect claim is a hard failure. Strict mode rejects unparsed sentences and does not claim to verify arbitrary market prose.
+\section{Design Evolution}
+The original implementation intentionally preferred payload claims. A new regression showed that wrong displayed confidence could pass beside correct JSON. The corrected contract checks both, adds feature-value/attribution-target validation, requires essential display claims, and retains the failed report. Prediction outputs and historical experimental results are unchanged.
+\section{Domain Model}
+A corpus contains session-keyed decisions with ticker, horizon, probabilities, feature/SHAP vectors, base/raw score, ranked contributors, model/data references, and recorded risk tier. An explanation has text and optional JSON. Verification produces claim verdicts, four metrics and hard-gate failures. Emission adds fallback status and the rejected candidate/report.
+\section{Data Design}
+Historical artifacts remain the classifier source; no live quote, social observation or personalized classifier prediction is added. Context preserves missing values and rejects non-finite probabilities/attributions. The separate comparator fits population z-score statistics on the first 148 saved raw feature rows of each corpus and scores only the later 38. This is a newly declared retrospective scaling run, not a reconstruction of the old CV baseline. Source hashes, fitting dates and statistics are recorded. No profile database is implemented.
+\section{Process / Behavior Design}
+The process validates a selected record, builds context, receives/renders a candidate, checks prose and JSON, applies hard gates, and accepts or verifies a fallback. The complete guided path additionally requires all feature values/contributions/directions/targets, family totals, meanings and raw-score scope in both representations. The local adapter bounds retries/timeouts and retains failed/truncated attempts. Actual inference now requires an original-publisher model and all weight-shard hashes to match the publisher pointers. The replacement evaluation is pending. A future constrained reference-reproduction result would not alone establish a comprehension benefit over the complete guided template.
+
+The prototype profile refuses incomplete answers, scores capacity/tolerance separately, exposes matched/binding project caps, and reconciles the smaller score. The ability/willingness and time-horizon distinctions have external educational references \cite{finra_risk_tolerance,investor_asset_allocation}; these do not validate project scoring. The separate comparator uses the profile score as R in C=R S+(1-R)T beside R=0.5. T averages five technical z-scores with inherited trend signs; S uses standardized headline polarity. Missing news contributes zero with disclosure; missing technical inputs or development sessions refuse output. Scores are not probabilities/returns. The mapping is unvalidated, and lower R does not guarantee a more conservative action. Saved classifier outputs remain unchanged.
+
+An actual saved-feature semantics audit evaluates C(R)=T+R(S-T). Its slope is S-T, so increasing R changes the weight of the news score and does not impose a conservative/aggressive ordering. Across the 38 held-out sessions per corpus, R=0 versus R=1 changes the comparator action on 25 Alpaca and 29 FNSPID rows. These are parameter scenarios on historical features, not observations of people or investment outcomes. The audit receipt retains the arithmetic and original source hashes.

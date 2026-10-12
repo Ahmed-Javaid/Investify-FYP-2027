@@ -1,0 +1,20 @@
+\begin{tikzpicture}[
+box/.style={draw,rounded corners,align=center,text width=37mm,minimum height=13mm,font=\small},
+pending/.style={box,dashed},node distance=9mm and 12mm]
+\node[box] (actor) {Reviewer / operator};
+\node[box,right=of actor] (record) {Select and inspect\\historical evidence};
+\node[box,below=of actor] (profile) {Complete explicit\\prototype profile};
+\node[box,right=of profile] (blend) {Compare separate\\held-out linear blend};
+\node[box,below=of profile] (verify) {Check edited or\\guided explanation};
+\node[box,right=of verify] (result) {Inspect candidate failure\\and verified emission};
+\node[box,below=of verify] (study) {Inspect real study input\\readiness/comparison};
+\node[pending,right=of study] (inputs) {Actual candidate runs\\and validated student};
+\draw[->] (actor) -- (record);
+\draw[->] (actor) -- (profile);
+\draw[->] (profile) -- (blend);
+\draw[->] (record) -- (blend);
+\draw[->] (verify) -- (result);
+\draw[->] (actor.west) -- ++(-5mm,0) |- (verify.west);
+\draw[->] (actor.west) -- ++(-9mm,0) |- (study.west);
+\draw[->,dashed] (inputs) -- (study);
+\end{tikzpicture}

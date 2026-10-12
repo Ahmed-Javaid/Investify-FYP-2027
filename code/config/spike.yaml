@@ -1,0 +1,117 @@
+# Investify POC spike configuration
+# Scope decision 2026-09-10 (see artifacts/phase0_report.md §7): NVDA-only,
+# not AAPL/NVDA/TSLA -- AAPL and TSLA both have real coverage gaps in the
+# FNSPID corpus (missing 2021 entirely; AAPL also missing 2018-2019).
+
+tickers:
+  - NVDA
+
+date_range:
+  start: "2018-01-01"
+  end: "2023-12-31"
+
+seed: 42
+
+calendar:
+  exchange: "NYSE"
+  timezone: "America/New_York"
+  session_close: "16:00:00"
+
+news:
+  source: "FNSPID"
+  file: "Stock_news/nasdaq_exteral_data.csv"
+  hf_repo: "Zihan1004/FNSPID"
+  extracted_path: "data/raw/fnspid_nasdaq_external_aapl_nvda_tsla.csv"
+  headline_max_tokens: 128
+
+sentiment:
+  model: "ProsusAI/finbert"
+  cache_dir: ".cache/finbert_scores"
+
+technical_indicators:
+  rsi_period: 14
+  sma_period: 200
+  # MACD histogram, Bollinger position, OBV slope use their standard windows
+
+labels:
+  horizons_days: [1, 5]
+  primary_horizon_days: 5
+  volatility_window_days: 20
+  class_thresholds: [-0.5, 0.5]  # constants, not fitted -- see brief §5
+
+splits:
+  n_folds: 6
+  embargo_days: 5
+
+as_of_join:
+  max_lookback_days: 7
+
+arms:
+  - name: "A_CLEAN"
+  - name: "B_SHUFFLED"
+  - name: "C_NOPURGE"
+  - name: "D_CENTRED"
+  - name: "E_SAMEBAR_TEXT"
+
+leakage_control:
+  pass_threshold_abs_lift: 0.03
+  bootstrap_resamples: 10000
+
+paths:
+  store: "data/store"
+  artifacts: "artifacts"
+
+# Fixed XGBoost configuration -- brief section 7: ONE documented config used
+# everywhere, no Optuna, no hyperparameter search. Identical across all five
+# arms so the only thing that varies between arms is temporal discipline.
+xgboost:
+  objective: "multi:softprob"
+  tree_method: "hist"
+  n_estimators: 300
+  max_depth: 4
+  learning_rate: 0.05
+  subsample: 0.8
+  colsample_bytree: 0.8
+  reg_lambda: 1.0
+  min_child_weight: 1
+  random_state: 42
+  n_jobs: 4
+
+features:
+  technical:
+    - rsi_14
+    - macd_hist
+    - dist_sma200
+    - bollinger_pos
+    - obv_slope
+  sentiment:
+    - mean_polarity
+    - mention_volume
+    - mom_3d
+    - mom_7d
+    - volume_z
+    - dispersion
+
+# Two news corpora, reported side by side (change control, 2026-09-10).
+# FNSPID is the committed Phase 0-3 source. Alpaca/Benzinga was added because
+# FNSPID's timestamps are 99.78% midnight-defaulted, which makes E_SAMEBAR_TEXT
+# unmeasurable on it (1 of 26 real-timestamp rows maps differently). Alpaca is
+# 100% genuinely timestamped with 749 of 6,769 rows (11.1%) disagreeing between
+# the same-bar and next-session rules. Neither replaces the other: the
+# comparison between them is itself a finding about published datasets.
+corpora:
+  fnspid:
+    loader: "fnspid"
+    path: "data/raw/fnspid_nasdaq_external_aapl_nvda_tsla.csv"
+    feature_matrix: "data/store/feature_matrix.parquet"
+    results_prefix: "results"
+  alpaca:
+    loader: "alpaca"
+    path: "data/raw/alpaca_nvda_news.csv"
+    feature_matrix: "data/store/feature_matrix_alpaca.parquet"
+    results_prefix: "results_alpaca"
+
+# FinBERT's cache is keyed by SHA-256 of the headline text, so both corpora
+# share one cache safely -- identical headlines appearing in both are scored
+# once, and no key can collide across sources.
+default_corpus: "fnspid"

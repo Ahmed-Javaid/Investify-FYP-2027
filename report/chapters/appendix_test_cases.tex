@@ -1,0 +1,31 @@
+\chapter{Detailed Test Cases}
+\begin{longtable}{p{0.28\textwidth}p{0.50\textwidth}p{0.11\textwidth}}
+\toprule Group & Scope & Status\\\midrule
+Existing verifier/emission & 20 checks, including clean fixtures and corruptions & Passed\\
+Context & 5 tests; actual records, absent/missing features & Passed\\
+Verifier regressions & 11 tests; contradictions, omissions, schema, padding, strict mode, report retention & Passed\\
+Portable HTTP & 11 tests; verification/fallback, invalid inputs, profile contract and independent risk comparator & Passed\\
+Portable request ownership & 12 controlled Node cases execute real inline handlers with limited DOM/deferred-fetch fixtures; separate eight pure-state assertions & Passed; browser QA pending\\
+Harness structural readiness & 10 tests; missing/empty/truncated/wrong-type/read-denied files, module discovery and explicit preflight limits & Passed\\
+Local generator & 12 tests; definitions, positive acceptance, retries/fallback, malformed/truncated output, configuration and provenance & Passed\\
+Provider transport & 2 actual loopback HTTP fixture checks & Passed\\
+Evaluation protocol & 7 checks; chronological split, frozen plan enforcement, no-inference/zero-output accounting & Passed\\
+Complete guided evidence & 8 tests; all-feature coverage, non-top-k corruptions, missing/zero, family and scope checks & Passed\\
+Risk profile/comparator & 10 tests; 32,400 answer combinations, chronology, scaling isolation, failure and classifier independence & Passed\\
+Authoritative record validation & 4 tests; non-finite fields, vector/rank/value consistency and invalid identity/horizon & Passed\\
+Social-selection tooling & 9 labelled-fixture tests; human-label provenance schema, adjudication, fixed split, paired coverage and metric/refusal paths & Passed; actual study pending\\
+Source revision/handover & 5 tests; checked Git-free inventory, explicit working-tree status, modified/unsafe inventory refusal and ancestor-repository isolation & Passed\\
+Offline sentiment inference & 8 labelled-backend tests; frozen identity, text/label mapping, head refusal, failures, truncation and absent weights & Passed; actual model pending\\
+AI annotation/import & 10 labelled-fixture tests; blinded packets, retained initial labels, null single-pass reliability, input/provenance/persistence checks & Passed; human validation pending\\
+Generative sentiment protocol & 6 labelled-provider tests; frozen parent split/runtime, raw failures and identity/source-drift refusal & Passed; actual inference pending\\
+Original-publisher gates & 4 labelled-file tests; exact catalog identity, complete shard hashes and receipt replay & Passed; verified real weights pending\\
+Recorded teacher import/export & 7 fixture tests; date grouping, actual-versus-fixture gate, independent prose checks and separate exports & Passed; student pending\\
+Streamlit AppTest & 20 tests; existing flow plus explicit profile, real comparator and stale/development refusal & Passed\\
+Live endpoint exercise & 62 checks, including explanation cases and separate profile/refusal probes & Passed\\
+Comparator arithmetic audit & 228 checks on 76 held-out real rows and three labelled parameter scenarios & Passed\\
+\bottomrule
+\end{longtable}
+The selected suite totals 212 passes and zero skips. Test XML, fixture confusion matrix, artifact/source validation, comparator audit and live HTTP evidence are in \texttt{GPT\_MIDEVAL/evidence}. Streamlit cases ran in the isolated restored viewer environment; remote CI has not run. Scenario profiles are deterministic probes, not participant observations.
+The dated initial continuation receipt is \texttt{background\_readiness\_tests\_20261012.xml}; the later 188-pass receipt is \texttt{background\_delivery\_tests\_20261012\_v2.xml}. The final current receipt and source bundle identify any subsequent matching snapshot. The separate Node handler receipt is \texttt{background\_portable\_handlers\_20261012\_parallel.json}; its twelve cases are not added to Python-suite totals and perform no live server/model/browser requests. The 18 requirement IDs have exact source/test anchors checked by the traceability tool. This establishes execution of named regressions, not complete scientific or institutional acceptance.
+
+The matching post-recovery receipts are \texttt{recovery\_selected\_tests\_20261012.xml} (212 passes, twenty Streamlit cases) and \texttt{recovery\_core\_tests\_20261012.xml} (153 scoped passes, three deselected). These overlap and are not added together. Separate read-only Python 3.13 probes execute three unchanged shuffled-split function bodies with real sklearn and replay actual isotonic helper fits on explicitly labelled numeric fixtures. Neither probe restores the original scientific lock or uses historical market inputs.

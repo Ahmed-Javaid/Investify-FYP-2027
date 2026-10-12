@@ -1,0 +1,10 @@
+{
+  "built_utc": "2026-10-11T22:17:27.626446+00:00",
+  "code_commit": "0a27ed11ae14758895277368f15c16cb72f67c9c",
+  "files": 343,
+  "code_snapshot_kind": "uncommitted_working_tree",
+  "zip_bytes": 4339859,
+  "zip_sha256": "faa14bf26705a1ecfa63abab4ac6eedc96e1068ce0e70b0f4043795c5aec1e9d",
+  "scope": "Uncommitted research/source handover including actual AI reference labels and official-publisher model gates; replacement candidate inference, compiled institutional report/deck and human validation remain pending. Third-party corpus is not approved for public redistribution.",
+  "source_inventory_files": 144
+}

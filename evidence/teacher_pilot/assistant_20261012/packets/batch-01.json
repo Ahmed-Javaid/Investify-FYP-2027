@@ -1,0 +1,893 @@
+{
+  "protocol": "investify-recorded-assistant-teacher-v1",
+  "plan_sha256": "c1887d2790d844ea1cc3b84b6b4b8386242f002784452526ec23b2d141ed7157",
+  "packet_id": "batch-01",
+  "teacher_prompt": "Act as the teacher for a small university explanation-model pilot. The supplied historical decision record and reviewed definitions are authoritative. Write the complete explanation text from those facts. Do not produce a stock prediction, introduce a market cause, infer user suitability, invent social sentiment, claim live freshness, or expose hidden reasoning. Use the controlled sentence patterns below so the existing strict verifier can check each displayed claim. Supply one sentence per line, no extra headings. Interleave each feature's recorded evidence with its definition to make the evidence readable. Include all eleven features, both family totals, all top-ranked contributions, the full class distribution, attribution scope and the exact notice. The packet does not contain a completed answer.\nSentence patterns (substitute actual facts; percentages use two decimals, values and signed SHAP use four decimals):\n{ticker} decision for session {session_date} ({horizon_days}-day horizon): {decision}.\nCalibrated confidence in this decision: {confidence_percent}%.\nFull probability breakdown -- Buy: {Buy_percent}%, Hold: {Hold_percent}%, Sell: {Sell_percent}%.\n{feature} (value {value_or_missing}) {supports_or_opposes} the {decision} decision with a SHAP contribution of {signed_shap}, ranked #{rank} of {top_k_count}.\nRecorded feature {feature} (value {value_or_missing}): SHAP {signed_shap} for {decision}; effect {supports_opposes_or_neutral}.\nFeature definition for {feature}: {exact_reviewed_meaning}\nFamily contribution for {family}: SHAP {signed_family_shap} for {decision}; effect {supports_opposes_or_neutral}.\nCopy the exact attribution-scope disclosure and advisory notice. The output is JSON containing record_id and text for each matching packet record. Do not output a completed factual payload: the program constructs that separately from the saved record, and this hybrid supervision is explicitly disclosed.",
+  "records": [
+    {
+      "record_id": "alpaca:NVDA:2023-03-29:5d",
+      "record_sha256": "c5561d5045f7cadcdded7a5e5f9ed900c4ba4e955cbb044a8e46f67c26e3cbac",
+      "split": "train",
+      "input": {
+        "prompt_version": "record-facts-to-complete-controlled-prose-v1",
+        "evidence": {
+          "schema_version": "mideval-evidence-v1",
+          "ticker": "NVDA",
+          "session_date": "2023-03-29",
+          "horizon_days": 5,
+          "decision": "Buy",
+          "probabilities": {
+            "Buy": 0.5338375568389893,
+            "Hold": 0.16494980454444885,
+            "Sell": 0.3012126684188843
+          },
+          "corpus": "alpaca",
+          "model_version": "xgboost-3.2.0-git723ed97632f2",
+          "features": [
+            {
+              "feature": "rsi_14",
+              "label": "Relative strength index",
+              "family": "Technical analysis",
+              "value": 79.31261071966482,
+              "value_available": true,
+              "shap_value": -0.12501205503940582,
+              "effect_on_predicted_class": "opposes",
+              "meaning": "Recent price momentum on a zero-to-one-hundred scale, calculated here over fourteen sessions.",
+              "reference": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/rsi"
+            },
+            {
+              "feature": "macd_hist",
+              "label": "MACD histogram",
+              "family": "Technical analysis",
+              "value": 0.05661028283281544,
+              "value_available": true,
+              "shap_value": -0.11925574392080307,
+              "effect_on_predicted_class": "opposes",
+              "meaning": "The difference between the MACD line and its signal line; it describes a change in price momentum.",
+              "reference": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/macd"
+            },
+            {
+              "feature": "dist_sma200",
+              "label": "Distance from the long-term average",
+              "family": "Technical analysis",
+              "value": 0.5726673428400998,
+              "value_available": true,
+              "shap_value": -0.14061690866947174,
+              "effect_on_predicted_class": "opposes",
+              "meaning": "The closing price's relative distance from its trailing two-hundred-session average.",
+              "reference": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/sma"
+            },
+            {
+              "feature": "bollinger_pos",
+              "label": "Position within the Bollinger bands",
+              "family": "Technical analysis",
+              "value": 0.8313328346991747,
+              "value_available": true,
+              "shap_value": 0.10115643590688705,
+              "effect_on_predicted_class": "supports",
+              "meaning": "The closing price's position between trailing volatility bands. Values can move outside the usual band interval.",
+              "reference": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/bollinger-bands"
+            },
+            {
+              "feature": "obv_slope",
+              "label": "Volume trend",
+              "family": "Technical analysis",
+              "value": 281585928.5714286,
+              "value_available": true,
+              "shap_value": -0.3778236508369446,
+              "effect_on_predicted_class": "opposes",
+              "meaning": "The average change in on-balance volume over fourteen sessions; volume is added on rising closes and subtracted on falling closes.",
+              "reference": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/obv"
+            },
+            {
+              "feature": "mean_polarity",
+              "label": "Average headline sentiment",
+              "family": "News sentiment",
+              "value": 0.2526901960372925,
+              "value_available": true,
+              "shap_value": 0.003579243551939726,
+              "effect_on_predicted_class": "supports",
+              "meaning": "Average headline polarity, calculated as the positive-class probability minus the negative-class probability.",
+              "reference": "https://huggingface.co/ProsusAI/finbert"
+            },
+            {
+              "feature": "mention_volume",
+              "label": "Headline count",
+              "family": "News sentiment",
+              "value": 7.0,
+              "value_available": true,
+              "shap_value": -0.04860039800405502,
+              "effect_on_predicted_class": "opposes",
+              "meaning": "The number of scored headlines assigned to the contributing news session.",
+              "reference": ""
+            },
+            {
+              "feature": "mom_3d",
+              "label": "Short sentiment momentum",
+              "family": "News sentiment",
+              "value": 0.1625992755095164,
+              "value_available": true,
+              "shap_value": 0.12051514536142349,
+              "effect_on_predicted_class": "supports",
+              "meaning": "The trailing three-session average headline polarity minus polarity three sessions earlier.",
+              "reference": ""
+            },
+            {
+              "feature": "mom_7d",
+              "label": "Longer sentiment momentum",
+              "family": "News sentiment",
+              "value": 0.22571274930877344,
+              "value_available": true,
+              "shap_value": -0.2217559814453125,
+              "effect_on_predicted_class": "opposes",
+              "meaning": "The trailing seven-session average headline polarity minus polarity seven sessions earlier.",
+              "reference": ""
+            },
+            {
+              "feature": "volume_z",
+              "label": "Unusual news attention",
+              "family": "News sentiment",
+              "value": -0.21511012483183833,
+              "value_available": true,
+              "shap_value": -0.026862986385822296,
+              "effect_on_predicted_class": "opposes",
+              "meaning": "Headline count relative to its trailing twenty-session mean and standard deviation; it is news attention, not traded share volume.",
+              "reference": ""
+            },
+            {
+              "feature": "dispersion",
+              "label": "Variation in recent sentiment",
+              "family": "News sentiment",
+              "value": 0.14239465771130147,
+              "value_available": true,
+              "shap_value": -0.054825786501169205,
+              "effect_on_predicted_class": "opposes",
+              "meaning": "The trailing five-session standard deviation of average polarity; it is variation across sessions, not disagreement among individual headlines.",
+              "reference": ""
+            }
+          ],
+          "family_contributions": {
+            "News sentiment": -0.2279507634229958,
+            "Technical analysis": -0.6615519225597382
+          },
+          "base_value": -0.07230424135923386,
+          "raw_model_output": -0.9618064761161804,
+          "coverage": {
+            "technical_features": 5,
+            "news_features": 6,
+            "social_sentiment": "Not present in this news-only spike",
+            "risk_conditioning": "The risk profile does not condition the saved classifier; the live demo offers a separate prototype comparator"
+          },
+          "interpretation": "Attributions explain the raw model score for the selected class. They do not sum to its calibrated probability and do not establish what caused a market price move.",
+          "data_status": "Historical experiment record; no live market freshness is established",
+          "notice": "Research and educational output only. Not investment advice, not a recommendation to buy or sell any security."
+        },
+        "ranked_contributors": [
+          {
+            "name": "obv_slope",
+            "value": 281585928.5714286,
+            "shap_value": -0.3778236508369446,
+            "rank": 1,
+            "direction": "opposes"
+          },
+          {
+            "name": "mom_7d",
+            "value": 0.22571274930877344,
+            "shap_value": -0.2217559814453125,
+            "rank": 2,
+            "direction": "opposes"
+          },
+          {
+            "name": "dist_sma200",
+            "value": 0.5726673428400998,
+            "shap_value": -0.14061690866947174,
+            "rank": 3,
+            "direction": "opposes"
+          },
+          {
+            "name": "rsi_14",
+            "value": 79.31261071966482,
+            "shap_value": -0.12501205503940582,
+            "rank": 4,
+            "direction": "opposes"
+          },
+          {
+            "name": "mom_3d",
+            "value": 0.1625992755095164,
+            "shap_value": 0.12051514536142349,
+            "rank": 5,
+            "direction": "supports"
+          }
+        ],
+        "response_schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "ticker": {
+                  "type": "string"
+                },
+                "session_date": {
+                  "type": "string"
+                },
+                "horizon_days": {
+                  "type": "integer"
+                },
+                "decision": {
+                  "type": "string",
+                  "enum": [
+                    "Buy",
+                    "Hold",
+                    "Sell"
+                  ]
+                },
+                "confidence": {
+                  "type": "number"
+                },
+                "probabilities": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "Buy": {
+                      "type": "number"
+                    },
+                    "Hold": {
+                      "type": "number"
+                    },
+                    "Sell": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "Buy",
+                    "Hold",
+                    "Sell"
+                  ]
+                },
+                "contributions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "enum": [
+                          "rsi_14",
+                          "macd_hist",
+                          "dist_sma200",
+                          "bollinger_pos",
+                          "obv_slope",
+                          "mean_polarity",
+                          "mention_volume",
+                          "mom_3d",
+                          "mom_7d",
+                          "volume_z",
+                          "dispersion"
+                        ]
+                      },
+                      "value": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "shap_value": {
+                        "type": "number"
+                      },
+                      "rank": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "direction": {
+                        "type": "string",
+                        "enum": [
+                          "supports",
+                          "opposes"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "value",
+                      "shap_value",
+                      "rank",
+                      "direction"
+                    ]
+                  }
+                },
+                "definitions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "enum": [
+                          "rsi_14",
+                          "macd_hist",
+                          "dist_sma200",
+                          "bollinger_pos",
+                          "obv_slope",
+                          "mean_polarity",
+                          "mention_volume",
+                          "mom_3d",
+                          "mom_7d",
+                          "volume_z",
+                          "dispersion"
+                        ]
+                      },
+                      "meaning": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "meaning"
+                    ]
+                  }
+                },
+                "feature_evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "enum": [
+                          "rsi_14",
+                          "macd_hist",
+                          "dist_sma200",
+                          "bollinger_pos",
+                          "obv_slope",
+                          "mean_polarity",
+                          "mention_volume",
+                          "mom_3d",
+                          "mom_7d",
+                          "volume_z",
+                          "dispersion"
+                        ]
+                      },
+                      "value": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "shap_value": {
+                        "type": "number"
+                      },
+                      "direction": {
+                        "type": "string",
+                        "enum": [
+                          "supports",
+                          "opposes",
+                          "neutral"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "value",
+                      "shap_value",
+                      "direction"
+                    ]
+                  }
+                },
+                "family_contributions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "enum": [
+                          "News sentiment",
+                          "Technical analysis"
+                        ]
+                      },
+                      "shap_value": {
+                        "type": "number"
+                      },
+                      "direction": {
+                        "type": "string",
+                        "enum": [
+                          "supports",
+                          "opposes",
+                          "neutral"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "shap_value",
+                      "direction"
+                    ]
+                  }
+                },
+                "attribution_scope": {
+                  "type": "string"
+                },
+                "non_advice_notice": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ticker",
+                "session_date",
+                "horizon_days",
+                "decision",
+                "confidence",
+                "probabilities",
+                "contributions",
+                "definitions",
+                "feature_evidence",
+                "family_contributions",
+                "attribution_scope",
+                "non_advice_notice"
+              ]
+            }
+          },
+          "required": [
+            "text",
+            "payload"
+          ]
+        },
+        "controlled_sentence_patterns": " (substitute actual facts; percentages use two decimals, values and signed SHAP use four decimals):\n{ticker} decision for session {session_date} ({horizon_days}-day horizon): {decision}.\nCalibrated confidence in this decision: {confidence_percent}%.\nFull probability breakdown -- Buy: {Buy_percent}%, Hold: {Hold_percent}%, Sell: {Sell_percent}%.\n{feature} (value {value_or_missing}) {supports_or_opposes} the {decision} decision with a SHAP contribution of {signed_shap}, ranked #{rank} of {top_k_count}.\nRecorded feature {feature} (value {value_or_missing}): SHAP {signed_shap} for {decision}; effect {supports_opposes_or_neutral}.\nFeature definition for {feature}: {exact_reviewed_meaning}\nFamily contribution for {family}: SHAP {signed_family_shap} for {decision}; effect {supports_opposes_or_neutral}.\n",
+        "attribution_scope": "Attributions explain the raw model score for the selected class. They do not sum to its calibrated probability and do not establish what caused a market price move."
+      }
+    },
+    {
+      "record_id": "fnspid:NVDA:2023-03-29:5d",
+      "record_sha256": "2157276008ceee3a23cb5c163f46b8f01a090c71a2e59bdbf8811d4ac3aaca6e",
+      "split": "train",
+      "input": {
+        "prompt_version": "record-facts-to-complete-controlled-prose-v1",
+        "evidence": {
+          "schema_version": "mideval-evidence-v1",
+          "ticker": "NVDA",
+          "session_date": "2023-03-29",
+          "horizon_days": 5,
+          "decision": "Buy",
+          "probabilities": {
+            "Buy": 0.5530287623405457,
+            "Hold": 0.1355919986963272,
+            "Sell": 0.31137922406196594
+          },
+          "corpus": "fnspid",
+          "model_version": "xgboost-3.2.0-git1037928e5f95",
+          "features": [
+            {
+              "feature": "rsi_14",
+              "label": "Relative strength index",
+              "family": "Technical analysis",
+              "value": 79.31261071966482,
+              "value_available": true,
+              "shap_value": -0.22091645002365112,
+              "effect_on_predicted_class": "opposes",
+              "meaning": "Recent price momentum on a zero-to-one-hundred scale, calculated here over fourteen sessions.",
+              "reference": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/rsi"
+            },
+            {
+              "feature": "macd_hist",
+              "label": "MACD histogram",
+              "family": "Technical analysis",
+              "value": 0.05661028283281544,
+              "value_available": true,
+              "shap_value": -0.15835566818714142,
+              "effect_on_predicted_class": "opposes",
+              "meaning": "The difference between the MACD line and its signal line; it describes a change in price momentum.",
+              "reference": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/macd"
+            },
+            {
+              "feature": "dist_sma200",
+              "label": "Distance from the long-term average",
+              "family": "Technical analysis",
+              "value": 0.5726673428400998,
+              "value_available": true,
+              "shap_value": -0.007047025952488184,
+              "effect_on_predicted_class": "opposes",
+              "meaning": "The closing price's relative distance from its trailing two-hundred-session average.",
+              "reference": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/sma"
+            },
+            {
+              "feature": "bollinger_pos",
+              "label": "Position within the Bollinger bands",
+              "family": "Technical analysis",
+              "value": 0.8313328346991747,
+              "value_available": true,
+              "shap_value": 0.16530375182628632,
+              "effect_on_predicted_class": "supports",
+              "meaning": "The closing price's position between trailing volatility bands. Values can move outside the usual band interval.",
+              "reference": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/bollinger-bands"
+            },
+            {
+              "feature": "obv_slope",
+              "label": "Volume trend",
+              "family": "Technical analysis",
+              "value": 281585928.5714286,
+              "value_available": true,
+              "shap_value": -0.2807302474975586,
+              "effect_on_predicted_class": "opposes",
+              "meaning": "The average change in on-balance volume over fourteen sessions; volume is added on rising closes and subtracted on falling closes.",
+              "reference": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/obv"
+            },
+            {
+              "feature": "mean_polarity",
+              "label": "Average headline sentiment",
+              "family": "News sentiment",
+              "value": 0.240226611495018,
+              "value_available": true,
+              "shap_value": 0.00971513707190752,
+              "effect_on_predicted_class": "supports",
+              "meaning": "Average headline polarity, calculated as the positive-class probability minus the negative-class probability.",
+              "reference": "https://huggingface.co/ProsusAI/finbert"
+            },
+            {
+              "feature": "mention_volume",
+              "label": "Headline count",
+              "family": "News sentiment",
+              "value": 9.0,
+              "value_available": true,
+              "shap_value": -0.03971734270453453,
+              "effect_on_predicted_class": "opposes",
+              "meaning": "The number of scored headlines assigned to the contributing news session.",
+              "reference": ""
+            },
+            {
+              "feature": "mom_3d",
+              "label": "Short sentiment momentum",
+              "family": "News sentiment",
+              "value": -0.01337074985106787,
+              "value_available": true,
+              "shap_value": -0.09424993395805359,
+              "effect_on_predicted_class": "opposes",
+              "meaning": "The trailing three-session average headline polarity minus polarity three sessions earlier.",
+              "reference": ""
+            },
+            {
+              "feature": "mom_7d",
+              "label": "Longer sentiment momentum",
+              "family": "News sentiment",
+              "value": -0.01988090521522931,
+              "value_available": true,
+              "shap_value": -0.030896469950675964,
+              "effect_on_predicted_class": "opposes",
+              "meaning": "The trailing seven-session average headline polarity minus polarity seven sessions earlier.",
+              "reference": ""
+            },
+            {
+              "feature": "volume_z",
+              "label": "Unusual news attention",
+              "family": "News sentiment",
+              "value": -0.7221190808701659,
+              "value_available": true,
+              "shap_value": 0.07122272253036499,
+              "effect_on_predicted_class": "supports",
+              "meaning": "Headline count relative to its trailing twenty-session mean and standard deviation; it is news attention, not traded share volume.",
+              "reference": ""
+            },
+            {
+              "feature": "dispersion",
+              "label": "Variation in recent sentiment",
+              "family": "News sentiment",
+              "value": 0.06292514269836298,
+              "value_available": true,
+              "shap_value": 0.1490563154220581,
+              "effect_on_predicted_class": "supports",
+              "meaning": "The trailing five-session standard deviation of average polarity; it is variation across sessions, not disagreement among individual headlines.",
+              "reference": ""
+            }
+          ],
+          "family_contributions": {
+            "News sentiment": 0.06513042841106653,
+            "Technical analysis": -0.501745639834553
+          },
+          "base_value": -0.06623762845993042,
+          "raw_model_output": -0.5028528571128845,
+          "coverage": {
+            "technical_features": 5,
+            "news_features": 6,
+            "social_sentiment": "Not present in this news-only spike",
+            "risk_conditioning": "The risk profile does not condition the saved classifier; the live demo offers a separate prototype comparator"
+          },
+          "interpretation": "Attributions explain the raw model score for the selected class. They do not sum to its calibrated probability and do not establish what caused a market price move.",
+          "data_status": "Historical experiment record; no live market freshness is established",
+          "notice": "Research and educational output only. Not investment advice, not a recommendation to buy or sell any security."
+        },
+        "ranked_contributors": [
+          {
+            "name": "obv_slope",
+            "value": 281585928.5714286,
+            "shap_value": -0.2807302474975586,
+            "rank": 1,
+            "direction": "opposes"
+          },
+          {
+            "name": "rsi_14",
+            "value": 79.31261071966482,
+            "shap_value": -0.22091645002365112,
+            "rank": 2,
+            "direction": "opposes"
+          },
+          {
+            "name": "bollinger_pos",
+            "value": 0.8313328346991747,
+            "shap_value": 0.16530375182628632,
+            "rank": 3,
+            "direction": "supports"
+          },
+          {
+            "name": "macd_hist",
+            "value": 0.05661028283281544,
+            "shap_value": -0.15835566818714142,
+            "rank": 4,
+            "direction": "opposes"
+          },
+          {
+            "name": "dispersion",
+            "value": 0.06292514269836298,
+            "shap_value": 0.1490563154220581,
+            "rank": 5,
+            "direction": "supports"
+          }
+        ],
+        "response_schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "ticker": {
+                  "type": "string"
+                },
+                "session_date": {
+                  "type": "string"
+                },
+                "horizon_days": {
+                  "type": "integer"
+                },
+                "decision": {
+                  "type": "string",
+                  "enum": [
+                    "Buy",
+                    "Hold",
+                    "Sell"
+                  ]
+                },
+                "confidence": {
+                  "type": "number"
+                },
+                "probabilities": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "Buy": {
+                      "type": "number"
+                    },
+                    "Hold": {
+                      "type": "number"
+                    },
+                    "Sell": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "Buy",
+                    "Hold",
+                    "Sell"
+                  ]
+                },
+                "contributions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "enum": [
+                          "rsi_14",
+                          "macd_hist",
+                          "dist_sma200",
+                          "bollinger_pos",
+                          "obv_slope",
+                          "mean_polarity",
+                          "mention_volume",
+                          "mom_3d",
+                          "mom_7d",
+                          "volume_z",
+                          "dispersion"
+                        ]
+                      },
+                      "value": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "shap_value": {
+                        "type": "number"
+                      },
+                      "rank": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "direction": {
+                        "type": "string",
+                        "enum": [
+                          "supports",
+                          "opposes"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "value",
+                      "shap_value",
+                      "rank",
+                      "direction"
+                    ]
+                  }
+                },
+                "definitions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "enum": [
+                          "rsi_14",
+                          "macd_hist",
+                          "dist_sma200",
+                          "bollinger_pos",
+                          "obv_slope",
+                          "mean_polarity",
+                          "mention_volume",
+                          "mom_3d",
+                          "mom_7d",
+                          "volume_z",
+                          "dispersion"
+                        ]
+                      },
+                      "meaning": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "meaning"
+                    ]
+                  }
+                },
+                "feature_evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "enum": [
+                          "rsi_14",
+                          "macd_hist",
+                          "dist_sma200",
+                          "bollinger_pos",
+                          "obv_slope",
+                          "mean_polarity",
+                          "mention_volume",
+                          "mom_3d",
+                          "mom_7d",
+                          "volume_z",
+                          "dispersion"
+                        ]
+                      },
+                      "value": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "shap_value": {
+                        "type": "number"
+                      },
+                      "direction": {
+                        "type": "string",
+                        "enum": [
+                          "supports",
+                          "opposes",
+                          "neutral"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "value",
+                      "shap_value",
+                      "direction"
+                    ]
+                  }
+                },
+                "family_contributions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "enum": [
+                          "News sentiment",
+                          "Technical analysis"
+                        ]
+                      },
+                      "shap_value": {
+                        "type": "number"
+                      },
+                      "direction": {
+                        "type": "string",
+                        "enum": [
+                          "supports",
+                          "opposes",
+                          "neutral"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "shap_value",
+                      "direction"
+                    ]
+                  }
+                },
+                "attribution_scope": {
+                  "type": "string"
+                },
+                "non_advice_notice": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ticker",
+                "session_date",
+                "horizon_days",
+                "decision",
+                "confidence",
+                "probabilities",
+                "contributions",
+                "definitions",
+                "feature_evidence",
+                "family_contributions",
+                "attribution_scope",
+                "non_advice_notice"
+              ]
+            }
+          },
+          "required": [
+            "text",
+            "payload"
+          ]
+        },
+        "controlled_sentence_patterns": " (substitute actual facts; percentages use two decimals, values and signed SHAP use four decimals):\n{ticker} decision for session {session_date} ({horizon_days}-day horizon): {decision}.\nCalibrated confidence in this decision: {confidence_percent}%.\nFull probability breakdown -- Buy: {Buy_percent}%, Hold: {Hold_percent}%, Sell: {Sell_percent}%.\n{feature} (value {value_or_missing}) {supports_or_opposes} the {decision} decision with a SHAP contribution of {signed_shap}, ranked #{rank} of {top_k_count}.\nRecorded feature {feature} (value {value_or_missing}): SHAP {signed_shap} for {decision}; effect {supports_opposes_or_neutral}.\nFeature definition for {feature}: {exact_reviewed_meaning}\nFamily contribution for {family}: SHAP {signed_family_shap} for {decision}; effect {supports_opposes_or_neutral}.\n",
+        "attribution_scope": "Attributions explain the raw model score for the selected class. They do not sum to its calibrated probability and do not establish what caused a market price move."
+      }
+    }
+  ],
+  "packet_sha256": "8a4f02f961bcaf3c292593e15b79a1339ff09d89f50bf51c92cd7847f794f5d5"
+}

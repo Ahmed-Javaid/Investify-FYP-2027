@@ -1,0 +1,23 @@
+{
+  "schema": "investify-model-policy-cleanup-v1",
+  "removed_variant_experiments_and_derived_files": true,
+  "working_text_variant_references": [],
+  "preserved_prior_archives": [
+    {
+      "archive": "investify_mideval_ai_review_20261012.zip",
+      "forbidden_variant_references": 0
+    },
+    {
+      "archive": "investify_mideval_ai_review_20261012_v2.zip",
+      "forbidden_variant_references": 0
+    },
+    {
+      "archive": "investify_mideval_source.zip",
+      "forbidden_variant_references": 0
+    }
+  ],
+  "original_external_weight_files_preserved": true,
+  "frozen_ai_reference_labels_preserved": true,
+  "withdrawn_metrics_used_as_official_results": false,
+  "official_replacement_inference_completed": false
+}

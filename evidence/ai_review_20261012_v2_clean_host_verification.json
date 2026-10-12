@@ -1,0 +1,22 @@
+{
+  "checked_utc": "2026-10-11T19:52:32.108999+00:00",
+  "archive_sha256": "793c907c4bfd6cd8b0020d4dd6d8da3513aed2ed9e8110570f1fa835585b7213",
+  "code_commit": "0a27ed11ae14758895277368f15c16cb72f67c9c",
+  "inventory_files_verified": 300,
+  "clean_environment": "E:\\AI-Tools\\Temp\\investify-portable-clean-py311",
+  "unavailable_external_packages": {
+    "numpy": false,
+    "streamlit": false,
+    "torch": false,
+    "pytest": false
+  },
+  "portable_tests_passed": 103,
+  "live_checks_passed": 62,
+  "records_validated": 372,
+  "revision_source": "checked_working_tree_inventory",
+  "git_dirty": true,
+  "plan_only_status": "plan_only",
+  "real_completions": 0,
+  "browser_visual_qa": false,
+  "scope": "Actual ZIP extraction, hash inventory, stdlib-only execution, live portable server and no-inference planning; not scientific reproduction or rendered report/deck"
+}

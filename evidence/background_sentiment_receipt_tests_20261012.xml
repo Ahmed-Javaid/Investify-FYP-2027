@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="10" time="0.823" timestamp="2026-10-12T07:07:01.471405+05:00" hostname="DESKTOP-EMOSSU6"><testcase classname="tests.test_mideval_sentiment_receipts.SentimentReceiptTests" name="test_backend_injection_has_no_production_path" time="0.020" /><testcase classname="tests.test_mideval_sentiment_receipts.SentimentReceiptTests" name="test_catalog_and_source_plan_drift_prevent_a_run_before_backend_use" time="0.026" /><testcase classname="tests.test_mideval_sentiment_receipts.SentimentReceiptTests" name="test_directory_revision_name_cannot_hide_substituted_weight_bytes" time="0.041" /><testcase classname="tests.test_mideval_sentiment_receipts.SentimentReceiptTests" name="test_fixture_receipt_comparison_is_explicitly_separate_from_research" time="0.114" /><testcase classname="tests.test_mideval_sentiment_receipts.SentimentReceiptTests" name="test_hash_consistent_probability_edit_still_fails_retained_logit_replay" time="0.094" /><testcase classname="tests.test_mideval_sentiment_receipts.SentimentReceiptTests" name="test_incomplete_actual_publisher_metadata_never_freezes_a_research_plan" time="0.017"><failure message="UnicodeDecodeError: 'charmap' codec can't decode byte 0x9d in position 135175: character maps to &lt;undefined&gt;">self = &lt;tests.test_mideval_sentiment_receipts.SentimentReceiptTests testMethod=test_incomplete_actual_publisher_metadata_never_freezes_a_research_plan&gt;
+
+    def test_incomplete_actual_publisher_metadata_never_freezes_a_research_plan(self):
+        catalog = json.loads((ROOT / 'artifacts/mid_eval/social_publisher_catalog_v4.json').read_text())
+&gt;       benchmark = json.loads((ROOT / 'artifacts/mid_eval/social_benchmark.json').read_text())
+
+tests\test_mideval_sentiment_receipts.py:118: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Habibi\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:1059: in read_text
+    return f.read()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;encodings.cp1252.IncrementalDecoder object at 0x00000216F80BDB50&gt;
+input = b'{\r\n  "protocol": "mideval-equity-social-selection-v3",\r\n  "selection": {\r\n    "annotation_method": "model_gene... "exclusion_reason": "An app-feature notification contains no substantive Microsoft proposition."\r\n    }\r\n  ]\r\n}'
+final = True
+
+    def decode(self, input, final=False):
+&gt;       return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+E       UnicodeDecodeError: 'charmap' codec can't decode byte 0x9d in position 135175: character maps to &lt;undefined&gt;
+
+C:\Users\Habibi\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py:23: UnicodeDecodeError</failure></testcase><testcase classname="tests.test_mideval_sentiment_receipts.SentimentReceiptTests" name="test_missing_or_swapped_sidecar_cannot_score_a_probability_run" time="0.099" /><testcase classname="tests.test_mideval_sentiment_receipts.SentimentReceiptTests" name="test_parent_split_labels_and_candidate_declarations_are_unchanged" time="0.017" /><testcase classname="tests.test_mideval_sentiment_receipts.SentimentReceiptTests" name="test_text_and_token_provenance_tampering_fail_closed" time="0.167" /><testcase classname="tests.test_mideval_sentiment_receipts.SentimentReceiptTests" name="test_unbound_tokenizer_configuration_cannot_be_loaded" time="0.018" /></testsuite></testsuites>

@@ -1,0 +1,18 @@
+{
+  "schema": "investify-finbert-pinned-page-access-v1",
+  "checked_utc": "2026-10-12T11:53:56.625464+00:00",
+  "repository": "ProsusAI/finbert",
+  "proposed_revision": "0bc2ac10dda6929bcb1f77ccc43c7ec5c424f031",
+  "primary_main_tree_readable": true,
+  "exact_revision_tree_page_status": "not_accessible_via_web_tool",
+  "exact_revision_safetensors_blob_page_status": "not_accessible_via_web_tool",
+  "weight_pointer_sha256": null,
+  "weight_size_bytes": null,
+  "config_tokenizer_original_byte_hashes": null,
+  "weights_downloaded": 0,
+  "normal_network_retries": 0,
+  "model_loads": 0,
+  "inference_calls": 0,
+  "status": "metadata_incomplete",
+  "scope": "Supplemental official-page metadata checks only; no source-byte acquisition or substitution"
+}

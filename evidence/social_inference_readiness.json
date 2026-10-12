@@ -1,0 +1,15 @@
+{
+  "checked_utc": "2026-10-11T19:49:08.549441+00:00",
+  "status": "blocked",
+  "reference_status": "actual_ai_reference_frozen",
+  "runtime_modules": {
+    "torch": false,
+    "transformers": false
+  },
+  "cryptobert_snapshot_present": false,
+  "actual_attempt_receipt": "social_pilot/cryptobert_inference_blocked.json",
+  "cardiff_published_format": "Inspected pinned snapshot lists pickle/TensorFlow, without required Safetensors; compatible conversion/refreeze pending",
+  "cardiff_source": "https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest/tree/3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+  "model_outputs": 0,
+  "quality_metrics": null
+}

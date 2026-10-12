@@ -1,0 +1,91 @@
+# Mid-evaluation readiness estimate - 12 October 2026
+
+## Continuation criterion deltas
+
+The user requested at least 90% first-mid readiness. **That target is not achieved.** Keep the original weights below; the historical 68.5% ledger and its approximately-70% judgement remain a dated starting point. The updated judgement is approximately **72%** (72.25% weighted), with uncertainty roughly 65-80%. It is not a grade, automated acceptance, whole-project percentage or supervisor closure.
+
+| Work area | Unchanged weight | Current planning completion | Concrete delta / remaining evidence |
+| --- | ---: | ---: | --- |
+| Original scientific pipeline/baseline/leakage | 25% | 60% | High-value source/fixture repairs improve confidence but do not replace the still-missing actual ingestion-to-baseline/trained-canary run. No increase from test counts. |
+| Live interface/explanation/transparency | 20% | 95% | New fixture-causality/failure demo, verification freshness, retained selection/retry and clear historical/calibration limits. Browser/supervisor review remains. |
+| Social-sentiment selection | 15% | 50% | CPU classifier imports recovered and receipt/original-byte gates prepared, but original snapshots/metadata and actual paired outputs remain absent. No research-completion increase from fixtures. |
+| Report/requirements/design | 20% | 80% | Original-mid and exact engineering traceability, numbered original/scoped NFRs, interfaces and current science/model wording. Institutional compilation/render/signature/review remain. |
+| Committee responses/model inventory/metrics | 10% | 85% | Current AI/teacher roles and worked explanation/temporal evidence linked; no added teacher content/comprehension benefit or committee approval. |
+| Handover/repository/contributions | 5% | 70% | New recovery archive/extraction verified: 165 standard-library tests, 62 live checks, 372 records and 18 requirement anchors. Remote CI/upstream/member/process evidence still missing. |
+| Presentation/demo/defence | 5% | 55% | Full code-linked walkthrough, actual failure/fixture steps and reconciled notes. No rendered deck or genuine rehearsal/defence. |
+
+The table yields **72.25%**, reported as approximately **72%**. Handover now receives the previously conditional 70% credit because the matching recovery archive/extraction receipt exists. The earlier 71.75% estimate withheld that credit. No scientific/social completion credit is added from fixture counts.
+
+If pipeline remains 60% and social selection remains 50%, even setting every other area to 100% caps this ledger at **82.5%**. Honest 90% therefore requires substantive actual-run closure in those areas, plus the report/deck/review evidence; more tests, teacher examples or drafting alone cannot meet it. A missing required rendered report/live review can prevent readiness at any percentage.
+
+Current engineering scopes: 212 selected passes/no skips with twenty Streamlit cases; 153 core-contract passes/three shuffled cases deselected; twelve controlled Node handler cases/eight state assertions; six CPU tensor fixtures; and separate actual sklearn split/isotonic helper checks. These overlap and are not summed as scientific acceptance. No original model conversion, candidate inference, student training or corrected historical performance result exists. The four-page continuation PDF retains its earlier 186-test snapshot and is rendered/visually checked working evidence, not the institutional report. The fresh both-corpus doctor lists 25 blockers and executes zero commands; the social CLI refuses an incomplete publisher catalog. See BACKGROUND_PROGRESS.md and dated receipts for exact boundaries.
+
+### Earlier starting-point estimate
+
+**The earlier working estimate was approximately 70% complete for the first-mid package (roughly 60-75% allowing for unresolved reproduction and review).** It is preserved below as the original planning baseline, not the current 72% estimate. These are effort-weighted judgements, not a university grade, automated acceptance score, whole-FYP completion percentage or supervisor-approved closure. A nearly complete package can still be unready if a required live demonstration or report is missing.
+
+## Basis for the percentage
+
+The work areas below cover the scope in [MID_EVAL_SCOPE.md](MID_EVAL_SCOPE.md). Weights reflect estimated share/importance of this package and are not the university's rubric weights. Partial implementation receives partial credit; drafts do not receive completion credit for compilation, visual QA or student defence. Existing cached evidence is distinguished from a newly reproduced scientific pipeline.
+
+| Work area | Planning weight | Estimated completion | Basis |
+| --- | ---: | ---: | --- |
+| Original scientific pipeline, baseline and leakage/mutation evidence | 25% | 60% | Existing source and saved artifacts available; original runtime/input restoration and a fresh end-to-end run remain. |
+| Live interface, explanations, verifier and transparency | 20% | 90% | Working local interfaces and widget tests; complete technical/news context, corruption detection, verified fallback and scoped limitations. Visual/supervisor demonstration remains. |
+| Social-sentiment model selection study | 15% | 50% | Real source acquisition, frozen AI references, evaluator/runner and provenance gates exist. Candidate model execution/comparison and selection remain. |
+| Research, requirements, design and institutional report | 20% | 75% | Populated source chapters, references, requirements and figures; further reconciliation, compilation, visual QA and institutional completion remain. |
+| Committee responses, model inventory and metrics | 10% | 80% | Working revisions and current evidence available; user-benefit claims, remaining study outcomes and team/supervisor review are not closed. |
+| Reproducible handover, repository/CI and contribution evidence | 5% | 60% | Source bundles and local checks available; remote CI, upstream reconciliation and genuine member/process evidence remain. |
+| Presentation, final demonstration and defence preparation | 5% | 40% | Twelve-slide content/notes draft exists; no authored/rendered PPTX, complete rehearsal or student ownership defence yet. |
+
+Weighted result: 68.5%, reported as approximately 70% to avoid treating the judgements as exact measurement. Do not increase the estimate merely by adding test counts or later-stage teacher examples.
+
+## What is done
+
+- Isolated working copy, preserved history and original-file protection: latest preservation receipt checks 224 files with zero changes.
+- Historical decision/explanation interface and portable HTTP demo; complete technical/news feature values, definitions and attributions; missing-data and uncertainty disclosure.
+- Verifier correction checks visible prose and JSON independently; incorrect candidates retain rejection evidence and use a verified fallback.
+- Latest selected receipt: 158 passes, zero failures/errors/skips, including 17 actual Streamlit widget cases. Separate saved-record/live/comparator checks cover 372 records, 62 HTTP checks and 228 arithmetic probes. These are not model accuracy or scientific-pipeline reproduction results.
+- Actual social acquisition/AI annotation: 200 MSFT posts, 117 usable references and 83 exclusions, with frozen chronology, labels and provenance. Candidate sentiment scores remain unavailable.
+- Six actual assistant-teacher explanations accepted by the bounded verifier, with four training/two validation exports and a replay/viewer. This is a construction pilot; all are Buy and no added explanatory content, comprehension benefit or training efficacy is demonstrated.
+- Working research, problem/contribution, model/metric inventory, requirements/design, report chapters, diagram sources, twelve-slide content/notes and source handover archives.
+- TeX inputs/citations/environment/brace checks pass across 28 sources. This is structural verification, not compilation or rendered layout QA.
+
+## What remains for first mid
+
+| Task | Completion evidence needed | Current dependency |
+| --- | --- | --- |
+| Fresh baseline and leakage/mutation run | Actual ingestion-to-baseline results, tested calendars/features, leakage checks and demonstrated deliberate failure; current limitations/recovery recorded. | Original scientific data/store/cache and supported scientific environment. |
+| Finish social-model selection | Real paired candidate outputs, scoped metrics against the frozen AI references, comparison and selection or declared news-only branch. | Compatible official candidate weights and supported inference runtime. AI agreement is not independent human accuracy. |
+| Complete report/design/research consistency | Current model roles and results, requirements traceability, appropriate design artefacts, institutional metadata, compiled and visually inspected report. | LaTeX/compiler availability and genuine institutional/team inputs. |
+| Finish presentation and demonstration | Authored/rendered deck, concise demonstration including failure/fallback, launch instructions and rehearsal. | Required presentation tooling and a usable review surface. |
+| Close process and committee evidence | Current action/evidence mapping, actual contributors/meetings, upstream/CI verification where required, reviewed final bundle and student explanations. | Private repository access and student/supervisor participation. |
+
+The committee asks that the LLM's usefulness be explained and evidenced appropriately. Recorded teacher examples and deterministic explanation coverage are available; do not present them as a live language model, a measured improvement over the guide or a completed user study. Full follow-up behaviour/user-study requirements remain in the later schedule unless rescheduled.
+
+## Remaining time, AI assisted
+
+These are **additional active work hours from this checkpoint**, assuming the execution dependencies above become available. They exclude model/data transfer waits, external access delays, unattended long computation and substantial unforeseen repair. They do not promise a completion date while prerequisites are unavailable.
+
+| Remaining work | Active AI-assisted hours |
+| --- | ---: |
+| Restore and run scientific baseline/leakage checks, investigate discrepancies | 4-8 |
+| Execute and analyse sentiment-model comparison | 2-4 |
+| Finish report/diagrams/research consistency, compile and inspect | 3-5 |
+| Author/check presentation and prepare the demonstration | 2-3 |
+| Repository/CI, final evidence reconciliation and packaging | 1-2 |
+| **Total** | **12-22** |
+
+Allow **2-4 additional team hours** for institutional facts, review, contribution records, rehearsal and defence preparation, assuming the team already understands its original modules. Learning unfamiliar implementation may take longer. With dependencies ready, plan roughly **2-4 working days** for execution and review. If substantial scientific-pipeline repair is required, the active AI-assisted budget could rise to **30-40 hours**; feasibility and predictive performance cannot be guaranteed in advance.
+
+QLoRA/student adaptation and a full teacher/original-student/adapted-student study are outside this first-mid estimate; the proposal schedules them for Final-2. No new Qwen teacher download is required. No specific task currently needs Astra; present blockers are execution/access/tooling rather than a demonstrated need for a different reasoning model.
+
+## Supporting records
+
+- [Scope and original milestone mapping](MID_EVAL_SCOPE.md).
+- [Current selected-test receipt](../evidence/current_tests.xml).
+- [Original preservation receipt](../evidence/originals_preservation_check.json).
+- [Source/TeX structural verification](../evidence/source_syntax_verification.json).
+- [Teacher pilot and limitations](../deliverables/ASSISTANT_TEACHER_PILOT.md).
+- [AI social-reference pilot](../deliverables/AI_SENTIMENT_PILOT.md).
+- [Dated clean-host source-handover verification](../evidence/teacher_review_20261012_v2_clean_host_verification.json). This predates the scope/readiness documentation changes; it proves that archived version, not a newly repackaged current workspace.

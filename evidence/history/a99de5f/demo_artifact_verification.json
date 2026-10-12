@@ -1,0 +1,42 @@
+{
+  "checked_utc": "2026-10-11T10:45:39.510253+00:00",
+  "python": "3.11.9",
+  "git_commit": "a99de5f94aa6406004193686d9aa94b2dff5c9e7",
+  "git_dirty": false,
+  "validation_sources_sha256": {
+    "src\\investify\\decision_record.py": "75cd68466fdd5a8398a05881e57e88a276c29db439b34183ac2d2614c9b6cf80",
+    "src\\investify\\explain\\context.py": "2bf12f8534f1cab86370e32092c15fddbc6eea0359328b58c2ac621bd4d9c335",
+    "src\\investify\\explain\\template.py": "6374ce6ab4f59ea4aac6312e338ef6e658703ef185b209aeffae4315ea0f6b24",
+    "src\\investify\\explain\\verifier.py": "a2dc19e46b1139d669f2831e05165a1524b4faf526317bdf8396a9bc9875286e",
+    "src\\investify\\explain\\pipeline.py": "a648550ac928bd75bdda167f7386d452a6a46b855c9dff1ba01e671a70540b51",
+    "src\\investify\\demo_server.py": "624a379371af33778d3e65c87248db67bfe79dbd83cf217310ab4d739673eb4a",
+    "src\\investify\\demo_readiness.py": "d92d1650f040452f7341f7bf3d58ee89829fd614b7e6c4acb587b6e4f1400de3",
+    "app\\mideval_demo.html": "fa547a3a4145650651aff369433c4e9863cbd376e23fde3a39563e7a0ed3faa2"
+  },
+  "scope": "Committed records, evidence-context construction, and deterministic template verification; no retraining or LLM evaluation",
+  "verifier_contract": "mideval-prose-and-payload-v2",
+  "results": [
+    {
+      "corpus": "fnspid",
+      "records": 186,
+      "template_passes": 186,
+      "decision_counts": {
+        "Buy": 186
+      },
+      "constant_predictor": true,
+      "max_shap_residual": 1.9185245037078857e-07,
+      "artifact_sha256": "4045b234c0f482a01590f2b13dd76e24acbc9ab8e97c20f3e87d9bc0ba41ae42"
+    },
+    {
+      "corpus": "alpaca",
+      "records": 186,
+      "template_passes": 186,
+      "decision_counts": {
+        "Buy": 186
+      },
+      "constant_predictor": true,
+      "max_shap_residual": 9.052455425262451e-07,
+      "artifact_sha256": "f31543479e9fa1a2688da5bd360e25439ea0d332f9169588ae013547fd9ef029"
+    }
+  ]
+}

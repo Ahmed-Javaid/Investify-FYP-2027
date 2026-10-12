@@ -1,0 +1,24 @@
+\begin{tikzpicture}[
+box/.style={draw,rounded corners,align=center,text width=30mm,minimum height=13mm,font=\small},
+planned/.style={box,dashed},node distance=9mm and 8mm]
+\node[box] (record) {Saved decision\\and attributions};
+\node[box,right=of record] (context) {Complete evidence\\context};
+\node[box,right=of context] (display) {Technical/news\\evidence display};
+\node[box,below=of record] (template) {Template or\\candidate claims};
+\node[box,right=of template] (verifier) {Prose and JSON\\verification};
+\node[box,right=of verifier] (output) {Accepted text or\\verified fallback};
+\node[planned,above=of context] (llm) {Official-model adapter\\run pending};
+\node[box,below=of template] (profile) {Explicit prototype\\capacity/tolerance};
+\node[box,right=of profile] (scaler) {Saved raw features\\148/38 split};
+\node[box,right=of scaler] (blend) {Separate profile\\linear comparator};
+\draw[->] (record) -- (context);
+\draw[->] (context) -- (display);
+\draw[->] (record) -- (template);
+\draw[->] (template) -- (verifier);
+\draw[->] (verifier) -- (output);
+\draw[->,dashed] (context) -- (llm);
+\draw[->,dashed] (llm.east) -- ++(5mm,0) |- (verifier.east);
+\draw[->] (record.west) -- ++(-6mm,0) |- (scaler.south);
+\draw[->] (scaler) -- (blend);
+\draw[->] (profile.south) -- ++(0,-7mm) -| (blend.south);
+\end{tikzpicture}

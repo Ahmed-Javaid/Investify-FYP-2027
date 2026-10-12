@@ -1,0 +1,17 @@
+**/.git/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+**/.cache/
+**/.venv/
+**/.env
+**/.env.*
+**/*.gguf
+**/*.safetensors
+**/*.bin
+**/*.zip
+code/data/raw/
+code/data/store/
+original_materials/
+sources/stocknet/
+evidence/social_pilot/source/

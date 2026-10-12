@@ -1,0 +1,58 @@
+{
+  "checked_utc": "2026-10-12T11:52:28.154586+00:00",
+  "credentials": {
+    "alpaca_inherited_environment_pair_present": false,
+    "credential_values_recorded": false
+  },
+  "declared_manifest_sha256": "d7e85df8d889e34e78abee220ca2935fd6d8c20182fbfe4c6571f4c046718840",
+  "large_corpus_transfer_attempted": false,
+  "normal_configured_proxy_present": true,
+  "results": [
+    {
+      "detail": "Normal inherited-network request failed; no proxy, routing or security setting was changed",
+      "elapsed_seconds": 2.093,
+      "errno": 10061,
+      "error_type": "URLError",
+      "maximum_bytes": 1048576,
+      "purpose": "Bounded genuine NVDA daily-price snapshot request, not yfinance execution",
+      "reason_type": "ConnectionRefusedError",
+      "response_bytes": 0,
+      "source": "Yahoo Finance",
+      "status": "connection_failed",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?period1=1514764800&period2=1704067200&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "winerror": 10061
+    },
+    {
+      "detail": "Normal inherited-network request failed; no proxy, routing or security setting was changed",
+      "elapsed_seconds": 2.093,
+      "errno": 10061,
+      "error_type": "URLError",
+      "maximum_bytes": 262144,
+      "purpose": "Publisher dataset revision/file metadata only; no 23GB CSV transfer",
+      "reason_type": "ConnectionRefusedError",
+      "response_bytes": 0,
+      "source": "Author-released FNSPID",
+      "status": "connection_failed",
+      "url": "https://huggingface.co/api/datasets/Zihan1004/FNSPID?blobs=true",
+      "winerror": 10061
+    },
+    {
+      "detail": "Normal inherited-network request failed; no proxy, routing or security setting was changed",
+      "elapsed_seconds": 2.093,
+      "errno": 10061,
+      "error_type": "URLError",
+      "maximum_bytes": 131072,
+      "purpose": "Bounded declared historical news endpoint access check",
+      "reason_type": "ConnectionRefusedError",
+      "response_bytes": 0,
+      "source": "Alpaca/Benzinga",
+      "status": "connection_failed",
+      "url": "https://data.alpaca.markets/v1beta1/news?symbols=NVDA&start=2018-01-01T00%3A00%3A00Z&end=2023-12-31T23%3A59%3A59Z&limit=1&sort=asc&include_content=false",
+      "winerror": 10061
+    }
+  ],
+  "routing_or_proxy_settings_changed": false,
+  "schema": "investify-declared-market-source-probe-v1",
+  "scope": "Actual current bounded normal-network attempts. Source metadata/public response bytes are not a historical reproduction, complete news acquisition, trained-model execution or scientific result.",
+  "source_script_sha256": "5ae35c7b371778fcf7154ee21e3520cb39be74567bfd45d5952d89093d4dea28"
+}

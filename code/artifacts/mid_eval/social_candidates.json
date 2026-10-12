@@ -1,0 +1,12 @@
+[
+  {
+    "model_id": "ElKulako/cryptobert",
+    "revision": "9e37c910fe87727cb842a9ac55c6388256fe0f15",
+    "preprocessing": "{\"text_policy\":\"raw\",\"max_length\":128,\"label_mapping\":{\"0\":\"negative\",\"1\":\"neutral\",\"2\":\"positive\"}}"
+  },
+  {
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "revision": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+    "preprocessing": "{\"text_policy\":\"tweet_mentions_urls\",\"max_length\":128,\"label_mapping\":{\"0\":\"negative\",\"1\":\"neutral\",\"2\":\"positive\"}}"
+  }
+]

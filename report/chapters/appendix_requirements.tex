@@ -1,0 +1,25 @@
+\chapter{Detailed Requirements}
+\begin{longtable}{p{0.16\textwidth}p{0.34\textwidth}p{0.39\textwidth}}
+\toprule Requirement & Component & Evidence\\\midrule
+MID-FR-01 & Schema/catalogue/input handling & Actual-record and missing/invalid-input checks\\
+MID-FR-02 & Context and both interfaces & All 372 records; complete coverage tests\\
+MID-FR-03 & Verifier & Prose/payload contradiction regressions\\
+MID-FR-04 & Verifier/emission & Hard gates, omissions, malformed claims, verified fallback\\
+MID-FR-05 & Emission/reporting & Retained failed report and HTTP assertions\\
+MID-FR-06 & Strict prose gate & Clean acceptance and unsupported-sentence rejection\\
+MID-FR-07 & Structural readiness/UI control & Missing, empty, truncated, invalid-type and read-denied fixtures; module discovery and actual widget checks\\
+MID-FR-08 & Local adapter and interfaces & Retry, unavailable-provider, malformed/truncated output, loopback transport and fallback tests\\
+MID-FR-09 & Guided template and verifier & All 372 guided records; modified-definition and coverage checks\\
+MID-FR-10 & Evaluation command & Disjoint chronological selection, plan-only and zero-completion tests\\
+MID-FR-11 & Complete guided contract & Non-top-k, missing/zero, family, target, scope and two-source coverage tests\\
+MID-FR-12 & Prototype profile/form & All 32,400 answer combinations; cap, incomplete-answer and actual widget tests\\
+MID-FR-13 & Retrospective scaling & Both 148/38 splits, held-out perturbation and development/missing-input refusal\\
+MID-FR-14 & Separate comparator & Actual HTTP/AppTest independence; 228 real-row/labelled-scenario arithmetic checks\\
+MID-FR-15 & Social-study provenance/plan & Labelled-fixture tests for duplicates, timestamps, independent declared labels and adjudication\\
+MID-FR-16 & Sentiment comparison tool & Matched-plan, per-model coverage/refusal, null partial metrics and explicit ties/raw-output tests; real results pending\\
+MID-FR-17 & Offline classifier runner & Eight backend-fixture checks; head/mapping/weight refusal, no label inputs, raw/error/truncation retention; actual checkpoint pending\\
+MID-FR-18 & Recorded teacher import/export & Seven fixture tests plus actual evidence replay and viewer checks; six real examples, hybrid target disclosure and separate exports\\
+\bottomrule
+\end{longtable}
+Mapping to the complete proposal baseline and final acceptance study remains pending.
+Exact functions and named passing tests are retained in \texttt{code/docs/requirements\_traceability.json}; \texttt{tools/verify\_requirements\_traceability.py} checks their existence and matching selected-suite execution. The working Markdown matrix also distinguishes each original first-mid commitment from downstream saved-record engineering evidence.

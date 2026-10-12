@@ -1,0 +1,35 @@
+﻿[
+    {
+        "value":  [
+                      {
+                          "source":  "src\\investify\\harness\\splits.py",
+                          "sha256":  "a6bf41b800589ff8ad7e630b9b883e5cea62aae0add255049296478b30123459"
+                      },
+                      {
+                          "source":  "src\\investify\\harness\\arms.py",
+                          "sha256":  "907677a71473105f7b8089e0cabeff7d546e330fa5d660bee0141fed269ea88a"
+                      },
+                      {
+                          "source":  "src\\investify\\labels.py",
+                          "sha256":  "26b6474d432026e57e596cccaf82334a0447a6d04e2795c37084827869221563"
+                      },
+                      {
+                          "source":  "src\\investify\\engine.py",
+                          "sha256":  "7eaf9bddb41c0c034cf35bc1f8c6fa25b8f1c8b43a7899f618e8582ee27ec9cd"
+                      },
+                      {
+                          "source":  "src\\investify\\harness\\run_spike.py",
+                          "sha256":  "6ce58c934da8ab1ad72fa00879c33519703f4e7e00707e6e205bd18d8330ca52"
+                      },
+                      {
+                          "source":  "tests\\test_splits.py",
+                          "sha256":  "ced3de47c84dd6dc9c2050da86a696b2a1d5c19382de9f3a21d964f5b5483b39"
+                      }
+                  ],
+        "Count":  6
+    },
+    {
+        "source":  "scripts\\build_decision_records.py",
+        "sha256":  "50b3cb67463b8e256130197edf4a0da599e0cf86060bd50074445d84b8c5e59b"
+    }
+]

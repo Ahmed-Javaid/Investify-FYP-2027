@@ -1,0 +1,1771 @@
+{
+  "checked_utc": "2026-10-11T21:25:59.751019+00:00",
+  "status": "actual_saved_feature_semantics_audited",
+  "formula": "C(R)=T+R*(S-T); derivative dC/dR=S-T",
+  "corpora": {
+    "alpaca": {
+      "heldout_rows": 38,
+      "source_artifact_sha256": "f31543479e9fa1a2688da5bd360e25439ea0d332f9169588ae013547fd9ef029",
+      "score_slope_counts": {
+        "positive": 23,
+        "negative": 15
+      },
+      "R0_to_R1_action_counts": [
+        {
+          "R0": "Buy",
+          "R1": "Buy",
+          "rows": 5
+        },
+        {
+          "R0": "Buy",
+          "R1": "Hold",
+          "rows": 3
+        },
+        {
+          "R0": "Buy",
+          "R1": "Sell",
+          "rows": 2
+        },
+        {
+          "R0": "Hold",
+          "R1": "Buy",
+          "rows": 6
+        },
+        {
+          "R0": "Hold",
+          "R1": "Hold",
+          "rows": 2
+        },
+        {
+          "R0": "Hold",
+          "R1": "Sell",
+          "rows": 6
+        },
+        {
+          "R0": "Sell",
+          "R1": "Buy",
+          "rows": 6
+        },
+        {
+          "R0": "Sell",
+          "R1": "Hold",
+          "rows": 2
+        },
+        {
+          "R0": "Sell",
+          "R1": "Sell",
+          "rows": 6
+        }
+      ],
+      "changed_action_rows": 25,
+      "all_rows": [
+        {
+          "session": "2023-10-30",
+          "T": -1.380151649321435,
+          "S": -1.3012099730622662,
+          "dC_dR": 0.07894167625916881,
+          "R0": {
+            "score": -1.380151649321435,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -1.380151649321435
+          },
+          "R1": {
+            "score": -1.3012099730622662,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -1.3012099730622662,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-10-31",
+          "T": -1.579023633946246,
+          "S": 0.1806400288520312,
+          "dC_dR": 1.7596636627982771,
+          "R0": {
+            "score": -1.579023633946246,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -1.579023633946246
+          },
+          "R1": {
+            "score": 0.1806400288520312,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.1806400288520312,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-01",
+          "T": -1.2629181900422017,
+          "S": -1.6118289810596935,
+          "dC_dR": -0.3489107910174918,
+          "R0": {
+            "score": -1.2629181900422017,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -1.2629181900422017
+          },
+          "R1": {
+            "score": -1.6118289810596935,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -1.6118289810596935,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-02",
+          "T": -0.8121783790164482,
+          "S": 1.901343015337423,
+          "dC_dR": 2.713521394353871,
+          "R0": {
+            "score": -0.8121783790164482,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.8121783790164482
+          },
+          "R1": {
+            "score": 1.901343015337423,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 1.901343015337423,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-03",
+          "T": -0.4908727141683853,
+          "S": 2.4923591238968448,
+          "dC_dR": 2.98323183806523,
+          "R0": {
+            "score": -0.4908727141683853,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.4908727141683853
+          },
+          "R1": {
+            "score": 2.4923591238968448,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 2.4923591238968448,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-06",
+          "T": -0.03279493024413684,
+          "S": -1.2495674959941787,
+          "dC_dR": -1.216772565750042,
+          "R0": {
+            "score": -0.03279493024413684,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -0.03279493024413684
+          },
+          "R1": {
+            "score": -1.2495674959941787,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -1.2495674959941787,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-07",
+          "T": 0.2822235281257274,
+          "S": 0.6584111274891152,
+          "dC_dR": 0.37618759936338786,
+          "R0": {
+            "score": 0.2822235281257274,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 0.2822235281257274
+          },
+          "R1": {
+            "score": 0.6584111274891152,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.6584111274891152,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-08",
+          "T": 0.5357419516165486,
+          "S": 0.33457113566196794,
+          "dC_dR": -0.20117081595458064,
+          "R0": {
+            "score": 0.5357419516165486,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 0.5357419516165486
+          },
+          "R1": {
+            "score": 0.33457113566196794,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.33457113566196794,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-09",
+          "T": 0.7956903980932084,
+          "S": 1.44667385965692,
+          "dC_dR": 0.6509834615637116,
+          "R0": {
+            "score": 0.7956903980932084,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 0.7956903980932084
+          },
+          "R1": {
+            "score": 1.44667385965692,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 1.44667385965692,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-10",
+          "T": 0.92385658921575,
+          "S": 0.9861640001824574,
+          "dC_dR": 0.062307410966707444,
+          "R0": {
+            "score": 0.92385658921575,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 0.92385658921575
+          },
+          "R1": {
+            "score": 0.9861640001824574,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.9861640001824574,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-13",
+          "T": 0.9184497298966194,
+          "S": -0.689958378406675,
+          "dC_dR": -1.6084081083032944,
+          "R0": {
+            "score": 0.9184497298966194,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": 0.9184497298966194
+          },
+          "R1": {
+            "score": -0.689958378406675,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -0.689958378406675,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-14",
+          "T": 1.2597434747829446,
+          "S": 0.6316996846468339,
+          "dC_dR": -0.6280437901361107,
+          "R0": {
+            "score": 1.2597434747829446,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 1.2597434747829446
+          },
+          "R1": {
+            "score": 0.6316996846468339,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.6316996846468339,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-15",
+          "T": 1.1967760432999834,
+          "S": 0.3428321061403555,
+          "dC_dR": -0.853943937159628,
+          "R0": {
+            "score": 1.1967760432999834,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 1.1967760432999834
+          },
+          "R1": {
+            "score": 0.3428321061403555,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.3428321061403555,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-16",
+          "T": 1.1730526452106607,
+          "S": -0.8364561198349735,
+          "dC_dR": -2.0095087650456342,
+          "R0": {
+            "score": 1.1730526452106607,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": 1.1730526452106607
+          },
+          "R1": {
+            "score": -0.8364561198349735,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -0.8364561198349735,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-17",
+          "T": 0.9580012945241896,
+          "S": 0.7323520307150687,
+          "dC_dR": -0.22564926380912087,
+          "R0": {
+            "score": 0.9580012945241896,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 0.9580012945241896
+          },
+          "R1": {
+            "score": 0.7323520307150687,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.7323520307150687,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-20",
+          "T": 1.1709682621616622,
+          "S": 0.03602765219592857,
+          "dC_dR": -1.1349406099657335,
+          "R0": {
+            "score": 1.1709682621616622,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 1.1709682621616622
+          },
+          "R1": {
+            "score": 0.03602765219592857,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.03602765219592857,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-21",
+          "T": 0.8603674942011518,
+          "S": 1.5474438132979105,
+          "dC_dR": 0.6870763190967587,
+          "R0": {
+            "score": 0.8603674942011518,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 0.8603674942011518
+          },
+          "R1": {
+            "score": 1.5474438132979105,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 1.5474438132979105,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-22",
+          "T": 0.33653730525585085,
+          "S": 0.8936699962976237,
+          "dC_dR": 0.5571326910417729,
+          "R0": {
+            "score": 0.33653730525585085,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 0.33653730525585085
+          },
+          "R1": {
+            "score": 0.8936699962976237,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.8936699962976237,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-24",
+          "T": -0.09159265377829588,
+          "S": 1.611322133654051,
+          "dC_dR": 1.702914787432347,
+          "R0": {
+            "score": -0.09159265377829588,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.09159265377829588
+          },
+          "R1": {
+            "score": 1.611322133654051,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 1.611322133654051,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-27",
+          "T": -0.15103024198134662,
+          "S": -0.2827164374095154,
+          "dC_dR": -0.13168619542816878,
+          "R0": {
+            "score": -0.15103024198134662,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -0.15103024198134662
+          },
+          "R1": {
+            "score": -0.2827164374095154,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -0.2827164374095154,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-28",
+          "T": -0.411270636878139,
+          "S": -2.881496450653985,
+          "dC_dR": -2.470225813775846,
+          "R0": {
+            "score": -0.411270636878139,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -0.411270636878139
+          },
+          "R1": {
+            "score": -2.881496450653985,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -2.881496450653985,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-29",
+          "T": -0.4458778484906702,
+          "S": 2.2680638718793684,
+          "dC_dR": 2.7139417203700384,
+          "R0": {
+            "score": -0.4458778484906702,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.4458778484906702
+          },
+          "R1": {
+            "score": 2.2680638718793684,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 2.2680638718793684,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-30",
+          "T": -0.9508438678914054,
+          "S": 1.5822536306068478,
+          "dC_dR": 2.533097498498253,
+          "R0": {
+            "score": -0.9508438678914054,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.9508438678914054
+          },
+          "R1": {
+            "score": 1.5822536306068478,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 1.5822536306068478,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-01",
+          "T": -1.2385143962232308,
+          "S": -0.9420806752205622,
+          "dC_dR": 0.2964337210026686,
+          "R0": {
+            "score": -1.2385143962232308,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -1.2385143962232308
+          },
+          "R1": {
+            "score": -0.9420806752205622,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -0.9420806752205622,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-04",
+          "T": -1.6873539271542288,
+          "S": -1.092290848463556,
+          "dC_dR": 0.5950630786906728,
+          "R0": {
+            "score": -1.6873539271542288,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -1.6873539271542288
+          },
+          "R1": {
+            "score": -1.092290848463556,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -1.092290848463556,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-05",
+          "T": -1.557325985741095,
+          "S": 1.5710738264015247,
+          "dC_dR": 3.1283998121426198,
+          "R0": {
+            "score": -1.557325985741095,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -1.557325985741095
+          },
+          "R1": {
+            "score": 1.5710738264015247,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 1.5710738264015247,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-06",
+          "T": -1.7273682654822582,
+          "S": 0.5408910519337098,
+          "dC_dR": 2.2682593174159678,
+          "R0": {
+            "score": -1.7273682654822582,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -1.7273682654822582
+          },
+          "R1": {
+            "score": 0.5408910519337098,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.5408910519337098,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-07",
+          "T": -1.5063561973780295,
+          "S": 0.9830278657165318,
+          "dC_dR": 2.4893840630945614,
+          "R0": {
+            "score": -1.5063561973780295,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -1.5063561973780295
+          },
+          "R1": {
+            "score": 0.9830278657165318,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.9830278657165318,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-08",
+          "T": -1.1604469590355924,
+          "S": -0.7452047887369672,
+          "dC_dR": 0.4152421702986252,
+          "R0": {
+            "score": -1.1604469590355924,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -1.1604469590355924
+          },
+          "R1": {
+            "score": -0.7452047887369672,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -0.7452047887369672,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-11",
+          "T": -1.4931568073443853,
+          "S": -0.9976747464909711,
+          "dC_dR": 0.4954820608534142,
+          "R0": {
+            "score": -1.4931568073443853,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -1.4931568073443853
+          },
+          "R1": {
+            "score": -0.9976747464909711,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -0.9976747464909711,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-12",
+          "T": -1.080320733538105,
+          "S": 0.5498864118681341,
+          "dC_dR": 1.6302071454062392,
+          "R0": {
+            "score": -1.080320733538105,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -1.080320733538105
+          },
+          "R1": {
+            "score": 0.5498864118681341,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.5498864118681341,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-13",
+          "T": -0.6921152579249102,
+          "S": -0.20619823811089796,
+          "dC_dR": 0.48591701981401225,
+          "R0": {
+            "score": -0.6921152579249102,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -0.6921152579249102
+          },
+          "R1": {
+            "score": -0.20619823811089796,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -0.20619823811089796,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-14",
+          "T": -0.44707273315941476,
+          "S": -0.547707363437286,
+          "dC_dR": -0.10063463027787123,
+          "R0": {
+            "score": -0.44707273315941476,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -0.44707273315941476
+          },
+          "R1": {
+            "score": -0.547707363437286,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -0.547707363437286,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-15",
+          "T": -0.30280891951167566,
+          "S": -1.7931788461354938,
+          "dC_dR": -1.4903699266238182,
+          "R0": {
+            "score": -0.30280891951167566,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -0.30280891951167566
+          },
+          "R1": {
+            "score": -1.7931788461354938,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -1.7931788461354938,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-18",
+          "T": 0.11764260750971119,
+          "S": -1.9499238305166455,
+          "dC_dR": -2.0675664380263568,
+          "R0": {
+            "score": 0.11764260750971119,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": 0.11764260750971119
+          },
+          "R1": {
+            "score": -1.9499238305166455,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -1.9499238305166455,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-19",
+          "T": -0.07751824999557749,
+          "S": 0.4265227986013533,
+          "dC_dR": 0.5040410485969308,
+          "R0": {
+            "score": -0.07751824999557749,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.07751824999557749
+          },
+          "R1": {
+            "score": 0.4265227986013533,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.4265227986013533,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-20",
+          "T": -0.3273765434460135,
+          "S": 1.879609702675668,
+          "dC_dR": 2.2069862461216814,
+          "R0": {
+            "score": -0.3273765434460135,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.3273765434460135
+          },
+          "R1": {
+            "score": 1.879609702675668,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 1.879609702675668,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-21",
+          "T": -0.07094148862090316,
+          "S": -1.0753685154604633,
+          "dC_dR": -1.00442702683956,
+          "R0": {
+            "score": -0.07094148862090316,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -0.07094148862090316
+          },
+          "R1": {
+            "score": -1.0753685154604633,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -1.0753685154604633,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        }
+      ],
+      "first_lower_R_Buy_example": {
+        "session": "2023-11-08",
+        "T": 0.5357419516165486,
+        "S": 0.33457113566196794,
+        "dC_dR": -0.20117081595458064,
+        "R0": {
+          "score": 0.5357419516165486,
+          "decision": "Buy",
+          "sentiment_weight": 0.0,
+          "sentiment_term": 0.0,
+          "technical_term": 0.5357419516165486
+        },
+        "R1": {
+          "score": 0.33457113566196794,
+          "decision": "Hold",
+          "sentiment_weight": 1.0,
+          "sentiment_term": 0.33457113566196794,
+          "technical_term": 0.0
+        },
+        "saved_classifier": "Buy"
+      }
+    },
+    "fnspid": {
+      "heldout_rows": 38,
+      "source_artifact_sha256": "4045b234c0f482a01590f2b13dd76e24acbc9ab8e97c20f3e87d9bc0ba41ae42",
+      "score_slope_counts": {
+        "positive": 28,
+        "negative": 10
+      },
+      "R0_to_R1_action_counts": [
+        {
+          "R0": "Buy",
+          "R1": "Buy",
+          "rows": 4
+        },
+        {
+          "R0": "Buy",
+          "R1": "Hold",
+          "rows": 5
+        },
+        {
+          "R0": "Buy",
+          "R1": "Sell",
+          "rows": 1
+        },
+        {
+          "R0": "Hold",
+          "R1": "Buy",
+          "rows": 10
+        },
+        {
+          "R0": "Hold",
+          "R1": "Hold",
+          "rows": 2
+        },
+        {
+          "R0": "Hold",
+          "R1": "Sell",
+          "rows": 2
+        },
+        {
+          "R0": "Sell",
+          "R1": "Buy",
+          "rows": 7
+        },
+        {
+          "R0": "Sell",
+          "R1": "Hold",
+          "rows": 4
+        },
+        {
+          "R0": "Sell",
+          "R1": "Sell",
+          "rows": 3
+        }
+      ],
+      "changed_action_rows": 29,
+      "all_rows": [
+        {
+          "session": "2023-10-30",
+          "T": -1.380151649321435,
+          "S": 1.2713730579967244,
+          "dC_dR": 2.6515247073181594,
+          "R0": {
+            "score": -1.380151649321435,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -1.380151649321435
+          },
+          "R1": {
+            "score": 1.2713730579967244,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 1.2713730579967244,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-10-31",
+          "T": -1.579023633946246,
+          "S": -0.40956786786793964,
+          "dC_dR": 1.1694557660783063,
+          "R0": {
+            "score": -1.579023633946246,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -1.579023633946246
+          },
+          "R1": {
+            "score": -0.40956786786793964,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -0.40956786786793964,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-01",
+          "T": -1.2629181900422017,
+          "S": -1.2464116219852928,
+          "dC_dR": 0.016506568056908977,
+          "R0": {
+            "score": -1.2629181900422017,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -1.2629181900422017
+          },
+          "R1": {
+            "score": -1.2464116219852928,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -1.2464116219852928,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-02",
+          "T": -0.8121783790164482,
+          "S": -0.16156364644777965,
+          "dC_dR": 0.6506147325686685,
+          "R0": {
+            "score": -0.8121783790164482,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -0.8121783790164482
+          },
+          "R1": {
+            "score": -0.16156364644777965,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -0.16156364644777965,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-03",
+          "T": -0.4908727141683853,
+          "S": 2.7855112638318658,
+          "dC_dR": 3.276383978000251,
+          "R0": {
+            "score": -0.4908727141683853,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.4908727141683853
+          },
+          "R1": {
+            "score": 2.7855112638318658,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 2.7855112638318658,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-06",
+          "T": -0.03279493024413684,
+          "S": 0.5253042150060956,
+          "dC_dR": 0.5580991452502324,
+          "R0": {
+            "score": -0.03279493024413684,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.03279493024413684
+          },
+          "R1": {
+            "score": 0.5253042150060956,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.5253042150060956,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-07",
+          "T": 0.2822235281257274,
+          "S": 1.0919852017971428,
+          "dC_dR": 0.8097616736714154,
+          "R0": {
+            "score": 0.2822235281257274,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 0.2822235281257274
+          },
+          "R1": {
+            "score": 1.0919852017971428,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 1.0919852017971428,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-08",
+          "T": 0.5357419516165486,
+          "S": -0.8783053553600023,
+          "dC_dR": -1.414047306976551,
+          "R0": {
+            "score": 0.5357419516165486,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": 0.5357419516165486
+          },
+          "R1": {
+            "score": -0.8783053553600023,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -0.8783053553600023,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-09",
+          "T": 0.7956903980932084,
+          "S": 0.3293743650570688,
+          "dC_dR": -0.4663160330361396,
+          "R0": {
+            "score": 0.7956903980932084,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 0.7956903980932084
+          },
+          "R1": {
+            "score": 0.3293743650570688,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.3293743650570688,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-10",
+          "T": 0.92385658921575,
+          "S": 0.2295990172813245,
+          "dC_dR": -0.6942575719344255,
+          "R0": {
+            "score": 0.92385658921575,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 0.92385658921575
+          },
+          "R1": {
+            "score": 0.2295990172813245,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.2295990172813245,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-13",
+          "T": 0.9184497298966194,
+          "S": 1.5524043189048349,
+          "dC_dR": 0.6339545890082154,
+          "R0": {
+            "score": 0.9184497298966194,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 0.9184497298966194
+          },
+          "R1": {
+            "score": 1.5524043189048349,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 1.5524043189048349,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-14",
+          "T": 1.2597434747829446,
+          "S": 0.3036973614564103,
+          "dC_dR": -0.9560461133265343,
+          "R0": {
+            "score": 1.2597434747829446,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 1.2597434747829446
+          },
+          "R1": {
+            "score": 0.3036973614564103,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.3036973614564103,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-15",
+          "T": 1.1967760432999834,
+          "S": 0.9407428864172209,
+          "dC_dR": -0.2560331568827625,
+          "R0": {
+            "score": 1.1967760432999834,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 1.1967760432999834
+          },
+          "R1": {
+            "score": 0.9407428864172209,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.9407428864172209,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-16",
+          "T": 1.1730526452106607,
+          "S": 0.3937354726058891,
+          "dC_dR": -0.7793171726047716,
+          "R0": {
+            "score": 1.1730526452106607,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 1.1730526452106607
+          },
+          "R1": {
+            "score": 0.3937354726058891,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.3937354726058891,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-17",
+          "T": 0.9580012945241896,
+          "S": 1.543333804391312,
+          "dC_dR": 0.5853325098671225,
+          "R0": {
+            "score": 0.9580012945241896,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 0.9580012945241896
+          },
+          "R1": {
+            "score": 1.543333804391312,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 1.543333804391312,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-20",
+          "T": 1.1709682621616622,
+          "S": 0.08049247062274448,
+          "dC_dR": -1.0904757915389176,
+          "R0": {
+            "score": 1.1709682621616622,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 1.1709682621616622
+          },
+          "R1": {
+            "score": 0.08049247062274448,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.08049247062274448,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-21",
+          "T": 0.8603674942011518,
+          "S": 0.752944937982133,
+          "dC_dR": -0.10742255621901875,
+          "R0": {
+            "score": 0.8603674942011518,
+            "decision": "Buy",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": 0.8603674942011518
+          },
+          "R1": {
+            "score": 0.752944937982133,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.752944937982133,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-22",
+          "T": 0.33653730525585085,
+          "S": -1.285627718907501,
+          "dC_dR": -1.6221650241633518,
+          "R0": {
+            "score": 0.33653730525585085,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": 0.33653730525585085
+          },
+          "R1": {
+            "score": -1.285627718907501,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -1.285627718907501,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-24",
+          "T": -0.09159265377829588,
+          "S": 0.15267897089496968,
+          "dC_dR": 0.24427162467326557,
+          "R0": {
+            "score": -0.09159265377829588,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.09159265377829588
+          },
+          "R1": {
+            "score": 0.15267897089496968,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.15267897089496968,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-27",
+          "T": -0.15103024198134662,
+          "S": 0.5355958994628569,
+          "dC_dR": 0.6866261414442035,
+          "R0": {
+            "score": -0.15103024198134662,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.15103024198134662
+          },
+          "R1": {
+            "score": 0.5355958994628569,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.5355958994628569,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-28",
+          "T": -0.411270636878139,
+          "S": 0.1400056994133471,
+          "dC_dR": 0.5512763362914861,
+          "R0": {
+            "score": -0.411270636878139,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.411270636878139
+          },
+          "R1": {
+            "score": 0.1400056994133471,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.1400056994133471,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-29",
+          "T": -0.4458778484906702,
+          "S": 0.8354070300639975,
+          "dC_dR": 1.2812848785546678,
+          "R0": {
+            "score": -0.4458778484906702,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.4458778484906702
+          },
+          "R1": {
+            "score": 0.8354070300639975,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.8354070300639975,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-11-30",
+          "T": -0.9508438678914054,
+          "S": 1.970564643666827,
+          "dC_dR": 2.9214085115582322,
+          "R0": {
+            "score": -0.9508438678914054,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.9508438678914054
+          },
+          "R1": {
+            "score": 1.970564643666827,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 1.970564643666827,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-01",
+          "T": -1.2385143962232308,
+          "S": 1.3272145435102467,
+          "dC_dR": 2.5657289397334777,
+          "R0": {
+            "score": -1.2385143962232308,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -1.2385143962232308
+          },
+          "R1": {
+            "score": 1.3272145435102467,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 1.3272145435102467,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-04",
+          "T": -1.6873539271542288,
+          "S": 0.5143392591034605,
+          "dC_dR": 2.2016931862576894,
+          "R0": {
+            "score": -1.6873539271542288,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -1.6873539271542288
+          },
+          "R1": {
+            "score": 0.5143392591034605,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.5143392591034605,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-05",
+          "T": -1.557325985741095,
+          "S": -1.2710547353829607,
+          "dC_dR": 0.2862712503581344,
+          "R0": {
+            "score": -1.557325985741095,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -1.557325985741095
+          },
+          "R1": {
+            "score": -1.2710547353829607,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -1.2710547353829607,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-06",
+          "T": -1.7273682654822582,
+          "S": -0.5362143342042895,
+          "dC_dR": 1.1911539312779686,
+          "R0": {
+            "score": -1.7273682654822582,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -1.7273682654822582
+          },
+          "R1": {
+            "score": -0.5362143342042895,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -0.5362143342042895,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-07",
+          "T": -1.5063561973780295,
+          "S": 0.9944247137371233,
+          "dC_dR": 2.500780911115153,
+          "R0": {
+            "score": -1.5063561973780295,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -1.5063561973780295
+          },
+          "R1": {
+            "score": 0.9944247137371233,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.9944247137371233,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-08",
+          "T": -1.1604469590355924,
+          "S": -0.16027997715409037,
+          "dC_dR": 1.000166981881502,
+          "R0": {
+            "score": -1.1604469590355924,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": -1.1604469590355924
+          },
+          "R1": {
+            "score": -0.16027997715409037,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -0.16027997715409037,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-11",
+          "T": -1.4931568073443853,
+          "S": 0.9977727328337251,
+          "dC_dR": 2.4909295401781106,
+          "R0": {
+            "score": -1.4931568073443853,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -1.4931568073443853
+          },
+          "R1": {
+            "score": 0.9977727328337251,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.9977727328337251,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-12",
+          "T": -1.080320733538105,
+          "S": 0.4442158611421229,
+          "dC_dR": 1.524536594680228,
+          "R0": {
+            "score": -1.080320733538105,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -1.080320733538105
+          },
+          "R1": {
+            "score": 0.4442158611421229,
+            "decision": "Hold",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.4442158611421229,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-13",
+          "T": -0.6921152579249102,
+          "S": 0.6868117680118495,
+          "dC_dR": 1.3789270259367599,
+          "R0": {
+            "score": -0.6921152579249102,
+            "decision": "Sell",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.6921152579249102
+          },
+          "R1": {
+            "score": 0.6868117680118495,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.6868117680118495,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-14",
+          "T": -0.44707273315941476,
+          "S": 0.551502046527177,
+          "dC_dR": 0.9985747796865918,
+          "R0": {
+            "score": -0.44707273315941476,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.44707273315941476
+          },
+          "R1": {
+            "score": 0.551502046527177,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 0.551502046527177,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-15",
+          "T": -0.30280891951167566,
+          "S": 2.1834414232766024,
+          "dC_dR": 2.486250342788278,
+          "R0": {
+            "score": -0.30280891951167566,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.30280891951167566
+          },
+          "R1": {
+            "score": 2.1834414232766024,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 2.1834414232766024,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-18",
+          "T": 0.11764260750971119,
+          "S": -0.9215815242330123,
+          "dC_dR": -1.0392241317427235,
+          "R0": {
+            "score": 0.11764260750971119,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": -0.0,
+            "technical_term": 0.11764260750971119
+          },
+          "R1": {
+            "score": -0.9215815242330123,
+            "decision": "Sell",
+            "sentiment_weight": 1.0,
+            "sentiment_term": -0.9215815242330123,
+            "technical_term": 0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-19",
+          "T": -0.07751824999557749,
+          "S": 1.0805151363735992,
+          "dC_dR": 1.1580333863691767,
+          "R0": {
+            "score": -0.07751824999557749,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.07751824999557749
+          },
+          "R1": {
+            "score": 1.0805151363735992,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 1.0805151363735992,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-20",
+          "T": -0.3273765434460135,
+          "S": 1.0805151363735992,
+          "dC_dR": 1.4078916798196128,
+          "R0": {
+            "score": -0.3273765434460135,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.3273765434460135
+          },
+          "R1": {
+            "score": 1.0805151363735992,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 1.0805151363735992,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        },
+        {
+          "session": "2023-12-21",
+          "T": -0.07094148862090316,
+          "S": 1.0805151363735992,
+          "dC_dR": 1.1514566249945024,
+          "R0": {
+            "score": -0.07094148862090316,
+            "decision": "Hold",
+            "sentiment_weight": 0.0,
+            "sentiment_term": 0.0,
+            "technical_term": -0.07094148862090316
+          },
+          "R1": {
+            "score": 1.0805151363735992,
+            "decision": "Buy",
+            "sentiment_weight": 1.0,
+            "sentiment_term": 1.0805151363735992,
+            "technical_term": -0.0
+          },
+          "saved_classifier": "Buy"
+        }
+      ],
+      "first_lower_R_Buy_example": {
+        "session": "2023-11-08",
+        "T": 0.5357419516165486,
+        "S": -0.8783053553600023,
+        "dC_dR": -1.414047306976551,
+        "R0": {
+          "score": 0.5357419516165486,
+          "decision": "Buy",
+          "sentiment_weight": 0.0,
+          "sentiment_term": -0.0,
+          "technical_term": 0.5357419516165486
+        },
+        "R1": {
+          "score": -0.8783053553600023,
+          "decision": "Sell",
+          "sentiment_weight": 1.0,
+          "sentiment_term": -0.8783053553600023,
+          "technical_term": 0.0
+        },
+        "saved_classifier": "Buy"
+      }
+    }
+  },
+  "human_profiles_used": 0,
+  "outcome_labels_used": 0,
+  "suitability_or_return_metrics": null,
+  "source_sha256": {
+    "src/investify/risk_profile.py": "444f470835330d861603685921aec5f464e03c430369a56a6d29db8afd5d50d8",
+    "src/investify/risk_comparator.py": "de43fc9dcbaf31f563a1fcfb89b0c5b0abe7216f27a68b04d5703b276cdacbd3",
+    "scripts/verify_risk_comparator.py": "33a6baf7a2715f32ab3ebac79bbc51247889e80ae1e82240435605276bd1308a"
+  },
+  "conclusion": "R changes relative news/technical weighting. Lower R is not a constraint on exposure, expected loss, volatility or the direction/intensity of Buy/Hold/Sell. Risk-tier naming must not imply validated conservative behavior.",
+  "design_decision": "Keep the separate prototype explicit. Preserve saved classifier decisions. Treat allocation/position sizing, horizon-dependent asset risk and validated risk-questionnaire semantics as separate unfinished requirements; do not assert that blend arithmetic implements suitability."
+}

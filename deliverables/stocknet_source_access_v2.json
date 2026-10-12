@@ -1,0 +1,25 @@
+{
+  "protocol": "mideval-equity-social-selection-v3",
+  "status": "Amended declaration before tweet-content acquisition: NVDA is absent from the author's released ticker directories. This pilot uses MSFT; it cannot establish NVDA-specific performance.",
+  "source": {
+    "repository": "yumoxu/stocknet-dataset",
+    "revision": "330708b5ddc359961078bef469f43f48992fd6e4",
+    "directory": "tweet/raw/MSFT",
+    "readme_url": "https://github.com/yumoxu/stocknet-dataset",
+    "license_url": "https://github.com/yumoxu/stocknet-dataset/blob/330708b5ddc359961078bef469f43f48992fd6e4/LICENSE",
+    "access_scope": "Published research dataset released by authors; retain MIT repository notice and cite Xu & Cohen ACL 2018. Third-party tweet rights are not authenticated; no public redistribution or platform rehydration is performed."
+  },
+  "selection": {
+    "annotation_method": "model_generated",
+    "sampling_rule": "Take the first 200 unique post IDs and whitespace/case-normalized target/text pairs in chronological timestamp/ID order from author-released raw MSFT daily files in 2015. Read daily files in ascending date order until 200 eligible unique posts; retain every selected original post including ambiguity, neutral, URL-only and irrelevant posts for explicit AI exclusion. Do not select using candidate predictions, later returns or sentiment tags. Skip records with missing ID, text or explicit timestamp and retain a preparation log.",
+    "target_tickers": [
+      "MSFT"
+    ],
+    "window_start_utc": "2015-01-01T00:00:00Z",
+    "window_end_utc": "2015-12-31T23:59:59Z",
+    "declared_at_utc": "2026-10-11T19:21:02Z",
+    "access_conditions_reference": "../../deliverables/stocknet_source_access_v2.json; retained repository README and LICENSE in sources/stocknet"
+  },
+  "candidate_predictions_exposed": false,
+  "supersedes": "stocknet_source_access.json (NVDA source unavailable; no tweet contents acquired under that declaration)"
+}

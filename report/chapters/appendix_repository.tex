@@ -1,0 +1,14 @@
+\chapter{Repository and Contribution Evidence}
+The independent code copy is on \texttt{gpt/mid-eval} and retains original history. Evidence JSON identifies exact verification revisions and hashes. A 224-file manifest checks original preservation.
+Local commits \texttt{a99de5f}, \texttt{20dfff9}, \texttt{3650d0c}, \texttt{efb428f} and latest \texttt{0a27ed1} record verifier/demo, complete-guided/risk/social tools, Git-free handover, offline inference and complete/partial study UI checks. They are attributed to tool-assisted development. Nothing has been pushed; commits do not establish student authorship or remote CI completion.
+
+The earlier AI review ZIP is a dated historical snapshot: its extracted standard-library-only environment passed 103 portable tests, 62 live HTTP checks and 372 record validations. The then-selected viewer suite had 136 passes and 13 AppTest cases. Those receipts do not validate later source changes. The earlier clean-commit ZIP and its 92-test receipt also remain preserved. New continuation bundles identify their own exact archive/source hashes, uncommitted contents and base HEAD; use the matching current handover receipt. Third-party corpus data is not approved for public redistribution.
+\section*{Portable reproduction}
+From the code directory:
+\begin{verbatim}
+python -B -m unittest discover -s tests -p "test_mideval*.py" -v
+python -B scripts/serve_mideval_demo.py
+\end{verbatim}
+Open the printed loopback URL. The live-check script can run from a second shell with output under the evidence folder. This tests recorded decisions and verification, not scientific retraining or LLM generation.
+\section*{Pending process evidence}
+Remote branch/PR/workflow results, agreed owners, actual member contributions, meeting records, delivery target and confirmed assessment date remain pending. Historical authorship is not reassigned.

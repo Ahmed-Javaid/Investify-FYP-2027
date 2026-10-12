@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Investify | Mid evaluation</title>
+<style>
+:root{color-scheme:light;--ink:#16202b;--soft:#526170;--paper:#f7f8f6;--line:#d4dbe0;--accent:#0f766e}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,sans-serif}
+main{max-width:1160px;margin:auto;padding:32px 24px 64px}header{border-bottom:1px solid var(--line);padding-bottom:18px}
+.eyebrow{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+h1{font-size:34px;line-height:1.2;margin:8px 0}h2{font-size:22px;margin:28px 0 12px}h3{font-size:17px;margin:0 0 8px}
+p{margin:8px 0}.muted{color:var(--soft);font-size:14px}.notice{border:1px solid #e3d2a9;border-left:4px solid #a16207;background:#fffdf7;padding:14px 18px;margin:20px 0;border-radius:6px}
+.controls,.facts,.metrics{display:flex;gap:16px;flex-wrap:wrap;margin:20px 0}.controls label{min-width:200px;flex:1}
+label{font-size:14px;font-weight:600;display:block}select,textarea,button{font:inherit}select,textarea{width:100%;border:1px solid var(--line);border-radius:6px;background:white;color:var(--ink);padding:10px;margin-top:6px}
+textarea{min-height:235px;font:13px/1.6 ui-monospace,Consolas,monospace;resize:vertical}button{background:var(--accent);color:white;border:0;border-radius:6px;padding:10px 16px;cursor:pointer;font-weight:600}button.secondary{background:white;color:var(--ink);border:1px solid var(--line)}button:disabled{opacity:.55;cursor:default}button:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #5cbcb2;outline-offset:2px}
+.fact,.metric{flex:1;min-width:160px;background:white;border:1px solid var(--line);border-radius:6px;padding:16px}.fact span,.metric span{display:block;color:var(--soft);font-size:13px}.fact strong{font-size:25px}.metric strong{font:22px ui-monospace,Consolas,monospace}
+.scroll{overflow:auto;background:white;border:1px solid var(--line);border-radius:6px}table{width:100%;border-collapse:collapse;font-size:14px}th{text-align:left;background:#edf1ef}th,td{padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top}td.number{white-space:nowrap;font-family:ui-monospace,Consolas,monospace}.definition{font-size:13px;color:var(--soft);max-width:520px}.definition a{color:var(--accent)}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:white;border:1px solid var(--line);border-radius:6px;padding:18px;font:13px/1.7 ui-monospace,Consolas,monospace}.check{font-weight:400;display:flex;align-items:flex-start;gap:8px;margin:12px 0}.check input{margin-top:5px}.actions{display:flex;gap:12px;flex-wrap:wrap}.result{border-left:4px solid var(--accent);padding:14px 18px;background:white;margin-top:18px}.result.rejected{border-color:#c2410c}#claim-table{max-height:380px}footer{border-top:1px solid var(--line);margin-top:32px;padding-top:12px}[hidden]{display:none!important}
+@media(max-width:620px){main{padding:24px 14px}h1{font-size:28px}.fact,.metric{min-width:130px}th,td{padding:10px}button{width:100%}}
+</style>
+</head>
+<body><main>
+<header><div class="eyebrow">Investify · FYP-1 mid evaluation</div><h1>Evidence behind a decision</h1><p class="muted">Explore historical technical and news evidence, then check an explanation against the recorded facts.</p></header>
+<div class="notice"><strong>Current model limitation</strong><p>Both saved evaluation folds predict Buy for every session. A verified explanation establishes consistency with the recorded model output. Predictive usefulness has not been demonstrated.</p></div>
+<p id="status" role="status" aria-live="polite">Loading historical records…</p>
+<div class="controls"><label for="corpus">News corpus<select id="corpus"></select></label><label for="session">Recorded session<select id="session"></select></label><div style="align-self:end"><button id="retry-record" class="secondary">Retry selected record</button><button id="refresh-catalog" class="secondary">Refresh sources</button></div></div>
+<p id="catalog-limitations" class="muted"></p>
+<div id="workspace" hidden>
+<div class="facts"><div class="fact"><span>Recorded model decision</span><strong id="decision"></strong></div><div class="fact"><span>Prediction horizon</span><strong id="horizon"></strong></div><div class="fact"><span>Calibrated probability</span><strong id="confidence"></strong></div></div>
+<p id="probabilities" class="muted"></p><p id="interpretation"></p>
+<section aria-labelledby="risk-title"><h2 id="risk-title">Risk-dependent linear comparator</h2><p>Answer the capacity and tolerance questions to change a separate news/technical blend. The recorded classifier decision and probabilities above stay the same.</p><p class="muted">Project prototype: questions, weights and caps are not a validated risk instrument. Scaling uses the first 148 saved rows; only the later 38 sessions are scored. Scores are weighted z-scores, not probabilities or expected returns.</p><button id="retry-profile" class="secondary">Retry profile questions</button><form id="risk-form"><div class="controls" id="profile-fields"></div><button id="compare-risk" type="submit">Compare profile blend</button></form><p id="risk-status" role="status" aria-live="polite">Complete every answer; no defaults are assumed.</p><div id="risk-result" hidden><div class="facts"><div class="fact"><span>Fixed R = 0.5 comparator</span><strong id="risk-fixed"></strong><p id="risk-fixed-score"></p></div><div class="fact"><span>Profile blend comparator</span><strong id="risk-conditioned"></strong><p id="risk-conditioned-score"></p></div></div><p id="risk-formula"></p><details><summary>Profile calculation and comparator inputs</summary><pre id="risk-audit"></pre></details></div><p class="muted">R is the smaller capacity/tolerance score. A smaller R gives news less weight; it need not give a more conservative action. Suitability and predictive performance are unvalidated. <a href="https://syndication.finra.org/content/know-your-risk-tolerance" target="_blank" rel="noopener">Ability and willingness reference</a>; this reference does not validate the project weights.</p></section>
+<section><h2>Technical analysis</h2><div class="scroll"><table><thead><tr><th>Indicator and meaning</th><th>Recorded input</th><th>Raw-score contribution</th><th>Effect on selected class</th></tr></thead><tbody id="technical"></tbody></table></div></section>
+<section><h2>News sentiment</h2><div class="scroll"><table><thead><tr><th>Feature and meaning</th><th>Recorded input</th><th>Raw-score contribution</th><th>Effect on selected class</th></tr></thead><tbody id="news"></tbody></table></div></section>
+<section aria-labelledby="guided-title"><h2 id="guided-title">Explain the indicators</h2><p>Use the same recorded facts with reviewed technical and news definitions. A configured local LLM can attempt this constrained contract; unavailable or rejected generation uses the verified deterministic comparator.</p><p id="generator-status" class="muted">Checking local generator configuration?</p><button id="explain">Explain selected record</button><div id="generation-result" hidden><p id="generation-status" role="status" aria-live="polite"></p><pre id="generated"></pre><details><summary>Generation attempts (unverified raw output)</summary><pre id="generation-attempts"></pre></details></div></section>
+<section aria-labelledby="verification-title"><h2 id="verification-title">Check the explanation</h2><p>The text and its JSON claims are checked independently against the decision record. Edit a claim to see rejection and the verified fallback.</p><p class="muted">This checks supported claim sentences and exact reviewed definitions. Local generation is enabled only when a model is explicitly configured; arbitrary market prose is not certified.</p>
+<div class="controls"><label for="corruption">Example error<select id="corruption"><option value="probability">Wrong probability beside correct JSON</option><option value="direction">Reversed contribution direction</option><option value="value">Wrong feature value</option><option value="class">Wrong decision class</option><option value="notice">Missing advisory notice</option><option value="unsupported">Unsupported sentence</option></select></label><div style="align-self:end"><button id="inject" class="secondary">Inject example error</button></div></div>
+<label for="candidate">Candidate explanation<textarea id="candidate" spellcheck="false"></textarea></label>
+<label class="check"><input type="checkbox" id="payload" checked>Also check the original JSON claims. This lets you demonstrate that correct JSON cannot hide wrong displayed text.</label>
+<label class="check"><input type="checkbox" id="strict" checked>Reject sentences outside the supported claim grammar. With this disabled, the existing unverifiable-claim rate threshold applies.</label>
+<div class="actions"><button id="verify">Verify explanation</button><button id="reset" class="secondary">Restore correct explanation</button></div>
+<div id="result" class="result" role="status" aria-live="polite" hidden><h3 id="verdict"></h3><p id="failure"></p></div>
+<div id="reports" hidden><h3 style="margin-top:22px">Candidate verification</h3><div class="metrics" id="metrics"></div><h3>What is shown to the user</h3><pre id="emitted"></pre><details><summary>Candidate claim report</summary><div class="scroll" id="claim-table"><table><thead><tr><th>Source</th><th>Claim</th><th>Subject</th><th>Claimed</th><th>Recorded</th><th>Result</th><th>Reason</th></tr></thead><tbody id="claims"></tbody></table></div></details><p class="muted" id="contract"></p></div>
+</section>
+<footer><p id="coverage"></p><p id="data" class="muted"></p><p id="notice"></p><p id="model" class="muted"></p></footer>
+</div>
+<script src="/static/demo_state.js"></script>
+<script>
+'use strict';
+const byId=id=>document.getElementById(id);
+let catalog={},current=null,selectionGeneration=0,riskGeneration=0,profileContract=null,activeVerificationTicket=null,activeRiskTicket=null,activeActionTicket=null;
+const verificationState=createInvestifyVerificationState();
+const catalogRequests=createInvestifyRequestState(),profileRequests=createInvestifyRequestState(),guidedRequests=createInvestifyRequestState();
+function updateComparatorButton(){byId('compare-risk').disabled=!current||!profileContract||activeRiskTicket!==null;}
+const format=x=>x===null?'Missing':Number(x).toLocaleString(undefined,{maximumSignificantDigits:6});
+async function api(path,body){const response=await fetch(path,body===undefined?{}:{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const data=await response.json();if(!response.ok)throw new Error(data.error||'The request could not be completed.');return data;}
+function table(id,features){const body=byId(id);body.replaceChildren();for(const f of features){const tr=document.createElement('tr'),label=document.createElement('td'),strong=document.createElement('strong');strong.textContent=f.label;label.append(strong);const definition=document.createElement('div');definition.className='definition';definition.textContent=f.meaning;label.append(definition);if(f.reference){const a=document.createElement('a');a.href=f.reference;a.target='_blank';a.rel='noopener';a.textContent='Reference';definition.append(' ',a);}tr.append(label);for(const value of [format(f.value),(f.shap_value>0?'+':'')+format(f.shap_value),f.effect_on_predicted_class]){const td=document.createElement('td');td.className='number';td.textContent=value;tr.append(td);}body.append(tr);}}
+function clearVerification(){verificationState.invalidate();byId('result').hidden=true;byId('reports').hidden=true;}
+function verificationInput(){return {corpus:byId('corpus').value,session:byId('session').value,text:byId('candidate').value,payload:byId('payload').checked,strict:byId('strict').checked,record:current?current.template:null};}
+byId('candidate').addEventListener('input',clearVerification);byId('payload').addEventListener('change',clearVerification);byId('strict').addEventListener('change',clearVerification);
+function clearResult(){
+  clearVerification();guidedRequests.invalidate();activeVerificationTicket=null;activeActionTicket=null;
+  byId('generation-result').hidden=true;byId('risk-result').hidden=true;
+  byId('risk-status').textContent=profileContract?'Complete every answer, then compare the selected session.':'Profile questions are unavailable; retry them to continue.';
+  riskGeneration++;activeRiskTicket=null;updateComparatorButton();
+}
+function busy(value){for(const id of ['verify','inject','reset','candidate','explain','payload','strict','corruption'])byId(id).disabled=value;}
+async function loadRecord(){
+  const generation=++selectionGeneration,corpus=byId('corpus').value,session=byId('session').value;
+  current=null;busy(true);clearResult();byId('workspace').hidden=true;
+  byId('status').textContent='Loading the selected historical decision?';
+  try{
+    if(!catalog[corpus]||!catalog[corpus].sessions.includes(session))throw new Error('Choose an available corpus and recorded session.');
+    const data=await api('/api/record?'+new URLSearchParams({corpus,session}));
+    if(generation!==selectionGeneration)return;
+    current=data;const r=data.context;
+    byId('decision').textContent=r.decision;byId('horizon').textContent=r.horizon_days+' sessions';
+    byId('confidence').textContent=(r.probabilities[r.decision]*100).toFixed(2)+'%';
+    byId('probabilities').textContent='Model probabilities: '+Object.entries(r.probabilities).map(([k,v])=>k+' '+(v*100).toFixed(2)+'%').join(' ? ');
+    byId('interpretation').textContent=r.interpretation;
+    table('technical',r.features.filter(f=>f.family==='Technical analysis'));table('news',r.features.filter(f=>f.family==='News sentiment'));
+    byId('candidate').value=data.template.text;byId('coverage').textContent=r.coverage.social_sentiment+'. '+r.coverage.risk_conditioning+'.';
+    byId('data').textContent=r.data_status+'. Recorded session: '+r.session_date+'.';byId('notice').textContent=r.notice;
+    byId('model').textContent='Model reference: '+r.model_version;byId('status').textContent='Historical record loaded. Verification runs locally when requested.';
+    byId('workspace').hidden=false;busy(false);updateComparatorButton();
+  }catch(error){
+    if(generation===selectionGeneration){current=null;byId('status').textContent='Decision unavailable. '+error.message;updateComparatorButton();}
+  }
+}
+function selectCorpus(preferredSession){
+  byId('session').replaceChildren();
+  const info=catalog[byId('corpus').value];
+  if(info)for(const date of info.sessions){const option=document.createElement('option');option.value=date;option.textContent=date;byId('session').append(option);}
+  if(info&&typeof preferredSession==='string'&&info.sessions.includes(preferredSession))byId('session').value=preferredSession;
+  else byId('session').selectedIndex=byId('session').options.length-1;
+  return loadRecord();
+}
+byId('retry-record').addEventListener('click',()=>{if(Object.keys(catalog).length)loadRecord();else loadCatalog();});
+byId('corpus').addEventListener('change',selectCorpus);byId('session').addEventListener('change',loadRecord);
+function profileSelect(id,labelText,options){
+  const label=document.createElement('label'),select=document.createElement('select');label.htmlFor=id;label.append(document.createTextNode(labelText));
+  select.id=id;select.required=true;const empty=document.createElement('option');empty.value='';empty.textContent='Select an answer';select.append(empty);
+  for(const [value,text] of options){const option=document.createElement('option');option.value=value;option.textContent=text;select.append(option);}
+  select.addEventListener('change',()=>{riskGeneration++;activeRiskTicket=null;byId('risk-result').hidden=true;byId('risk-status').textContent='Profile changed. Compare again to update the selected session.';updateComparatorButton();});
+  label.append(select);byId('profile-fields').append(label);
+}
+byId('risk-form').addEventListener('submit',event=>{if(!profileContract||Array.from(byId('profile-fields').querySelectorAll('select')).some(select=>select.value==='')){event.preventDefault();event.stopImmediatePropagation();byId('risk-status').textContent='Complete every profile answer before comparison.';}},true);
+async function loadProfileContract(){
+  const ticket=profileRequests.begin();profileContract=null;riskGeneration++;activeRiskTicket=null;
+  byId('profile-fields').replaceChildren();byId('risk-result').hidden=true;updateComparatorButton();
+  byId('risk-status').textContent='Loading profile questions?';
+  try{
+    const data=await api('/api/profile-contract');if(!profileRequests.isCurrent(ticket))return;
+    if(!data.capacity_options||Object.keys(data.capacity_options).length!==5||!Array.isArray(data.tolerance_questions)||data.tolerance_questions.length!==3)throw new Error('The profile question contract is incomplete.');
+    profileContract=data;
+    const labels={horizon:'When will you need this money?',buffer:'Emergency expenses buffer',stability:'Income stability',dependants:'Financial dependants',age:'Age band'};
+    for(const [name,options] of Object.entries(data.capacity_options))profileSelect('profile-'+name,labels[name],Object.keys(options).map(value=>[value,value]));
+    data.tolerance_questions.forEach(([question,options],index)=>profileSelect('tolerance-'+index,question,options.map((value,i)=>[String(i),value])));
+    byId('risk-status').textContent='Complete every profile answer; no defaults are assumed.';updateComparatorButton();
+  }catch(error){
+    if(profileRequests.isCurrent(ticket)){profileContract=null;byId('profile-fields').replaceChildren();byId('risk-status').textContent='Profile unavailable. '+error.message;updateComparatorButton();}
+  }
+}
+byId('retry-profile').addEventListener('click',loadProfileContract);
+loadProfileContract();
+byId('risk-form').addEventListener('submit',async event=>{
+  event.preventDefault();if(!current||!profileContract)return;
+  const generation=selectionGeneration,ticket=++riskGeneration;activeRiskTicket=ticket;
+  const capacity=Object.fromEntries(Object.keys(profileContract.capacity_options).map(name=>[name,byId('profile-'+name).value]));
+  const tolerance=profileContract.tolerance_questions.map((_,i)=>Number(byId('tolerance-'+i).value));
+  updateComparatorButton();byId('risk-result').hidden=true;
+  try{
+    const data=await api('/api/risk-comparator',{corpus:byId('corpus').value,session:byId('session').value,capacity,tolerance});
+    if(generation!==selectionGeneration||ticket!==riskGeneration)return;
+    byId('risk-status').textContent='Prototype profile '+data.profile.tier+'; binding axis '+data.profile.binding_axis+'. Scaling ends '+data.scaling_fit_end+'.';
+    byId('risk-fixed').textContent=data.reference.decision;byId('risk-fixed-score').textContent='Score '+data.reference.score.toFixed(4);
+    byId('risk-conditioned').textContent=data.profile_conditioned.decision;byId('risk-conditioned-score').textContent='R = '+data.profile.score.toFixed(3)+'; score '+data.profile_conditioned.score.toFixed(4);
+    byId('risk-formula').textContent='C = R ? S + (1 ? R) ? T. News S = '+data.sentiment_signal.toFixed(4)+'; technical T = '+data.technical_signal.toFixed(4)+'. Sell: C ? ?0.5; Hold: ?0.5 < C ? 0.5; Buy: C > 0.5.'+(data.missing_sentiment?' '+data.missing_policy:'');
+    byId('risk-audit').textContent='Capacity before caps: '+data.profile.capacity_raw.toFixed(4)+'; after caps: '+data.profile.capacity_score.toFixed(4)+'\nTolerance: '+data.profile.tolerance_score.toFixed(4)+'\nMatched project rules: '+(data.profile.matched_caps.join(', ')||'none')+'; changed score: '+data.profile.cap_binding+'\n\nScaled feature inputs:\n'+Object.entries(data.scaled_inputs).map(([name,value])=>name+': '+(value===null?'missing':value.toFixed(4))).join('\n')+'\n\n'+data.limitation;
+    byId('risk-result').hidden=false;
+  }catch(error){
+    if(generation===selectionGeneration&&ticket===riskGeneration)byId('risk-status').textContent='Comparator unavailable. '+error.message;
+  }finally{
+    if(activeRiskTicket===ticket){activeRiskTicket=null;updateComparatorButton();}
+  }
+});
+byId('reset').addEventListener('click',()=>{if(!current)return;byId('candidate').value=current.template.text;clearVerification();});
+byId('inject').addEventListener('click',()=>{if(!current)return;let text=current.template.text;const p=current.template.payload,f=p.contributions[0];switch(byId('corruption').value){case 'probability':text=text.replace('Calibrated confidence in this decision: '+(p.confidence*100).toFixed(2)+'%.','Calibrated confidence in this decision: 1.00%.');break;case 'direction':text=text.replace(') '+f.direction+' the',') '+(f.direction==='supports'?'opposes':'supports')+' the');break;case 'value':text=text.replace(f.name+' (value '+f.value.toFixed(4)+')',f.name+' (value '+(f.value+10).toFixed(4)+')');break;case 'class':text=text.replace('horizon): '+p.decision+'.','horizon): '+(p.decision==='Buy'?'Sell':'Buy')+'.');break;case 'notice':text=text.replace(p.non_advice_notice,'');break;case 'unsupported':text+='\nThe stock will definitely double.';break;}byId('candidate').value=text;clearVerification();});
+byId('verify').addEventListener('click',async()=>{if(!current)return;const generation=selectionGeneration,input=verificationInput(),ticket=verificationState.begin(input);activeVerificationTicket=ticket;activeActionTicket=ticket;byId('result').hidden=true;byId('reports').hidden=true;busy(true);try{const response=await api('/api/verify',{corpus:byId('corpus').value,session:byId('session').value,text:byId('candidate').value,payload:byId('payload').checked?current.template.payload:null,strict_prose:byId('strict').checked});if(generation!==selectionGeneration)return;if(!verificationState.matches(ticket,verificationInput()))return;const rejected=response.replaced_by_template;byId('result').className='result'+(rejected?' rejected':'');byId('verdict').textContent=rejected?'Rejected. Verified template shown.':'Accepted. Supported claims passed verification.';byId('failure').textContent=rejected?'Candidate failures: '+response.candidate.failed_metrics.join(', ')+'. Emitted template passes verification.':'The checked explanation is shown below.';byId('metrics').replaceChildren();for(const [label,key] of [['Numeric fidelity','numeric_fidelity'],['Directional consistency','directional_consistency'],['Claim recall','claim_recall'],['Unverifiable rate','unverifiable_rate']]){const box=document.createElement('div');box.className='metric';const span=document.createElement('span');span.textContent=label;const strong=document.createElement('strong');strong.textContent=response.candidate[key].toFixed(3);box.append(span,strong);byId('metrics').append(box);}byId('emitted').textContent=response.text;byId('claims').replaceChildren();for(const claim of response.candidate.claims){const tr=document.createElement('tr');for(const key of ['source','kind','subject','claimed','actual','verdict','reason']){const td=document.createElement('td'),value=claim[key];td.textContent=value===null?'—':typeof value==='object'?JSON.stringify(value):String(value);tr.append(td);}byId('claims').append(tr);}byId('contract').textContent='Verification contract: '+response.verifier_contract+'. Coverage is measured from displayed text; the worse numeric/directional result of text and JSON is reported.';byId('result').hidden=false;byId('reports').hidden=false;}catch(error){if(generation===selectionGeneration&&verificationState.matches(ticket,verificationInput())){byId('result').hidden=false;byId('result').className='result rejected';byId('verdict').textContent='Verification unavailable.';byId('failure').textContent=error.message;byId('reports').hidden=true;}}finally{if(generation===selectionGeneration&&activeVerificationTicket===ticket&&activeActionTicket===ticket){activeActionTicket=null;busy(false);};}});
+byId('explain').addEventListener('click',async()=>{
+  if(!current)return;
+  const generation=selectionGeneration,ticket=guidedRequests.begin(),action={kind:'guide',ticket};activeActionTicket=action;
+  busy(true);
+  try{
+    const data=await api('/api/explain',{corpus:byId('corpus').value,session:byId('session').value});
+    if(generation!==selectionGeneration||!guidedRequests.isCurrent(ticket))return;
+    byId('generation-status').textContent=(data.used_template?'Verified deterministic explanation. ':'Verified local generation. ')+data.reason;
+    byId('generated').textContent=data.text;
+    byId('generation-attempts').textContent=data.attempts.length?data.attempts.map(a=>'Attempt '+a.number+'; served model '+(a.served_model||'unreported')+'; '+a.elapsed_seconds+' seconds\n'+(a.error||'Supported claims passed')+'\n'+(a.raw_output||'No completion returned')).join('\n\n'):'No model request was made.';
+    byId('generation-result').hidden=false;
+  }catch(error){
+    if(generation===selectionGeneration&&guidedRequests.isCurrent(ticket)){byId('generation-status').textContent='Explanation unavailable. '+error.message;byId('generated').textContent='';byId('generation-attempts').textContent='';byId('generation-result').hidden=false;}
+  }finally{
+    if(generation===selectionGeneration&&activeActionTicket===action){activeActionTicket=null;busy(false);}
+  }
+});
+(async()=>{try{const data=await api('/api/explainer-status');byId('generator-status').textContent=data.configured?'Local model configured: '+data.model+'. Connection and generated claims are checked when requested.':'No local LLM is configured. The verified deterministic comparator is available.';}catch(error){byId('generator-status').textContent='Generator status unavailable. '+error.message;}})();
+async function loadCatalog(){
+  const ticket=catalogRequests.begin(),previousCorpus=byId('corpus').value,previousSession=byId('session').value;
+  selectionGeneration++;current=null;catalog={};clearResult();busy(true);byId('workspace').hidden=true;
+  byId('corpus').replaceChildren();byId('session').replaceChildren();byId('status').textContent='Loading available historical sources?';
+  try{
+    const data=await api('/api/catalog');if(!catalogRequests.isCurrent(ticket))return;
+    byId('catalog-limitations').textContent=Object.entries(data.unavailable||{}).map(([name,reason])=>name+': '+reason).concat(Object.entries(data.risk_comparator_unavailable||{}).map(([name,reason])=>name+' comparator: '+reason)).join(' ');
+    if(!data.corpora||typeof data.corpora!=='object'||Array.isArray(data.corpora))throw new Error('The historical source catalogue is invalid.');
+    const entries=Object.entries(data.corpora);
+    if(!entries.length)throw new Error('No valid historical decision records are available.');
+    if(entries.some(([,value])=>!value||typeof value.label!=='string'||!Array.isArray(value.sessions)||!value.sessions.length))throw new Error('A historical source has no valid recorded session list.');
+    catalog=data.corpora;
+    for(const [key,value] of entries){const option=document.createElement('option');option.value=key;option.textContent=value.label;byId('corpus').append(option);}
+    if(catalog[previousCorpus])byId('corpus').value=previousCorpus;
+    await selectCorpus(byId('corpus').value===previousCorpus?previousSession:null);
+  }catch(error){
+    if(catalogRequests.isCurrent(ticket)){byId('status').textContent='Demo unavailable. '+error.message;updateComparatorButton();}
+  }
+}
+byId('refresh-catalog').addEventListener('click',loadCatalog);
+loadCatalog();
+</script>
+</main></body></html>

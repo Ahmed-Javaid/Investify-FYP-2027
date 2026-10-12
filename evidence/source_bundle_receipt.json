@@ -1,0 +1,9 @@
+{
+  "built_utc": "2026-10-11T15:50:37.061165+00:00",
+  "code_commit": "0a27ed11ae14758895277368f15c16cb72f67c9c",
+  "files": 188,
+  "zip_bytes": 3842349,
+  "zip_sha256": "73671dd0dee1604be6193a21acd6f346ebbb63928bd3ae15ac78c5661e7e0198",
+  "scope": "Working source/evidence handover; no newly compiled report/deck, model weights or completed external studies",
+  "source_inventory_files": 127
+}

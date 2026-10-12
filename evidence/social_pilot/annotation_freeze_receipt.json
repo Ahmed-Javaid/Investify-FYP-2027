@@ -1,0 +1,37 @@
+{
+  "status": "annotated_reference_frozen",
+  "benchmark_sha256": "4ee137070c0c90e16503c34d3ed9245a094c658213ed7d0a8cc0aa8fbb05fe2d",
+  "unannotated_corpus_sha256": "ffd9d3cee58d77e69b4a5a439da1ac988230a92f940fad470e78832bed591f7e",
+  "raw_batches": [
+    {
+      "file": "raw_labels_batch_01.json",
+      "sha256": "d04a7eecdf543d8256402392d64f9cdc6b0038ede6ab65ef6092ac986180cc56",
+      "packet_sha256": "837983a7713cefa4b9cf0b487a83621ef5164ad2af2c7ae57359f1d77c5a1506",
+      "persisted_utc": "2026-10-11T19:27:07.662663+00:00"
+    },
+    {
+      "file": "raw_labels_batch_02.json",
+      "sha256": "d394460ffae1c3a9bdad86cb60ec3866cf1c0f4e15f9f15763d74ac4239f6c9a",
+      "packet_sha256": "02973b96c5f9c401b7dd6576ce2203285fc72f1f6a5d3642cb20a3f99403b890",
+      "persisted_utc": "2026-10-11T19:28:04.918866+00:00"
+    },
+    {
+      "file": "raw_labels_batch_03.json",
+      "sha256": "18dd9957b852aa0c190aa1368055d23f6a480973713d155a0d8aa5486d271e86",
+      "packet_sha256": "d95bf0425e20479b44f1a89743faa9d8ab26282bfb59ee5b55544c7b1db9eb4e",
+      "persisted_utc": "2026-10-11T19:29:10.498055+00:00"
+    },
+    {
+      "file": "raw_labels_batch_04.json",
+      "sha256": "fb859ab446f45de0f6cf90d6947e5530baa86733c7b6b4c25a58a16332a7df1d",
+      "packet_sha256": "f0e74fa2837f9e52964a7b6506290e313647d615f81232f2737de19c78d4fb1c",
+      "persisted_utc": "2026-10-11T19:30:15.974670+00:00"
+    }
+  ],
+  "frozen_utc": "2026-10-11T19:30:16.423081+00:00",
+  "annotation_method": "model_generated",
+  "human_labels_created": 0,
+  "candidate_inference_calls": 0,
+  "timestamp_definition": "Per-post annotated_at_utc is the containing raw batch file persistence time. Per-post model latency is not measured.",
+  "limitation": "One session-generated AI reference pass; no cross-model agreement, independent human validation, candidate accuracy or model selection is established."
+}

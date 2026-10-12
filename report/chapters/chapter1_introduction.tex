@@ -1,0 +1,35 @@
+\chapter{Introduction and Project Vision}
+\section{Project Overview}
+Investify (F26-003-Investify) is an educational investment advisory project for retail investors. The planned system combines technical indicators, news and social sentiment, and risk information to present a one-week Buy, Hold, or Sell view with understandable, checkable evidence. The proposal was approved with minor modifications concerning contribution clarity, the language-model role, evaluation, transparency, and domain understanding.
+
+\section{Problem Statement}
+A retail investor evaluating a company must interpret historical price indicators and a large volume of news and social commentary. A decision label alone does not explain which signals influenced it, how conflicting evidence was handled, how uncertain it is, or whether an action fits the investor's risk constraints. A fluent explanation can misstate recorded values or attributions, while an evaluation using information unavailable at decision time can overstate model quality.
+
+Investify addresses these issues through a temporally controlled evaluation pipeline and explanations tied to recorded inputs and model attributions. Its outputs are educational and advisory; predictive usefulness must be established against explicit comparators, and the system does not execute transactions.
+
+\section{Problem Context and Motivation}
+The baseline contains a historical NVDA experiment using technical indicators and financial-news sentiment. It found no demonstrated predictive signal, and its calibrated evaluation records all select Buy. Explaining those records makes the computation and its limitations inspectable; it does not establish a useful trading signal. Financial-text classification supplies evidence about text tone rather than the truth of a headline or a promised return \cite{finbert_card}.
+
+\section{Project Vision}
+The user can inspect a view's evidence, understand its uncertainty and coverage, and ask questions without receiving invented values or unsupported causes. The LLM communicates the recorded decision. A separate claim verifier and deterministic fallback govern supported factual statements.
+
+\section{Project Objectives}
+Objectives cover point-in-time alignment, engine/baseline comparison, equity social-model transfer and news/social disagreement, capacity/tolerance reconciliation, verified explanations and user understanding, and a reproducible measured system. Implemented components, measured findings, and planned objectives are reported separately.
+
+\section{Project Scope}
+The current spike covers NVDA, historical news, one- and five-session experimental horizons, and cached artifacts. Full scope targets a small equity universe, a one-week user horizon, social sentiment, genuine risk conditioning, and a verified LLM. Price-only continuously traded assets provide a later calendar experiment. Brokerage integration and trading execution are excluded.
+
+\section{Project Modules}
+Modules cover ingestion/storage, calendar/as-of alignment, feature/sentiment construction, evaluation/controls, prediction/calibration/attribution, risk profiling, explanations/verification, and interface/deployment. The new increment adds complete evidence context at the explanation/interface boundary.
+
+\section{Stakeholders and User Classes}
+The primary user seeks educational analysis. The operator maintains data/runtime health. The supervisor evaluates scope and evidence. Each team member must explain and modify their actual work and disclose external assistance and components.
+
+\section{Success Criteria}
+Criteria include causal alignment checks, injected faults, held-out predictive/calibration metrics, explanation measures, interpretation tasks, and runtime/installability checks. Existing explanation targets are numeric fidelity at least 0.98, directional consistency at least 0.95, recall at least 0.80, and unverifiable rate at most 0.15. Planned bounds are not measurements.
+
+\section{Constraints and Assumptions}
+The local clone lacks the training store/raw corpora, and fresh upstream changes could not be checked. Candidate social-model comparison, live LLM/student inference and comprehension evaluation remain pending. Six recorded teacher examples demonstrate construction under a bounded contract. The prototype questionnaire affects a separate technical/news comparator; it does not condition the saved XGBoost predictions or implement the proposal's validated risk instrument. Context/verification checks can run without the training stack.
+
+\section{Ethical, Legal and DEI Considerations}
+The interface must explain data age, coverage, uncertainty, actual profile effect, and failure states. An AI explanation is not a guaranteed prediction \cite{sec_ai_alert}. Personal data, annotations, and acceptance work require appropriate privacy, licensing, consent, and truthful records. The advisory boundary must remain clear throughout the journey.

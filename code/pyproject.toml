@@ -1,0 +1,25 @@
+[project]
+name = "investify"
+version = "0.1.0"
+description = "Leakage-audited point-in-time advisory pipeline (proposal-defence POC spike)"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "pandas>=2.2,<3",
+    "numpy>=1.26,<2",
+    "pyarrow>=15",
+    "duckdb>=0.10",
+    "pandas-market-calendars>=4.4",
+    "yfinance>=0.2.40",
+    "xgboost>=2.0",
+    "shap>=0.45",
+    "scikit-learn>=1.4",
+    "transformers>=4.40",
+    "torch>=2.2",
+    "pyyaml>=6.0",
+    "pytest>=8.0",
+    "matplotlib>=3.11.1",
+    "streamlit>=1.63.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

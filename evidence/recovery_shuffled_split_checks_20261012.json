@@ -1,0 +1,51 @@
+{
+  "schema": "investify-recovered-split-function-checks-v1",
+  "checked_utc": "2026-10-12T10:53:12.371170+00:00",
+  "python": "3.13.0",
+  "executable": "C:\\Users\\Habibi\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+  "runner": "Direct unchanged AST function-body execution; not pytest",
+  "runtime": {
+    "numpy": {
+      "version": "2.4.6",
+      "path": "E:\\Uni_Stuff\\Projects\\WeatherForcastAI\\CookBookAI\\venv\\Lib\\site-packages\\numpy\\__init__.py"
+    },
+    "pandas": {
+      "version": "3.0.3",
+      "path": "E:\\Uni_Stuff\\Projects\\WeatherForcastAI\\CookBookAI\\venv\\Lib\\site-packages\\pandas\\__init__.py"
+    },
+    "scipy": {
+      "version": "1.17.1",
+      "path": "E:\\Uni_Stuff\\Projects\\WeatherForcastAI\\CookBookAI\\venv\\Lib\\site-packages\\scipy\\__init__.py"
+    },
+    "sklearn": {
+      "version": "1.9.0",
+      "path": "E:\\Uni_Stuff\\Projects\\WeatherForcastAI\\CookBookAI\\venv\\Lib\\site-packages\\sklearn\\__init__.py"
+    }
+  },
+  "source_sha256": {
+    "tools\\verify_recovered_split_checks.py": "44defad98b0e56204fb56eb9a20341a32e9c31f0201b49e80607d7021f8eb4f2",
+    "code\\tests\\test_splits.py": "ebb030fa00150d3942f30121c1e992aacb007b80f08ebf8c6944d666d75c0e69",
+    "code\\src\\investify\\harness\\splits.py": "21abd2a37beb34bd8105120161d7aa99a3c39b15ef8208147fc88a5b80c743b3"
+  },
+  "checks": [
+    {
+      "function": "test_shuffled_kfold_is_deterministic",
+      "passed": true
+    },
+    {
+      "function": "test_shuffled_kfold_breaks_temporal_order",
+      "passed": true
+    },
+    {
+      "function": "test_shuffled_kfold_partitions_all_rows",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "pytest_executed": false,
+  "scientific_py311_lock_restored": false,
+  "market_inputs_used": false,
+  "classifier_fits": 0,
+  "model_inference_calls": 0,
+  "scope": "Three existing shuffled-split assertions on labelled synthetic dates/indices, using real sklearn. Earlier deselected Py311 test receipts remain unchanged; this is a separate partial-runtime check."
+}

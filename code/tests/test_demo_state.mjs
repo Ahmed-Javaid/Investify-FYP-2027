@@ -1,0 +1,22 @@
+/* Node-only unit fixtures. No browser creation/navigation or visual-QA claim. */
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const context = {};
+vm.createContext(context);
+vm.runInContext(fs.readFileSync(new URL('../app/demo_state.js', import.meta.url), 'utf8'), context);
+const state = context.createInvestifyVerificationState();
+const input = {corpus: 'LABELLED fixture', session: '2023-01-02', text: 'LABELLED clean input', payload: true, strict: true};
+const first = state.begin(input);
+assert.equal(state.matches(first, input), true);
+assert.equal(state.matches(first, {...input, text: 'LABELLED edited text'}), false);
+assert.equal(state.matches(first, {...input, payload: false}), false);
+assert.equal(state.matches(first, {...input, strict: false}), false);
+assert.equal(state.matches(first, {...input, session: '2023-01-03'}), false);
+state.invalidate();
+assert.equal(state.matches(first, input), false);
+const second = state.begin(input);
+const third = state.begin(input);
+assert.equal(state.matches(second, input), false);
+assert.equal(state.matches(third, input), true);
+console.log('8 verification-freshness unit assertions passed; Node only, no browser');

@@ -1,0 +1,291 @@
+{
+  "spike": "risk_profile_weight_sensitivity",
+  "persona_space_sha256": "a897fac64a784d09",
+  "config": {
+    "factors": [
+      "horizon",
+      "buffer",
+      "stability",
+      "dependants",
+      "age"
+    ],
+    "weights": [
+      0.3,
+      0.3,
+      0.2,
+      0.1,
+      0.1
+    ],
+    "caps": {
+      "no_buffer": 0.399999999,
+      "short_horizon": 0.399999999,
+      "fragile": 0.399999999
+    },
+    "tier_cuts": [
+      0.4,
+      0.7
+    ],
+    "gl_range": [
+      13,
+      47
+    ],
+    "lambda_by_tier": {
+      "conservative": 2.75,
+      "moderate": 2.25,
+      "aggressive": 1.75
+    },
+    "n_draws": 1000,
+    "perturbation": 0.5,
+    "seed": 42
+  },
+  "results": {
+    "fixture": {
+      "persona": "age 18-30, income somewhat, 2 dep, buffer 1-3m, horizon 3-5y",
+      "capacity": 0.55,
+      "capacity_target_in_proposal": 0.55,
+      "capacity_matches": true,
+      "tolerance_nearest_attainable": 0.67,
+      "tolerance_printed_in_proposal": 0.68,
+      "tolerance_gl_raw": 32,
+      "tolerance_exactly_attainable": false,
+      "binds": "capacity",
+      "tier": "moderate",
+      "tier_matches": true
+    },
+    "named_personas": [
+      {
+        "name": "proposal 10.8 as written",
+        "persona": "age 18-30, income stable, 2 dep, buffer 3-6m, horizon 5y+",
+        "raw_weighted": 0.851,
+        "cap_ceiling": 1.0,
+        "cap_fires": false,
+        "capacity_weighted": 0.851,
+        "tier_weighted": "aggressive",
+        "capacity_equal": 0.834,
+        "tier_equal": "aggressive",
+        "agree": true
+      },
+      {
+        "name": "proposal 10.8 corrected",
+        "persona": "age 18-30, income somewhat, 2 dep, buffer 1-3m, horizon 3-5y",
+        "raw_weighted": 0.55,
+        "cap_ceiling": 1.0,
+        "cap_fires": false,
+        "capacity_weighted": 0.55,
+        "tier_weighted": "moderate",
+        "capacity_equal": 0.6,
+        "tier_equal": "moderate",
+        "agree": true
+      },
+      {
+        "name": "wealthy but anxious",
+        "persona": "age 18-30, income stable, 0 dep, buffer 6m+, horizon 5y+",
+        "raw_weighted": 1.0,
+        "cap_ceiling": 1.0,
+        "cap_fires": false,
+        "capacity_weighted": 1.0,
+        "tier_weighted": "aggressive",
+        "capacity_equal": 1.0,
+        "tier_equal": "aggressive",
+        "agree": true
+      },
+      {
+        "name": "constrained but bold",
+        "persona": "age 18-30, income unstable, 1 dep, buffer 1-3m, horizon 1-3y",
+        "raw_weighted": 0.373,
+        "cap_ceiling": 0.4,
+        "cap_fires": true,
+        "capacity_weighted": 0.373,
+        "tier_weighted": "conservative",
+        "capacity_equal": 0.4,
+        "tier_equal": "conservative",
+        "agree": true
+      }
+    ],
+    "fr7_property_test": {
+      "pairs_checked": 42000,
+      "violations": 0,
+      "conflicting_pairs": 29075,
+      "capacity_binds_share": 0.7396388650042992,
+      "tolerance_binds_share": 0.2603611349957008,
+      "passes": true
+    },
+    "invariance": {
+      "n_personas": 1200,
+      "n_draws": 1000,
+      "perturbation": "each weight x U(0.50, 1.50), renormalised",
+      "invariant": 790,
+      "invariant_share": 0.6583333333333333,
+      "pairwise_agreement": 0.9471333333333334,
+      "spans_two_tiers": 405,
+      "spans_three_tiers": 5,
+      "boundary_examples": [
+        {
+          "persona": "age 65+, income unstable, 4 dep, buffer 6m+, horizon 5y+",
+          "baseline_tier": "moderate",
+          "tiers_seen": [
+            "conservative",
+            "moderate",
+            "aggressive"
+          ],
+          "share_off_baseline": 0.056
+        },
+        {
+          "persona": "age 18-30, income unstable, 3 dep, buffer 6m+, horizon 1-3y",
+          "baseline_tier": "moderate",
+          "tiers_seen": [
+            "conservative",
+            "moderate",
+            "aggressive"
+          ],
+          "share_off_baseline": 0.01
+        },
+        {
+          "persona": "age 31-45, income unstable, 4 dep, buffer 3-6m, horizon 5y+",
+          "baseline_tier": "moderate",
+          "tiers_seen": [
+            "conservative",
+            "moderate",
+            "aggressive"
+          ],
+          "share_off_baseline": 0.007
+        },
+        {
+          "persona": "age 31-45, income unstable, 4 dep, buffer 6m+, horizon 3-5y",
+          "baseline_tier": "moderate",
+          "tiers_seen": [
+            "conservative",
+            "moderate",
+            "aggressive"
+          ],
+          "share_off_baseline": 0.004
+        },
+        {
+          "persona": "age 46-55, income unstable, 0 dep, buffer 6m+, horizon 1-3y",
+          "baseline_tier": "moderate",
+          "tiers_seen": [
+            "conservative",
+            "moderate",
+            "aggressive"
+          ],
+          "share_off_baseline": 0.002
+        },
+        {
+          "persona": "age 65+, income unstable, 0 dep, buffer 3-6m, horizon 1-3y",
+          "baseline_tier": "moderate",
+          "tiers_seen": [
+            "conservative",
+            "moderate"
+          ],
+          "share_off_baseline": 0.514
+        },
+        {
+          "persona": "age 56-65, income unstable, 1 dep, buffer 3-6m, horizon 1-3y",
+          "baseline_tier": "moderate",
+          "tiers_seen": [
+            "conservative",
+            "moderate"
+          ],
+          "share_off_baseline": 0.509
+        },
+        {
+          "persona": "age 56-65, income unstable, 1 dep, buffer 6m+, horizon 5y+",
+          "baseline_tier": "aggressive",
+          "tiers_seen": [
+            "moderate",
+            "aggressive"
+          ],
+          "share_off_baseline": 0.508
+        }
+      ]
+    },
+    "per_weight_sensitivity": [
+      {
+        "factor": "horizon",
+        "weight": 0.3,
+        "flip_share_halved": 0.055,
+        "flip_share_doubled": 0.0675,
+        "flip_share_max": 0.0675
+      },
+      {
+        "factor": "buffer",
+        "weight": 0.3,
+        "flip_share_halved": 0.0675,
+        "flip_share_doubled": 0.0733,
+        "flip_share_max": 0.0733
+      },
+      {
+        "factor": "stability",
+        "weight": 0.2,
+        "flip_share_halved": 0.0475,
+        "flip_share_doubled": 0.0983,
+        "flip_share_max": 0.0983
+      },
+      {
+        "factor": "dependants",
+        "weight": 0.1,
+        "flip_share_halved": 0.0275,
+        "flip_share_doubled": 0.0492,
+        "flip_share_max": 0.0492
+      },
+      {
+        "factor": "age",
+        "weight": 0.1,
+        "flip_share_halved": 0.0275,
+        "flip_share_doubled": 0.0492,
+        "flip_share_max": 0.0492
+      }
+    ],
+    "equal_weights": {
+      "agreement": 0.8991666666666667,
+      "cohen_kappa": 0.8286,
+      "n_disagreements": 121,
+      "mean_abs_capacity_delta": 0.0444
+    },
+    "cap_ablation": {
+      "personas_where_a_cap_fires": 600,
+      "personas_whose_tier_the_caps_change": 270,
+      "tier_invariance_with_caps": 0.6583,
+      "tier_invariance_without_caps": 0.2875,
+      "invariance_gained_by_caps": 0.3708
+    },
+    "lambda_action_bands": [
+      {
+        "tier": "conservative",
+        "lambda": 2.75,
+        "theta_buy": 0.6111,
+        "theta_sell": -0.4091,
+        "buy_share_normal": 0.27,
+        "hold_share_normal": 0.388,
+        "sell_share_normal": 0.3421,
+        "buy_share_student_t4": 0.2178,
+        "hold_share_student_t4": 0.4849,
+        "sell_share_student_t4": 0.2973
+      },
+      {
+        "tier": "moderate",
+        "lambda": 2.25,
+        "theta_buy": 0.5,
+        "theta_sell": -0.5,
+        "buy_share_normal": 0.3073,
+        "hold_share_normal": 0.3836,
+        "sell_share_normal": 0.309,
+        "buy_share_student_t4": 0.2583,
+        "hold_share_student_t4": 0.4814,
+        "sell_share_student_t4": 0.2603
+      },
+      {
+        "tier": "aggressive",
+        "lambda": 1.75,
+        "theta_buy": 0.3889,
+        "theta_sell": -0.6429,
+        "buy_share_normal": 0.3477,
+        "hold_share_normal": 0.3916,
+        "sell_share_normal": 0.2607,
+        "buy_share_student_t4": 0.3051,
+        "hold_share_student_t4": 0.4873,
+        "sell_share_student_t4": 0.2076
+      }
+    ]
+  }
+}

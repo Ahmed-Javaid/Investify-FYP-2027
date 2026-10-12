@@ -1,0 +1,328 @@
+{
+  "schema": "investify-requirement-anchors-v1",
+  "scope": "Current engineering increment; traceability does not close proposal milestones, scientific studies or institutional acceptance.",
+  "requirements": [
+    {
+      "id": "MID-FR-01",
+      "acceptance": "Load saved decisions and refuse invalid inputs",
+      "implementation": [
+        {
+          "path": "code/src/investify/decision_record.py",
+          "symbol": "DecisionRecord.from_dict"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_record_validation.py",
+          "symbol": "RecordValidationTests.test_nonfinite_out_of_range_or_boolean_probabilities_are_rejected"
+        }
+      ],
+      "evidence_boundary": "Saved records only; no live-data ingestion result."
+    },
+    {
+      "id": "MID-FR-02",
+      "acceptance": "Display all technical/news values, attributions, meanings and coverage",
+      "implementation": [
+        {
+          "path": "code/src/investify/explain/context.py",
+          "symbol": "build_context"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_context.py",
+          "symbol": "MidEvalContextTests.test_all_real_records_keep_their_facts_and_validate"
+        }
+      ],
+      "evidence_boundary": "Social features and live freshness remain absent."
+    },
+    {
+      "id": "MID-FR-03",
+      "acceptance": "Check visible prose independently of structured claims",
+      "implementation": [
+        {
+          "path": "code/src/investify/explain/verifier.py",
+          "symbol": "verify"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_verifier.py",
+          "symbol": "MidEvalVerifierTests.test_correct_payload_cannot_hide_wrong_displayed_probability"
+        }
+      ],
+      "evidence_boundary": "Supported grammar; no unrestricted semantic verification."
+    },
+    {
+      "id": "MID-FR-04",
+      "acceptance": "Reject contradictions and missing essential visible claims",
+      "implementation": [
+        {
+          "path": "code/src/investify/explain/verifier.py",
+          "symbol": "verify"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_verifier.py",
+          "symbol": "MidEvalVerifierTests.test_payload_cannot_supply_facts_or_notice_absent_from_displayed_text"
+        }
+      ],
+      "evidence_boundary": "Known contradictions are hard failures; default vague-sentence acceptance is disclosed."
+    },
+    {
+      "id": "MID-FR-05",
+      "acceptance": "Retain failed candidate reporting separately from verified fallback",
+      "implementation": [
+        {
+          "path": "code/src/investify/explain/pipeline.py",
+          "symbol": "emit"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_verifier.py",
+          "symbol": "MidEvalVerifierTests.test_fallback_retains_the_rejected_candidate_report"
+        }
+      ],
+      "evidence_boundary": "Fallback success does not relabel the candidate as successful."
+    },
+    {
+      "id": "MID-FR-06",
+      "acceptance": "Reject unsupported sentences in strict mode",
+      "implementation": [
+        {
+          "path": "code/src/investify/explain/verifier.py",
+          "symbol": "verify"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_verifier.py",
+          "symbol": "MidEvalVerifierTests.test_strict_mode_rejects_unparsed_text_and_preserves_clean_template"
+        }
+      ],
+      "evidence_boundary": "Strict mode checks the maintained grammar."
+    },
+    {
+      "id": "MID-FR-07",
+      "acceptance": "Block re-runs when data/runtime preflight fails",
+      "implementation": [
+        {
+          "path": "code/src/investify/demo_readiness.py",
+          "symbol": "harness_input_report"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_readiness.py",
+          "symbol": "MidEvalReadinessTests.test_empty_partition_directories_do_not_enable_a_rerun"
+        },
+        {
+          "path": "code/tests/test_streamlit_mideval.py",
+          "symbol": "StreamlitMidEvalTests.test_leakage_view_labels_saved_results_and_limits_preflight_claims"
+        }
+      ],
+      "evidence_boundary": "Structural preflight is not row/schema/cache-coverage or scientific-lock validation."
+    },
+    {
+      "id": "MID-FR-08",
+      "acceptance": "Bound explicitly configured generator requests and label fallback",
+      "implementation": [
+        {
+          "path": "code/src/investify/explain/local_llm.py",
+          "symbol": "LocalExplainer.explain"
+        },
+        {
+          "path": "code/src/investify/publisher_models.py",
+          "symbol": "verify_runtime"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_local_llm.py",
+          "symbol": "LocalLLMTests.test_unavailable_provider_fails_fast_with_explicit_fallback"
+        },
+        {
+          "path": "code/tests/test_mideval_publisher_models.py",
+          "symbol": "PublisherModelTests.test_all_shards_are_required_and_changed_bytes_fail_before_inference"
+        }
+      ],
+      "evidence_boundary": "Provider fixtures are engineering evidence; no real local/student inference."
+    },
+    {
+      "id": "MID-FR-09",
+      "acceptance": "Check maintained definitions in prose and JSON",
+      "implementation": [
+        {
+          "path": "code/src/investify/explain/local_llm.py",
+          "symbol": "verify_generated"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_local_llm.py",
+          "symbol": "LocalLLMTests.test_wrong_reviewed_definitions_in_text_or_json_are_rejected"
+        }
+      ],
+      "evidence_boundary": "Matching maintained definitions is not independent domain review."
+    },
+    {
+      "id": "MID-FR-10",
+      "acceptance": "Require frozen evaluation identities and retain null scores without outputs",
+      "implementation": [
+        {
+          "path": "code/src/investify/explain/evaluation.py",
+          "symbol": "evaluate"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_llm_evaluation.py",
+          "symbol": "EvaluationPlanTests.test_plan_drift_is_rejected_before_any_provider_request"
+        }
+      ],
+      "evidence_boundary": "Plan-only and unavailable-provider receipts are not model quality."
+    },
+    {
+      "id": "MID-FR-11",
+      "acceptance": "Require all-feature, family and attribution-scope coverage",
+      "implementation": [
+        {
+          "path": "code/src/investify/explain/local_llm.py",
+          "symbol": "verify_generated"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_complete_evidence.py",
+          "symbol": "CompleteEvidenceTests.test_every_feature_has_a_value_magnitude_direction_and_target_in_both_sources"
+        }
+      ],
+      "evidence_boundary": "SHAP explains raw predicted-class score, not calibrated probability or market causation."
+    },
+    {
+      "id": "MID-FR-12",
+      "acceptance": "Require explicit capacity/tolerance answers and expose reconciliation",
+      "implementation": [
+        {
+          "path": "code/src/investify/risk_profile.py",
+          "symbol": "score_profile"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_risk.py",
+          "symbol": "RiskProfileTests.test_incomplete_unknown_and_boolean_answers_are_not_defaulted"
+        }
+      ],
+      "evidence_boundary": "Project stand-ins and caps; no validated psychometric or suitability claim."
+    },
+    {
+      "id": "MID-FR-13",
+      "acceptance": "Fit separate comparator scaling on earlier rows and refuse invalid inputs",
+      "implementation": [
+        {
+          "path": "code/src/investify/risk_comparator.py",
+          "symbol": "build_comparator"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_risk.py",
+          "symbol": "RiskComparatorTests.test_changing_heldout_feature_values_cannot_change_scaling_statistics"
+        }
+      ],
+      "evidence_boundary": "Retrospective saved-feature comparator, not the original ingestion-to-linear baseline."
+    },
+    {
+      "id": "MID-FR-14",
+      "acceptance": "Change only separate profile blend beside the fixed reference",
+      "implementation": [
+        {
+          "path": "code/src/investify/risk_comparator.py",
+          "symbol": "HistoricalComparator.score"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_risk.py",
+          "symbol": "RiskComparatorTests.test_real_profile_changes_the_separate_score_without_mutating_saved_probabilities"
+        }
+      ],
+      "evidence_boundary": "Lower R is not guaranteed conservatism; outcome performance is unmeasured."
+    },
+    {
+      "id": "MID-FR-15",
+      "acceptance": "Validate declared annotation provenance and freeze social references",
+      "implementation": [
+        {
+          "path": "code/src/investify/sentiment_selection.py",
+          "symbol": "validate_benchmark"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_ai_annotation.py",
+          "symbol": "AIAnnotationTests.test_one_ai_pass_has_null_agreement_and_explicit_reference_scope"
+        }
+      ],
+      "evidence_boundary": "Actual AI-reference pilot exists; no second pass, human validation or reliability score."
+    },
+    {
+      "id": "MID-FR-16",
+      "acceptance": "Require complete paired held-out outputs before sentiment comparison",
+      "implementation": [
+        {
+          "path": "code/src/investify/sentiment_selection.py",
+          "symbol": "evaluate_predictions"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_sentiment_selection.py",
+          "symbol": "SentimentSelectionTests.test_no_runs_or_one_candidate_never_manufactures_a_model_selection"
+        }
+      ],
+      "evidence_boundary": "Candidate inference/selection remains pending; agreement is against AI references."
+    },
+    {
+      "id": "MID-FR-17",
+      "acceptance": "Load declared local classifier weights and retain raw/error outcomes",
+      "implementation": [
+        {
+          "path": "code/src/investify/sentiment_inference.py",
+          "symbol": "run_inference"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_sentiment_inference.py",
+          "symbol": "SentimentInferenceTests.test_actual_loader_refuses_missing_weights_without_a_download"
+        }
+      ],
+      "evidence_boundary": "Real model loading/inference unexecuted; compatible official weights/runtime missing."
+    },
+    {
+      "id": "MID-FR-18",
+      "acceptance": "Preserve teacher prose/provenance and separate verified training/validation exports",
+      "implementation": [
+        {
+          "path": "code/src/investify/explain/teacher_session.py",
+          "symbol": "import_responses"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_mideval_teacher_session.py",
+          "symbol": "TeacherSessionTests.test_actual_exports_keep_validation_out_of_training_and_disclose_hybrid_targets"
+        },
+        {
+          "path": "code/tests/test_streamlit_mideval.py",
+          "symbol": "StreamlitMidEvalTests.test_actual_teacher_view_replays_examples_and_preserves_student_pending_state"
+        }
+      ],
+      "evidence_boundary": "Six actual all-Buy teacher examples; factual JSON assembled; no student inference/QLoRA or measured user benefit."
+    }
+  ]
+}

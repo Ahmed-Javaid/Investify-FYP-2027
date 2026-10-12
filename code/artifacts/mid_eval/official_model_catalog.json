@@ -1,0 +1,37 @@
+{
+  "schema": "investify-official-publisher-models-v1",
+  "checked_date": "2026-10-12",
+  "policy": "Use original publisher models and publisher-issued quantizations only. No third-party fine-tunes or behaviour-modified variants. Verify all local weight files against the publisher pointers before inference.",
+  "models": {
+    "qwen25": {
+      "repository": "Qwen/Qwen2.5-7B-Instruct-GGUF",
+      "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+      "base_model": "Qwen/Qwen2.5-7B-Instruct",
+      "publisher": "Qwen",
+      "license": "apache-2.0",
+      "quantization": "Q5_K_M",
+      "served_alias": "investify-official-qwen25-q5km",
+      "model_card_url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF",
+      "revision_url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/commit/bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+      "files": [
+        {"filename": "qwen2.5-7b-instruct-q5_k_m-00001-of-00002.gguf", "sha256": "42f6693004793ee6cf1b2b723f0273b10f86a3bb2a949bd9128d4cda5fb866cd", "size_bytes": 3989841792},
+        {"filename": "qwen2.5-7b-instruct-q5_k_m-00002-of-00002.gguf", "sha256": "beba9d4f2f5a1fe7d144dcae332e68b52c26705c5310dece2e5d1997e091e134", "size_bytes": 1454989568}
+      ]
+    },
+    "qwen3": {
+      "repository": "Qwen/Qwen3-8B-GGUF",
+      "revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "base_model": "Qwen/Qwen3-8B",
+      "publisher": "Qwen",
+      "license": "apache-2.0",
+      "quantization": "Q5_K_M",
+      "served_alias": "investify-official-qwen3-q5km",
+      "model_card_url": "https://huggingface.co/Qwen/Qwen3-8B-GGUF",
+      "revision_url": "https://huggingface.co/Qwen/Qwen3-8B-GGUF/commit/7c41481f57cb95916b40956ab2f0b139b296d974",
+      "files": [
+        {"filename": "Qwen3-8B-Q5_K_M.gguf", "sha256": "068bae163faa96ad48032daf4e071a6a28fe67d8dcc95367609c2ff165e52738", "size_bytes": 5851112224}
+      ]
+    }
+  },
+  "evidence_scope": "Publisher repository revisions and SHA-256/size pointers inspected through primary-source pages. Local weight acquisition and actual inference remain pending; repository metadata is not proof of a downloaded file. Pointer URLs at main were readable; direct full-revision blob/raw URLs were unavailable through the web tool. Acquisition must recheck the pointers at the pinned revision before downloading."
+}

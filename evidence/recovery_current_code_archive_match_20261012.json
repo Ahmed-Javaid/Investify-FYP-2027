@@ -1,0 +1,8 @@
+{
+  "checked_utc": "2026-10-12T11:28:27.614738+00:00",
+  "archive_sha256": "54c84e1f7738c97173d98ec1c75a9d2321239297ae115306dbca0316bfc2535f",
+  "current_code_files_checked": 199,
+  "changed_code_files": [],
+  "passed": true,
+  "scope": "Archived code bytes match current workspace; later workspace planning/doctor confirmations remain outside this earlier archive snapshot."
+}

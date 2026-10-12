@@ -1,0 +1,14 @@
+{
+  "checked_utc": "2026-10-12T02:52:27.992745+00:00",
+  "archives_checked": 1,
+  "results": [
+    {
+      "path": "E:\\Uni_Stuff\\FYP\\Investify_PoC.zip",
+      "archive_bytes": 235714,
+      "entries": 14,
+      "candidate_input_entries": [],
+      "candidate_list_truncated": false
+    }
+  ],
+  "scope": "Read-only metadata inspection of original PoC ZIP and bounded known backup folders; no extraction/mutation or inference"
+}

@@ -1,0 +1,7 @@
+# Direct UI dependencies pinned to the existing uv.lock snapshot.
+# This is the historical artifact viewer, not the scientific training environment.
+streamlit==1.63.0
+PyYAML==6.0.3
+numpy==1.26.4
+pandas==2.3.3
+pyarrow==25.0.1

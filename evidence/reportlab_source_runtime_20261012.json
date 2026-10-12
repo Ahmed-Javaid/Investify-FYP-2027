@@ -1,0 +1,637 @@
+{
+  "source_repository": "MrBitBucket/reportlab-mirror",
+  "revision": "c4c83349b7272094f7413f726dcf206dbde7836d",
+  "modules": [
+    {
+      "path": "src/reportlab/__init__.py",
+      "sha": "d516270a11f303684c1fa1edb42a27fbf3f08ae4"
+    },
+    {
+      "path": "src/reportlab/graphics/__init__.py",
+      "sha": "2f1af9c678698abecc842b66f4e7a247b6871884"
+    },
+    {
+      "path": "src/reportlab/graphics/barcode/__init__.py",
+      "sha": "69993d3f2749518f86235d21ba3c869631d3fe8b"
+    },
+    {
+      "path": "src/reportlab/graphics/barcode/code128.py",
+      "sha": "c8cf4fc02456043aa0605e820eda48a9ed57d916"
+    },
+    {
+      "path": "src/reportlab/graphics/barcode/code39.py",
+      "sha": "65fd99d45a119573293e2b04f138de7998b084f4"
+    },
+    {
+      "path": "src/reportlab/graphics/barcode/code93.py",
+      "sha": "e1c95a1756fe2b4d7d504b1ccacc65f279839893"
+    },
+    {
+      "path": "src/reportlab/graphics/barcode/common.py",
+      "sha": "4dae03a21b2fbeeb2aa66a149e908be596e2c87e"
+    },
+    {
+      "path": "src/reportlab/graphics/barcode/dmtx.py",
+      "sha": "bc155d254e70f411b68765897eeed6a828967398"
+    },
+    {
+      "path": "src/reportlab/graphics/barcode/eanbc.py",
+      "sha": "a59a319b3d973ccf23da5ebfb21bb6546d664bd1"
+    },
+    {
+      "path": "src/reportlab/graphics/barcode/ecc200datamatrix.py",
+      "sha": "7c1851a2ba6403eb9a79cbdeca4edc3f85457d0c"
+    },
+    {
+      "path": "src/reportlab/graphics/barcode/fourstate.py",
+      "sha": "539d0a5ca09f0c02142a2965ff231a5a8a6b286f"
+    },
+    {
+      "path": "src/reportlab/graphics/barcode/lto.py",
+      "sha": "2b4756f918479d5e41c396abc1f88f2e0de04cf0"
+    },
+    {
+      "path": "src/reportlab/graphics/barcode/qr.py",
+      "sha": "5196e1bb78a5ff0a96d9eeb44a7acf41b4769652"
+    },
+    {
+      "path": "src/reportlab/graphics/barcode/qrencoder.py",
+      "sha": "a9cfeb8cadb77b4f9f0e663c4959742abed825b5"
+    },
+    {
+      "path": "src/reportlab/graphics/barcode/test.py",
+      "sha": "2cba0a20f34e498e68c207ff559228079d13c2c6"
+    },
+    {
+      "path": "src/reportlab/graphics/barcode/usps.py",
+      "sha": "a40169b8264526fc953cebb79f95941f4f39659b"
+    },
+    {
+      "path": "src/reportlab/graphics/barcode/usps4s.py",
+      "sha": "8d998001dae64e5e0ecff694caaafa24dc96228d"
+    },
+    {
+      "path": "src/reportlab/graphics/barcode/widgets.py",
+      "sha": "27d9bd0bf29e6d125f3c059c3891e27a396c6665"
+    },
+    {
+      "path": "src/reportlab/graphics/charts/__init__.py",
+      "sha": "663dda468b76554a088b8c8d420e9eb3405c3013"
+    },
+    {
+      "path": "src/reportlab/graphics/charts/areas.py",
+      "sha": "3e1c93d92431bd0048edce10d873f057f25b5b2d"
+    },
+    {
+      "path": "src/reportlab/graphics/charts/axes.py",
+      "sha": "70e9f358cb3df438a061ce932a8fb953f177361a"
+    },
+    {
+      "path": "src/reportlab/graphics/charts/barcharts.py",
+      "sha": "3d6b4385bfd1cfb56f452b49ebc006d4d32b60ba"
+    },
+    {
+      "path": "src/reportlab/graphics/charts/dotbox.py",
+      "sha": "e81404533efaea7c177343040b2e3b1952332e67"
+    },
+    {
+      "path": "src/reportlab/graphics/charts/doughnut.py",
+      "sha": "e5bea872257c7bac6f25f2e2217b0853b944be4d"
+    },
+    {
+      "path": "src/reportlab/graphics/charts/legends.py",
+      "sha": "5731ecca53d47601b660064854a2ab421530e964"
+    },
+    {
+      "path": "src/reportlab/graphics/charts/linecharts.py",
+      "sha": "4973a5a45b8c44bcd88c07951f26326bfaeb3c02"
+    },
+    {
+      "path": "src/reportlab/graphics/charts/lineplots.py",
+      "sha": "47184e6c1be1a8cfcba2311d44c702086323b9e0"
+    },
+    {
+      "path": "src/reportlab/graphics/charts/markers.py",
+      "sha": "10979dfd556787072867d03a1bf5e8bd476db346"
+    },
+    {
+      "path": "src/reportlab/graphics/charts/piecharts.py",
+      "sha": "fba0ffdb1a3609a96350c5af5147713e9e00902a"
+    },
+    {
+      "path": "src/reportlab/graphics/charts/slidebox.py",
+      "sha": "f48bba69143fbd398632b57bb0d9e328dcac0061"
+    },
+    {
+      "path": "src/reportlab/graphics/charts/spider.py",
+      "sha": "c309bd244fe6663925a2c7cef1030f416504d09f"
+    },
+    {
+      "path": "src/reportlab/graphics/charts/textlabels.py",
+      "sha": "538fc54de85cbe1c639203d1bf23393c344e6674"
+    },
+    {
+      "path": "src/reportlab/graphics/charts/utils.py",
+      "sha": "4d306dc8d8ebadfe4299eea61e825948f3efbb0a"
+    },
+    {
+      "path": "src/reportlab/graphics/charts/utils3d.py",
+      "sha": "93b9530b79ff135469c01a92f0032f0436fd09b9"
+    },
+    {
+      "path": "src/reportlab/graphics/renderPDF.py",
+      "sha": "f721b7a9f9d90964b9dc1db04068120c414f1416"
+    },
+    {
+      "path": "src/reportlab/graphics/renderPM.py",
+      "sha": "16b1b3e045c44aab06ed5c91cd515612dd0a84ed"
+    },
+    {
+      "path": "src/reportlab/graphics/renderPS.py",
+      "sha": "36ff6c4672ba4b72bf31739cc1e4c0df39711e9d"
+    },
+    {
+      "path": "src/reportlab/graphics/renderSVG.py",
+      "sha": "b17bad61aa51f803980a54525ae2fbd6eccba5db"
+    },
+    {
+      "path": "src/reportlab/graphics/renderbase.py",
+      "sha": "2b9d7264669abc11468b053ca9519820be1cc114"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/__init__.py",
+      "sha": "c16b3b27f8b6bc0483be20423de078e44ca1b219"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/bubble.py",
+      "sha": "57bc012a8960ea4fae0240145f80f5cc65671b1a"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/clustered_bar.py",
+      "sha": "e57836134f7f02ea0c32af0e03b313a59ac1c41d"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/clustered_column.py",
+      "sha": "055f1ea7754f978c55b33195dab184650e015eda"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/excelcolors.py",
+      "sha": "23b0213cd0ca3f3909182991e47139a6f440e6ff"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/exploded_pie.py",
+      "sha": "c4d99bc7b582bee4feea55449cd87759b2c9e93b"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/filled_radar.py",
+      "sha": "7761a4a55a36a7d58eb4aab667ce8f262944d313"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/line_chart.py",
+      "sha": "dc6bcab005c53378021677396817a432c107a14c"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/linechart_with_markers.py",
+      "sha": "981e69ac47a323d4a56c669008b859403a590985"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/radar.py",
+      "sha": "b7480546ec963bc43dfdc64d4c278ff2b049da31"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/runall.py",
+      "sha": "9d6400a5af216801ad24f427a29e9a12651b1368"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/scatter.py",
+      "sha": "a5a17f0231bba4ae548cc36ab0ef56167558a87a"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/scatter_lines.py",
+      "sha": "b435625beb7d6795e14909d87132c9a85dc92b29"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/scatter_lines_markers.py",
+      "sha": "53406056bd28b296c854c4d0c1489af2142df62d"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/simple_pie.py",
+      "sha": "670beba5984fd0c6b32a61727bad73cc69fe23f3"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/stacked_bar.py",
+      "sha": "d175651807c43f3126ec60f78b06b2fedb993db7"
+    },
+    {
+      "path": "src/reportlab/graphics/samples/stacked_column.py",
+      "sha": "70246c665179a41c12b44ae63008c43ad9549193"
+    },
+    {
+      "path": "src/reportlab/graphics/shapes.py",
+      "sha": "89edd0984e0eee40371c8bd1d9781ed9e80c7764"
+    },
+    {
+      "path": "src/reportlab/graphics/svgpath.py",
+      "sha": "e46481f59e42f98b335c0aaba70e1129fe4a5367"
+    },
+    {
+      "path": "src/reportlab/graphics/testdrawings.py",
+      "sha": "ebbf015309814c7448c904bd9cd2ed259b44b12c"
+    },
+    {
+      "path": "src/reportlab/graphics/testshapes.py",
+      "sha": "a4317ef1b02ccd87b5e27d4f0e4c6212d6d53397"
+    },
+    {
+      "path": "src/reportlab/graphics/transform.py",
+      "sha": "fb4be2f691826f0aa4f7515b99aef1dcfb383ab7"
+    },
+    {
+      "path": "src/reportlab/graphics/utils.py",
+      "sha": "010a23a7fa3ade3e66b13084062873276795ce60"
+    },
+    {
+      "path": "src/reportlab/graphics/widgetbase.py",
+      "sha": "977e906dca88bd16e99d9513ff57714422d1e11a"
+    },
+    {
+      "path": "src/reportlab/graphics/widgets/__init__.py",
+      "sha": "6d8f6f784ba813e7d96b25d07885a95b2b812928"
+    },
+    {
+      "path": "src/reportlab/graphics/widgets/adjustableArrow.py",
+      "sha": "bdd18c9f1af4cb421e1ad3f24a434a8b665d6f7c"
+    },
+    {
+      "path": "src/reportlab/graphics/widgets/eventcal.py",
+      "sha": "55758b1cbd4e38bf7a4b13ef0f088b9ce537a366"
+    },
+    {
+      "path": "src/reportlab/graphics/widgets/flags.py",
+      "sha": "7afd6b5a1318dc581bd190b128a96bbc2c720a1c"
+    },
+    {
+      "path": "src/reportlab/graphics/widgets/grids.py",
+      "sha": "a1bfa6336f00667bc5c66d4b6406ef8a240b45b3"
+    },
+    {
+      "path": "src/reportlab/graphics/widgets/markers.py",
+      "sha": "30e47682e295b5f691f0d2ae6f6a1c8514cece35"
+    },
+    {
+      "path": "src/reportlab/graphics/widgets/signsandsymbols.py",
+      "sha": "8b75b5bb61b146edd1596a5da3303750fed0606d"
+    },
+    {
+      "path": "src/reportlab/graphics/widgets/table.py",
+      "sha": "a5be99e84b6af2c2e254bebc6fef05f87a04d8c4"
+    },
+    {
+      "path": "src/reportlab/lib/PyFontify.py",
+      "sha": "249a7cf62066d8cbc2ba02f2d7f44691cc0d2001"
+    },
+    {
+      "path": "src/reportlab/lib/__init__.py",
+      "sha": "1f1353555a65ec0bd14b504272f5c90f5243b3d7"
+    },
+    {
+      "path": "src/reportlab/lib/abag.py",
+      "sha": "456af1b0858b11e71465ff6f9ff6d9ec29ca43f4"
+    },
+    {
+      "path": "src/reportlab/lib/arciv.py",
+      "sha": "e66755427a63ef26ade0574f9818c70778e06fe8"
+    },
+    {
+      "path": "src/reportlab/lib/attrmap.py",
+      "sha": "58f4fe2322170aa6bbad5b0e4649424cdf6bff2c"
+    },
+    {
+      "path": "src/reportlab/lib/boxstuff.py",
+      "sha": "7e90f5bd982a4244f9f6d3d57e3b8aa5b885dc2b"
+    },
+    {
+      "path": "src/reportlab/lib/codecharts.py",
+      "sha": "4186be5875d160632cf63bee8d76d37910c02f50"
+    },
+    {
+      "path": "src/reportlab/lib/colors.py",
+      "sha": "28c4eb9b2c1f4af920b8573b7e6d203edbaf8fd5"
+    },
+    {
+      "path": "src/reportlab/lib/corp.py",
+      "sha": "a85f923e8c6624827a39572bdc5d29703615f817"
+    },
+    {
+      "path": "src/reportlab/lib/enums.py",
+      "sha": "69ca834097488aa748e6f4d496d33dd4196ef647"
+    },
+    {
+      "path": "src/reportlab/lib/fontfinder.py",
+      "sha": "ceef67c9878b71f1deefd7a2c29a75f5bc144de5"
+    },
+    {
+      "path": "src/reportlab/lib/fonts.py",
+      "sha": "144548f3163647978ccd8277734bfb4d33561474"
+    },
+    {
+      "path": "src/reportlab/lib/formatters.py",
+      "sha": "459ce4e653fce0b0eca4e4166500c6f745a03f6a"
+    },
+    {
+      "path": "src/reportlab/lib/geomutils.py",
+      "sha": "4efbfa2f0497975a1418d06b368147d866e3745b"
+    },
+    {
+      "path": "src/reportlab/lib/logger.py",
+      "sha": "04f11737db26e77cf5eec5adc3c07c02df2f7d79"
+    },
+    {
+      "path": "src/reportlab/lib/normalDate.py",
+      "sha": "cfca9f101796ca2b58f0f448cd370aaee7b00ecd"
+    },
+    {
+      "path": "src/reportlab/lib/pagesizes.py",
+      "sha": "6a2d9a1874f627329d343235e569d9564177bc7d"
+    },
+    {
+      "path": "src/reportlab/lib/pdfencrypt.py",
+      "sha": "467bf47ff40575eaa04da55c29f4e35711419dec"
+    },
+    {
+      "path": "src/reportlab/lib/pygments2xpre.py",
+      "sha": "8a32681bc6aedce559dbbce2a05549cddb2d853d"
+    },
+    {
+      "path": "src/reportlab/lib/randomtext.py",
+      "sha": "088bcd62f45fadfdb45205fe5ec63fca1070a430"
+    },
+    {
+      "path": "src/reportlab/lib/rl_accel.py",
+      "sha": "0b32d3ae520ed993e94a86537ff2633b62eb363d"
+    },
+    {
+      "path": "src/reportlab/lib/rl_safe_eval.py",
+      "sha": "27ef3cb8c984f2af5d60f0f905a5e68d87c9c746"
+    },
+    {
+      "path": "src/reportlab/lib/rltempfile.py",
+      "sha": "6f14064afd3bdc182c4559341833eb065260f091"
+    },
+    {
+      "path": "src/reportlab/lib/rparsexml.py",
+      "sha": "702e2f7ec62f4e02c9f12392d359abba39555980"
+    },
+    {
+      "path": "src/reportlab/lib/sequencer.py",
+      "sha": "f40cef1b85c15c6a42ac33988084931529f6b992"
+    },
+    {
+      "path": "src/reportlab/lib/styles.py",
+      "sha": "23558b2ad980b8a8c2081f09a26cfc2458dda879"
+    },
+    {
+      "path": "src/reportlab/lib/testutils.py",
+      "sha": "a3ebcccb3deb66057abfd2abd28672a700107881"
+    },
+    {
+      "path": "src/reportlab/lib/textsplit.py",
+      "sha": "4c6eeaf209cc154a29134292b68fc105af3045b9"
+    },
+    {
+      "path": "src/reportlab/lib/units.py",
+      "sha": "14d78915a4b46ad183d3e7e4150e492482fa6f82"
+    },
+    {
+      "path": "src/reportlab/lib/utils.py",
+      "sha": "9a98e8aad431026a561bf85c1f194760236ebe10"
+    },
+    {
+      "path": "src/reportlab/lib/validators.py",
+      "sha": "658dee1b7dd289d3780f5e7877cf2a8a78168d08"
+    },
+    {
+      "path": "src/reportlab/lib/yaml.py",
+      "sha": "31a0ef0081ef14c826e4e46465eecbf9b8c5745e"
+    },
+    {
+      "path": "src/reportlab/pdfbase/__init__.py",
+      "sha": "2fb35f3c91c6369d7b5561bb0f2d27e39acdb95a"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_can_cmap_data.py",
+      "sha": "93d4aa821900feec34d336ae58aa5667d60f151a"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_cidfontdata.py",
+      "sha": "b04b2c48a47c53bee04cfeee596ca6dace1be9ad"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata.py",
+      "sha": "037412d1f2d21610b777baa0f7aa9bfff4b70e91"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_enc_macexpert.py",
+      "sha": "f0372db7ae78b7113dc64eb29a9a79fa12a38f68"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_enc_macroman.py",
+      "sha": "b406712457fc6db60c234e6e759899f4e1c1d809"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_enc_pdfdoc.py",
+      "sha": "39ccf5ce166bae6dfcbc409aadf6e722ed390c1a"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_enc_standard.py",
+      "sha": "e17aa68036a610bd2c7433181ba0bdfe96302534"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_enc_symbol.py",
+      "sha": "cc399bbe05e57b2277b6df8f0164db1bdc20e502"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_enc_winansi.py",
+      "sha": "8cf18ba8a82ee3d77ff68edc0f133b39726f5052"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_enc_zapfdingbats.py",
+      "sha": "80b66756bb6d62bfb6dcd244f6433f76cd30ac99"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_widths_courier.py",
+      "sha": "f196a19ade080eacd50f981c3a6e506a8ca22a30"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_widths_courierbold.py",
+      "sha": "f196a19ade080eacd50f981c3a6e506a8ca22a30"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_widths_courierboldoblique.py",
+      "sha": "f196a19ade080eacd50f981c3a6e506a8ca22a30"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_widths_courieroblique.py",
+      "sha": "f196a19ade080eacd50f981c3a6e506a8ca22a30"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_widths_helvetica.py",
+      "sha": "10d74db28996b951e6a4205179db9b1626d84bab"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_widths_helveticabold.py",
+      "sha": "7b9acd2cd0af9ac87003600d8671d3332ed5b701"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_widths_helveticaboldoblique.py",
+      "sha": "7b9acd2cd0af9ac87003600d8671d3332ed5b701"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_widths_helveticaoblique.py",
+      "sha": "10d74db28996b951e6a4205179db9b1626d84bab"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_widths_symbol.py",
+      "sha": "a18f2f693d8bdc1fc4568b42a0468c919860aada"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_widths_timesbold.py",
+      "sha": "97adc79a7432d19b4e461b0d1df8bcaca5213b16"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_widths_timesbolditalic.py",
+      "sha": "e7c6be43abf9269fdc1adce400b3cc16dcabd71e"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_widths_timesitalic.py",
+      "sha": "77aaa16fb3c888b274e1b5b6e78e96ee47480f13"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_widths_timesroman.py",
+      "sha": "82d0347c8547e891c91c53e82c452ccde808baed"
+    },
+    {
+      "path": "src/reportlab/pdfbase/_fontdata_widths_zapfdingbats.py",
+      "sha": "5fc9f7ff8d2c980c7bca1814db2f3e7079f476ee"
+    },
+    {
+      "path": "src/reportlab/pdfbase/acroform.py",
+      "sha": "ea91a9ce17722dd38e03becb131956dbde7cf160"
+    },
+    {
+      "path": "src/reportlab/pdfbase/cidfonts.py",
+      "sha": "e204391ae167fb33eb7d0fc782e65fa23ce67697"
+    },
+    {
+      "path": "src/reportlab/pdfbase/pdfdoc.py",
+      "sha": "9f34282e83ac21eb1d9cbcd5120edb53de61c65f"
+    },
+    {
+      "path": "src/reportlab/pdfbase/pdfform.py",
+      "sha": "57a72227bd13f65a3e6d57a8d1a8e70d88ca9f19"
+    },
+    {
+      "path": "src/reportlab/pdfbase/pdfmetrics.py",
+      "sha": "e97a016017f1370c7fa625397b7e868494b4aeca"
+    },
+    {
+      "path": "src/reportlab/pdfbase/pdfpattern.py",
+      "sha": "4cc0898f11cc81ce360919f40ceb813af92326ef"
+    },
+    {
+      "path": "src/reportlab/pdfbase/pdfutils.py",
+      "sha": "9b0f001fd6f63d2db7a7898c868445c040251e02"
+    },
+    {
+      "path": "src/reportlab/pdfbase/rl_codecs.py",
+      "sha": "d25890c77a65aa562542b2ed64dceb94af81dab3"
+    },
+    {
+      "path": "src/reportlab/pdfbase/ttfonts.py",
+      "sha": "eccd3d28b44db5ba0a17e553dbc261994b14fb9a"
+    },
+    {
+      "path": "src/reportlab/pdfgen/__init__.py",
+      "sha": "d8d012b8930c707eab779740126577989674dfb3"
+    },
+    {
+      "path": "src/reportlab/pdfgen/canvas.py",
+      "sha": "33765376eae186e66e883009e051cdf60dc11f6a"
+    },
+    {
+      "path": "src/reportlab/pdfgen/pathobject.py",
+      "sha": "fab148e07a07c58cd9b3adbd1a69392de80d06df"
+    },
+    {
+      "path": "src/reportlab/pdfgen/pdfgeom.py",
+      "sha": "55f05e4d4cf60af6c459eec566f9d036dbf93040"
+    },
+    {
+      "path": "src/reportlab/pdfgen/pdfimages.py",
+      "sha": "dba35f88d787d73057778f5cc529169fd04b1205"
+    },
+    {
+      "path": "src/reportlab/pdfgen/textobject.py",
+      "sha": "1908040a0c196c113ba837bfb66382165273ed59"
+    },
+    {
+      "path": "src/reportlab/platypus/__init__.py",
+      "sha": "c051b8ca8542ef918e3ac978e2f35b3e0f2451fa"
+    },
+    {
+      "path": "src/reportlab/platypus/doctemplate.py",
+      "sha": "1901f08566b7a111069296c7e1fae4bf1b3e95d7"
+    },
+    {
+      "path": "src/reportlab/platypus/figures.py",
+      "sha": "33e870e45842d4bbabdc9e4219b06e51757fe100"
+    },
+    {
+      "path": "src/reportlab/platypus/flowables.py",
+      "sha": "6310993b5d9549f3f912254b126cfdf815d90b62"
+    },
+    {
+      "path": "src/reportlab/platypus/frames.py",
+      "sha": "f74c0e325add901cb6b4bee26f2c95dc54613d55"
+    },
+    {
+      "path": "src/reportlab/platypus/multicol.py",
+      "sha": "a213978b8bac4496e330345a60bc83793d7f67c4"
+    },
+    {
+      "path": "src/reportlab/platypus/para.py",
+      "sha": "276886fccaa784e92b3ccbec679ae22cdbc04948"
+    },
+    {
+      "path": "src/reportlab/platypus/paragraph.py",
+      "sha": "635d99c34fb3062f13663d815608869e0d985432"
+    },
+    {
+      "path": "src/reportlab/platypus/paraparser.py",
+      "sha": "cfdce0e0e4ab12949cc814b4ce384c9a86f59f9d"
+    },
+    {
+      "path": "src/reportlab/platypus/tableofcontents.py",
+      "sha": "35fb7c3dde8745a91437b1e59c5e90feaa9390f6"
+    },
+    {
+      "path": "src/reportlab/platypus/tables.py",
+      "sha": "d239d02ee83cc1524d77f4c6c054bd09e99390bc"
+    },
+    {
+      "path": "src/reportlab/platypus/xpreformatted.py",
+      "sha": "f917dbd46780ec84e8e99892a9072d2d298e7af4"
+    },
+    {
+      "path": "src/reportlab/rl_config.py",
+      "sha": "e095e4c0e7045a3fed10f2b6cc1a9a8ec763b299"
+    },
+    {
+      "path": "src/reportlab/rl_settings.py",
+      "sha": "20a496f7cba29366f665e6cc480d03978bc604c5"
+    }
+  ],
+  "license_git_blob_sha": "0ff4a17617915da75cff14d17c67538a957011ce",
+  "storage": "E:/AI-Tools/Temp/investify-reportlab-source-20261012-c4c83349",
+  "scope": "Unmodified UTF-8 source bytes verified against Git blob identities, retained BSD license, isolated PYTHONPATH import; no bundled skill dependencies modified."
+}

@@ -1,0 +1,1353 @@
+{
+  "captured_utc": "2026-10-11T01:00:23.082693+00:00",
+  "roots": {
+    "FYP": "E:\\Uni_Stuff\\FYP",
+    "investify_repo": "E:\\Uni_Stuff\\investify_repo"
+  },
+  "files": [
+    {
+      "origin": "FYP",
+      "path": "backup_pre_fix\\Investify_Concept.docx",
+      "sha256": "5c35bb644fe270a42bea2de0bcb9d1b9214498beb53be23ec8005e4da03a9a7b",
+      "bytes": 808891
+    },
+    {
+      "origin": "FYP",
+      "path": "backup_pre_fix\\Investify_Proposal_Full.docx",
+      "sha256": "52048d21cf9ac7db0e85c25631f473209a1cc59193dc81db38a33d5d2ae7d906",
+      "bytes": 817861
+    },
+    {
+      "origin": "FYP",
+      "path": "FUTURE_WORK_staleness_gate.md",
+      "sha256": "9ef09aabffa078ee354a7bd89efdd13ee757c3a104812545b6d99139dc985db0",
+      "bytes": 3471
+    },
+    {
+      "origin": "FYP",
+      "path": "Investify Updated (1).pptx",
+      "sha256": "56e6f8fae9b8dc172f9ca1cf484181f41456c5e864519abc6501b90172c2ec5c",
+      "bytes": 116304
+    },
+    {
+      "origin": "FYP",
+      "path": "Investify_Concept.docx",
+      "sha256": "edd56db99122a23a6b7953f476c53cf23b0ba5e97ea10666379a68fc2944dcff",
+      "bytes": 807247
+    },
+    {
+      "origin": "FYP",
+      "path": "Investify_Concept.pdf",
+      "sha256": "bff0d2e61a5bfc372e1f84896e4d7e7889c8336cf260f39e4e67042ccf5e5b65",
+      "bytes": 1777038
+    },
+    {
+      "origin": "FYP",
+      "path": "Investify_Defence_Concept.pptx",
+      "sha256": "eee49d952943d00fa7245ba79596d5d5d3eea983b9c9256291bef21f1241f7b4",
+      "bytes": 445771
+    },
+    {
+      "origin": "FYP",
+      "path": "Investify_Defence_Full.pptx",
+      "sha256": "e27cb1304638e4e29c58a1ceb89ac2a065b9057dea932b11d9cc9be5623f76de",
+      "bytes": 462528
+    },
+    {
+      "origin": "FYP",
+      "path": "Investify_PoC.zip",
+      "sha256": "8ae67908c11b362135ad860613112cff70cc7c4bb5d356d6b884672d9541e70d",
+      "bytes": 235714
+    },
+    {
+      "origin": "FYP",
+      "path": "Investify_Proposal_Full.docx",
+      "sha256": "0bec001cfd84c07b2073603de6a50ee9b3b43c954ab07d057c4929f50e76b9ef",
+      "bytes": 816207
+    },
+    {
+      "origin": "FYP",
+      "path": "Investify_Proposal_Full.pdf",
+      "sha256": "5f276b83b1935623d39416a1669b2b21ff38703d6f6f138952bf422e13873aac",
+      "bytes": 1909832
+    },
+    {
+      "origin": "FYP",
+      "path": "Mid_Eval\\F26_FYP1_Mid_Report_LaTeX_Complete.pdf",
+      "sha256": "92e7c58b3a3a8140aea75b6c9951587f8aba03a6b225707414cd92ea19f04a05",
+      "bytes": 123492
+    },
+    {
+      "origin": "FYP",
+      "path": "Mid_Eval\\F26_FYP1_Mid_Report_LaTeX_Complete.zip",
+      "sha256": "90993ae4087e632b072e1c116e2fa7256e7398b2a724523f6e93db2d3f920734",
+      "bytes": 93607
+    },
+    {
+      "origin": "FYP",
+      "path": "Mid_Eval\\FYP-1-Mid-Assessment-Guidelines-and-Rubrics.pdf",
+      "sha256": "aae01fb689e5b43a03af21eaa72c1cd23a75949c9c51feac6d027cf9b3ca1a93",
+      "bytes": 1150467
+    },
+    {
+      "origin": "FYP",
+      "path": "Mid_Eval\\PROPOSAL_ACTION_REGISTER.md",
+      "sha256": "ef3e59e250caa069a5040ce9972ea828103ae7030332a140d6e2f68edf089c20",
+      "bytes": 15641
+    },
+    {
+      "origin": "FYP",
+      "path": "Mid_Eval\\Screenshot 2026-10-11 004104.png",
+      "sha256": "26fc9f6363cee29e0ef7404503dab741c80edbbcc045538f0f92ae076f673c45",
+      "bytes": 88035
+    },
+    {
+      "origin": "FYP",
+      "path": "Mid_Eval\\Screenshot 2026-10-11 004215.png",
+      "sha256": "923caa28ab30a583a091700537303bbca3d37f80fee8acd6caff3058f09893ee",
+      "bytes": 143902
+    },
+    {
+      "origin": "FYP",
+      "path": "old\\CV_FYP_Shortlist.md",
+      "sha256": "3c056b993143cb00b84e92cdddff7da34bb5ac5f2a32f0c5774b3602254c5e83",
+      "bytes": 22341
+    },
+    {
+      "origin": "FYP",
+      "path": "old\\Flow.txt",
+      "sha256": "9f2e2f611da1512068502b1cc2992b27b446b1b46e08ec8d77e09bc78659392e",
+      "bytes": 1387
+    },
+    {
+      "origin": "FYP",
+      "path": "old\\FYP_MasterList_Fall2026.html",
+      "sha256": "495b001a1eca610fdf05c5faca6b67139520594f23a791c665fa5b6d1ab1e1e3",
+      "bytes": 1017462
+    },
+    {
+      "origin": "FYP",
+      "path": "old\\Investify (1).docx",
+      "sha256": "5a4424df2bcd0a52fdc37f8a114e58e24d034eaf92784e36c23bffc94320d7ab",
+      "bytes": 199155
+    },
+    {
+      "origin": "FYP",
+      "path": "old\\MasterList Fall 2026 - Google Drive.pdf",
+      "sha256": "7a8189f221e1dbb5619fd8e9a6230b3ad1f809f1363aa8ef25f4e728eeac1402",
+      "bytes": 84538
+    },
+    {
+      "origin": "FYP",
+      "path": "old\\Quantamental Idea\\FYP Committee Evaluation of the Quantamental AI Investment Engine (v5.0)_ Scope, Novelty, and Feasibility Review.pdf",
+      "sha256": "37cf7bca35b8ad48fe61f1b9e5716026ea3b7dc33163e465a7c0c94dc851764e",
+      "bytes": 421380
+    },
+    {
+      "origin": "FYP",
+      "path": "old\\Quantamental Idea\\Quantamental_AI_Proposal_FINAL.docx",
+      "sha256": "2ce2893b651a4ae152c388a5bee89d2d33fe61ea2b3fcbcbadb57d1e0da51730",
+      "bytes": 281578
+    },
+    {
+      "origin": "FYP",
+      "path": "old\\Quantamental Idea\\Quantamental_AI_Proposal_v5.docx",
+      "sha256": "69283cbe243ad19f0fa6785a781b55f513298d4cd8eddbea9454cfbfe74672f8",
+      "bytes": 22778
+    },
+    {
+      "origin": "FYP",
+      "path": "old\\Quantamental Idea\\Quantamental_AI_Proposal_v6.docx",
+      "sha256": "d8faf01583a5dc5122400e43f51aca50b9825c3666cc62540f73ac09c5cb1210",
+      "bytes": 45357
+    },
+    {
+      "origin": "FYP",
+      "path": "old\\Quantamental Idea\\Quantamental_AI_Proposal_v7.docx",
+      "sha256": "0d987e2acfc8605ce5029351b1f7801ba38af102a0c770984263c742b9abc64a",
+      "bytes": 114575
+    },
+    {
+      "origin": "FYP",
+      "path": "old\\Quantamental Idea\\Quantamental_AI_Proposal_v8.docx",
+      "sha256": "7e44a083c699a1d22e507b4037c8b7548daac743bb67155f444b3a2b5dcb5ae4",
+      "bytes": 108457
+    },
+    {
+      "origin": "FYP",
+      "path": "old\\Quantamental Idea\\Quantamental_Defence_Briefs.pdf",
+      "sha256": "7c32677124368ff9acec175a161e4d3c759e5844656727a4306569d50069b02f",
+      "bytes": 669036
+    },
+    {
+      "origin": "FYP",
+      "path": "old\\Quantamental Idea\\Quantamental_FYP_Defense.pptx",
+      "sha256": "230ee9f0c6a9f41fe793e0cbaa04e7b44cedcbe2d2b553ec1c4631c95c9c2bdb",
+      "bytes": 540935
+    },
+    {
+      "origin": "FYP",
+      "path": "old\\Quantamental Idea\\Quantamental_Proposal_Committee_Format.docx",
+      "sha256": "a6b7bb162cbedf87b8dab6e52ad4baee13a66ac0560b7cd686a311084f531b66",
+      "bytes": 98140
+    },
+    {
+      "origin": "FYP",
+      "path": "old\\~$antamental_AI_Proposal_v8.docx",
+      "sha256": "951b16405696e7be6ff682e06e54ca08088ac2d9a13ee0c5e8f3d9d6104629eb",
+      "bytes": 162
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\__pycache__\\poc_risk_profile_spike.cpython-311.pyc",
+      "sha256": "fa787296c4d5d7f40c0908681c5d4564538f3ab07346250c381c8f10bdeb72bb",
+      "bytes": 43738
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\poc_leakage_chart.png",
+      "sha256": "36f68710cf35b0c7a926f0c521d0d1226ce05f8a485d57369a168158b4c74dbf",
+      "bytes": 77153
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\poc_leakage_spike.py",
+      "sha256": "b4413a5a9e64eba5b9ab0afc18c2ef5f9113a106451e2650638ed30c1675a3cd",
+      "bytes": 17956
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\poc_leakage_spike.py.bak",
+      "sha256": "cfe6a0b18cc7f9a742308e56b602f8cd2bbe94d090e137b3d2bed145a87807af",
+      "bytes": 17500
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\poc_results.json",
+      "sha256": "60d0247a9823b8d3da752ac5a485d1f4f2686da9d0c6ba6ec2b2f801e3054343",
+      "bytes": 3293
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\poc_risk_chart.png",
+      "sha256": "3f4d5a8a2004c59a573fcdf268b7bc8a6b628252c5a7567ecf2f94d21a5ab725",
+      "bytes": 122556
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\poc_risk_profile_spike.py",
+      "sha256": "1d4259f536e3375557448392d2e7d628d793a7ac9c0d7a26c92c66cb0ba2ace3",
+      "bytes": 31970
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\poc_risk_results.json",
+      "sha256": "115670b93ba7ef89171748703a279b7877fad34517197be1cba3c7721d436abe",
+      "bytes": 8374
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\prototype\\.streamlit\\config.toml",
+      "sha256": "a8683d7442cd714a2458bdb70bb8b7dcf4b465ed32a17e78fd20e81a49d2b574",
+      "bytes": 815
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\prototype\\__pycache__\\fixtures.cpython-311.pyc",
+      "sha256": "1ddea3bedcc20d4d5403dee8d38c92bb171b9b5d3fbcc973f4880d1dce8ff97f",
+      "bytes": 14943
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\prototype\\__pycache__\\profile_scoring.cpython-311.pyc",
+      "sha256": "edeb5e1caaf1603b873c55f39a68929e30ab0708ad5d2a19c4e0dea1a206d9d4",
+      "bytes": 9994
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\prototype\\__pycache__\\verifier.cpython-311.pyc",
+      "sha256": "51dcb20909f40121d1f960462d2b736613b0c5cf6b0e26141fd4d012ec5bb20e",
+      "bytes": 15288
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\prototype\\app.py",
+      "sha256": "247f4f47fdeff326e733f88086c9d344ea63d9b4e022c122bc7042bd669d3768",
+      "bytes": 35503
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\prototype\\fixtures.py",
+      "sha256": "73fb95b032eb2e83eecd67331478e55b2c1b1fb94a515883b722a6c018b69aac",
+      "bytes": 14574
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\prototype\\profile_scoring.py",
+      "sha256": "dfd0a9ec1b5e7b3b87be9569cca16446a1a366cedb3b06ea41804b2ea9a43256",
+      "bytes": 9223
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\prototype\\README.md",
+      "sha256": "92d1aa5044aeac2c1eba069e8c6de2f58c28d681fd6f69539b0657b45b5b3de7",
+      "bytes": 8237
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\prototype\\test_prototype.py",
+      "sha256": "e86c5138dac911017aa0e2220e1e1a45fe19b7e2bac1951a4c444fd9a98366ef",
+      "bytes": 7763
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\prototype\\verifier.py",
+      "sha256": "043f4ed22f23247b5f4fbf1a438ed805d22cbd0bb334c0422b74651ec2769f2d",
+      "bytes": 11255
+    },
+    {
+      "origin": "FYP",
+      "path": "poc\\requirements.txt",
+      "sha256": "f72151b040ce123ec9292da7cdc65f8ff3ae075552f795dd2a8e30c326352219",
+      "bytes": 476
+    },
+    {
+      "origin": "FYP",
+      "path": "PROJECT_STATUS.md",
+      "sha256": "6aa3e4783495fbfc7710ca7e91a248f29719af2ec606000c914c8de5da37bf17",
+      "bytes": 15371
+    },
+    {
+      "origin": "FYP",
+      "path": "reference\\FAST_FYP_Student_Idea_Selection_Guide_School_of_Computing.pdf",
+      "sha256": "62016fd41519d90964c340c762a6691250bc2dcc67be7af5b93f0e685b9e2940",
+      "bytes": 2533398
+    },
+    {
+      "origin": "FYP",
+      "path": "reference\\FYP Orientation Session Notes - 2.docx",
+      "sha256": "06931109cd66d818eb03d96d831f1195abd431c565fe1f42ec4af01af9dbb0fc",
+      "bytes": 20365
+    },
+    {
+      "origin": "FYP",
+      "path": "reference\\FYP Orientation Session Notes.docx",
+      "sha256": "2bab5258a8bd40d9f68f4890bd1083048dd38c7e69877430225a176ce64548ea",
+      "bytes": 20637
+    },
+    {
+      "origin": "FYP",
+      "path": "reference\\FYP_MasterList_Fall2026.csv",
+      "sha256": "4cb234e06c4c53d3d9b6f8abba411ba2a6143fcc58d1c0c87134b49ee628b5af",
+      "bytes": 506504
+    },
+    {
+      "origin": "FYP",
+      "path": "reference\\FYP_MasterList_Fall2026_clean.csv",
+      "sha256": "7a006e3453f05534fc35d4843dd4c103f39f164fd3f58db9917b5af2ba2ca1a3",
+      "bytes": 1407127
+    },
+    {
+      "origin": "FYP",
+      "path": "slides\\flow_mermaid.html",
+      "sha256": "a4a020a0b1479e4f095cca7ebf59e1eb13ac62e64d2010030570e11f50f3f392",
+      "bytes": 2839
+    },
+    {
+      "origin": "FYP",
+      "path": "slides\\investify_flow.mmd",
+      "sha256": "601b8f09720dff8b1546e9d6ec2c8e8dbf5d89d435572ff5ae8e5711921f93cb",
+      "bytes": 1758
+    },
+    {
+      "origin": "FYP",
+      "path": "slides\\investify_flow.png",
+      "sha256": "e0a83c0d577f6d3eaab48913044ac0a26f9fad15583fed4ba275485ea723c59e",
+      "bytes": 215199
+    },
+    {
+      "origin": "FYP",
+      "path": "slides\\investify_flow.svg",
+      "sha256": "43a16b15ad8c2c145c70318bea94493f61813d7f0dc21a2bda211c0b2f6ec61e",
+      "bytes": 116164
+    },
+    {
+      "origin": "FYP",
+      "path": "slides\\investify_flow_mermaid.png",
+      "sha256": "47213f9124bb5566e9ecaeddfdbd523607e11e66da5edc5b2d0a9ba608f9704d",
+      "bytes": 145558
+    },
+    {
+      "origin": "FYP",
+      "path": "slides\\make_slide_figures.py",
+      "sha256": "045d9bcd791d9c170f4e8961b0b29cb8de3cff8928bcf7e9cbc1c214324524c2",
+      "bytes": 8418
+    },
+    {
+      "origin": "FYP",
+      "path": "slides\\mermaid_config.json",
+      "sha256": "e3eb4f9b6dabc76405f96e7fcebfe9c78f855b107cdcef6af7882ddba44470e2",
+      "bytes": 323
+    },
+    {
+      "origin": "FYP",
+      "path": "slides\\poc_results_table.png",
+      "sha256": "c04ceb80b284d0d7d6af795d4545784694f5b43834c9fa619f06d43c5367d1b2",
+      "bytes": 279713
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\config",
+      "sha256": "2756576f3c73b4c852e2d741d0a835c855e28f75962ef27a88de3c700acb68b3",
+      "bytes": 309
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\description",
+      "sha256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+      "bytes": 73
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\HEAD",
+      "sha256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+      "bytes": 21
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\hooks\\applypatch-msg.sample",
+      "sha256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+      "bytes": 478
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\hooks\\commit-msg.sample",
+      "sha256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+      "bytes": 896
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\hooks\\fsmonitor-watchman.sample",
+      "sha256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+      "bytes": 4726
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\hooks\\post-update.sample",
+      "sha256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+      "bytes": 189
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\hooks\\pre-applypatch.sample",
+      "sha256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+      "bytes": 424
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\hooks\\pre-commit.sample",
+      "sha256": "57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b",
+      "bytes": 1649
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\hooks\\pre-merge-commit.sample",
+      "sha256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+      "bytes": 416
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\hooks\\pre-push.sample",
+      "sha256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+      "bytes": 1374
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\hooks\\pre-rebase.sample",
+      "sha256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+      "bytes": 4898
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\hooks\\pre-receive.sample",
+      "sha256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+      "bytes": 544
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\hooks\\prepare-commit-msg.sample",
+      "sha256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+      "bytes": 1492
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\hooks\\push-to-checkout.sample",
+      "sha256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+      "bytes": 2783
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\hooks\\sendemail-validate.sample",
+      "sha256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92",
+      "bytes": 2308
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\hooks\\update.sample",
+      "sha256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+      "bytes": 3650
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\index",
+      "sha256": "716de7d80c4d4f042cc387c2175d4f806ce9c005c95d4faac00eb383afdd0ccf",
+      "bytes": 8356
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\info\\exclude",
+      "sha256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+      "bytes": 240
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\logs\\HEAD",
+      "sha256": "29c74617d4819b5db246e7eb51542ca9d8dc976660b3a1ee7c1cbec41fa7f8fe",
+      "bytes": 219
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\logs\\refs\\heads\\main",
+      "sha256": "29c74617d4819b5db246e7eb51542ca9d8dc976660b3a1ee7c1cbec41fa7f8fe",
+      "bytes": 219
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\logs\\refs\\remotes\\origin\\HEAD",
+      "sha256": "29c74617d4819b5db246e7eb51542ca9d8dc976660b3a1ee7c1cbec41fa7f8fe",
+      "bytes": 219
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\objects\\pack\\pack-0ec23d0f83068ae9321d1daffd23148ca58ca1bc.idx",
+      "sha256": "ccee1d727abfcd403d97194c938089a3006cd0188f4a3d693b9fe837d2ab598f",
+      "bytes": 6168
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\objects\\pack\\pack-0ec23d0f83068ae9321d1daffd23148ca58ca1bc.pack",
+      "sha256": "422c2ca99dc4b461602747f5977cd2a1860c1e8188cbb0230d20678aa7592744",
+      "bytes": 3558314
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\objects\\pack\\pack-0ec23d0f83068ae9321d1daffd23148ca58ca1bc.rev",
+      "sha256": "2306bac933b3ee22ad5f317e1a16e21063880f268a94daccb49db70e65c2833c",
+      "bytes": 780
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\packed-refs",
+      "sha256": "428a651370e453061d9b8b79cb2e8b0159c904d63c6c1c237ead76e69c07531a",
+      "bytes": 112
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\refs\\heads\\main",
+      "sha256": "cddb4853800622ea3198fb8fdc25f2ec90976aaf28ccd06d45cb890695f2b3f5",
+      "bytes": 41
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".git\\refs\\remotes\\origin\\HEAD",
+      "sha256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4",
+      "bytes": 30
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".gitignore",
+      "sha256": "06b4cc1003af17bc4b04721401900d231c38090a981cc27658a402b91335852f",
+      "bytes": 382
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".pytest_cache\\.gitignore",
+      "sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+      "bytes": 37
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".pytest_cache\\CACHEDIR.TAG",
+      "sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+      "bytes": 191
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".pytest_cache\\README.md",
+      "sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+      "bytes": 302
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".pytest_cache\\v\\cache\\lastfailed",
+      "sha256": "25bc7ea9f216f0641eb53473f541494dd9e46301d0201f9d928576da5dd90197",
+      "bytes": 1112
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".pytest_cache\\v\\cache\\nodeids",
+      "sha256": "7618467537a0726c09b96f3818817ce1ddae3d5046d7b99970bd7c56d701f412",
+      "bytes": 9658
+    },
+    {
+      "origin": "investify_repo",
+      "path": ".streamlit\\config.toml",
+      "sha256": "52d1623ecfc46552a08412fac1a2173a569768c40c901eaaa2eddba96293b38a",
+      "bytes": 489
+    },
+    {
+      "origin": "investify_repo",
+      "path": "app\\__pycache__\\risk_quiz.cpython-311.pyc",
+      "sha256": "162db110a7a98b39f6ffde8530234e8c6cbad6e7fe01455a8d79685623457c81",
+      "bytes": 5039
+    },
+    {
+      "origin": "investify_repo",
+      "path": "app\\__pycache__\\theme.cpython-311.pyc",
+      "sha256": "b73560fc751aff5bb18b2b36ce995ec0fae7405209f9ed2af592ab9a6d593823",
+      "bytes": 6025
+    },
+    {
+      "origin": "investify_repo",
+      "path": "app\\risk_quiz.py",
+      "sha256": "6f838ab5eeaf70c792b40e58abd35dc3890c2747f5dccf248dd47cfd973b34e1",
+      "bytes": 3783
+    },
+    {
+      "origin": "investify_repo",
+      "path": "app\\streamlit_app.py",
+      "sha256": "9265b38c8cc879c3fefd83d0f6cdd64c629aba1e97b3e9f5f4bdd6c60ed3997f",
+      "bytes": 2688
+    },
+    {
+      "origin": "investify_repo",
+      "path": "app\\tabs\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "origin": "investify_repo",
+      "path": "app\\tabs\\__pycache__\\__init__.cpython-311.pyc",
+      "sha256": "7cc9b2b91aafb674289f0be5544db6168e545b17bd0312eaabbe582b0975883f",
+      "bytes": 157
+    },
+    {
+      "origin": "investify_repo",
+      "path": "app\\tabs\\__pycache__\\decision.cpython-311.pyc",
+      "sha256": "a6ff5cd8001054ecc18f262139a52e509ec8243bda322b5a743ed1fcd827c5ca",
+      "bytes": 17032
+    },
+    {
+      "origin": "investify_repo",
+      "path": "app\\tabs\\__pycache__\\leakage_lab.cpython-311.pyc",
+      "sha256": "52208737a66b2d4972824b24b62a308f6f779b3f7201766d11eadc1079a68fb2",
+      "bytes": 15218
+    },
+    {
+      "origin": "investify_repo",
+      "path": "app\\tabs\\decision.py",
+      "sha256": "c93e98c0d2a0236c3c5d7b414c3b708db575ba08c2e9d0aba5c2934c34bff543",
+      "bytes": 11547
+    },
+    {
+      "origin": "investify_repo",
+      "path": "app\\tabs\\leakage_lab.py",
+      "sha256": "2886fb9e72dce46a4dee2228f40a4e626b4bceb64692d516b32e9aa93f8db407",
+      "bytes": 9469
+    },
+    {
+      "origin": "investify_repo",
+      "path": "app\\theme.py",
+      "sha256": "367bb50f44c7f696d43e6c9fc0de4939181186a9f08f5413517dac9add16f6ac",
+      "bytes": 5161
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\alpaca_probe_report.md",
+      "sha256": "f6cdf27d09acbae46e3d35466028b92149c5a8729ecb3c925fd2c5b1b5d169a7",
+      "bytes": 8773
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\arms_lift.png",
+      "sha256": "30d8c6a8a81f9bfbdb965bbb30baf4365b66931c41121c9775d44d279076963c",
+      "bytes": 67110
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\arms_lift_alpaca.png",
+      "sha256": "b8498550b81ac87d7d1bcdc24423d4e9114f33f8ab6a91b1598e78571323a732",
+      "bytes": 67626
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\corpus_manifest.json",
+      "sha256": "d7e85df8d889e34e78abee220ca2935fd6d8c20182fbfe4c6571f4c046718840",
+      "bytes": 15087
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\decision_records.json",
+      "sha256": "4045b234c0f482a01590f2b13dd76e24acbc9ab8e97c20f3e87d9bc0ba41ae42",
+      "bytes": 541746
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\decision_records_alpaca.json",
+      "sha256": "f31543479e9fa1a2688da5bd360e25439ea0d332f9169588ae013547fd9ef029",
+      "bytes": 546907
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\phase0_report.md",
+      "sha256": "95fd3fdd78860885e7bcbc8470c1185af9fa750e218cb2f3502dc5395be0c39b",
+      "bytes": 9817
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\phase1_report.md",
+      "sha256": "3b35a3b39a72446d1bfd8b7977e4b90fcac43a2127f44aa60701ee761ebf6d6d",
+      "bytes": 3958
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\phase2_report.md",
+      "sha256": "60c78e0992ea3b8605bcae23a7cce0a551ca9a136da303050463359346ce7520",
+      "bytes": 11546
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\phase3_report.md",
+      "sha256": "aaec2df49f407f0a84da4f6d50e75c904c175584b12d8ff25992bab2221bc2d2",
+      "bytes": 9248
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\reliability_curve.png",
+      "sha256": "5561139199c3efe2f4b86f31bba1d848a0bcdcdf9088601acc009de97e84712b",
+      "bytes": 65158
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\reliability_curve_alpaca.png",
+      "sha256": "61038fb3cc4a3f3e108ae586b097298b8194674cfd5a8d76015f0892f0cf49ed",
+      "bytes": 66833
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\results.csv",
+      "sha256": "eef1fa46e0ada5c325a9db6e673abe7578d0bb5bae271b27b8b0078bd034a62f",
+      "bytes": 2651
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\results.json",
+      "sha256": "fb781d69f4d9c985840f9f4723d69388a54a0e48d11fe113ad0117457e67ff45",
+      "bytes": 21978
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\results_alpaca.csv",
+      "sha256": "4c717b871a95e8ed79a798f745130dd2b7b7957ce9d91aa2b9df55906e9e4e62",
+      "bytes": 2748
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\results_alpaca.json",
+      "sha256": "db79901f286f5baa30cfb03d07868dea9081a47f246bda0d34b50523838244c2",
+      "bytes": 30605
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\slide_content.md",
+      "sha256": "abda1ce529821c30ee77bc0fbfa737120eb05a3047feaeab255c5f2dd4be8dcc",
+      "bytes": 2708
+    },
+    {
+      "origin": "investify_repo",
+      "path": "artifacts\\verifier_confusion_matrix.json",
+      "sha256": "3c56aff2d1977bde1a359f79d48a797ffbb0a01435c5308302065380030c0ebb",
+      "bytes": 1203
+    },
+    {
+      "origin": "investify_repo",
+      "path": "CLAUDE.md",
+      "sha256": "7f3facf5e8c76e550f81520070f6c7c8f3b104f9877f6e18fdad7b7e51f618d9",
+      "bytes": 7164
+    },
+    {
+      "origin": "investify_repo",
+      "path": "config\\spike.yaml",
+      "sha256": "8cbc3cd9940e9e59bdac6be5ea566d709cc6054c9e02692ecaba6adf5f202392",
+      "bytes": 3250
+    },
+    {
+      "origin": "investify_repo",
+      "path": "docs\\FAST_FYP_Student_Idea_Selection_Guide_School_of_Computing.pdf",
+      "sha256": "bb157c78066352ac26cc7c5c2044589cea70f04353f42c6fa957f0ec943d987a",
+      "bytes": 2539256
+    },
+    {
+      "origin": "investify_repo",
+      "path": "docs\\Investify Updated.pdf",
+      "sha256": "789558e079ae234e49e8d67b77e3cdf92cbd57280a87f2405653122538861eee",
+      "bytes": 599388
+    },
+    {
+      "origin": "investify_repo",
+      "path": "docs\\Investify_Concept.docx",
+      "sha256": "5c35bb644fe270a42bea2de0bcb9d1b9214498beb53be23ec8005e4da03a9a7b",
+      "bytes": 808891
+    },
+    {
+      "origin": "investify_repo",
+      "path": "docs\\investify_poc_claude_code_brief.md",
+      "sha256": "429e986603ba8dbfe5cb4c97676678297d80f8691f7872ccdea3f5f936a1e434",
+      "bytes": 21393
+    },
+    {
+      "origin": "investify_repo",
+      "path": "docs\\phase2_4_plan.md",
+      "sha256": "7f2637b22ad078786d98f96ae3e169d52ebe7eb2a4afca6f28805b93505d19bb",
+      "bytes": 9100
+    },
+    {
+      "origin": "investify_repo",
+      "path": "Makefile",
+      "sha256": "60a510e105a79eef1665a052296302757049ae443cc65f3fc17cb278a17fc920",
+      "bytes": 2045
+    },
+    {
+      "origin": "investify_repo",
+      "path": "POC_REPORT.md",
+      "sha256": "642ad9288ca8381a34500dedf06d9254b982be6c1a09a1c83c709d3bf29aca53",
+      "bytes": 22397
+    },
+    {
+      "origin": "investify_repo",
+      "path": "pyproject.toml",
+      "sha256": "176622e8adb4194ce95f91d00bb33901b0d0e3da5acf9e8befc97afdf3c7d042",
+      "bytes": 605
+    },
+    {
+      "origin": "investify_repo",
+      "path": "README.md",
+      "sha256": "4f1f0280c395a5e4d3a5c470792229d548dbe5085a4fc4ca3f6bccd960913ce7",
+      "bytes": 3493
+    },
+    {
+      "origin": "investify_repo",
+      "path": "scripts\\build_alpaca_feature_matrix.py",
+      "sha256": "1b6db616a204fffde6d0bca653fdc7ad9de187950a437c9bfb33f693324a61c2",
+      "bytes": 4798
+    },
+    {
+      "origin": "investify_repo",
+      "path": "scripts\\build_decision_records.py",
+      "sha256": "50b3cb67463b8e256130197edf4a0da599e0cf86060bd50074445d84b8c5e59b",
+      "bytes": 5091
+    },
+    {
+      "origin": "investify_repo",
+      "path": "scripts\\build_phase1_feature_matrix.py",
+      "sha256": "15bcfe99990b0784efeab746d3510b486d71785bc9a27099046146036793450f",
+      "bytes": 4540
+    },
+    {
+      "origin": "investify_repo",
+      "path": "scripts\\phase0_pull_nasdaq_ticker_news.py",
+      "sha256": "5f86a8b0f155dbd0013c8b06ad1598bad1623e90ef87a7f469b6cc825723fbb8",
+      "bytes": 5051
+    },
+    {
+      "origin": "investify_repo",
+      "path": "scripts\\phase0_pull_nasdaq_ticker_news_resume.py",
+      "sha256": "d884c923586778ad732dc2ef612ff6038893b55b3185ee14e0a43e2a03af33cd",
+      "bytes": 6055
+    },
+    {
+      "origin": "investify_repo",
+      "path": "scripts\\phase0_pull_ticker_news.py",
+      "sha256": "022874e8d019138a865abe87d438af756e889b19c72246b760871d5b870f2f02",
+      "bytes": 3856
+    },
+    {
+      "origin": "investify_repo",
+      "path": "scripts\\pull_alpaca_nvda_news.py",
+      "sha256": "013f1bb75348a608a97848e0c09ef962123bd6548a401e85891871bcff2badf0",
+      "bytes": 7219
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\__pycache__\\__init__.cpython-311.pyc",
+      "sha256": "3bc70dd05031dc90b640b60fb67d6cc73ad1dfc6688267ea68ae888641b1cfb2",
+      "bytes": 162
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\__pycache__\\calendars.cpython-311.pyc",
+      "sha256": "51eb5c637395fd756f48d695487fef49a915d19274c9bde72e803e2d7804e5de",
+      "bytes": 6979
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\__pycache__\\decision_record.cpython-311.pyc",
+      "sha256": "75156be9832992a8dda02326c31c039af7720183675d735538f1b51dcb6f9ccd",
+      "bytes": 12329
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\__pycache__\\engine.cpython-311.pyc",
+      "sha256": "e694a26fb4eddc144ece2aa16c55530764b89d9893f1ae7b7250dccacd75c345",
+      "bytes": 39186
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\__pycache__\\labels.cpython-311.pyc",
+      "sha256": "7ce07bf98e695149aa2e63602603e1d469b920d8f785c0303082786c0df0753f",
+      "bytes": 2287
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\__pycache__\\scaling.cpython-311.pyc",
+      "sha256": "769a251d8430142da3bba378bdb62be23cb3a006d1aeafb65f4448a7f75031a4",
+      "bytes": 1350
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\__pycache__\\store.cpython-311.pyc",
+      "sha256": "890d75869e87b5e93835c1362517f003c0533b5a8d797fe9e4a241c80f852312",
+      "bytes": 7379
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\calendars.py",
+      "sha256": "7f0deae0be6c45bb2616495f831facf6b6ee9c4d3a428d7d4abaf935181b11b6",
+      "bytes": 4173
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\decision_record.py",
+      "sha256": "75cd68466fdd5a8398a05881e57e88a276c29db439b34183ac2d2614c9b6cf80",
+      "bytes": 8323
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\engine.py",
+      "sha256": "7eaf9bddb41c0c034cf35bc1f8c6fa25b8f1c8b43a7899f618e8582ee27ec9cd",
+      "bytes": 30376
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\explain\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\explain\\__pycache__\\__init__.cpython-311.pyc",
+      "sha256": "f60f0dfa266c16fb29cd2f436b5faa0c54a8e554f77a98fad718a8bc4ecc22ac",
+      "bytes": 170
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\explain\\__pycache__\\fixtures.cpython-311.pyc",
+      "sha256": "a7fe9809896100fc51f66b1b51b9fec3a530aa775b9e0f43577b0f28a58ee58b",
+      "bytes": 15901
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\explain\\__pycache__\\pipeline.cpython-311.pyc",
+      "sha256": "62404edc1e414d3df40cf58193c4efee245cc279ab5aaac4210454f51d43b839",
+      "bytes": 4342
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\explain\\__pycache__\\template.cpython-311.pyc",
+      "sha256": "5e0259f15635629f4d17fb0c053dc9ca87e96659aef4cd5145e4c28013003429",
+      "bytes": 7219
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\explain\\__pycache__\\verifier.cpython-311.pyc",
+      "sha256": "7adb52ed2665dca24121f3707bd445a6963de31e2071d93eef8c91eafbcb7551",
+      "bytes": 24507
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\explain\\fixtures.py",
+      "sha256": "14db3af220482c87aed3a8666247a0ecfbc33ce482fb65bc665c3fbdb9e33343",
+      "bytes": 11631
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\explain\\pipeline.py",
+      "sha256": "2ba55decee438439125d73bd0422591592e1737a2dbc2cd44a764728d90c1d11",
+      "bytes": 3529
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\explain\\template.py",
+      "sha256": "37642877a438efd696cf0bb8f096c9f93ac2884e9b9bff5ed6513dee99bd6f75",
+      "bytes": 5332
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\explain\\verifier.py",
+      "sha256": "28948e55c405fbe4cb7eebab73641d014ed93c5c0b70797ddc9b47abab9370ee",
+      "bytes": 20916
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\features\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\features\\__pycache__\\__init__.cpython-311.pyc",
+      "sha256": "18435c92b5d79eb325fe8f634079b1812e9877766134cbafe3528d7b2c4705da",
+      "bytes": 171
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\features\\__pycache__\\assembly.cpython-311.pyc",
+      "sha256": "b3cbe0d3664106c5e29f852adbf6ab0f5f755b2bb31abea612aa210a9745e28c",
+      "bytes": 6115
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\features\\__pycache__\\indicators.cpython-311.pyc",
+      "sha256": "4789ea0c84bf954d964c3e608c0d60e843395c5373fa0f1cff6521c633f661fb",
+      "bytes": 8026
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\features\\__pycache__\\sentiment.cpython-311.pyc",
+      "sha256": "6a3536da01a59a5ddb1d5b4861fa12f043a8a4f3e6fc3f6e2a8a8e2a94ba6696",
+      "bytes": 7917
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\features\\assembly.py",
+      "sha256": "8611fae64ddf852880b0b2895cc50defb7ba0243ea42f3c1ba88359ced7b3445",
+      "bytes": 3411
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\features\\indicators.py",
+      "sha256": "068ff16768f9a4b4d0bcc0508b11cba2f658bcf498adacda7aa6b2bd28477197",
+      "bytes": 5016
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\features\\sentiment.py",
+      "sha256": "0bd0a21a03d31dc4c959b1415a8e069ff212d6c60d9c5e3c6262949863d051ae",
+      "bytes": 4606
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\harness\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\harness\\__pycache__\\__init__.cpython-311.pyc",
+      "sha256": "b509e59b634d479d0a5f2a5f69085fc3f1a08ad6e3fd0435766e5628a4f07b81",
+      "bytes": 170
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\harness\\__pycache__\\arms.cpython-311.pyc",
+      "sha256": "161bd5714b524102a1c46ddcd24d3551379ac1545d1f5a240225f8cb6f41e170",
+      "bytes": 20565
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\harness\\__pycache__\\metrics.cpython-311.pyc",
+      "sha256": "923f3d366f237d1d84e7783e986cfc720afb37d1c5be28af7af57d0119ea7b77",
+      "bytes": 12752
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\harness\\__pycache__\\splits.cpython-311.pyc",
+      "sha256": "37570d8c580546a956ed6455fead7b28782f025827cc8241139ef424c7b6c714",
+      "bytes": 5460
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\harness\\arms.py",
+      "sha256": "907677a71473105f7b8089e0cabeff7d546e330fa5d660bee0141fed269ea88a",
+      "bytes": 15121
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\harness\\metrics.py",
+      "sha256": "985d56dd05f47db96ca5ef1046baf2f98eafb7dc3fbb1f8144e461bc023a62a4",
+      "bytes": 9063
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\harness\\run_spike.py",
+      "sha256": "6ce58c934da8ab1ad72fa00879c33519703f4e7e00707e6e205bd18d8330ca52",
+      "bytes": 6204
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\harness\\splits.py",
+      "sha256": "a6bf41b800589ff8ad7e630b9b883e5cea62aae0add255049296478b30123459",
+      "bytes": 3988
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\ingest\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\ingest\\__pycache__\\__init__.cpython-311.pyc",
+      "sha256": "f2eef325a71a99683bf4431d5f5d43beb0806e1ff192406a796ac4cc867f3f3b",
+      "bytes": 169
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\ingest\\__pycache__\\news.cpython-311.pyc",
+      "sha256": "1cb5ff8da2d60b731b25db42f4e6b76b9dd38de4192c63032642484b986e5d52",
+      "bytes": 8967
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\ingest\\news.py",
+      "sha256": "0d9b24b26fd072a0e66eb2df6dd83d60ddc3f5cacbe4fd32fd529bca8f169dac",
+      "bytes": 6853
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\ingest\\prices.py",
+      "sha256": "f4614fb12dde928124deaeeef3fb48049c588ecfd4bda1f992c4a17c39f5bafa",
+      "bytes": 2532
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\labels.py",
+      "sha256": "26b6474d432026e57e596cccaf82334a0447a6d04e2795c37084827869221563",
+      "bytes": 1374
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\scaling.py",
+      "sha256": "d65e708778a594e106752857d0f9678a9ce7e8edb44a18633187ec17d74efafb",
+      "bytes": 729
+    },
+    {
+      "origin": "investify_repo",
+      "path": "src\\investify\\store.py",
+      "sha256": "a4f2bb6ebcdf8778aa29abe6da81ef3607bd1212e3a6582b25ba139453977c21",
+      "bytes": 3736
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\__pycache__\\__init__.cpython-311.pyc",
+      "sha256": "0a78a5c3899e929f70ddec52ed1eb7a51ee96c755ae0ce3ea241e473c9b3e2ee",
+      "bytes": 154
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\__pycache__\\test_alpaca_loader.cpython-311-pytest-9.1.1.pyc",
+      "sha256": "4bbaead49bcc98d51003bd9ca4ed746f720d8ae0388d381032bf9d1e4c514d44",
+      "bytes": 20170
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\__pycache__\\test_asof_join.cpython-311-pytest-9.1.1.pyc",
+      "sha256": "1a4bf46fe0e9e9dea98d84f5dba56d1cc3a55068ec9d8d18711959b1cf825272",
+      "bytes": 11423
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\__pycache__\\test_backward_only.cpython-311-pytest-9.1.1.pyc",
+      "sha256": "ee58d830ff8bb5c8dce6dfd8e1b7bbf7b4d8ec0a45c751cb3d6ece8cc73c72fe",
+      "bytes": 5526
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\__pycache__\\test_calendar.cpython-311-pytest-9.1.1.pyc",
+      "sha256": "02747741d4004bafac29a6450e6f7fd06a17554ca740b2e1618056240c4115ce",
+      "bytes": 23186
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\__pycache__\\test_emit_pipeline.cpython-311-pytest-9.1.1.pyc",
+      "sha256": "292ffb4f6816021c6a1e108c4d0dd84b9f21db3bd492aee9e24fff7aa18fb34b",
+      "bytes": 11800
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\__pycache__\\test_fold_local_scaling.cpython-311-pytest-9.1.1.pyc",
+      "sha256": "146fec169da423b52e9eab2b5aa2910942ba9ef7da31484e6e62cd5f263934da",
+      "bytes": 11060
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\__pycache__\\test_labels.cpython-311-pytest-9.1.1.pyc",
+      "sha256": "9bf9be4df599472be7c11c0f06271150535245736439a09fbda6b34abe0bbdaf",
+      "bytes": 10769
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\__pycache__\\test_leak_canary.cpython-311-pytest-9.1.1.pyc",
+      "sha256": "e4de99b390d346308352c9ad7bc3a8786fbc0344528bf846c45d3cb4ec3547a7",
+      "bytes": 12018
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\__pycache__\\test_leak_variants.cpython-311-pytest-9.1.1.pyc",
+      "sha256": "367365246acde740628a17ddacc63daae801a1df43f710728dc7c1217c25048b",
+      "bytes": 32033
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\__pycache__\\test_metrics.cpython-311-pytest-9.1.1.pyc",
+      "sha256": "f7268ea63286f228ad00cd5f8422e40f839d73ed8a9011ebfcd154c4a139113c",
+      "bytes": 40826
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\__pycache__\\test_shap_additivity.cpython-311-pytest-9.1.1.pyc",
+      "sha256": "704452b01b974e995e50d426dca67840bec5f8afc5d66f0603bb98afb6b8ecf9",
+      "bytes": 27583
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\__pycache__\\test_splits.cpython-311-pytest-9.1.1.pyc",
+      "sha256": "21b50b0a29d8a05f4f63c70dd2369dcb180b05bf4bc6537407196f03667816f6",
+      "bytes": 41397
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\__pycache__\\test_store_append_only.cpython-311-pytest-9.1.1.pyc",
+      "sha256": "fa1745c33f362c20829a16800efdbfe1f76bb64c1eaa9fcf07576ee68bb7dd7a",
+      "bytes": 14148
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\__pycache__\\test_verifier.cpython-311-pytest-9.1.1.pyc",
+      "sha256": "98e7c71b5b8c6b436e8c3b5a6088d36c7d7a8f30aaaa11dc32613c9897cd7e69",
+      "bytes": 49878
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\test_alpaca_loader.py",
+      "sha256": "7890f09c5b6e04df62b06b9cc03cfdf926f7d07258d99b4dc3489e604eae4227",
+      "bytes": 4385
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\test_asof_join.py",
+      "sha256": "95b2f0cd106048ec4c44d7ea1e62344077f92eb633e429af0e9280ee21e01628",
+      "bytes": 4946
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\test_backward_only.py",
+      "sha256": "a9ce793968d0dcc35ff6dc31458077c1d20b83cb2ab50b6738e58d10fa4fb5da",
+      "bytes": 2098
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\test_calendar.py",
+      "sha256": "4c0afe2d41a5a7f9d896eed54963ebdc36ba90e6243bcd86a3bae4915e1103fa",
+      "bytes": 5144
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\test_emit_pipeline.py",
+      "sha256": "233155d389a34f8da27a61845c9afbc1ad945d472247a942e391f3c81e1b378a",
+      "bytes": 2556
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\test_fold_local_scaling.py",
+      "sha256": "4f7fd54b14acdb175bb751220c714f34e66b52cf515e9441788da0c19caf4745",
+      "bytes": 2995
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\test_labels.py",
+      "sha256": "0444a592f9720d315d98d05518ec21e79e664b6d88f1dfb06c862abb8b52ef23",
+      "bytes": 3577
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\test_leak_canary.py",
+      "sha256": "5470a7018b0f5e4bf224914ed81be6d6bca8bf6a5f4401aed39884924a5900bf",
+      "bytes": 4529
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\test_leak_variants.py",
+      "sha256": "02b4ecf618979c353e1c65b5ff452e747190001022b8a0d39518907c36ab9708",
+      "bytes": 10548
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\test_metrics.py",
+      "sha256": "6801ba65d518732cc13bebae25139444bff1f838d7f66fb92b3032bdc0c85c46",
+      "bytes": 12843
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\test_shap_additivity.py",
+      "sha256": "f7c28dd26aa6cdd5bd6173d3e9c2df53e554d236845d043171da60b938a24b3c",
+      "bytes": 6565
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\test_splits.py",
+      "sha256": "ced3de47c84dd6dc9c2050da86a696b2a1d5c19382de9f3a21d964f5b5483b39",
+      "bytes": 8313
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\test_store_append_only.py",
+      "sha256": "6bb777fc24aac9c933080fbee45210388fa9cb4673b9499da2086095d587ecd9",
+      "bytes": 3315
+    },
+    {
+      "origin": "investify_repo",
+      "path": "tests\\test_verifier.py",
+      "sha256": "7dfbfbb036e15228565b59d3728932fda745b944c0ccf767e7de0118b3ecfdda",
+      "bytes": 17128
+    },
+    {
+      "origin": "investify_repo",
+      "path": "uv.lock",
+      "sha256": "f6096f426f039b9d731a2de7014c4cb991615787abf54dc051e0686663a45840",
+      "bytes": 206570
+    }
+  ]
+}

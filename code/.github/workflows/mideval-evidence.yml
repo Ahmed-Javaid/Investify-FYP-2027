@@ -1,0 +1,62 @@
+name: MidEval evidence checks
+
+on:
+  push:
+    branches: [main, 'gpt/**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  evidence:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.11'
+      - name: Test historical-record explanations and failure handling
+        run: python -B -m unittest discover -s tests -p "test_mideval*.py" -v
+      - name: Validate both corpora and record evidence hashes
+        run: python -B scripts/verify_demo_artifacts.py --output artifacts/mid_eval/verification.json
+      - name: Build the standalone evidence preview
+        run: python -B scripts/export_mideval_preview.py --output artifacts/mid_eval/evidence_preview.html
+      - name: Freeze the explainer selection without inference
+        run: python -B scripts/evaluate_mideval_llm.py --plan-only --output artifacts/mid_eval/explainer_evaluation_plan.json
+      - name: Audit separate risk comparator on held-out saved features
+        run: python -B scripts/verify_risk_comparator.py --output artifacts/mid_eval/risk_comparator_verification.json
+      - name: Keep the generated evidence for review
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: mid-eval-evidence-${{ matrix.os }}
+          path: artifacts/mid_eval/
+          retention-days: 14
+
+  streamlit-ui:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.11'
+      - name: Install the historical demo runtime
+        run: python -B -m pip install -r requirements-demo-runtime.txt
+      - name: Exercise the actual Streamlit interface
+        run: python -B -m unittest discover -s tests -p "test_streamlit_mideval.py" -v
+
+# This job covers the artifact-backed explanation increment. The full training
+# suite needs its pinned environment and acquired datasets. Deployment/delivery
+# publication is pending a chosen target and repository access; this workflow
+# does not claim a running CD deployment or evaluation of a language model.

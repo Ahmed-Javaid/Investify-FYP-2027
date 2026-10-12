@@ -1,0 +1,44 @@
+\chapter{Iteration 1: Design and Implementation}
+\section{Iteration Objectives}
+Preserve the existing project, validate the cached decision/explanation path, and make technical/news evidence inspectable. Establish the LLM input boundary and replay six recorded assistant-teacher examples; a live generator and measured user-comprehension benefit remain pending.
+
+\section{Selected Use Cases / Features}
+Select a historical corpus/session, inspect the decision/probabilities, read every feature's meaning and attribution, and inspect coverage/limitations. Fault checks reject corrupted confidence and show verified fallback.
+
+\section{Design}
+The frozen decision record remains the prediction source. A new builder combines its facts with reviewed definitions and implementation limitations. Streamlit and the standalone explorer reuse that context. Existing template verification remains the baseline.
+
+\section{Implementation}
+The independent code copy is on branch \texttt{gpt/mid-eval}. New code in \texttt{src/investify/explain/context.py} covers every feature, handles missing values, rejects non-finite attributions/probabilities, and identifies unreviewed definitions. The Decision tab renders the context; the exporter uses the same records.
+
+\section{Completed Features / Module}
+The context, artifact tools, complete-guided verifier, report-retaining fallback, both live interfaces, prototype profile and separate retrospective risk comparator are implemented. Actual Streamlit widget tests pass. Six actual teacher explanations are saved and replayed in Teacher Study. Live model inference, candidate social-model comparison, social features, personalized classifier predictions and remote GitHub execution remain pending.
+
+\section{Technical Implementation Details}
+Feature values and predicted-class SHAP contributions are separate. Family totals retain raw-score units. The verifier checks prose and JSON independently, including feature values and attribution targets. Displayed-text coverage, essential disclosures and hard contradiction gates prevent a correct payload from hiding an incorrect display. Strict mode rejects unsupported sentences. Evidence tools check schemas/context/templates/distributions/additivity and record artifact/runtime/source hashes.
+
+\section{Algorithms and Technical Decisions}
+Definitions follow actual features: dispersion is trailing variation of session-average polarity, and news attention is a headline-count z-score. Missing data stays missing. Indicator meaning and its use by this model are distinct \cite{fidelity_rsi,fidelity_macd,fidelity_obv}.
+
+\section{Tools, Frameworks and Technologies}
+The portable path uses standard Python. The restored isolated viewer/test environment yields 212 selected passes and no skips; it is not the locked scientific environment. CI targets Python 3.11 on Windows/Linux with portable checks, frozen plans, comparator audits and a separate Streamlit AppTest job. Remote jobs have not run.
+
+\section{Demonstration Evidence}
+The continuation adds an explicitly labelled feature-level causality button: nine checks on synthetic fixtures detect four centred-window mutations, with no classifier fit. Scientific input/runtime absence disables the real re-run, and a later import/data failure is reported without a fabricated experiment result. Portable reports are invalidated after candidate/settings edits; record-loading errors retain selection/retry controls. These checks are distinct from browser visual QA.
+Artifact checks cover 186 records per corpus. The live HTTP exercise passes 62 explanation/risk cases. The separate comparator audit passes 228 arithmetic checks on actual held-out rows with labelled parameter scenarios. Browser visual QA remains pending. Both saved classifiers predict Buy throughout; no predictor-performance improvement is claimed.
+
+\section{Iteration Outcome}
+\subsection{Versioned Scientific Corrections}
+The historical purger used calendar-day subtraction for observed-row labels. On the same labelled business-day fixture/test blocks it retains 18 training-label endpoints reaching the evaluation blocks; the corrected \texttt{observed-label-end-purge-v2} retains zero. Actual endpoints are calculated before feature filtering and carried to folds. Calibration candidates ending on/after first evaluation are excluded; a future-price shock leaves retained fixture inputs unchanged. Explicit frozen-classifier and refit-transfer modes now support a fair source-level comparison, but actual model fitting/results require restored inputs/runtime.
+
+Original scientific source/results are preserved. Cache joins refuse duplicate document keys or inconsistent probabilities, RSI edge windows have explicit behaviour, datetime units are normalized for the as-of join, and input ranges/ticker/revision/calendar contracts fail visibly. New outputs/cache directories are isolated. Full score/margin/truth arrays, calibration knots, scaler/model bytes and source/input identity are retained by the new trace mechanism. None of these source/fixture repairs establishes changed historical performance or explains the all-Buy result. E\_SAMEBAR\_TEXT is a lag-rule ablation under the retained strict-prior join.
+The increment improves evidence coverage and transparency over the top-k numeric template and supplies a tested LLM input contract. It does not yet establish LLM usefulness, predictive skill, complete mid readiness, or deployment.
+
+\section{Recorded Assistant Teacher Construction Pilot}
+Under the user's latest direction, the current assistant supplies teacher examples before an alternative API is considered. The planned student remains Phi-3-mini; no additional Qwen teacher download is required. Six actual explanations were written from frozen historical NVDA records, and all six pass the current strict verifier. Input packets contain facts, reviewed definitions and controlled sentence patterns without a completed reference answer.
+
+The supervision is hybrid: prose is actually assistant-generated, while the factual JSON payload is assembled deterministically from the original record. Both are checked, but the payload is not claimed as a teacher completion. Exact serving model ID/revision, decoding, token usage and per-example inference latency are unavailable and recorded as null.
+
+Both corpora share date groups: 118 training dates, 30 validation dates and 38 preserved held-out test dates. The actual pilot has four training and two validation examples; test records are excluded. All saved source decisions are Buy, so neither class generalization nor adequate QLoRA data is established. Some held-out examples were previously explored; no first-ever untouched-test claim is made. Copied evidence replays original hash-bound raw persistence times and exact exports.
+
+Original-student inference, QLoRA training, student quality and user understanding remain unmeasured. The inspected GPU has 10,240 MiB; the proposal's 16 GB envelope does not establish current-machine feasibility. Required training libraries, exact student checkpoint/tokenizer and measured token/VRAM budgets remain pending. Earlier Qwen-specific local pilot choices are inactive for the selected teacher/student workflow.

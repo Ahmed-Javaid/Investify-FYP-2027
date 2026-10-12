@@ -1,0 +1,18 @@
+\begin{tikzpicture}[
+box/.style={draw,rounded corners,align=center,text width=42mm,minimum height=15mm,font=\small},
+pending/.style={box,dashed},node distance=10mm and 12mm]
+\node[box] (record) {Frozen development records\\and reviewed definitions};
+\node[box,right=of record] (teacher) {Current assistant teacher\\actual recorded prose};
+\node[box,below=of record] (payload) {Factual JSON payload\\assembled from the record};
+\node[box,right=of payload] (gate) {Independent prose/payload\\verification and rejection};
+\node[box,below=of payload] (dataset) {Accepted hybrid targets\\4 training / 2 validation};
+\node[pending,right=of dataset] (student) {Original Phi-3-mini\\baseline and QLoRA pending};
+\node[pending,below=of student] (comparison) {Teacher / original student /\\adapted student comparison};
+\draw[->] (record) -- (teacher);
+\draw[->] (record) -- (payload);
+\draw[->] (teacher) -- (gate);
+\draw[->] (payload) -- (gate);
+\draw[->] (gate.south) -- ++(0,-5mm) -| (dataset.north);
+\draw[->,dashed] (dataset) -- (student);
+\draw[->,dashed] (student) -- (comparison);
+\end{tikzpicture}

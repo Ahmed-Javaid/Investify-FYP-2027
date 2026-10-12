@@ -1,0 +1,78 @@
+{
+  "schema": "investify-v4-residual-validation-v1",
+  "checked_utc": "2026-10-12T10:56:09.678138+00:00",
+  "protected_v3_files": [
+    {
+      "path": "GPT_MIDEVAL\\code\\src\\investify\\sentiment_selection.py",
+      "expected": "39d79fc77709a42ef0641af27cf3c5f14884b8d0ed57604808e462d410f68c30",
+      "actual": "39d79fc77709a42ef0641af27cf3c5f14884b8d0ed57604808e462d410f68c30",
+      "unchanged": true
+    },
+    {
+      "path": "GPT_MIDEVAL\\code\\src\\investify\\sentiment_inference.py",
+      "expected": "bb73177a405ee515ae3f159a4c720be251a776b780d5ee2935e6b9361e254012",
+      "actual": "bb73177a405ee515ae3f159a4c720be251a776b780d5ee2935e6b9361e254012",
+      "unchanged": true
+    },
+    {
+      "path": "GPT_MIDEVAL\\code\\artifacts\\mid_eval\\social_benchmark.json",
+      "expected": "ede8fd3386ff0bf142553b69251f9ef7736b7fd517f4073be4f8b63b884b9f06",
+      "actual": "ede8fd3386ff0bf142553b69251f9ef7736b7fd517f4073be4f8b63b884b9f06",
+      "unchanged": true
+    },
+    {
+      "path": "GPT_MIDEVAL\\code\\artifacts\\mid_eval\\social_candidates.json",
+      "expected": "469ffc755528ec6b0972b112cbf748b71d005798f1373796b5fa592a15c9cbfc",
+      "actual": "469ffc755528ec6b0972b112cbf748b71d005798f1373796b5fa592a15c9cbfc",
+      "unchanged": true
+    },
+    {
+      "path": "GPT_MIDEVAL\\code\\artifacts\\mid_eval\\social_selection_plan.json",
+      "expected": "1b65d2c4e635473aa3217e17e5f07e7c301130d2d924f5fddae7ee0dada95d80",
+      "actual": "1b65d2c4e635473aa3217e17e5f07e7c301130d2d924f5fddae7ee0dada95d80",
+      "unchanged": true
+    },
+    {
+      "path": "GPT_MIDEVAL\\code\\artifacts\\mid_eval\\social_model_runs.json",
+      "expected": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "actual": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "unchanged": true
+    }
+  ],
+  "v3_plan_replay": true,
+  "acquired": 200,
+  "usable": 117,
+  "heldout": 24,
+  "portable_tests": {
+    "tests": 45,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "cpu_tensor_fixture_tests": {
+    "tests": 6,
+    "passed": 6,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "source_sha256": {
+    "src/investify/sentiment_receipts.py": "b029398163c53d6e960ab54e7856d67ce247254213737a48bde3adb126c9b23d",
+    "src/investify/sentiment_inference.py": "bb73177a405ee515ae3f159a4c720be251a776b780d5ee2935e6b9361e254012",
+    "src/investify/sentiment_selection.py": "39d79fc77709a42ef0641af27cf3c5f14884b8d0ed57604808e462d410f68c30",
+    "scripts/social_study_v4.py": "fab2e08b13555b057b895f269a87ca8e9f0b26661ab6aa8d1a425a71da027af6",
+    "scripts/classifier_runtime_py313.py": "e75cf9faae1fd5e9f643a178fa9c7d5debe3e2c745ec6900eb6fe108ea906197",
+    "src/investify/model_conversion.py": "5ba20c88032443839a0bc0972e5876622304c7f41c82199bffcc68e7a0525595",
+    "scripts/convert_original_cardiff.py": "fe85e3c797440817e9cf45ca9eccaff940d8c4171fc962cedf59d6e2cc0afe50",
+    "tests/test_mideval_sentiment_receipts.py": "39d8d231d837d5a8863c7fee9e882f0d0df69fb12986a9b072f04e09da1c56ed",
+    "tests/test_mideval_model_conversion.py": "6c088e59eff94581c35c0b1b05649a43e6a82016ddaa0adf6e0289bf18d01430",
+    "tests/test_conversion_py313_regressions.py": "4dbae8345ee00fbc1d47a17c34e8074334505e25118b016c5a28bf78d71919a4",
+    "artifacts/mid_eval/social_publisher_catalog_v4.json": "4151a0dc707de1b569a20a7c6a23734e099e76d660d05ff5e98e732b7f160fe3"
+  },
+  "candidate_inference_calls": 0,
+  "original_publisher_conversions": 0,
+  "training_calls": 0,
+  "metadata_catalog_status": "metadata_incomplete",
+  "independent_execution_attestation": false,
+  "scope": "Engineering gates and explicitly labelled CPU tensor fixtures only; frozen original research inputs preserved; no sentiment candidate result or scientific-lock restoration"
+}

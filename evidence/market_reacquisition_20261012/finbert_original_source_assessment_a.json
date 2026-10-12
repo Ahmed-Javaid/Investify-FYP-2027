@@ -1,0 +1,51 @@
+{
+  "schema": "investify-finbert-original-source-assessment-v1",
+  "checked_utc": "2026-10-12T11:51:11.122423+00:00",
+  "purpose": "fresh_market_reacquisition_assessment",
+  "repository": "ProsusAI/finbert",
+  "proposed_revision": "0bc2ac10dda6929bcb1f77ccc43c7ec5c424f031",
+  "revision_source": "https://huggingface.co/ProsusAI/finbert/tree/main links the full commit URL; exact-revision metadata still requires verification",
+  "normal_network_metadata_endpoint": "https://huggingface.co/api/models/ProsusAI/finbert/revision/0bc2ac10dda6929bcb1f77ccc43c7ec5c424f031?blobs=true",
+  "network_attempts": 1,
+  "weight_downloads": 0,
+  "installs": 0,
+  "model_loads": 0,
+  "inference_calls": 0,
+  "required_original_files": [
+    "model.safetensors",
+    "config.json",
+    "tokenizer_config.json",
+    "special_tokens_map.json",
+    "vocab.txt"
+  ],
+  "preprocessing": {
+    "input": "headlines_only",
+    "max_tokens": 128,
+    "truncation": true,
+    "padding": "batch",
+    "polarity": "P(positive)-P(negative)"
+  },
+  "publisher_config_inspection": {
+    "source_url": "https://huggingface.co/ProsusAI/finbert/blob/main/config.json",
+    "byte_exact_pinned_revision_verified": false,
+    "architecture": "BertForSequenceClassification",
+    "model_type": "bert",
+    "id2label": {
+      "0": "positive",
+      "1": "negative",
+      "2": "neutral"
+    }
+  },
+  "strategy": [
+    "Verify repository revision and every file blob/LFS pointer at the exact original revision before acquiring bytes.",
+    "Acquire only publisher Safetensors plus its four original config/tokenizer files into a separately versioned E: snapshot; verify every byte hash.",
+    "Use the existing read-only cp313 CPU runtime, strict complete-head loading and explicit original class semantics; no remote model code.",
+    "Retain a new model/preprocessing/input-bound fresh-news score cache and full probabilities/logits/token/timing receipts; do not reuse or relabel missing historical cache identity."
+  ],
+  "scope": "Source strategy and bounded access only; no new model/data/scientific result or old-cache restoration",
+  "status": "blocked",
+  "error_type": "URLError",
+  "underlying_error_type": "ConnectionRefusedError",
+  "winerror": 10061,
+  "errno": 10061
+}

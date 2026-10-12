@@ -1,0 +1,576 @@
+{
+  "checked_utc": "2026-10-11T10:45:39.223701+00:00",
+  "python": "3.11.9",
+  "base_url": "http://127.0.0.1:8765",
+  "git_commit": "a99de5f94aa6406004193686d9aa94b2dff5c9e7",
+  "scope": "Live Python HTTP endpoints; six historical records and labelled corruptions. No browser visual QA, retraining, or LLM generations.",
+  "verifier_contract": "mideval-prose-and-payload-v2",
+  "elapsed_seconds": 0.693,
+  "checks_passed": 48,
+  "checks": [
+    {
+      "corpus": "alpaca",
+      "session": "2023-03-29",
+      "case": "clean",
+      "candidate_passed": true,
+      "fallback_used": false,
+      "failed_metrics": [],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-03-29",
+      "case": "wrong_displayed_probability",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim",
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-03-29",
+      "case": "wrong_displayed_direction",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "directional_consistency",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-03-29",
+      "case": "wrong_displayed_feature_value",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-03-29",
+      "case": "wrong_displayed_decision",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "contradictory_claim",
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-03-29",
+      "case": "missing_notice",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-03-29",
+      "case": "unsupported_sentence",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "unsupported_prose"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-03-29",
+      "case": "wrong_payload_probability",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-08-11",
+      "case": "clean",
+      "candidate_passed": true,
+      "fallback_used": false,
+      "failed_metrics": [],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-08-11",
+      "case": "wrong_displayed_probability",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim",
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-08-11",
+      "case": "wrong_displayed_direction",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "directional_consistency",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-08-11",
+      "case": "wrong_displayed_feature_value",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-08-11",
+      "case": "wrong_displayed_decision",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "contradictory_claim",
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-08-11",
+      "case": "missing_notice",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-08-11",
+      "case": "unsupported_sentence",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "unsupported_prose"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-08-11",
+      "case": "wrong_payload_probability",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-12-21",
+      "case": "clean",
+      "candidate_passed": true,
+      "fallback_used": false,
+      "failed_metrics": [],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-12-21",
+      "case": "wrong_displayed_probability",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim",
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-12-21",
+      "case": "wrong_displayed_direction",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "directional_consistency",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-12-21",
+      "case": "wrong_displayed_feature_value",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-12-21",
+      "case": "wrong_displayed_decision",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "contradictory_claim",
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-12-21",
+      "case": "missing_notice",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-12-21",
+      "case": "unsupported_sentence",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "unsupported_prose"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "alpaca",
+      "session": "2023-12-21",
+      "case": "wrong_payload_probability",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-03-29",
+      "case": "clean",
+      "candidate_passed": true,
+      "fallback_used": false,
+      "failed_metrics": [],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-03-29",
+      "case": "wrong_displayed_probability",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim",
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-03-29",
+      "case": "wrong_displayed_direction",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "directional_consistency",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-03-29",
+      "case": "wrong_displayed_feature_value",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-03-29",
+      "case": "wrong_displayed_decision",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "contradictory_claim",
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-03-29",
+      "case": "missing_notice",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-03-29",
+      "case": "unsupported_sentence",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "unsupported_prose"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-03-29",
+      "case": "wrong_payload_probability",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-08-11",
+      "case": "clean",
+      "candidate_passed": true,
+      "fallback_used": false,
+      "failed_metrics": [],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-08-11",
+      "case": "wrong_displayed_probability",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim",
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-08-11",
+      "case": "wrong_displayed_direction",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "directional_consistency",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-08-11",
+      "case": "wrong_displayed_feature_value",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-08-11",
+      "case": "wrong_displayed_decision",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "contradictory_claim",
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-08-11",
+      "case": "missing_notice",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-08-11",
+      "case": "unsupported_sentence",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "unsupported_prose"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-08-11",
+      "case": "wrong_payload_probability",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-12-21",
+      "case": "clean",
+      "candidate_passed": true,
+      "fallback_used": false,
+      "failed_metrics": [],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-12-21",
+      "case": "wrong_displayed_probability",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim",
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-12-21",
+      "case": "wrong_displayed_direction",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "directional_consistency",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-12-21",
+      "case": "wrong_displayed_feature_value",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-12-21",
+      "case": "wrong_displayed_decision",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "contradictory_claim",
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-12-21",
+      "case": "missing_notice",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "missing_required_claims"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-12-21",
+      "case": "unsupported_sentence",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "unsupported_prose"
+      ],
+      "check_passed": true
+    },
+    {
+      "corpus": "fnspid",
+      "session": "2023-12-21",
+      "case": "wrong_payload_probability",
+      "candidate_passed": false,
+      "fallback_used": true,
+      "failed_metrics": [
+        "numeric_fidelity",
+        "contradictory_claim"
+      ],
+      "check_passed": true
+    }
+  ],
+  "source_sha256": {
+    "src\\investify\\demo_server.py": "624a379371af33778d3e65c87248db67bfe79dbd83cf217310ab4d739673eb4a",
+    "src\\investify\\explain\\verifier.py": "a2dc19e46b1139d669f2831e05165a1524b4faf526317bdf8396a9bc9875286e",
+    "src\\investify\\explain\\pipeline.py": "a648550ac928bd75bdda167f7386d452a6a46b855c9dff1ba01e671a70540b51",
+    "app\\mideval_demo.html": "fa547a3a4145650651aff369433c4e9863cbd376e23fde3a39563e7a0ed3faa2"
+  },
+  "runtime_source_sha256": {
+    "src\\investify\\demo_server.py": "624a379371af33778d3e65c87248db67bfe79dbd83cf217310ab4d739673eb4a",
+    "src\\investify\\explain\\verifier.py": "a2dc19e46b1139d669f2831e05165a1524b4faf526317bdf8396a9bc9875286e",
+    "src\\investify\\explain\\pipeline.py": "a648550ac928bd75bdda167f7386d452a6a46b855c9dff1ba01e671a70540b51",
+    "app\\mideval_demo.html": "fa547a3a4145650651aff369433c4e9863cbd376e23fde3a39563e7a0ed3faa2"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "title": "Investify: FYP-1 mid evaluation",
+  "status": "Content and speaker-note draft. PowerPoint authoring/rendering is pending the required artifact-tool runtime.",
+  "date_prepared": "2026-10-11",
+  "assessment_date": null,
+  "team": ["Ahmed Javaid (22I-2530)", "Rafay Ul Haq (22I-2520)", "Soban Ahmad (22I-2460)"],
+  "supervisor": "Mr. Irfan Ullah",
+  "slides": [
+    {
+      "title": "Investify",
+      "body": ["F26-003-Investify", "FYP-1 mid-evaluation working draft", "Educational equity decisions with recorded evidence and checked explanations"],
+      "speaker_notes": "Introduce the team and supervisor. The preparation date is 11 October 2026, not a confirmed assessment date. Present the actual implementation and disclose the historical model limitation.",
+      "sources": ["planning/CHECKPOINT.md", "sources/PROJECT_STATUS.md"]
+    },
+    {
+      "title": "The problem",
+      "body": ["A Buy/Hold/Sell label leaves the evidence and uncertainty unexplained.", "An explanation can sound plausible while contradicting its recorded values.", "An evaluation can overstate performance when information is aligned after its availability time."],
+      "speaker_notes": "Explain the retail-user interpretation task. Investify is educational and does not execute orders. Its numerical consistency checks and temporal controls must be evaluated independently of predictive usefulness.",
+      "sources": ["deliverables/PROBLEM_AND_CONTRIBUTION.md"]
+    },
+    {
+      "title": "Project contributions",
+      "table": {
+        "columns": ["Contribution", "Team-built work", "External inputs"],
+        "rows": [
+          ["Temporal evaluation", "Alignment, leakage controls and audit evidence", "Market data, exchange calendars and modelling libraries"],
+          ["Explanation verification", "Record checks, contradiction gates and verified fallback", "Stored SHAP attributions and an optional generator"]
+        ]
+      },
+      "speaker_notes": "Separate implemented engineering contributions from research novelty. FinBERT, XGBoost and TreeSHAP are external components. The closest-work comparison and broader novelty claim still need review.",
+      "sources": ["report/chapters/chapter2_research.tex", "https://arxiv.org/abs/1908.10063", "https://arxiv.org/abs/1802.03888"]
+    },
+    {
+      "title": "Implemented scope",
+      "body": ["Historical NVDA decisions from two news experiments", "Five technical and six news features; 186 saved decisions per corpus", "Complete checked explanations and an explicit prototype risk profile", "Separate retrospective risk-dependent blend; saved classifier unchanged"],
+      "speaker_notes": "The full proposal remains broader. The separate blend fits 148 earlier feature rows and scores 38 later sessions per corpus. Its profile weighting is unvalidated for suitability/performance. Social sentiment, raw inputs and scientific reproduction remain pending.",
+      "sources": ["evidence/demo_artifact_verification.json", "sources/PROJECT_STATUS.md"]
+    },
+    {
+      "title": "The explanation path",
+      "body": ["A validated decision record supplies probabilities, feature values and attributions.", "The context builder supplies all feature meanings and coverage limits.", "The verifier checks visible sentences and JSON independently.", "Rejected or unavailable generation selects a verified deterministic explanation."],
+      "speaker_notes": "Use the report architecture source when the slide renderer is available. The local LLM adapter has bounded retries and records failed attempts. Distinguish ready integration code from an actually evaluated model.",
+      "sources": ["report/figures/mideval_architecture.tex", "code/src/investify/explain/local_llm.py", "code/src/investify/explain/verifier.py"]
+    },
+    {
+      "title": "A reproduced verifier defect",
+      "table": {
+        "columns": ["Input", "Original behaviour", "Current behaviour"],
+        "rows": [
+          ["Wrong displayed confidence beside correct JSON", "Accepted from payload facts", "Rejected from displayed claims"],
+          ["Wrong feature definition beside correct JSON", "No definition contract", "Rejected against the maintained glossary"],
+          ["Missing advisory notice in visible text", "Payload could fill the coverage", "Required visible claim fails"]
+        ]
+      },
+      "speaker_notes": "Demonstrate one real saved record with a deliberately edited statement. This is a labelled corruption, not a market forecast. Keep the candidate failure report separate from the successful fallback report.",
+      "sources": ["code/tests/test_mideval_verifier.py", "code/tests/test_mideval_local_llm.py", "code/tests/test_verifier.py"]
+    },
+    {
+      "title": "The LLM pilot",
+      "table": {
+        "columns": ["Comparator", "What it provides", "Current evidence"],
+        "rows": [
+          ["Numeric template", "Recorded decision and top contributors", "Deterministic checks pass"],
+          ["Complete guided template", "All feature contributions, family totals, meanings and scope", "All 372 records pass"],
+          ["Local constrained LLM", "Attempts the same checked contract", "Adapter/fixture tests pass. Real completions: 0"]
+        ]
+      },
+      "speaker_notes": "The comparator with definitions prevents attributing an improvement to the LLM merely because it receives definitions missing from the original template. Exact wording and supported sentences constrain this first pilot. Arbitrary semantic faithfulness and human comprehension are unmeasured.",
+      "sources": ["code/src/investify/explain/evaluation.py", "evidence/explainer_evaluation_plan.json", "evidence/local_llm_probe.json", "https://lmstudio.ai/docs/developer/openai-compat/structured-output"]
+    },
+    {
+      "title": "Validation evidence",
+      "table": {
+        "columns": ["Check", "Result", "Boundary"],
+        "rows": [
+          ["Selected Python suite", "124 passed, no skips", "Full scientific suite pending"],
+          ["Streamlit AppTest", "12 actual cases passed", "Browser visual QA pending"],
+          ["Record and guided explanations", "372 checked", "No new predictor fit"],
+          ["Live HTTP checks", "62 passed", "Actual loopback endpoints"],
+          ["Separate risk comparator", "228 arithmetic probes", "No human/predictive validation"],
+          ["Real LLM generation", "0 completions", "No model-quality score"]
+        ]
+      },
+      "speaker_notes": "Refresh counts from the final evidence before presenting. The local provider transport tests use labelled test fixtures, not real LLM outputs. The original-file manifest checks 224 protected originals. Prepared GitHub CI has not executed remotely.",
+      "sources": ["evidence/current_tests.xml", "evidence/live_demo_verification.json", "evidence/risk_comparator_verification.json", "evidence/originals_preservation_check.json", "evidence/llm_evaluation_blocked.json"]
+    },
+    {
+      "title": "Prediction limitation",
+      "table": {
+        "columns": ["Corpus", "Evaluation records", "Decision distribution"],
+        "rows": [["FNSPID", "186", "186 Buy"], ["Alpaca/Benzinga", "186", "186 Buy"]]
+      },
+      "body": ["Successful explanation verification does not establish predictive usefulness."],
+      "speaker_notes": "State the limitation before the panel discovers it by changing dates. Examine calibration and class distribution together. Do not claim useful trading returns, and do not alter thresholds to manufacture a positive result.",
+      "sources": ["evidence/demo_artifact_verification.json", "code/artifacts/decision_records.json", "code/artifacts/decision_records_alpaca.json"]
+    },
+    {
+      "title": "Live demonstration",
+      "body": ["Select a corpus/session and inspect technical/news evidence.", "Show rejection and fallback for wrong prose beside correct JSON.", "Request the complete guided explanation and show actual model/fallback status.", "Complete the prototype profile and compare separate blends on a held-out date."],
+      "speaker_notes": "Start the portable server before the presentation and use its printed loopback URL. The current default has no configured LLM, so its guided result is explicitly deterministic. Use real generation only after model access is restored and its results are recorded.",
+      "sources": ["code/scripts/serve_mideval_demo.py", "code/docs/mideval_increment.md"]
+    },
+    {
+      "title": "Remaining work",
+      "body": ["Restore the local model and scientific environment/raw inputs.", "Evaluate real generations on the frozen chronological selection.", "Complete human social annotations and review profile/blend semantics.", "Run GitHub CI, record actual team contributions, and render/review report/slides."],
+      "speaker_notes": "The deadline and task owners remain unconfirmed. The current connection cannot access the repository. QLoRA/teacher comparison, broader ticker/horizon work, deployment and participant acceptance remain later milestones unless the supervisor changes the scope.",
+      "sources": ["report/chapters/chapter10_fyp2_plan.tex", "planning/CHECKPOINT.md"]
+    },
+    {
+      "title": "Proposal feedback status",
+      "body": ["Complete technical/news explanations and separate risk-comparator checks extend the PoC.", "Social-study validators/view and offline runner are prepared; real corpus/labels/model execution remain pending.", "Source-handover and report metadata/macro corrections have explicit evidence.", "LLM usefulness, broader domain review, user validation and accurate team/tool disclosure remain open."],
+      "speaker_notes": "Use the action register to show concrete evidence and outstanding closure. Do not label all modifications closed. Preserve historical authorship and describe actual student review, implementation and understanding.",
+      "sources": ["report/chapters/appendix_action_register.tex", "report/chapters/chapter9_development_evidence.tex"]
+    }
+  ]
+}

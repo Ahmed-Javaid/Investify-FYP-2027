@@ -1,0 +1,58 @@
+{
+  "checked_utc": "2026-10-11T15:43:25.852412+00:00",
+  "python": "3.11.9",
+  "git_commit": "0a27ed11ae14758895277368f15c16cb72f67c9c",
+  "git_dirty": false,
+  "revision_source": "owned_git_checkout",
+  "validation_sources_sha256": {
+    "src\\investify\\decision_record.py": "4c558f9765f7162f9a9f90d20711cad6fd2ef0b11d8ab7c8c9892def7bde8e5c",
+    "src\\investify\\source_revision.py": "b0dce6a30323ce209f190de69ffce829daa2d52e1a14e4c78616f5d4fd7ff744",
+    "src\\investify\\explain\\context.py": "1fc67362b8664e9a29cabfca78bc581d0d58b36f6a9bede882c51d8c17c58ada",
+    "src\\investify\\explain\\template.py": "ec285643ae05f10826c76cc30aa7dc90d6d428688dc9d16f0037da9d821ac28a",
+    "src\\investify\\explain\\verifier.py": "f0193046dc4cc9d2d9d62138523500b90024bcc2b3565bdaf37fe3e5743e6391",
+    "src\\investify\\explain\\pipeline.py": "8fda1725d5e1ddd78cd384ff248a23d0b85bf25cc5542689635a2750e6247250",
+    "src\\investify\\explain\\local_llm.py": "3210151d508213b7873b432076cda9d76d8ab0c2684133eeb644fe9052018f9d",
+    "src\\investify\\explain\\evaluation.py": "3d956ab4c81e201598ef0f8ce9f0dfedcab84d78176dfb03d785fbf9ce080303",
+    "src\\investify\\demo_server.py": "9b9f57f698acd2e98dfc61527bb603363a465f3c18d5ab5dadc686dd06edbe4d",
+    "src\\investify\\demo_readiness.py": "d92d1650f040452f7341f7bf3d58ee89829fd614b7e6c4acb587b6e4f1400de3",
+    "src\\investify\\risk_profile.py": "444f470835330d861603685921aec5f464e03c430369a56a6d29db8afd5d50d8",
+    "src\\investify\\risk_comparator.py": "de43fc9dcbaf31f563a1fcfb89b0c5b0abe7216f27a68b04d5703b276cdacbd3",
+    "app\\risk_profile_form.py": "1ffa309c0a4c793823f13cbfd26432a16920b2cfffa0cd57e1a9be1d59732688",
+    "app\\tabs\\decision.py": "21ce28b718a9772bbf458e56faf1eeae163032a9d8d1650118cba67cd4b6863c",
+    "app\\streamlit_app.py": "922a6caa885dfa679b4e10f8aef259e9c0ce3ddebe62c64c751045a84e619acf",
+    "app\\tabs\\social_study.py": "ba2bd5b00fcb294ee35fe5951706333f7a374cf56a8485a5ed046e1ab2ea71d8",
+    "src\\investify\\sentiment_selection.py": "48939e86c79aded586bbd0bbde1628ae2398f7fac61cb3f9b65fcc143be7546d",
+    "src\\investify\\sentiment_inference.py": "4a6c2568155f663c4a8cd2a778af86154058f1bf6c8831964ff072e74661dd0c",
+    "scripts\\evaluate_social_study.py": "3fe37d9495763df81a87e9d5823cf24e9fb358e15643f10bf04ee35160ef1bf5",
+    "scripts\\run_social_inference.py": "d8e3314d0e1642b3ede61c32c1ca5560320ff1d89e0f51d8643922e88d51c753",
+    "app\\mideval_demo.html": "f47db0ae75367249fc581f1a132146498f84e0ff2992eda0176dd7e93dbcd66d"
+  },
+  "scope": "Committed records, evidence context, numeric and definition-enhanced deterministic templates; no retraining or real LLM generation evaluation",
+  "verifier_contract": "mideval-complete-evidence-v4",
+  "results": [
+    {
+      "corpus": "fnspid",
+      "records": 186,
+      "template_passes": 186,
+      "guided_template_passes": 186,
+      "decision_counts": {
+        "Buy": 186
+      },
+      "constant_predictor": true,
+      "max_shap_residual": 1.9185245037078857e-07,
+      "artifact_sha256": "4045b234c0f482a01590f2b13dd76e24acbc9ab8e97c20f3e87d9bc0ba41ae42"
+    },
+    {
+      "corpus": "alpaca",
+      "records": 186,
+      "template_passes": 186,
+      "guided_template_passes": 186,
+      "decision_counts": {
+        "Buy": 186
+      },
+      "constant_predictor": true,
+      "max_shap_residual": 9.052455425262451e-07,
+      "artifact_sha256": "f31543479e9fa1a2688da5bd360e25439ea0d332f9169588ae013547fd9ef029"
+    }
+  ]
+}

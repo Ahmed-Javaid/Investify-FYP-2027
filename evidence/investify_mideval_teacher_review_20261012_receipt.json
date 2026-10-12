@@ -1,0 +1,10 @@
+{
+  "built_utc": "2026-10-11T23:28:27.053483+00:00",
+  "code_commit": "0a27ed11ae14758895277368f15c16cb72f67c9c",
+  "files": 394,
+  "code_snapshot_kind": "uncommitted_working_tree",
+  "zip_bytes": 4543520,
+  "zip_sha256": "c2318c86c8dccf8201453b8f62f48c96e5121d3d0f3672d774d28ee84fe61550",
+  "scope": "Uncommitted research/source handover with actual AI references and six recorded assistant teacher explanations. Phi-3-mini remains the student family; student inference/QLoRA, sentiment-candidate inference, compiled institutional report/deck and human validation remain pending. The included four-page brief is an earlier snapshot. Third-party corpus is not approved for public redistribution.",
+  "source_inventory_files": 158
+}

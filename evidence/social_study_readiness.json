@@ -1,0 +1,18 @@
+{
+  "checked_utc": "2026-10-11T19:49:08.549441+00:00",
+  "protocol": "mideval-equity-social-selection-v3",
+  "reference_status": "actual_ai_reference_frozen",
+  "candidate_comparison_status": "blocked",
+  "acquired_posts": 200,
+  "usable_posts": 117,
+  "excluded_posts": 83,
+  "development_posts": 93,
+  "heldout_posts": 24,
+  "annotation_method": "model_generated",
+  "annotation_runs": 1,
+  "human_annotations": 0,
+  "candidate_model_outputs": 0,
+  "candidate_quality_metrics": null,
+  "benchmark_sha256": "4ee137070c0c90e16503c34d3ed9245a094c658213ed7d0a8cc0aa8fbb05fe2d",
+  "scope": "Actual AI reference pilot, not independent human validation or sentiment classifier results"
+}

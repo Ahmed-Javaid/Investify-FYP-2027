@@ -1,0 +1,8 @@
+{
+  "checked_utc": "2026-10-11T19:49:08.549441+00:00",
+  "repository": "Schwifty101/investify",
+  "request": "GitHub connector GET branches",
+  "status": "unverified",
+  "observed_response": "404 Not Found",
+  "scope": "A 404 does not establish whether the private repository exists; no remote mutations or CI runs performed"
+}

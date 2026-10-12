@@ -1,0 +1,49 @@
+{
+  "schema": "investify-native-background-launch-v1",
+  "prepared_utc": "2026-10-12 00:21:56 UTC",
+  "title": "Investify mid-eval: unattended continuation",
+  "status": "native_task_failed_continuation_taken_over",
+  "thread_id": "01a12d7d-bb17-7161-a314-703e2ced4de0",
+  "cwd": "E:\\Uni_Stuff\\FYP",
+  "handoff": "GPT_MIDEVAL/planning/HANDOFF_20261012.md",
+  "progress": "GPT_MIDEVAL/planning/BACKGROUND_PROGRESS.md",
+  "writer_policy": "Current continuation coordinates explicitly authorized parallel owners with disjoint source assignments. The failed native task must not be restarted as a competing writer.",
+  "persistent_goal_created": false,
+  "scope": "Native local Codex continuation, not a cloud schedule or guaranteed always-on job.",
+  "verified_utc": "2026-10-12 10:33:01 UTC",
+  "native_thread_status": "systemError",
+  "native_turn_id": "01a12fab-656c-7c90-9685-97946bcfd4ee",
+  "native_turn_status": "failed",
+  "initial_native_status_observation": {
+    "verified_utc": "2026-10-12 00:23:41 UTC",
+    "native_thread_status": "active",
+    "native_turn_id": "01a12d7d-c042-72a0-bdf0-9f9767c113f8",
+    "native_turn_status": "inProgress",
+    "launch_status": "started_and_observed_active",
+    "writer_policy": "One continuation task owns development; no competing writers."
+  },
+  "start_result": "Native create_thread returned task ID; read_thread shows handoff reads and commands executing.",
+  "departing_chat_writes_finished": true,
+  "model_override": null,
+  "limitations": "Progress requires the local host/Codex session and available usage/tools; external blockers remain. No guaranteed continuous duration or cloud execution.",
+  "later_status_observation": {
+    "observed_utc": "2026-10-12T10:33:01Z",
+    "native_thread_status": "systemError",
+    "native_turn_status": "failed",
+    "error_code": "context_length_exceeded",
+    "receipt": "GPT_MIDEVAL/evidence/background_native_failure_20261012.json",
+    "recovery_owner": "Current continuation chat with explicitly authorized, nonoverlapping parallel implementation assignments",
+    "continuation_thread_id": "01a12d7f-b282-7942-8123-b612313155dc",
+    "parallel_assignment_status": "All three implementation assignments completed and integrated; coordinator owns dependency recovery and records",
+    "verified_recovery_archive": "GPT_MIDEVAL/deliverables/investify_mideval_recovery_review_20261012.zip",
+    "recovery_extraction_receipt": "GPT_MIDEVAL/evidence/recovery_review_20261012_clean_host_verification.json",
+    "target_readiness_achieved": false,
+    "parallel_assignments": {
+      "/root/pipeline_review": "Scientific trace, engine/export, harness and scientific identity; associated tests",
+      "/root/sentiment_recovery": "V4 sentiment receipt, runtime/conversion, catalog and associated tests; V3 frozen files excluded",
+      "/root/report_demo_review": "Portable interface/state/Node tests and current report/deliverable wording",
+      "/root": "Recovery runner, final verification/packaging and planning records"
+    },
+    "failed_native_task_restarted": false
+  }
+}

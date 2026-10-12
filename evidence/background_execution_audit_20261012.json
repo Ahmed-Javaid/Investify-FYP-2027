@@ -1,0 +1,283 @@
+{
+  "schema": "investify-execution-dependency-audit-v1",
+  "checked_utc": "2026-10-12T00:29:13.739897+00:00",
+  "python": "3.11.9",
+  "executable": "E:\\AI-Tools\\Temp\\investify-ui-py311\\Scripts\\python.exe",
+  "known_original_and_working_inputs": {
+    "E:\\Uni_Stuff\\FYP\\GPT_MIDEVAL\\code\\data\\store": false,
+    "E:\\Uni_Stuff\\FYP\\GPT_MIDEVAL\\code\\data\\raw": false,
+    "E:\\Uni_Stuff\\FYP\\GPT_MIDEVAL\\code\\.cache\\finbert_scores\\finbert_scores.parquet": false,
+    "E:\\Uni_Stuff\\investify_repo\\data\\store": false,
+    "E:\\Uni_Stuff\\investify_repo\\data\\raw": false,
+    "E:\\Uni_Stuff\\investify_repo\\.cache\\finbert_scores\\finbert_scores.parquet": false
+  },
+  "harness_preflight": {
+    "fnspid": {
+      "schema": "investify-harness-preflight-v2",
+      "corpus": "fnspid",
+      "inputs": [
+        {
+          "name": "prices",
+          "path": "E:\\Uni_Stuff\\FYP\\GPT_MIDEVAL\\code\\data\\store\\prices\\ticker=NVDA",
+          "kind": "parquet_dataset",
+          "status": "missing",
+          "files_checked": 0,
+          "detail": "Input is absent"
+        },
+        {
+          "name": "cached_sentiment",
+          "path": "E:\\Uni_Stuff\\FYP\\GPT_MIDEVAL\\code\\.cache\\finbert_scores\\finbert_scores.parquet",
+          "kind": "parquet_file",
+          "status": "missing",
+          "files_checked": 0,
+          "detail": "Input is absent"
+        },
+        {
+          "name": "news",
+          "path": "E:\\Uni_Stuff\\FYP\\GPT_MIDEVAL\\code\\data\\store\\news\\ticker=NVDA",
+          "kind": "parquet_dataset",
+          "status": "missing",
+          "files_checked": 0,
+          "detail": "Input is absent"
+        }
+      ],
+      "runtime": [
+        {
+          "module": "numpy",
+          "discoverable": true
+        },
+        {
+          "module": "pandas",
+          "discoverable": true
+        },
+        {
+          "module": "scipy",
+          "discoverable": false
+        },
+        {
+          "module": "sklearn",
+          "discoverable": false
+        },
+        {
+          "module": "xgboost",
+          "discoverable": false
+        },
+        {
+          "module": "pandas_market_calendars",
+          "discoverable": false
+        },
+        {
+          "module": "pyarrow",
+          "discoverable": true
+        },
+        {
+          "module": "torch",
+          "discoverable": false
+        },
+        {
+          "module": "transformers",
+          "discoverable": false
+        }
+      ],
+      "blockers": [
+        "prices: missing - E:\\Uni_Stuff\\FYP\\GPT_MIDEVAL\\code\\data\\store\\prices\\ticker=NVDA (Input is absent)",
+        "cached_sentiment: missing - E:\\Uni_Stuff\\FYP\\GPT_MIDEVAL\\code\\.cache\\finbert_scores\\finbert_scores.parquet (Input is absent)",
+        "news: missing - E:\\Uni_Stuff\\FYP\\GPT_MIDEVAL\\code\\data\\store\\news\\ticker=NVDA (Input is absent)",
+        "runtime module: scipy",
+        "runtime module: sklearn",
+        "runtime module: xgboost",
+        "runtime module: pandas_market_calendars",
+        "runtime module: torch",
+        "runtime module: transformers"
+      ],
+      "preflight_passed": false,
+      "scope": "Read access, nonempty input files, Parquet boundary signatures and module discovery only; no dataset row/schema/cache-coverage validation, dependency import or scientific-lock verification",
+      "scientific_run_executed": false
+    },
+    "alpaca": {
+      "schema": "investify-harness-preflight-v2",
+      "corpus": "alpaca",
+      "inputs": [
+        {
+          "name": "prices",
+          "path": "E:\\Uni_Stuff\\FYP\\GPT_MIDEVAL\\code\\data\\store\\prices\\ticker=NVDA",
+          "kind": "parquet_dataset",
+          "status": "missing",
+          "files_checked": 0,
+          "detail": "Input is absent"
+        },
+        {
+          "name": "cached_sentiment",
+          "path": "E:\\Uni_Stuff\\FYP\\GPT_MIDEVAL\\code\\.cache\\finbert_scores\\finbert_scores.parquet",
+          "kind": "parquet_file",
+          "status": "missing",
+          "files_checked": 0,
+          "detail": "Input is absent"
+        },
+        {
+          "name": "news",
+          "path": "E:\\Uni_Stuff\\FYP\\GPT_MIDEVAL\\code\\data\\raw\\alpaca_nvda_news.csv",
+          "kind": "csv_file",
+          "status": "missing",
+          "files_checked": 0,
+          "detail": "Input is absent"
+        }
+      ],
+      "runtime": [
+        {
+          "module": "numpy",
+          "discoverable": true
+        },
+        {
+          "module": "pandas",
+          "discoverable": true
+        },
+        {
+          "module": "scipy",
+          "discoverable": false
+        },
+        {
+          "module": "sklearn",
+          "discoverable": false
+        },
+        {
+          "module": "xgboost",
+          "discoverable": false
+        },
+        {
+          "module": "pandas_market_calendars",
+          "discoverable": false
+        },
+        {
+          "module": "pyarrow",
+          "discoverable": true
+        },
+        {
+          "module": "torch",
+          "discoverable": false
+        },
+        {
+          "module": "transformers",
+          "discoverable": false
+        }
+      ],
+      "blockers": [
+        "prices: missing - E:\\Uni_Stuff\\FYP\\GPT_MIDEVAL\\code\\data\\store\\prices\\ticker=NVDA (Input is absent)",
+        "cached_sentiment: missing - E:\\Uni_Stuff\\FYP\\GPT_MIDEVAL\\code\\.cache\\finbert_scores\\finbert_scores.parquet (Input is absent)",
+        "news: missing - E:\\Uni_Stuff\\FYP\\GPT_MIDEVAL\\code\\data\\raw\\alpaca_nvda_news.csv (Input is absent)",
+        "runtime module: scipy",
+        "runtime module: sklearn",
+        "runtime module: xgboost",
+        "runtime module: pandas_market_calendars",
+        "runtime module: torch",
+        "runtime module: transformers"
+      ],
+      "preflight_passed": false,
+      "scope": "Read access, nonempty input files, Parquet boundary signatures and module discovery only; no dataset row/schema/cache-coverage validation, dependency import or scientific-lock verification",
+      "scientific_run_executed": false
+    }
+  },
+  "runtime_packages": {
+    "numpy": {
+      "discoverable": true,
+      "installed_distribution_version": "2.4.6"
+    },
+    "pandas": {
+      "discoverable": true,
+      "installed_distribution_version": "3.0.6"
+    },
+    "scipy": {
+      "discoverable": false,
+      "installed_distribution_version": null
+    },
+    "sklearn": {
+      "discoverable": false,
+      "installed_distribution_version": null
+    },
+    "xgboost": {
+      "discoverable": false,
+      "installed_distribution_version": null
+    },
+    "pandas_market_calendars": {
+      "discoverable": false,
+      "installed_distribution_version": null
+    },
+    "pyarrow": {
+      "discoverable": true,
+      "installed_distribution_version": "25.0.1"
+    },
+    "torch": {
+      "discoverable": false,
+      "installed_distribution_version": null
+    },
+    "transformers": {
+      "discoverable": false,
+      "installed_distribution_version": null
+    },
+    "shap": {
+      "discoverable": false,
+      "installed_distribution_version": null
+    },
+    "peft": {
+      "discoverable": false,
+      "installed_distribution_version": null
+    },
+    "bitsandbytes": {
+      "discoverable": false,
+      "installed_distribution_version": null
+    },
+    "datasets": {
+      "discoverable": false,
+      "installed_distribution_version": null
+    },
+    "accelerate": {
+      "discoverable": false,
+      "installed_distribution_version": null
+    }
+  },
+  "declared_candidate_locations": {
+    "E:\\AI-Tools\\Temp\\investify-official-models\\qwen25": {
+      "exists": false,
+      "top_level_weight_files": []
+    },
+    "E:\\AI-Tools\\Temp\\investify-official-models\\qwen3": {
+      "exists": false,
+      "top_level_weight_files": []
+    },
+    "E:\\AI-Tools\\Temp\\investify-social-models\\cryptobert": {
+      "exists": false,
+      "top_level_weight_files": []
+    },
+    "E:\\AI-Tools\\Temp\\investify-social-models\\cardiff": {
+      "exists": false,
+      "top_level_weight_files": []
+    },
+    "E:\\AI-Tools\\Temp\\investify-student-models\\phi3-mini": {
+      "exists": false,
+      "top_level_weight_files": []
+    }
+  },
+  "latex_commands": {
+    "pdflatex": null,
+    "lualatex": null,
+    "xelatex": null,
+    "tectonic": null,
+    "latexmk": null
+  },
+  "local_service_health": {
+    "http://127.0.0.1:8501/_stcore/health": {
+      "error": "URLError: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    "http://127.0.0.1:8765/health": {
+      "error": "URLError: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    }
+  },
+  "source_sha256": {
+    "tools\\audit_execution_dependencies.py": "3068a42e66298d19c2dfa9db82183c145679cdac77a81a44716ffd4f34d7f350",
+    "code\\src\\investify\\demo_readiness.py": "dbb3b9190019e300fb73e3221f0fb5d892d3ef374a13efee11dd318891418181",
+    "code\\config\\spike.yaml": "8cbc3cd9940e9e59bdac6be5ea566d709cc6054c9e02692ecaba6adf5f202392"
+  },
+  "scientific_run_executed": false,
+  "candidate_inference_executed": false,
+  "scope": "Known input paths, current interpreter package metadata/discovery, declared candidate directories, compiler PATH and loopback health only. No exhaustive disk search, package import/lock validation, model identity validation, external network attempt, inference or training."
+}

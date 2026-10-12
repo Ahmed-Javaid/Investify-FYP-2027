@@ -1,0 +1,93 @@
+{
+  "alpaca_credentials": {
+    "checked_project_env_files_present": false,
+    "credential_values_recorded": false,
+    "inherited_pair_present": false
+  },
+  "checked_utc": "2026-10-12T11:56:39.279628+00:00",
+  "data_acquired": false,
+  "evidence_boundary": "Documentation availability is separate from machine-network access. No source records were copied from browser previews, saved features, fixtures or alternate publishers. Original weights, teacher/reference freezes and scientific outcomes are unchanged.",
+  "no_alternate_tool_data_transfer": true,
+  "no_large_transfer_attempted": true,
+  "no_routing_proxy_policy_changes": true,
+  "normal_network_probe": {
+    "path": "evidence\\market_reacquisition_20261012\\normal_network_probe_v1\\probe.json",
+    "sha256": "4a0dbd13efd4cc1566dfb48a6a428e0d14c3c6b21b55b8e8d70064133c5b89a6",
+    "source_results": [
+      {
+        "http_status": null,
+        "response_bytes": 0,
+        "source": "Yahoo Finance",
+        "status": "connection_failed",
+        "winerror": 10061
+      },
+      {
+        "http_status": null,
+        "response_bytes": 0,
+        "source": "Author-released FNSPID",
+        "status": "connection_failed",
+        "winerror": 10061
+      },
+      {
+        "http_status": null,
+        "response_bytes": 0,
+        "source": "Alpaca/Benzinga",
+        "status": "connection_failed",
+        "winerror": 10061
+      }
+    ]
+  },
+  "recovery_order": [
+    {
+      "distinction": "Direct Yahoo chart bytes would be a newly disclosed acquisition adapter, not execution of yfinance or reproduction of its historical snapshot.",
+      "next_supported_step": "After ordinary host-network access succeeds, reacquire NVDA daily OHLCV into a new immutable snapshot with auto_adjust=False, actions=False, pinned package/runtime identity and request dates 2018-01-01 inclusive through 2024-01-01 exclusive.",
+      "official_reference": "https://ranaroussi.github.io/yfinance/reference/api/yfinance.download.html",
+      "required_checks": [
+        "Preserve raw provider bytes and full timestamps before normalization; SHA256 every new file.",
+        "Retain corporate-action/adjustment metadata separately; disabling client adjustment does not prove as-traded vendor history.",
+        "Validate complete exchange sessions and unique positive finite OHLC/nonnegative volume before using labels or indicators."
+      ],
+      "source": "Yahoo/yfinance"
+    },
+    {
+      "declared_original_file": {
+        "path": "Stock_news/nasdaq_exteral_data.csv",
+        "scan_status": "complete_full_scan_in_two_legs_see_process_notes",
+        "sha256": "1a7a3eb8e6b97ec19f286f2cfca3371542bddb272ab1eb8f36e33ad98fa5c4da",
+        "size_bytes": 23232979597
+      },
+      "new_publisher_revision_verified": null,
+      "next_supported_step": "Retrieve author repository metadata using normal network, freeze a full immutable publisher revision and verify declared file size/LFS identity. Only then stream the original CSV with a proper CSV parser and retain a new NVDA subset plus source coverage/hash receipts.",
+      "official_references": [
+        "https://huggingface.co/datasets/Zihan1004/FNSPID",
+        "https://huggingface.co/docs/dataset-viewer/en/filter"
+      ],
+      "required_checks": [
+        "No split-on-newline range slicing of quoted multiline article CSV records.",
+        "Record rejected malformed rows explicitly; do not silently skip scientific source records.",
+        "Never replace the old subset/hash/annotation freezes. A new subset must receive an explicit new lineage/run identity."
+      ],
+      "source": "Author Zihan1004/FNSPID",
+      "transfer_caution": "The selected file is 23,232,979,597 bytes. No full transfer was started. The smaller All_external source does not cover the required 2021-2023 period in preserved findings.",
+      "viewer_strategy": "Publisher page currently reports full viewer unavailable with DatasetGenerationError/ArrowInvalid. Official filter indexing can be partial beyond 5GB; partial results cannot establish a complete NVDA2018-2023 corpus."
+    },
+    {
+      "next_supported_step": "After normal network and authorized credentials are available, query the declared v1beta1/news endpoint for NVDA2018-2023 and paginate using next_page_token, preserving raw pages and unique article IDs.",
+      "official_reference": "https://docs.alpaca.markets/us/reference/news-3",
+      "required_checks": [
+        "Retain created_at and updated_at plus acquisition timestamps; current provider content does not prove historical as-of headline text.",
+        "Keep all endpoint request bounds/pagination/rate-limit receipts and no credential values.",
+        "Preserve the historical Alpaca file/hash; new API responses require a new snapshot identity."
+      ],
+      "source": "Alpaca/Benzinga"
+    }
+  ],
+  "schema": "investify-market-reacquisition-status-v1",
+  "specific_astra_task": null,
+  "status": "blocked_before_any_provider_response",
+  "viewer_runtime": {
+    "huggingface_hub_available": false,
+    "pandas_market_calendars_available": false,
+    "yfinance_available": false
+  }
+}

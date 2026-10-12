@@ -1,0 +1,30 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# uv
+.python-version
+
+# macOS
+.DS_Store
+
+# Secrets / env
+.env
+.env.*
+
+# Model caches / large downloads (not the corpus manifest, just the raw weights/data)
+.cache/
+huggingface_cache/
+data/raw/
+data/store/
+
+# Editors
+.vscode/
+.idea/
+
+# Claude Code local session state
+.claude/

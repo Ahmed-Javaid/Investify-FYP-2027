@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="10" time="1.663" timestamp="2026-10-12T07:56:00.351459+05:00" hostname="DESKTOP-EMOSSU6"><testcase classname="tests.test_scientific_trace_fixture" name="test_trace_retains_all_class_arrays_truth_knots_scalers_and_model_bytes" time="0.036"><failure message="assert 0.31000000000000005 == 0.29 ± 2.9e-07&#10;  &#10;  comparison failed&#10;  Obtained: 0.31000000000000005&#10;  Expected: 0.29 ± 2.9e-07">def test_trace_retains_all_class_arrays_truth_knots_scalers_and_model_bytes():
+        trace = trace_fixture()
+        assert np.asarray(trace['evaluation']['raw_margins_all_classes']).shape == (2, 3)
+        assert trace['evaluation']['truth'] == ['Sell', 'Buy']
+        assert trace['calibration_scaler']['mean'][1] is None
+        assert trace['calibration_model']['sha256'] == trace['evaluation_model']['sha256']
+        assert trace['replay']['purpose'] == 'unit_fixture'
+&gt;       assert trace['replay']['brier_before'] == pytest.approx(.29)
+E       assert 0.31000000000000005 == 0.29 ± 2.9e-07
+E         
+E         comparison failed
+E         Obtained: 0.31000000000000005
+E         Expected: 0.29 ± 2.9e-07
+
+tests\test_scientific_trace_fixture.py:47: AssertionError</failure></testcase><testcase classname="tests.test_scientific_trace_fixture" name="test_probability_and_model_byte_tampering_are_independently_rejected" time="0.006" /><testcase classname="tests.test_scientific_trace_fixture" name="test_all_zero_isotonic_outputs_are_not_uniform_filled" time="0.003" /><testcase classname="tests.test_scientific_trace_fixture" name="test_frozen_mode_cannot_claim_different_model_or_scaler_objects" time="0.003" /><testcase classname="tests.test_scientific_trace_fixture" name="test_truth_date_alignment_and_nonfinite_scores_fail_closed" time="0.005" /><testcase classname="tests.test_engine_orchestration_fixture" name="test_frozen_mode_reuses_the_exact_classifier_and_scaler_for_calibration_and_evaluation" time="0.042" /><testcase classname="tests.test_engine_orchestration_fixture" name="test_explicit_refit_comparator_fits_distinct_models_and_scalers" time="0.039" /><testcase classname="tests.test_engine_orchestration_fixture" name="test_full_price_endpoints_survive_feature_mask_and_calibration_selection_before_scoring" time="0.062" /><testcase classname="tests.test_engine_orchestration_fixture" name="test_unknown_calibration_mode_is_refused" time="0.017" /><testcase classname="tests.test_engine_orchestration_fixture" name="test_identity_change_during_orchestration_refuses_a_result" time="0.039" /></testsuite></testsuites>

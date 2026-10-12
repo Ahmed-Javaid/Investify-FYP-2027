@@ -1,0 +1,72 @@
+\chapter{Software Requirements}
+\section{User Interactions / Use Cases}
+The increment lets a reviewer select a historical corpus/session, inspect all technical/news evidence, check explanations, inspect rejection/fallback, complete an explicit prototype risk profile, and compare a separate profile-dependent linear blend. It identifies absent social features, historical data, unchanged classifier probabilities and constant-Buy behaviour. The final retail-user journey remains broader than this demonstration.
+\section{Use Case Diagram}
+The implemented interactions are Select Historical Decision, Inspect Evidence, Check Explanation, Inspect Rejection/Fallback, Calculate Prototype Profile, Compare Separate Blend, and Inspect Social Study Evidence. The diagram represents the current reviewer/operator journey, not a complete approved retail-product design.
+\begin{figure}[htbp]\centering
+\input{figures/mideval_use_cases}
+\caption{Implemented mid-evaluation reviewer/operator interactions and explicit study dependencies.}
+\end{figure}
+\section{Detailed Use Cases}
+For Check Explanation, the precondition is an available, validated record. The user submits visible text and optional JSON claims. Both are checked against the record. A contradiction, missing essential display claim, malformed payload, or unsupported sentence in strict mode causes rejection and a verified deterministic fallback. An unavailable record produces an explicit error instead of a substituted decision.
+\section{Functional Requirements}
+These identifiers document this increment; they do not replace the full proposal baseline or imply supervisor approval of a scope change.
+\begin{longtable}{p{0.15\textwidth}p{0.56\textwidth}p{0.18\textwidth}}
+\toprule Identifier & Requirement & Status\\\midrule
+MID-FR-01 & Load real saved decisions; disclose unavailable/invalid inputs. & Implemented\\
+MID-FR-02 & Show all technical/news features with values, attributions, meanings, and limitations. & Implemented\\
+MID-FR-03 & Check visible prose and JSON independently against the record. & Implemented\\
+MID-FR-04 & Reject known contradictions and missing essential claims; verify the fallback. & Implemented\\
+MID-FR-05 & Retain the candidate's rejection report separately from the fallback report. & Implemented\\
+MID-FR-06 & Reject unparsed sentences in strict mode. & Implemented\\
+MID-FR-07 & Disable scientific re-runs when input files are absent, empty, unreadable or structurally invalid, or runtime modules are missing. & Structural preflight tested\\
+MID-FR-08 & Request only an explicitly configured local generator; bound retries/timeouts and disclose fallback. & Adapter tested; real model pending\\
+MID-FR-09 & Check complete maintained feature definitions in both visible text and JSON. & Implemented\\
+MID-FR-10 & Preserve raw/failed attempts and frozen evaluation selection; report no model-quality score without completions. & Implemented; plan recorded\\
+MID-FR-11 & Check every feature's value, SHAP magnitude/direction/target, family totals and attribution scope in both guided representations. & Implemented\\
+MID-FR-12 & Require all profile answers; expose capacity/tolerance reconciliation and matched/binding project caps. & Implemented prototype\\
+MID-FR-13 & Fit comparator scaling on earlier development rows; refuse development-session decisions and missing technical inputs. & Implemented\\
+MID-FR-14 & Show the profile-dependent blend beside a fixed reference, preserving saved classifier probabilities and disclosing unvalidated assumptions. & Implemented prototype\\
+MID-FR-15 & Validate social-post provenance, declared AI or human initial labels and annotation provenance, adjudication/exclusions and a frozen chronological study plan. & AI reference pilot frozen; candidate inference pending\\
+MID-FR-16 & Require matching code/data/checkpoint/preprocessing and complete paired held-out outputs for sentiment comparison; preserve failures/raw runs. & Tool tested; real study pending\\
+MID-FR-17 & Run a declared social classifier only from existing local weights with explicit class/text/token mapping; retain logits, truncation and failures. & Runner fixture-tested; real load pending\\
+MID-FR-18 & Retain actual teacher prose and provenance; verify it independently of assembled JSON; exclude test dates and export training/validation separately. & Six-example construction pilot; student pending\\
+\bottomrule
+\end{longtable}
+\section{Non-Functional Requirements}
+The original quantitative NFRs remain separate from this increment's scoped engineering contracts. None of these planned performance bounds is accepted from template, fixture, HTTP health or import tests alone.
+\begin{longtable}{p{0.12\textwidth}p{0.62\textwidth}p{0.15\textwidth}}
+\toprule ID & Preserved original acceptance target & Current status\\\midrule
+NFR-1 & Feature assembly, inference, TreeSHAP and verification below 800 ms at p95; target VM, warm cache; excludes generation. & Unmeasured\\
+NFR-2 & Sentiment throughput at least 150 documents/s on 16 GB GPU, fp16 and 128-token input. & Unmeasured\\
+NFR-3 & TreeSHAP below 50 ms on CPU. & Unmeasured\\
+NFR-4 & Peak resident inference memory below 4 GB on the target VM. & Unmeasured\\
+NFR-5 & QLoRA within four GPU hours on the 16 GB envelope; later milestone. & Unexecuted\\
+NFR-6 & Explanation including verification below five seconds; target VM, CPU. & Unmeasured; reconcile\\
+NFR-7 & Nightly incremental ingest and scoring over the full universe below 30 minutes; GPU and local store. & Unexecuted\\
+NFR-8 & Full purged walk-forward sweep and hyperparameter search below 90 minutes on CPU. & Unmeasured\\
+\bottomrule\end{longtable}
+The local adapter's 20-second default socket timeout, configurable upper bound and two attempts do not establish a five-second whole-request deadline. Its bounded-failure behaviour is tested separately; NFR-6 is pending reconciliation and measurement. The inspected GPU has 10,240 MiB, so the proposal's 16 GB targets are not assumed satisfied. The separate recovered classifier runtime is CPU-only and is not a QLoRA environment.
+
+\begin{longtable}{p{0.15\textwidth}p{0.51\textwidth}p{0.23\textwidth}}
+\toprule Scoped ID & Testable increment acceptance & Evidence/status\\\midrule
+MID-NFR-01 & Preserve rejected-candidate reporting and verify fallback independently. & Verifier/emission/HTTP regressions\\
+MID-NFR-02 & Show explicit unavailable-data/refusal states without fabricated decisions or experiment results. & Record/readiness/widget tests\\
+MID-NFR-03 & Local generator requests use loopback, bounded attempts/socket timeouts and retain failures. & Transport/adapter fixtures; whole deadline unmeasured\\
+MID-NFR-04 & Expose only declared local routes, reject malformed/nonfinite/oversized requests and redact credentials. & HTTP/transport tests; prototype scope\\
+MID-NFR-05 & Git-free delivery verifies included inventory and reports uncommitted identity explicitly. & Source/handover tests and archive receipts\\
+MID-NFR-06 & A visible verification report must match the current record, text, JSON-inclusion and strict setting; obsolete record, source, profile and result requests cannot publish or release a newer request. & Eight pure-state assertions and twelve controlled Node handler cases; browser QA pending\\
+\bottomrule\end{longtable}
+These contracts do not replace the original NFRs or certify participant comprehension, deployment security or scientific accuracy.
+\subsection{Reliability}
+Missing inputs do not produce invented decisions. A template failing its own verifier raises an error. The portable server calls the real pipeline rather than simulating generation.
+\subsection{Usability}
+Candidate and emitted text are labelled separately. Feature meanings, raw-score attribution units, and unsupported capabilities are disclosed. Visual QA and participant comprehension checks remain pending.
+\subsection{Performance}
+Interactions perform no training or corpus scoring. HTTP duration is recorded in the live evidence JSON; it is not a browser-rendering or full-system latency measurement.
+\subsection{Security}
+The portable server binds to loopback and serves a single page, one explicit state script and declared APIs. It does not expose arbitrary project files or provide brokerage access, authentication, or production deployment.
+\section{Acceptance Criteria}
+Both corpora retain their recorded facts and accepted templates. Correct JSON cannot hide wrong visible prose; correct prose cannot hide wrong JSON. Rejection yields the verified template and retained failed report. Missing inputs are disclosed without synthetic replacement. Strict mode rejects unsupported sentences while preserving correct templates.
+\section{Requirements Traceability}
+The appendix and the machine-checked working traceability matrix map these 18 identifiers to exact source symbols and named executed tests. The check establishes anchor existence and execution, not a coverage percentage or institutional acceptance. Full proposal requirements still need reconciliation with agreed owners, approved iteration dates, social-study evidence, risk semantics, LLM evaluation, and deployment.

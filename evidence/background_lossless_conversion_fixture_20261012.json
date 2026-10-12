@@ -1,0 +1,43 @@
+{
+  "protocol": "original-cardiff-lossless-safetensors-v1",
+  "purpose": "unit_fixture",
+  "source_bin_sha256": "255daa48c6746782105f86487255cefbafb6c3831adb2cee1e2fac3000e16b39",
+  "source_bin_bytes": 1965,
+  "converted_sha256": "fa3e411bfce19bf54c7beb592b411898b435d05b3605e108673fda1000a70c8b",
+  "converted_bytes": 282,
+  "torch": "2.12.0+cpu",
+  "state_dict_keys": 3,
+  "tensor_equality": [
+    {
+      "key": "LABELLED.alias",
+      "dtype": "torch.float32",
+      "shape": [
+        4
+      ],
+      "raw_bytes_sha256": "774c36eae40dfacf13f9baccc4c132a92944c3f94a013d248854c4b5f886a063"
+    },
+    {
+      "key": "LABELLED.bias",
+      "dtype": "torch.float16",
+      "shape": [
+        1
+      ],
+      "raw_bytes_sha256": "195f58bc6d6b7b36335c95e08343825a7ae6f30437b4a7e6fa7b89d76907570a"
+    },
+    {
+      "key": "LABELLED.weight",
+      "dtype": "torch.float32",
+      "shape": [
+        4
+      ],
+      "raw_bytes_sha256": "774c36eae40dfacf13f9baccc4c132a92944c3f94a013d248854c4b5f886a063"
+    }
+  ],
+  "all_keys_dtype_shape_raw_bytes_equal": true,
+  "weights_only": true,
+  "dtype_casts": 0,
+  "keys_dropped": 0,
+  "model_inference_calls": 0,
+  "converter_sha256": "969fa16ada746aa6903f4bb201b726dc6047e054b43c9e9c3fa9ff8a1fa6cf49",
+  "scope": "Lossless file serialization only; no independent execution attestation, model score or tokenizer/config authentication"
+}

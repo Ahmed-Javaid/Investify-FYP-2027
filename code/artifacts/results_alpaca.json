@@ -1,0 +1,770 @@
+{
+  "provenance": {
+    "seed": 42,
+    "corpus": "alpaca",
+    "corpus_spec": {
+      "loader": "alpaca",
+      "path": "data/raw/alpaca_nvda_news.csv",
+      "feature_matrix": "data/store/feature_matrix_alpaca.parquet",
+      "results_prefix": "results_alpaca"
+    },
+    "tickers": [
+      "NVDA"
+    ],
+    "date_range": {
+      "start": "2018-01-01",
+      "end": "2023-12-31"
+    },
+    "git_commit": "ca32f7ef79e86653b2ad637922472ac230f0fda5",
+    "package_versions": {
+      "python": "3.11.2",
+      "pandas": "2.3.3",
+      "numpy": "1.26.4",
+      "scikit-learn": "1.9.0",
+      "xgboost": "3.2.0"
+    },
+    "corpus_manifest": {
+      "source": {
+        "name": "FNSPID",
+        "citation": "Dong, Z., Fan, X., Peng, Z. (2024). FNSPID: A Comprehensive Financial News Dataset in Time Series. arXiv:2402.06698",
+        "huggingface_repo": "Zihan1004/FNSPID",
+        "repo_type": "dataset",
+        "verified_canonical": true,
+        "verification_note": "Confirmed via dataset card: author matches paper (Zihan Dong), arXiv tag matches brief's cited arXiv:2402.06698 exactly. 41 other HF repos matched a search for 'FNSPID'; all are forks/derivatives with far lower downloads/likes.",
+        "license": "CC BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0 International)",
+        "licensing_note": "Non-commercial use only per dataset card. Commercial use requires explicit permission from authors. Fine for this academic FYP; flag if any future commercial framing is considered.",
+        "retrieval_timestamp_all_external": "2026-09-09T20:39:35Z",
+        "retrieval_timestamp_nasdaq_exteral": "2026-09-10T05:35:00Z"
+      },
+      "repo_files": [
+        {
+          "path": "Stock_news/All_external.csv",
+          "size_bytes": 5731397037,
+          "sha256": "5d4c018036bd82ca821da71b7a9c0c7db3289642e0fc6f897ea69f4a0c5135c3",
+          "scan_status": "complete_full_scan"
+        },
+        {
+          "path": "Stock_news/nasdaq_exteral_data.csv",
+          "size_bytes": 23232979597,
+          "sha256": "1a7a3eb8e6b97ec19f286f2cfca3371542bddb272ab1eb8f36e33ad98fa5c4da",
+          "scan_status": "complete_full_scan_in_two_legs_see_process_notes"
+        },
+        {
+          "path": "Stock_price/full_history.zip",
+          "size_bytes": 589525596,
+          "scan_status": "not_examined_prices_come_from_yfinance_per_brief"
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 2014,
+          "scan_status": "read_full"
+        }
+      ],
+      "columns_present": {
+        "both_csv_files": [
+          "Date",
+          "Article_title",
+          "Stock_symbol",
+          "Url",
+          "Publisher",
+          "Author",
+          "Article",
+          "Lsa_summary",
+          "Luhn_summary",
+          "Textrank_summary",
+          "Lexrank_summary"
+        ],
+        "meets_minimum_requirement": true,
+        "note": "Article/Lsa_summary/etc. columns are empty (NaN) in All_external.csv rows; nasdaq_exteral_data.csv carries full article bodies (source of its 4x larger size). Neither matters for this spike -- brief scores headlines only (128-token truncation)."
+      },
+      "timestamp_granularity_finding": {
+        "headline": "CRITICAL, CONFIRMED ACROSS BOTH FILES BY FULL SCAN: for our 3 target tickers, 99.66-99.78% of nasdaq_exteral_data.csv timestamps (and 97.9-99.7% of All_external.csv's) are truncated/defaulted to exactly 00:00:00 UTC. Real intraday timestamps: ~25-31 rows per ticker across all of 2018-2023, out of 9,000-11,700 total rows per ticker.",
+        "all_external_csv_full_scan_AAPL_NVDA_TSLA": {
+          "AAPL": {
+            "midnight_fraction": 0.9789,
+            "n_rows": 473
+          },
+          "NVDA": {
+            "midnight_fraction": 0.9968,
+            "n_rows": 3146
+          },
+          "TSLA": {
+            "midnight_fraction": 0.9947,
+            "n_rows": 1875
+          }
+        },
+        "nasdaq_exteral_data_csv_full_scan_AAPL_NVDA_TSLA": {
+          "AAPL": {
+            "midnight_fraction": 0.9966,
+            "n_rows": 9142,
+            "non_midnight_rows_2018_2023": 31
+          },
+          "NVDA": {
+            "midnight_fraction": 0.9978,
+            "n_rows": 11709,
+            "non_midnight_rows_2018_2023": 26
+          },
+          "TSLA": {
+            "midnight_fraction": 0.9976,
+            "n_rows": 10294,
+            "non_midnight_rows_2018_2023": 25
+          }
+        },
+        "implication": "Both files, independently sourced (different publisher mix), show the same pathology for the same 3 tickers: overwhelmingly date-only timestamps. The brief's 16:00 ET same-session-vs-next-session cutoff rule, and the E_SAMEBAR_TEXT leak arm built on it, need to know whether a headline landed before or after the close -- that information does not exist in this field for ~99.7% of rows. With only ~25-31 genuinely-timestamped rows per ticker across 6 years, there is not enough real signal to run the same-bar arm as designed against the committed 3-ticker universe."
+      },
+      "coverage_finding": {
+        "all_external_csv_AAPL_NVDA_TSLA_full_scan": {
+          "AAPL": {
+            "date_range": [
+              "2020-03-09",
+              "2020-06-10"
+            ],
+            "n_rows": 473,
+            "note": "All rows fall in a 3-month window in 2020. Nothing before or after."
+          },
+          "NVDA": {
+            "date_range": [
+              "2011-03-03",
+              "2020-06-10"
+            ],
+            "n_rows": 3146,
+            "note": "2011-2020 present, nothing 2021-2023."
+          },
+          "TSLA": {
+            "date_range": [
+              "2019-07-01",
+              "2020-06-10"
+            ],
+            "n_rows": 1875,
+            "note": "~11 months only, nothing 2021-2023."
+          },
+          "implication": "Alone, does not reach the brief's 2018-2023 window beyond a mid-2020 slice for any ticker."
+        },
+        "nasdaq_exteral_data_csv_AAPL_NVDA_TSLA_full_scan": {
+          "AAPL": {
+            "per_year": {
+              "2020": 473,
+              "2022": 3018,
+              "2023": 5651
+            },
+            "n_rows": 9142,
+            "gap": "No 2018, 2019, or 2021 rows at all."
+          },
+          "NVDA": {
+            "per_year": {
+              "2011": 224,
+              "2012": 180,
+              "2013": 144,
+              "2014": 118,
+              "2015": 180,
+              "2016": 336,
+              "2017": 614,
+              "2018": 526,
+              "2019": 507,
+              "2020": 309,
+              "2021": 702,
+              "2022": 2332,
+              "2023": 5537
+            },
+            "n_rows": 11709,
+            "gap": "Continuous 2018-2023, no gap."
+          },
+          "TSLA": {
+            "per_year": {
+              "2019": 733,
+              "2020": 1141,
+              "2022": 3046,
+              "2023": 5374
+            },
+            "n_rows": 10294,
+            "gap": "No 2018 or 2021 rows."
+          },
+          "implication": "Much better than All_external.csv -- NVDA is fully continuous 2018-2023. AAPL and TSLA both have a real, unexplained gap: no 2021 coverage at all, and AAPL additionally has no 2018-2019. Not investigated further (could be a corpus artifact, or AAPL/TSLA genuinely had a gap in this specific source's crawl -- undetermined)."
+        }
+      },
+      "extracted_subsets": [
+        {
+          "path": "data/raw/fnspid_all_external_aapl_nvda_tsla.csv",
+          "gitignored": true,
+          "sha256": "e0f817924b5cf116aea2655a85fb35921129ccc6ad1a156181701d4c3058fefd",
+          "row_count": 5494,
+          "source_file": "Stock_news/All_external.csv",
+          "scan_coverage": "100% -- 13,057,514 rows scanned, byte count matches upstream content-length exactly"
+        },
+        {
+          "path": "data/raw/fnspid_nasdaq_external_aapl_nvda_tsla.csv",
+          "gitignored": true,
+          "sha256": "b47f355438c3658bce578ed0838fc7ed90f882065a0c7a003c20118830890c5d",
+          "row_count": 31145,
+          "source_file": "Stock_news/nasdaq_exteral_data.csv",
+          "scan_coverage": "100% -- scanned in two legs (crashed at 73%, resumed from an estimated byte offset with a 1GB safety margin, 642 boundary duplicates removed). See process_notes."
+        }
+      ],
+      "process_notes": {
+        "timebox_status": "EXCEEDED substantially. Brief allotted 2 hours; this probe ran roughly 8 hours wall-clock across two files (most of it unattended background transfer time, not active analysis -- but still far past the nominal timebox).",
+        "network_issue": "HuggingFace-backed storage for this dataset throttled to ~1-2.4 MB/s regardless of approach (single stream, 8-way parallel range requests, or pandas' own urllib-based URL streaming -- the last of these additionally exhibited a separate near-total stall unrelated to bandwidth, cause not fully diagnosed, abandoned in favor of a working approach rather than debugged further under time pressure).",
+        "tooling_bugs_found_and_fixed": [
+          "All_external.csv: first working attempt crashed at 75% on a ParserError from manually splitting the byte buffer on the last newline, which occasionally landed inside a quoted multi-line field. Fixed by feeding the httpx byte stream through a file-like adapter directly into pandas' own C-engine tokenizer (verified against a synthetic adversarial test before rerunning).",
+          "nasdaq_exteral_data.csv: crashed at 73% on a pandas-internal IndexError in _concatenate_chunks, triggered by combining usecols with chunked low_memory dtype-consistency checks. Fixed with dtype=str + low_memory=False. Recovered via a resumed run from an estimated byte offset (1GB safety margin) rather than a full 3hr restart; 642 duplicate rows near the resume boundary removed afterward."
+        ],
+        "alternatives_not_evaluated": "Non-FNSPID corpora (GDELT, live yfinance/RSS headlines) were not evaluated, per the brief's instructions for a source that proves unworkable. FNSPID is not unworkable in the sense of 'unobtainable' -- both files were fully retrieved and analyzed -- but the granularity finding above means the spike's core assumption (testable same-bar leakage) cannot be demonstrated against this corpus as originally scoped. This is the decision point for Phase 1."
+      },
+      "alpaca_news_supplemental_source": {
+        "_note": "ADDITIONAL source, appended without altering the FNSPID entry above. Acquired specifically because FNSPID's NVDA rows are 99.78% midnight-defaulted (26 genuine timestamps out of 11,708 -- see timestamp_granularity_finding above), too thin to measure the E_SAMEBAR_TEXT leak arm. Full detail in artifacts/alpaca_probe_report.md.",
+        "source": {
+          "name": "Alpaca Markets News API (Benzinga wire)",
+          "endpoint": "https://data.alpaca.markets/v1beta1/news",
+          "api_version": "v1beta1",
+          "ticker": "NVDA",
+          "auth": "APCA-API-KEY-ID / APCA-API-SECRET-KEY headers, credentials read from gitignored .env, never logged or written to any output",
+          "query_params": {
+            "symbols": "NVDA",
+            "start": "2018-01-01T00:00:00Z",
+            "end": "2023-12-31T23:59:59Z",
+            "limit": 50,
+            "sort": "asc",
+            "include_content": "false"
+          },
+          "retrieval_timestamp": "2026-09-10T14:26:00-05:00"
+        },
+        "probe_step1_timestamp_granularity": {
+          "method": "limit=50 sample pulled for a ~3-month window in each of 2018, 2020, 2023",
+          "2018_window": {
+            "range": [
+              "2018-01-01",
+              "2018-03-31"
+            ],
+            "articles_returned": 50,
+            "non_midnight_fraction": 1.0
+          },
+          "2020_window": {
+            "range": [
+              "2020-01-01",
+              "2020-03-31"
+            ],
+            "articles_returned": 50,
+            "non_midnight_fraction": 1.0
+          },
+          "2023_window": {
+            "range": [
+              "2023-01-01",
+              "2023-03-31"
+            ],
+            "articles_returned": 50,
+            "non_midnight_fraction": 1.0
+          },
+          "verdict": "Not midnight-defaulted like FNSPID. Every sampled row across all three probe windows carries a genuine second-resolution created_at. Proceeded to full pull."
+        },
+        "probe_step2_earliest_available_date": {
+          "method": "per-year earliest-article probe (sort=asc, limit=1) from 2010 through 2018",
+          "results_by_year": {
+            "2010": null,
+            "2012": null,
+            "2014": null,
+            "2015": "2015-01-05T20:14:29Z",
+            "2016": "2015-12-17T15:44:51Z",
+            "2017": "2017-01-02T15:13:33Z",
+            "2018": "2018-01-02T09:15:41Z"
+          },
+          "true_earliest_found": "2015-01-05T20:14:29Z",
+          "verdict": "No free-tier history restriction encountered down to 2015 -- well before the 2018 start of the target window, so the full 2018-2023 pull is unconstrained by subscription tier."
+        },
+        "pull_result": {
+          "total_rows": 6769,
+          "duplicate_ids_removed": 0,
+          "true_date_range_utc": [
+            "2017-07-31T21:10:51Z",
+            "2023-12-30T09:16:38Z"
+          ],
+          "note_on_range": "One row (id 9851408, 2017-07-31) fell outside the requested start=2018-01-01 boundary and was NOT chronologically first in the asc-sorted pagination sequence (appeared mid-stream at row 2313 of 6769) -- a minor Alpaca API/pagination anomaly, not investigated further given negligible size (1 row / 0.015%). Retained in the output file rather than silently dropped. 6,768 of 6,769 rows fall within the committed 2018-01-01..2023-12-31 window.",
+          "rows_per_year_ny_local": {
+            "2017": 1,
+            "2018": 493,
+            "2019": 375,
+            "2020": 515,
+            "2021": 1035,
+            "2022": 1632,
+            "2023": 2718
+          },
+          "pull_duration_wall_clock_seconds": 49,
+          "pages_fetched": 136,
+          "checkpointed": true,
+          "checkpoint_path": "data/raw/.alpaca_pull_checkpoint.json (gitignored, transient)"
+        },
+        "timestamp_granularity_finding": {
+          "fraction_non_midnight_utc": 1.0,
+          "n_genuine_timestamps": 6769,
+          "n_total": 6769,
+          "contrast_with_fnspid": "FNSPID NVDA: 26 genuine timestamps out of 11,708 rows (0.22%). Alpaca NVDA: 6,769 genuine timestamps out of 6,769 rows (100%)."
+        },
+        "cutoff_and_session_mapping_analysis": {
+          "rows_ny_local_time_at_or_after_16_00": {
+            "count": 810,
+            "fraction": 0.1197,
+            "note": "these are the rows the 16:00 ET cutoff rule actually acts on"
+          },
+          "rows_on_weekend_ny_local": 210,
+          "rows_on_weekday_non_trading_session_ny_local": 22,
+          "rows_on_any_non_trading_day": 232,
+          "rows_where_samebar_session_differs_from_correct_next_session": {
+            "count_all_rows": 749,
+            "fraction_all_rows": 0.1107,
+            "count_within_2018_2023_window": 748,
+            "computed_via": "investify.calendars.NYSECalendar + investify.ingest.news.map_to_sessions / map_to_sessions_samebar, imported read-only, not modified"
+          },
+          "contrast_with_fnspid": "FNSPID: 1 of 26 genuinely-timestamped rows maps to a different session under same-bar vs. next-session rules, and that one case was diagnosed as a timestamp-default artifact rather than a genuine after-close item (phase2_report.md Sec.3). Alpaca: 748-749 of 6,769 rows (~11%) map differently, driven by real after-close and weekend/holiday publication times -- large enough for E_SAMEBAR_TEXT to be measured with statistical power, not just illustrated."
+        },
+        "shape_vs_load_ticker_news": {
+          "columns_written": [
+            "id",
+            "ticker",
+            "headline",
+            "event_ts",
+            "publisher",
+            "author",
+            "url",
+            "n_symbols_tagged"
+          ],
+          "matches_load_ticker_news_output_columns": [
+            "ticker",
+            "headline",
+            "event_ts",
+            "publisher"
+          ],
+          "note": "src/investify/ingest/news.py::load_ticker_news takes RAW FNSPID columns (Date/Article_title/Stock_symbol/Publisher) and returns ticker/headline/event_ts/publisher after filtering+renaming+parsing (format '%Y-%m-%d %H:%M:%S UTC'). This Alpaca CSV is already shaped like load_ticker_news's OUTPUT, not its input -- it is pre-filtered to NVDA and already named ticker/headline/event_ts/publisher. event_ts here is ISO8601 with 'Z' suffix (e.g. 2020-01-09T20:15:55Z), not FNSPID's 'YYYY-MM-DD HH:MM:SS UTC' format, so pd.to_datetime(..., utc=True) parses it directly with no format string needed. news.py was NOT modified -- a separate small loader (not built here, out of this script's scope) would be needed to consume this file; load_ticker_news as written cannot be pointed at it directly because its Date-parsing format string and Stock_symbol column name are FNSPID-specific.",
+          "publisher_column_caveat": "Alpaca's 'source' field (mapped to publisher) was empty string for every sampled row -- the entire feed is the Benzinga wire, so this column carries no discriminating information, same as FNSPID's own frequently-empty Publisher column. 'author' (the writing analyst/reporter) is populated and was kept as an extra column."
+        },
+        "extracted_subset": {
+          "path": "data/raw/alpaca_nvda_news.csv",
+          "gitignored": true,
+          "sha256": "7c72ad6d621bcb7a6680eed69fcd13db0d240afd3189eeb583734d3d52b2feb7",
+          "row_count": 6769,
+          "retrieval_timestamp": "2026-09-10T14:26:00-05:00",
+          "pull_script": "scripts/pull_alpaca_nvda_news.py"
+        },
+        "recommendation": "Alpaca makes E_SAMEBAR_TEXT genuinely measurable: 100% real timestamps (vs FNSPID's 0.22%) and ~11% of rows (748-749) map to a different session under the same-bar vs. correct rule (vs FNSPID's 1 of 26). See artifacts/alpaca_probe_report.md for the full writeup and caveats before adopting it as the primary source for that arm."
+      }
+    },
+    "xgboost_config": {
+      "objective": "multi:softprob",
+      "tree_method": "hist",
+      "n_estimators": 300,
+      "max_depth": 4,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 1.0,
+      "min_child_weight": 1,
+      "random_state": 42,
+      "n_jobs": 4
+    },
+    "splits": {
+      "n_folds": 6,
+      "embargo_days": 5
+    },
+    "leakage_control": {
+      "pass_threshold_abs_lift": 0.03,
+      "bootstrap_resamples": 10000
+    },
+    "feature_cols": [
+      "rsi_14",
+      "macd_hist",
+      "dist_sma200",
+      "bollinger_pos",
+      "obv_slope",
+      "mean_polarity",
+      "mention_volume",
+      "mom_3d",
+      "mom_7d",
+      "volume_z",
+      "dispersion"
+    ],
+    "run_completed_utc": "2026-09-10T11:31:06.031944+00:00"
+  },
+  "results": [
+    {
+      "arm": "A_CLEAN",
+      "horizon_days": 1,
+      "changes": "Nothing. Correct throughout.",
+      "n_rows": 1309,
+      "n_folds": 6,
+      "macro_f1": 0.30781662168294044,
+      "macro_f1_sd": 0.040985080214796604,
+      "chance": 0.3314023717045968,
+      "lift": -0.02358575002165636,
+      "ci_lo": -0.056815167251749045,
+      "ci_hi": 0.0007175578083839876,
+      "threshold": 0.03,
+      "verdict": "PASS",
+      "per_fold_f1": [
+        0.22821004998895444,
+        0.3250174823683919,
+        0.3113045684474256,
+        0.34553811421479663,
+        0.32569797101816805,
+        0.311131544059906
+      ],
+      "per_fold_baseline": [
+        0.3306549441349579,
+        0.3323223070689227,
+        0.3319911300807463,
+        0.3305156813504814,
+        0.3312629057568005,
+        0.33166726183567197
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "B_SHUFFLED",
+      "horizon_days": 1,
+      "changes": "Shuffled K-fold instead of expanding walk-forward.",
+      "n_rows": 1309,
+      "n_folds": 6,
+      "macro_f1": 0.3395171617260871,
+      "macro_f1_sd": 0.017264860979926556,
+      "chance": 0.3317037014379711,
+      "lift": 0.00781346028811597,
+      "ci_lo": -0.00342216568697933,
+      "ci_hi": 0.01953976469057068,
+      "threshold": 0.03,
+      "verdict": "PASS",
+      "per_fold_f1": [
+        0.33337919963306956,
+        0.33314869121320734,
+        0.36115030719934155,
+        0.3157949489039678,
+        0.3350911227629727,
+        0.35853870064396376
+      ],
+      "per_fold_baseline": [
+        0.3317279479061558,
+        0.3302204074989491,
+        0.3323131231543896,
+        0.3301296589557058,
+        0.33292939801141064,
+        0.3329016731012158
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "C_NOPURGE",
+      "horizon_days": 1,
+      "changes": "Purge and embargo removed, walk-forward retained.",
+      "n_rows": 1309,
+      "n_folds": 6,
+      "macro_f1": 0.3153214457749431,
+      "macro_f1_sd": 0.03656884114422302,
+      "chance": 0.33135755947528717,
+      "lift": -0.01603611370034408,
+      "ci_lo": -0.04275462763685109,
+      "ci_hi": 0.01005462222422531,
+      "threshold": 0.03,
+      "verdict": "PASS",
+      "per_fold_f1": [
+        0.2606002684536716,
+        0.3308433306428718,
+        0.30951741427164475,
+        0.3369331614012465,
+        0.2904335933996951,
+        0.36360090648052884
+      ],
+      "per_fold_baseline": [
+        0.33063872877010575,
+        0.3321555414145885,
+        0.3320675013216885,
+        0.3304531437697266,
+        0.331207469185554,
+        0.33162297239005967
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "D_CENTRED",
+      "horizon_days": 1,
+      "changes": "bollinger_pos computed with a centred rather than trailing window.",
+      "n_rows": 1309,
+      "n_folds": 6,
+      "macro_f1": 0.3843917599270555,
+      "macro_f1_sd": 0.03576369215186719,
+      "chance": 0.3314023717045968,
+      "lift": 0.05298938822245869,
+      "ci_lo": 0.02444490543811366,
+      "ci_hi": 0.07578855621424878,
+      "threshold": 0.03,
+      "verdict": "LEAK",
+      "per_fold_f1": [
+        0.397761645493043,
+        0.36644749777674357,
+        0.39607951763990584,
+        0.32331778036703607,
+        0.3944612601329019,
+        0.42828285815270273
+      ],
+      "per_fold_baseline": [
+        0.3306549441349579,
+        0.3323223070689227,
+        0.3319911300807463,
+        0.3305156813504814,
+        0.3312629057568005,
+        0.33166726183567197
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "D_CENTRED_SMA200",
+      "horizon_days": 1,
+      "changes": "dist_sma200 centred instead of trailing (window does not overlap the horizon).",
+      "n_rows": 1309,
+      "n_folds": 6,
+      "macro_f1": 0.33147232683220956,
+      "macro_f1_sd": 0.029005533168743085,
+      "chance": 0.3314023717045968,
+      "lift": 6.995512761276412e-05,
+      "ci_lo": -0.02092414431233554,
+      "ci_hi": 0.02175292865199512,
+      "threshold": 0.03,
+      "verdict": "PASS",
+      "per_fold_f1": [
+        0.3386270108492331,
+        0.3393543817041085,
+        0.291239478155366,
+        0.3787037037037037,
+        0.31973813621834274,
+        0.32117125036250344
+      ],
+      "per_fold_baseline": [
+        0.3306549441349579,
+        0.3323223070689227,
+        0.3319911300807463,
+        0.3305156813504814,
+        0.3312629057568005,
+        0.33166726183567197
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "E_SAMEBAR_TEXT",
+      "horizon_days": 1,
+      "changes": "Text mapped to the same session it published in, not the next.",
+      "n_rows": 1309,
+      "n_folds": 6,
+      "macro_f1": 0.32327198191689577,
+      "macro_f1_sd": 0.05368941683221865,
+      "chance": 0.3314023717045968,
+      "lift": -0.008130389787701031,
+      "ci_lo": -0.047832487148509927,
+      "ci_hi": 0.028827468733455118,
+      "threshold": 0.03,
+      "verdict": "PASS",
+      "per_fold_f1": [
+        0.24195623353742565,
+        0.2831032703620531,
+        0.3226731766859933,
+        0.3370448672774254,
+        0.3693225141814141,
+        0.3855318294570631
+      ],
+      "per_fold_baseline": [
+        0.3306549441349579,
+        0.3323223070689227,
+        0.3319911300807463,
+        0.3305156813504814,
+        0.3312629057568005,
+        0.33166726183567197
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "A_CLEAN",
+      "horizon_days": 5,
+      "changes": "Nothing. Correct throughout.",
+      "n_rows": 1305,
+      "n_folds": 6,
+      "macro_f1": 0.2792316538130504,
+      "macro_f1_sd": 0.04319040661397468,
+      "chance": 0.3287520203378126,
+      "lift": -0.049520366524762216,
+      "ci_lo": -0.07962347963474393,
+      "ci_hi": -0.016285230906905757,
+      "threshold": 0.03,
+      "verdict": "BELOW_CHANCE",
+      "per_fold_f1": [
+        0.2343717485561457,
+        0.34205405405405404,
+        0.24164990361243818,
+        0.2810841993335087,
+        0.25816218587302925,
+        0.3180678314491264
+      ],
+      "per_fold_baseline": [
+        0.32663980676306004,
+        0.3305346642741409,
+        0.3304883217241779,
+        0.3247176522241207,
+        0.33005665815357277,
+        0.3300750188878034
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "B_SHUFFLED",
+      "horizon_days": 5,
+      "changes": "Shuffled K-fold instead of expanding walk-forward.",
+      "n_rows": 1305,
+      "n_folds": 6,
+      "macro_f1": 0.4417945724703825,
+      "macro_f1_sd": 0.02236204418212744,
+      "chance": 0.33143867227023066,
+      "lift": 0.11035590020015185,
+      "ci_lo": 0.09265357520996724,
+      "ci_hi": 0.12618956267202497,
+      "threshold": 0.03,
+      "verdict": "LEAK",
+      "per_fold_f1": [
+        0.4344368089511475,
+        0.4595546250475828,
+        0.40971053933696194,
+        0.46632071672273145,
+        0.4561170017565921,
+        0.4246277430072795
+      ],
+      "per_fold_baseline": [
+        0.3299715222580839,
+        0.3313061597637852,
+        0.33315843972855214,
+        0.331564774583895,
+        0.33155479473750077,
+        0.3310763425495668
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "C_NOPURGE",
+      "horizon_days": 5,
+      "changes": "Purge and embargo removed, walk-forward retained.",
+      "n_rows": 1305,
+      "n_folds": 6,
+      "macro_f1": 0.27916791938207985,
+      "macro_f1_sd": 0.04582161654355581,
+      "chance": 0.3288779072756093,
+      "lift": -0.04970998789352943,
+      "ci_lo": -0.07901977246685436,
+      "ci_hi": -0.014501575112863957,
+      "threshold": 0.03,
+      "verdict": "BELOW_CHANCE",
+      "per_fold_f1": [
+        0.24454620776665204,
+        0.3571201019432941,
+        0.23532234883482187,
+        0.26228725234250094,
+        0.26707879104563564,
+        0.30865281435957465
+      ],
+      "per_fold_baseline": [
+        0.3271390184783052,
+        0.330625885336277,
+        0.33050780715172107,
+        0.324679226614791,
+        0.3301553761986953,
+        0.3301601298738664
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "D_CENTRED",
+      "horizon_days": 5,
+      "changes": "bollinger_pos computed with a centred rather than trailing window.",
+      "n_rows": 1305,
+      "n_folds": 6,
+      "macro_f1": 0.5481499055159249,
+      "macro_f1_sd": 0.030969206867133607,
+      "chance": 0.3287520203378126,
+      "lift": 0.21939788517811232,
+      "ci_lo": 0.1982753236832643,
+      "ci_hi": 0.23934486907628635,
+      "threshold": 0.03,
+      "verdict": "LEAK",
+      "per_fold_f1": [
+        0.5093649110129489,
+        0.5829542966611932,
+        0.5702542668059909,
+        0.5173011580334235,
+        0.5712250712250712,
+        0.5377997293569217
+      ],
+      "per_fold_baseline": [
+        0.32663980676306004,
+        0.3305346642741409,
+        0.3304883217241779,
+        0.3247176522241207,
+        0.33005665815357277,
+        0.3300750188878034
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "D_CENTRED_SMA200",
+      "horizon_days": 5,
+      "changes": "dist_sma200 centred instead of trailing (window does not overlap the horizon).",
+      "n_rows": 1305,
+      "n_folds": 6,
+      "macro_f1": 0.3116302118461535,
+      "macro_f1_sd": 0.04084892429090528,
+      "chance": 0.3287520203378126,
+      "lift": -0.017121808491659063,
+      "ci_lo": -0.046224311595339136,
+      "ci_hi": 0.013366188348762326,
+      "threshold": 0.03,
+      "verdict": "PASS",
+      "per_fold_f1": [
+        0.31890331890331886,
+        0.3760059883818871,
+        0.27113527938270204,
+        0.32924225553818526,
+        0.3096854588418183,
+        0.26480897002900966
+      ],
+      "per_fold_baseline": [
+        0.32663980676306004,
+        0.3305346642741409,
+        0.3304883217241779,
+        0.3247176522241207,
+        0.33005665815357277,
+        0.3300750188878034
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "E_SAMEBAR_TEXT",
+      "horizon_days": 5,
+      "changes": "Text mapped to the same session it published in, not the next.",
+      "n_rows": 1305,
+      "n_folds": 6,
+      "macro_f1": 0.27415798404817093,
+      "macro_f1_sd": 0.030939535660777277,
+      "chance": 0.3287520203378126,
+      "lift": -0.054594036289641656,
+      "ci_lo": -0.07567434857207421,
+      "ci_hi": -0.03287324248407562,
+      "threshold": 0.03,
+      "verdict": "BELOW_CHANCE",
+      "per_fold_f1": [
+        0.22992149758454108,
+        0.31947320332186857,
+        0.2747589461647557,
+        0.2522096221225935,
+        0.29094202898550725,
+        0.2776426061097594
+      ],
+      "per_fold_baseline": [
+        0.32663980676306004,
+        0.3305346642741409,
+        0.3304883217241779,
+        0.3247176522241207,
+        0.33005665815357277,
+        0.3300750188878034
+      ],
+      "corpus": "alpaca"
+    }
+  ]
+}

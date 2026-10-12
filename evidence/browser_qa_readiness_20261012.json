@@ -1,0 +1,10 @@
+{
+  "checked_utc": "2026-10-11T19:49:08.549441+00:00",
+  "status": "unavailable",
+  "surface_inventory": {
+    "apps": [],
+    "browsers": []
+  },
+  "source": "Actual cua.getState in this session; native APIs disabled",
+  "visual_qa_performed": false
+}

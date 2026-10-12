@@ -1,0 +1,26 @@
+{
+  "schema": "investify-cpu-tensor-fixture-regressions-v1",
+  "purpose": "unit_fixture",
+  "started_utc": "2026-10-12T10:52:06.714178+00:00",
+  "completed_utc": "2026-10-12T10:52:09.884697+00:00",
+  "python": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+  "torch": "2.12.0+cpu",
+  "safetensors": "0.8.0",
+  "tests": 6,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "passed": 6,
+  "failure_details": [],
+  "model_inference_calls": 0,
+  "original_publisher_conversions": 0,
+  "training_calls": 0,
+  "downloads": 0,
+  "source_sha256": {
+    "src/investify/model_conversion.py": "5ba20c88032443839a0bc0972e5876622304c7f41c82199bffcc68e7a0525595",
+    "tests/test_conversion_py313_regressions.py": "4dbae8345ee00fbc1d47a17c34e8074334505e25118b016c5a28bf78d71919a4",
+    "scripts/classifier_runtime_py313.py": "e75cf9faae1fd5e9f643a178fa9c7d5debe3e2c745ec6900eb6fe108ea906197"
+  },
+  "scope": "Actual CPU tensor fixtures only; no original publisher weights, model load, candidate score or scientific-lock restoration",
+  "prior_attempt": "sentiment_v4_conversion_tests_20261012_a.json retains setup/cleanup ACL failures; its negative passed arithmetic is superseded by this distinct-test count"
+}

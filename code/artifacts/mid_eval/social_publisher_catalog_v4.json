@@ -1,0 +1,45 @@
+{
+  "schema": "investify-classifier-publisher-catalog-v1",
+  "status": "metadata_incomplete",
+  "scope": "Pinned original publisher weight pointers only. Config/tokenizer byte metadata and local weights remain missing; this catalog cannot authorize research inference.",
+  "models": [
+    {
+      "model_id": "ElKulako/cryptobert",
+      "revision": "9e37c910fe87727cb842a9ac55c6388256fe0f15",
+      "status": "metadata_incomplete",
+      "files": [
+        {
+          "filename": "model.safetensors",
+          "sha256": "fe34ba09b3d701ff2b4ee69205e42c8143fcee1f89fe3a0cf10444988634a3c9",
+          "expected_bytes": null,
+          "source_url": "https://huggingface.co/ElKulako/cryptobert/blob/9e37c910fe87727cb842a9ac55c6388256fe0f15/model.safetensors"
+        }
+      ],
+      "missing_provenance": [
+        "Exact original config/tokenizer file hashes",
+        "Complete original config/special_tokens_map/vocab/merges/tokenizer/tokenizer_config file manifest",
+        "Actual local snapshot and classifier load; recovered runtime imports alone are insufficient"
+      ]
+    },
+    {
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "revision": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+      "status": "metadata_incomplete",
+      "files": [
+        {
+          "filename": "pytorch_model.bin",
+          "sha256": "4d24a3e32a88ed1c4e5b789fc6644e2e767500554e954b27dccf52a8e762cbae",
+          "expected_bytes": null,
+          "source_url": "https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest/blob/3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7/pytorch_model.bin",
+          "pointer_provenance": "Read-only reviewer reported the primary pointer; this task's direct fetch was unavailable."
+        }
+      ],
+      "missing_provenance": [
+        "Original config/tokenizer file hashes",
+        "Disclosed verified lossless conversion with original BIN, retained hash-bound receipt and exact tensor equality",
+        "Original Cardiff has no tokenizer_config.json; bind its config/special_tokens_map/vocab/merges files",
+        "Actual local snapshot and classifier load; recovered runtime imports alone are insufficient"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "schema": "investify-teacher-export-readiness-v1",
+  "checked_utc": "2026-10-11T23:23:40.862694+00:00",
+  "teacher_examples": 6,
+  "exports": {
+    "train": {
+      "rows": 4,
+      "file_sha256": "4e9c1866fca1948fe01325287ba8ff195c1fade109ee1a9952c9a3e9003a752f",
+      "decision_counts": {
+        "Buy": 4
+      },
+      "examples": [
+        {
+          "session_date": "2023-03-29",
+          "corpus": "alpaca",
+          "decision": "Buy",
+          "input_characters": 10139,
+          "target_characters": 7863,
+          "teacher_prose_characters": 3586,
+          "teacher_prose_lines": 34,
+          "actual_student_token_count": null,
+          "exactly_same_text_as_deterministic_guide": false,
+          "same_sentence_line_multiset_as_guide": true
+        },
+        {
+          "session_date": "2023-03-29",
+          "corpus": "fnspid",
+          "decision": "Buy",
+          "input_characters": 10148,
+          "target_characters": 7887,
+          "teacher_prose_characters": 3600,
+          "teacher_prose_lines": 34,
+          "actual_student_token_count": null,
+          "exactly_same_text_as_deterministic_guide": false,
+          "same_sentence_line_multiset_as_guide": true
+        },
+        {
+          "session_date": "2023-09-15",
+          "corpus": "alpaca",
+          "decision": "Buy",
+          "input_characters": 10155,
+          "target_characters": 7893,
+          "teacher_prose_characters": 3601,
+          "teacher_prose_lines": 34,
+          "actual_student_token_count": null,
+          "exactly_same_text_as_deterministic_guide": false,
+          "same_sentence_line_multiset_as_guide": true
+        },
+        {
+          "session_date": "2023-09-15",
+          "corpus": "fnspid",
+          "decision": "Buy",
+          "input_characters": 10146,
+          "target_characters": 7887,
+          "teacher_prose_characters": 3602,
+          "teacher_prose_lines": 34,
+          "actual_student_token_count": null,
+          "exactly_same_text_as_deterministic_guide": false,
+          "same_sentence_line_multiset_as_guide": true
+        }
+      ]
+    },
+    "validation": {
+      "rows": 2,
+      "file_sha256": "33eb6d82fc21256941a3a41d8f1026e3f93a8288e7bad48a7322bd5a0fd4a7e5",
+      "decision_counts": {
+        "Buy": 2
+      },
+      "examples": [
+        {
+          "session_date": "2023-10-09",
+          "corpus": "alpaca",
+          "decision": "Buy",
+          "input_characters": 10150,
+          "target_characters": 7883,
+          "teacher_prose_characters": 3595,
+          "teacher_prose_lines": 34,
+          "actual_student_token_count": null,
+          "exactly_same_text_as_deterministic_guide": false,
+          "same_sentence_line_multiset_as_guide": true
+        },
+        {
+          "session_date": "2023-10-09",
+          "corpus": "fnspid",
+          "decision": "Buy",
+          "input_characters": 10152,
+          "target_characters": 7895,
+          "teacher_prose_characters": 3602,
+          "teacher_prose_lines": 34,
+          "actual_student_token_count": null,
+          "exactly_same_text_as_deterministic_guide": false,
+          "same_sentence_line_multiset_as_guide": true
+        }
+      ]
+    }
+  },
+  "python": "3.11.9",
+  "inspected_runtime": "E:\\AI-Tools\\Temp\\investify-ui-py311\\Scripts\\python.exe",
+  "training_modules_available": {
+    "torch": false,
+    "transformers": false,
+    "peft": false,
+    "bitsandbytes": false,
+    "datasets": false,
+    "accelerate": false
+  },
+  "gpu_probe_name_and_total_mib": "NVIDIA GeForce RTX 3080, 10240",
+  "student_checkpoint_declared": false,
+  "student_tokenizer_loaded": false,
+  "student_token_counts_measured": false,
+  "student_load_smoke_test_completed": false,
+  "student_training_executed": false,
+  "training_ready": false,
+  "template_comparison_scope": "Literal text/line-multiset comparison only. The teacher can reorder checked sentences, but this does not establish new supported content, readability gains or human comprehension.",
+  "blockers": [
+    "Only four accepted real training examples and two validation examples are present.",
+    "All actual source decisions are Buy; Hold/Sell generation generalization is untested.",
+    "Exact original Phi-3-mini checkpoint, tokenizer and supported training runtime are not configured.",
+    "Combined input/target token lengths and peak training VRAM require measurement; character counts are not token counts."
+  ],
+  "scope": "Actual export character/line counts, hashes and local runtime/device probes. No tokens, training feasibility, model performance or student outcomes are invented."
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "wheel": "markupsafe-3.0.3-1-py3-none-any.whl",
+    "sha256": "2641538a20b90e9360a13d77a60e28b1624bc7cad03792baeea626f8348b08e5",
+    "source": "E:\\AI-Tools\\Cache\\pip-existing\\http-v2\\9\\c\\8\\e\\5\\9c8e526eb1d13ea5764d8042f5918709c3d27a639f1aad019b231c0a.body",
+    "variant": "Unmodified vendor Python fallback; incompatible CP313 speedup binary omitted; license retained"
+  },
+  {
+    "wheel": "itsdangerous-2.2.0-1-py3-none-any.whl",
+    "sha256": "2dcf0c963f17cd9a636247db6709461a4deb189cd99ef1c809be8ce1a51358dc",
+    "source": "https://github.com/pallets/itsdangerous",
+    "revision": "096c8d42545d3b68ea21a4f890fb2b2d8979c0bd",
+    "variant": "Unmodified official source at pinned release; license retained"
+  }
+]

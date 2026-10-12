@@ -1,0 +1,17 @@
+{
+  "schema": "investify-native-status-observation-v1",
+  "observed_utc": "2026-10-12T10:33:01Z",
+  "thread_id": "01a12d7d-bb17-7161-a314-703e2ced4de0",
+  "thread_status": "systemError",
+  "original_turn_id": "01a12d7d-c042-72a0-bdf0-9f9767c113f8",
+  "original_turn_status": "failed",
+  "original_turn_duration_ms": 20584257,
+  "followup_turn_id": "01a12fab-656c-7c90-9685-97946bcfd4ee",
+  "followup_turn_status": "failed",
+  "error_code": "context_length_exceeded",
+  "error_message": "Your input exceeds the context window of this model. Please adjust your input and try again.",
+  "evidence_source": "Native wait_threads and read_thread status, not launch receipt or inferred filesystem activity",
+  "recovery": "Current continuation takes over coordination. Three explicitly authorized parallel workers have separate source ownership; the failed native task is not restarted.",
+  "permission_request_pending": false,
+  "persistent_goal_created": false
+}

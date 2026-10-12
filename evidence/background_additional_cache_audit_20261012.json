@@ -1,0 +1,24 @@
+{
+  "checked_utc": "2026-10-12T00:43:23.829368+00:00",
+  "cache": "E:\\cache\\pip",
+  "files_inspected": 7,
+  "file_limit": 5000,
+  "search_truncated": false,
+  "candidate_wheels": [
+    {
+      "path": "E:\\cache\\pip\\http-v2\\6\\0\\9\\b\\c\\609bc8f40121469884ce667e14ef9b9a7291ce77ba3467bc8114d957.body",
+      "name": "numpy",
+      "version": "2.4.6",
+      "wheel_tags": [
+        "cp311-cp311-win_amd64"
+      ],
+      "compatible_with_inspected_interpreter": true,
+      "bytes": 12608406,
+      "origin_authenticated": false
+    }
+  ],
+  "errors": [],
+  "installation_executed": false,
+  "tool_sha256": "2540542958be7722690ba45707bbafbea6299620a27b9345efb716c72f6e9291",
+  "scope": "Read-only ZIP wheel metadata/tag discovery in one declared cache, not source/publisher authentication or dependency-lock restoration. Cache is preserved; no inferred model weights."
+}

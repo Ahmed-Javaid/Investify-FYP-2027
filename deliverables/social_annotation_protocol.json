@@ -1,0 +1,76 @@
+{
+  "status": "The actual AI reference pilot contains 200 real MSFT tweets: 117 usable labels (31 positive, 67 neutral, 19 negative) and 83 explicit exclusions. Its frozen split is 93 development/24 held out, with only two negative held-out references. One session pass is recorded with full prompt/input/raw-output/timing and declared model-identity provenance; agreement/kappa are null and independent human validation is absent. Candidate inference remains blocked with null metrics.",
+  "target_posts": 200,
+  "task": "Sentiment expressed about a named US equity in a social post, independent of its subsequent return",
+  "sampling": {
+    "required": [
+      "Document source, access/license conditions, acquisition date and selection rules",
+      "Record a real source URL/identifier and publication timestamp",
+      "Predeclare target equities and time windows",
+      "Deduplicate before splitting",
+      "Keep the evaluation subset fixed before model/prompt selection"
+    ],
+    "avoid": [
+      "Selecting examples because a model already classifies them well",
+      "Treating news headlines as an equity-social benchmark",
+      "Using subsequent price movement to decide sentiment labels",
+      "Invented posts or model-generated labels presented as human evidence"
+    ]
+  },
+  "labels": {
+    "positive": "The post expresses a favourable view of the target equity or its prospects",
+    "negative": "The post expresses an unfavourable view of the target equity or its prospects",
+    "neutral": "Relevant descriptive content without a clear favourable/unfavourable stance",
+    "exclude_or_adjudicate": "Unclear ticker, irrelevance, inaccessible content, mixed/sarcastic/ambiguous stance that cannot be resolved consistently"
+  },
+  "annotation": {
+    "method": "model_generated",
+    "human_method_supported": "two_independent_humans",
+    "procedure": [
+      "Declare source/window/sampling before acquisition",
+      "Annotate target/original text only without candidate outputs",
+      "Preserve actual model identity evidence, prompt, hashes, raw labels/reasons and run timing",
+      "Optional separate pass retains initial disagreements and adjudication",
+      "Freeze labels before candidate inference"
+    ],
+    "boundary": "AI reference agreement is not independently human-validated accuracy. Single-pass reliability statistics are null."
+  },
+  "record_fields": [
+    "post_id",
+    "source",
+    "source_kind",
+    "source_url",
+    "published_at_utc",
+    "ticker",
+    "text",
+    "model_annotations",
+    "adjudicated_label",
+    "adjudication_note",
+    "adjudicator_id",
+    "adjudicated_at_utc",
+    "exclusion_reason"
+  ],
+  "implemented_tooling": {
+    "entrypoint": "code/scripts/evaluate_social_study.py",
+    "offline_inference_entrypoint": "code/scripts/run_social_inference.py",
+    "protocol_version": "mideval-equity-social-selection-v3",
+    "documentation": "code/docs/social_selection.md",
+    "scope": "Validate declared provenance, separate labels/adjudication/exclusions; freeze chronological selection and exact checkpoint/preprocessing/data/code identities; score complete paired actual outputs",
+    "boundary": "Schemas cannot authenticate source rights/model identities/blindness. Candidate outputs and independent human validation remain absent.",
+    "actual_study_status": "Actual 200-post AI reference pilot frozen; candidate inference blocked",
+    "session_import_entrypoint": "code/scripts/import_session_annotations.py"
+  },
+  "evaluation": [
+    "Report annotation agreement and disagreements",
+    "Compare the proposed CryptoBERT checkpoint with a documented social-domain alternative",
+    "Evaluate macro-F1, per-class precision/recall and confusion matrices on exactly the same held-out posts",
+    "Preserve checkpoint identifiers, preprocessing, model outputs and dataset hashes",
+    "Use the proposal's news-only fallback if social transfer is inadequate, with the decision and limits disclosed"
+  ],
+  "pending_inputs": [
+    "Genuine candidate weights/runtime and supported Cardiff format",
+    "Actual explainer endpoint/model",
+    "Original scientific inputs/runtime",
+    "Review/adequacy decisions, institutional facts and deadline"
+  ]
+}
