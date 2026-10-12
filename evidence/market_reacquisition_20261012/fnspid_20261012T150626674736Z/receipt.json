@@ -1,0 +1,27 @@
+{
+  "schema": "investify-fnspid-acquisition-v1",
+  "started_utc": "2026-10-12T15:06:26.675299+00:00",
+  "publisher_revision": "bf9189c41527198897d1af3e17b1a0095279fc45",
+  "publisher_file": "Stock_news/nasdaq_exteral_data.csv",
+  "url": "https://huggingface.co/datasets/Zihan1004/FNSPID/resolve/bf9189c41527198897d1af3e17b1a0095279fc45/Stock_news/nasdaq_exteral_data.csv",
+  "expected_full_size": 23232979597,
+  "expected_full_sha256": "1a7a3eb8e6b97ec19f286f2cfca3371542bddb272ab1eb8f36e33ad98fa5c4da",
+  "mode": "bounded_csv_sample",
+  "alpaca_credentials_used": false,
+  "maximum_sample_bytes": 1048576,
+  "full_source_hash_verified": false,
+  "usable_for_nvda_pipeline": false,
+  "intraday_timestamp_quality_verified": false,
+  "intended_role": "Restore the original NVDA FNSPID baseline, not replace the precise-timestamp corpus",
+  "known_original_limitations": "AAPL/TSLA missing years; sparse NVDA daily news; about 99.78% NVDA midnight-defaulted timestamps. Publication-timing claims require a separate validated corpus.",
+  "historical_inputs_overwritten": false,
+  "requested_tickers": [
+    "AAPL",
+    "NVDA",
+    "TSLA"
+  ],
+  "status": "failed_incomplete",
+  "error_type": "URLError",
+  "detail": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+  "finished_utc": "2026-10-12T15:06:28.737857+00:00"
+}

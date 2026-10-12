@@ -1,0 +1,573 @@
+{
+  "provenance": {
+    "seed": 42,
+    "corpus": "alpaca",
+    "corpus_spec": {
+      "feature_matrix": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\inputs\\not_precomputed.parquet",
+      "loader": "alpaca",
+      "path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\data\\raw\\snapshots\\alpaca_nvda_20261012T155013436Z\\revision_conservative.csv",
+      "results_prefix": "results_alpaca"
+    },
+    "tickers": [
+      "NVDA"
+    ],
+    "date_range": {
+      "end": "2023-12-31",
+      "start": "2018-01-01"
+    },
+    "git_commit": "533bd66fcb56a16936ee6320746ac44a1eec5b62",
+    "package_versions": {
+      "python": "3.11.9",
+      "pandas": "2.3.3",
+      "numpy": "1.26.4",
+      "scikit-learn": "1.9.0",
+      "xgboost": "3.2.0"
+    },
+    "corpus_manifest": {
+      "schema": "investify-fresh-alpaca-corpus-v1",
+      "identity": "alpaca_revision_conservative_20261012_run01",
+      "source": "Alpaca/Benzinga fresh revision-conservative snapshot",
+      "raw_subsets": [
+        {
+          "path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\data\\raw\\snapshots\\alpaca_nvda_20261012T155013436Z\\revision_conservative.csv",
+          "sha256": "6be5f33926cba57ddf962c1e104b2768d82469befed041b4daa3d6559007096f"
+        }
+      ],
+      "price_response": {
+        "path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\data\\raw\\snapshots\\prices_nvda_20261012T155832889411Z\\split-response.json",
+        "sha256": "c23120c374535a34b6fb04f20fb9b80d41b54dc91a42815ee0002baa94649ca0"
+      },
+      "acquisition": {
+        "price_response_sha256": "c23120c374535a34b6fb04f20fb9b80d41b54dc91a42815ee0002baa94649ca0",
+        "conservative_news_sha256": "6be5f33926cba57ddf962c1e104b2768d82469befed041b4daa3d6559007096f",
+        "model_files_sha256": {
+          "config.json": "f6449ddda85eb726207a40be59c0cd3bd4b142ccb27298d5e45f9ae3396b1abe",
+          "tokenizer_config.json": "ffc7913f6084b138dad68de5a0c2f0ee25ac983709260901e01f53be5796b9d9",
+          "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+          "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+          "model.safetensors": "e5897858ff819aad7629b96ce521ae5477952d03634ef5dd30ed2d76357a9f00"
+        },
+        "acquisition_receipts_sha256": {
+          "E:\\Uni_Stuff\\FYP\\Investify\\evidence\\market_reacquisition_20261012\\price_acquisition_20261012T155832889411Z.json": "d99caa6bec4b10747ca05aeafae4b1947fcb8c1390d77ad23ce6a5d2d1668042",
+          "E:\\Uni_Stuff\\FYP\\Investify\\evidence\\market_reacquisition_20261012\\news_acquisition_20261012T160105342Z.json": "80937f066286fe85bf1af2ba222836ac46e3e901f32cd359419cefeb6f4e18e1",
+          "E:\\Uni_Stuff\\FYP\\Investify\\evidence\\finbert_publisher_acquisition_20261012.json": "cfff11b4a02b3e8e96072150de3da178f29ec2c42231c5021b44ae439e01e4bb"
+        },
+        "price_adjustment": "Alpaca SIP split adjustment, including vendor action vintage; no cash-dividend adjustment",
+        "news_timing": "Conservative event_ts is max(created_at, updated_at); versions available after the window are excluded.",
+        "point_in_time_availability_proven": false,
+        "historical_byte_reproduction": false
+      },
+      "scope": "New experiment; does not restore September corpus or historical data vintage"
+    },
+    "corpus_manifest_file_sha256": "553d7f0866d2f5fa63ebbe320b60a84bc047e879ad54d42ab4d4b16b97629f6b",
+    "corpus_lineage": {
+      "expected_raw_subset_sha256": "6be5f33926cba57ddf962c1e104b2768d82469befed041b4daa3d6559007096f",
+      "actual_raw_subset_sha256": "6be5f33926cba57ddf962c1e104b2768d82469befed041b4daa3d6559007096f",
+      "status": "original_raw_subset_bytes_verified",
+      "path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\data\\raw\\snapshots\\alpaca_nvda_20261012T155013436Z\\revision_conservative.csv"
+    },
+    "xgboost_config": {
+      "colsample_bytree": 0.8,
+      "learning_rate": 0.05,
+      "max_depth": 4,
+      "min_child_weight": 1,
+      "n_estimators": 300,
+      "n_jobs": 4,
+      "objective": "multi:softprob",
+      "random_state": 42,
+      "reg_lambda": 1.0,
+      "subsample": 0.8,
+      "tree_method": "hist"
+    },
+    "splits": {
+      "embargo_days": 5,
+      "n_folds": 6
+    },
+    "split_contract": "observed-label-end-purge-v2",
+    "scientific_identity": {
+      "source_sha256": {
+        "src/investify/engine.py": "a601913f4a4d04c5be7326d39dc70be73e47836f82e1f1fbd1933ba4204a56ee",
+        "src/investify/decision_record.py": "4c558f9765f7162f9a9f90d20711cad6fd2ef0b11d8ab7c8c9892def7bde8e5c",
+        "src/investify/calibration_split.py": "48bd71a5b9ca6246f1122d7a58f5dc2a9e2cfc83ed537aa09eb413510d21aceb",
+        "src/investify/science_identity.py": "7653c8ec07fc57618b345eb5ab44352a904fb27360839f596866029f7921b24e",
+        "src/investify/calendars.py": "5fe45ac66715db5402d0c71210cbeb5ad2939fd597963c20b7c332d6dfc78963",
+        "src/investify/labels.py": "107b8a996011e0d96eb42e5b0dcc17fa5d74c6477b73f0b6a22669bbc886d4c4",
+        "src/investify/harness/arms.py": "9438bf542d584a68260428a35860f0c8e16ae1f406fe3e6fbe272c2fd2c44753",
+        "src/investify/harness/splits.py": "21abd2a37beb34bd8105120161d7aa99a3c39b15ef8208147fc88a5b80c743b3",
+        "src/investify/harness/metrics.py": "985d56dd05f47db96ca5ef1046baf2f98eafb7dc3fbb1f8144e461bc023a62a4",
+        "src/investify/features/indicators.py": "cfa469d740e85840785b2fde29243f49f90ee259e908e5880bdb343728057586",
+        "src/investify/features/assembly.py": "dc177f4984dc51b11c333da53986714d15accc2bac41cc1dc7c6be7a344f0f8e",
+        "src/investify/features/sentiment.py": "f43e5a61b16b9201f0f66bdd48cb8891633b44198e12c254ab46da4c61b97688",
+        "src/investify/news_cache.py": "beed2673843939871123caba66e01d641e2b601612939e8ff7d701687789b4ae",
+        "src/investify/scaling.py": "d65e708778a594e106752857d0f9678a9ce7e8edb44a18633187ec17d74efafb",
+        "src/investify/market_inputs.py": "ad0ca856cd805ee8381ecec37bb2a77f15f460920bade53b68434b36278b71ec",
+        "src/investify/corpus_lineage.py": "d3b6d70311916dfc9361cc86e0d63678b49674fc5e3abcaf357123d6512a1223",
+        "src/investify/scientific_trace.py": "f8cc177ccf1e6132e68c07b8e4084393c8254d93dc4a30929e44a92eea97d917",
+        "src/investify/ingest/news.py": "63066a63d26ccc7a87b92595287cfd793070d174c8b5c8c75666ade4befb9293",
+        "src/investify/store.py": "d651ca90d06b7babe0b10c1496ae62ab04d9ebf4319f62ef68508b8d91511760",
+        "pyproject.toml": "176622e8adb4194ce95f91d00bb33901b0d0e3da5acf9e8befc97afdf3c7d042",
+        "uv.lock": "f6096f426f039b9d731a2de7014c4cb991615787abf54dc051e0686663a45840",
+        "src/investify/harness/run_spike.py": "a8fe3a630ec283a94c4366b6e4518f6af18a3747cbd5f221538d5838103f513b",
+        "scripts/build_decision_records.py": "dbf6e3fcefa9b049b73460a9fe2103f7afd88bd8d71f2b18759693f278a044b6"
+      },
+      "configuration_sha256": "77d82709b5f5bbfd61732d395ac336be0d46bccf5fabe27e0cd0027faaf529a1",
+      "input_snapshots": {
+        "prices": {
+          "path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\inputs\\store\\prices\\ticker=NVDA",
+          "files": {
+            "year=2018\\part-b72201c7d5e54fdb8c4b042b3d62f5d9-0.parquet": "3a7a1b17f6d17edfe2e753fb6d8cba340c9217ca0d2b1c4bb17f767d0a5c11bd",
+            "year=2019\\part-b72201c7d5e54fdb8c4b042b3d62f5d9-0.parquet": "debba97d0ffe62d1512290fee2406d1c7ba0c831e88062f94c1f205569a8c640",
+            "year=2020\\part-b72201c7d5e54fdb8c4b042b3d62f5d9-0.parquet": "0ae6353d6963a5348a69d2eaaef135675b5962c5587d2876d6db3a692a1cfc9f",
+            "year=2021\\part-b72201c7d5e54fdb8c4b042b3d62f5d9-0.parquet": "3a8fe7f325178caa6877fd29702358a1b01c83edad2c702378bd66eb806d3e0d",
+            "year=2022\\part-b72201c7d5e54fdb8c4b042b3d62f5d9-0.parquet": "2f57c0fbf63af8083c0e1e27f5d0910c3dd9bd619593e232696c621c311e02c7",
+            "year=2023\\part-b72201c7d5e54fdb8c4b042b3d62f5d9-0.parquet": "acd5f39bee5352983914a346c98b55c064bdc8578bf8fff427d3e9cb746d2654"
+          }
+        },
+        "news": {
+          "path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\data\\raw\\snapshots\\alpaca_nvda_20261012T155013436Z\\revision_conservative.csv",
+          "files": {
+            "revision_conservative.csv": "6be5f33926cba57ddf962c1e104b2768d82469befed041b4daa3d6559007096f"
+          }
+        },
+        "sentiment_scores": {
+          "path": "E:\\AI-Tools\\Cache\\finbert_scores\\alpaca_revision_conservative_20261012_run01\\finbert_scores.parquet",
+          "files": {
+            "finbert_scores.parquet": "5adc86b573dbe11eba6519e57a0b2c63ae05d8ee2518b7a054fb91b25309b2e7"
+          }
+        },
+        "corpus_manifest": {
+          "path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\inputs\\corpus_manifest.json",
+          "files": {
+            "corpus_manifest.json": "553d7f0866d2f5fa63ebbe320b60a84bc047e879ad54d42ab4d4b16b97629f6b"
+          }
+        }
+      },
+      "runtime": {
+        "python": "3.11.9",
+        "packages": {
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pyarrow": "25.0.1",
+          "scikit-learn": "1.9.0",
+          "scipy": "1.17.1",
+          "xgboost": "3.2.0",
+          "shap": "0.49.1",
+          "pandas-market-calendars": "5.4.0"
+        }
+      },
+      "scope": "Byte/config/runtime identity, not proof of source rights, truth, timing quality or inference execution",
+      "identity_sha256": "9f542fa0486ec690946d167df48213f3e4561e00def5641726734b8590a240e9"
+    },
+    "label_availability": "Exact observed-row endpoint computed on full prices before feature filtering; strictly before test session",
+    "scientific_source_sha256": {
+      "src\\investify\\harness\\run_spike.py": "a8fe3a630ec283a94c4366b6e4518f6af18a3747cbd5f221538d5838103f513b",
+      "src\\investify\\harness\\splits.py": "21abd2a37beb34bd8105120161d7aa99a3c39b15ef8208147fc88a5b80c743b3",
+      "src\\investify\\harness\\arms.py": "9438bf542d584a68260428a35860f0c8e16ae1f406fe3e6fbe272c2fd2c44753",
+      "src\\investify\\labels.py": "107b8a996011e0d96eb42e5b0dcc17fa5d74c6477b73f0b6a22669bbc886d4c4"
+    },
+    "leakage_control": {
+      "bootstrap_resamples": 10000,
+      "pass_threshold_abs_lift": 0.03
+    },
+    "feature_cols": [
+      "rsi_14",
+      "macd_hist",
+      "dist_sma200",
+      "bollinger_pos",
+      "obv_slope",
+      "mean_polarity",
+      "mention_volume",
+      "mom_3d",
+      "mom_7d",
+      "volume_z",
+      "dispersion"
+    ],
+    "run_completed_utc": "2026-10-12T18:10:34.188618+00:00"
+  },
+  "results": [
+    {
+      "arm": "A_CLEAN",
+      "horizon_days": 1,
+      "changes": "Nothing. Correct throughout.",
+      "n_rows": 1309,
+      "n_folds": 6,
+      "macro_f1": 0.3078803046689269,
+      "macro_f1_sd": 0.03662592378582391,
+      "chance": 0.3313753839504689,
+      "lift": -0.023495079281541986,
+      "ci_lo": -0.05143571394654036,
+      "ci_hi": 0.00027220055559645795,
+      "threshold": 0.03,
+      "verdict": "PASS",
+      "per_fold_f1": [
+        0.2438378860316056,
+        0.29508114602757335,
+        0.3299227343275524,
+        0.3037037037037037,
+        0.32737669615104786,
+        0.34735966177207867
+      ],
+      "per_fold_baseline": [
+        0.3306549441349579,
+        0.3323223070689227,
+        0.3319911300807463,
+        0.33030786755174074,
+        0.33129860861456817,
+        0.3316774462518776
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "B_SHUFFLED",
+      "horizon_days": 1,
+      "changes": "Shuffled K-fold instead of expanding walk-forward.",
+      "n_rows": 1309,
+      "n_folds": 6,
+      "macro_f1": 0.3446181032816113,
+      "macro_f1_sd": 0.03682146344984481,
+      "chance": 0.3316151602014567,
+      "lift": 0.013002943080154594,
+      "ci_lo": -0.010727070656785576,
+      "ci_hi": 0.041923405549416405,
+      "threshold": 0.03,
+      "verdict": "PASS",
+      "per_fold_f1": [
+        0.34814192758143436,
+        0.31970791919669667,
+        0.40964599667379425,
+        0.3218399401645475,
+        0.30988565162907267,
+        0.35848718444412225
+      ],
+      "per_fold_baseline": [
+        0.3314516665469717,
+        0.3300523745365973,
+        0.33217895989740975,
+        0.3300841860874486,
+        0.3329469392259699,
+        0.3329768349143427
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "C_NOPURGE",
+      "horizon_days": 1,
+      "changes": "Purge and embargo removed, walk-forward retained.",
+      "n_rows": 1309,
+      "n_folds": 6,
+      "macro_f1": 0.3281047503518855,
+      "macro_f1_sd": 0.02111184670515889,
+      "chance": 0.3313512685540923,
+      "lift": -0.003246518202206783,
+      "ci_lo": -0.01875893276516914,
+      "ci_hi": 0.011297492898482206,
+      "threshold": 0.03,
+      "verdict": "PASS",
+      "per_fold_f1": [
+        0.2997835497835498,
+        0.3061023863943572,
+        0.3365079365079365,
+        0.3284890167380352,
+        0.3509906398559069,
+        0.34675497283152784
+      ],
+      "per_fold_baseline": [
+        0.33063872877010575,
+        0.3321555414145885,
+        0.3320675013216885,
+        0.3302584930099178,
+        0.3312852539029391,
+        0.3317020929053141
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "D_CENTRED",
+      "horizon_days": 1,
+      "changes": "bollinger_pos computed with a centred rather than trailing window.",
+      "n_rows": 1309,
+      "n_folds": 6,
+      "macro_f1": 0.40136428227375304,
+      "macro_f1_sd": 0.035033585857437856,
+      "chance": 0.3313753839504689,
+      "lift": 0.06998889832328414,
+      "ci_lo": 0.04644994573412244,
+      "ci_hi": 0.09507228619064556,
+      "threshold": 0.03,
+      "verdict": "LEAK",
+      "per_fold_f1": [
+        0.40762849175261073,
+        0.3639494800762479,
+        0.4022188078158613,
+        0.36692479758173197,
+        0.40712849840242304,
+        0.4603356180136429
+      ],
+      "per_fold_baseline": [
+        0.3306549441349579,
+        0.3323223070689227,
+        0.3319911300807463,
+        0.33030786755174074,
+        0.33129860861456817,
+        0.3316774462518776
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "D_CENTRED_SMA200",
+      "horizon_days": 1,
+      "changes": "dist_sma200 centred instead of trailing (window does not overlap the horizon).",
+      "n_rows": 1309,
+      "n_folds": 6,
+      "macro_f1": 0.3352440586220718,
+      "macro_f1_sd": 0.024907898349152094,
+      "chance": 0.3313753839504689,
+      "lift": 0.003868674671602901,
+      "ci_lo": -0.014531306799343613,
+      "ci_hi": 0.02230400142100497,
+      "threshold": 0.03,
+      "verdict": "PASS",
+      "per_fold_f1": [
+        0.3357675285348241,
+        0.3090722534598864,
+        0.3074676895431612,
+        0.35281683668780445,
+        0.33454517171188297,
+        0.3717948717948718
+      ],
+      "per_fold_baseline": [
+        0.3306549441349579,
+        0.3323223070689227,
+        0.3319911300807463,
+        0.33030786755174074,
+        0.33129860861456817,
+        0.3316774462518776
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "E_SAMEBAR_TEXT",
+      "horizon_days": 1,
+      "changes": "Alternate publication-date bucket; strict-prior join retained. Mapping/lag comparison, not a proven publication-leak canary.",
+      "n_rows": 1309,
+      "n_folds": 6,
+      "macro_f1": 0.31397113465583937,
+      "macro_f1_sd": 0.040175218494097886,
+      "chance": 0.3313753839504689,
+      "lift": -0.017404249294629526,
+      "ci_lo": -0.046891587020352725,
+      "ci_hi": 0.01049643440112443,
+      "threshold": 0.03,
+      "verdict": "PASS",
+      "per_fold_f1": [
+        0.2679070488594298,
+        0.26137432813487066,
+        0.3209122014000063,
+        0.33403159640394514,
+        0.3407513938305678,
+        0.3588502393062165
+      ],
+      "per_fold_baseline": [
+        0.3306549441349579,
+        0.3323223070689227,
+        0.3319911300807463,
+        0.33030786755174074,
+        0.33129860861456817,
+        0.3316774462518776
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "A_CLEAN",
+      "horizon_days": 5,
+      "changes": "Nothing. Correct throughout.",
+      "n_rows": 1305,
+      "n_folds": 6,
+      "macro_f1": 0.2843234954053511,
+      "macro_f1_sd": 0.053685107518421676,
+      "chance": 0.3286851772146437,
+      "lift": -0.044361681809292564,
+      "ci_lo": -0.0854884647284169,
+      "ci_hi": -0.01207459416981895,
+      "threshold": 0.03,
+      "verdict": "BELOW_CHANCE",
+      "per_fold_f1": [
+        0.18591163134029318,
+        0.336026719916322,
+        0.2685292272643624,
+        0.2871340445110937,
+        0.3167569998986686,
+        0.3115823495013671
+      ],
+      "per_fold_baseline": [
+        0.3258882075121323,
+        0.33088815425638457,
+        0.3305455265955323,
+        0.32420396697988313,
+        0.33016591522477384,
+        0.33041929271915577
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "B_SHUFFLED",
+      "horizon_days": 5,
+      "changes": "Shuffled K-fold instead of expanding walk-forward.",
+      "n_rows": 1305,
+      "n_folds": 6,
+      "macro_f1": 0.44567531830243734,
+      "macro_f1_sd": 0.034074258322820745,
+      "chance": 0.33148401698630975,
+      "lift": 0.11419130131612759,
+      "ci_lo": 0.08788035516868846,
+      "ci_hi": 0.13711898254460253,
+      "threshold": 0.03,
+      "verdict": "LEAK",
+      "per_fold_f1": [
+        0.45893172229567347,
+        0.47063935716187083,
+        0.4138979174190442,
+        0.4671261487050961,
+        0.47139804639804633,
+        0.3920587178348931
+      ],
+      "per_fold_baseline": [
+        0.3298821077017506,
+        0.3314737644382036,
+        0.33301870811594325,
+        0.3315117009579378,
+        0.3315387226584465,
+        0.3314790980455769
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "C_NOPURGE",
+      "horizon_days": 5,
+      "changes": "Purge and embargo removed, walk-forward retained.",
+      "n_rows": 1305,
+      "n_folds": 6,
+      "macro_f1": 0.3021579363387678,
+      "macro_f1_sd": 0.038000279406024025,
+      "chance": 0.3289058716328516,
+      "lift": -0.026747935294083813,
+      "ci_lo": -0.054666399361419114,
+      "ci_hi": -0.00033702910989767226,
+      "threshold": 0.03,
+      "verdict": "BELOW_CHANCE",
+      "per_fold_f1": [
+        0.2537038708836127,
+        0.3452364762034284,
+        0.26344816711308855,
+        0.2974263519718065,
+        0.3142340779295887,
+        0.338898673931082
+      ],
+      "per_fold_baseline": [
+        0.3271390184783052,
+        0.33097524350663904,
+        0.33065428743074143,
+        0.32410957927052203,
+        0.3302190090274969,
+        0.33033809208340503
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "D_CENTRED",
+      "horizon_days": 5,
+      "changes": "bollinger_pos computed with a centred rather than trailing window.",
+      "n_rows": 1305,
+      "n_folds": 6,
+      "macro_f1": 0.5390354495610808,
+      "macro_f1_sd": 0.05147771641173459,
+      "chance": 0.3286851772146437,
+      "lift": 0.21035027234643716,
+      "ci_lo": 0.16978375955492817,
+      "ci_hi": 0.2420917361203314,
+      "threshold": 0.03,
+      "verdict": "LEAK",
+      "per_fold_f1": [
+        0.4456264775413712,
+        0.5485724803754765,
+        0.5976986004336685,
+        0.5283652050737234,
+        0.567808098253694,
+        0.5461418356885517
+      ],
+      "per_fold_baseline": [
+        0.3258882075121323,
+        0.33088815425638457,
+        0.3305455265955323,
+        0.32420396697988313,
+        0.33016591522477384,
+        0.33041929271915577
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "D_CENTRED_SMA200",
+      "horizon_days": 5,
+      "changes": "dist_sma200 centred instead of trailing (window does not overlap the horizon).",
+      "n_rows": 1305,
+      "n_folds": 6,
+      "macro_f1": 0.33331362314479657,
+      "macro_f1_sd": 0.028669143037367752,
+      "chance": 0.3286851772146437,
+      "lift": 0.00462844593015288,
+      "ci_lo": -0.014982998089152025,
+      "ci_hi": 0.026379967992947527,
+      "threshold": 0.03,
+      "verdict": "PASS",
+      "per_fold_f1": [
+        0.31389966646246004,
+        0.3678084596967279,
+        0.31327480777016403,
+        0.37264155413409145,
+        0.31752769247859586,
+        0.31472955832674027
+      ],
+      "per_fold_baseline": [
+        0.3258882075121323,
+        0.33088815425638457,
+        0.3305455265955323,
+        0.32420396697988313,
+        0.33016591522477384,
+        0.33041929271915577
+      ],
+      "corpus": "alpaca"
+    },
+    {
+      "arm": "E_SAMEBAR_TEXT",
+      "horizon_days": 5,
+      "changes": "Alternate publication-date bucket; strict-prior join retained. Mapping/lag comparison, not a proven publication-leak canary.",
+      "n_rows": 1305,
+      "n_folds": 6,
+      "macro_f1": 0.2650927480932639,
+      "macro_f1_sd": 0.05744626063968003,
+      "chance": 0.3286851772146437,
+      "lift": -0.0635924291213798,
+      "ci_lo": -0.10827466162582654,
+      "ci_hi": -0.0321711928249625,
+      "threshold": 0.03,
+      "verdict": "BELOW_CHANCE",
+      "per_fold_f1": [
+        0.15559056814662195,
+        0.30374992122014244,
+        0.2851818759274341,
+        0.24782777801208064,
+        0.2987952300527151,
+        0.2994111152005889
+      ],
+      "per_fold_baseline": [
+        0.3258882075121323,
+        0.33088815425638457,
+        0.3305455265955323,
+        0.32420396697988313,
+        0.33016591522477384,
+        0.33041929271915577
+      ],
+      "corpus": "alpaca"
+    }
+  ]
+}

@@ -1,5 +1,35 @@
 # Mid-evaluation readiness estimate - 12 October 2026
 
+## Latest readiness - actual scientific execution
+
+Current planning completion is **78.5%, approximately 79%**. It supersedes the
+72.25% checkpoint below. All original weights are unchanged.
+
+| Work area | Weight | Completion judgement | Weighted contribution |
+| --- | ---: | ---: | ---: |
+| Scientific pipeline, baseline and leakage | 25% | 85% | 21.25% |
+| Interface, explanation and transparency | 20% | 95% | 19.00% |
+| Social-sentiment selection | 15% | 50% | 7.50% |
+| Report, requirements and design | 20% | 80% | 16.00% |
+| Committee responses, inventory and metrics | 10% | 85% | 8.50% |
+| Handover, repository and contributions | 5% | 70% | 3.50% |
+| Presentation, demo and defence | 5% | 55% | 2.75% |
+
+The six-arm/two-horizon real Alpaca experiment, both fitted calibration modes,
+native model/SHAP replay and 372 new verified guided explanations justify raising
+science from 60% to 85%. September raw/cache bytes and exact lock are not restored;
+cross-corpus/historical reproduction and review remain. The predictor is still
+weak and calibrated decisions remain all Buy. No social/report/deck/team credit
+is added merely because these runs passed.
+
+[Current evidence summary](../evidence/fresh_alpaca_science_summary_20261012_run01.json). This estimate is neither the
+university's marking rubric nor a measured grade. The 90% goal remains unmet.
+
+One illustrative 90.00% route, retaining the other area estimates, is science
+90%, social 90%, report 95% and presentation 80%. Those judgements require actual
+study/selection, compiled and inspected documents, review and rehearsal.
+No threshold or readiness weight should be changed to manufacture completion.
+
 ## Continuation criterion deltas
 
 The user requested at least 90% first-mid readiness. **That target is not achieved.** Keep the original weights below; the historical 68.5% ledger and its approximately-70% judgement remain a dated starting point. The updated judgement is approximately **72%** (72.25% weighted), with uncertainty roughly 65-80%. It is not a grade, automated acceptance, whole-project percentage or supervisor closure.

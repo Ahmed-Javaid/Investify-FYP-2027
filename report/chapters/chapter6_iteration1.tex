@@ -9,10 +9,10 @@ Select a historical corpus/session, inspect the decision/probabilities, read eve
 The frozen decision record remains the prediction source. A new builder combines its facts with reviewed definitions and implementation limitations. Streamlit and the standalone explorer reuse that context. Existing template verification remains the baseline.
 
 \section{Implementation}
-The independent code copy is on branch \texttt{gpt/mid-eval}. New code in \texttt{src/investify/explain/context.py} covers every feature, handles missing values, rejects non-finite attributions/probabilities, and identifies unreviewed definitions. The Decision tab renders the context; the exporter uses the same records.
+The active consolidated repository is on \texttt{main}; the earlier isolated branch is preserved in history. New code in \texttt{src/investify/explain/context.py} covers every feature, handles missing values, rejects non-finite attributions/probabilities, and identifies unreviewed definitions. The Decision tab renders the context; the exporter uses the same records.
 
 \section{Completed Features / Module}
-The context, artifact tools, complete-guided verifier, report-retaining fallback, both live interfaces, prototype profile and separate retrospective risk comparator are implemented. Actual Streamlit widget tests pass. Six actual teacher explanations are saved and replayed in Teacher Study. Live model inference, candidate social-model comparison, social features, personalized classifier predictions and remote GitHub execution remain pending.
+The context, artifact tools, complete-guided verifier, report-retaining fallback, both live interfaces, prototype profile and separate retrospective risk comparator are implemented. Actual Streamlit widget tests pass. Six actual teacher explanations are saved and replayed in Teacher Study. Live LLM inference, candidate social-model comparison, social features, personalized classifier predictions and remote GitHub execution remain pending.
 
 \section{Technical Implementation Details}
 Feature values and predicted-class SHAP contributions are separate. Family totals retain raw-score units. The verifier checks prose and JSON independently, including feature values and attribution targets. Displayed-text coverage, essential disclosures and hard contradiction gates prevent a correct payload from hiding an incorrect display. Strict mode rejects unsupported sentences. Evidence tools check schemas/context/templates/distributions/additivity and record artifact/runtime/source hashes.
@@ -29,9 +29,9 @@ Artifact checks cover 186 records per corpus. The live HTTP exercise passes 62 e
 
 \section{Iteration Outcome}
 \subsection{Versioned Scientific Corrections}
-The historical purger used calendar-day subtraction for observed-row labels. On the same labelled business-day fixture/test blocks it retains 18 training-label endpoints reaching the evaluation blocks; the corrected \texttt{observed-label-end-purge-v2} retains zero. Actual endpoints are calculated before feature filtering and carried to folds. Calibration candidates ending on/after first evaluation are excluded; a future-price shock leaves retained fixture inputs unchanged. Explicit frozen-classifier and refit-transfer modes now support a fair source-level comparison, but actual model fitting/results require restored inputs/runtime.
+The historical purger used calendar-day subtraction for observed-row labels. On the same labelled business-day fixture/test blocks it retains 18 training-label endpoints reaching the evaluation blocks; the corrected \texttt{observed-label-end-purge-v2} retains zero. Actual endpoints are calculated before feature filtering and carried to folds. Calibration candidates ending on/after first evaluation are excluded; a future-price shock leaves retained fixture inputs unchanged. Explicit frozen-classifier and refit-transfer modes now support a fair source-level comparison, with a genuine fresh Alpaca fitted comparison now recorded below.
 
-Original scientific source/results are preserved. Cache joins refuse duplicate document keys or inconsistent probabilities, RSI edge windows have explicit behaviour, datetime units are normalized for the as-of join, and input ranges/ticker/revision/calendar contracts fail visibly. New outputs/cache directories are isolated. Full score/margin/truth arrays, calibration knots, scaler/model bytes and source/input identity are retained by the new trace mechanism. None of these source/fixture repairs establishes changed historical performance or explains the all-Buy result. E\_SAMEBAR\_TEXT is a lag-rule ablation under the retained strict-prior join.
+Original scientific source/results are preserved. Cache joins refuse duplicate document keys or inconsistent probabilities, RSI edge windows have explicit behaviour, datetime units are normalized for the as-of join, and input ranges/ticker/revision/calendar contracts fail visibly. New outputs/cache directories are isolated. Full score/margin/truth arrays, calibration knots, scaler/model bytes and source/input identity are retained by the new trace mechanism. These earlier source/fixture repairs alone do not establish changed historical performance; the fresh-run findings below are separate. E\_SAMEBAR\_TEXT is a lag-rule ablation under the retained strict-prior join.
 The increment improves evidence coverage and transparency over the top-k numeric template and supplies a tested LLM input contract. It does not yet establish LLM usefulness, predictive skill, complete mid readiness, or deployment.
 
 \section{Recorded Assistant Teacher Construction Pilot}
@@ -42,3 +42,71 @@ The supervision is hybrid: prose is actually assistant-generated, while the fact
 Both corpora share date groups: 118 training dates, 30 validation dates and 38 preserved held-out test dates. The actual pilot has four training and two validation examples; test records are excluded. All saved source decisions are Buy, so neither class generalization nor adequate QLoRA data is established. Some held-out examples were previously explored; no first-ever untouched-test claim is made. Copied evidence replays original hash-bound raw persistence times and exact exports.
 
 Original-student inference, QLoRA training, student quality and user understanding remain unmeasured. The inspected GPU has 10,240 MiB; the proposal's 16 GB envelope does not establish current-machine feasibility. Required training libraries, exact student checkpoint/tokenizer and measured token/VRAM budgets remain pending. Earlier Qwen-specific local pilot choices are inactive for the selected teacher/student workflow.
+
+
+\section{Fresh Alpaca Scientific Execution}
+On 12 October 2026 a separately identified, genuine Alpaca experiment executed
+the corrected pipeline. All 1,509 requested NYSE price sessions were present.
+The 6,768 revision-conservative news rows contain 5,748 distinct headlines,
+scored offline with original ProsusAI/finbert revision
+\texttt{0bc2ac10dda6929bcb1f77ccc43c7ec5c424f031}.
+The selected price basis is current-vintage SIP split adjustment, without cash
+dividend adjustment. News availability uses the later creation/update timestamp.
+Neither policy proves historical vendor availability. No FNSPID was downloaded;
+this run does not replace the preserved September results or reproduce their bytes.
+
+Six arms at two horizons ran on shared row sets (1,309 one-day and 1,305
+five-day rows), with six folds, fixed seed and unchanged model settings.
+The clean five-day macro-F1 is 0.2843 versus the training-distribution
+stratified-random baseline 0.3287, giving lift -0.0444
+(95\% fold-bootstrap interval [-0.0855,-0.0121]).
+The centred-Bollinger mutation gives five-day macro-F1 0.5390 and lift +0.2104
+(interval [+0.1698,+0.2421]), demonstrating the deliberate canary.
+The one-day clean arm passes the configured control rule; the five-day
+clean arm remains below chance. E\_SAMEBAR\_TEXT remains a lag ablation.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Calibration mode & Eval. rows & Macro-F1 & Brier before & Brier after \\
+\midrule
+Frozen classifier & 186 & 0.2238 & 0.7929 & 0.6105 \\
+Refit transfer & 186 & 0.2238 & 0.7760 & 0.6078 \\
+\bottomrule
+\end{tabular}
+\caption{Fresh revision-conservative Alpaca experiment, five-day held-out evaluation.}
+\end{table}
+
+Five of 186 candidate calibration labels ended on or after evaluation start and
+were excluded. The 181 retained rows fit isotonic mappings; 186 evaluation
+sessions span 29 March--21 December 2023. Both current modes produce 186 Buy
+decisions. Before calibration, the frozen model predicts Buy 40, Hold 51 and
+Sell 95. Its fitted isotonic mappings make Buy largest on every evaluation row.
+Raw held-out macro-F1 is 0.3182 in frozen mode and 0.3116 in refit mode;
+calibration reduces both to 0.2238 despite improving Brier.
+Thus classifier refitting is not necessary for the observed fresh-run collapse.
+This is an observation about the current experiment, not proof of the historical
+cause. Lower Brier and all-Buy classifications must be reported together.
+
+Actual inference from retained model bytes/scalers exactly reproduces the stored
+raw scores. Independent native XGBoost TreeSHAP matches every exported
+contribution and bias; the maximum frozen additivity residual is about
+$1.02\times10^{-6}$ against the unchanged $10^{-4}$ tolerance.
+Calibration, labels/endpoints and metric replay pass. Complete guided
+explanations verify on all 372 new records, separately from the historical 372.
+
+The current source/input/runtime identities and execution logs are retained in
+\texttt{code/artifacts/scientific\_runs/} and dated evidence receipts.
+The restored Python 3.11 runtime satisfies declared dependency ranges; it is
+not exact restoration of \texttt{uv.lock}. Engineering contracts record
+179 passes and six legacy-input skips, with eight separate admission-refusal
+passes. No independently validated social accuracy, trading return, human
+benefit, student training or institutional approval is established.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{../code/artifacts/scientific_runs/alpaca_revision_conservative_20261012_run01/recovery01/harness_alpaca/arms_lift_alpaca.png}
+\caption{Actual fresh Alpaca leakage harness: lift relative to a training-distribution random baseline.}
+\end{figure}

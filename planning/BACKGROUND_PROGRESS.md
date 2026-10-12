@@ -151,3 +151,95 @@ Created **deliverables/mid_eval_continuation_evidence_20261012.pdf**, four pages
 Report now has preserved quantitative NFR1..8, scoped numbered MID-NFRs, explicit API/request/rejection contracts, original-first-mid versus engineering traceability, current AI/teacher wording and unrerun scientific corrections. No performance target or supervisor/student closure is fabricated. The approximately72% current planning judgement retains ledger weights and gives no additional research-completion credit from core test counts; pipeline60/social50still cap the ledger at82.5even if all other areas100. Honest90requires actual substantive run/render/review closure.
 
 Streamlit8501 stopped during the long session and was restarted as a task-owned CLI service (session6526). Fresh portable source is on8766 (session73343), distinct from earlier8765snapshot; live/source receipts are being refreshed. Current-source packaging/extraction follows next, preserving all earlier files. Original data/weights/provenance, institutional tool/access inputs and genuine review remain unresolved; no Astra task identified. Development continues beyond this packaging milestone under the user's five-hour/90% direction.
+
+
+## 12 October 2026 - detailed Alpaca rejection and independent client
+
+The resumed sandbox network check failed with WinError 10061 before HTTP.
+Explicitly approved outside-sandbox execution succeeded in reaching Alpaca,
+without modifying proxy/routing settings. The urllib diagnostic at 15:17 UTC
+returned paper 401 (`unauthorized.`) and news 401 (nginx HTML). At 15:19 UTC,
+requests 2.34.2 independently returned the same errors. Both receipts retain
+redacted messages and request IDs, and no account bodies or credential values.
+Receipts: `market_reacquisition_20261012/paper_auth_20261012T151704775Z/probe.json`
+and `market_reacquisition_20261012/independent_auth_20261012T151921041173Z/probe.json`.
+
+A local independent parser matched both values; each has a single declaration,
+ASCII content, no whitespace/quotes, and correct prepared APCA headers without
+an extra Authorization header. The first independent-client attempt had a
+duplicate stream option and failed locally before sending a request; the
+corrected attempt produced the retained receipt. These checks reduce evidence
+for a client/parsing defect but cannot determine whether the pair is invalid,
+revoked/mismatched or affected by an account-side issue. Current official Alpaca
+docs confirm the hosts/header names. Compare the pair with the current paper
+account locally, or send only request IDs/statuses to Alpaca support, then
+rerun after correction/resolution. No support message was sent here.
+
+The diagnostic's stale FNSPID fallback recommendation was removed. Current
+README/status/handoff now preserve the user's explicit no-FNSPID instruction.
+Zero FNSPID requests or corpus downloads occurred; no settings, frozen research
+artifacts, original documents or readiness weights were changed.
+
+
+## Alpaca access restored - 12 October, 15:30 UTC
+
+After the user replaced the local key pair, both paper-account and market-news
+requests returned **200 OK**. [Authentication receipt](../evidence/market_reacquisition_20261012/paper_auth_20261012T152909983Z/probe.json).
+Approved outside-sandbox requests work; default sandbox networking remains
+restricted. Credentials and account response bodies were not saved.
+
+A fresh, bounded historical sample retrieved **30 NVDA articles**, five from
+each year 2018-2023, with 200 responses for all six requests. All 30 have
+non-midnight, timezone-aware `created_at` values and satisfy ticker/year/headline
+checks. [Historical sample receipt](../evidence/market_reacquisition_20261012/historical_news_sample_20261012T153005905951Z/probe.json).
+Every year has further pages; this is not a complete corpus or scientific run.
+Fourteen sampled records were updated after creation, so retain `updated_at`
+and assess revised-text availability before claiming point-in-time-safe inputs.
+No original/frozen input was replaced. **No FNSPID request or download occurred.**
+
+Next: acquire paginated Alpaca news under a fresh snapshot identity, retaining
+created/updated timestamps and raw provenance; validate coverage, duplicates and
+revision timing before scientific ingestion. The legacy pull script uses a fixed
+historical output path and drops `updated_at`, so it must not be run unchanged
+against the frozen research inputs. Run the recovery doctor before the pipeline.
+Earlier 401 diagnoses below concern the replaced pair and are now historical.
+
+
+## Fresh scientific execution - 12 October 2026
+
+The new **Alpaca revision-conservative experiment has completed and passed actual
+model/calibration/native-TreeSHAP replay**. It consumed 1,509 complete NYSE price
+sessions and 6,768 news rows, with 5,748 distinct headlines scored offline by the
+pinned original ProsusAI/finbert checkpoint. The recovery doctor had zero blockers
+and all three scientific commands completed.
+
+Six arms at both horizons ran on shared row sets: 1,309 rows at one day and
+1,305 at five days, six folds each. Clean five-day macro-F1 is **0.2843** against
+the training-distribution random baseline **0.3287** (lift -0.0444).
+The deliberately centred Bollinger canary has five-day lift **+0.2104**,
+95% fold-bootstrap CI **[+0.1698, +0.2421]**. E_SAMEBAR_TEXT remains a lag ablation.
+
+Both current calibration modes still emit **186 Buy decisions**. Raw frozen-mode
+predictions are Buy 40 / Hold 51 / Sell 95; learned isotonic maps make Buy highest
+on every evaluation row. Frozen Brier improves **0.7929 to 0.6105**; refit-transfer
+improves **0.7760 to 0.6078**. Better Brier does not resolve decision collapse or
+establish useful prediction. Five unavailable calibration labels were excluded;
+181 rows calibrate, and evaluation runs 29 March to 21 December 2023.
+
+Actual retained-model inference reproduces margins/probabilities exactly; native
+TreeSHAP agrees with every exported contribution/bias, with maximum frozen
+additivity residual about 1.02e-6. All 372 **new** guided explanations validate,
+separately from the 372 preserved historical records. New engineering checks:
+179 passed / six legacy-input skips, plus eight admission-refusal passes.
+
+This is a fresh SIP split-adjusted snapshot using max(created_at, updated_at)
+for news availability, not the original September data or exact uv.lock.
+Historical vintage is not proven; all original records, freezes and ZIPs remain
+separate. No FNSPID was requested.
+
+[Reviewed summary](../evidence/fresh_alpaca_science_summary_20261012_run01.json) and [actual replay](../evidence/fresh_alpaca_science_replay_20261012_run01.json).
+
+Readiness is now **78.5%, approximately 79%**, with unchanged weights and other
+areas: science alone rises from 60% to 85%. Remaining substantive gaps are the
+social comparison, rendered institutional report/deck, and genuine team review,
+contribution/rehearsal and repository evidence. The 90% target is not achieved.

@@ -1,0 +1,59 @@
+{
+  "schema": "investify-independent-alpaca-auth-v1",
+  "checked_utc": "2026-10-12T15:19:21.041173+00:00",
+  "client": "requests",
+  "client_version": "2.34.2",
+  "comparison_receipt": "evidence/market_reacquisition_20261012/paper_auth_20261012T151704775Z/probe.json",
+  "credential_audit": {
+    "ALPACA_API_KEY": {
+      "source": "local_env_file",
+      "independent_parser_matches": true,
+      "ascii": true,
+      "contains_whitespace": false,
+      "contains_quotes": false,
+      "declarations": 1
+    },
+    "ALPACA_API_SECRET": {
+      "source": "local_env_file",
+      "independent_parser_matches": true,
+      "ascii": true,
+      "contains_whitespace": false,
+      "contains_quotes": false,
+      "declarations": 1
+    }
+  },
+  "results": [
+    {
+      "source": "Paper account",
+      "url": "https://paper-api.alpaca.markets/v2/account",
+      "credential_headers_match_loaded_values": true,
+      "unexpected_authorization_header": false,
+      "http_status": 401,
+      "status": "http_error",
+      "provider_diagnostic": {
+        "body_truncated": false,
+        "message": "unauthorized.",
+        "request_id": "2814fd8ca1c611c439ea6e99b5aca4b4"
+      }
+    },
+    {
+      "source": "Market news",
+      "url": "https://data.alpaca.markets/v1beta1/news?symbols=NVDA&limit=1&include_content=false",
+      "credential_headers_match_loaded_values": true,
+      "unexpected_authorization_header": false,
+      "http_status": 401,
+      "status": "http_error",
+      "provider_diagnostic": {
+        "body_truncated": false,
+        "message": "<html>\r\n<head><title>401 Authorization Required</title></head>\r\n<body>\r\n<center><h1>401 Authorization Required</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+        "request_id": "0f5f846cec3dbbb9a8bf18a8e1cbb6df"
+      }
+    }
+  ],
+  "credential_values_recorded": false,
+  "account_data_saved": false,
+  "routing_or_proxy_settings_changed": false,
+  "redirects_followed": false,
+  "fnspid_requests": 0,
+  "scope": "Two bounded read-only requests and local parser/header checks; no trading or historical acquisition."
+}

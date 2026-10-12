@@ -1,0 +1,1023 @@
+{
+  "schema": "investify-alpaca-news-acquisition-v1",
+  "started_utc": "2026-10-12T16:01:05.530186+00:00",
+  "snapshot_directory": "E:\\Uni_Stuff\\FYP\\Investify\\code\\data\\raw\\snapshots\\alpaca_nvda_20261012T155013436Z",
+  "config": {
+    "schema": "investify-alpaca-news-snapshot-v1",
+    "endpoint": "https://data.alpaca.markets/v1beta1/news",
+    "params": {
+      "symbols": "NVDA",
+      "start": "2018-01-01T00:00:00Z",
+      "end": "2023-12-31T23:59:59.999999Z",
+      "limit": 50,
+      "sort": "asc",
+      "include_content": "false"
+    },
+    "source_sha256": "d6abdda656f42b8b9317051c8fd3f41c7d3c1069b211b5e3c00288a5e23562ef"
+  },
+  "resumed": true,
+  "requests_this_invocation": 0,
+  "fnspid_requests": 0,
+  "credential_values_recorded": false,
+  "routing_settings_changed": false,
+  "status": "acquired_and_audited",
+  "pagination_complete": true,
+  "scope": "Fresh provider snapshot; raw pages and both timestamps preserved. No historical-byte reproduction, model inference or performance claim.",
+  "pages": [
+    {
+      "file": "page-000001.json",
+      "sha256": "dcf2b05ac43b693afab759fe03761ad42d93d41bb1b112e8c81cd64794d7d324",
+      "response_sha256": "625603ac50f093ea77f6056c32cc0b2965ae1de1f13aed5f0df0a375446adc96",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:14.612461+00:00"
+    },
+    {
+      "file": "page-000002.json",
+      "sha256": "60d43dcda7f20696467db6a5d91702f012a9926a6d52b61696ec16bbd433b04c",
+      "response_sha256": "51d822b815306d9adb5b96ffe96ae9c7bf68948431331f6ecd6844bcaab2e3ee",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:16.108648+00:00"
+    },
+    {
+      "file": "page-000003.json",
+      "sha256": "ae711c4e71c63f261dec97116044114b988eaf43a15c21b9605e420322cf2b3c",
+      "response_sha256": "778788045010538c79bf5fe493b7d5ee3ca5aa90670a31aabe12147c167aea96",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:17.626330+00:00"
+    },
+    {
+      "file": "page-000004.json",
+      "sha256": "aa120836e2d8196578ffc7ea810f3259964df161c2019a9dea26292f46a0eb52",
+      "response_sha256": "51dbe172af32b054df20308f25b8a1ed1483bc80b8c7fba19f828f3df6129428",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:19.091489+00:00"
+    },
+    {
+      "file": "page-000005.json",
+      "sha256": "be316a9b8df504c5b550f373059207017d8f459d3b95ec39846b9119c54da611",
+      "response_sha256": "7d50585425e94b1cb0af987d6f973ea27ddda01f329d90a00910ee340db02657",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:20.522260+00:00"
+    },
+    {
+      "file": "page-000006.json",
+      "sha256": "650f421670e87841217f07af12a9871ad51aa5a00afa5fc5d57bd16fa0625d04",
+      "response_sha256": "625355ea8367d13a45d93b243506a4ccb893adc1ac779b3a37309ce2c3059af6",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:21.997381+00:00"
+    },
+    {
+      "file": "page-000007.json",
+      "sha256": "a0410b4ff66c9f428755beb212800906ec39e820b523d9519744f39c520ab093",
+      "response_sha256": "15d0fe2248e94a3601ebc15361b6f65f324f5b27e322d72bb585b6cc2f55f2c2",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:23.468369+00:00"
+    },
+    {
+      "file": "page-000008.json",
+      "sha256": "4fde9487c5e7345007f9b859a3be5590abff691a5f1c94069fa5cc3c4eaf56c7",
+      "response_sha256": "9257500ce21526bcd07b6b44f096a7c9921b70984a35318ffd154e7867e87936",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:24.954555+00:00"
+    },
+    {
+      "file": "page-000009.json",
+      "sha256": "ab5e97635f64ab94e8b44a0a2034b27ce3339d3b60f56dece1f08738d2c96453",
+      "response_sha256": "ec7c333bd478555817cee140b9d172f184b7bb9ee31053c41355047d63b19a8d",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:26.423198+00:00"
+    },
+    {
+      "file": "page-000010.json",
+      "sha256": "fab4fa114582905d5812ecad43fa00553ad23c41c2415e8ac3a3a58ca3204afa",
+      "response_sha256": "cc822121d6b6e5081256b2c8b55cdf3d5e503d0ad1a9ba18aafa621f79a138df",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:27.878200+00:00"
+    },
+    {
+      "file": "page-000011.json",
+      "sha256": "4fab43995ef43ed6638018720591872f385e581d36a5d9237c8272c49cf9da94",
+      "response_sha256": "1a20818d9d1769cb7d8fb9265f51154a7ad515c04debe192c6c3971efff1823b",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:29.371438+00:00"
+    },
+    {
+      "file": "page-000012.json",
+      "sha256": "d6a2fca0e9daa5c76f482be315468e43eaec409d5d95ae673474b00f46545411",
+      "response_sha256": "53b9a30f419d4514379735f7843fdc84e635291c680b5d6ca638cb8ca3be941a",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:30.907591+00:00"
+    },
+    {
+      "file": "page-000013.json",
+      "sha256": "177314c94073b07a4ff20f9f7e6a07e41a29de4a619cbb25f6f0e65a22cbf92f",
+      "response_sha256": "f598791f5717db16ed1b6b100d55fe1c04f62991e30132b87174d634b13c6b26",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:32.373563+00:00"
+    },
+    {
+      "file": "page-000014.json",
+      "sha256": "47cdab67d2a6d4a53828ecfcbe50b23487dccd64cabe129cc37bbd4790682c86",
+      "response_sha256": "cda7e5721083d9f4206e7e07ede7c0c8f2d9f9ddedc424ade16f574ad0a8d210",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:37.755061+00:00"
+    },
+    {
+      "file": "page-000015.json",
+      "sha256": "c410890c217b54441c89fbdccd45f32f3018a460b4393801ad287c978ee35fd5",
+      "response_sha256": "a9fc852c75a65d91c1c9310b471996d987449b6ffb73cef4464e03e16c077be7",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:39.281942+00:00"
+    },
+    {
+      "file": "page-000016.json",
+      "sha256": "0323a8dae9fb2a17c00a4477fc503510bc8d9aeb3e7215da95436bd5380500b7",
+      "response_sha256": "09393b607b8b9e6e33682823ad1c98bd51b86a01c949a4c6939a870cc53bdee8",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:40.816250+00:00"
+    },
+    {
+      "file": "page-000017.json",
+      "sha256": "c3206f9cc661c7696f065e4a5fa08b9572a3fdce01f564044643a96d7427c31e",
+      "response_sha256": "83d9fe355f6d16b6b2fede2be67843ed517fb6c5f46597c0d14c8a5090e89a13",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:42.302627+00:00"
+    },
+    {
+      "file": "page-000018.json",
+      "sha256": "4cb061463839761074b25535bddf74529c46454f057589faf4323b394bc1cb1c",
+      "response_sha256": "ef9313c898dafbf0305f634fefd7b38851743480d9f046c516d35c49b8a98dea",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:43.969749+00:00"
+    },
+    {
+      "file": "page-000019.json",
+      "sha256": "553b766f2af358076250766f2474aa4283a633c7ff102b79503315493fc34dac",
+      "response_sha256": "ee56e08417b16b2db5f86c6198a87630c11832818a94763383358bcd239cd59f",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:45.493697+00:00"
+    },
+    {
+      "file": "page-000020.json",
+      "sha256": "49452874999458798e46561068e7a3d180531867a1ccf8e4b09fcc489933db8a",
+      "response_sha256": "086f9a3dc0b3dc8989fd0184924d63b0cf010a762a4e4a6bf776ffb09bc05d13",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:46.980645+00:00"
+    },
+    {
+      "file": "page-000021.json",
+      "sha256": "0696ba0f8a649eb1d717476ea24e738994b6d119b723c1d6e155a08fae73eee7",
+      "response_sha256": "910a7d30ec9fbee19aa23cc70dcf55fc1368a223c952e056b8f3e450662d6110",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:55.619388+00:00"
+    },
+    {
+      "file": "page-000022.json",
+      "sha256": "e69a2ae4be7905e7aa7ceccf427fe94ce457f071d4e01ccfb839bd9322f6c955",
+      "response_sha256": "24591bd5eb13163d7236441ab723670c277ace6ef0cfac09f5439c38676f3a50",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:57.132470+00:00"
+    },
+    {
+      "file": "page-000023.json",
+      "sha256": "416d94ad1323e5a8bbf86993746eb0d778ec5f8091e67a4014c2c19067ed3968",
+      "response_sha256": "4351cba9f87bb848fa1338f2fb3a4f3d03b40180c11dffebf53b93afc71f1b8a",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:50:58.818092+00:00"
+    },
+    {
+      "file": "page-000024.json",
+      "sha256": "2bee4506fc3cb654ff0f5cbdf3fe0f76ab3e2a3b8567ae226f984d7b3e6b90d4",
+      "response_sha256": "24510e6ecc89e18e3a1926bb17e88f05fac8bbac85a44d48f22e1bcc2420eebb",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:51:00.341090+00:00"
+    },
+    {
+      "file": "page-000025.json",
+      "sha256": "7fe82a6717d9d4a68a9da74e2434fb17ca0150c8d030902dc5a4070cf37aa817",
+      "response_sha256": "1d3896600f0de8196a984e0853a58ae9400b1beac378aa8fb42355d31d3a9b3d",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:51:01.814463+00:00"
+    },
+    {
+      "file": "page-000026.json",
+      "sha256": "4b66999d0437e49b729475e730f29e5d8207e73611ca8b8713d0c8ba73dbf248",
+      "response_sha256": "d3d691e28863a7c925bac26e19b54de5aa7eef007168cf368438780cfc3d2d81",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:51:03.776813+00:00"
+    },
+    {
+      "file": "page-000027.json",
+      "sha256": "e9374661e01376b194e21421741d4e945e65fc78a3da715458a561e6d2ef60fb",
+      "response_sha256": "46a40ec30502626df512c2f5e8ab4c6d653e5ae6b54d5acf8a45936f0248e544",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:51:06.175598+00:00"
+    },
+    {
+      "file": "page-000028.json",
+      "sha256": "b1fd1c1f8252ebe9bf07d90c781e92240b94d3ccc2bbd1b416da320d166b1a80",
+      "response_sha256": "8b791823a880fcc352fc280bee074f34645c11916d399d949c1f68f3bd26ed84",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:51:08.520095+00:00"
+    },
+    {
+      "file": "page-000029.json",
+      "sha256": "c2104f6b77057d1df99b6042ea7b5a28c1307501332479e43cfb9565baa7361c",
+      "response_sha256": "2bc5c19bb23ebb4ae5ac0881d21909c40cad0b0a8fb37a9d3ecfd6fb0f4da229",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:51:10.963380+00:00"
+    },
+    {
+      "file": "page-000030.json",
+      "sha256": "77f9d836b9d997281c5c2a3630ee400c0df961e3ccc879f6a461914dc9c8b19b",
+      "response_sha256": "f35f2f35b8ba9751d0c12ca420a88b6dcf5f90c9f754478d8e11129bc95f06ca",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:51:17.455834+00:00"
+    },
+    {
+      "file": "page-000031.json",
+      "sha256": "c3427e51e08d4cf2587f91cdb8322989be0e72eadb8320569c339da80339e9f8",
+      "response_sha256": "9626ef5e36ad0d9d7dca097dad3ffe3d3b415dafc3f6fed9af1c8b0e17f2a9f9",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:51:20.239045+00:00"
+    },
+    {
+      "file": "page-000032.json",
+      "sha256": "e439dc9760d4f1447020cf1138bccaf725b93e38a2f16867a26d198fdb920d3f",
+      "response_sha256": "9705fa84661db45d69250298098f96ae16e8c514924fea1d715692afec2835ed",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:51:23.575690+00:00"
+    },
+    {
+      "file": "page-000033.json",
+      "sha256": "1c24ecefde5aeaa8f7281343145411fc7e699ed5d75277a10973fbf0e93f7d97",
+      "response_sha256": "573ebf4d5f07b15ad920450ca2a3a946398fedb3bc1fe667e9c4f89407cca35c",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:51:29.678651+00:00"
+    },
+    {
+      "file": "page-000034.json",
+      "sha256": "552402ec05dfe04cd56255eb4d33fdb75e0d152e0d0d137eb0e9a912bb027f6e",
+      "response_sha256": "407657d54d617dbdc3a720131dbf9cd27b197be73578dd8efef2b07f486b679d",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:51:31.313355+00:00"
+    },
+    {
+      "file": "page-000035.json",
+      "sha256": "8fee1b22373a9dfea7167ce44d1cad48beb132ae76e49f202b7d59b16b6e40da",
+      "response_sha256": "241c51a010f531504bad982a23f45501919b9b38b97ceda4eef71ea8f6275177",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:51:33.032898+00:00"
+    },
+    {
+      "file": "page-000036.json",
+      "sha256": "8048c4508c29445da109ca910f86e786c370045adf394f1480b5ac3c80ed50cc",
+      "response_sha256": "925ee52ec28e4f58d4da4877012d0245f5259c4a975ca6072192544d7a345798",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:51:34.800390+00:00"
+    },
+    {
+      "file": "page-000037.json",
+      "sha256": "53ab3de8e54741906e84bc6dbcdb34efa30518134404af31a1f962a0f9cbc966",
+      "response_sha256": "4ee4a26217210052c4a0e55f2e9d7f3366b83bfa47f68f8af33f75ebdcdbaad9",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:53:32.694552+00:00"
+    },
+    {
+      "file": "page-000038.json",
+      "sha256": "b9b3160deed7eae35e79568face66136bf3cf2988016330a2dad69d1f0faa7d0",
+      "response_sha256": "3c74a47c68f28be55e0c1c1d3e5038f3b8a124dc49762743504e30a2410a3d41",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:53:34.353636+00:00"
+    },
+    {
+      "file": "page-000039.json",
+      "sha256": "ec026c1eb62cee1e3f6a33bfbae231996ab6fe19c80edf79d791f801c2aab40a",
+      "response_sha256": "c11f5a09b9efc9b317a1a3649f8ec6a3c8ffe3f946860a1fd5583000d6c7f5a6",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:53:35.854887+00:00"
+    },
+    {
+      "file": "page-000040.json",
+      "sha256": "7aaf6f96506367ee210b432a690855322003160238a3e182f20a56ccd743fe65",
+      "response_sha256": "8d16890d76c07ad9917cf0575793e69ff21df6e741dd50236522514c23094bdd",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:53:37.567277+00:00"
+    },
+    {
+      "file": "page-000041.json",
+      "sha256": "901174e2d8dc41ef81a30a9891d2fe5fee4ef6d2d90531df7db4fee4bd652bdf",
+      "response_sha256": "ac2154d449ab87fdffe72eba8be5748a01d399ab417e818611b8f66d07a44e98",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:53:39.276830+00:00"
+    },
+    {
+      "file": "page-000042.json",
+      "sha256": "0d4d4148abfae5e762b03b17d08ac907691c0bea221fbc6ea49d183eb485bf03",
+      "response_sha256": "739aac1615808a84ee88e949b026271b30aa2d1e4c9c36a335e6fa1fdb72b356",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:53:47.948217+00:00"
+    },
+    {
+      "file": "page-000043.json",
+      "sha256": "32c1a8dd1609f1dec1bbbdc3c425f250be316404e4cbf306567435c357044a88",
+      "response_sha256": "bccd13fddbf75632638768e0511b3ebcb233030c0f9dd4b61f8ea674e01e147c",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:53:49.664965+00:00"
+    },
+    {
+      "file": "page-000044.json",
+      "sha256": "50d4103679ff1df347de10ad80583807358045c10cc2a6bf4a9d775930038fd0",
+      "response_sha256": "12fdca47f1141897dd1d9b40bf560af9224de8d50a6b79983d5387f3e4ce24c8",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:53:51.423202+00:00"
+    },
+    {
+      "file": "page-000045.json",
+      "sha256": "f2ec865d8fba22b2151f87a6203316d46cb3b72b38a9df2f1b906d96a8ade840",
+      "response_sha256": "b7cb269476aaac961facb141055a30cb46c407275819fd94d64beb5d0572d6c4",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:53:52.933606+00:00"
+    },
+    {
+      "file": "page-000046.json",
+      "sha256": "0b5f4fd6e7e52635ec544355756227ab62540cd18fc620288fb181b6ca919cc3",
+      "response_sha256": "3a69edd3cd13211630f987524689be8d287037bcbc8a4edf46eb0cedf00a2843",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:53:54.461802+00:00"
+    },
+    {
+      "file": "page-000047.json",
+      "sha256": "6c27b4a4fa175a740553394e14c94d6ba6bb0b7e0b6d8a10d7c050a94b6b4e86",
+      "response_sha256": "83dea31f591593d22ebe97461bd071eb6e40cde3153d6a3e9c704dafb9632442",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:53:56.172060+00:00"
+    },
+    {
+      "file": "page-000048.json",
+      "sha256": "609e4ef7ef09aad38799f61847b7401cd1245935d7030b988e4533a53ae2876c",
+      "response_sha256": "8fda20b48821c7e696b9836ed01cb74adf052c2c6e2f41273f477e708e1654b5",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:53:57.883114+00:00"
+    },
+    {
+      "file": "page-000049.json",
+      "sha256": "fd7fb4529480e86663db35eeb33626da392f2b28af7de71e59bb287304432378",
+      "response_sha256": "f05be001e68c7d672538b3a8bfa27f5c6468eca54dafb129c8fc0cdf37aeb2c0",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:53:59.638167+00:00"
+    },
+    {
+      "file": "page-000050.json",
+      "sha256": "ea93473a0b397b3a5ff8fa44eff6dd6f7c563e67ab4b90c4a5bc5c3a66d322ba",
+      "response_sha256": "61fcbc9856e19679f80279bd9b125f74c115b8235ff96f2aebb1901883af429e",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:01.377342+00:00"
+    },
+    {
+      "file": "page-000051.json",
+      "sha256": "50f5f86b32b70a36102093f62035acff39c2c1d14409316e5b1c5ffa7fee4b39",
+      "response_sha256": "7c20bd616b6c8eb65b6fa9b7ad0d087f6035e151d536c16bdb02685de51cd0a9",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:03.123979+00:00"
+    },
+    {
+      "file": "page-000052.json",
+      "sha256": "2bbca995bc5d6442702b125a5970444bf19d5f2847a93330dc5876c9d9249f49",
+      "response_sha256": "a811df4c46acc44f2ee1c85627dd576062e3a9ac906cb4affcf6908d2b46827d",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:04.838135+00:00"
+    },
+    {
+      "file": "page-000053.json",
+      "sha256": "2b20aedc12675a80cdf064ab27207a39b4405301d8a966cbbb3f05edad40ab44",
+      "response_sha256": "88119f5e38efe4803aec418bcd5b2bce29885c2ed3c3f9631851238db93ee915",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:06.604184+00:00"
+    },
+    {
+      "file": "page-000054.json",
+      "sha256": "0f9b829d1b870609a18860194a8a8866748c10178140861ddf20095a44de22bf",
+      "response_sha256": "beb067f9ad4412c132f0d4cfc02545a4a994c3947df8955052692621cd95323e",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:08.822351+00:00"
+    },
+    {
+      "file": "page-000055.json",
+      "sha256": "8189e38370f6aae86c8a882bda686d8be342991072ef991a044695e3cc37a1d8",
+      "response_sha256": "d88b260679414d2b041b9466fd1594323a8e8b76a499479faaec8a36b4bba572",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:10.826739+00:00"
+    },
+    {
+      "file": "page-000056.json",
+      "sha256": "9b59fb797d163099e758635342852a8d702ce18ec01d2ae287315c63fc6848cb",
+      "response_sha256": "9f5d46b0574b6e14098bcb0d2ecb5497f834a8dc39fe8e1c446dc0eaee7e3845",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:12.578584+00:00"
+    },
+    {
+      "file": "page-000057.json",
+      "sha256": "fff6e09e057ecba28fa52c73c8c0776e7e43c7d79a68444f7eafb5d71968cbe8",
+      "response_sha256": "231127eb8b60d8e5c8b176ee226eb7f2551927a5385a89ce14eb6cbaa207c07b",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:14.268003+00:00"
+    },
+    {
+      "file": "page-000058.json",
+      "sha256": "fb84dfaeb500b1f77975b60a8723a847b6a2df2c755d30b81f268df70f0bae25",
+      "response_sha256": "94064a363989f67b4e0a5462411f5e2905ddfdb089ee3269471bd176ba1740b1",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:16.151908+00:00"
+    },
+    {
+      "file": "page-000059.json",
+      "sha256": "0fb459e3fe60cb6f11c987f7c1164f17c753a42e118aed055d1ac6493a84506d",
+      "response_sha256": "be877a5e33498ec30785b6a23c8ad7a74f14aad30c169f63936be07d4cd7dc23",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:17.876120+00:00"
+    },
+    {
+      "file": "page-000060.json",
+      "sha256": "fc549df3187f511413bbacba37ea9263321d7ee5f04dcfdec6383e679ba4bdf1",
+      "response_sha256": "f17096120cc6f1d1db0542378429ce469555ff7e673c7df312b67ed68ff64ed6",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:20.311886+00:00"
+    },
+    {
+      "file": "page-000061.json",
+      "sha256": "23c9e2e594a1e06e34034f3f9e032a29032de9aa8672223ddb1744bfa2a167af",
+      "response_sha256": "d39a822ba3b05aa66c39033cdbef17f2afe619ac94e5bb83a3786ecc1d52e432",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:22.104103+00:00"
+    },
+    {
+      "file": "page-000062.json",
+      "sha256": "1a3ab72d425f8e61af8db57089d5f4d3982128d54d10b5f13a1dc5cb726d2dda",
+      "response_sha256": "f894a68f5bbc304e04cfaff6604a4d3457189bc6a4b89b527aa6f8cc67858a77",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:23.873188+00:00"
+    },
+    {
+      "file": "page-000063.json",
+      "sha256": "f3be01f49fa75dd9329a9949d86b399c4518751f7bc5e0e2c741dbb0a9b3e020",
+      "response_sha256": "95417dc28bb472ecf1846690b3bb6f39138ecd45d33bc998a1f82ebf2f67ccd7",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:25.622324+00:00"
+    },
+    {
+      "file": "page-000064.json",
+      "sha256": "0a6cc39a109b29bb7345b7162916d6e2bb585f1b85a3c6f36bcba518971081fd",
+      "response_sha256": "956d81ed148dfe6a5d3cde21ff7fff8275797d6404f0a9d55ae16b707ff828a7",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:27.319896+00:00"
+    },
+    {
+      "file": "page-000065.json",
+      "sha256": "df655eb7dff219d5df98e0db29436bd61845a6118330a5a7c9581c200cd04b81",
+      "response_sha256": "a8ed7451165e8cc26082260a3ea1c6a817c4c9ad22c3dd441272a20638e3ae4c",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:29.065067+00:00"
+    },
+    {
+      "file": "page-000066.json",
+      "sha256": "4715344e0a2c324bf45ce43cbd7022771ec061d5b39d97014252b88673280ca3",
+      "response_sha256": "ad4f57158814e2583209b16f3827bd12eb0124f9d803badcc7988fb2300c6c20",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:30.802590+00:00"
+    },
+    {
+      "file": "page-000067.json",
+      "sha256": "76bc5608fd41c03b749905d71b1725450744eab79564b2f27973b48bd5067c8f",
+      "response_sha256": "f74ef2b305bef22f0ffcc60c0fb873ce5130169071856cffd9868823c9a714a0",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:32.512816+00:00"
+    },
+    {
+      "file": "page-000068.json",
+      "sha256": "8cd5e1406f0bfb62ba354ba048bf53644fdeb527b394cec21b66b3cadeca96b3",
+      "response_sha256": "77e739a7a63792b899decece59db560734aee846f72bc0aa71ba81be2efd1126",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:34.290222+00:00"
+    },
+    {
+      "file": "page-000069.json",
+      "sha256": "5438951038b553f61110fa9e28fcbda39c18a5ece6c3e508488a59fa13f757ad",
+      "response_sha256": "dc9ff8ffaf6c301963e92368a276a624f9e4e919b43683f5a9fec0a07c7d1ce9",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:36.031740+00:00"
+    },
+    {
+      "file": "page-000070.json",
+      "sha256": "a897842f9e50bede3403c8a524e0f71fe8437239ab73a5ffe049d8fde9c67f72",
+      "response_sha256": "831eaee8f591216ec5f5f068bf833453c31dd70ec41f376f50a441e683a74ffb",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:37.763329+00:00"
+    },
+    {
+      "file": "page-000071.json",
+      "sha256": "9ec8ba82f1b36d6cbebc9c8fcf3ba0f9aa5976b0c0455f34b8f983a8b69b7044",
+      "response_sha256": "eaf754866cbcb3d9c125816282291213845d10d78ca45f889c1c593e12550fc2",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:39.460500+00:00"
+    },
+    {
+      "file": "page-000072.json",
+      "sha256": "ce2e9107d09531ba2f55a6dd74f36f962112ed8439c53170afc2845c5c1b9f02",
+      "response_sha256": "6b493adbf60b7c6499d405d9357d4333bd8c106b8179308d0ead530befbfddfe",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:41.183525+00:00"
+    },
+    {
+      "file": "page-000073.json",
+      "sha256": "33c6c08052060cc3fc2ddc63a7a1bb79ffb8eae19c31f44c1bdf4b5e6a776d26",
+      "response_sha256": "e5fcdba061addc521aa78b568334969254d213cbd7ab67ac1b209e7d459dffca",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:43.226636+00:00"
+    },
+    {
+      "file": "page-000074.json",
+      "sha256": "f59c9ec8086dc0b1b7799b4e8a45b39cf8f4e0a66e7de746f7e09ff0609c851d",
+      "response_sha256": "d30b3484264b86b339a5201e60e099b1a8fe37639e38577c249cfebd2d4c3cb4",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:53.430591+00:00"
+    },
+    {
+      "file": "page-000075.json",
+      "sha256": "3b0a8f7eb7cb05082a3efa617ef3bd8369caa253f59861376673c5407eb4b9c5",
+      "response_sha256": "8dce8f30453d9a157d141e65fd4cc8962f45fd1fb1ae1afd6fa0dbd6d8ad5c3c",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:55.341899+00:00"
+    },
+    {
+      "file": "page-000076.json",
+      "sha256": "ba7772cef52e79899d8e74574d3b60899db75d128b0e107d27f7761938435452",
+      "response_sha256": "5d295e9ac9f9a0d69592cf93375361f01fea8cefb1664f98cfdeed1340cea597",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:57.405994+00:00"
+    },
+    {
+      "file": "page-000077.json",
+      "sha256": "6711b1df3786c2270241ef03c91f58598e1f592eb2194f6bda678f0efd0344f9",
+      "response_sha256": "2836bcadaa5fea75ddec3e38defe31c3c8ff62043e2a393c782880ec1347443e",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:54:59.147334+00:00"
+    },
+    {
+      "file": "page-000078.json",
+      "sha256": "fb9cfd7864b6127eb8ab120797165da90b0dcf49882ad83bb2ebe7516b530347",
+      "response_sha256": "a9bdea486334dc4bf04e0a18355d451de2715866981e36f1c7bd9775a7bbcf68",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:00.918289+00:00"
+    },
+    {
+      "file": "page-000079.json",
+      "sha256": "020b054d28b54fc8bff91935f60afaa83e5fd16f7d337b2b99af4533bba21d0b",
+      "response_sha256": "0eb23307531c09fe023a137ece29c64631839aa440df4766e2f4b8cfbe8b4182",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:02.682847+00:00"
+    },
+    {
+      "file": "page-000080.json",
+      "sha256": "965a5dba56ebb240ad0dbd03539046450035e1576c2c84ef8f0399b2326e9cdd",
+      "response_sha256": "da31a342e0a918f0c4a002dfa7c974fd2bfb9087650db0b98851aedd7867c521",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:04.431868+00:00"
+    },
+    {
+      "file": "page-000081.json",
+      "sha256": "53999fcd7bcd95d4556b39049410d3a1d2f9dc036839e67c7a07c86b0c6ae545",
+      "response_sha256": "5ce0722ede1e250d957540bc0925c956c2914174d30493886211d9ffd744b8c1",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:06.175457+00:00"
+    },
+    {
+      "file": "page-000082.json",
+      "sha256": "fd009360df4a93a436b9c20e10436418287fa04c0523a0ad68c3d23f25633f45",
+      "response_sha256": "091835dcc092b62324b9adb3eea7e2025e100f71843ec43914b5812a4ee90f93",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:07.942073+00:00"
+    },
+    {
+      "file": "page-000083.json",
+      "sha256": "e67721ba7ba388151199bb6034592c80b2414e49bd3799f3369c6fd52c56a2af",
+      "response_sha256": "55ba6c2e081be407bb1891e5e0326a65e86bf9d24f40dd85db894c4764935863",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:15.024266+00:00"
+    },
+    {
+      "file": "page-000084.json",
+      "sha256": "43e089dd8b1107f3a5a0379ef169b0e70154bc6153597d5995650b96c7f4b760",
+      "response_sha256": "1450d328a857a4400049869101445aa5986f99cf6de926c7e05b061e8a85dd7b",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:16.546698+00:00"
+    },
+    {
+      "file": "page-000085.json",
+      "sha256": "b112456107537d7a5c9957427f4c3dbc5b4b80a0d7f5fe111cd31b01677a6422",
+      "response_sha256": "38a41ca1903215b23a4c2ee9288a140b46adfce1bffc161bfb3f4072ea822e35",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:18.187666+00:00"
+    },
+    {
+      "file": "page-000086.json",
+      "sha256": "0399a79ed5791fd6288d722f400a8726563d5120617fcb4011b0e43ac08b01cf",
+      "response_sha256": "5d37dd2b31534e4199307dde5cf24f8306f7a159b5be452a45433c50dc49a991",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:20.357115+00:00"
+    },
+    {
+      "file": "page-000087.json",
+      "sha256": "dcf8680a7dfa4fe41d3984e48f45963b9edbadb97575f40c2fc7d0b8436b23ee",
+      "response_sha256": "0a0830d7b968333d345b27cef046352548905584d2d51d504b53db4962f1ba6d",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:21.917037+00:00"
+    },
+    {
+      "file": "page-000088.json",
+      "sha256": "08a87d1d87ee785382c39af4207b0dfd5d5bd0b8c17e1b106d8e15d88e64d77e",
+      "response_sha256": "91249a63a95ab4218de36bdd4a0af2b76a8c6da136e813763c6b2f84fa38d5fb",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:23.852442+00:00"
+    },
+    {
+      "file": "page-000089.json",
+      "sha256": "47c736bee42b27f6ac8dd900c2c38461f5c89d378df6138221a66df31ca65bc7",
+      "response_sha256": "146fb9bbaa7f1d1ddf81365d6a3ccccf86055d63419b0f0f1d8e023901203318",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:25.591327+00:00"
+    },
+    {
+      "file": "page-000090.json",
+      "sha256": "1685da998cc1c6842e725b6becdf31f0d7489c0e53ed7ba4a90ee8e538c56d17",
+      "response_sha256": "e2deeac595a6fc6762397aa70c244fc0eb9207eaea79b29b2099d9eb0fcf008d",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:27.758435+00:00"
+    },
+    {
+      "file": "page-000091.json",
+      "sha256": "7fd6283b718b56cd08160495a991efe5bd1ede855f235ff7ef277467f03f2f9f",
+      "response_sha256": "b56ebef84213506f45c92f29d4eb6595852fbfe6a574d98f3485b74be6dd08f0",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:29.709509+00:00"
+    },
+    {
+      "file": "page-000092.json",
+      "sha256": "39bd7f7fd32b0c8401779e5bc6157a4d4e2ed1bf559dcf50bbaa2a95a6c4f461",
+      "response_sha256": "b42843ae20fc5204f46efa95f351a4c0b45472d3594490160044e9e3d0b216da",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:31.698777+00:00"
+    },
+    {
+      "file": "page-000093.json",
+      "sha256": "eb80a6e47d68767a2b3864c86f14c4290a9c8f7c4cabdf88bb297701d75ffbb5",
+      "response_sha256": "1045077edaba637d3c66a0ac428075a307f117cfd01c7eb426b70b989920ff05",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:33.434880+00:00"
+    },
+    {
+      "file": "page-000094.json",
+      "sha256": "074debc24b6994c8ec92a8404d5ed8db297e63b175b5d7f6551815fd4e83b673",
+      "response_sha256": "c0f0dc40ad09f98473a78160ebdaa65c098a4112892a37fee49f8e37d57f7656",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:35.363628+00:00"
+    },
+    {
+      "file": "page-000095.json",
+      "sha256": "e390d825216d815a6a8723f731c94a6e96fdcd12ec28f8c50d4a58af9596ba1a",
+      "response_sha256": "b513088ab18b637a455e190b78c5111a64ee6d9fc0d55b6a3249c26d4ba98a6a",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:37.180144+00:00"
+    },
+    {
+      "file": "page-000096.json",
+      "sha256": "9ceff3b45dafca7c353567647aeb4b2b0ffc54afb2c7565f58c4268fccef84a0",
+      "response_sha256": "fe4ce8d21ad4b9e2c96f6437ce23937fb2dafb0a4d4c7d9b64bcfda042a2f783",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:38.975303+00:00"
+    },
+    {
+      "file": "page-000097.json",
+      "sha256": "59737d26e05ad064c826e7dea2151ae4f57729d64c70824c4591bf5c8f1fd93e",
+      "response_sha256": "c27ceb0ee5414c4037c348cd9ba63a5c8eee17957c3865e310ccfa567e109c11",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:40.554215+00:00"
+    },
+    {
+      "file": "page-000098.json",
+      "sha256": "b97623e3d4166526c2b175c3ecb426e87d5b2536a9cd61435bf1e8a8eadd4719",
+      "response_sha256": "c2ace9944d43aa284146ebab215896d381741420d2d5bd3d04e13e8d92829ca4",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:42.329754+00:00"
+    },
+    {
+      "file": "page-000099.json",
+      "sha256": "032743677a02f8230c23f5b0dc16c57452cf673ceb7d9cdcb92081b1f347e2e0",
+      "response_sha256": "f77b815c82fa26c100a33163e26c85679c012ecf6bd9d662f7e576c105174e84",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:44.532156+00:00"
+    },
+    {
+      "file": "page-000100.json",
+      "sha256": "5d5a38cdbbf15bcd9a1ae8d68fa99a2975188b978921d71cafd703b3f941b189",
+      "response_sha256": "14bceda2b3443ca669c6e7805a7a3fdf05823e811393cdbc10fccfcdd6fd7c5b",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:46.723670+00:00"
+    },
+    {
+      "file": "page-000101.json",
+      "sha256": "08395849e8941801462ec5177c30d701fd9ff665c1d93929fc2739e866103f13",
+      "response_sha256": "22072ed3f602a3a28f556229ea2efe4637fde4ea1d2f689938926ecdca87303e",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:52.559392+00:00"
+    },
+    {
+      "file": "page-000102.json",
+      "sha256": "9986593c650a856251734ee5af3ea03a4482aa8094ef3e72a674769c0e693362",
+      "response_sha256": "d0aa410fe9be409625e2a4bb54b99671870db64c89f4c7e538edb426afe2c0a0",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:54.342363+00:00"
+    },
+    {
+      "file": "page-000103.json",
+      "sha256": "f8d12da8b5c12567bb2e9b03a705ec95eaddcc5be304f62764d52cfc9b4a66df",
+      "response_sha256": "65a727db3e10040718cc58b5d1c8d4a678f849cea45e0bf69dd7ec168bf37e5a",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:56.125570+00:00"
+    },
+    {
+      "file": "page-000104.json",
+      "sha256": "bca35c5d3aa1121466736666dd8c35d7bf75a1db98a7085f556991d01da2178b",
+      "response_sha256": "6df538acd5ed287bb7badd733f646df316d89fdbbbbc0051f63903bda6f8e6e8",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:55:59.712294+00:00"
+    },
+    {
+      "file": "page-000105.json",
+      "sha256": "ac4650bd846a9a491b2e6374ea329dfbfab17c8f4d93d3ea7403d643356c1b4d",
+      "response_sha256": "35e6c486f4c775078738bc9553c28147b952b1f80ccce20747ee393b0a741624",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:01.593352+00:00"
+    },
+    {
+      "file": "page-000106.json",
+      "sha256": "ec6b2f7de6a965b0ca7a4dee592aa58ea34af8ad56001d38d1ab9b1cb4575533",
+      "response_sha256": "26af429352916c2b8dc8e3d2827ad3f3bb3437721ca81de6369dda33835cc01e",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:03.742188+00:00"
+    },
+    {
+      "file": "page-000107.json",
+      "sha256": "eee87a09bcc55500728ab85bd9434a8ccb32a7caa40747393ec56e55af8b55d8",
+      "response_sha256": "2add6c8ea93b12425104c8cf07621fc027ba5df4393b5ae1c5aa60a14745a15b",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:05.508304+00:00"
+    },
+    {
+      "file": "page-000108.json",
+      "sha256": "41123ed2ab097fb8e7d942d035ecc0ca3c98bdab8720fc6c34a9f7efbff767f0",
+      "response_sha256": "6bac96dface51d7a8bae36440ac43064a43cb1eee247d2160d93baadfccf10fd",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:07.742216+00:00"
+    },
+    {
+      "file": "page-000109.json",
+      "sha256": "9139966cbe8e635b83f55f6320f5e3f311b1a0974a9c484eaf40f6d030d91aee",
+      "response_sha256": "9415717523ce237d88859e0adf5dbeefaf526ba377873999b8ee47c9ba43e601",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:09.484728+00:00"
+    },
+    {
+      "file": "page-000110.json",
+      "sha256": "c3f5cd025971e15c544bd0131ab2e12c15b7c4b619b401bce6eaf6d85067adf6",
+      "response_sha256": "a6ae8ca305dcd9239ddfd7bff6f35902b7d2c7f7763c025d4a041b370076d27f",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:11.745702+00:00"
+    },
+    {
+      "file": "page-000111.json",
+      "sha256": "6a49685450f760fa5d9304c9943e1ff69a5bfbc177e65fbfa4677f2368c86394",
+      "response_sha256": "e9c07dbee6f43061830b6381cd877ce5f7485a74af275acae1bca2e14b69d75f",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:13.526479+00:00"
+    },
+    {
+      "file": "page-000112.json",
+      "sha256": "83bb4d329efb4fe00f019234d83edd64f40ae9d34209d10190c590b3efec342a",
+      "response_sha256": "d362d2aca1297b7eed7838c72515876eaa0963e40a4795df6e4ba5ca35dc702a",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:15.325814+00:00"
+    },
+    {
+      "file": "page-000113.json",
+      "sha256": "b81d51fa5a0c45455c0a320837517f73a9e2ce4b8206df899c13030b0c1d61f1",
+      "response_sha256": "d26e5d1a120ff08fef387a4bbaf330a6bbb97a6a6d11c44de34d45903edb1df9",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:17.218372+00:00"
+    },
+    {
+      "file": "page-000114.json",
+      "sha256": "9497ee2309825e9b1111652fc4a557d6921871920707d0c0877c1a74d7551453",
+      "response_sha256": "a9d13978678da5949f4434683f2f8e1cbc9c6587c9ae607a6752faa7f116d8c9",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:19.457687+00:00"
+    },
+    {
+      "file": "page-000115.json",
+      "sha256": "3dc3afcbd63fe7ce54894574de7a2a8aeaff027662a0902e463675931e975594",
+      "response_sha256": "50b9dd556bd9fec457cc7d5f422d1e7d3a138531ca2752a38ab9d7f81b2ef0c2",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:21.254177+00:00"
+    },
+    {
+      "file": "page-000116.json",
+      "sha256": "a0581002264fc49f1e3947af10554fd5060b418ed9171bd261db9e424e089519",
+      "response_sha256": "7c9293e4352e83500abeed125a3a3ef2d2db775ef1b89b337018bdfd026690d8",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:23.118597+00:00"
+    },
+    {
+      "file": "page-000117.json",
+      "sha256": "2924473b53eaf06da510481ad20551f9968259832454dc4cd2d80dc106ba4828",
+      "response_sha256": "aa8cf45d960dcb910efef9d3fe1c944acaf48d634c0de606e359a4b23d4122da",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:24.991778+00:00"
+    },
+    {
+      "file": "page-000118.json",
+      "sha256": "6facfe30a6fa5797edd81353048ffe589959c453651cbf3293f2f6ffc756f76f",
+      "response_sha256": "a6b0707f4ebc6ad9ccb7740642a3c27652ef6edab234c8efd6777963223f00fe",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:26.847690+00:00"
+    },
+    {
+      "file": "page-000119.json",
+      "sha256": "968f7969ff6884dd5c5b56a1ab55fa207ad33c22ff1ba83ff588a76761bd8c49",
+      "response_sha256": "ff21e54f36cd820d1fba725c18871835cdd3a894fe1cb9cc5c62323a5383f790",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:28.802283+00:00"
+    },
+    {
+      "file": "page-000120.json",
+      "sha256": "37d49b4c09672efabe87d7f348357a463865dae39e018a9dfe6ff22b1bcaa32f",
+      "response_sha256": "8d5df953788bc12d6c4a91dd2f698b013a8f57008ca79e5c918b073feb2b7fe3",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:30.620810+00:00"
+    },
+    {
+      "file": "page-000121.json",
+      "sha256": "c49f94251bee405e933726d26bcb72037d80caab98fb81b95e9840dc4ad126a6",
+      "response_sha256": "47e7dda9065619d42cb89a58063027e08938feca227f2da080f8119a8e375696",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:32.428547+00:00"
+    },
+    {
+      "file": "page-000122.json",
+      "sha256": "c55c26f33a105767d9d0b17929931d9e843adca26ddc4dd9a285845b6c8e3fd3",
+      "response_sha256": "3ca9ecde25ab09741a83c1d8e6da87453f2251d2b1d10b2575db431e9a464ced",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:34.245562+00:00"
+    },
+    {
+      "file": "page-000123.json",
+      "sha256": "6ef1e91c3eac22749718abe183f56c7185781b317f807565110ef332bbe4d79d",
+      "response_sha256": "251fb4fc106fb16717582fff4f64d273d6db30d969ef63821c668545c65377c6",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:36.320160+00:00"
+    },
+    {
+      "file": "page-000124.json",
+      "sha256": "62539a073574a769e06dd0d97d0bd31570900d96f832920cef0cc1f44e93a4d5",
+      "response_sha256": "c840efc1ddd96224dcb7f48183cac8ef0a40d9938ebee600f6c89e96d922ed43",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:38.542819+00:00"
+    },
+    {
+      "file": "page-000125.json",
+      "sha256": "09bff0bd600b43fe3ff0a7fdb9ba14bfabe4511a1e1c9d93557440a36d93b715",
+      "response_sha256": "cf5969e4ab16df0493504edb5885c8dbe950f62ca1c7ca863dc4ee257ffc1ef6",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:40.821684+00:00"
+    },
+    {
+      "file": "page-000126.json",
+      "sha256": "16fbf7e79158b6990c9d1fecde6e0504fe3b393f7858948bd9d4b11e353e9993",
+      "response_sha256": "b802ea691d476b53fa12b4a2ade8c0b64c2722073a34ef34b1634a969d55324d",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:42.733061+00:00"
+    },
+    {
+      "file": "page-000127.json",
+      "sha256": "fa9bc1c629bc11201d59e054e74c85831fd42116cd8592126b71e25855a6a4c0",
+      "response_sha256": "78dc24171d0f9cb0171d36b39cd4f2ea49d58ba2b4c758c337099bd6bdac3c3c",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:44.979122+00:00"
+    },
+    {
+      "file": "page-000128.json",
+      "sha256": "ffa5fa196db97b61c1623225221e614a7a826d21df9153c808dbd48367228ef1",
+      "response_sha256": "042a59c80d70961606c2703589b45e8c352fd6831f7010afd513360057549153",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:46.793869+00:00"
+    },
+    {
+      "file": "page-000129.json",
+      "sha256": "4e8002ee27f2d8a8d9ca39cbf40e5144ac56e760fe181a3f4d45d0c6f314c5a3",
+      "response_sha256": "adad7d6dcc3b2da6c5720035b39cc00ab67a97752d2c5f5fa7cc33259f7e38af",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:48.652491+00:00"
+    },
+    {
+      "file": "page-000130.json",
+      "sha256": "4ff3b2c5f23722524c03cb96ced1716ea2d01d0ad9e488c9749d5a83135babc3",
+      "response_sha256": "6b08e719c9fd7af656f3e5987e683e09e827017728e48e0b31e8205fab2009ef",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:50.265041+00:00"
+    },
+    {
+      "file": "page-000131.json",
+      "sha256": "36ee972334d1554c87b6a76bdf3252c05448d887bb7702784a208128b1468777",
+      "response_sha256": "b4dc290fe89b184ad2d2d30032a0a6080ba6f58d782b73330b7c16269517dd39",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:52.130991+00:00"
+    },
+    {
+      "file": "page-000132.json",
+      "sha256": "ff74e712c398314ef6b0e265a7971b69e7e45c4a90c6f941432eda0024942e9c",
+      "response_sha256": "b844c1b9b1e4f74bddb732a4f72e4c78fcc442cf05f16e48bd4f6479bf7a9288",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:53.953980+00:00"
+    },
+    {
+      "file": "page-000133.json",
+      "sha256": "b545651bdafdb1e5498617dd0a193dd531d243b91d1828dd0d2097d5a59ebba1",
+      "response_sha256": "ad521d0944199ea610f3b040c37fbdbaa4a86b65f05fd8412421c5a5f4713b68",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:55.782530+00:00"
+    },
+    {
+      "file": "page-000134.json",
+      "sha256": "c7db23b36454de26cc46a868299b8ca10c9d1497cdfba38caabb8aa246fb00e2",
+      "response_sha256": "d0bfcc3a134252394eab266b15b263d9834f23489da61fd902cee9a23eb30142",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:57.577402+00:00"
+    },
+    {
+      "file": "page-000135.json",
+      "sha256": "42710ced57237d1e982f95769a082dba1c2c7ea1ee52ff9a34b3490f95c0c96f",
+      "response_sha256": "3d59350c214cb3b5bdcaa298652158f5b9139ec47d76fc07a84461387b8f9459",
+      "article_count": 50,
+      "received_utc": "2026-10-12T15:56:59.434386+00:00"
+    },
+    {
+      "file": "page-000136.json",
+      "sha256": "19525f5fa3336f9b1422ba27fc5229cb7b12c6809a2de85b8b84434b9e240f29",
+      "response_sha256": "420b4308f5402c7866029467bcade7d3d75dd7b1482ebd49c060ddac0ceb176e",
+      "article_count": 19,
+      "received_utc": "2026-10-12T15:57:01.091578+00:00"
+    }
+  ],
+  "audit": {
+    "received_article_rows": 6769,
+    "unique_provider_ids": 6769,
+    "identical_duplicate_rows": 0,
+    "outside_publication_window": 1,
+    "publication_rows": 6768,
+    "revised_after_publication": 4009,
+    "midnight_publication_rows": 0,
+    "conservative_rows": 6768,
+    "updates_outside_window_excluded_from_conservative": 0,
+    "publication_rows_by_year": {
+      "2018": 493,
+      "2019": 375,
+      "2020": 515,
+      "2021": 1035,
+      "2022": 1632,
+      "2023": 2718
+    },
+    "conservative_rows_by_year": {
+      "2018": 493,
+      "2019": 375,
+      "2020": 515,
+      "2021": 1035,
+      "2022": 1632,
+      "2023": 2718
+    },
+    "first_created_at": "2018-01-02T09:15:41Z",
+    "last_created_at": "2023-12-30T09:16:38Z",
+    "revision_policy": "Conservative event_ts is max(created_at, updated_at); versions available after the window are excluded.",
+    "historical_coverage_exhaustive": false,
+    "point_in_time_availability_proven": false
+  },
+  "publication_csv": {
+    "path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\data\\raw\\snapshots\\alpaca_nvda_20261012T155013436Z\\publication_time.csv",
+    "sha256": "a9f10ca7c1a56e92b272ca104d3ad7511083ad42998a290b1d6e1e67efec757b",
+    "rows": 6768
+  },
+  "conservative_csv": {
+    "path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\data\\raw\\snapshots\\alpaca_nvda_20261012T155013436Z\\revision_conservative.csv",
+    "sha256": "6be5f33926cba57ddf962c1e104b2768d82469befed041b4daa3d6559007096f",
+    "rows": 6768
+  },
+  "completed_utc": "2026-10-12T16:01:05.979396+00:00"
+}

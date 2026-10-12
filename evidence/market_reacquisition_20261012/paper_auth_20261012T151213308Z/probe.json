@@ -1,0 +1,30 @@
+{
+  "schema": "investify-paper-news-auth-diagnosis-v1",
+  "checked_utc": "2026-10-12T15:12:15.541185+00:00",
+  "credential_sources": {
+    "ALPACA_API_KEY": "local_env_file",
+    "ALPACA_API_SECRET": "local_env_file"
+  },
+  "credential_values_recorded": false,
+  "account_data_saved": false,
+  "requests_executed": 2,
+  "results": [
+    {
+      "source": "Paper account",
+      "url": "https://paper-api.alpaca.markets/v2/account",
+      "status": "connection_failed",
+      "winerror": 10061,
+      "elapsed_seconds": 2.063
+    },
+    {
+      "source": "Market news",
+      "url": "https://data.alpaca.markets/v1beta1/news?symbols=NVDA&limit=1&include_content=false",
+      "status": "connection_failed",
+      "winerror": 10061,
+      "elapsed_seconds": 2.063
+    }
+  ],
+  "status": "network_prevents_complete_diagnosis",
+  "next_step": "Run in normal network-enabled PowerShell. Check its expected proxy/VPN configuration if connections also fail there.",
+  "scope": "Two read-only provider requests. No trading, settings changes, raw account data, historical coverage or scientific run."
+}

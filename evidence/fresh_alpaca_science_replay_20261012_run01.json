@@ -1,0 +1,595 @@
+{
+  "schema": "investify-fresh-science-actual-replay-v1",
+  "purpose": "research",
+  "checked_utc": "2026-10-12T18:13:57.727420+00:00",
+  "config_path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\recovery_config.yaml",
+  "script_sha256": "8cee41d13ea235f9ad280098a60320a007b4a314e6d6e1d36c18fe40a758c94b",
+  "network_requests": 0,
+  "modes": {
+    "frozen_classifier": {
+      "result_path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\engine_frozen_alpaca\\decision_records.json",
+      "result_sha256": "33a3690ab073c9fb5511e53befe5fba522d8120abf25cbf6cb95497b8ef3a0e2",
+      "trace_sha256": "009d3b40df86338d918d6546640c57e43fa13541d592e551a5b35fc55d25304e",
+      "trace_consistency": {
+        "brier_before": 0.7929202034954362,
+        "brier_after": 0.6104969395473482,
+        "calibration_class_counts": {
+          "Buy": 98,
+          "Hold": 27,
+          "Sell": 56
+        },
+        "evaluation_class_counts": {
+          "Buy": 94,
+          "Hold": 30,
+          "Sell": 62
+        },
+        "model_bytes_integrity_passed": true,
+        "score_probability_consistency_passed": true,
+        "calibration_numeric_replay_passed": true,
+        "label_availability_replay_passed": true,
+        "calibration_absolute_tolerance": 1e-06,
+        "model_inference_replayed": false,
+        "purpose": "research"
+      },
+      "actual_inference_replay": {
+        "calibration": {
+          "rows": 181,
+          "maximum_margin_difference": 0.0,
+          "maximum_probability_difference": 0.0,
+          "model_sha256": "afcce3fc43dbdb5391f0adee89d00c9e0336147757617de26d39a7034542198c",
+          "model_inference_replayed": true
+        },
+        "evaluation": {
+          "rows": 186,
+          "maximum_margin_difference": 0.0,
+          "maximum_probability_difference": 0.0,
+          "model_sha256": "afcce3fc43dbdb5391f0adee89d00c9e0336147757617de26d39a7034542198c",
+          "model_inference_replayed": true
+        },
+        "native_treeshap": {
+          "maximum_contribution_difference": 0.0,
+          "maximum_base_difference": 0.0,
+          "maximum_additivity_residual": 1.0230578482151031e-06,
+          "tolerance": 0.0001
+        }
+      },
+      "metrics": {
+        "cv_macro_f1_mean": 0.2843234954053511,
+        "cv_macro_f1_sd": 0.053685107518421676,
+        "cv_macro_f1_per_fold": [
+          0.18591163134029318,
+          0.336026719916322,
+          0.2685292272643624,
+          0.2871340445110937,
+          0.3167569998986686,
+          0.3115823495013671
+        ],
+        "baseline_cv_macro_f1_mean": 0.2796068787066104,
+        "baseline_cv_macro_f1_sd": 0.05592611893142395,
+        "baseline_cv_macro_f1_per_fold": [
+          0.24055849985962893,
+          0.32823643342468545,
+          0.28444904531861054,
+          0.33704631950245983,
+          0.2977318403674993,
+          0.18961913376677828
+        ],
+        "eval_macro_f1_model": 0.2238095238095238,
+        "eval_macro_f1_baseline": 0.18000947204618753,
+        "brier_before": 0.7929202034954362,
+        "brier_after": 0.6104969395473482
+      },
+      "decision_counts": {
+        "Buy": 186
+      },
+      "calibration_availability": {
+        "contract": "calibration-label-end-before-evaluation-v1",
+        "evaluation_start": "2023-03-29",
+        "candidate_rows": 186,
+        "available_rows": 181,
+        "removed_rows": 5,
+        "excluded_source_indices": [
+          1114,
+          1115,
+          1116,
+          1117,
+          1118
+        ],
+        "selection_uses_label_values": false
+      },
+      "held_out_dates": [
+        "2023-03-29",
+        "2023-12-21"
+      ]
+    },
+    "refit_transfer": {
+      "result_path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\engine_refit_alpaca\\decision_records.json",
+      "result_sha256": "8378e4b4dca62ca3529d5c3842de47267ac16c4a4642ae89d43658a756338f7e",
+      "trace_sha256": "04c0f821432b5c80cfc957e115f6c06de31875159368db7ad1ef80a2c83b330e",
+      "trace_consistency": {
+        "brier_before": 0.776041525770274,
+        "brier_after": 0.6078417162644654,
+        "calibration_class_counts": {
+          "Buy": 98,
+          "Hold": 27,
+          "Sell": 56
+        },
+        "evaluation_class_counts": {
+          "Buy": 94,
+          "Hold": 30,
+          "Sell": 62
+        },
+        "model_bytes_integrity_passed": true,
+        "score_probability_consistency_passed": true,
+        "calibration_numeric_replay_passed": true,
+        "label_availability_replay_passed": true,
+        "calibration_absolute_tolerance": 1e-06,
+        "model_inference_replayed": false,
+        "purpose": "research"
+      },
+      "actual_inference_replay": {
+        "calibration": {
+          "rows": 181,
+          "maximum_margin_difference": 0.0,
+          "maximum_probability_difference": 0.0,
+          "model_sha256": "afcce3fc43dbdb5391f0adee89d00c9e0336147757617de26d39a7034542198c",
+          "model_inference_replayed": true
+        },
+        "evaluation": {
+          "rows": 186,
+          "maximum_margin_difference": 0.0,
+          "maximum_probability_difference": 0.0,
+          "model_sha256": "1e649ddaba641292c6b45669dcb231f4f0dd74544214efa1b6046eb6816ac438",
+          "model_inference_replayed": true
+        },
+        "native_treeshap": {
+          "maximum_contribution_difference": 0.0,
+          "maximum_base_difference": 0.0,
+          "maximum_additivity_residual": 1.0486692190170288e-06,
+          "tolerance": 0.0001
+        }
+      },
+      "metrics": {
+        "cv_macro_f1_mean": 0.2843234954053511,
+        "cv_macro_f1_sd": 0.053685107518421676,
+        "cv_macro_f1_per_fold": [
+          0.18591163134029318,
+          0.336026719916322,
+          0.2685292272643624,
+          0.2871340445110937,
+          0.3167569998986686,
+          0.3115823495013671
+        ],
+        "baseline_cv_macro_f1_mean": 0.2796068787066104,
+        "baseline_cv_macro_f1_sd": 0.05592611893142395,
+        "baseline_cv_macro_f1_per_fold": [
+          0.24055849985962893,
+          0.32823643342468545,
+          0.28444904531861054,
+          0.33704631950245983,
+          0.2977318403674993,
+          0.18961913376677828
+        ],
+        "eval_macro_f1_model": 0.2238095238095238,
+        "eval_macro_f1_baseline": 0.18961913376677828,
+        "brier_before": 0.776041525770274,
+        "brier_after": 0.6078417162644654
+      },
+      "decision_counts": {
+        "Buy": 186
+      },
+      "calibration_availability": {
+        "contract": "calibration-label-end-before-evaluation-v1",
+        "evaluation_start": "2023-03-29",
+        "candidate_rows": 186,
+        "available_rows": 181,
+        "removed_rows": 5,
+        "excluded_source_indices": [
+          1114,
+          1115,
+          1116,
+          1117,
+          1118
+        ],
+        "selection_uses_label_values": false
+      },
+      "held_out_dates": [
+        "2023-03-29",
+        "2023-12-21"
+      ]
+    }
+  },
+  "passed": true,
+  "harness": {
+    "path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\harness_alpaca\\results_alpaca.json",
+    "sha256": "5f0c432e5741fcf2b73b745c6398267a0029f19213d46d6ca5cdddad98c1703d",
+    "arms": [
+      {
+        "arm": "A_CLEAN",
+        "horizon_days": 1,
+        "changes": "Nothing. Correct throughout.",
+        "n_rows": 1309,
+        "n_folds": 6,
+        "macro_f1": 0.3078803046689269,
+        "macro_f1_sd": 0.03662592378582391,
+        "chance": 0.3313753839504689,
+        "lift": -0.023495079281541986,
+        "ci_lo": -0.05143571394654036,
+        "ci_hi": 0.00027220055559645795,
+        "threshold": 0.03,
+        "verdict": "PASS",
+        "per_fold_f1": [
+          0.2438378860316056,
+          0.29508114602757335,
+          0.3299227343275524,
+          0.3037037037037037,
+          0.32737669615104786,
+          0.34735966177207867
+        ],
+        "per_fold_baseline": [
+          0.3306549441349579,
+          0.3323223070689227,
+          0.3319911300807463,
+          0.33030786755174074,
+          0.33129860861456817,
+          0.3316774462518776
+        ],
+        "corpus": "alpaca"
+      },
+      {
+        "arm": "B_SHUFFLED",
+        "horizon_days": 1,
+        "changes": "Shuffled K-fold instead of expanding walk-forward.",
+        "n_rows": 1309,
+        "n_folds": 6,
+        "macro_f1": 0.3446181032816113,
+        "macro_f1_sd": 0.03682146344984481,
+        "chance": 0.3316151602014567,
+        "lift": 0.013002943080154594,
+        "ci_lo": -0.010727070656785576,
+        "ci_hi": 0.041923405549416405,
+        "threshold": 0.03,
+        "verdict": "PASS",
+        "per_fold_f1": [
+          0.34814192758143436,
+          0.31970791919669667,
+          0.40964599667379425,
+          0.3218399401645475,
+          0.30988565162907267,
+          0.35848718444412225
+        ],
+        "per_fold_baseline": [
+          0.3314516665469717,
+          0.3300523745365973,
+          0.33217895989740975,
+          0.3300841860874486,
+          0.3329469392259699,
+          0.3329768349143427
+        ],
+        "corpus": "alpaca"
+      },
+      {
+        "arm": "C_NOPURGE",
+        "horizon_days": 1,
+        "changes": "Purge and embargo removed, walk-forward retained.",
+        "n_rows": 1309,
+        "n_folds": 6,
+        "macro_f1": 0.3281047503518855,
+        "macro_f1_sd": 0.02111184670515889,
+        "chance": 0.3313512685540923,
+        "lift": -0.003246518202206783,
+        "ci_lo": -0.01875893276516914,
+        "ci_hi": 0.011297492898482206,
+        "threshold": 0.03,
+        "verdict": "PASS",
+        "per_fold_f1": [
+          0.2997835497835498,
+          0.3061023863943572,
+          0.3365079365079365,
+          0.3284890167380352,
+          0.3509906398559069,
+          0.34675497283152784
+        ],
+        "per_fold_baseline": [
+          0.33063872877010575,
+          0.3321555414145885,
+          0.3320675013216885,
+          0.3302584930099178,
+          0.3312852539029391,
+          0.3317020929053141
+        ],
+        "corpus": "alpaca"
+      },
+      {
+        "arm": "D_CENTRED",
+        "horizon_days": 1,
+        "changes": "bollinger_pos computed with a centred rather than trailing window.",
+        "n_rows": 1309,
+        "n_folds": 6,
+        "macro_f1": 0.40136428227375304,
+        "macro_f1_sd": 0.035033585857437856,
+        "chance": 0.3313753839504689,
+        "lift": 0.06998889832328414,
+        "ci_lo": 0.04644994573412244,
+        "ci_hi": 0.09507228619064556,
+        "threshold": 0.03,
+        "verdict": "LEAK",
+        "per_fold_f1": [
+          0.40762849175261073,
+          0.3639494800762479,
+          0.4022188078158613,
+          0.36692479758173197,
+          0.40712849840242304,
+          0.4603356180136429
+        ],
+        "per_fold_baseline": [
+          0.3306549441349579,
+          0.3323223070689227,
+          0.3319911300807463,
+          0.33030786755174074,
+          0.33129860861456817,
+          0.3316774462518776
+        ],
+        "corpus": "alpaca"
+      },
+      {
+        "arm": "D_CENTRED_SMA200",
+        "horizon_days": 1,
+        "changes": "dist_sma200 centred instead of trailing (window does not overlap the horizon).",
+        "n_rows": 1309,
+        "n_folds": 6,
+        "macro_f1": 0.3352440586220718,
+        "macro_f1_sd": 0.024907898349152094,
+        "chance": 0.3313753839504689,
+        "lift": 0.003868674671602901,
+        "ci_lo": -0.014531306799343613,
+        "ci_hi": 0.02230400142100497,
+        "threshold": 0.03,
+        "verdict": "PASS",
+        "per_fold_f1": [
+          0.3357675285348241,
+          0.3090722534598864,
+          0.3074676895431612,
+          0.35281683668780445,
+          0.33454517171188297,
+          0.3717948717948718
+        ],
+        "per_fold_baseline": [
+          0.3306549441349579,
+          0.3323223070689227,
+          0.3319911300807463,
+          0.33030786755174074,
+          0.33129860861456817,
+          0.3316774462518776
+        ],
+        "corpus": "alpaca"
+      },
+      {
+        "arm": "E_SAMEBAR_TEXT",
+        "horizon_days": 1,
+        "changes": "Alternate publication-date bucket; strict-prior join retained. Mapping/lag comparison, not a proven publication-leak canary.",
+        "n_rows": 1309,
+        "n_folds": 6,
+        "macro_f1": 0.31397113465583937,
+        "macro_f1_sd": 0.040175218494097886,
+        "chance": 0.3313753839504689,
+        "lift": -0.017404249294629526,
+        "ci_lo": -0.046891587020352725,
+        "ci_hi": 0.01049643440112443,
+        "threshold": 0.03,
+        "verdict": "PASS",
+        "per_fold_f1": [
+          0.2679070488594298,
+          0.26137432813487066,
+          0.3209122014000063,
+          0.33403159640394514,
+          0.3407513938305678,
+          0.3588502393062165
+        ],
+        "per_fold_baseline": [
+          0.3306549441349579,
+          0.3323223070689227,
+          0.3319911300807463,
+          0.33030786755174074,
+          0.33129860861456817,
+          0.3316774462518776
+        ],
+        "corpus": "alpaca"
+      },
+      {
+        "arm": "A_CLEAN",
+        "horizon_days": 5,
+        "changes": "Nothing. Correct throughout.",
+        "n_rows": 1305,
+        "n_folds": 6,
+        "macro_f1": 0.2843234954053511,
+        "macro_f1_sd": 0.053685107518421676,
+        "chance": 0.3286851772146437,
+        "lift": -0.044361681809292564,
+        "ci_lo": -0.0854884647284169,
+        "ci_hi": -0.01207459416981895,
+        "threshold": 0.03,
+        "verdict": "BELOW_CHANCE",
+        "per_fold_f1": [
+          0.18591163134029318,
+          0.336026719916322,
+          0.2685292272643624,
+          0.2871340445110937,
+          0.3167569998986686,
+          0.3115823495013671
+        ],
+        "per_fold_baseline": [
+          0.3258882075121323,
+          0.33088815425638457,
+          0.3305455265955323,
+          0.32420396697988313,
+          0.33016591522477384,
+          0.33041929271915577
+        ],
+        "corpus": "alpaca"
+      },
+      {
+        "arm": "B_SHUFFLED",
+        "horizon_days": 5,
+        "changes": "Shuffled K-fold instead of expanding walk-forward.",
+        "n_rows": 1305,
+        "n_folds": 6,
+        "macro_f1": 0.44567531830243734,
+        "macro_f1_sd": 0.034074258322820745,
+        "chance": 0.33148401698630975,
+        "lift": 0.11419130131612759,
+        "ci_lo": 0.08788035516868846,
+        "ci_hi": 0.13711898254460253,
+        "threshold": 0.03,
+        "verdict": "LEAK",
+        "per_fold_f1": [
+          0.45893172229567347,
+          0.47063935716187083,
+          0.4138979174190442,
+          0.4671261487050961,
+          0.47139804639804633,
+          0.3920587178348931
+        ],
+        "per_fold_baseline": [
+          0.3298821077017506,
+          0.3314737644382036,
+          0.33301870811594325,
+          0.3315117009579378,
+          0.3315387226584465,
+          0.3314790980455769
+        ],
+        "corpus": "alpaca"
+      },
+      {
+        "arm": "C_NOPURGE",
+        "horizon_days": 5,
+        "changes": "Purge and embargo removed, walk-forward retained.",
+        "n_rows": 1305,
+        "n_folds": 6,
+        "macro_f1": 0.3021579363387678,
+        "macro_f1_sd": 0.038000279406024025,
+        "chance": 0.3289058716328516,
+        "lift": -0.026747935294083813,
+        "ci_lo": -0.054666399361419114,
+        "ci_hi": -0.00033702910989767226,
+        "threshold": 0.03,
+        "verdict": "BELOW_CHANCE",
+        "per_fold_f1": [
+          0.2537038708836127,
+          0.3452364762034284,
+          0.26344816711308855,
+          0.2974263519718065,
+          0.3142340779295887,
+          0.338898673931082
+        ],
+        "per_fold_baseline": [
+          0.3271390184783052,
+          0.33097524350663904,
+          0.33065428743074143,
+          0.32410957927052203,
+          0.3302190090274969,
+          0.33033809208340503
+        ],
+        "corpus": "alpaca"
+      },
+      {
+        "arm": "D_CENTRED",
+        "horizon_days": 5,
+        "changes": "bollinger_pos computed with a centred rather than trailing window.",
+        "n_rows": 1305,
+        "n_folds": 6,
+        "macro_f1": 0.5390354495610808,
+        "macro_f1_sd": 0.05147771641173459,
+        "chance": 0.3286851772146437,
+        "lift": 0.21035027234643716,
+        "ci_lo": 0.16978375955492817,
+        "ci_hi": 0.2420917361203314,
+        "threshold": 0.03,
+        "verdict": "LEAK",
+        "per_fold_f1": [
+          0.4456264775413712,
+          0.5485724803754765,
+          0.5976986004336685,
+          0.5283652050737234,
+          0.567808098253694,
+          0.5461418356885517
+        ],
+        "per_fold_baseline": [
+          0.3258882075121323,
+          0.33088815425638457,
+          0.3305455265955323,
+          0.32420396697988313,
+          0.33016591522477384,
+          0.33041929271915577
+        ],
+        "corpus": "alpaca"
+      },
+      {
+        "arm": "D_CENTRED_SMA200",
+        "horizon_days": 5,
+        "changes": "dist_sma200 centred instead of trailing (window does not overlap the horizon).",
+        "n_rows": 1305,
+        "n_folds": 6,
+        "macro_f1": 0.33331362314479657,
+        "macro_f1_sd": 0.028669143037367752,
+        "chance": 0.3286851772146437,
+        "lift": 0.00462844593015288,
+        "ci_lo": -0.014982998089152025,
+        "ci_hi": 0.026379967992947527,
+        "threshold": 0.03,
+        "verdict": "PASS",
+        "per_fold_f1": [
+          0.31389966646246004,
+          0.3678084596967279,
+          0.31327480777016403,
+          0.37264155413409145,
+          0.31752769247859586,
+          0.31472955832674027
+        ],
+        "per_fold_baseline": [
+          0.3258882075121323,
+          0.33088815425638457,
+          0.3305455265955323,
+          0.32420396697988313,
+          0.33016591522477384,
+          0.33041929271915577
+        ],
+        "corpus": "alpaca"
+      },
+      {
+        "arm": "E_SAMEBAR_TEXT",
+        "horizon_days": 5,
+        "changes": "Alternate publication-date bucket; strict-prior join retained. Mapping/lag comparison, not a proven publication-leak canary.",
+        "n_rows": 1305,
+        "n_folds": 6,
+        "macro_f1": 0.2650927480932639,
+        "macro_f1_sd": 0.05744626063968003,
+        "chance": 0.3286851772146437,
+        "lift": -0.0635924291213798,
+        "ci_lo": -0.10827466162582654,
+        "ci_hi": -0.0321711928249625,
+        "threshold": 0.03,
+        "verdict": "BELOW_CHANCE",
+        "per_fold_f1": [
+          0.15559056814662195,
+          0.30374992122014244,
+          0.2851818759274341,
+          0.24782777801208064,
+          0.2987952300527151,
+          0.2994111152005889
+        ],
+        "per_fold_baseline": [
+          0.3258882075121323,
+          0.33088815425638457,
+          0.3305455265955323,
+          0.32420396697988313,
+          0.33016591522477384,
+          0.33041929271915577
+        ],
+        "corpus": "alpaca"
+      }
+    ],
+    "same_row_counts_per_horizon": true
+  },
+  "scope": "Actual retained XGBoost model/scaler inference on reconstructed genuine snapshot features; independent native TreeSHAP, isotonic, label endpoint and metric replay. No historical-byte reproduction, human validation or profitability claim."
+}

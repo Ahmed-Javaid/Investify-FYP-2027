@@ -1,0 +1,40 @@
+{
+  "schema": "investify-paper-news-auth-diagnosis-v1",
+  "checked_utc": "2026-10-12T15:17:05.864920+00:00",
+  "credential_sources": {
+    "ALPACA_API_KEY": "local_env_file",
+    "ALPACA_API_SECRET": "local_env_file"
+  },
+  "credential_values_recorded": false,
+  "account_data_saved": false,
+  "requests_executed": 2,
+  "results": [
+    {
+      "source": "Paper account",
+      "url": "https://paper-api.alpaca.markets/v2/account",
+      "status": "http_error",
+      "http_status": 401,
+      "elapsed_seconds": 0.922,
+      "provider_diagnostic": {
+        "body_truncated": false,
+        "message": "unauthorized.",
+        "request_id": "66fce8a6267715823a210fde8e1949e5"
+      }
+    },
+    {
+      "source": "Market news",
+      "url": "https://data.alpaca.markets/v1beta1/news?symbols=NVDA&limit=1&include_content=false",
+      "status": "http_error",
+      "http_status": 401,
+      "elapsed_seconds": 0.75,
+      "provider_diagnostic": {
+        "body_truncated": false,
+        "message": "<html>\r\n<head><title>401 Authorization Required</title></head>\r\n<body>\r\n<center><h1>401 Authorization Required</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+        "request_id": "4229fd5320d46e4db7290edf0354d8d6"
+      }
+    }
+  ],
+  "status": "credentials_or_account_rejected",
+  "next_step": "Review the redacted provider error code/message and request ID. Audit parsing, endpoint and request headers against an independent client before changing credentials. Continue the original NVDA FNSPID baseline independently; it does not replace the precise-timestamp experiment.",
+  "scope": "Two read-only provider requests. No trading, settings changes, raw account data, historical coverage or scientific run."
+}

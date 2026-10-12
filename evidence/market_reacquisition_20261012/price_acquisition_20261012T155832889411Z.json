@@ -1,0 +1,44 @@
+{
+  "schema": "investify-fresh-alpaca-prices-v1",
+  "checked_utc": "2026-10-12T15:58:35.635346+00:00",
+  "snapshot_directory": "E:\\Uni_Stuff\\FYP\\Investify\\code\\data\\raw\\snapshots\\prices_nvda_20261012T155832889411Z",
+  "credential_values_recorded": false,
+  "results": [
+    {
+      "source": "raw",
+      "url": "https://data.alpaca.markets/v2/stocks/bars?symbols=NVDA&timeframe=1Day&start=2018-01-01T00%3A00%3A00Z&end=2023-12-31T23%3A59%3A59Z&limit=10000&feed=sip&adjustment=raw&asof=2023-12-31&sort=asc",
+      "maximum_bytes": 4194304,
+      "status": "response_received",
+      "response_bytes": 168921,
+      "http_status": 200,
+      "content_type": "application/json",
+      "content_length": null,
+      "etag": null,
+      "repo_commit": null,
+      "response_sha256": "43f7f51dff4f9d4611825dcab9af99337a85b05cfb521188d8fc104989739cfc",
+      "elapsed_seconds": 1.438,
+      "bar_count": 1509,
+      "pagination_complete": true,
+      "response_file": "code\\data\\raw\\snapshots\\prices_nvda_20261012T155832889411Z\\raw-response.json"
+    },
+    {
+      "source": "split",
+      "url": "https://data.alpaca.markets/v2/stocks/bars?symbols=NVDA&timeframe=1Day&start=2018-01-01T00%3A00%3A00Z&end=2023-12-31T23%3A59%3A59Z&limit=10000&feed=sip&adjustment=split&asof=2023-12-31&sort=asc",
+      "maximum_bytes": 4194304,
+      "status": "response_received",
+      "response_bytes": 157216,
+      "http_status": 200,
+      "content_type": "application/json",
+      "content_length": null,
+      "etag": null,
+      "repo_commit": null,
+      "response_sha256": "c23120c374535a34b6fb04f20fb9b80d41b54dc91a42815ee0002baa94649ca0",
+      "elapsed_seconds": 2.735,
+      "bar_count": 1509,
+      "pagination_complete": true,
+      "response_file": "code\\data\\raw\\snapshots\\prices_nvda_20261012T155832889411Z\\split-response.json"
+    }
+  ],
+  "fnspid_requests": 0,
+  "scope": "Fresh SIP daily price snapshots, raw and split-adjusted variants; not original yfinance-byte reproduction. Split basis adjusts prices and volume, not cash dividends. asof controls symbol mapping, not historical availability or corporate-action revision vintage."
+}

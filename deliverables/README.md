@@ -1,5 +1,14 @@
 # Investify document guide
 
+## Fresh scientific execution - 12 October 2026
+
+The [reviewed scientific summary](../evidence/fresh_alpaca_science_summary_20261012_run01.json)
+links the completed new experiment, both calibration modes, actual retained-model
+and native-TreeSHAP replay, input identities and current readiness judgement.
+Current report and slide sources now include its findings; neither has been
+compiled/exported as an institutional submission. Older evidence briefs and ZIPs
+retain their original snapshots.
+
 Use [the current status](../planning/CURRENT_STATUS.md) to check what has actually run. This folder contains working material and dated snapshots; a filename containing ?review? or ?evidence? does not establish submission approval.
 
 ## Current editable work

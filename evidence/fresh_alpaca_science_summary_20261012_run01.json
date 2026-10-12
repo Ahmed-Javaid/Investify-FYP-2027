@@ -1,0 +1,197 @@
+{
+  "schema": "investify-fresh-science-review-summary-v1",
+  "checked_utc": "2026-10-12T18:18:49.252114+00:00",
+  "inputs": {
+    "schema": "investify-fresh-alpaca-science-inputs-v1",
+    "started_utc": "2026-10-12T17:57:52.881408+00:00",
+    "status": "prepared_and_validated",
+    "run_directory": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01",
+    "score_cache": "E:\\AI-Tools\\Cache\\finbert_scores\\alpaca_revision_conservative_20261012_run01",
+    "network_requests": 0,
+    "fnspid_requests": 0,
+    "historical_outputs_modified": false,
+    "scientific_harness_executed": false,
+    "model_inference_executed": true,
+    "verified_inputs": {
+      "price_response_sha256": "c23120c374535a34b6fb04f20fb9b80d41b54dc91a42815ee0002baa94649ca0",
+      "conservative_news_sha256": "6be5f33926cba57ddf962c1e104b2768d82469befed041b4daa3d6559007096f",
+      "model_files_sha256": {
+        "config.json": "f6449ddda85eb726207a40be59c0cd3bd4b142ccb27298d5e45f9ae3396b1abe",
+        "tokenizer_config.json": "ffc7913f6084b138dad68de5a0c2f0ee25ac983709260901e01f53be5796b9d9",
+        "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+        "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+        "model.safetensors": "e5897858ff819aad7629b96ce521ae5477952d03634ef5dd30ed2d76357a9f00"
+      },
+      "acquisition_receipts_sha256": {
+        "E:\\Uni_Stuff\\FYP\\Investify\\evidence\\market_reacquisition_20261012\\price_acquisition_20261012T155832889411Z.json": "d99caa6bec4b10747ca05aeafae4b1947fcb8c1390d77ad23ce6a5d2d1668042",
+        "E:\\Uni_Stuff\\FYP\\Investify\\evidence\\market_reacquisition_20261012\\news_acquisition_20261012T160105342Z.json": "80937f066286fe85bf1af2ba222836ac46e3e901f32cd359419cefeb6f4e18e1",
+        "E:\\Uni_Stuff\\FYP\\Investify\\evidence\\finbert_publisher_acquisition_20261012.json": "cfff11b4a02b3e8e96072150de3da178f29ec2c42231c5021b44ae439e01e4bb"
+      },
+      "price_adjustment": "Alpaca SIP split adjustment, including vendor action vintage; no cash-dividend adjustment",
+      "news_timing": "Conservative event_ts is max(created_at, updated_at); versions available after the window are excluded.",
+      "point_in_time_availability_proven": false,
+      "historical_byte_reproduction": false
+    },
+    "runtime": {
+      "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+      "executable": "E:\\AI-Tools\\Temp\\investify-science-py311-20261012\\Scripts\\python.exe",
+      "torch_threads": 4,
+      "exact_uv_lock_restored": false,
+      "packages": {
+        "numpy": "1.26.4",
+        "pandas": "2.3.3",
+        "torch": "2.14.0",
+        "transformers": "5.17.0",
+        "scikit-learn": "1.9.0",
+        "xgboost": "3.2.0",
+        "shap": "0.49.1",
+        "pyarrow": "25.0.1",
+        "pandas-market-calendars": "5.4.0"
+      }
+    },
+    "calendar_audit": {
+      "orphan_sessions": 0,
+      "missing_sessions": 0,
+      "policy": "Complete observed exchange-session sequence between first and last consumed bar"
+    },
+    "news_ingestion_audit": {
+      "source_rows": 6768,
+      "target_rows": 6768,
+      "outside_window_rows": 0,
+      "missing_or_blank_rows": 0,
+      "duplicate_rows": 0,
+      "retained_rows": 6768
+    },
+    "price_rows": 1509,
+    "news_rows": 6768,
+    "finbert_publisher": "ProsusAI/finbert",
+    "finbert_revision": "0bc2ac10dda6929bcb1f77ccc43c7ec5c424f031",
+    "scored_news_rows": 6768,
+    "unique_scored_headlines": 5748,
+    "scoring_seconds": 305.953,
+    "score_cache_sha256": "5adc86b573dbe11eba6519e57a0b2c63ae05d8ee2518b7a054fb91b25309b2e7",
+    "scored_cardinality": 6768,
+    "config_path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\fresh_config.yaml",
+    "config_sha256": "65884eaa1147da90261a8b2c457bf318e64208fa297f79aa5242a795e6f828c3",
+    "manifest_sha256": "553d7f0866d2f5fa63ebbe320b60a84bc047e879ad54d42ab4d4b16b97629f6b",
+    "script_sha256": "59121dcf340193f41999ddaa3beb3746dc2a931e1b0df50869a04a52dd8851b6",
+    "sentiment_source_sha256": "f43e5a61b16b9201f0f66bdd48cb8891633b44198e12c254ab46da4c61b97688",
+    "completed_utc": "2026-10-12T18:03:18.323195+00:00"
+  },
+  "execution_receipt": "E:\\Uni_Stuff\\FYP\\Investify\\evidence\\fresh_alpaca_science_execution_20261012_run01.json",
+  "replay_receipt": "E:\\Uni_Stuff\\FYP\\Investify\\evidence\\fresh_alpaca_science_replay_20261012_run01.json",
+  "diagnosis": {
+    "frozen_classifier": {
+      "raw_evaluation_decision_counts": {
+        "Hold": 51,
+        "Buy": 40,
+        "Sell": 95
+      },
+      "raw_evaluation_macro_f1": 0.31821235099958256,
+      "calibrated_evaluation_decision_counts": {
+        "Buy": 186
+      },
+      "minimum_buy_probability_advantage": 0.20076659321784973,
+      "calibrated_probability_ranges": {
+        "Buy": [
+          0.48658517003059387,
+          0.6299622058868408
+        ],
+        "Hold": [
+          0.0,
+          0.22759628295898438
+        ],
+        "Sell": [
+          0.2601583003997803,
+          0.37003782391548157
+        ]
+      },
+      "guided_explanations_verified": 186,
+      "interpretation": "Raw decisions vary; the learned isotonic maps make Buy the argmax on every current evaluation row. The frozen mode also collapses, so classifier refitting is not required for this observation. This does not establish the cause of the preserved September outputs."
+    },
+    "refit_transfer": {
+      "raw_evaluation_decision_counts": {
+        "Sell": 99,
+        "Buy": 37,
+        "Hold": 50
+      },
+      "raw_evaluation_macro_f1": 0.3115823495013671,
+      "calibrated_evaluation_decision_counts": {
+        "Buy": 186
+      },
+      "minimum_buy_probability_advantage": 0.20076659321784973,
+      "calibrated_probability_ranges": {
+        "Buy": [
+          0.48658517003059387,
+          0.5769617557525635
+        ],
+        "Hold": [
+          0.1095418706536293,
+          0.25360724329948425
+        ],
+        "Sell": [
+          0.2041979730129242,
+          0.3295031487941742
+        ]
+      },
+      "guided_explanations_verified": 186,
+      "interpretation": "Raw decisions vary; the learned isotonic maps make Buy the argmax on every current evaluation row. The frozen mode also collapses, so classifier refitting is not required for this observation. This does not establish the cause of the preserved September outputs."
+    }
+  },
+  "engineering_tests": {
+    "fresh_science_contract_tests_20261012_run01.xml": {
+      "passed": 179,
+      "skipped": 6,
+      "failed": 0
+    },
+    "fresh_science_admission_tests_20261012_run01.xml": {
+      "passed": 8,
+      "skipped": 0,
+      "failed": 0
+    }
+  },
+  "readiness_judgement": {
+    "weighted_percentage": 78.5,
+    "previous_weighted_percentage": 72.25,
+    "areas": [
+      {
+        "area": "Scientific pipeline, baseline and leakage",
+        "weight": 25,
+        "completion": 85
+      },
+      {
+        "area": "Interface, explanation and transparency",
+        "weight": 20,
+        "completion": 95
+      },
+      {
+        "area": "Social-sentiment selection",
+        "weight": 15,
+        "completion": 50
+      },
+      {
+        "area": "Report, requirements and design",
+        "weight": 20,
+        "completion": 80
+      },
+      {
+        "area": "Committee responses, inventory and metrics",
+        "weight": 10,
+        "completion": 85
+      },
+      {
+        "area": "Handover, repository and contributions",
+        "weight": 5,
+        "completion": 70
+      },
+      {
+        "area": "Presentation, demo and defence",
+        "weight": 5,
+        "completion": 55
+      }
+    ],
+    "basis": "Only science increases from 60 to 85 after actual fresh ingestion/scoring, all-arm execution, both fitted calibration modes and model/SHAP replay. Weights and other area estimates remain unchanged. This is a planning judgement, not a grade or automatic acceptance."
+  },
+  "scope": "New Alpaca SIP split-adjusted/revision-conservative experiment. No September-byte reproduction, original lock restoration, social-candidate inference, student training, human validation or institutional submission.",
+  "summary_tool_sha256": "13509fb20902f085beccf7c906e922a84b3c8369e781eafd4c877ac6c72e9057"
+}

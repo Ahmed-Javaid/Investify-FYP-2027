@@ -1,5 +1,14 @@
 # Investify working project
 
+## Fresh scientific execution - 12 October 2026
+
+The fresh Alpaca baseline/leakage and both calibration runs are now executed and
+replayed. Read [current status](planning/CURRENT_STATUS.md) and the
+[reviewed scientific summary](evidence/fresh_alpaca_science_summary_20261012_run01.json).
+The five-day clean model remains weak and both calibrated modes remain all Buy.
+Mid readiness is approximately 79%; institutional rendering, social comparison
+and genuine team review remain open. Original September records are preserved.
+
 **Work here: `E:\Uni_Stuff\FYP\Investify`.** This is the consolidated project for F26-003-Investify. Start with [current status](planning/CURRENT_STATUS.md) and the [document guide](deliverables/README.md).
 
 ## Folder guide
@@ -47,21 +56,24 @@ stores a new dated result and suggests the next step. From this project folder:
 .\tools\check_market_access.ps1
 ```
 
-The user's normal-terminal result reaches all providers: FNSPID metadata returns
-200, Yahoo returns 429 and Alpaca news returns 401. For the confirmed paper-account
-key pair, run `tools/check_alpaca_auth.ps1` in that terminal. It compares read-only
-paper-account access with news access, retains only statuses and gives the next
-step; account response details and credential values are discarded. Paper trading
-uses `paper-api.alpaca.markets`, while paper-account market data uses
-`data.alpaca.markets`, per [Alpaca authentication](https://docs.alpaca.markets/us/docs/authentication).
+The new local pair now passes both paper-account and market-news authentication
+(**200 OK**): [receipt](evidence/market_reacquisition_20261012/paper_auth_20261012T152909983Z/probe.json). A bounded historical check also retrieved
+30 NVDA articles, five per year for 2018-2023, all with timezone-aware,
+non-midnight publication times: [sample receipt](evidence/market_reacquisition_20261012/historical_news_sample_20261012T153005905951Z/probe.json).
 
-FNSPID recovery is independent of Alpaca: `tools/acquire_fnspid.ps1` checks at
-most 1 MiB of the actual publisher CSV; `-Full` downloads/verifies the 23.2 GB
-file in E: cache and extracts a new ticker subset. This restores the original
-NVDA baseline only. The original probe found missing AAPL/TSLA years, sparse
-NVDA daily coverage and about 99.78% midnight-defaulted NVDA timestamps.
-FNSPID cannot replace Alpaca/Benzinga for the publication-timing experiment.
-See [the recorded original-source review](evidence/fnspid_source_review_20261012.json).
+This is a fresh sample, not the complete corpus or a scientific reproduction.
+Fourteen articles have updates after creation; retain and audit `updated_at`
+before treating current headline text as available at publication. Full
+acquisition must use new paths and preserve the frozen historical identities.
+The legacy fixed-output pull script needs adaptation before reuse.
+Approved outside-sandbox networking works; default sandbox networking remains
+restricted. No credentials or account response bodies are retained in receipts.
+
+**Do not download FNSPID.** This is the user's current direction. No FNSPID
+request was made in this continuation. Existing acquisition utilities are
+retained as historical tooling, not the next action. FNSPID cannot replace the
+precise-timestamp experiment; see the retained
+[original-source review](evidence/fnspid_source_review_20261012.json).
 
 ## Old material
 

@@ -1,0 +1,12 @@
+{
+  "scheme": "canonical-json-v2",
+  "content_cols": [
+    "ticker",
+    "date",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume"
+  ]
+}

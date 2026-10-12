@@ -23,7 +23,7 @@ def interpretation(results):
     if any(row['status'] == 'connection_failed' for row in results):
         return 'network_prevents_complete_diagnosis', 'Run in normal network-enabled PowerShell. Check its expected proxy/VPN configuration if connections also fail there.'
     if all(row.get('http_status') in (401, 403) for row in results):
-        return 'credentials_or_account_rejected', 'Review the redacted provider error code/message and request ID. Audit parsing, endpoint and request headers against an independent client before changing credentials. Continue the original NVDA FNSPID baseline independently; it does not replace the precise-timestamp experiment.'
+        return 'credentials_or_account_rejected', 'Review the redacted provider error code/message and request ID. Audit parsing, endpoint and request headers against an independent client before changing credentials. If the independent client also fails, compare the local pair with the current paper-account credentials or ask Alpaca support to trace the saved request IDs. Do not download FNSPID.'
     return 'provider_responses_need_review', 'Review both endpoint statuses. Rate limits or provider failures require a delayed retry; an authentication rejection requires checking the matching key pair/account.'
 
 

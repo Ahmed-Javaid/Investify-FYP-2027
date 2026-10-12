@@ -1,5 +1,44 @@
 # Scientific source corrections and evidence boundary
 
+## Fresh scientific execution - 12 October 2026
+
+The new **Alpaca revision-conservative experiment has completed and passed actual
+model/calibration/native-TreeSHAP replay**. It consumed 1,509 complete NYSE price
+sessions and 6,768 news rows, with 5,748 distinct headlines scored offline by the
+pinned original ProsusAI/finbert checkpoint. The recovery doctor had zero blockers
+and all three scientific commands completed.
+
+Six arms at both horizons ran on shared row sets: 1,309 rows at one day and
+1,305 at five days, six folds each. Clean five-day macro-F1 is **0.2843** against
+the training-distribution random baseline **0.3287** (lift -0.0444).
+The deliberately centred Bollinger canary has five-day lift **+0.2104**,
+95% fold-bootstrap CI **[+0.1698, +0.2421]**. E_SAMEBAR_TEXT remains a lag ablation.
+
+Both current calibration modes still emit **186 Buy decisions**. Raw frozen-mode
+predictions are Buy 40 / Hold 51 / Sell 95; learned isotonic maps make Buy highest
+on every evaluation row. Frozen Brier improves **0.7929 to 0.6105**; refit-transfer
+improves **0.7760 to 0.6078**. Better Brier does not resolve decision collapse or
+establish useful prediction. Five unavailable calibration labels were excluded;
+181 rows calibrate, and evaluation runs 29 March to 21 December 2023.
+
+Actual retained-model inference reproduces margins/probabilities exactly; native
+TreeSHAP agrees with every exported contribution/bias, with maximum frozen
+additivity residual about 1.02e-6. All 372 **new** guided explanations validate,
+separately from the 372 preserved historical records. New engineering checks:
+179 passed / six legacy-input skips, plus eight admission-refusal passes.
+
+This is a fresh SIP split-adjusted snapshot using max(created_at, updated_at)
+for news availability, not the original September data or exact uv.lock.
+Historical vintage is not proven; all original records, freezes and ZIPs remain
+separate. No FNSPID was requested.
+
+[Reviewed summary](../evidence/fresh_alpaca_science_summary_20261012_run01.json) and [actual replay](../evidence/fresh_alpaca_science_replay_20261012_run01.json).
+
+Readiness is now **78.5%, approximately 79%**, with unchanged weights and other
+areas: science alone rises from 60% to 85%. Remaining substantive gaps are the
+social comparison, rendered institutional report/deck, and genuine team review,
+contribution/rehearsal and repository evidence. The 90% target is not achieved.
+
 ## Post-recovery verification
 
 After the former native task's context-window failure, separate implementation owners completed trace/export binding, strict V4 original-file/class/loading/receipt checks and portable request ownership. [The matching selected receipt](../evidence/recovery_selected_tests_20261012.xml) has **212 passes, twenty Streamlit cases, no skips**. [The core receipt](../evidence/recovery_core_tests_20261012.xml) has **153 passes and three shuffled cases deselected** in the Python 3.11 viewer. These scopes overlap and are not summed as full scientific acceptance.

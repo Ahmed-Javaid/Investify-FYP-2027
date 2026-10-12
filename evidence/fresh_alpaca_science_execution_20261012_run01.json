@@ -1,0 +1,413 @@
+{
+  "schema": "investify-historical-science-recovery-v1",
+  "checked_utc": "2026-10-12T18:06:34.628733+00:00",
+  "executable": "E:\\AI-Tools\\Temp\\investify-science-py311-20261012\\Scripts\\python.exe",
+  "status": "executed_pending_result_review",
+  "blockers": [],
+  "harness_preflight": {
+    "alpaca": {
+      "schema": "investify-harness-preflight-v2",
+      "corpus": "alpaca",
+      "inputs": [
+        {
+          "name": "prices",
+          "path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\inputs\\store\\prices\\ticker=NVDA",
+          "kind": "parquet_dataset",
+          "status": "available",
+          "files_checked": 6
+        },
+        {
+          "name": "cached_sentiment",
+          "path": "E:\\AI-Tools\\Cache\\finbert_scores\\alpaca_revision_conservative_20261012_run01\\finbert_scores.parquet",
+          "kind": "parquet_file",
+          "status": "available",
+          "files_checked": 1
+        },
+        {
+          "name": "news",
+          "path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\data\\raw\\snapshots\\alpaca_nvda_20261012T155013436Z\\revision_conservative.csv",
+          "kind": "csv_file",
+          "status": "available",
+          "files_checked": 1
+        }
+      ],
+      "runtime": [
+        {
+          "module": "numpy",
+          "discoverable": true
+        },
+        {
+          "module": "pandas",
+          "discoverable": true
+        },
+        {
+          "module": "scipy",
+          "discoverable": true
+        },
+        {
+          "module": "sklearn",
+          "discoverable": true
+        },
+        {
+          "module": "xgboost",
+          "discoverable": true
+        },
+        {
+          "module": "pandas_market_calendars",
+          "discoverable": true
+        },
+        {
+          "module": "pyarrow",
+          "discoverable": true
+        }
+      ],
+      "blockers": [],
+      "preflight_passed": true,
+      "scope": "Read access, nonempty input files, Parquet boundary signatures and module discovery only; no dataset row/schema/cache-coverage validation, dependency import or scientific-lock verification",
+      "scientific_run_executed": false
+    }
+  },
+  "declared_requirement_ranges": [
+    {
+      "requirement": "pandas>=2.2,<3",
+      "installed": "2.3.3",
+      "declared_range_satisfied": true
+    },
+    {
+      "requirement": "numpy>=1.26,<2",
+      "installed": "1.26.4",
+      "declared_range_satisfied": true
+    },
+    {
+      "requirement": "pyarrow>=15",
+      "installed": "25.0.1",
+      "declared_range_satisfied": true
+    },
+    {
+      "requirement": "duckdb>=0.10",
+      "installed": "1.5.5",
+      "declared_range_satisfied": true
+    },
+    {
+      "requirement": "pandas-market-calendars>=4.4",
+      "installed": "5.4.0",
+      "declared_range_satisfied": true
+    },
+    {
+      "requirement": "yfinance>=0.2.40",
+      "installed": "1.7.0",
+      "declared_range_satisfied": true
+    },
+    {
+      "requirement": "xgboost>=2.0",
+      "installed": "3.2.0",
+      "declared_range_satisfied": true
+    },
+    {
+      "requirement": "shap>=0.45",
+      "installed": "0.49.1",
+      "declared_range_satisfied": true
+    },
+    {
+      "requirement": "scikit-learn>=1.4",
+      "installed": "1.9.0",
+      "declared_range_satisfied": true
+    },
+    {
+      "requirement": "transformers>=4.40",
+      "installed": "5.17.0",
+      "declared_range_satisfied": true
+    },
+    {
+      "requirement": "torch>=2.2",
+      "installed": "2.14.0",
+      "declared_range_satisfied": true
+    },
+    {
+      "requirement": "pyyaml>=6.0",
+      "installed": "6.0.3",
+      "declared_range_satisfied": true
+    },
+    {
+      "requirement": "pytest>=8.0",
+      "installed": "9.1.1",
+      "declared_range_satisfied": true
+    },
+    {
+      "requirement": "matplotlib>=3.11.1",
+      "installed": "3.11.1",
+      "declared_range_satisfied": true
+    },
+    {
+      "requirement": "streamlit>=1.63.0",
+      "installed": "1.63.0",
+      "declared_range_satisfied": true
+    }
+  ],
+  "config": {
+    "tickers": [
+      "NVDA"
+    ],
+    "date_range": {
+      "start": "2018-01-01",
+      "end": "2023-12-31"
+    },
+    "seed": 42,
+    "calendar": {
+      "exchange": "NYSE",
+      "timezone": "America/New_York",
+      "session_close": "16:00:00"
+    },
+    "news": {
+      "source": "Alpaca/Benzinga",
+      "file": "Stock_news/nasdaq_exteral_data.csv",
+      "hf_repo": "Zihan1004/FNSPID",
+      "extracted_path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\data\\raw\\snapshots\\alpaca_nvda_20261012T155013436Z\\revision_conservative.csv",
+      "headline_max_tokens": 128
+    },
+    "sentiment": {
+      "model": "ProsusAI/finbert",
+      "cache_dir": "E:\\AI-Tools\\Cache\\finbert_scores\\alpaca_revision_conservative_20261012_run01",
+      "publisher": "ProsusAI/finbert",
+      "revision": "0bc2ac10dda6929bcb1f77ccc43c7ec5c424f031",
+      "model_path": "E:\\AI-Tools\\Cache\\models\\ProsusAI_finbert_0bc2ac10dda6929bcb1f77ccc43c7ec5c424f031",
+      "acquisition_receipt_sha256": "cfff11b4a02b3e8e96072150de3da178f29ec2c42231c5021b44ae439e01e4bb"
+    },
+    "technical_indicators": {
+      "rsi_period": 14,
+      "sma_period": 200
+    },
+    "labels": {
+      "horizons_days": [
+        1,
+        5
+      ],
+      "primary_horizon_days": 5,
+      "volatility_window_days": 20,
+      "class_thresholds": [
+        -0.5,
+        0.5
+      ]
+    },
+    "splits": {
+      "n_folds": 6,
+      "embargo_days": 5
+    },
+    "as_of_join": {
+      "max_lookback_days": 7
+    },
+    "arms": [
+      {
+        "name": "A_CLEAN"
+      },
+      {
+        "name": "B_SHUFFLED"
+      },
+      {
+        "name": "C_NOPURGE"
+      },
+      {
+        "name": "D_CENTRED"
+      },
+      {
+        "name": "E_SAMEBAR_TEXT"
+      }
+    ],
+    "leakage_control": {
+      "pass_threshold_abs_lift": 0.03,
+      "bootstrap_resamples": 10000
+    },
+    "paths": {
+      "store": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\inputs\\store",
+      "artifacts": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\inputs"
+    },
+    "xgboost": {
+      "objective": "multi:softprob",
+      "tree_method": "hist",
+      "n_estimators": 300,
+      "max_depth": 4,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 1.0,
+      "min_child_weight": 1,
+      "random_state": 42,
+      "n_jobs": 4
+    },
+    "features": {
+      "technical": [
+        "rsi_14",
+        "macd_hist",
+        "dist_sma200",
+        "bollinger_pos",
+        "obv_slope"
+      ],
+      "sentiment": [
+        "mean_polarity",
+        "mention_volume",
+        "mom_3d",
+        "mom_7d",
+        "volume_z",
+        "dispersion"
+      ]
+    },
+    "corpora": {
+      "alpaca": {
+        "loader": "alpaca",
+        "path": "E:\\Uni_Stuff\\FYP\\Investify\\code\\data\\raw\\snapshots\\alpaca_nvda_20261012T155013436Z\\revision_conservative.csv",
+        "feature_matrix": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\inputs\\not_precomputed.parquet",
+        "results_prefix": "results_alpaca"
+      }
+    },
+    "default_corpus": "alpaca",
+    "fresh_snapshot_policy": {
+      "price_response_sha256": "c23120c374535a34b6fb04f20fb9b80d41b54dc91a42815ee0002baa94649ca0",
+      "conservative_news_sha256": "6be5f33926cba57ddf962c1e104b2768d82469befed041b4daa3d6559007096f",
+      "model_files_sha256": {
+        "config.json": "f6449ddda85eb726207a40be59c0cd3bd4b142ccb27298d5e45f9ae3396b1abe",
+        "tokenizer_config.json": "ffc7913f6084b138dad68de5a0c2f0ee25ac983709260901e01f53be5796b9d9",
+        "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+        "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+        "model.safetensors": "e5897858ff819aad7629b96ce521ae5477952d03634ef5dd30ed2d76357a9f00"
+      },
+      "acquisition_receipts_sha256": {
+        "E:\\Uni_Stuff\\FYP\\Investify\\evidence\\market_reacquisition_20261012\\price_acquisition_20261012T155832889411Z.json": "d99caa6bec4b10747ca05aeafae4b1947fcb8c1390d77ad23ce6a5d2d1668042",
+        "E:\\Uni_Stuff\\FYP\\Investify\\evidence\\market_reacquisition_20261012\\news_acquisition_20261012T160105342Z.json": "80937f066286fe85bf1af2ba222836ac46e3e901f32cd359419cefeb6f4e18e1",
+        "E:\\Uni_Stuff\\FYP\\Investify\\evidence\\finbert_publisher_acquisition_20261012.json": "cfff11b4a02b3e8e96072150de3da178f29ec2c42231c5021b44ae439e01e4bb"
+      },
+      "price_adjustment": "Alpaca SIP split adjustment, including vendor action vintage; no cash-dividend adjustment",
+      "news_timing": "Conservative event_ts is max(created_at, updated_at); versions available after the window are excluded.",
+      "point_in_time_availability_proven": false,
+      "historical_byte_reproduction": false
+    }
+  },
+  "split_contract": "observed-label-end-purge-v2",
+  "result_directory": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01",
+  "process_cache_directory": "E:\\AI-Tools\\Temp\\investify-science-recovery-20261012-run01",
+  "commands": [
+    [
+      "E:\\AI-Tools\\Temp\\investify-science-py311-20261012\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "investify.harness.run_spike",
+      "--corpus",
+      "alpaca",
+      "--config",
+      "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\recovery_config.yaml",
+      "--output-directory",
+      "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\harness_alpaca"
+    ],
+    [
+      "E:\\AI-Tools\\Temp\\investify-science-py311-20261012\\Scripts\\python.exe",
+      "-B",
+      "E:\\Uni_Stuff\\FYP\\Investify\\code\\scripts\\build_decision_records.py",
+      "--corpus",
+      "alpaca",
+      "--config",
+      "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\recovery_config.yaml",
+      "--calibration-mode",
+      "frozen_classifier",
+      "--output-directory",
+      "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\engine_frozen_alpaca"
+    ],
+    [
+      "E:\\AI-Tools\\Temp\\investify-science-py311-20261012\\Scripts\\python.exe",
+      "-B",
+      "E:\\Uni_Stuff\\FYP\\Investify\\code\\scripts\\build_decision_records.py",
+      "--corpus",
+      "alpaca",
+      "--config",
+      "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\recovery_config.yaml",
+      "--calibration-mode",
+      "refit_transfer",
+      "--output-directory",
+      "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\engine_refit_alpaca"
+    ]
+  ],
+  "executions": [
+    {
+      "command": [
+        "E:\\AI-Tools\\Temp\\investify-science-py311-20261012\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "investify.harness.run_spike",
+        "--corpus",
+        "alpaca",
+        "--config",
+        "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\recovery_config.yaml",
+        "--output-directory",
+        "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\harness_alpaca"
+      ],
+      "status": "completed",
+      "started_utc": "2026-10-12T18:06:34.662800+00:00",
+      "log": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\step-01.log",
+      "returncode": 0,
+      "log_sha256": "a513180f73db6bebfc8d804abfb2e35bf410c153d4623f1617564c0ccfdfce65",
+      "completed_utc": "2026-10-12T18:10:39.321915+00:00"
+    },
+    {
+      "command": [
+        "E:\\AI-Tools\\Temp\\investify-science-py311-20261012\\Scripts\\python.exe",
+        "-B",
+        "E:\\Uni_Stuff\\FYP\\Investify\\code\\scripts\\build_decision_records.py",
+        "--corpus",
+        "alpaca",
+        "--config",
+        "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\recovery_config.yaml",
+        "--calibration-mode",
+        "frozen_classifier",
+        "--output-directory",
+        "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\engine_frozen_alpaca"
+      ],
+      "status": "completed",
+      "started_utc": "2026-10-12T18:10:39.330428+00:00",
+      "log": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\step-02.log",
+      "returncode": 0,
+      "log_sha256": "074c4fc926ee9a89fc6cb3ab5a4e53d0799f9ec5bfc6d844b7e5e86cccc83174",
+      "completed_utc": "2026-10-12T18:10:50.629184+00:00"
+    },
+    {
+      "command": [
+        "E:\\AI-Tools\\Temp\\investify-science-py311-20261012\\Scripts\\python.exe",
+        "-B",
+        "E:\\Uni_Stuff\\FYP\\Investify\\code\\scripts\\build_decision_records.py",
+        "--corpus",
+        "alpaca",
+        "--config",
+        "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\recovery_config.yaml",
+        "--calibration-mode",
+        "refit_transfer",
+        "--output-directory",
+        "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\engine_refit_alpaca"
+      ],
+      "status": "completed",
+      "started_utc": "2026-10-12T18:10:50.638990+00:00",
+      "log": "E:\\Uni_Stuff\\FYP\\Investify\\code\\artifacts\\scientific_runs\\alpaca_revision_conservative_20261012_run01\\recovery01\\step-03.log",
+      "returncode": 0,
+      "log_sha256": "8075bf9402eb996551d5a97f4ad44da0e447e77d1b657bc47bc4500a19cb7445",
+      "completed_utc": "2026-10-12T18:11:00.044429+00:00"
+    }
+  ],
+  "source_sha256": {
+    "scripts\\prepare_scientific_recovery.py": "c3d5de7627da5bba4cbe897bf7677a1433f23b0da0ff2396fd2eda9c8ea19b27",
+    "config\\spike.yaml": "8cbc3cd9940e9e59bdac6be5ea566d709cc6054c9e02692ecaba6adf5f202392",
+    "pyproject.toml": "176622e8adb4194ce95f91d00bb33901b0d0e3da5acf9e8befc97afdf3c7d042",
+    "uv.lock": "f6096f426f039b9d731a2de7014c4cb991615787abf54dc051e0686663a45840",
+    "src\\investify\\harness\\splits.py": "21abd2a37beb34bd8105120161d7aa99a3c39b15ef8208147fc88a5b80c743b3",
+    "src\\investify\\harness\\arms.py": "9438bf542d584a68260428a35860f0c8e16ae1f406fe3e6fbe272c2fd2c44753",
+    "src\\investify\\labels.py": "107b8a996011e0d96eb42e5b0dcc17fa5d74c6477b73f0b6a22669bbc886d4c4",
+    "src\\investify\\engine.py": "a601913f4a4d04c5be7326d39dc70be73e47836f82e1f1fbd1933ba4204a56ee",
+    "src\\investify\\calibration_split.py": "48bd71a5b9ca6246f1122d7a58f5dc2a9e2cfc83ed537aa09eb413510d21aceb",
+    "src\\investify\\features\\indicators.py": "cfa469d740e85840785b2fde29243f49f90ee259e908e5880bdb343728057586",
+    "src\\investify\\features\\assembly.py": "dc177f4984dc51b11c333da53986714d15accc2bac41cc1dc7c6be7a344f0f8e",
+    "src\\investify\\news_cache.py": "beed2673843939871123caba66e01d641e2b601612939e8ff7d701687789b4ae",
+    "src\\investify\\scaling.py": "d65e708778a594e106752857d0f9678a9ce7e8edb44a18633187ec17d74efafb",
+    "src\\investify\\ingest\\news.py": "63066a63d26ccc7a87b92595287cfd793070d174c8b5c8c75666ade4befb9293",
+    "src\\investify\\store.py": "d651ca90d06b7babe0b10c1496ae62ab04d9ebf4319f62ef68508b8d91511760"
+  },
+  "exact_uv_lock_restored": false,
+  "historical_pipeline_executed": true,
+  "predictive_metrics": null,
+  "scope": "Read-only prerequisites and prepared separate-output commands. Satisfying declared ranges is not exact uv.lock restoration. Only explicit execution with genuine inputs can produce model results; data/schema/cache coverage, full arrays/calibration comparison and full acceptance still require review.",
+  "step_timeout_seconds": 1200
+}

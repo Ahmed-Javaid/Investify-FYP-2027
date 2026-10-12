@@ -25,13 +25,16 @@ def _pick_device() -> str:
 
 
 class FinBERTScorer:
-    def __init__(self, cache_dir: str, device: str | None = None):
+    def __init__(self, cache_dir: str, device: str | None = None, *, model_path: Path | str | None = None):
         self.cache_path = Path(cache_dir) / "finbert_scores.parquet"
         self.cache_path.parent.mkdir(parents=True, exist_ok=True)
         self.device = device or _pick_device()
 
-        self.tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-        self.model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME).to(self.device)
+        # Explicit local snapshots allow offline, receipt-verified new experiments.
+        source = str(model_path) if model_path is not None else MODEL_NAME
+        local = model_path is not None
+        self.tokenizer = AutoTokenizer.from_pretrained(source, local_files_only=local)
+        self.model = AutoModelForSequenceClassification.from_pretrained(source, local_files_only=local).to(self.device)
         self.model.eval()
 
         # read label order from the model config -- never assume it

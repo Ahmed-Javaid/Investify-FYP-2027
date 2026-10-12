@@ -1,0 +1,104 @@
+tickers:
+- NVDA
+date_range:
+  start: '2018-01-01'
+  end: '2023-12-31'
+seed: 42
+calendar:
+  exchange: NYSE
+  timezone: America/New_York
+  session_close: '16:00:00'
+news:
+  source: Alpaca/Benzinga
+  file: Stock_news/nasdaq_exteral_data.csv
+  hf_repo: Zihan1004/FNSPID
+  extracted_path: E:\Uni_Stuff\FYP\Investify\code\data\raw\snapshots\alpaca_nvda_20261012T155013436Z\revision_conservative.csv
+  headline_max_tokens: 128
+sentiment:
+  model: ProsusAI/finbert
+  cache_dir: E:\AI-Tools\Cache\finbert_scores\alpaca_revision_conservative_20261012_run01
+  publisher: ProsusAI/finbert
+  revision: 0bc2ac10dda6929bcb1f77ccc43c7ec5c424f031
+  model_path: E:\AI-Tools\Cache\models\ProsusAI_finbert_0bc2ac10dda6929bcb1f77ccc43c7ec5c424f031
+  acquisition_receipt_sha256: cfff11b4a02b3e8e96072150de3da178f29ec2c42231c5021b44ae439e01e4bb
+technical_indicators:
+  rsi_period: 14
+  sma_period: 200
+labels:
+  horizons_days:
+  - 1
+  - 5
+  primary_horizon_days: 5
+  volatility_window_days: 20
+  class_thresholds:
+  - -0.5
+  - 0.5
+splits:
+  n_folds: 6
+  embargo_days: 5
+as_of_join:
+  max_lookback_days: 7
+arms:
+- name: A_CLEAN
+- name: B_SHUFFLED
+- name: C_NOPURGE
+- name: D_CENTRED
+- name: E_SAMEBAR_TEXT
+leakage_control:
+  pass_threshold_abs_lift: 0.03
+  bootstrap_resamples: 10000
+paths:
+  store: E:\Uni_Stuff\FYP\Investify\code\artifacts\scientific_runs\alpaca_revision_conservative_20261012_run01\inputs\store
+  artifacts: E:\Uni_Stuff\FYP\Investify\code\artifacts\scientific_runs\alpaca_revision_conservative_20261012_run01\inputs
+xgboost:
+  objective: multi:softprob
+  tree_method: hist
+  n_estimators: 300
+  max_depth: 4
+  learning_rate: 0.05
+  subsample: 0.8
+  colsample_bytree: 0.8
+  reg_lambda: 1.0
+  min_child_weight: 1
+  random_state: 42
+  n_jobs: 4
+features:
+  technical:
+  - rsi_14
+  - macd_hist
+  - dist_sma200
+  - bollinger_pos
+  - obv_slope
+  sentiment:
+  - mean_polarity
+  - mention_volume
+  - mom_3d
+  - mom_7d
+  - volume_z
+  - dispersion
+corpora:
+  alpaca:
+    loader: alpaca
+    path: E:\Uni_Stuff\FYP\Investify\code\data\raw\snapshots\alpaca_nvda_20261012T155013436Z\revision_conservative.csv
+    feature_matrix: E:\Uni_Stuff\FYP\Investify\code\artifacts\scientific_runs\alpaca_revision_conservative_20261012_run01\inputs\not_precomputed.parquet
+    results_prefix: results_alpaca
+default_corpus: alpaca
+fresh_snapshot_policy:
+  price_response_sha256: c23120c374535a34b6fb04f20fb9b80d41b54dc91a42815ee0002baa94649ca0
+  conservative_news_sha256: 6be5f33926cba57ddf962c1e104b2768d82469befed041b4daa3d6559007096f
+  model_files_sha256:
+    config.json: f6449ddda85eb726207a40be59c0cd3bd4b142ccb27298d5e45f9ae3396b1abe
+    tokenizer_config.json: ffc7913f6084b138dad68de5a0c2f0ee25ac983709260901e01f53be5796b9d9
+    special_tokens_map.json: 303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3
+    vocab.txt: 07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3
+    model.safetensors: e5897858ff819aad7629b96ce521ae5477952d03634ef5dd30ed2d76357a9f00
+  acquisition_receipts_sha256:
+    E:\Uni_Stuff\FYP\Investify\evidence\market_reacquisition_20261012\price_acquisition_20261012T155832889411Z.json: d99caa6bec4b10747ca05aeafae4b1947fcb8c1390d77ad23ce6a5d2d1668042
+    E:\Uni_Stuff\FYP\Investify\evidence\market_reacquisition_20261012\news_acquisition_20261012T160105342Z.json: 80937f066286fe85bf1af2ba222836ac46e3e901f32cd359419cefeb6f4e18e1
+    E:\Uni_Stuff\FYP\Investify\evidence\finbert_publisher_acquisition_20261012.json: cfff11b4a02b3e8e96072150de3da178f29ec2c42231c5021b44ae439e01e4bb
+  price_adjustment: Alpaca SIP split adjustment, including vendor action vintage;
+    no cash-dividend adjustment
+  news_timing: Conservative event_ts is max(created_at, updated_at); versions available
+    after the window are excluded.
+  point_in_time_availability_proven: false
+  historical_byte_reproduction: false

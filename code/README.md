@@ -1,5 +1,32 @@
 # Investify
 
+## Fresh scientific execution - 12 October 2026
+
+The isolated scientific runtime is
+E:\AI-Tools\Temp\investify-science-py311-20261012\Scripts\python.exe.
+The completed experiment is under
+artifacts/scientific_runs/alpaca_revision_conservative_20261012_run01.
+Its fresh_config.yaml, recovery01/recovery_config.yaml, input store, six-arm
+results, two sets of decision records/traces and logs are retained. Scores are
+under E:\AI-Tools\Cache\finbert_scores\alpaca_revision_conservative_20261012_run01.
+The existing default config and historical demo records remain separate.
+
+To prepare another run, use scripts/prepare_fresh_alpaca_science.py --help.
+Supply the three acquisition receipts, a **new** run directory, a **new** score
+cache on E: and a **new** evidence receipt. It gates source bytes against pinned
+publisher hashes and keeps model loading offline. Run the recovery doctor with
+the new config before execution. Choose new result/receipt identities.
+
+The independent completed-run checker is scripts/verify_fresh_science_run.py:
+
+~~~powershell
+& 'E:\AI-Tools\Temp\investify-science-py311-20261012\Scripts\python.exe' -B scripts/verify_fresh_science_run.py --run-directory artifacts/scientific_runs/alpaca_revision_conservative_20261012_run01/recovery01 --output ../evidence/fresh_science_replay_NEW.json
+~~~
+
+The new outcome is documented in ../planning/CURRENT_STATUS.md. The original
+September source inputs and exact lock are not reproduced, and the all-Buy
+calibration outcome still prevents a predictive-usefulness claim.
+
 Current teacher increment: six actual assistant-written explanations pass the bounded verifier; four training/two validation examples are exported. Teacher Study replays their source/prompt/raw-output/persistence checks. Phi-3-mini remains the student family, with no student baseline inference or QLoRA yet. Qwen is not a required teacher download. Current selected suite: 212 passes, including 20 Streamlit cases. See ../deliverables/ASSISTANT_TEACHER_PILOT.md.
 
 The intended product combines technical, news/social and risk-profile evidence into an educational Buy/Hold/Sell view with verified explanations. The current implementation uses historical, news-only NVDA records; all saved calibrated decisions are Buy. A separate prototype risk-dependent linear comparator is now available. No real explainer completion has been obtained; the separate sentiment pilot now has actual session-generated AI reference labels.

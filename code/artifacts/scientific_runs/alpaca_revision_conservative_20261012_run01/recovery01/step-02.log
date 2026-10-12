@@ -1,0 +1,16 @@
+=== Training engine on NVDA, corpus 'alpaca', primary horizon 5d, seed 42 ===
+
+=== Engine report ===
+Cross-validated macro-F1 (6-fold expanding purged walk-forward, primary horizon):
+  model:    0.2843 +/- 0.0537
+  baseline: 0.2796 +/- 0.0559
+Held-out eval fold (fold 5, n=186), calibrated decisions:
+  model macro-F1:    0.2238
+  baseline macro-F1: 0.1800
+Brier score on eval fold: before=0.7929  after=0.6105
+Calibration fitted on fold 4 (n=181), never on the eval fold above.
+
+186 decision records written -> E:\Uni_Stuff\FYP\Investify\code\artifacts\scientific_runs\alpaca_revision_conservative_20261012_run01\recovery01\engine_frozen_alpaca\decision_records.json
+Reliability curve -> E:\Uni_Stuff\FYP\Investify\code\artifacts\scientific_runs\alpaca_revision_conservative_20261012_run01\recovery01\engine_frozen_alpaca\reliability_curve.png
+model_version = xgboost-3.2.0-observed-label-end-purge-v2-frozen_classifier-srcf49fcee819b1-git533bd66fcb56
+=== DONE in 5.7s ===
