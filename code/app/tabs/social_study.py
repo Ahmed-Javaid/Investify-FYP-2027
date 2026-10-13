@@ -7,7 +7,7 @@ import streamlit as st
 
 from investify.sentiment_selection import validate_benchmark, annotation_agreement, evaluate_predictions
 from investify.generative_sentiment import compare as compare_generative
-from investify.sentiment_receipts import compare_bundles
+from investify.recorded_social_replay import compare_recorded_bundles as compare_bundles
 
 ROOT = Path(__file__).resolve().parents[2]
 STUDY = ROOT / 'artifacts/mid_eval'
