@@ -5,8 +5,9 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-TEXT = {'.py', '.tex', '.cls', '.sty', '.bib', '.json', '.csv', '.tsv', '.txt',
-        '.md', '.yml', '.yaml', '.toml', '.ps1', '.html', '.js', '.mjs', '.css'}
+TEXT = {'.py', '.tex', '.cls', '.sty', '.bib', '.json', '.jsonl', '.csv', '.tsv', '.txt',
+        '.md', '.yml', '.yaml', '.toml', '.ps1', '.html', '.js', '.mjs', '.css',
+        '.xml', '.lock', '.log', '.sh', '.ini', '.cfg', '.svg'}
 
 
 def restore(root, inventory):
