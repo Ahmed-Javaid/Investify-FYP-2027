@@ -20,6 +20,10 @@ def main():
     parser.add_argument('--verified', action='store_true')
     parser.add_argument('--hosted-receipt', type=Path)
     args = parser.parse_args()
+    if args.hosted_receipt is None:
+        retained_hosted = ROOT / 'evidence/remote_ci_delivery_20261013_run02.json'
+        if retained_hosted.exists():
+            args.hosted_receipt = retained_hosted
     report = read('evidence/handbook_report_delivery_20261013_run06.json')
     deck = read('evidence/handbook_presentation_delivery_20261013_run06.json')
     for value in (report, deck):

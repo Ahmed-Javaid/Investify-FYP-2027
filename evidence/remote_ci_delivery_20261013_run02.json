@@ -1,0 +1,514 @@
+{
+  "schema": "investify-hosted-ci-delivery-verification-v1",
+  "run_id": 38426650755,
+  "html_url": "https://github.com/Ahmed-Javaid/Investify-FYP-2027/actions/runs/38426650755",
+  "head_sha": "ddf435d431b1c78f44c515fd9852aac86f02eb08",
+  "conclusion": "success",
+  "passed_jobs": 5,
+  "jobs": [
+    {
+      "id": 115397697027,
+      "name": "evidence (ubuntu-latest)",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38426650755,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Keep Git checkout translation explicit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Restore reviewed source and frozen artifact newline bytes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Execute portable validation, preview, plan and localhost integration",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Keep the generated evidence for review",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        }
+      ]
+    },
+    {
+      "id": 115397697305,
+      "name": "streamlit-ui (ubuntu-latest)",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38426650755,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Keep Git checkout translation explicit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Restore reviewed source and frozen artifact newline bytes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Install the historical demo runtime",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Install the pinned source checker",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Execute source checks and all current recorded UI scopes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Keep UI logs and their source-bound receipt",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        }
+      ]
+    },
+    {
+      "id": 115397697433,
+      "name": "evidence (windows-latest)",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38426650755,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Keep Git checkout translation explicit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Restore reviewed source and frozen artifact newline bytes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Execute portable validation, preview, plan and localhost integration",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Keep the generated evidence for review",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        }
+      ]
+    },
+    {
+      "id": 115397697570,
+      "name": "streamlit-ui (windows-latest)",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38426650755,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Keep Git checkout translation explicit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Restore reviewed source and frozen artifact newline bytes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Install the historical demo runtime",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Install the pinned source checker",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Execute source checks and all current recorded UI scopes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Keep UI logs and their source-bound receipt",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        }
+      ]
+    },
+    {
+      "id": 115398391643,
+      "name": "delivery",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38426650755,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Keep Git checkout translation explicit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Restore reviewed inputs",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Check delivery admission and checkout preservation",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Download this run's four CI prerequisites",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Package and verify source, PDFs and handover",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Deliver the verified bundle and source-bound receipt",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        }
+      ]
+    }
+  ],
+  "delivery_artifact": {
+    "id": 11829755173,
+    "name": "investify-mid1-delivery-ddf435d431b1c78f44c515fd9852aac86f02eb08",
+    "size_in_bytes": 16596834,
+    "url": "https://api.github.com/repos/Ahmed-Javaid/Investify-FYP-2027/actions/artifacts/11829755173",
+    "archive_download_url": "https://api.github.com/repos/Ahmed-Javaid/Investify-FYP-2027/actions/artifacts/11829755173/zip",
+    "expired": false,
+    "created_at": "2026-10-13T16:00:25Z",
+    "expires_at": "2026-10-27T16:00:23Z",
+    "updated_at": "2026-10-13T16:00:25Z",
+    "digest": "sha256:476ea4c6b5c66a56b2a662f03f30c31f5fb7f23895d9606c10c93560b6986286",
+    "workflow_run": {
+      "id": 38426650755,
+      "repository_id": 1417281220,
+      "head_repository_id": 1417281220,
+      "head_branch": "main",
+      "head_sha": "ddf435d431b1c78f44c515fd9852aac86f02eb08"
+    }
+  },
+  "artifacts": [
+    {
+      "id": 11829755173,
+      "name": "investify-mid1-delivery-ddf435d431b1c78f44c515fd9852aac86f02eb08",
+      "size_in_bytes": 16596834,
+      "url": "https://api.github.com/repos/Ahmed-Javaid/Investify-FYP-2027/actions/artifacts/11829755173",
+      "archive_download_url": "https://api.github.com/repos/Ahmed-Javaid/Investify-FYP-2027/actions/artifacts/11829755173/zip",
+      "expired": false,
+      "created_at": "2026-10-13T16:00:25Z",
+      "expires_at": "2026-10-27T16:00:23Z",
+      "updated_at": "2026-10-13T16:00:25Z",
+      "digest": "sha256:476ea4c6b5c66a56b2a662f03f30c31f5fb7f23895d9606c10c93560b6986286",
+      "workflow_run": {
+        "id": 38426650755,
+        "repository_id": 1417281220,
+        "head_repository_id": 1417281220,
+        "head_branch": "main",
+        "head_sha": "ddf435d431b1c78f44c515fd9852aac86f02eb08"
+      }
+    },
+    {
+      "id": 11829755058,
+      "name": "mid-eval-ui-ubuntu-latest",
+      "size_in_bytes": 17607,
+      "url": "https://api.github.com/repos/Ahmed-Javaid/Investify-FYP-2027/actions/artifacts/11829755058",
+      "archive_download_url": "https://api.github.com/repos/Ahmed-Javaid/Investify-FYP-2027/actions/artifacts/11829755058/zip",
+      "expired": false,
+      "created_at": "2026-10-13T15:59:43Z",
+      "expires_at": "2026-10-27T15:59:42Z",
+      "updated_at": "2026-10-13T15:59:43Z",
+      "digest": "sha256:127fe3093995ec14dea48e8949b996af72e3f0b8f648ee95c2503d6cf9d5a528",
+      "workflow_run": {
+        "id": 38426650755,
+        "repository_id": 1417281220,
+        "head_repository_id": 1417281220,
+        "head_branch": "main",
+        "head_sha": "ddf435d431b1c78f44c515fd9852aac86f02eb08"
+      }
+    },
+    {
+      "id": 11828674260,
+      "name": "mid-eval-ui-windows-latest",
+      "size_in_bytes": 17640,
+      "url": "https://api.github.com/repos/Ahmed-Javaid/Investify-FYP-2027/actions/artifacts/11828674260",
+      "archive_download_url": "https://api.github.com/repos/Ahmed-Javaid/Investify-FYP-2027/actions/artifacts/11828674260/zip",
+      "expired": false,
+      "created_at": "2026-10-13T16:00:03Z",
+      "expires_at": "2026-10-27T16:00:02Z",
+      "updated_at": "2026-10-13T16:00:03Z",
+      "digest": "sha256:df869416aaa5a811bbf2698fe901e6109220e91e8c79153b696c101f68f9a295",
+      "workflow_run": {
+        "id": 38426650755,
+        "repository_id": 1417281220,
+        "head_repository_id": 1417281220,
+        "head_branch": "main",
+        "head_sha": "ddf435d431b1c78f44c515fd9852aac86f02eb08"
+      }
+    },
+    {
+      "id": 11828569544,
+      "name": "mid-eval-evidence-windows-latest",
+      "size_in_bytes": 168850,
+      "url": "https://api.github.com/repos/Ahmed-Javaid/Investify-FYP-2027/actions/artifacts/11828569544",
+      "archive_download_url": "https://api.github.com/repos/Ahmed-Javaid/Investify-FYP-2027/actions/artifacts/11828569544/zip",
+      "expired": false,
+      "created_at": "2026-10-13T15:59:15Z",
+      "expires_at": "2026-10-27T15:59:14Z",
+      "updated_at": "2026-10-13T15:59:15Z",
+      "digest": "sha256:4641d06db60cabe3ba0d9f96f6c4b8f157352ea0a6e050f56728e685a1e2657c",
+      "workflow_run": {
+        "id": 38426650755,
+        "repository_id": 1417281220,
+        "head_repository_id": 1417281220,
+        "head_branch": "main",
+        "head_sha": "ddf435d431b1c78f44c515fd9852aac86f02eb08"
+      }
+    },
+    {
+      "id": 11828284633,
+      "name": "mid-eval-evidence-ubuntu-latest",
+      "size_in_bytes": 168740,
+      "url": "https://api.github.com/repos/Ahmed-Javaid/Investify-FYP-2027/actions/artifacts/11828284633",
+      "archive_download_url": "https://api.github.com/repos/Ahmed-Javaid/Investify-FYP-2027/actions/artifacts/11828284633/zip",
+      "expired": false,
+      "created_at": "2026-10-13T15:59:00Z",
+      "expires_at": "2026-10-27T15:58:59Z",
+      "updated_at": "2026-10-13T15:59:00Z",
+      "digest": "sha256:541caa7f472b6f8479fd823ff7ce58739e24e4dc45ebc9ca981f5e7f717c895a",
+      "workflow_run": {
+        "id": 38426650755,
+        "repository_id": 1417281220,
+        "head_repository_id": 1417281220,
+        "head_branch": "main",
+        "head_sha": "ddf435d431b1c78f44c515fd9852aac86f02eb08"
+      }
+    }
+  ],
+  "technical_scope": "Working Mid-1 code, complete authored report, working CI/CD artifact delivery and required Mid-1 modules. Team signatures/review/walkthrough/rehearsal excluded."
+}
+

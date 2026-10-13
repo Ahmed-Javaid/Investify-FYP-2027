@@ -1,15 +1,15 @@
 {
   "schema": "investify-mid1-technical-completion-v1",
   "definition": "User-defined technical scope, replacing the earlier mixed readiness score.",
-  "technical_completion_percent": null,
+  "technical_completion_percent": 100,
   "code": "implemented and locally checked",
   "report": "complete authored content, compiled and visually reviewed",
   "required_modules": "implemented with separate execution evidence",
-  "ci_cd": "configured; hosted verification pending",
+  "ci_cd": "hosted tests and artifact delivery passed",
   "excluded_team_todo": "deliverables/MID1_TEAM_TODO.md",
   "report_output": "deliverables/Investify_FYP1_Mid_Report_Technical_Completion_20261013.pdf",
   "presentation_output": "deliverables/Investify_FYP1_Mid_Presentation_Technical_Completion_20261013.pdf",
-  "hosted_run": null,
+  "hosted_run": "https://github.com/Ahmed-Javaid/Investify-FYP-2027/actions/runs/38426650755",
   "limits": [
     "Mid-1 technical completion, not full FYP completion or a university grade.",
     "Negative prediction, all-Buy calibration and AI-reference sentiment limits remain disclosed.",

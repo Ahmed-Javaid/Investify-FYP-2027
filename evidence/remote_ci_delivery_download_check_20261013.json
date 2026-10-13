@@ -1,0 +1,79 @@
+{
+  "schema": "investify-downloaded-delivery-check-v1",
+  "run_id": 38426650755,
+  "artifact_id": 11829755173,
+  "artifact_sha256": "476ea4c6b5c66a56b2a662f03f30c31f5fb7f23895d9606c10c93560b6986286",
+  "all_delivery_file_hashes_match": true,
+  "hosted_delivery_receipt": {
+    "schema": "investify-verified-continuous-delivery-v1",
+    "checked_utc": "2026-10-13T16:00:23.566920+00:00",
+    "status": "passed",
+    "repository_commit": "ddf435d431b1c78f44c515fd9852aac86f02eb08",
+    "execution_location": "github_actions",
+    "ci_prerequisites": [
+      {
+        "job": "evidence",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "receipt_sha256": "336c45aefe4ba2500d0385d4c3057486728bf8644db3720851fe374d3e6b16ff",
+        "execution_location": "github_actions"
+      },
+      {
+        "job": "evidence",
+        "platform": "Windows-10-10.0.26100-SP0",
+        "receipt_sha256": "5574f29e99c260e92ffdf5ed0efa8e0b73cb352f735c151c517417d0e17d06fa",
+        "execution_location": "github_actions"
+      },
+      {
+        "job": "streamlit-ui",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "receipt_sha256": "d04577f8c9d794b999dd2e81c47ae76ec22b2116ec1080db0009a869cd5c72bb",
+        "execution_location": "github_actions"
+      },
+      {
+        "job": "streamlit-ui",
+        "platform": "Windows-10-10.0.26100-SP0",
+        "receipt_sha256": "0e43f951203d850ba79bffeec5a0d8ab62d87f5bd24f18c5407df7627ae8b714",
+        "execution_location": "github_actions"
+      }
+    ],
+    "document_configuration_sha256": "3fae91f04a82461887416f19c868ef053fc6ef4db78081132ace99e179f12f15",
+    "delivery_kind": "Verified source, reviewed PDF and handover artifact; production hosting is later scope.",
+    "artifacts_sha256": {
+      "delivery_extraction_clean_host_tests.txt": "c04a27f22e069b0d84d489b840b35b488265a53c9d5381266d4030311d1adcd7",
+      "delivery_extraction_clean_host_verification.json": "e030cd4f964aeb64d022b384abc7808517c48e2d653dde756de461e601c1028c",
+      "investify_mid1_ci_delivery_ddf435d431b1.zip": "500831a52d7a7680bd696c9748e5c040301e91bc7d1412262064466dfd74f4c6",
+      "package_receipt.json": "178a36525623a816ba7570e006f5cf8cfa691fefe0fa8fc5426e58dafccece47",
+      "prerequisite_1.json": "336c45aefe4ba2500d0385d4c3057486728bf8644db3720851fe374d3e6b16ff",
+      "prerequisite_2.json": "5574f29e99c260e92ffdf5ed0efa8e0b73cb352f735c151c517417d0e17d06fa",
+      "prerequisite_3.json": "d04577f8c9d794b999dd2e81c47ae76ec22b2116ec1080db0009a869cd5c72bb",
+      "prerequisite_4.json": "0e43f951203d850ba79bffeec5a0d8ab62d87f5bd24f18c5407df7627ae8b714"
+    }
+  },
+  "extraction_verification": {
+    "checked_utc": "2026-10-13T16:00:23.481011+00:00",
+    "archive_sha256": "500831a52d7a7680bd696c9748e5c040301e91bc7d1412262064466dfd74f4c6",
+    "code_commit": "ddf435d431b1c78f44c515fd9852aac86f02eb08",
+    "inventory_files_verified": 791,
+    "clean_environment": "/home/runner/work/_temp/investify-portable-clean-py311",
+    "unavailable_external_packages": {
+      "numpy": false,
+      "streamlit": false,
+      "torch": false,
+      "pytest": false
+    },
+    "portable_tests_passed": 168,
+    "live_checks_passed": 62,
+    "records_validated": 372,
+    "revision_source": "checked_bundle_inventory",
+    "git_dirty": null,
+    "plan_only_status": "plan_only",
+    "real_completions": 0,
+    "browser_visual_qa": false,
+    "recorded_teacher_examples_replayed": 6,
+    "student_training_executed": false,
+    "original_social_acquisition_inputs_replayed": false,
+    "requirement_anchors_checked_against_bundled_selected_receipt": 18,
+    "streamlit_tests_executed_on_clean_host": false,
+    "scope": "Actual ZIP extraction, hash inventory, stdlib-only execution, live portable server and no-inference planning; not scientific reproduction or rendered report/deck"
+  }
+}
