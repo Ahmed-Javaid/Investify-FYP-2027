@@ -10,7 +10,7 @@ Mid-1 planning completion is **84.25%, about 84%**. The [unchanged-weight ledger
 - [Focused UI checks](../evidence/presenter_and_legacy_ui_tests_20261013.xml): 40 passes comprising 12 primary UI cases, 24 preserved legacy cases and 4 selectors. Protected originals: 224 checked, zero changes.
 - [Handbook coverage](../planning/HANDBOOK_MID1_AUDIT.md) maps 34 requirements. The code walkthrough and setup/manual are prepared. Actual UI browser captures, projector review, rehearsal, confirmed cover details, real member contributions and supervisor/baseline approval remain open.
 
-Scientific freezes are unchanged. Weak prediction, all-Buy calibration, AI-reference sentiment limits and the untrained Phi-3-mini student remain explicit. Existing ZIPs certify their own older snapshots. A new matching source review archive will be linked after clean extraction verification. No student ownership, user acceptance, remote CI or institutional approval is inferred.
+Scientific freezes are unchanged. Weak prediction, all-Buy calibration, AI-reference sentiment limits and the untrained Phi-3-mini student remain explicit. Existing ZIPs certify their own older snapshots. The [current 699-file review archive](../deliverables/investify_mid1_handbook_review_20261013.zip) identifies clean code snapshot **ebe4e22**. [Its actual extraction review](../evidence/handbook_review_20261013_clean_host_verification.json) passes 165 portable tests, 62 live HTTP checks and 372 historical records, with six teacher examples replayed. These later receipt/status notes are a separate documentation increment. No student ownership, user acceptance, remote CI or institutional approval is inferred.
 
 ## Verified current source review archive - 13 October 2026
 
