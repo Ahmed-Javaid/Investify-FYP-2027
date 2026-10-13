@@ -9,7 +9,6 @@ from investify.decision_record import DecisionRecord
 from investify.explain.template import Explanation, render, render_guided
 from investify.explain.verifier import verify
 from investify.explain.pipeline import emit
-from investify.explain.fixtures import generate_all
 
 class PolicyExplanationTests(unittest.TestCase):
     def setUp(self):
@@ -52,11 +51,24 @@ class PolicyExplanationTests(unittest.TestCase):
         self.assertIn('Policy outcome: Observe.', result.text)
 
     def test_all_supported_corruptions_are_rejected_in_strict_policy_mode(self):
+        # Cover the fixture categories without requiring NumPy in portable CI.
         output = render(self.record, policy_action='Observe')
-        for case in generate_all(self.record, output, seed=0):
-            with self.subTest(kind=case.kind):
-                self.assertFalse(verify(self.record, case.explanation.text, case.explanation.payload,
+        mutations = {
+            'wrong_probability': lambda p: p.update(confidence=0.99),
+            'wrong_shap_magnitude': lambda p: p['contributions'][0].update(shap_value=99.0),
+            'flipped_direction': lambda p: p['contributions'][0].update(
+                direction='opposes' if p['contributions'][0]['direction'] == 'supports' else 'supports'),
+            'promoted_minor_feature': lambda p: p['contributions'][1].update(rank=1),
+            'invented_feature_name': lambda p: p['contributions'][0].update(name='invented_feature'),
+        }
+        for kind, mutate in mutations.items():
+            with self.subTest(kind=kind):
+                payload = copy.deepcopy(output.payload)
+                mutate(payload)
+                self.assertFalse(verify(self.record, output.text, payload,
                                         policy_action='Observe', strict_prose=True).passed)
+        self.assertFalse(verify(self.record, output.text + '\nUncheckable market narrative.',
+                                output.payload, policy_action='Observe', strict_prose=True).passed)
 
     def test_historical_default_template_keeps_the_frozen_teacher_pilot_replayable(self):
         from investify.explain.teacher_session import prepare_packets

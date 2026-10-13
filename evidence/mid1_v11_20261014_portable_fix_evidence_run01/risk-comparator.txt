@@ -1,0 +1,1 @@
+Comparator arithmetic checks passed: 228; report: E:\Uni_Stuff\FYP\Investify\evidence\mid1_v11_20261014_portable_fix_evidence_run01\risk-comparator.json
