@@ -4,8 +4,8 @@ Work in this consolidated repository. Start with `README.md`,
 `planning/CURRENT_STATUS.md`, `planning/HANDOFF_20261012.md` and
 `deliverables/README.md`. Code commands run from `code`; the Git root is here.
 
-The current report draft is `report/main.tex`; current mid-slide content is
-`deliverables/presentation_outline.json`. `sources` contains preserved reference
+The current report draft is `report/main.tex`; current presentation entry is
+`presentation/main.tex`, with notes mirrored in `deliverables/presentation_outline.json`. `sources` contains preserved reference
 documents, while `original_materials` and the parent `_archives` contain old
 copies. Historical `code/CLAUDE.md`, old source briefs and archived handoffs
 describe the September spike; current user directions and this handoff govern

@@ -1,44 +1,79 @@
-\chapter{System Design}
-\section{System Architecture}
+\chapter{Software Design Specification}
+\label{chap:design}
+\section{Design Scope and Rationale}
+This design specification describes the implemented Mid-1 record, evidence, profile and explanation-checking module. The handbook permits the design models appropriate to the project; the selected component, domain, layered, data-flow, sequence, activity, state and deployment models answer different implementation questions. A relational database is not implemented: the schema diagram describes the actual JSON/Parquet artifact contracts and digest relationships. No screen or diagram implies a trained student, a production service or supervisor approval.
 
-The recorded assistant teacher pipeline is separate from the user-facing student inference path. Six actual controlled-prose explanations have been checked and exported; original-student inference and QLoRA remain pending. No extra Qwen teacher download is required. The factual JSON target is assembled from original records, explicitly as hybrid supervision rather than a teacher-generated payload.
-\begin{figure}[htbp]\centering
-\input{figures/mideval_teacher_training}
-\caption{Actual teacher construction and verification, with pending Phi-3-mini training and comparison shown dashed. Both corpora share date groups and held-out test records are excluded.}
-\end{figure}
-The existing historical pipeline acquires and aligns prices/news, derives features, evaluates fixed models, and stores decisions/attributions. This increment operates downstream of those records and adds complete context, independent prose/payload checks, and a live local verification interface.
-\begin{figure}[htbp]\centering
-\input{figures/mideval_architecture}
-\caption{Explanation architecture with the implemented adapter and a pending official-publisher model run.}
-\end{figure}
-\section{Architectural Components}
-The validating decision schema supplies facts. The context builder adds reviewed definitions without changing predictions. The template renders supported sentences. The verifier checks both visible and structured claims. The emission pipeline accepts a candidate or verifies a fallback while retaining its rejection report. Streamlit and the portable HTTP interface expose these components.
-\section{Interfaces and Dependencies}
-The portable interface uses Python 3.11's standard library and explicit catalogue, record, explanation, profile-contract and comparator APIs. Streamlit uses the separately frozen, restored viewer runtime. Historical re-runs require their original price, news and sentiment-cache inputs. The fresh Alpaca experiment uses its separately restored scientific runtime and verified input identities; the viewer runtime remains separate.
-\begin{longtable}{p{0.28\textwidth}p{0.36\textwidth}p{0.25\textwidth}}
-\toprule Interface & Request / response contract & Failure contract\\\midrule
-GET /api/catalog & Available corpora/sessions plus unavailable and comparator-unavailable entries. & Partial availability is disclosed.\\
-GET /api/record & Corpus/session query returns authoritative context and numeric template. & Unknown/unavailable selection: 400, no substituted record.\\
-POST /api/verify & Text, optional payload and strict flag; candidate/emitted reports and replacement flag. & Factual rejection: 200 with candidate false, emitted true and replacement true.\\
-POST /api/explain & Corpus/session; complete guided output, status/reason and retained attempts. & Unconfigured model: labelled guide, zero model calls.\\
-GET /api/profile-contract & Five capacity and three tolerance controls, with no assumed answers. & No profile answers inferred.\\
-POST /api/risk-comparator & Exactly corpus/session/capacity/tolerance; separate profile/fixed blend and audit. & Incomplete, development or unavailable request: 400.\\
-GET /health & Process/data readiness and source hashes captured when the server starts. & HTTP 200 does not imply scientific or model readiness.\\
-\bottomrule\end{longtable}
-Recognized POST transport failures are 415 for a non-JSON content type, 413 for invalid/empty or over-131,072-byte declared bodies, and 400 for malformed/nonfinite JSON or invalid top-level requests. Undeclared routes return 404. A syntactically valid but factually wrong candidate selects verified fallback rather than becoming a transport error. Numeric verification fallback and the complete guided explanation comparator have different coverage contracts.
+The key decision is to keep recorded classifier facts authoritative. A profile changes a separate retrospective comparator, and an explanation cannot overwrite model probabilities. The input validator checks probabilities, class argmax, feature/attribution consistency and missing values before a view appears. The verifier checks displayed text and structured claims independently; the emission path retains a rejected candidate while checking its replacement.
 
-For a valid request, the interface selects a validated record, builds evidence, submits current text/settings, verifies prose and JSON independently, and displays the accepted candidate/report. For rejection, the same path records candidate failures, verifies a numeric template independently and displays the fallback with the failed candidate report retained. Client edits invalidate the displayed verification report while preserving independent guide/profile output. Request ownership prevents obsolete catalogue, record, profile, guided and comparator responses from publishing or releasing a newer request's controls. An accepted empty catalogue clears the current record/reports. Source refresh preserves an available selection; separate record and profile retries recover failed requests without assuming answers or duplicating controls. Twelve controlled Node cases execute the real inline handlers with a limited DOM/deferred-fetch fixture, separately from eight pure-state assertions. They make no live server, model or browser request; browser visual review remains blocked.
-\section{Architecture Decisions and Rationale}
-The record is authoritative over both representations. Coverage comes from visible text. Numeric and directional scores use the worse result of prose and JSON; payload duplication cannot dilute a display error. Any known incorrect claim is a hard failure. Strict mode rejects unparsed sentences and does not claim to verify arbitrary market prose.
-\section{Design Evolution}
-The original implementation intentionally preferred payload claims. A new regression showed that wrong displayed confidence could pass beside correct JSON. The corrected contract checks both, adds feature-value/attribution-target validation, requires essential display claims, and retains the failed report. Prediction outputs and historical experimental results are unchanged.
+\section{Overall Pipeline and Conceptual Domain}
+\begin{figure}[htbp]\centering\input{figures/mid1_pipeline}\caption[Scientific pipeline and live-module boundary]{Current end-to-end boundary: separately executed price/news preparation, sentiment/features, observed-label evaluation and model traces feed recorded artifacts; the live module checks their explanations. Social/teacher studies remain separate.}\end{figure}
+The fresh scientific increment establishes a real input-to-model path, rather than only an interface replay. Price/news admission, exchange calendars, strict-prior joins, label-end purge, fixed leakage arms, model/calibration and native SHAP produce retained outputs. The current presentation consumes those outputs without fitting a classifier. Original September bytes and historical vendor availability are not implied.
+
+\begin{figure}[htbp]\centering\input{figures/mid1_equity_domain}\caption[Conceptual equity-to-explanation domain]{Conceptual equity-to-explanation domain. The current implementation realizes these concepts through typed records and file contracts; the following class model gives the concrete live-module objects.}\end{figure}
+An equity study has dated market observations, derived feature evidence and a model run. A recorded decision case connects probabilities and attributions to a particular session/source. Explanation checking consumes that case. The prototype profile is an independent comparison, as the concrete class model below shows; no investor account or personalized classifier is invented.
+
+\section{Component and Layer Design}
+\begin{figure}[htbp]\centering\input{figures/mid1_components}\caption[Implemented components and interfaces]{Implemented component dependencies. The presentation controller calls the recorded-data adapter, verification pipeline and independent profile comparator.}\label{fig:components}\end{figure}
+The main entry point is \nolinkurl{app/streamlit_app.py}. \nolinkurl{app/presenter.py} renders only the selected workspace and walkthrough step. \nolinkurl{app/presenter_data.py} reads a fixed source registry, validates every recorded decision and refuses duplicate sessions, inconsistent model collections or changed bytes. A collection identity includes the full artifact hash; this prevents a check for one source revision from appearing as a check for another.
+
+\begin{figure}[htbp]\centering\input{figures/mid1_layers}\caption[Layer responsibilities]{Responsibilities from presentation through application and domain contracts to recorded artifacts. Offline scientific execution is separate from page rendering.}\end{figure}
+Streamlit provides the current presentation interface; the original standard-library HTTP demonstration remains an alternate historical interface. Neither opening the UI nor reading a study runs model training. Scientific execution uses its separately prepared runtime and original verified publisher weights, while the current interface reads completed results.
+
 \section{Domain Model}
-A corpus contains session-keyed decisions with ticker, horizon, probabilities, feature/SHAP vectors, base/raw score, ranked contributors, model/data references, and recorded risk tier. An explanation has text and optional JSON. Verification produces claim verdicts, four metrics and hard-gate failures. Emission adds fallback status and the rejected candidate/report.
-\section{Data Design}
-Historical artifacts remain the classifier source; no live quote, social observation or personalized classifier prediction is added. Context preserves missing values and rejects non-finite probabilities/attributions. The separate comparator fits population z-score statistics on the first 148 saved raw feature rows of each corpus and scores only the later 38. This is a newly declared retrospective scaling run, not a reconstruction of the old CV baseline. Source hashes, fitting dates and statistics are recorded. No profile database is implemented.
-\section{Process / Behavior Design}
-The process validates a selected record, builds context, receives/renders a candidate, checks prose and JSON, applies hard gates, and accepts or verifies a fallback. The complete guided path additionally requires all feature values/contributions/directions/targets, family totals, meanings and raw-score scope in both representations. The local adapter bounds retries/timeouts and retains failed/truncated attempts. Actual inference now requires an original-publisher model and all weight-shard hashes to match the publisher pointers. The replacement evaluation is pending. A future constrained reference-reproduction result would not alone establish a comprehension benefit over the complete guided template.
+\begin{figure}[htbp]\centering\input{figures/mid1_domain}\caption[Live-module class/domain model]{Implemented domain objects and their principal associations. A case collection owns session-indexed records; each record contains ranked feature contributions. Research-study evidence remains separate from the live classifier.}\label{fig:domain}\end{figure}
+\texttt{DecisionRecord} is the factual boundary. Its dataclass rejects impossible probability or attribution states; nested dictionaries remain ordinary mappings and downstream functions treat them as read-only. \texttt{Explanation} contains visible text and an optional claim payload. \texttt{VerificationResult} retains per-claim verdicts and four metrics. \texttt{EmittedExplanation} carries accepted or verified fallback output plus the rejected candidate/report when present. A \texttt{RiskProfile} contains capacity, tolerance, caps and the reconciled score; its result is a separate comparison rather than a new prediction.
 
-The prototype profile refuses incomplete answers, scores capacity/tolerance separately, exposes matched/binding project caps, and reconciles the smaller score. The ability/willingness and time-horizon distinctions have external educational references \cite{finra_risk_tolerance,investor_asset_allocation}; these do not validate project scoring. The separate comparator uses the profile score as R in C=R S+(1-R)T beside R=0.5. T averages five technical z-scores with inherited trend signs; S uses standardized headline polarity. Missing news contributes zero with disclosure; missing technical inputs or development sessions refuse output. Scores are not probabilities/returns. The mapping is unvalidated, and lower R does not guarantee a more conservative action. Saved classifier outputs remain unchanged.
+\section{Data Flow and Artifact Schema}
+\begin{figure}[htbp]\centering\input{figures/mid1_dataflow}\caption[Live-module logical data flow]{Logical data flow for a selected case. The current text and JSON meet at the verifier; profile answers flow to a separate comparator.}\label{fig:dataflow}\end{figure}
+The reviewer supplies a source/session choice, optional profile answers and a candidate explanation. Validation reads the recorded data store, context supplies maintained meanings, verification checks the selected record, and the comparator uses earlier scaling rows. These paths return visible evidence, checked prose and comparison outputs. Social/teacher data is read only in its own research workspace.
 
-An actual saved-feature semantics audit evaluates C(R)=T+R(S-T). Its slope is S-T, so increasing R changes the weight of the news score and does not impose a conservative/aggressive ordering. Across the 38 preserved historical held-out sessions per corpus, R=0 versus R=1 changes the comparator action on 25 Alpaca and 29 FNSPID rows. The guided UI now also offers the separate comparator on the new frozen and refit records; its default 21 December case shows Hold versus Sell under explicitly fictional example profiles. These are parameter scenarios on historical features, not observations of people or investment outcomes. The audit receipt retains the arithmetic and original source hashes.
+\begin{figure}[htbp]\centering\input{figures/mid1_schema}\caption[Artifact schema and digest relationships]{Actual artifact relationships expressed through source, plan, model and run digests. This is a file-schema design, not a claim of an implemented SQL database.}\label{fig:schema}\end{figure}
+A scientific run binds input, configuration, source and runtime identities. Its model, scaler and calibration traces and decision records are retained under a new run directory. The social benchmark binds a frozen plan; each candidate bundle binds that plan, model revision, raw logits and execution receipts. Teacher packets bind record facts and split identities; accepted prose is exported to training/validation with held-out test dates excluded.
+
+\subsection{Data Dictionary}
+\begin{longtable}{p{0.25\textwidth}p{0.29\textwidth}p{0.36\textwidth}}\toprule Item & Representation & Rule and meaning\\\midrule
+Record identity & Source, session, artifact SHA256 & One ticker/horizon/model per collection; sessions unique.\\
+Class probabilities & Buy/Hold/Sell mapping & Finite nonnegative values sum to one within $10^{-6}$; class equals argmax.\\
+Feature vector & Named numeric/missing values & Five technical and six news features; absent evidence remains absent.\\
+SHAP vector & Named raw-score contributions & Same feature keys; base plus contributions reconstruct raw output within $10^{-4}$.\\
+Top contributors & Ranked contribution objects & Nonzero contributions agree with feature values, magnitude order and direction.\\
+Candidate explanation & Text and optional JSON & Visible prose and payload checked separately; known contradictions cannot be diluted.\\
+Verification & Claim checks and metrics & Numeric fidelity, direction, coverage and unverifiable rate plus hard failures.\\
+Profile & Five capacity and three tolerance answers & No unanswered default; caps and smaller-axis reconciliation disclosed.\\
+Comparator & Scaling manifest and two scores & Earlier 80\% rows fit scaling; later rows scored; no outcome accuracy implied.\\
+Study reference & Post ID, text, label/exclusion & AI provenance declared; no independent human-label claim.\\
+Publisher/run identity & Revision, SHA256, logits, receipts & Missing/changed weights, partial runs and incompatible metadata refuse comparison.\\
+\bottomrule\end{longtable}
+
+\section{Behavior and Sequence Design}
+\begin{figure}[htbp]\centering\input{figures/mid1_sequence}\caption[Explanation-check system sequence]{System sequence for the live explanation check, including the retained rejection and independently checked fallback.}\label{fig:ssd}\end{figure}
+The controller receives the current candidate, not an earlier cached result. \nolinkurl{explain/pipeline.py:emit} invokes \nolinkurl{explain/verifier.py:verify}. A passing candidate is emitted; a failure keeps its report, renders the deterministic template and verifies it independently. If the template check itself fails, the operation raises an error and the UI claims no verified output.
+
+\begin{figure}[htbp]\centering\input{figures/mid1_activity}\caption[Accepted and fallback activity flow]{Activity flow and the two visible success paths. The failure path does not silently accept the candidate.}\end{figure}
+\begin{figure}[htbp]\centering\input{figures/mid1_state}\caption[Explanation-view state transitions]{Explanation-view state machine. A case or text edit invalidates the visible check; only a result for the current identity can appear as accepted.}\end{figure}
+The candidate cache identity combines source, session, artifact digest and text digest. Changing cases resets the candidate to that record's template; editing text hides a previous verdict until checking runs again. Independent profile state can persist between steps without altering classifier facts.
+
+\section{Interface and Failure Contracts}
+\begin{longtable}{p{0.26\textwidth}p{0.34\textwidth}p{0.30\textwidth}}\toprule Operation & Result & Failure behavior\\\midrule
+Select recorded case & Validated record/context & Missing, duplicate, inconsistent or changed input shows an error; no substituted case.\\
+Check explanation & Candidate/report or verified fallback & Known contradiction, malformed claims, missing essential claims and strict unsupported prose reject.\\
+Apply profile & Reconciled profile and separate blend & Incomplete answers produce no score; development sessions refuse comparison.\\
+Read study & Recomputed receipt-bound metrics & Invalid/partial evidence withholds comparison; no neutral substitute for failures.\\
+Optional local generation & Explicit model request and checked output & Unconfigured model gives labelled deterministic guide; retry/timeout/identity limits remain explicit.\\
+\bottomrule\end{longtable}
+The portable historical API additionally exposes catalogue, record, verification, guide and profile/comparator endpoints. It rejects unknown routes, malformed/nonfinite JSON and oversized bodies. Those contracts and their live HTTP checks remain in the dated source handover; they do not establish browser visual quality or production security.
+
+\section{Deployment and Security Design}
+\begin{figure}[htbp]\centering\input{figures/mid1_deployment}\caption[Local deployment topology]{Current local topology. The viewer binds loopback; publisher weights and temporary builds stay on E:. Scientific execution and optional generation are distinct operations.}\end{figure}
+The launch script binds \nolinkurl{127.0.0.1:8507}, disables usage telemetry and keeps cache/scratch on E:. It refuses an occupied port. The UI has no broker/account access, authentication or transaction path. Profiles stay in session memory; no profile database is implemented. Credentials stay in ignored local configuration and are excluded from review archives. This is a local review topology; a production target and authentication/deployment threat model remain later work.
+
+\section{Alternatives and Design Evolution}
+\begin{longtable}{p{0.22\textwidth}p{0.32\textwidth}p{0.36\textwidth}}\toprule Decision & Alternative considered & Rationale and remaining limitation\\\midrule
+One active workspace & All tabs mounted at once & Reduces competing controls and unnecessary hidden work; preserves explicit movement through the core demonstration.\\
+Independent prose/JSON checks & Trust structured claims alone & A wrong displayed probability can coexist with correct JSON; the regression and live failure demonstrate the corrected boundary.\\
+Deterministic fallback & Emit a failed candidate & Keeps supported record facts visible and retains the failure report; arbitrary language understanding is unproven.\\
+Separate profile comparator & Relabel saved model output & Demonstrates prototype weighting without falsely claiming personalized XGBoost or suitable investor actions.\\
+Artifact storage & Introduce SQL persistence & Actual interfaces consume immutable study files and transient profiles; adding a database would imply unsupported implementation.\\
+Recorded studies in separate workspace & Train during presentation & Preserves reproducible source identities and a short core demonstration; live generation/training is not inferred.\\
+\bottomrule\end{longtable}
+The previous UI exposed four densely populated research tabs, then a guided wrapper. User review identified clutter; the present revision isolates the four-step case walkthrough and moves study details to their own workspace. This is an authorized presentation/design change. Scientific inputs, labels, model identities, thresholds and historical evidence remain unchanged.

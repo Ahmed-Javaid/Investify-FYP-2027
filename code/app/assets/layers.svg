@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="884" viewBox="0 0 900 884" role="img" aria-label="Layer responsibilities">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#426c85"/></marker></defs>
+<rect width="900" height="884" fill="#fff"/>
+<text x="20" y="27" fill="#172b43" font-family="Arial" font-size="21" font-weight="bold">Layer responsibilities</text>
+<rect x="321" y="58" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="102.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Presentation</text>
+<text x="450" y="122.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">focused Streamlit workspace</text>
+<text x="450" y="142.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">portable historical HTTP</text>
+<text x="450" y="162.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">interface</text>
+<rect x="321" y="280" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="314.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Application services</text>
+<text x="450" y="334.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">case selection, context,</text>
+<text x="450" y="354.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">emission</text>
+<text x="450" y="374.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">prototype profile and recorded</text>
+<text x="450" y="394.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">studies</text>
+<rect x="321" y="502" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="536.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Domain contracts</text>
+<text x="450" y="556.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">DecisionRecord and claim</text>
+<text x="450" y="576.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">verification</text>
+<text x="450" y="596.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">profile rules and comparison</text>
+<text x="450" y="616.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">invariants</text>
+<rect x="321" y="724" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="758.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Artifact boundary</text>
+<text x="450" y="778.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">JSON receipts and model</text>
+<text x="450" y="798.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">records</text>
+<text x="450" y="818.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">Parquet feature store; E:</text>
+<text x="450" y="838.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">model caches</text>
+<path d="M450,198.20000000000002 L450,234.20000000000002 L450,234.20000000000002 L450,279.79999999999995" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,420.20000000000005 L450,456.20000000000005 L450,456.20000000000005 L450,501.79999999999995" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,642.2 L450,678.2 L450,678.2 L450,723.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+</svg>

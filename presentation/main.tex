@@ -1,0 +1,248 @@
+\documentclass[aspectratio=169,12pt]{beamer}
+\usepackage{fontspec}
+\setsansfont{Arial}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{xurl}
+\usetikzlibrary{arrows.meta,positioning}
+\definecolor{ink}{HTML}{18303F}
+\definecolor{teal}{HTML}{007F83}
+\definecolor{muted}{HTML}{526371}
+\definecolor{pale}{HTML}{EEF5F5}
+\definecolor{warning}{HTML}{B04C35}
+\setbeamercolor{normal text}{fg=ink,bg=white}
+\setbeamercolor{frametitle}{fg=ink}
+\setbeamercolor{structure}{fg=teal}
+\setbeamercolor{alerted text}{fg=warning}
+\setbeamerfont{frametitle}{size=\fontsize{22}{25}\selectfont,series=\bfseries}
+\setbeamersize{text margin left=9mm,text margin right=9mm}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}{\small\color{teal}\textbullet}
+\setbeamertemplate{frametitle}{\vspace{3mm}\insertframetitle\par\vspace{2mm}}
+\setbeamertemplate{footline}{\hspace{9mm}\color{muted}\fontsize{6.5}{8}\selectfont Investify\quad FYP-1 Mid-1\hfill Preparation: 13 October 2026\quad\insertframenumber/\inserttotalframenumber\hspace{9mm}\vspace{3mm}}
+\setbeameroption{hide notes}
+\hypersetup{pdftitle={Investify FYP-1 Mid-1},pdfauthor={Investify project team},colorlinks=true,urlcolor=teal}
+\newcommand{\source}[1]{\par\vspace{2mm}{\color{muted}\fontsize{6.5}{8}\selectfont Evidence: \nolinkurl{#1}\par}}
+\newcommand{\lead}[1]{{\color{teal}\bfseries #1}\par\vspace{2mm}}
+\tikzset{nodebox/.style={draw=teal,fill=pale,align=center,inner sep=2mm,font=\fontsize{10}{12}\selectfont},flow/.style={-{Stealth[length=2mm]},thick,draw=teal},plain/.style={align=left,font=\fontsize{10}{12}\selectfont}}
+\begin{document}
+
+\begin{frame}[plain]
+\vspace{5mm}
+{\color{teal}\large F26-003\quad FYP-1 Mid-1}\par\vspace{5mm}
+{\fontsize{38}{42}\selectfont\bfseries Investify}\par\vspace{3mm}
+{\Large Educational equity decisions\\with evidence and checked explanations}\par\vspace{7mm}
+{\small Ahmed Javaid (22I-2530)\quad Rafay Ul Haq (22I-2520)\\Soban Ahmad (22I-2460)}\par\vspace{2mm}
+{\small Supervisor: Mr. Irfan Ullah}\par\vspace{3mm}
+{\color{muted}\footnotesize Working draft prepared 13 October 2026}
+\note{Introduce the team and supervisor. The preparation date is not a confirmed assessment date. The project is an educational prototype. It does not execute orders or establish investment suitability. Working implementation, diagrams and assessment drafts include assistant contributions. Genuine student review and ownership evidence remain pending. Sources: planning/CHECKPOINT.md and report/main.tex. Timing: 30 seconds.}
+\end{frame}
+
+\begin{frame}{Problem and research contribution}
+\lead{A decision label leaves important questions unanswered.}
+\begin{itemize}\setlength{\itemsep}{2.5mm}
+\item Which observed features contributed to the result?
+\item Does the explanation agree with the recorded numbers?
+\item Did the evaluation use information available at that time?
+\end{itemize}
+\vspace{3mm}
+{\small FinBERT, XGBoost and TreeSHAP supply existing methods.\\
+Investify adds temporal controls and a checked explanation path.\\
+Predictive usefulness and user understanding require separate evidence.}
+\source{report/chapters/chapter2_research.tex; deliverables/PROBLEM_AND_CONTRIBUTION.md}
+\note{FinBERT provides news sentiment, XGBoost classifies the feature vector, and TreeSHAP supplies model attributions. Explain the engineering contribution without claiming invention of these methods or established research novelty. An explanation can be numerically consistent without being useful or causal. The related-work chapter compares the research components and discusses the remaining novelty review. Research sources in that chapter include FinBERT arXiv:1908.10063 and TreeSHAP arXiv:1802.03888. Timing: 60 seconds.}
+\end{frame}
+
+\begin{frame}{Scope and acceptance checks}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.47\textwidth}
+\lead{Current prototype}
+\begin{itemize}\setlength{\itemsep}{2mm}
+\item Historical NVDA cases
+\item Five-session horizon
+\item 5 technical and 6 news features
+\item Separate risk comparison
+\end{itemize}
+\end{column}
+\begin{column}{.49\textwidth}
+\lead{Observable acceptance}
+\begin{itemize}\setlength{\itemsep}{2mm}
+\item Validate the selected record
+\item Expose feature meaning and units
+\item Reject contradictory prose
+\item Verify the fallback separately
+\end{itemize}
+\end{column}
+\end{columns}
+\vspace{4mm}
+{\small The social study remains separate. Phi-3-mini adaptation is later work.}
+\source{report/chapters/chapter4_requirements.tex; code/tests/test_presenter_ui.py}
+\note{The four record collections preserve historical and fresh frozen/refit identities. There are 186 decisions in each evaluation collection, not independent experiments to sum as a single sample. The risk-dependent blend is a separate retrospective prototype and does not modify the classifier probabilities. No default questionnaire responses are supplied. Social inputs have not been integrated into the news-only core. Original Phi-3-mini inference and QLoRA training remain unmeasured. Timing: 60 seconds.}
+\end{frame}
+
+\begin{frame}{Mid-1 deliverables}
+\relax
+{\small Week 8 formative supervisor checkpoint\quad Recommended duration: 15 minutes}\par
+\vspace{3mm}
+{\fontsize{10.5}{12.5}\selectfont\begin{tabular}{@{}p{.26\textwidth}p{.67\textwidth}@{}}
+\toprule
+\textbf{Required area} & \textbf{Prepared evidence}\\\midrule
+Report v1.0 & Vision, related work, SRS, use cases, test plan, DEI and ethics\\[2mm]
+Appropriate design & Domain, components, layers, DFD, sequence, state and schema\\[2mm]
+Working iteration & Four-step demo, failure case, code walkthrough and tests\\[2mm]
+Maintenance & CI configuration, deployment diagram and setup manual\\\bottomrule
+\end{tabular}}\par
+\vspace{3mm}
+{\small Genuine team contributions, baseline review and applicable approvals remain open.}
+\source{sources/BS-FYP-Handbook-2026_DRAFT.pdf pp.11,27,37-38; planning/HANDBOOK_MID1_AUDIT.md}
+\note{Table 1a asks for report version 1.0 and suitable design artifacts rather than every listed alternative. The audit maps 34 requirements to actual evidence or an explicit open condition. Mid-1 contributes 20 percent of FYP-1. The 45 percent implementation expectation belongs to Final-1, not this checkpoint. Show the report and explain why file schemas rather than a SQL database describe this iteration. Form 2 also asks for a genuine member code walkthrough and contribution evidence. Generated files do not establish that ownership. Timing: 60 seconds.}
+\end{frame}
+
+\begin{frame}{System architecture}
+\centering
+\begin{tikzpicture}[x=1mm,y=1mm]
+\node[nodebox,text width=34mm,minimum height=13mm] (inputs) at (20,43) {Dated prices\\and headlines};
+\node[nodebox,text width=38mm,minimum height=13mm] (features) at (69,43) {Availability controls\\and feature extraction};
+\node[nodebox,text width=34mm,minimum height=13mm] (model) at (120,43) {XGBoost, calibration\\and TreeSHAP};
+\draw[flow] (inputs)--(features); \draw[flow] (features)--(model);
+\node[nodebox,text width=34mm,minimum height=13mm] (records) at (120,15) {Retained records\\and run identities};
+\node[nodebox,text width=38mm,minimum height=13mm] (verify) at (69,15) {Record/context checks\\and explanation verifier};
+\node[nodebox,text width=34mm,minimum height=13mm] (ui) at (20,15) {Local Streamlit\\walkthrough};
+\draw[flow] (model)--(records);\draw[flow] (records)--(verify);\draw[flow] (verify)--(ui);
+\node[plain,text width=130mm] at (70,-3) {Offline research creates the retained artifacts. The live demo reads them and checks explanations.};
+\end{tikzpicture}
+\source{report/figures/mid1_pipeline.tex; code/app/presenter_data.py}
+\note{Trace one concrete artifact from offline scientific output to CaseCollection, DecisionRecord and FeatureContext. Model fitting and actual SHAP replay happened offline and have dated receipts. Opening the UI does not train a model, fetch market data or request an unconfigured LLM. The optional local generation adapter is implemented but candidate student performance remains pending. The separate social study has its own inputs and labels. Timing: 70 seconds.}
+\end{frame}
+
+\begin{frame}{Domain model and file schema}
+\centering
+\begin{tikzpicture}[x=1mm,y=1mm]
+\node[nodebox,text width=34mm,minimum height=13mm] (equity) at (20,41) {Equity\\ticker and study scope};
+\node[nodebox,text width=38mm,minimum height=13mm] (obs) at (69,41) {Market observations\\session and availability};
+\node[nodebox,text width=34mm,minimum height=13mm] (feat) at (120,41) {Feature evidence\\value, units and meaning};
+\draw[flow] (equity)--(obs); \draw[flow] (obs)--(feat);
+\node[nodebox,text width=34mm,minimum height=13mm] (run) at (120,14) {Model run\\identity and calibration};
+\node[nodebox,text width=38mm,minimum height=13mm] (decision) at (69,14) {Recorded decision\\class and probability\\SHAP contributions};
+\node[nodebox,text width=34mm,minimum height=13mm] (explain) at (20,14) {Explanation check\\candidate and verdict};
+\draw[flow] (feat)--(run); \draw[flow] (run)--(decision); \draw[flow] (decision)--(explain);
+\end{tikzpicture}
+\vspace{1mm}
+{\small File schemas bind cases to source/session and model identity.\\Current storage uses JSON/CSV artifacts. A SQL database is unnecessary here.}
+\source{report/figures/mid1_equity_domain.tex; report/figures/mid1_schema.tex}
+\note{This is the conceptual domain, not a claim that all conceptual nouns are Python classes. The report also includes a concrete implementation domain/class diagram, field dictionary and file schema. Explain the relationship between a corpus, a validated DecisionRecord, its FeatureContext and explanation output. The loader rejects duplicate sessions, non-finite values and mismatched context, model or horizon. There is no fabricated database implementation. Timing: 60 seconds.}
+\end{frame}
+
+\begin{frame}{Explanation check and recovery}
+\begin{tikzpicture}[x=1mm,y=1mm]
+\node[nodebox,text width=31mm,minimum height=12mm] (record) at (19,26) {Validated record\\and feature context};
+\node[nodebox,text width=31mm,minimum height=12mm] (candidate) at (68,26) {Visible explanation\\and factual payload};
+\node[nodebox,text width=31mm,minimum height=12mm] (check) at (117,26) {Independent checks\\of prose and JSON};
+\draw[flow] (record)--(candidate); \draw[flow] (candidate)--(check);
+\node[plain,text width=60mm] (accept) at (105,4) {Accepted candidate\\or independently verified fallback};
+\draw[flow] (check.south)--++(0,-5)-|(accept.north);
+\end{tikzpicture}
+\vspace{3mm}
+{\small\textbf{Demonstrable defect}}\par
+{\small Correct JSON beside a wrong visible confidence must fail.\\The UI retains the candidate rejection and the separate fallback verdict.}
+\source{code/src/investify/explain/verifier.py; code/tests/test_presenter_ui.py}
+\note{An earlier verifier accepted facts from the payload even when the visible sentence contradicted them. The current verifier checks both independently. In the live demo, inject the labelled wrong probability of 1.00 percent. Explain that this deliberately corrupted text is a failure demonstration, not a forecast. The report sequence and state diagrams show rejection, fallback and invalidation after edits. Numerical consistency does not establish causal validity or human comprehension. Timing: 60 seconds.}
+\end{frame}
+
+\begin{frame}{Live demonstration}
+\begin{enumerate}\setlength{\itemsep}{3mm}
+\item \textbf{Decision}\quad Recorded class, probabilities and contributions
+\item \textbf{Evidence}\quad One feature and its definition at a time
+\item \textbf{Risk profile}\quad Explicit fictional profiles, separate comparison
+\item \textbf{Explanation check}\quad Wrong probability, rejection and fallback
+\end{enumerate}
+\vspace{3mm}
+{\color{teal}\large\url{http://127.0.0.1:8507}}
+\par\vspace{2mm}
+{\small Default case: Fresh Alpaca frozen, NVDA, 21 December 2023.}
+\source{report/chapters/chapter7_ui_manual.tex; evidence/presenter_and_legacy_ui_tests_20261013.xml}
+\note{Reserve four minutes for the live walkthrough. Open Overview and choose Open the decision walkthrough. Leave the default Fresh Alpaca frozen case on 2023-12-21. Decision shows Buy and its calibrated probabilities. On Evidence choose a technical feature and a news feature. Risk profile: the explicit cautious fictional example R=0 gives Hold, and the higher-tolerance example R=1 gives Sell in the separate comparator, while the classifier remains Buy. Clear the profile to demonstrate no assumed answers. On Explanation check choose Inject wrong probability, then Check explanation. Show candidate rejection and verified fallback. Edit the text and show that the old verdict disappears. Twelve primary-UI widget tests pass. The full 40-test scope includes 24 historical UI tests and 4 selectors and must not be described as 40 new-interface tests. Browser/projector visual review and genuine rehearsal remain pending.}
+\end{frame}
+
+\begin{frame}{Calibration and decision collapse}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.62\textwidth}
+\begin{tikzpicture}[x=1mm,y=1mm]
+\foreach \x/\lab in {0/0,20/50,40/100,60/150,74.4/186}{\draw[gray!30] (\x,0)--(\x,36);\node[font=\scriptsize,text=muted] at (\x,-3){\lab};}
+\fill[teal] (0,26) rectangle (16,32);\fill[gray!55] (16,26) rectangle (36.4,32);\fill[warning] (36.4,26) rectangle (74.4,32);
+\fill[teal] (0,14) rectangle (74.4,20);
+\fill[teal] (0,2) rectangle (37.6,8);\fill[gray!55] (37.6,2) rectangle (49.6,8);\fill[warning] (49.6,2) rectangle (74.4,8);
+\node[anchor=west,font=\fontsize{9}{10}\selectfont] at (0,35){Raw: 40 Buy / 51 Hold / 95 Sell};
+\node[anchor=west,font=\fontsize{9}{10}\selectfont] at (0,23){Calibrated: 186 Buy};
+\node[anchor=west,font=\fontsize{9}{10}\selectfont] at (0,11){Observed: 94 Buy / 30 Hold / 62 Sell};
+\end{tikzpicture}
+\end{column}
+\begin{column}{.35\textwidth}
+\lead{Frozen classifier}
+{\small Multiclass Brier\\0.7929 to 0.6105}\par\vspace{2mm}
+{\small Calibration-prior comparator\\0.6095}\par\vspace{2mm}
+{\small Evaluation: 186 sessions\\Mar--Dec 2023}
+\end{column}
+\end{columns}
+\vspace{2mm}
+{\small All 186 calibrated cases are Buy in both frozen and refit runs.\\Lower Brier alone does not establish useful classification.}
+\source{evidence/fresh_alpaca_science_replay_20261012_run01.json; evidence/calibration_class_prior_audit_20261013.json}
+\note{These are fresh Alpaca revision-conservative results, not overwritten September metrics. The frozen and refit paths both reproduce actual model, calibration and native SHAP results. After excluding five unavailable labels, calibration has 181 rows. Frozen raw macro-F1 is 0.3182 and calibrated macro-F1 is 0.2238. Refit Brier changes from 0.7760 to 0.6078. The class-prior comparator uses calibration labels only, with Brier 0.60948945. Do not tune thresholds on this evaluation set to manufacture varied decisions. Timing: 60 seconds.}
+\end{frame}
+
+\begin{frame}{Temporal leakage experiment}
+\begin{tikzpicture}[x=1mm,y=1mm]
+\foreach \x/\lab in {0/0.0,20/0.1,40/0.2,60/0.3,80/0.4,100/0.5,120/0.6}{\draw[gray!25] (\x,0)--(\x,36);\node[font=\scriptsize,text=muted] at (\x,-3){\lab};}
+\fill[teal] (0,26) rectangle (56.8647,32);
+\fill[gray!60] (0,14) rectangle (65.7370,20);
+\fill[warning] (0,2) rectangle (107.8071,8);
+\node[anchor=west,font=\fontsize{9}{11}\selectfont] at (0,35){Clean: 0.2843};
+\node[anchor=west,font=\fontsize{9}{11}\selectfont] at (0,23){Training-distribution random baseline: 0.3287};
+\node[anchor=west,font=\fontsize{9}{11}\selectfont] at (0,11){Deliberately centred Bollinger canary: 0.5390};
+\end{tikzpicture}
+\vspace{2mm}
+{\small Five-session macro-F1, mean across six folds.\\Clean lift: $-0.0444$\quad 95\% fold-bootstrap CI [$-0.0855,-0.0121$].}
+\source{evidence/fresh_alpaca_science_summary_20261012_run01.json}
+\note{The fresh study executes six arms, two horizons and six folds. The centered Bollinger variant deliberately uses future information and is a leakage demonstration. Its five-session lift is plus 0.2104, with fold-bootstrap interval plus 0.1698 to plus 0.2421. It is not a valid trading strategy. The clean arm is below the training-distribution random comparator. The intervals summarize fold resampling, not guaranteed future returns. Preserve the negative finding. The source vintage and full chronological September reproduction remain separate limitations. Timing: 60 seconds.}
+\end{frame}
+
+\begin{frame}{Sentiment and teacher studies}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.52\textwidth}
+\lead{Original sentiment candidates}
+{\small Same 24 frozen MSFT AI references}\par
+\vspace{3mm}
+\begin{tabular}{@{}lrr@{}}\toprule
+\footnotesize Candidate & \footnotesize Macro-F1 & \footnotesize Exact\\\midrule
+\footnotesize CryptoBERT & \footnotesize 0.2564 & \footnotesize 15/24\\[2mm]
+\footnotesize Cardiff & \footnotesize 0.6016 & \footnotesize 16/24\\\bottomrule
+\end{tabular}
+\par\vspace{3mm}
+{\small Cardiff leads this benchmark.\\Only two references are negative.\\Final deployment selection is open.}
+\end{column}
+\begin{column}{.44\textwidth}
+\lead{Assistant teacher pilot}
+{\small Six actual prose examples\\Four training / two validation}\par\vspace{3mm}
+{\small The verifier accepts all six.\\All six decisions are Buy.}\par\vspace{3mm}
+{\small Phi-3-mini remains untrained.\\Human understanding is unmeasured.}
+\end{column}
+\end{columns}
+\source{evidence/social_study_review_20261013.json; deliverables/ASSISTANT_TEACHER_PILOT.md}
+\note{Both original publisher sentiment candidates run against unchanged AI references. CryptoBERT predicts only neutral. The 200 acquired MSFT posts yielded 117 usable references and 83 exclusions, frozen into 93 development and 24 held-out examples. These labels are not independently human validated. One held-out decision changes exact agreement by 4.17 percentage points. Do not infer NVDA transfer, profitability, significance or pretraining independence. The teacher prose is actual assistant output with deterministic factual JSON assembled from records. The exact serving revision is unavailable. Six examples do not establish adequate training data, student efficacy or user benefit. Timing: 60 seconds.}
+\end{frame}
+
+\begin{frame}{Remaining work and review decisions}
+\begin{itemize}\setlength{\itemsep}{2.5mm}
+\item \textbf{Demo readiness}\quad Browser/projector review and timed rehearsal
+\item \textbf{Assessment evidence}\quad Actual member walkthroughs and contributions
+\item \textbf{Report review}\quad Confirm metadata, baselines and applicable approvals
+\item \textbf{Research decisions}\quad Agree social/risk criteria and review weak prediction
+\end{itemize}
+\vspace{3mm}
+{\small Later work: expand teacher data, establish original student inference,\\then evaluate QLoRA on the frozen chronological split.}
+\par\vspace{2mm}
+{\color{teal}\small Mid-1 presents the working core, its design and its known limits.}
+\source{planning/HANDBOOK_MID1_AUDIT.md; report/chapters/chapter10_fyp2_plan.tex}
+\note{Ask the supervisor to review suitable baseline/design scope and the bounded research claims. Ask the team to supply genuine file/function understanding and task/meeting records. Cover session, co-supervisor applicability and coordinator details require confirmation. Data rights, ethics and institutional approval cannot be inferred from a generated appendix. No remote repository is configured, so prepared GitHub CI has not run remotely. Preserve the original planning weights and do not describe readiness as a university grade. The planned student is original Phi-3-mini, the current assistant is teacher, and Mistral remains fallback. Timing: 60 seconds plus discussion.}
+\end{frame}
+\end{document}

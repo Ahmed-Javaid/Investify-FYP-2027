@@ -1,17 +1,10 @@
-# The demo is projected in a lit room, so it is pinned to the light palette
-# rather than following the presenting machine's system theme -- a dark-mode
-# laptop would otherwise render light text on the light page background this
-# app's stylesheet sets.
 [theme]
 base = "light"
-primaryColor = "#C2410C"
-backgroundColor = "#F7F8F6"
-secondaryBackgroundColor = "#FFFFFF"
-textColor = "#16202B"
+primaryColor = "#267b86"
+backgroundColor = "#f8fafc"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#172b43"
 font = "sans serif"
 
 [browser]
 gatherUsageStats = false
-
-[server]
-headless = true

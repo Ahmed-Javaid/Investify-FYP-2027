@@ -1,5 +1,27 @@
 # Mid-evaluation readiness estimate - 12 October 2026
 
+## Current handbook revision - 13 October 2026
+
+Current Mid-1 planning completion is **84.25%, approximately 84%**. This supersedes all estimates below. It is an effort-weighted judgement for the Mid-1 package, not an institutional grade or completion of the whole FYP. Original weights remain unchanged.
+
+Your feedback showed that the earlier UI 95% and report 90% estimates overstated readiness. The handbook audit records a 75.75% starting reassessment. The rebuilt UI earns 80% after twelve actual widget checks, while browser/projector layout review remains open. The report returns to 90% after all 95 revised pages were rendered and visually reviewed with zero fully blank pages. Presentation rises from 55% to 85% after all twelve Beamer slides were compiled and reviewed. Genuine rehearsal and student defence remain open.
+
+| Work area | Original weight | Completion judgement | Weighted contribution |
+| --- | ---: | ---: | ---: |
+| Scientific pipeline, baseline and leakage | 25% | 85% | 21.25% |
+| Interface, explanation and transparency | 20% | 80% | 16.00% |
+| Social-sentiment selection | 15% | 85% | 12.75% |
+| Report, requirements and design | 20% | 90% | 18.00% |
+| Committee responses, inventory and metrics | 10% | 85% | 8.50% |
+| Handover, repository and contributions | 5% | 70% | 3.50% |
+| Presentation, demo and defence | 5% | 85% | 4.25% |
+
+Prepared: the four-step primary UI, code-linked handbook audit, expanded report models and manual, twelve-slide LaTeX/Beamer presentation, and current tests. The 40-test receipt comprises 12 primary UI tests, 24 preserved legacy UI tests and 4 recorded-study selectors. These overlap earlier suites and do not add scientific-accuracy or human-review credit.
+
+A conditional route to about 90%, using the same weights, is science 90%, UI 90%, social 85%, report 95%, committee 90%, handover 90%, and presentation 90%: **90.25%**. It requires genuine science/criteria review, browser/projector checks and rehearsal, confirmed report metadata and review, actual committee closure, and member contributions/defence plus agreed repository/CI evidence. Those are targets, not current credit. No threshold should be tuned on held-out results to manufacture progress.
+
+Evidence: [handbook audit](../evidence/handbook_mid1_audit_20261013.json), [report review](../evidence/handbook_report_delivery_20261013.json), [Beamer review](../evidence/handbook_presentation_delivery_20261013.json), [primary UI delivery](../evidence/presenter_revision_delivery_20261013.json). The earlier estimates below are preserved as historical planning records.
+
 ## Current checkpoint - reviewed report and guided demo, 13 October 2026
 
 Current weighted planning completion is **85.75%, approximately 86%**.

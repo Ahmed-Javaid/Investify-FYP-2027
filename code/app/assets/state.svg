@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="866" viewBox="0 0 900 866" role="img" aria-label="Explanation UI state transitions">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#426c85"/></marker></defs>
+<rect width="900" height="866" fill="#fff"/>
+<text x="20" y="27" fill="#172b43" font-family="Arial" font-size="21" font-weight="bold">Explanation UI state transitions</text>
+<rect x="321" y="58" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="112.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Case selected</text>
+<text x="450" y="132.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">candidate initialized</text>
+<text x="450" y="152.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">case and artifact identity</text>
+<rect x="321" y="274" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="328.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Text edited</text>
+<text x="450" y="348.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">verification becomes stale</text>
+<text x="450" y="368.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">no accepted result displayed</text>
+<rect x="321" y="490" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="544.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Checking</text>
+<text x="450" y="564.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">strict supported-claim gates</text>
+<text x="450" y="584.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">current case and text hash</text>
+<rect x="9" y="706" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="138" y="760.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Candidate accepted</text>
+<text x="138" y="780.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">current verified text</text>
+<text x="138" y="800.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">retained metrics</text>
+<rect x="321" y="706" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="760.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Fallback verified</text>
+<text x="450" y="780.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">rejected candidate retained</text>
+<text x="450" y="800.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">replacement checked separately</text>
+<rect x="633" y="706" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="762" y="760.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Unavailable or failed</text>
+<text x="762" y="780.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">no verified output claimed</text>
+<text x="762" y="800.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">explicit retry or selection</text>
+<path d="M450,198.20000000000002 L450,234.20000000000002 L450,234.20000000000002 L450,273.79999999999995" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,414.20000000000005 L450,450.20000000000005 L450,450.20000000000005 L450,489.79999999999995" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,630.2 L450,666.2 L138,666.2 L138,705.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,630.2 L450,666.2 L450,666.2 L450,705.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,630.2 L450,666.2 L762,666.2 L762,705.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+</svg>

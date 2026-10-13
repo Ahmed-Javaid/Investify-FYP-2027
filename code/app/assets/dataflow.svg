@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="920" viewBox="0 0 900 920" role="img" aria-label="Data flow through the live module">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#426c85"/></marker></defs>
+<rect width="900" height="920" fill="#fff"/>
+<text x="20" y="27" fill="#172b43" font-family="Arial" font-size="21" font-weight="bold">Data flow through the live module</text>
+<rect x="321" y="58" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="102.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Reviewer</text>
+<text x="450" y="122.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">session and source choice</text>
+<text x="450" y="142.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">candidate text; profile</text>
+<text x="450" y="162.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">answers</text>
+<rect x="321" y="268" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="322.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">P1 Validate case</text>
+<text x="450" y="342.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">record schema and hash</text>
+<text x="450" y="362.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">one available recorded session</text>
+<rect x="9" y="268" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="138" y="322.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">D1 Recorded decisions</text>
+<text x="138" y="342.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">classifier probabilities</text>
+<text x="138" y="362.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">raw features and attributions</text>
+<rect x="9" y="514" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="138" y="568.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">P2 Build context</text>
+<text x="138" y="588.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">feature meanings and units</text>
+<text x="138" y="608.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">explicit absent inputs</text>
+<rect x="321" y="514" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="568.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">P3 Check explanation</text>
+<text x="450" y="588.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">visible prose and JSON</text>
+<text x="450" y="608.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">against the selected record</text>
+<rect x="633" y="514" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="762" y="568.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">P4 Compare profile</text>
+<text x="762" y="588.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">earlier scaling rows only</text>
+<text x="762" y="608.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">separate fixed/profile blend</text>
+<rect x="321" y="760" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="804.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Reviewed output</text>
+<text x="450" y="824.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">class and source evidence</text>
+<text x="450" y="844.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">checked text or verified</text>
+<text x="450" y="864.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">fallback</text>
+<path d="M450,198.19999999999993 L450,234.19999999999993 L450,234.19999999999993 L450,267.79999999999995" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M267.0,338 L321.0,338" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,408.20000000000005 L450,444.20000000000005 L138,444.20000000000005 L138,513.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,408.20000000000005 L450,444.20000000000005 L450,444.20000000000005 L450,513.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,408.20000000000005 L450,444.20000000000005 L762,444.20000000000005 L762,513.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M138,654.2 L138,690.2 L450,690.2 L450,759.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,654.2 L450,690.2 L450,690.2 L450,759.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M762,654.2 L762,690.2 L450,690.2 L450,759.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+</svg>

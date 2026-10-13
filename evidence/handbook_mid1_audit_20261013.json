@@ -1,0 +1,281 @@
+{
+  "schema": "investify-handbook-mid1-audit-v1",
+  "checked_utc": "2026-10-12T22:51:24.162466+00:00",
+  "sources": [
+    {
+      "path": "sources/BS-FYP-Handbook-2026_DRAFT.pdf",
+      "sha256": "cda942843b1b455eb3bc363dd22b692549b33100efc09d8aa45d197d15f737a4",
+      "relevant_pdf_pages": [
+        7,
+        11,
+        13,
+        23,
+        27,
+        35,
+        37,
+        38,
+        56,
+        57,
+        58,
+        59
+      ]
+    },
+    {
+      "path": "sources/Mid_Eval/FYP-1-Mid-Assessment-Guidelines-and-Rubrics.pdf",
+      "sha256": "aae01fb689e5b43a03af21eaa72c1cd23a75949c9c51feac6d027cf9b3ca1a93",
+      "relevant_pdf_pages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "interpretation": "Mid-1 uses report v1.0, appropriate design artefacts and an implemented live core module. The supplied cohort rubric takes precedence over proposed draft sequencing. No fixed Mid-1 whole-project implementation percentage is stated; 45% is the handbook Final-1 expectation.",
+  "stage": {
+    "week": 8,
+    "supervisor_only": true,
+    "presentation_minutes": 15,
+    "fyp1_grade_share_percent": 20
+  },
+  "form2_weights": [
+    10,
+    10,
+    25,
+    10,
+    15,
+    10,
+    10,
+    10
+  ],
+  "form3_weights": [
+    5,
+    15,
+    10,
+    15,
+    15,
+    10,
+    15,
+    15
+  ],
+  "starting_reassessment": {
+    "original_weights_unchanged": true,
+    "science": 85,
+    "ui": 65,
+    "social": 85,
+    "report": 70,
+    "committee": 85,
+    "handover": 70,
+    "presentation": 55,
+    "weighted_percent": 75.75,
+    "scope": "Starting judgement after user feedback, before accepting the rebuilt UI/report; not an official mark."
+  },
+  "items": [
+    {
+      "id": "H01",
+      "requirement": "Report v1.0 and document control",
+      "evidence": "report/main.tex; appendix_handbook",
+      "status": "Draft; signatures/metadata pending"
+    },
+    {
+      "id": "H02",
+      "requirement": "Project vision, scope and stakeholders",
+      "evidence": "chapter1_introduction",
+      "status": "Written; stakeholder/supervisor review pending"
+    },
+    {
+      "id": "H03",
+      "requirement": "Related work, research gap and CCP",
+      "evidence": "chapter2_research",
+      "status": "Written; genuine source defence pending"
+    },
+    {
+      "id": "H04",
+      "requirement": "Use cases and use-case diagram",
+      "evidence": "chapter4_requirements; mideval_use_cases",
+      "status": "Implemented paths documented"
+    },
+    {
+      "id": "H05",
+      "requirement": "SRS: numbered, prioritized FRs/NFRs",
+      "evidence": "chapter4_requirements; appendix_requirements",
+      "status": "Draft baseline; acceptance matrix added"
+    },
+    {
+      "id": "H06",
+      "requirement": "Software design specification and rationale",
+      "evidence": "chapter5_design",
+      "status": "Revised; code-linked models supplied"
+    },
+    {
+      "id": "H07",
+      "requirement": "Test plan: levels and techniques",
+      "evidence": "chapter8_testing; appendix_test_cases",
+      "status": "Current unit/module/system scopes separated"
+    },
+    {
+      "id": "H08",
+      "requirement": "Development and iteration plan",
+      "evidence": "chapter3_iteration_plan; chapter10_fyp2_plan",
+      "status": "Revised plan; genuine owners/dates pending"
+    },
+    {
+      "id": "H09",
+      "requirement": "Wireframes",
+      "evidence": "mid1_wireframe.tex; chapter7_ui_manual",
+      "status": "Design wireframe present"
+    },
+    {
+      "id": "H10",
+      "requirement": "Actual UI screens and demonstrable flow",
+      "evidence": "app/presenter.py; chapter7_ui_manual",
+      "status": "Rebuilt; browser screenshots pending tooling choice"
+    },
+    {
+      "id": "H11",
+      "requirement": "DEI, ethics, privacy and legal statements",
+      "evidence": "chapter1_introduction; appendix_handbook",
+      "status": "Written; rights/clearance sign-off not invented"
+    },
+    {
+      "id": "H12",
+      "requirement": "Iteration-1 implemented core module",
+      "evidence": "explain/pipeline.py; risk_comparator.py",
+      "status": "Actual live checking/profile logic; tested"
+    },
+    {
+      "id": "H13",
+      "requirement": "Domain/class model",
+      "evidence": "mid1_domain.tex",
+      "status": "Actual classes/entities and invariants explained"
+    },
+    {
+      "id": "H14",
+      "requirement": "Component/layer/structure design",
+      "evidence": "mid1_components.tex; mid1_layers.tex",
+      "status": "Component/layer models selected; no redundant structure chart"
+    },
+    {
+      "id": "H15",
+      "requirement": "Flow/DFD/data dictionary",
+      "evidence": "mid1_dataflow.tex; SSD dictionary",
+      "status": "Selected data-flow model and field rules present"
+    },
+    {
+      "id": "H16",
+      "requirement": "Activity and sequence/SSD",
+      "evidence": "mid1_activity.tex; mid1_sequence.tex",
+      "status": "Failure/fallback path and messages present"
+    },
+    {
+      "id": "H17",
+      "requirement": "State/network/interaction behavior",
+      "evidence": "mid1_state.tex",
+      "status": "State model selected for stale-check handling; graph/interaction alternatives not required"
+    },
+    {
+      "id": "H18",
+      "requirement": "DB representation/schema/ERD as applicable",
+      "evidence": "mid1_schema.tex; SSD data design",
+      "status": "Artifact schema present; no implemented relational DB claimed"
+    },
+    {
+      "id": "H19",
+      "requirement": "Data structures and algorithms",
+      "evidence": "chapter6_iteration1; SSD dictionary",
+      "status": "Contracts and steps documented"
+    },
+    {
+      "id": "H20",
+      "requirement": "Comments and naming conventions",
+      "evidence": "presenter_data.py; presenter.py; chapter6",
+      "status": "Snake-case functions and documented invariants"
+    },
+    {
+      "id": "H21",
+      "requirement": "Static code analysis",
+      "evidence": "source-syntax checks; new UI tests",
+      "status": "Syntax checked; targeted structural check prepared"
+    },
+    {
+      "id": "H22",
+      "requirement": "Unit/module tests and test cases",
+      "evidence": "12 new UI checks; scoped core receipts",
+      "status": "Executed scopes retained; overlap not summed"
+    },
+    {
+      "id": "H23",
+      "requirement": "CI/CD and version-control process",
+      "evidence": ".github/workflows/mideval-evidence.yml",
+      "status": "Workflow exists; remote CI/CD and member evidence pending"
+    },
+    {
+      "id": "H24",
+      "requirement": "Deployment diagram",
+      "evidence": "mid1_deployment.tex",
+      "status": "Actual localhost topology documented"
+    },
+    {
+      "id": "H25",
+      "requirement": "System-level validation/testing",
+      "evidence": "portable HTTP checks; current AppTest",
+      "status": "Executed local tests; no external-user acceptance claimed"
+    },
+    {
+      "id": "H26",
+      "requirement": "Configuration/setup and tool manual",
+      "evidence": "chapter7_ui_manual; start_guided_demo.ps1",
+      "status": "Current launch and failure recovery documented"
+    },
+    {
+      "id": "H27",
+      "requirement": "Working code plus live demonstration",
+      "evidence": "app/streamlit_app.py; current UI tests",
+      "status": "Live arithmetic/verifier; recorded ML/study outcomes distinguished"
+    },
+    {
+      "id": "H28",
+      "requirement": "Response to proposal actions",
+      "evidence": "appendix_action_register; provided action register",
+      "status": "Evidence linked; genuine closure remains pending"
+    },
+    {
+      "id": "H29",
+      "requirement": "Design evolution since proposal",
+      "evidence": "SSD alternatives/evolution; Git history",
+      "status": "Earlier UI and verifier choices compared with current code"
+    },
+    {
+      "id": "H30",
+      "requirement": "Code walkthrough and genuine member ownership",
+      "evidence": "deliverables/CODE_WALKTHROUGH.md",
+      "status": "Walkthrough prepared; actual member defence not observed"
+    },
+    {
+      "id": "H31",
+      "requirement": "Milestone, delay and recovery record",
+      "evidence": "chapter3; planning/MID_EVAL_PLAN.md",
+      "status": "Technical blockers recorded; owners/dates require team input"
+    },
+    {
+      "id": "H32",
+      "requirement": "Requirements/design baseline approval",
+      "evidence": "document control; handbook C.5.1",
+      "status": "Draft only; no stakeholder/supervisor approval claimed"
+    },
+    {
+      "id": "H33",
+      "requirement": "Dependency/API/license register",
+      "evidence": "appendix_handbook; OFFICIAL_MODEL_POLICY",
+      "status": "Register started; data-use and clearance review pending"
+    },
+    {
+      "id": "H34",
+      "requirement": "Responsible AI/tool disclosure",
+      "evidence": "chapter9; appendix_handbook",
+      "status": "Assistant work disclosed; student review still required"
+    }
+  ],
+  "genuine_approvals_or_member_defence_claimed": false,
+  "source_bytes_modified": false
+}

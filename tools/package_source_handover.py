@@ -54,7 +54,7 @@ def main():
         if args.working_tree:
             revision.update(schema='investify-working-source-revision-v2', working_tree=True)
         (bundle / 'code/source_revision.json').write_text(json.dumps(revision, indent=2), encoding='utf-8')
-        for folder in ('report', 'planning'):
+        for folder in ('report', 'planning', 'presentation'):
             for source in (ROOT / folder).rglob('*'):
                 if source.is_file() and source.suffix not in ('.aux', '.log', '.out', '.toc', '.synctex'):
                     relative = source.relative_to(ROOT)
@@ -66,7 +66,7 @@ def main():
         for name in ('presentation_outline.json', 'social_annotation_protocol.json', 'PROBLEM_AND_CONTRIBUTION.md',
                      'LLM_DESIGN.md', 'MODELS_AND_EVALUATION.md', 'DOMAIN_NOTES.md', 'SOCIAL_CORPUS_ACCESS.md', 'REPORT_METADATA.md',
                      'AI_SENTIMENT_PILOT.md', 'CALIBRATION_INVESTIGATION.md', 'OFFICIAL_MODEL_POLICY.md', 'ASSISTANT_TEACHER_PILOT.md',
-                     'DEMO_AND_DEFENCE_GUIDE.md', 'REQUIREMENTS_TRACEABILITY.md',
+                     'DEMO_AND_DEFENCE_GUIDE.md', 'CODE_WALKTHROUGH.md', 'MID1_REVIEW_QUESTIONS.md', 'REQUIREMENTS_TRACEABILITY.md',
                      'ORIGINAL_MID_TRACEABILITY.md', 'SCIENCE_CORRECTIONS_20261012.md', 'SOCIAL_V4_RUNBOOK.md',
                      'stocknet_source_access.json', 'stocknet_source_access_v2.json'):
             target = bundle / 'deliverables' / name
@@ -91,7 +91,10 @@ def main():
                         raise ValueError('Research artifact path escaped its declared root')
                     target.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copyfile(source, target)
-        for relative in ('sources/Investify_Proposal_Full.docx',
+        for relative in ('sources/BS-FYP-Handbook-2026_DRAFT.pdf',
+                         '.github/workflows/mideval-evidence.yml',
+                         'AGENTS.md',
+                         'sources/Investify_Proposal_Full.docx',
                          'sources/Mid_Eval/PROPOSAL_ACTION_REGISTER.md',
                          'sources/Mid_Eval/FYP-1-Mid-Assessment-Guidelines-and-Rubrics.pdf'):
             target = bundle / relative
@@ -122,16 +125,31 @@ def main():
                     shutil.copyfile(source, bundle / 'evidence' / source.name)
         # New completed studies and the reviewed institutional draft have their
         # own dated scopes; retain them alongside the earlier evidence.
-        for pattern in ('fresh_*', 'social_*', 'guided_demo_*', 'calibration_class_prior_*', 'report_*'):
+        for pattern in ('fresh_*', 'social_*', 'guided_demo_*', 'calibration_class_prior_*', 'report_*', 'handbook_*', 'presenter_*', 'mid1_*'):
             for source in sorted((ROOT / 'evidence').glob(pattern)):
                 if source.is_file() and source.suffix in ('.json', '.xml', '.txt', '.log'):
                     shutil.copyfile(source, bundle / 'evidence' / source.name)
-        report_receipt = json.loads((ROOT / 'evidence/report_delivery_20261013_run02.json').read_text(encoding='utf-8'))
-        current_report = ROOT / report_receipt['output']
-        if (report_receipt['status'] != 'compiled_and_layout_reviewed_unsigned_working_draft'
+        report_receipt = json.loads((ROOT / 'evidence/handbook_report_delivery_20261013.json').read_text(encoding='utf-8'))
+        current_report = (ROOT / report_receipt['output']).resolve()
+        if (not current_report.is_relative_to(ROOT / 'deliverables')
+                or not report_receipt['all_pages_visually_checked']
+                or report_receipt['status'] != 'compiled_and_layout_reviewed_unsigned_working_draft'
                 or hashlib.sha256(current_report.read_bytes()).hexdigest() != report_receipt['pdf_sha256']):
             raise ValueError('Current report must match its reviewed working-draft receipt')
         shutil.copyfile(current_report, bundle / 'deliverables' / current_report.name)
+        deck_receipt = json.loads((ROOT / 'evidence/handbook_presentation_delivery_20261013.json').read_text(encoding='utf-8'))
+        current_deck = (ROOT / deck_receipt['output']).resolve()
+        if (not current_deck.is_relative_to(ROOT / 'deliverables')
+                or not deck_receipt['all_pages_visually_checked']
+                or hashlib.sha256(current_deck.read_bytes()).hexdigest() != deck_receipt['pdf_sha256']):
+            raise ValueError('Current presentation must match its reviewed Beamer receipt')
+        shutil.copyfile(current_deck, bundle / 'deliverables' / current_deck.name)
+        for kind, reviewed in (('report', report_receipt), ('presentation', deck_receipt)):
+            for relative, expected in reviewed['compiled_source_files'].items():
+                source = (ROOT / relative).resolve()
+                if (not source.is_relative_to(ROOT / kind)
+                        or hashlib.sha256(source.read_bytes()).hexdigest() != expected):
+                    raise ValueError('Compiled artifact source changed since visual review: ' + relative)
         shutil.copyfile(ROOT / 'README.md', bundle / 'README.md')
         shutil.copyfile(ROOT / 'deliverables/README.md', bundle / 'deliverables/README.md')
         continuation = ROOT / 'deliverables/mid_eval_continuation_evidence_20261012.pdf'
@@ -149,8 +167,8 @@ def main():
                  for path in sorted(bundle.rglob('*')) if path.is_file()}
         manifest = {'built_utc': datetime.now(timezone.utc).isoformat(), 'code_commit': commit,
                     'code_snapshot_kind': 'uncommitted_working_tree' if args.working_tree else 'clean_commit_snapshot',
-                    'files': files, 'scope': 'Current source handover with guided Streamlit flow, separately executed fresh Alpaca science, original CryptoBERT/Cardiff output bundles and six teacher examples. Dated receipts distinguish overlapping checks. The 89-page institutional report is a compiled/layout-reviewed unsigned working draft; PPTX, browser/projector review, student training and human/institutional acceptance remain open. Publisher weights, E: caches and ignored raw acquisition inputs are external prerequisites for fresh inference/training replay. Private review archive; third-party corpus is not approved for public redistribution.',
-                    'rendered_visual_qa': False, 'institutional_report_rendered_visual_qa': True, 'working_evidence_brief_rendered_visual_qa': True}
+                    'files': files, 'scope': 'Current Mid-1 handbook revision with rebuilt four-step Streamlit UI, separately executed fresh Alpaca science, original CryptoBERT/Cardiff outputs and six teacher examples. Dated receipts distinguish overlapping scopes. The 95-page report and 12-slide LaTeX/Beamer deck are compiled/layout-reviewed working drafts. Browser/projector review, rehearsal, student training and human/institutional acceptance remain open. Publisher weights, E: caches and ignored raw acquisition inputs are external prerequisites for fresh inference/training replay. Private review archive; third-party corpus is not approved for public redistribution.',
+                    'rendered_visual_qa': False, 'institutional_report_rendered_visual_qa': True, 'beamer_presentation_rendered_visual_qa': True, 'working_evidence_brief_rendered_visual_qa': True}
         (bundle / 'bundle_manifest.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8')
         output.parent.mkdir(parents=True, exist_ok=True)
         with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_DEFLATED) as archive:

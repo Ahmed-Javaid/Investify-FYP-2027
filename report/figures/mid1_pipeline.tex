@@ -1,0 +1,20 @@
+\begin{tikzpicture}[x=1mm,y=1mm,box/.style={draw=blue!45!black,fill=blue!2,rounded corners=1mm,align=center,text width=39mm,minimum height=22mm,inner sep=2mm,font=\sffamily\footnotesize},link/.style={->,>=stealth,draw=blue!50!black,thick}]
+\node[box] (inputs) at (23,135) {\textbf{Verified snapshots}\\[1mm]NVDA daily prices/news\\receipt and calendar admission};
+\node[box] (sentiment) at (75,135) {\textbf{Original FinBERT}\\[1mm]headline polarity scores\\5,748 unique headlines};
+\node[box] (features) at (127,135) {\textbf{Session features}\\[1mm]technical and news features\\strict-prior join and lags};
+\node[box] (labels) at (23,94) {\textbf{Observed labels}\\[1mm]one/five-session endpoints\\availability-safe purge};
+\node[box] (harness) at (75,94) {\textbf{Leakage harness}\\[1mm]six folds and six arms\\same rows and fixed seed};
+\node[box] (engine) at (127,94) {\textbf{Model and explanation data}\\[1mm]XGBoost and calibration\\native TreeSHAP traces};
+\node[box] (records) at (23,53) {\textbf{Retained run artifacts}\\[1mm]186 decisions per mode\\source/config/runtime hashes};
+\node[box] (live) at (75,53) {\textbf{Live review module}\\[1mm]context and claim checking\\separate prototype risk blend};
+\node[box] (studies) at (127,53) {\textbf{Separate recorded studies}\\[1mm]original social classifiers\\assistant teacher pilot};
+\draw[link] (inputs.east) -- (sentiment.west) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{news};
+\draw[link] (sentiment.east) -- (features.west) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{text};
+\draw[link] (inputs.south) -- ++(0,-6) -| (labels.north) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{price};
+\draw[link] (labels.east) -- (harness.west) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{rows};
+\draw[link] (features.south) -- ++(0,-6) -| (engine.north);
+\draw[link] (harness.east) -- (engine.west) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{eval};
+\draw[link] (engine.south) -- ++(0,-6) -| (records.north);
+\draw[link] (records.east) -- (live.west) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{read};
+\draw[link] (studies.west) -- (live.east) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{view};
+\end{tikzpicture}

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="848" viewBox="0 0 900 848" role="img" aria-label="Implemented components and interfaces">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#426c85"/></marker></defs>
+<rect width="900" height="848" fill="#fff"/>
+<text x="20" y="27" fill="#172b43" font-family="Arial" font-size="21" font-weight="bold">Implemented components and interfaces</text>
+<rect x="321" y="58" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="112.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Browser</text>
+<text x="450" y="132.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">localhost interface</text>
+<text x="450" y="152.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">selection and user actions</text>
+<rect x="321" y="268" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="322.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Presentation controller</text>
+<text x="450" y="342.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">streamlit_app.py</text>
+<text x="450" y="362.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">presenter.py active page</text>
+<rect x="9" y="478" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="138" y="532.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Recorded-data adapter</text>
+<text x="138" y="552.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">presenter_data.load_cases</text>
+<text x="138" y="572.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">schema and identity checks</text>
+<rect x="321" y="478" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="532.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Explanation checking</text>
+<text x="450" y="552.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">verifier.verify</text>
+<text x="450" y="572.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">pipeline.emit</text>
+<rect x="633" y="478" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="762" y="532.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Profile comparison</text>
+<text x="762" y="552.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">score_profile</text>
+<text x="762" y="572.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">comparator.score</text>
+<rect x="9" y="688" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="138" y="742.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Stored evidence</text>
+<text x="138" y="762.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">decision JSON and receipts</text>
+<text x="138" y="782.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">original run identities</text>
+<rect x="321" y="688" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="742.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Evidence context</text>
+<text x="450" y="762.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">build_context</text>
+<text x="450" y="782.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">maintained definitions</text>
+<rect x="633" y="688" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="762" y="742.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Comparison output</text>
+<text x="762" y="762.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">fixed and profile scores</text>
+<text x="762" y="782.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">classifier remains unchanged</text>
+<path d="M450,198.19999999999993 L450,234.19999999999993 L450,234.19999999999993 L450,267.79999999999995" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,408.20000000000005 L450,444.20000000000005 L138,444.20000000000005 L138,477.79999999999995" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,408.20000000000005 L450,444.20000000000005 L450,444.20000000000005 L450,477.79999999999995" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,408.20000000000005 L450,444.20000000000005 L762,444.20000000000005 L762,477.79999999999995" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M138,618.2 L138,654.2 L138,654.2 L138,687.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,618.2 L450,654.2 L450,654.2 L450,687.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M762,618.2 L762,654.2 L762,654.2 L762,687.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+</svg>

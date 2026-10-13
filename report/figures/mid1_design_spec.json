@@ -1,0 +1,1004 @@
+{
+  "status": "assistant-drafted project-specific design; student/supervisor review pending",
+  "scope": "Diagrams describe implemented artifacts and interfaces; no relational database or trained student is invented",
+  "diagrams": [
+    {
+      "name": "domain",
+      "title": "Implemented domain objects",
+      "nodes": [
+        {
+          "id": "collection",
+          "x_mm": 23,
+          "y_mm": 100,
+          "heading": "CaseCollection",
+          "fields": [
+            "source, artifact SHA256",
+            "records by session"
+          ]
+        },
+        {
+          "id": "record",
+          "x_mm": 75,
+          "y_mm": 100,
+          "heading": "DecisionRecord",
+          "fields": [
+            "ticker, session, horizon",
+            "class, probabilities",
+            "features and SHAP"
+          ]
+        },
+        {
+          "id": "contrib",
+          "x_mm": 127,
+          "y_mm": 100,
+          "heading": "FeatureContribution",
+          "fields": [
+            "name, value, SHAP",
+            "rank and direction"
+          ]
+        },
+        {
+          "id": "explanation",
+          "x_mm": 23,
+          "y_mm": 59,
+          "heading": "Explanation",
+          "fields": [
+            "visible candidate text",
+            "optional claim payload"
+          ]
+        },
+        {
+          "id": "verification",
+          "x_mm": 75,
+          "y_mm": 59,
+          "heading": "VerificationResult",
+          "fields": [
+            "claim checks, hard gates",
+            "four quality metrics"
+          ]
+        },
+        {
+          "id": "emission",
+          "x_mm": 127,
+          "y_mm": 59,
+          "heading": "EmittedExplanation",
+          "fields": [
+            "accepted or fallback text",
+            "retained rejected report"
+          ]
+        },
+        {
+          "id": "profile",
+          "x_mm": 23,
+          "y_mm": 18,
+          "heading": "RiskProfile",
+          "fields": [
+            "capacity and tolerance",
+            "reconciled score R"
+          ]
+        },
+        {
+          "id": "comparison",
+          "x_mm": 75,
+          "y_mm": 18,
+          "heading": "Comparator result",
+          "fields": [
+            "scaling provenance",
+            "fixed and profile scores"
+          ]
+        },
+        {
+          "id": "study",
+          "x_mm": 127,
+          "y_mm": 18,
+          "heading": "Study evidence",
+          "fields": [
+            "frozen plan and run hashes",
+            "separate recorded study"
+          ]
+        }
+      ],
+      "edges": [
+        [
+          "collection",
+          "record",
+          "1..n"
+        ],
+        [
+          "record",
+          "contrib",
+          "0..k"
+        ],
+        [
+          "record",
+          "verification",
+          "facts"
+        ],
+        [
+          "explanation",
+          "verification",
+          "checks"
+        ],
+        [
+          "verification",
+          "emission",
+          "result"
+        ],
+        [
+          "profile",
+          "comparison",
+          "R"
+        ]
+      ]
+    },
+    {
+      "name": "components",
+      "title": "Implemented components and interfaces",
+      "nodes": [
+        {
+          "id": "browser",
+          "x_mm": 75,
+          "y_mm": 140,
+          "heading": "Browser",
+          "fields": [
+            "localhost interface",
+            "selection and user actions"
+          ]
+        },
+        {
+          "id": "presenter",
+          "x_mm": 75,
+          "y_mm": 105,
+          "heading": "Presentation controller",
+          "fields": [
+            "streamlit_app.py",
+            "presenter.py active page"
+          ]
+        },
+        {
+          "id": "loader",
+          "x_mm": 23,
+          "y_mm": 70,
+          "heading": "Recorded-data adapter",
+          "fields": [
+            "presenter_data.load_cases",
+            "schema and identity checks"
+          ]
+        },
+        {
+          "id": "checking",
+          "x_mm": 75,
+          "y_mm": 70,
+          "heading": "Explanation checking",
+          "fields": [
+            "verifier.verify",
+            "pipeline.emit"
+          ]
+        },
+        {
+          "id": "risk",
+          "x_mm": 127,
+          "y_mm": 70,
+          "heading": "Profile comparison",
+          "fields": [
+            "score_profile",
+            "comparator.score"
+          ]
+        },
+        {
+          "id": "artifacts",
+          "x_mm": 23,
+          "y_mm": 35,
+          "heading": "Stored evidence",
+          "fields": [
+            "decision JSON and receipts",
+            "original run identities"
+          ]
+        },
+        {
+          "id": "context",
+          "x_mm": 75,
+          "y_mm": 35,
+          "heading": "Evidence context",
+          "fields": [
+            "build_context",
+            "maintained definitions"
+          ]
+        },
+        {
+          "id": "result",
+          "x_mm": 127,
+          "y_mm": 35,
+          "heading": "Comparison output",
+          "fields": [
+            "fixed and profile scores",
+            "classifier remains unchanged"
+          ]
+        }
+      ],
+      "edges": [
+        [
+          "browser",
+          "presenter",
+          ""
+        ],
+        [
+          "presenter",
+          "loader",
+          ""
+        ],
+        [
+          "presenter",
+          "checking",
+          ""
+        ],
+        [
+          "presenter",
+          "risk",
+          ""
+        ],
+        [
+          "loader",
+          "artifacts",
+          "read"
+        ],
+        [
+          "checking",
+          "context",
+          "facts"
+        ],
+        [
+          "risk",
+          "result",
+          "score"
+        ]
+      ]
+    },
+    {
+      "name": "layers",
+      "title": "Layer responsibilities",
+      "nodes": [
+        {
+          "id": "ui",
+          "x_mm": 75,
+          "y_mm": 135,
+          "heading": "Presentation",
+          "fields": [
+            "focused Streamlit workspace",
+            "portable historical HTTP interface"
+          ]
+        },
+        {
+          "id": "application",
+          "x_mm": 75,
+          "y_mm": 98,
+          "heading": "Application services",
+          "fields": [
+            "case selection, context, emission",
+            "prototype profile and recorded studies"
+          ]
+        },
+        {
+          "id": "domain",
+          "x_mm": 75,
+          "y_mm": 61,
+          "heading": "Domain contracts",
+          "fields": [
+            "DecisionRecord and claim verification",
+            "profile rules and comparison invariants"
+          ]
+        },
+        {
+          "id": "storage",
+          "x_mm": 75,
+          "y_mm": 24,
+          "heading": "Artifact boundary",
+          "fields": [
+            "JSON receipts and model records",
+            "Parquet feature store; E: model caches"
+          ]
+        }
+      ],
+      "edges": [
+        [
+          "ui",
+          "application",
+          "calls"
+        ],
+        [
+          "application",
+          "domain",
+          "validates"
+        ],
+        [
+          "domain",
+          "storage",
+          "recorded evidence"
+        ]
+      ]
+    },
+    {
+      "name": "dataflow",
+      "title": "Data flow through the live module",
+      "nodes": [
+        {
+          "id": "reviewer",
+          "x_mm": 75,
+          "y_mm": 143,
+          "heading": "Reviewer",
+          "fields": [
+            "session and source choice",
+            "candidate text; profile answers"
+          ]
+        },
+        {
+          "id": "load",
+          "x_mm": 75,
+          "y_mm": 108,
+          "heading": "P1 Validate case",
+          "fields": [
+            "record schema and hash",
+            "one available recorded session"
+          ]
+        },
+        {
+          "id": "store",
+          "x_mm": 23,
+          "y_mm": 108,
+          "heading": "D1 Recorded decisions",
+          "fields": [
+            "classifier probabilities",
+            "raw features and attributions"
+          ]
+        },
+        {
+          "id": "context",
+          "x_mm": 23,
+          "y_mm": 67,
+          "heading": "P2 Build context",
+          "fields": [
+            "feature meanings and units",
+            "explicit absent inputs"
+          ]
+        },
+        {
+          "id": "verify",
+          "x_mm": 75,
+          "y_mm": 67,
+          "heading": "P3 Check explanation",
+          "fields": [
+            "visible prose and JSON",
+            "against the selected record"
+          ]
+        },
+        {
+          "id": "blend",
+          "x_mm": 127,
+          "y_mm": 67,
+          "heading": "P4 Compare profile",
+          "fields": [
+            "earlier scaling rows only",
+            "separate fixed/profile blend"
+          ]
+        },
+        {
+          "id": "output",
+          "x_mm": 75,
+          "y_mm": 26,
+          "heading": "Reviewed output",
+          "fields": [
+            "class and source evidence",
+            "checked text or verified fallback"
+          ]
+        }
+      ],
+      "edges": [
+        [
+          "reviewer",
+          "load",
+          "choice"
+        ],
+        [
+          "store",
+          "load",
+          "read"
+        ],
+        [
+          "load",
+          "context",
+          ""
+        ],
+        [
+          "load",
+          "verify",
+          ""
+        ],
+        [
+          "load",
+          "blend",
+          ""
+        ],
+        [
+          "context",
+          "output",
+          ""
+        ],
+        [
+          "verify",
+          "output",
+          ""
+        ],
+        [
+          "blend",
+          "output",
+          ""
+        ]
+      ]
+    },
+    {
+      "name": "state",
+      "title": "Explanation UI state transitions",
+      "nodes": [
+        {
+          "id": "selected",
+          "x_mm": 75,
+          "y_mm": 135,
+          "heading": "Case selected",
+          "fields": [
+            "candidate initialized",
+            "case and artifact identity"
+          ]
+        },
+        {
+          "id": "edited",
+          "x_mm": 75,
+          "y_mm": 99,
+          "heading": "Text edited",
+          "fields": [
+            "verification becomes stale",
+            "no accepted result displayed"
+          ]
+        },
+        {
+          "id": "checking",
+          "x_mm": 75,
+          "y_mm": 63,
+          "heading": "Checking",
+          "fields": [
+            "strict supported-claim gates",
+            "current case and text hash"
+          ]
+        },
+        {
+          "id": "accepted",
+          "x_mm": 23,
+          "y_mm": 27,
+          "heading": "Candidate accepted",
+          "fields": [
+            "current verified text",
+            "retained metrics"
+          ]
+        },
+        {
+          "id": "fallback",
+          "x_mm": 75,
+          "y_mm": 27,
+          "heading": "Fallback verified",
+          "fields": [
+            "rejected candidate retained",
+            "replacement checked separately"
+          ]
+        },
+        {
+          "id": "error",
+          "x_mm": 127,
+          "y_mm": 27,
+          "heading": "Unavailable or failed",
+          "fields": [
+            "no verified output claimed",
+            "explicit retry or selection"
+          ]
+        }
+      ],
+      "edges": [
+        [
+          "selected",
+          "edited",
+          "edit"
+        ],
+        [
+          "edited",
+          "checking",
+          "check"
+        ],
+        [
+          "checking",
+          "accepted",
+          "pass"
+        ],
+        [
+          "checking",
+          "fallback",
+          "reject"
+        ],
+        [
+          "checking",
+          "error",
+          "error"
+        ]
+      ]
+    },
+    {
+      "name": "deployment",
+      "title": "Local deployment topology",
+      "nodes": [
+        {
+          "id": "browser",
+          "x_mm": 75,
+          "y_mm": 135,
+          "heading": "User browser",
+          "fields": [
+            "127.0.0.1:8507",
+            "Streamlit websocket and UI"
+          ]
+        },
+        {
+          "id": "viewer",
+          "x_mm": 75,
+          "y_mm": 97,
+          "heading": "Viewer Python 3.11",
+          "fields": [
+            "isolated E: environment",
+            "no import-time model training"
+          ]
+        },
+        {
+          "id": "project",
+          "x_mm": 23,
+          "y_mm": 59,
+          "heading": "Project artifacts",
+          "fields": [
+            "Investify/code and receipts",
+            "read recorded JSON evidence"
+          ]
+        },
+        {
+          "id": "core",
+          "x_mm": 75,
+          "y_mm": 59,
+          "heading": "Core modules",
+          "fields": [
+            "context, verifier, pipeline",
+            "profile and comparator"
+          ]
+        },
+        {
+          "id": "optional",
+          "x_mm": 127,
+          "y_mm": 59,
+          "heading": "Optional local LLM",
+          "fields": [
+            "explicit configured request",
+            "verified original checkpoint"
+          ]
+        },
+        {
+          "id": "science",
+          "x_mm": 23,
+          "y_mm": 21,
+          "heading": "Scientific environment",
+          "fields": [
+            "separate offline/recovery run",
+            "verified prices/news/model cache"
+          ]
+        },
+        {
+          "id": "cache",
+          "x_mm": 127,
+          "y_mm": 21,
+          "heading": "E: caches and scratch",
+          "fields": [
+            "original publisher weights",
+            "temporary builds and QA"
+          ]
+        }
+      ],
+      "edges": [
+        [
+          "browser",
+          "viewer",
+          ""
+        ],
+        [
+          "viewer",
+          "project",
+          ""
+        ],
+        [
+          "viewer",
+          "core",
+          ""
+        ],
+        [
+          "viewer",
+          "optional",
+          "optional"
+        ],
+        [
+          "science",
+          "project",
+          "new outputs"
+        ],
+        [
+          "optional",
+          "cache",
+          "weights"
+        ]
+      ]
+    },
+    {
+      "name": "schema",
+      "title": "Artifact schema and digest relationships",
+      "nodes": [
+        {
+          "id": "manifest",
+          "x_mm": 23,
+          "y_mm": 105,
+          "heading": "Corpus manifest",
+          "fields": [
+            "raw-subset and vendor hashes",
+            "calendar and source metadata"
+          ]
+        },
+        {
+          "id": "run",
+          "x_mm": 75,
+          "y_mm": 105,
+          "heading": "Scientific run",
+          "fields": [
+            "source/config/runtime identity",
+            "frozen and refit traces"
+          ]
+        },
+        {
+          "id": "records",
+          "x_mm": 127,
+          "y_mm": 105,
+          "heading": "Decision records",
+          "fields": [
+            "session-keyed JSON array",
+            "model and data provenance"
+          ]
+        },
+        {
+          "id": "benchmark",
+          "x_mm": 23,
+          "y_mm": 64,
+          "heading": "Social benchmark",
+          "fields": [
+            "post ID, text and AI reference",
+            "declared exclusions"
+          ]
+        },
+        {
+          "id": "plan",
+          "x_mm": 75,
+          "y_mm": 64,
+          "heading": "Selection plan",
+          "fields": [
+            "benchmark digest, split",
+            "pinned candidate revisions"
+          ]
+        },
+        {
+          "id": "bundle",
+          "x_mm": 127,
+          "y_mm": 64,
+          "heading": "Model run bundle",
+          "fields": [
+            "raw logits, probabilities",
+            "execution and byte receipts"
+          ]
+        },
+        {
+          "id": "packet",
+          "x_mm": 23,
+          "y_mm": 23,
+          "heading": "Teacher packet",
+          "fields": [
+            "record and split identity",
+            "facts, patterns, definitions"
+          ]
+        },
+        {
+          "id": "teacher",
+          "x_mm": 75,
+          "y_mm": 23,
+          "heading": "Verified teacher result",
+          "fields": [
+            "raw prose batch digest",
+            "independent verifier outcome"
+          ]
+        },
+        {
+          "id": "exports",
+          "x_mm": 127,
+          "y_mm": 23,
+          "heading": "Training exports",
+          "fields": [
+            "accepted train/validation",
+            "test dates excluded"
+          ]
+        }
+      ],
+      "edges": [
+        [
+          "manifest",
+          "run",
+          "hash"
+        ],
+        [
+          "run",
+          "records",
+          "writes"
+        ],
+        [
+          "benchmark",
+          "plan",
+          "hash"
+        ],
+        [
+          "plan",
+          "bundle",
+          "binds"
+        ],
+        [
+          "packet",
+          "teacher",
+          "binds"
+        ],
+        [
+          "teacher",
+          "exports",
+          "filters"
+        ]
+      ]
+    },
+    {
+      "name": "pipeline",
+      "title": "Scientific pipeline and live explanation module",
+      "nodes": [
+        {
+          "id": "inputs",
+          "x_mm": 23,
+          "y_mm": 135,
+          "heading": "Verified snapshots",
+          "fields": [
+            "NVDA daily prices/news",
+            "receipt and calendar admission"
+          ]
+        },
+        {
+          "id": "sentiment",
+          "x_mm": 75,
+          "y_mm": 135,
+          "heading": "Original FinBERT",
+          "fields": [
+            "headline polarity scores",
+            "5,748 unique headlines"
+          ]
+        },
+        {
+          "id": "features",
+          "x_mm": 127,
+          "y_mm": 135,
+          "heading": "Session features",
+          "fields": [
+            "technical and news features",
+            "strict-prior join and lags"
+          ]
+        },
+        {
+          "id": "labels",
+          "x_mm": 23,
+          "y_mm": 94,
+          "heading": "Observed labels",
+          "fields": [
+            "one/five-session endpoints",
+            "availability-safe purge"
+          ]
+        },
+        {
+          "id": "harness",
+          "x_mm": 75,
+          "y_mm": 94,
+          "heading": "Leakage harness",
+          "fields": [
+            "six folds and six arms",
+            "same rows and fixed seed"
+          ]
+        },
+        {
+          "id": "engine",
+          "x_mm": 127,
+          "y_mm": 94,
+          "heading": "Model and explanation data",
+          "fields": [
+            "XGBoost and calibration",
+            "native TreeSHAP traces"
+          ]
+        },
+        {
+          "id": "records",
+          "x_mm": 23,
+          "y_mm": 53,
+          "heading": "Retained run artifacts",
+          "fields": [
+            "186 decisions per mode",
+            "source/config/runtime hashes"
+          ]
+        },
+        {
+          "id": "live",
+          "x_mm": 75,
+          "y_mm": 53,
+          "heading": "Live review module",
+          "fields": [
+            "context and claim checking",
+            "separate prototype risk blend"
+          ]
+        },
+        {
+          "id": "studies",
+          "x_mm": 127,
+          "y_mm": 53,
+          "heading": "Separate recorded studies",
+          "fields": [
+            "original social classifiers",
+            "assistant teacher pilot"
+          ]
+        }
+      ],
+      "edges": [
+        [
+          "inputs",
+          "sentiment",
+          "news"
+        ],
+        [
+          "sentiment",
+          "features",
+          "text"
+        ],
+        [
+          "inputs",
+          "labels",
+          "price"
+        ],
+        [
+          "labels",
+          "harness",
+          "rows"
+        ],
+        [
+          "features",
+          "engine",
+          ""
+        ],
+        [
+          "harness",
+          "engine",
+          "eval"
+        ],
+        [
+          "engine",
+          "records",
+          ""
+        ],
+        [
+          "records",
+          "live",
+          "read"
+        ],
+        [
+          "studies",
+          "live",
+          "view"
+        ]
+      ]
+    },
+    {
+      "name": "equity_domain",
+      "title": "Conceptual equity-to-explanation domain",
+      "nodes": [
+        {
+          "id": "equity",
+          "x_mm": 30,
+          "y_mm": 115,
+          "heading": "Equity",
+          "fields": [
+            "ticker and study scope",
+            "NVDA or separate MSFT cohort"
+          ]
+        },
+        {
+          "id": "observations",
+          "x_mm": 105,
+          "y_mm": 115,
+          "heading": "Market observations",
+          "fields": [
+            "dated prices and headlines",
+            "declared vendor/source vintage"
+          ]
+        },
+        {
+          "id": "features",
+          "x_mm": 30,
+          "y_mm": 74,
+          "heading": "Feature evidence",
+          "fields": [
+            "technical and news values",
+            "session availability and units"
+          ]
+        },
+        {
+          "id": "model",
+          "x_mm": 105,
+          "y_mm": 74,
+          "heading": "Model run",
+          "fields": [
+            "model/calibration identity",
+            "raw scores and attributions"
+          ]
+        },
+        {
+          "id": "decision",
+          "x_mm": 30,
+          "y_mm": 33,
+          "heading": "Recorded decision case",
+          "fields": [
+            "class, probabilities, horizon",
+            "bound to source/session"
+          ]
+        },
+        {
+          "id": "explanation",
+          "x_mm": 105,
+          "y_mm": 33,
+          "heading": "Explanation and check",
+          "fields": [
+            "candidate, factual claims",
+            "accepted or verified fallback"
+          ]
+        }
+      ],
+      "edges": [
+        [
+          "equity",
+          "observations",
+          "1..n"
+        ],
+        [
+          "observations",
+          "features",
+          ""
+        ],
+        [
+          "features",
+          "model",
+          "input"
+        ],
+        [
+          "model",
+          "decision",
+          ""
+        ],
+        [
+          "decision",
+          "explanation",
+          "facts"
+        ]
+      ]
+    }
+  ]
+}

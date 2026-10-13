@@ -1,0 +1,13 @@
+\begin{tikzpicture}[x=1mm,y=1mm,font=\sffamily\footnotesize]
+\draw[gray] (0,0) rectangle (150,103);
+\node[anchor=west,font=\sffamily\bfseries\small] at (5,96){Investify};
+\node[anchor=east] at (145,96){Overview / Walkthrough / Experiments / Design};
+\draw[gray!45] (5,89)--(145,89);
+\node[anchor=west] at (5,82){Case selection (collapsed): experiment and recorded session};
+\node[anchor=west] at (5,72){Decision / Evidence / Risk profile / Explanation check};
+\draw[draw=gray!50,fill=blue!2] (5,17) rectangle (72,62);
+\draw[draw=gray!50,fill=blue!2] (78,17) rectangle (145,62);
+\node[align=left,text width=58mm] at (38,43){Editable candidate\\Displayed probability and claims\\[2mm]Inject error / restore facts\\Check explanation};
+\node[align=left,text width=58mm] at (112,43){Checked output\\Accepted or rejected status\\[2mm]Verified fallback when needed\\Details stay collapsed};
+\node[anchor=west] at (5,9){Previous};\node at (75,9){One active step};\node[anchor=east] at (145,9){Next};
+\end{tikzpicture}

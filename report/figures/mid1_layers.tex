@@ -1,0 +1,9 @@
+\begin{tikzpicture}[x=1mm,y=1mm,box/.style={draw=blue!45!black,fill=blue!2,rounded corners=1mm,align=center,text width=39mm,minimum height=22mm,inner sep=2mm,font=\sffamily\footnotesize},link/.style={->,>=stealth,draw=blue!50!black,thick}]
+\node[box] (ui) at (75,135) {\textbf{Presentation}\\[1mm]focused Streamlit workspace\\portable historical HTTP interface};
+\node[box] (application) at (75,98) {\textbf{Application services}\\[1mm]case selection, context, emission\\prototype profile and recorded studies};
+\node[box] (domain) at (75,61) {\textbf{Domain contracts}\\[1mm]DecisionRecord and claim verification\\profile rules and comparison invariants};
+\node[box] (storage) at (75,24) {\textbf{Artifact boundary}\\[1mm]JSON receipts and model records\\Parquet feature store; E: model caches};
+\draw[link] (ui.south) -- ++(0,-6) -| (application.north) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{calls};
+\draw[link] (application.south) -- ++(0,-6) -| (domain.north) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{validates};
+\draw[link] (domain.south) -- ++(0,-6) -| (storage.north) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{recorded evidence};
+\end{tikzpicture}

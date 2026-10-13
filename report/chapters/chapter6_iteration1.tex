@@ -115,3 +115,12 @@ benefit, student training or institutional approval is established.
 \includegraphics[width=\textwidth]{../code/artifacts/scientific_runs/alpaca_revision_conservative_20261012_run01/recovery01/harness_alpaca/arms_lift_alpaca.png}
 \caption{Actual fresh Alpaca leakage harness: lift relative to a training-distribution random baseline.}
 \end{figure}
+
+\section{Data Structures, Algorithms and Code Conventions}
+The implementation keeps records indexed by session inside a source/digest-bound collection. Feature/probability/SHAP mappings retain named keys; ranked contribution objects preserve magnitude, value and direction. Context materializes JSON-safe feature rows without replacing absent inputs with neutral observations. Frozen plans and receipts use explicit SHA256 relationships rather than model-name assumptions.
+
+The live checking algorithm is: validate the selected record; construct maintained context; read the current candidate and canonical facts; verify visible and structured claims independently; retain any rejected report; render and independently verify fallback; display only a result whose case/text identity still matches. The profile algorithm validates eight answers, computes weighted capacity/caps and tolerance, reconciles the smaller score, then scores only held-out comparator sessions using earlier scaling statistics. Neither algorithm updates the classifier.
+
+New UI functions use snake-case names, explicit page/step registries and small functions named for user actions. Data-boundary docstrings state their no-training/no-write role. Syntax/AST checks and focused UI tests are engineering static/dynamic evidence; the group must still explain and modify its actual owned functions during review. The source/file walkthrough is supplied separately rather than replaced with programming listings in the report.
+
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figures/mid1_calibration_counts.png}\caption{Observed labels, raw frozen-classifier predictions and calibrated classes on the same 186 evaluation sessions. Calibration collapses all emitted classes to Buy; this is descriptive retained-trace evidence, not a new selection or tuning experiment.}\label{fig:calibrationcounts}\end{figure}

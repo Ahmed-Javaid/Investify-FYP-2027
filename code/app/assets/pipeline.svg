@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="710" viewBox="0 0 900 710" role="img" aria-label="Scientific pipeline and live explanation module">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#426c85"/></marker></defs>
+<rect width="900" height="710" fill="#fff"/>
+<text x="20" y="27" fill="#172b43" font-family="Arial" font-size="21" font-weight="bold">Scientific pipeline and live explanation module</text>
+<rect x="9" y="58" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="138" y="112.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Verified snapshots</text>
+<text x="138" y="132.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">NVDA daily prices/news</text>
+<text x="138" y="152.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">receipt and calendar admission</text>
+<rect x="321" y="58" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="112.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Original FinBERT</text>
+<text x="450" y="132.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">headline polarity scores</text>
+<text x="450" y="152.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">5,748 unique headlines</text>
+<rect x="633" y="58" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="762" y="112.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Session features</text>
+<text x="762" y="132.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">technical and news features</text>
+<text x="762" y="152.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">strict-prior join and lags</text>
+<rect x="9" y="304" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="138" y="358.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Observed labels</text>
+<text x="138" y="378.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">one/five-session endpoints</text>
+<text x="138" y="398.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">availability-safe purge</text>
+<rect x="321" y="304" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="358.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Leakage harness</text>
+<text x="450" y="378.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">six folds and six arms</text>
+<text x="450" y="398.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">same rows and fixed seed</text>
+<rect x="633" y="304" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="762" y="358.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Model and explanation data</text>
+<text x="762" y="378.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">XGBoost and calibration</text>
+<text x="762" y="398.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">native TreeSHAP traces</text>
+<rect x="9" y="550" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="138" y="604.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Retained run artifacts</text>
+<text x="138" y="624.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">186 decisions per mode</text>
+<text x="138" y="644.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">source/config/runtime hashes</text>
+<rect x="321" y="550" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="604.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Live review module</text>
+<text x="450" y="624.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">context and claim checking</text>
+<text x="450" y="644.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">separate prototype risk blend</text>
+<rect x="633" y="550" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="762" y="604.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Separate recorded studies</text>
+<text x="762" y="624.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">original social classifiers</text>
+<text x="762" y="644.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">assistant teacher pilot</text>
+<path d="M267.0,128 L321.0,128" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M579.0,128 L633.0,128" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M138,198.20000000000002 L138,234.20000000000002 L138,234.20000000000002 L138,303.79999999999995" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M267.0,374 L321.0,374" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M762,198.20000000000002 L762,234.20000000000002 L762,234.20000000000002 L762,303.79999999999995" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M579.0,374 L633.0,374" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M762,444.20000000000005 L762,480.20000000000005 L138,480.20000000000005 L138,549.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M267.0,620 L321.0,620" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M633.0,620 L579.0,620" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+</svg>

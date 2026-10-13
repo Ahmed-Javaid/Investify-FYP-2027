@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="902" viewBox="0 0 900 902" role="img" aria-label="Local deployment topology">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#426c85"/></marker></defs>
+<rect width="900" height="902" fill="#fff"/>
+<text x="20" y="27" fill="#172b43" font-family="Arial" font-size="21" font-weight="bold">Local deployment topology</text>
+<rect x="321" y="58" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="112.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">User browser</text>
+<text x="450" y="132.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">127.0.0.1:8507</text>
+<text x="450" y="152.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">Streamlit websocket and UI</text>
+<rect x="321" y="286" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="340.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Viewer Python 3.11</text>
+<text x="450" y="360.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">isolated E: environment</text>
+<text x="450" y="380.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">no import-time model training</text>
+<rect x="9" y="514" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="138" y="568.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Project artifacts</text>
+<text x="138" y="588.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">Investify/code and receipts</text>
+<text x="138" y="608.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">read recorded JSON evidence</text>
+<rect x="321" y="514" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="568.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Core modules</text>
+<text x="450" y="588.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">context, verifier, pipeline</text>
+<text x="450" y="608.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">profile and comparator</text>
+<rect x="633" y="514" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="762" y="568.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Optional local LLM</text>
+<text x="762" y="588.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">explicit configured request</text>
+<text x="762" y="608.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">verified original checkpoint</text>
+<rect x="9" y="742" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="138" y="786.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Scientific environment</text>
+<text x="138" y="806.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">separate offline/recovery run</text>
+<text x="138" y="826.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">verified prices/news/model</text>
+<text x="138" y="846.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">cache</text>
+<rect x="633" y="742" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="762" y="796.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">E: caches and scratch</text>
+<text x="762" y="816.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">original publisher weights</text>
+<text x="762" y="836.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">temporary builds and QA</text>
+<path d="M450,198.20000000000002 L450,234.20000000000002 L450,234.20000000000002 L450,285.79999999999995" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,426.20000000000005 L450,462.20000000000005 L138,462.20000000000005 L138,513.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,426.20000000000005 L450,462.20000000000005 L450,462.20000000000005 L450,513.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M450,426.20000000000005 L450,462.20000000000005 L762,462.20000000000005 L762,513.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M138,741.8 L138,705.8 L138,705.8 L138,654.2" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M762,654.2 L762,690.2 L762,690.2 L762,741.8" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+</svg>

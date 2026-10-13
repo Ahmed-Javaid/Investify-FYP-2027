@@ -1,4 +1,4 @@
-"""Real Streamlit AppTest checks. Require the separate demo dependency set."""
+"""Historical mounted-tab regression checks. The rebuilt UI has its own AppTest suite."""
 import importlib.util
 import os
 import sys
@@ -17,7 +17,7 @@ if HAS_STREAMLIT:
 @unittest.skipUnless(HAS_STREAMLIT, "Streamlit runtime absent; install requirements-demo-runtime.txt")
 class StreamlitMidEvalTests(unittest.TestCase):
     def app(self):
-        app = AppTest.from_file(str(ROOT / "app/streamlit_app.py"), default_timeout=30).run()
+        app = AppTest.from_file(str(ROOT / "app/legacy_streamlit_app.py"), default_timeout=30).run()
         self.assertFalse(app.exception)
         return app
 

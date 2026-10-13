@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="710" viewBox="0 0 900 710" role="img" aria-label="Artifact schema and digest relationships">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#426c85"/></marker></defs>
+<rect width="900" height="710" fill="#fff"/>
+<text x="20" y="27" fill="#172b43" font-family="Arial" font-size="21" font-weight="bold">Artifact schema and digest relationships</text>
+<rect x="9" y="58" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="138" y="112.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Corpus manifest</text>
+<text x="138" y="132.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">raw-subset and vendor hashes</text>
+<text x="138" y="152.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">calendar and source metadata</text>
+<rect x="321" y="58" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="112.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Scientific run</text>
+<text x="450" y="132.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">source/config/runtime identity</text>
+<text x="450" y="152.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">frozen and refit traces</text>
+<rect x="633" y="58" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="762" y="112.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Decision records</text>
+<text x="762" y="132.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">session-keyed JSON array</text>
+<text x="762" y="152.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">model and data provenance</text>
+<rect x="9" y="304" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="138" y="358.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Social benchmark</text>
+<text x="138" y="378.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">post ID, text and AI reference</text>
+<text x="138" y="398.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">declared exclusions</text>
+<rect x="321" y="304" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="358.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Selection plan</text>
+<text x="450" y="378.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">benchmark digest, split</text>
+<text x="450" y="398.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">pinned candidate revisions</text>
+<rect x="633" y="304" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="762" y="358.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Model run bundle</text>
+<text x="762" y="378.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">raw logits, probabilities</text>
+<text x="762" y="398.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">execution and byte receipts</text>
+<rect x="9" y="550" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="138" y="604.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Teacher packet</text>
+<text x="138" y="624.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">record and split identity</text>
+<text x="138" y="644.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">facts, patterns, definitions</text>
+<rect x="321" y="550" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="450" y="604.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Verified teacher result</text>
+<text x="450" y="624.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">raw prose batch digest</text>
+<text x="450" y="644.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">independent verifier outcome</text>
+<rect x="633" y="550" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
+<text x="762" y="604.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Training exports</text>
+<text x="762" y="624.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">accepted train/validation</text>
+<text x="762" y="644.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">test dates excluded</text>
+<path d="M267.0,128 L321.0,128" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M579.0,128 L633.0,128" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M267.0,374 L321.0,374" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M579.0,374 L633.0,374" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M267.0,620 L321.0,620" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M579.0,620 L633.0,620" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
+</svg>

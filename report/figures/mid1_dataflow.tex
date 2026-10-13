@@ -1,0 +1,17 @@
+\begin{tikzpicture}[x=1mm,y=1mm,box/.style={draw=blue!45!black,fill=blue!2,rounded corners=1mm,align=center,text width=39mm,minimum height=22mm,inner sep=2mm,font=\sffamily\footnotesize},link/.style={->,>=stealth,draw=blue!50!black,thick}]
+\node[box] (reviewer) at (75,143) {\textbf{Reviewer}\\[1mm]session and source choice\\candidate text; profile answers};
+\node[box] (load) at (75,108) {\textbf{P1 Validate case}\\[1mm]record schema and hash\\one available recorded session};
+\node[box] (store) at (23,108) {\textbf{D1 Recorded decisions}\\[1mm]classifier probabilities\\raw features and attributions};
+\node[box] (context) at (23,67) {\textbf{P2 Build context}\\[1mm]feature meanings and units\\explicit absent inputs};
+\node[box] (verify) at (75,67) {\textbf{P3 Check explanation}\\[1mm]visible prose and JSON\\against the selected record};
+\node[box] (blend) at (127,67) {\textbf{P4 Compare profile}\\[1mm]earlier scaling rows only\\separate fixed/profile blend};
+\node[box] (output) at (75,26) {\textbf{Reviewed output}\\[1mm]class and source evidence\\checked text or verified fallback};
+\draw[link] (reviewer.south) -- ++(0,-6) -| (load.north) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{choice};
+\draw[link] (store.east) -- (load.west) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{read};
+\draw[link] (load.south) -- ++(0,-6) -| (context.north);
+\draw[link] (load.south) -- ++(0,-6) -| (verify.north);
+\draw[link] (load.south) -- ++(0,-6) -| (blend.north);
+\draw[link] (context.south) -- ++(0,-6) -| (output.north);
+\draw[link] (verify.south) -- ++(0,-6) -| (output.north);
+\draw[link] (blend.south) -- ++(0,-6) -| (output.north);
+\end{tikzpicture}

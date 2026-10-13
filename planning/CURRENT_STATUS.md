@@ -1,5 +1,17 @@
 # Current Investify status
 
+## Current handbook revision and rebuilt demo - 13 October 2026
+
+Mid-1 planning completion is **84.25%, about 84%**. The [unchanged-weight ledger](../planning/MID_EVAL_READINESS.md) corrects the earlier UI/report overestimate. All dated sections below this checkpoint describe earlier snapshots and are superseded for current navigation and deliverables.
+
+- [Revised LaTeX report](../deliverables/Investify_FYP1_Mid_Report_Handbook_Revision_20261013.pdf): 95 pages, zero fully blank pages, twelve additional native design/wireframe figures and descriptive research charts. All pages rendered and reviewed. The earlier PDF remains preserved.
+- [LaTeX/Beamer presentation](../deliverables/Investify_FYP1_Mid_Presentation_20261013.pdf): twelve slides with editable [source](../presentation/main.tex), diagrams/charts and speaker notes. All slides rendered and reviewed. The slide-export dependency is resolved by the user's LaTeX choice.
+- [Rebuilt demo guide](../deliverables/DEMO_AND_DEFENCE_GUIDE.md): Overview, Walkthrough, Experiments and Design, with only the selected workspace executing. Walkthrough has Decision, Evidence, Risk profile and Explanation check. The local session server is http://127.0.0.1:8507, restarted for the new light theme and health checked.
+- [Focused UI checks](../evidence/presenter_and_legacy_ui_tests_20261013.xml): 40 passes comprising 12 primary UI cases, 24 preserved legacy cases and 4 selectors. Protected originals: 224 checked, zero changes.
+- [Handbook coverage](../planning/HANDBOOK_MID1_AUDIT.md) maps 34 requirements. The code walkthrough and setup/manual are prepared. Actual UI browser captures, projector review, rehearsal, confirmed cover details, real member contributions and supervisor/baseline approval remain open.
+
+Scientific freezes are unchanged. Weak prediction, all-Buy calibration, AI-reference sentiment limits and the untrained Phi-3-mini student remain explicit. Existing ZIPs certify their own older snapshots. A new matching source review archive will be linked after clean extraction verification. No student ownership, user acceptance, remote CI or institutional approval is inferred.
+
 ## Verified current source review archive - 13 October 2026
 
 The [guided review ZIP](../deliverables/investify_mideval_guided_review_20261013.zip)

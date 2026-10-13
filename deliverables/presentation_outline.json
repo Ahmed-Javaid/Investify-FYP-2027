@@ -1,335 +1,116 @@
 {
-  "title": "Investify: FYP-1 mid evaluation",
-  "status": "Fresh science, original classifier comparison, compiled working report and guided demo incorporated; PPTX export/render and genuine rehearsal/review remain pending.",
+  "title": "Investify FYP-1 Mid-1",
+  "status": "Twelve-slide LaTeX/Beamer PDF compiled and visually reviewed; rehearsal and genuine defence remain pending.",
   "date_prepared": "2026-10-13",
   "assessment_date": null,
-  "team": [
-    "Ahmed Javaid (22I-2530)",
-    "Rafay Ul Haq (22I-2520)",
-    "Soban Ahmad (22I-2460)"
-  ],
-  "supervisor": "Mr. Irfan Ullah",
+  "source_entry": "presentation/main.tex",
+  "compiled_output": "deliverables/Investify_FYP1_Mid_Presentation_20261013.pdf",
   "slides": [
     {
+      "number": 1,
       "title": "Investify",
-      "body": [
-        "F26-003-Investify",
-        "FYP-1 mid-evaluation working draft",
-        "Educational equity decisions with recorded evidence and checked explanations"
+      "speaker_notes": "Introduce the team and supervisor. The preparation date is not a confirmed assessment date. The project is an educational prototype. It does not execute orders or establish investment suitability. Working implementation, diagrams and assessment drafts include assistant contributions. Genuine student review and ownership evidence remain pending. Sources: planning/CHECKPOINT.md and report/main.tex. Timing: 30 seconds.",
+      "sources": [],
+      "body_source": "presentation/main.tex"
+    },
+    {
+      "number": 2,
+      "title": "Problem and research contribution",
+      "speaker_notes": "FinBERT provides news sentiment, XGBoost classifies the feature vector, and TreeSHAP supplies model attributions. Explain the engineering contribution without claiming invention of these methods or established research novelty. An explanation can be numerically consistent without being useful or causal. The related-work chapter compares the research components and discusses the remaining novelty review. Research sources in that chapter include FinBERT arXiv:1908.10063 and TreeSHAP arXiv:1802.03888. Timing: 60 seconds.",
+      "sources": [
+        "report/chapters/chapter2_research.tex; deliverables/PROBLEM_AND_CONTRIBUTION.md"
       ],
-      "speaker_notes": "Introduce the team and supervisor. The preparation date is 13 October 2026, not a confirmed assessment date. Present the actual implementation and disclose the historical model limitation.",
-      "sources": [
-        "planning/CHECKPOINT.md",
-        "sources/PROJECT_STATUS.md"
-      ]
+      "body_source": "presentation/main.tex"
     },
     {
-      "title": "The problem",
-      "body": [
-        "A Buy/Hold/Sell label leaves the evidence and uncertainty unexplained.",
-        "An explanation can sound plausible while contradicting its recorded values.",
-        "An evaluation can overstate performance when information is aligned after its availability time."
+      "number": 3,
+      "title": "Scope and acceptance checks",
+      "speaker_notes": "The four record collections preserve historical and fresh frozen/refit identities. There are 186 decisions in each evaluation collection, not independent experiments to sum as a single sample. The risk-dependent blend is a separate retrospective prototype and does not modify the classifier probabilities. No default questionnaire responses are supplied. Social inputs have not been integrated into the news-only core. Original Phi-3-mini inference and QLoRA training remain unmeasured. Timing: 60 seconds.",
+      "sources": [
+        "report/chapters/chapter4_requirements.tex; code/tests/test_presenter_ui.py"
       ],
-      "speaker_notes": "Explain the retail-user interpretation task. Investify is educational and does not execute orders. Its numerical consistency checks and temporal controls must be evaluated independently of predictive usefulness.",
-      "sources": [
-        "deliverables/PROBLEM_AND_CONTRIBUTION.md"
-      ]
+      "body_source": "presentation/main.tex"
     },
     {
-      "title": "Project contributions",
-      "table": {
-        "columns": [
-          "Contribution",
-          "Project implementation",
-          "External inputs"
-        ],
-        "rows": [
-          [
-            "Temporal evaluation",
-            "Alignment, leakage controls and audit evidence",
-            "Market data, exchange calendars and modelling libraries"
-          ],
-          [
-            "Explanation verification",
-            "Record checks, contradiction gates and verified fallback",
-            "Stored SHAP attributions and an optional generator"
-          ]
-        ]
-      },
-      "speaker_notes": "Separate implemented engineering contributions from research novelty. FinBERT, XGBoost and TreeSHAP are external components. The closest-work comparison and broader novelty claim still need review. Current working implementation, tests and assessment drafts include disclosed assistant contributions. Student implementation/review ownership and understanding require genuine evidence; this slide assigns none.",
+      "number": 4,
+      "title": "Mid-1 deliverables",
+      "speaker_notes": "Table 1a asks for report version 1.0 and suitable design artifacts rather than every listed alternative. The audit maps 34 requirements to actual evidence or an explicit open condition. Mid-1 contributes 20 percent of FYP-1. The 45 percent implementation expectation belongs to Final-1, not this checkpoint. Show the report and explain why file schemas rather than a SQL database describe this iteration. Form 2 also asks for a genuine member code walkthrough and contribution evidence. Generated files do not establish that ownership. Timing: 60 seconds.",
       "sources": [
-        "report/chapters/chapter2_research.tex",
-        "https://arxiv.org/abs/1908.10063",
-        "https://arxiv.org/abs/1802.03888"
-      ]
-    },
-    {
-      "title": "Implemented scope",
-      "body": [
-        "Historical NVDA decisions from two news experiments",
-        "Five technical and six news features; 186 saved decisions per corpus",
-        "Complete checked explanations and an explicit prototype risk profile",
-        "Separate retrospective risk-dependent blend; saved classifier unchanged"
+        "sources/BS-FYP-Handbook-2026_DRAFT.pdf pp.11,27,37-38; planning/HANDBOOK_MID1_AUDIT.md"
       ],
-      "speaker_notes": "The full proposal remains broader. The separate blend fits 148 earlier feature rows and scores 38 later sessions per corpus. Its profile weighting is unvalidated for suitability/performance. Social sentiment, raw inputs and scientific reproduction remain pending. A separate fresh Alpaca input-to-model experiment now completes all six leakage arms and both calibration modes; September inputs and the exact lock are not reproduced.",
-      "sources": [
-        "evidence/demo_artifact_verification.json",
-        "sources/PROJECT_STATUS.md"
-      ]
+      "body_source": "presentation/main.tex"
     },
     {
-      "title": "The explanation path",
-      "body": [
-        "A validated decision record supplies probabilities, feature values and attributions.",
-        "The context builder supplies all feature meanings and coverage limits.",
-        "The verifier checks visible sentences and JSON independently.",
-        "Rejected or unavailable generation selects a verified deterministic explanation."
+      "number": 5,
+      "title": "System architecture",
+      "speaker_notes": "Trace one concrete artifact from offline scientific output to CaseCollection, DecisionRecord and FeatureContext. Model fitting and actual SHAP replay happened offline and have dated receipts. Opening the UI does not train a model, fetch market data or request an unconfigured LLM. The optional local generation adapter is implemented but candidate student performance remains pending. The separate social study has its own inputs and labels. Timing: 70 seconds.",
+      "sources": [
+        "report/figures/mid1_pipeline.tex; code/app/presenter_data.py"
       ],
-      "speaker_notes": "Use the report architecture source when the slide renderer is available. The local LLM adapter has bounded retries and records failed attempts. Distinguish ready integration code from an actually evaluated model.",
-      "sources": [
-        "report/figures/mideval_architecture.tex",
-        "code/src/investify/explain/local_llm.py",
-        "code/src/investify/explain/verifier.py"
-      ]
+      "body_source": "presentation/main.tex"
     },
     {
-      "title": "A reproduced verifier defect",
-      "table": {
-        "columns": [
-          "Input",
-          "Original behaviour",
-          "Current behaviour"
-        ],
-        "rows": [
-          [
-            "Wrong displayed confidence beside correct JSON",
-            "Accepted from payload facts",
-            "Rejected from displayed claims"
-          ],
-          [
-            "Wrong feature definition beside correct JSON",
-            "No definition contract",
-            "Rejected against the maintained glossary"
-          ],
-          [
-            "Missing advisory notice in visible text",
-            "Payload could fill the coverage",
-            "Required visible claim fails"
-          ]
-        ]
-      },
-      "speaker_notes": "Demonstrate one real saved record with a deliberately edited statement. This is a labelled corruption, not a market forecast. Keep the candidate failure report separate from the successful fallback report.",
+      "number": 6,
+      "title": "Domain model and file schema",
+      "speaker_notes": "This is the conceptual domain, not a claim that all conceptual nouns are Python classes. The report also includes a concrete implementation domain/class diagram, field dictionary and file schema. Explain the relationship between a corpus, a validated DecisionRecord, its FeatureContext and explanation output. The loader rejects duplicate sessions, non-finite values and mismatched context, model or horizon. There is no fabricated database implementation. Timing: 60 seconds.",
       "sources": [
-        "code/tests/test_mideval_verifier.py",
-        "code/tests/test_mideval_local_llm.py",
-        "code/tests/test_verifier.py"
-      ]
-    },
-    {
-      "title": "Teacher and student explanation study",
-      "table": {
-        "columns": [
-          "Comparator",
-          "What it provides",
-          "Current evidence"
-        ],
-        "rows": [
-          [
-            "Complete guided template",
-            "Deterministic facts, definitions and scope",
-            "All 372 records validate"
-          ],
-          [
-            "Current assistant teacher",
-            "Six actual controlled-prose examples; factual JSON assembled from records",
-            "6 accepted; 4 training / 2 validation"
-          ],
-          [
-            "Original Phi-3-mini student",
-            "Prompted student before adaptation",
-            "Exact checkpoint/runtime/inference pending"
-          ],
-          [
-            "QLoRA-adapted Phi-3-mini",
-            "Same student trained on accepted examples",
-            "Not trained; efficacy unmeasured"
-          ]
-        ]
-      },
-      "speaker_notes": "The user selected the current assistant as teacher; an additional Qwen teacher download is not required. The original open-weight teacher assumption is changed, with the original proposal preserved. Raw prose is actually assistant-generated, the structured payload is deterministic hybrid supervision. Both are checked. Exact teacher serving revision is unavailable. Training and validation are grouped by trading date, and the final 38-date test block is excluded. Six all-Buy examples do not establish adequate training data, student performance or human understanding.",
-      "sources": [
-        "deliverables/ASSISTANT_TEACHER_PILOT.md",
-        "evidence/teacher_pilot/assistant_20261012/packets/plan.json",
-        "evidence/teacher_pilot/assistant_20261012/verified/verification.json"
-      ]
-    },
-    {
-      "title": "Validation evidence",
-      "table": {
-        "columns": [
-          "Check",
-          "Result",
-          "Boundary"
-        ],
-        "rows": [
-          [
-            "Selected Python suite",
-            "212 passed, no skips",
-            "Full scientific suite pending"
-          ],
-          [
-            "Streamlit AppTest",
-            "20 actual cases passed",
-            "Browser visual QA pending"
-          ],
-          [
-            "Record and guided explanations",
-            "372 checked",
-            "No new predictor fit"
-          ],
-          [
-            "Live HTTP checks",
-            "62 passed",
-            "Actual loopback endpoints"
-          ],
-          [
-            "Separate risk comparator",
-            "228 arithmetic probes",
-            "No human/predictive validation"
-          ],
-          [
-            "Actual assistant teacher prose",
-            "6 explanations verified",
-            "Student/QLoRA outcomes remain unmeasured"
-          ],
-          [
-            "Portable request ownership",
-            "12 controlled Node handler cases; 8 separate state assertions",
-            "No browser, live server or model request"
-          ],
-          [
-            "Fresh actual model/SHAP replay",
-            "Both calibration modes pass",
-            "New snapshot; exact historical bytes/lock not reproduced"
-          ]
-        ]
-      },
-      "speaker_notes": "Refresh counts from the final evidence before presenting. The local provider transport tests use labelled test fixtures, not real LLM outputs. The original-file manifest checks 224 protected originals. Prepared GitHub CI has not executed remotely. Full-price label endpoints and calibration outcome availability are corrected:18fixture overlaps become0;5of20fixture calibration labels are excluded. Mock orchestration is not a model fit. CPU classifier imports are recovered; weights/config/tokenizer provenance and actual paired outputs remain missing. The separate handler receipt covers out-of-order catalogue, record, profile, guided and comparator replies plus retry and verification edits. It executes real inline code against a limited DOM/deferred-fetch fixture. Do not add its cases to Python-suite totals or infer visual QA. Current fitted-model evidence is now available under a separate fresh identity; earlier fixture and test counts retain their original scopes.",
-      "sources": [
-        "evidence/current_tests.xml",
-        "evidence/live_demo_verification.json",
-        "evidence/risk_comparator_verification.json",
-        "evidence/originals_preservation_check.json",
-        "evidence/llm_evaluation_blocked.json",
-        "evidence/background_core_contract_tests_20261012.xml",
-        "deliverables/SCIENCE_CORRECTIONS_20261012.md",
-        "evidence/background_portable_handlers_20261012_parallel.json",
-        "evidence/fresh_alpaca_science_replay_20261012_run01.json"
+        "report/figures/mid1_equity_domain.tex; report/figures/mid1_schema.tex"
       ],
-      "body": [
-        "Fresh science: six arms, two horizons, six folds; clean five-day F1 0.2843 versus random baseline 0.3287.",
-        "Deliberate centred canary: five-day lift +0.2104, 95% fold-bootstrap CI [+0.1698,+0.2421].",
-        "179 scientific contracts pass; six legacy-input skips; eight separate admission gate passes."
-      ]
+      "body_source": "presentation/main.tex"
     },
     {
-      "title": "Fresh experiment: calibration limitation",
-      "table": {
-        "columns": [
-          "Mode",
-          "Raw held-out decisions",
-          "Calibrated decisions",
-          "Brier before / after"
-        ],
-        "rows": [
-          [
-            "Frozen classifier",
-            "40 Buy / 51 Hold / 95 Sell",
-            "186 Buy",
-            "0.7929 / 0.6105"
-          ],
-          [
-            "Refit transfer",
-            "37 Buy / 50 Hold / 99 Sell",
-            "186 Buy",
-            "0.7760 / 0.6078"
-          ]
-        ]
-      },
-      "body": [
-        "Actual retained-model, calibration and native-TreeSHAP replay passes.",
-        "Lower Brier does not resolve all-Buy classifications or establish useful prediction."
-      ],
-      "speaker_notes": "These are new real Alpaca revision-conservative results, not overwritten September metrics. 181 calibration rows remain after excluding five unavailable labels; evaluation has 186 sessions from 29 March to 21 December 2023. Frozen raw predictions vary, but fitted isotonic maps make Buy largest on every evaluation row. Refitting is not required for this fresh collapse. The preserved historical cause is still unproven. Do not tune thresholds on this evaluation fold to manufacture varied decisions.",
+      "number": 7,
+      "title": "Explanation check and recovery",
+      "speaker_notes": "An earlier verifier accepted facts from the payload even when the visible sentence contradicted them. The current verifier checks both independently. In the live demo, inject the labelled wrong probability of 1.00 percent. Explain that this deliberately corrupted text is a failure demonstration, not a forecast. The report sequence and state diagrams show rejection, fallback and invalidation after edits. Numerical consistency does not establish causal validity or human comprehension. Timing: 60 seconds.",
       "sources": [
-        "evidence/fresh_alpaca_science_replay_20261012_run01.json",
-        "evidence/fresh_alpaca_science_summary_20261012_run01.json"
-      ]
+        "code/src/investify/explain/verifier.py; code/tests/test_presenter_ui.py"
+      ],
+      "body_source": "presentation/main.tex"
     },
     {
+      "number": 8,
       "title": "Live demonstration",
-      "body": [
-        "Start here: a guided six-minute route with next/previous navigation.",
-        "Profile + decision: explicit fictional examples change the separate blend; the saved classifier stays fixed.",
-        "Evidence: inspect one technical and one news feature.",
-        "Explanation + verification: wrong visible probability beside correct JSON is rejected; verified fallback is shown.",
-        "Leakage, Social and Teacher views replay actual experiments with their limitations."
-      ],
-      "speaker_notes": "Launch the current Streamlit guide with tools/start_guided_demo.ps1; this session uses localhost:8507. Keep Fresh Alpaca frozen and 2023-12-21. Example cautious gives R=0/Hold; higher tolerance gives R=1/Sell in the separate comparator, while the classifier remains Buy. These are fictional demonstration answers. Open the Evidence stage, then Explanation + verification. With no LLM configured, Explain selected record is deterministic. Corrupt visible probability beside correct JSON to show rejection and the separate checked fallback. Next opens the fresh leakage readouts, then the recorded 24-post original-classifier comparison and six-example teacher pilot. Opening a research view does not train or infer a model. Optional causality checks are explicitly synthetic fixtures. Browser/projector review and genuine rehearsal have not happened.",
+      "speaker_notes": "Reserve four minutes for the live walkthrough. Open Overview and choose Open the decision walkthrough. Leave the default Fresh Alpaca frozen case on 2023-12-21. Decision shows Buy and its calibrated probabilities. On Evidence choose a technical feature and a news feature. Risk profile: the explicit cautious fictional example R=0 gives Hold, and the higher-tolerance example R=1 gives Sell in the separate comparator, while the classifier remains Buy. Clear the profile to demonstrate no assumed answers. On Explanation check choose Inject wrong probability, then Check explanation. Show candidate rejection and verified fallback. Edit the text and show that the old verdict disappears. Twelve primary-UI widget tests pass. The full 40-test scope includes 24 historical UI tests and 4 selectors and must not be described as 40 new-interface tests. Browser/projector visual review and genuine rehearsal remain pending.",
       "sources": [
-        "deliverables/DEMO_AND_DEFENCE_GUIDE.md",
-        "code/app/demo_flow.py",
-        "code/app/streamlit_app.py",
-        "evidence/guided_demo_ui_tests_20261013_run02.xml"
-      ]
+        "report/chapters/chapter7_ui_manual.tex; evidence/presenter_and_legacy_ui_tests_20261013.xml"
+      ],
+      "body_source": "presentation/main.tex"
     },
     {
-      "title": "Remaining work",
-      "body": [
-        "Agree social-model acceptance criteria, review the exploratory comparison and preserve the news-only core until integration is justified.",
-        "Review the completed fresh science; preserve weak prediction/all-Buy findings and study calibration using development data only.",
-        "Evaluate real generations on the frozen chronological selection.",
-        "Run candidate inference against the frozen AI references and review profile/blend semantics.",
-        "Run GitHub CI, record actual team contributions, and render/review report/slides.",
-        "Expand recorded teacher data; establish original Phi-3-mini tokenizer/runtime and measured memory budget before QLoRA."
-      ],
-      "speaker_notes": "The deadline and task owners remain unconfirmed. The current connection cannot access the repository. QLoRA/teacher comparison, broader ticker/horizon work, deployment and participant acceptance remain later milestones unless the supervisor changes the scope.",
+      "number": 9,
+      "title": "Calibration and decision collapse",
+      "speaker_notes": "These are fresh Alpaca revision-conservative results, not overwritten September metrics. The frozen and refit paths both reproduce actual model, calibration and native SHAP results. After excluding five unavailable labels, calibration has 181 rows. Frozen raw macro-F1 is 0.3182 and calibrated macro-F1 is 0.2238. Refit Brier changes from 0.7760 to 0.6078. The class-prior comparator uses calibration labels only, with Brier 0.60948945. Do not tune thresholds on this evaluation set to manufacture varied decisions. Timing: 60 seconds.",
       "sources": [
-        "report/chapters/chapter10_fyp2_plan.tex",
-        "planning/CHECKPOINT.md"
-      ]
+        "evidence/fresh_alpaca_science_replay_20261012_run01.json; evidence/calibration_class_prior_audit_20261013.json"
+      ],
+      "body_source": "presentation/main.tex"
     },
     {
-      "title": "Original sentiment comparison",
-      "table": {
-        "columns": [
-          "Original candidate",
-          "Macro-F1 agreement",
-          "Exact agreement"
-        ],
-        "rows": [
-          [
-            "CryptoBERT",
-            "0.2564",
-            "15/24"
-          ],
-          [
-            "Cardiff",
-            "0.6016",
-            "16/24"
-          ]
-        ]
-      },
-      "body": [
-        "Both original candidates complete the same 24 frozen MSFT posts.",
-        "CryptoBERT predicts only neutral. Cardiff leads this exploratory benchmark.",
-        "AI-reference agreement, with only two negative examples. Final deployment selection remains open."
-      ],
-      "speaker_notes": "117 usable AI references come from 200 real posts, with 83 exclusions and a frozen 93/24 split. The labels are not independently human validated; one held-out prediction changes agreement by 4.17 points and negative recall by 50 points. Original publisher bytes are verified. Lossless Cardiff serialization preserves all keys, dtypes, shapes and raw bytes; its native unused pooler has exact logit parity. No predeclared adequacy threshold exists, so the deployment choice stays unset. These results do not establish NVDA transfer or return prediction.",
+      "number": 10,
+      "title": "Temporal leakage experiment",
+      "speaker_notes": "The fresh study executes six arms, two horizons and six folds. The centered Bollinger variant deliberately uses future information and is a leakage demonstration. Its five-session lift is plus 0.2104, with fold-bootstrap interval plus 0.1698 to plus 0.2421. It is not a valid trading strategy. The clean arm is below the training-distribution random comparator. The intervals summarize fold resampling, not guaranteed future returns. Preserve the negative finding. The source vintage and full chronological September reproduction remain separate limitations. Timing: 60 seconds.",
       "sources": [
-        "evidence/social_study_review_20261013.json",
-        "code/artifacts/mid_eval/social_study_20261013_run02/comparison/comparison.json"
-      ]
+        "evidence/fresh_alpaca_science_summary_20261012_run01.json"
+      ],
+      "body_source": "presentation/main.tex"
+    },
+    {
+      "number": 11,
+      "title": "Sentiment and teacher studies",
+      "speaker_notes": "Both original publisher sentiment candidates run against unchanged AI references. CryptoBERT predicts only neutral. The 200 acquired MSFT posts yielded 117 usable references and 83 exclusions, frozen into 93 development and 24 held-out examples. These labels are not independently human validated. One held-out decision changes exact agreement by 4.17 percentage points. Do not infer NVDA transfer, profitability, significance or pretraining independence. The teacher prose is actual assistant output with deterministic factual JSON assembled from records. The exact serving revision is unavailable. Six examples do not establish adequate training data, student efficacy or user benefit. Timing: 60 seconds.",
+      "sources": [
+        "evidence/social_study_review_20261013.json; deliverables/ASSISTANT_TEACHER_PILOT.md"
+      ],
+      "body_source": "presentation/main.tex"
+    },
+    {
+      "number": 12,
+      "title": "Remaining work and review decisions",
+      "speaker_notes": "Ask the supervisor to review suitable baseline/design scope and the bounded research claims. Ask the team to supply genuine file/function understanding and task/meeting records. Cover session, co-supervisor applicability and coordinator details require confirmation. Data rights, ethics and institutional approval cannot be inferred from a generated appendix. No remote repository is configured, so prepared GitHub CI has not run remotely. Preserve the original planning weights and do not describe readiness as a university grade. The planned student is original Phi-3-mini, the current assistant is teacher, and Mistral remains fallback. Timing: 60 seconds plus discussion.",
+      "sources": [
+        "planning/HANDBOOK_MID1_AUDIT.md; report/chapters/chapter10_fyp2_plan.tex"
+      ],
+      "body_source": "presentation/main.tex"
     }
   ]
 }

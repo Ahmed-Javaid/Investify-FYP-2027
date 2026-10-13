@@ -3,7 +3,7 @@
 \ifdefined\pdfcompresslevel\else
   \newcount\pdfcompresslevel
 \fi
-\documentclass{fast-nuces-bs}
+\documentclass[oneside,openany]{fast-nuces-bs}
 %\documentclass{article}
 
 \usepackage{blindtext}
@@ -17,7 +17,7 @@
 \usepackage{booktabs}
 \usepackage{xurl}
 \hypersetup{ocgcolorlinks=false,pageanchor=false}
-\usetikzlibrary{positioning}
+\usetikzlibrary{positioning,shapes.geometric}
 
 % Information about the Thesis
 % -----------------------------------------------------------------------------
@@ -60,6 +60,8 @@
 % Resolve the supplied class's mixed numeric/author-year natbib options.
 \setcitestyle{numbers,square,comma}
 \setlength{\headheight}{16pt}
+% The review PDF is single-sided; chapter transitions must not insert empty versos.
+\let\cleardoublepage\clearpage
 
 \setlength{\emergencystretch}{2em}
 \setlength{\tabcolsep}{3pt}
@@ -95,7 +97,12 @@
 \input{chapters/05_acknowledgments}
 \input{chapters/06_executive_summary}
 \cleardoublepage
+\begingroup
+\setstretch{1.0}
+\setlength{\parskip}{0pt}
+\setlength{\cftbeforechapskip}{0.5em}
 \tableofcontents
+\endgroup
 \cleardoublepage
 \listoffigures
 \cleardoublepage
@@ -111,6 +118,7 @@
 \input{chapters/chapter4_requirements}
 \input{chapters/chapter5_design}
 \input{chapters/chapter6_iteration1}
+\input{chapters/chapter7_ui_manual}
 \input{chapters/chapter8_testing}
 \input{chapters/chapter9_development_evidence}
 \input{chapters/chapter10_fyp2_plan}
@@ -123,6 +131,7 @@
 \input{chapters/appendix_repository}
 \input{chapters/appendix_diagrams}
 \input{chapters/appendix_meetings}
+\input{chapters/appendix_handbook}
 
 \bibliographystyle{IEEEtran}
 \bibliography{references/references}

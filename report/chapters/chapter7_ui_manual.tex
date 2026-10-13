@@ -1,0 +1,31 @@
+\chapter{Interface Design and Setup Manual}
+\label{chap:manual}
+\section{The Demonstration Journey}
+The redesigned interface has four workspaces: Overview, Walkthrough, Experiments and Design. Only the selected workspace executes. The core Walkthrough has four steps: Decision, Evidence, Risk profile and Explanation check. Technical tables, record provenance and optional model requests stay behind explicit detail controls. A persistent educational notice identifies the historical five-session research scope.
+
+\begin{figure}[htbp]\centering\input{figures/mid1_wireframe}\caption[Focused explanation-check wireframe]{Design wireframe of the focused explanation-check step. This is a wireframe, not a browser screenshot; the report separately identifies actual captures when available.}\label{fig:wireframe}\end{figure}
+\section{Core User Actions}
+\begin{longtable}{p{0.21\textwidth}p{0.35\textwidth}p{0.34\textwidth}}\toprule Step & User action & Visible response\\\midrule
+Decision & Select a recorded source/session. & Recorded class/probabilities and ranked raw-score contributions; all-Buy limitation visible.\\
+Evidence & Choose technical or news family, then one feature. & Value, definition and contribution with absent social/freshness limits; all features remain inspectable.\\
+Risk profile & Choose a labelled fictional example or complete eight answers. & Separate fixed/profile comparison; classifier remains unchanged; clearing removes profile output.\\
+Explanation & Edit the candidate, inject wrong probability, then check. & Current candidate accepted, or rejected with independently checked fallback and retained report.\\
+Experiments & Select leakage, original sentiment or teacher study. & Recorded outcomes and limitations; no page-load model inference.\\
+\bottomrule\end{longtable}
+
+\section{Local Setup}
+The current project root is \nolinkurl{E:/Uni_Stuff/FYP/Investify}. The viewer requires Python 3.11 and the separate demo dependencies, including Streamlit 1.63 or later. The restored viewer interpreter is on E:; it is separate from the scientific environment and does not imply restoration of the original scientific lock.
+\begin{quote}\small\begin{verbatim}
+& '.\tools\start_guided_demo.ps1'
+\end{verbatim}\end{quote}
+The launcher checks its interpreter and an available port, then binds \nolinkurl{127.0.0.1:8507}. Supply \texttt{-Port} for another free port and \texttt{-PythonExe} for an explicitly prepared interpreter. It keeps cache/temp on E: and disables usage telemetry. A foreground launch stops with Ctrl+C; session hosting is not guaranteed after the process stops.
+
+\section{A Reproducible Failure Demonstration}
+Open the Walkthrough and keep fresh Alpaca frozen-classifier records with 21 December 2023. In Risk profile, the explicitly fictional cautious example has $R=0$ and yields Hold in the separate comparator; the higher-tolerance example has $R=1$ and yields Sell. The stored classifier remains Buy. The weighting is a prototype assumption, not a validated risk instrument.
+
+In Explanation check, Inject wrong probability changes visible confidence to 1.00\% while the structured payload retains the correct facts. Check explanation executes the same \texttt{emit}/\texttt{verify} functions used by the core tests. The candidate fails; the UI displays the independently verified fallback and keeps its rejection report. Editing text or changing the case invalidates the visible verdict. Restore record facts returns the factual candidate. Unsupported arbitrary prose can fail the strict maintained-claim grammar.
+
+\section{Recovery and Boundaries}
+Missing or invalid recorded data yields an explicit error rather than a different synthetic decision. A development-block session refuses the profile comparator. Incomplete questions produce no assumed profile. Invalid study evidence withholds comparison scores. A failed checker claims no verified output. The optional local-model control makes a request only when explicitly invoked; an unconfigured model returns a labelled deterministic guide. Broker orders, accounts, profile persistence and trained-student inference are absent.
+
+The portable historical interface remains a separately scoped alternative. Its old source/extraction/HTTP receipts certify their own snapshot; they do not prove visual quality of the rebuilt Streamlit app. Actual browser captures and projector review remain distinct from AppTest or an interface wireframe.

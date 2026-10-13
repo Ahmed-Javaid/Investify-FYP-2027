@@ -57,8 +57,10 @@ jobs:
           python-version: '3.11'
       - name: Install the historical demo runtime
         run: python -B -m pip install -r requirements-demo-runtime.txt
-      - name: Exercise the actual Streamlit interface
+      - name: Exercise preserved Streamlit regression scope
         run: python -B -m unittest discover -s tests -p "test_streamlit_mideval.py" -v
+      - name: Exercise the rebuilt focused presenter UI
+        run: python -B -m unittest discover -s tests -p "test_presenter_ui.py" -v
 
 # This job covers the artifact-backed explanation increment. The full training
 # suite needs its pinned environment and acquired datasets. Deployment/delivery

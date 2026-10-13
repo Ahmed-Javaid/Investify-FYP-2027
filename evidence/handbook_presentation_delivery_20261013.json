@@ -1,0 +1,54 @@
+{
+  "schema": "investify-presentation-delivery-v2",
+  "checked_utc": "2026-10-13T00:25:05.103765+00:00",
+  "status": "compiled_and_layout_reviewed_unsigned_working_draft",
+  "output": "deliverables/Investify_FYP1_Mid_Presentation_20261013.pdf",
+  "pdf_sha256": "8aead32f306ce5db6f0506228e2c5bc0b496a222ebe2991a385bb1182b0095a5",
+  "pages": 12,
+  "empty_text_pages": [],
+  "outside_page_annotations": [],
+  "source_entry": "presentation/main.tex",
+  "compiled_source_files": {
+    "presentation/main.tex": "8021658c7454b5beb376ade61f51d0a7382fa6ab87ee364de1d812500d9df2ac"
+  },
+  "compiler": {
+    "path": "E:\\AI-Tools\\Cache\\tectonic-0.17.0\\tectonic.exe",
+    "sha256": "99ffcfdbf1ebf8bdda9e791942e3d06aedb12463fddc33f07de6f5211c8bf08d",
+    "version": "0.17.0",
+    "engine": "Tectonic XeTeX"
+  },
+  "build_directory": "E:\\AI-Tools\\Temp\\investify-report-build-presentation-20261013-run04",
+  "compile_log_sha256": "6988bf05c3d0dad92e9da4f6a7c8f5eb03ab094e9c257eb0c975f9e37564e749",
+  "render_directory": "E:\\AI-Tools\\Temp\\investify-presentation-qa-20261013-run04",
+  "rendered_pages": {
+    "page-01.png": "c478bcb349318e3f8c0dfcb4b9277e67f64b3ab09ea0f51b0111ec6a95e5ba6d",
+    "page-02.png": "3be8c1c151e5e4e96322432702e2ebd80d0762e47bb0539432b697b9433bc998",
+    "page-03.png": "d602332e6587975f6ea7987f021ed0f524b58e1f3d033d7549efeffcde66e0cb",
+    "page-04.png": "a3a3cf49dfa60b8fe2535023da6ca3860d6e4cc3633112c1e3fcb5a7bd4e1c9b",
+    "page-05.png": "2f6d21716a3aec607cf23c4f9f98d94d2462436c8456b063dcb42d4224db42c8",
+    "page-06.png": "f3a7f1bd9bd216abd4c8ede48e89c5509e3e8da35897a84329964487366eba76",
+    "page-07.png": "cdbfa3ec5cdef841e21b3d593a757d24f575619ece7fff3aadda769f9b045dbb",
+    "page-08.png": "ef97612b5e91489248b33e40f975b05793eaa61e6f1b80bd75b88d8eea745980",
+    "page-09.png": "50578ee66ad6d356d707dc94a39852523ac1217b830fae83b47623da2e075542",
+    "page-10.png": "15e73cfeec835d1f6c510c96e27409b32956c1bd8f081d4079ba0f867b078ec4",
+    "page-11.png": "76ad846e6439791a4d66f573e997c0338353d1db762f01d9b88f4d6701181658",
+    "page-12.png": "b4ec3ed56d2ad02529db1e8d91993cbf659139655f45e6f177d9d078a24f68fd"
+  },
+  "all_pages_visually_checked": true,
+  "visual_review_method": "All 12 run03 slides inspected individually at 1600 pixels. Final run04 rendered all slides. Byte-identical slides 1-3,5-10,12 retain that review; changed slides 4 and 11 inspected individually.",
+  "overfull_boxes": 0,
+  "unresolved_citations": 0,
+  "human_review_or_institutional_approval": false,
+  "browser_ui_screenshots_included": false,
+  "pending": [
+    "browser/projector UI review",
+    "genuine rehearsal",
+    "actual student code defence/contributions",
+    "metadata and applicable approval confirmation"
+  ],
+  "slides": 12,
+  "editable_diagrams_and_charts": true,
+  "notes_embedded_in_tex": true,
+  "format_requested": "LaTeX/Beamer",
+  "font_requirement": "Arial on Windows"
+}

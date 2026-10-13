@@ -1,0 +1,13 @@
+\begin{tikzpicture}[x=1mm,y=1mm,box/.style={draw,rounded corners,text width=43mm,align=center,minimum height=12mm,font=\sffamily\footnotesize},>=stealth]
+\node[box] (load) at (75,155){Load and validate the selected record};
+\node[box] (candidate) at (75,131){Read current text and record-bound payload};
+\node[box] (check) at (75,107){Verify visible claims and JSON independently};
+\node[draw,diamond,aspect=2,align=center,font=\sffamily\footnotesize] (pass) at (75,80){Pass?};
+\node[box] (accept) at (27,52){Emit accepted candidate and its report};
+\node[box] (reject) at (123,52){Retain failure; render and verify fallback};
+\node[box] (show) at (75,21){Display verified output; checking failure emits no success};
+\draw[->](load)--(candidate);\draw[->](candidate)--(check);\draw[->](check)--(pass);
+\draw[->](pass.west)-|node[pos=.25,above]{yes}(accept.north);
+\draw[->](pass.east)-|node[pos=.25,above]{no}(reject.north);
+\draw[->](accept.south)|-(show.west);\draw[->](reject.south)|-(show.east);
+\end{tikzpicture}
