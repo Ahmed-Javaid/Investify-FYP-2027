@@ -15,7 +15,7 @@ Mid-1 planning readiness remains **84.25%**, using the original weights. Work as
 - [Functional status](../deliverables/MID1_FUNCTIONAL_STATUS.md): the current recorded Mid-1 prototype is ready for practice. Predictive usefulness, student training and deployment remain unresolved or later work.
 - [Report metadata](../deliverables/REPORT_METADATA.md): **FYP-1 Mid-Evaluation, Fall 2026**. Team-selected report date: **11 October 2026 (Sunday)**. Actual revision/test dates are retained; the formal committee appointment is separate.
 
-The new source ZIP is being prepared; extraction verification is pending.
+[Current source ZIP](../deliverables/investify_mid1_fall_2026_review_20261013.zip): 829 files, clean snapshot **73c9162**. [Actual extraction review](../evidence/fall_2026_review_20261013_clean_host_verification.json) passes 165 portable tests, 62 HTTP checks and 372 historical records. Later receipt/navigation notes are a separate increment.
 
 Remaining inputs: current coordinator/submission details and actual individual review/code defence, physical projector/timed rehearsal and supervisor baseline/criteria/proposal-action review. Scientific findings, frozen inputs and labels remain unchanged; weak prediction, all-Buy calibration, AI-reference sentiment limits and untrained Phi-3-mini are still disclosed. Original PDFs/ZIPs and dated receipts remain preserved.
 <!-- MID1_BROWSER_CHECKPOINT_END -->
