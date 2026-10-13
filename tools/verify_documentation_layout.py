@@ -1,4 +1,4 @@
-"""Check consolidated guide links, exact archived notes and reviewed PDF sources."""
+"""Check current guide links, cleanup history and reviewed PDF source identities."""
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -31,12 +31,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--check-preservation', action='store_true',
-                        help='Compare source/evidence to the consolidation operation baseline')
+                        help='Check the current deliverables and science files preserved during cleanup')
     args = parser.parse_args()
     output = args.output.resolve()
     if output.parent != ROOT / 'evidence' or output.exists():
         raise ValueError('Use a new receipt directly under project evidence')
-    receipt = json.loads((ROOT / 'evidence/documentation_consolidation_20261013.json').read_text())
     failures, links = [], 0
     for name in DOCUMENTS:
         path = ROOT / name
@@ -56,17 +55,18 @@ def main():
             elif fragment and resolved.suffix == '.py' and re.fullmatch(r'L\d+', fragment):
                 if int(fragment[1:]) > len(resolved.read_text(encoding='utf-8-sig').splitlines()):
                     failures.append('Missing source line: ' + target)
-    for row in receipt['moved_files'] + receipt['control_document_backups']:
-        path = (ROOT / row['to']).resolve()
-        if not path.is_relative_to(ROOT / 'docs/archive') or not path.is_file() or sha(path) != row['sha256']:
-            failures.append('Changed archived bytes: ' + row['to'])
     protected = 0
+    cleanup_path = ROOT / 'evidence/workspace_cleanup_20261014.json'
+    cleanup = (json.loads(cleanup_path.read_text(encoding='utf-8'))
+               if cleanup_path.exists() else None)
     if args.check_preservation:
-        for name, digest in receipt['protected_files_sha256'].items():
+        if not cleanup or cleanup.get('status') != 'completed':
+            raise ValueError('Require the completed cleanup receipt for preserved-current-file checks')
+        for name, digest in cleanup['preserved_current_files_sha256'].items():
             path = ROOT / name
             protected += 1
             if not path.is_file() or sha(path) != digest:
-                failures.append('Changed during consolidation: ' + name)
+                failures.append('Changed current protected file: ' + name)
     for folder in ('deliverables', 'planning', 'code', 'report', 'presentation'):
         path = ROOT / folder
         if folder == 'deliverables' and list(path.glob('*.md')):
@@ -84,7 +84,7 @@ def main():
     value = {'schema': 'investify-consolidated-documentation-validation-v1',
              'checked_utc': datetime.now(timezone.utc).isoformat(), 'active_documents': DOCUMENTS,
              'local_links_checked': links,
-             'archived_files_checked': len(receipt['moved_files']) + len(receipt['control_document_backups']),
+             'cleanup_receipt': str(cleanup_path.relative_to(ROOT)) if cleanup else None,
              'protected_files_checked': protected,
              'reviewed_pdf_sources_unchanged': not any('Changed reviewed PDF' in item for item in failures),
              'failures': failures, 'passed': not failures}

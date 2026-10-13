@@ -19,9 +19,9 @@
 <text x="450" y="552.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">verifier.verify</text>
 <text x="450" y="572.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">pipeline.emit</text>
 <rect x="633" y="478" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
-<text x="762" y="532.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Profile comparison</text>
+<text x="762" y="532.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Profile and confidence</text>
 <text x="762" y="552.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">score_profile</text>
-<text x="762" y="572.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">comparator.score</text>
+<text x="762" y="572.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">apply_risk_policy</text>
 <rect x="9" y="688" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
 <text x="138" y="742.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Stored evidence</text>
 <text x="138" y="762.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">decision JSON and receipts</text>
@@ -31,8 +31,8 @@
 <text x="450" y="762.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">build_context</text>
 <text x="450" y="782.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">maintained definitions</text>
 <rect x="633" y="688" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
-<text x="762" y="742.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Comparison output</text>
-<text x="762" y="762.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">fixed and profile scores</text>
+<text x="762" y="742.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Policy output</text>
+<text x="762" y="762.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">allowance and confidence gate</text>
 <text x="762" y="782.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">classifier remains unchanged</text>
 <path d="M450,198.19999999999993 L450,234.19999999999993 L450,234.19999999999993 L450,267.79999999999995" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>
 <path d="M450,408.20000000000005 L450,444.20000000000005 L138,444.20000000000005 L138,477.79999999999995" fill="none" stroke="#426c85" stroke-width="1.8" marker-end="url(#arrow)"/>

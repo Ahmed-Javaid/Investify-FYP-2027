@@ -358,5 +358,6 @@ def design():
 - `explain/context.py`: exposes maintained feature meanings and missing-data limits.
 - `explain/verifier.py`: checks displayed claims and JSON independently.
 - `explain/pipeline.py`: retains rejection and verifies fallback.
-- `risk_profile.py` and `risk_comparator.py`: compute an explicitly separate prototype blend.""")
+- `risk_profile_gl.py`: score five capacity and thirteen tolerance answers; apply a separate confidence requirement.
+- `risk_comparator.py`: retain the earlier blend as a historical comparison.""")
     st.caption('Diagram and code review remains a genuine team/supervisor task. A generated figure or commit count does not establish student ownership.')

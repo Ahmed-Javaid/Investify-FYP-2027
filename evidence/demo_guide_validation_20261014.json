@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "portable_job": "code/artifacts/ci_evidence/demo_guide_cleanup_20261014_evidence02/job_receipt.json",
+  "ui_job": "code/artifacts/ci_evidence/demo_guide_cleanup_20261014_ui03/job_receipt.json",
+  "portable_tests": 176,
+  "ui_tests": 43,
+  "live_http_checks": 62,
+  "guide_facts_receipt": "evidence/demo_walkthrough_check_20261014.json",
+  "cleanup_executed": false,
+  "cleanup_status": "explicit_bulk_approval_pending",
+  "source_context_restored_to_frozen_bytes": true
+}

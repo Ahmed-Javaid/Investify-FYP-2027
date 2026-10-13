@@ -28,8 +28,8 @@
 <text x="762" y="378.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">accepted or fallback text</text>
 <text x="762" y="398.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">retained rejected report</text>
 <rect x="9" y="550" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
-<text x="138" y="604.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">RiskProfile</text>
-<text x="138" y="624.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">capacity and tolerance</text>
+<text x="138" y="604.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">InvestorProfile</text>
+<text x="138" y="624.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">capacity + 13-item tolerance</text>
 <text x="138" y="644.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="14" font-weight="normal">reconciled score R</text>
 <rect x="321" y="550" width="258" height="140" rx="7" fill="#f3f7fa" stroke="#426c85" stroke-width="1.5"/>
 <text x="450" y="604.0" text-anchor="middle" fill="#172b43" font-family="Arial" font-size="17" font-weight="bold">Comparator result</text>

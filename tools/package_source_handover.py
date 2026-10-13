@@ -18,8 +18,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, default=ROOT / 'deliverables/investify_mideval_source.zip')
     parser.add_argument('--working-tree', action='store_true', help='Explicit uncommitted review bundle, never a HEAD snapshot')
-    parser.add_argument('--report-receipt', type=Path, default=ROOT / 'evidence/handbook_report_delivery_20261013.json')
-    parser.add_argument('--presentation-receipt', type=Path, default=ROOT / 'evidence/handbook_presentation_delivery_20261013.json')
+    current = json.loads((ROOT / 'deliverables/current_delivery.json').read_text(encoding='utf-8'))
+    parser.add_argument('--report-receipt', type=Path, default=ROOT / current['report_receipt'])
+    parser.add_argument('--presentation-receipt', type=Path, default=ROOT / current['presentation_receipt'])
     parser.add_argument('--scratch-directory', type=Path, default=Path('E:/AI-Tools/Temp'))
     args = parser.parse_args()
     scratch = args.scratch_directory.resolve()
@@ -80,79 +81,25 @@ def main():
             target = bundle / 'deliverables' / name
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / 'deliverables' / name, target)
-        evidence = ('current_tests.xml', 'streamlit_runtime_verification.json', 'source_syntax_verification.json',
-                    'javascript_syntax_verification.json', 'demo_artifact_verification.json', 'live_demo_verification.json',
-                    'risk_comparator_verification.json', 'social_study_readiness.json', 'social_inference_readiness.json', 'local_llm_probe.json',
-                    'ollama_local_probe.json', 'explainer_evaluation_plan.json', 'llm_evaluation_blocked.json',
-                    'originals_preservation_check.json', 'ui_dependency_source_receipt.json')
-        for name in evidence:
-            source = ROOT / 'evidence' / name
-            target = bundle / 'evidence' / name
-            target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(source, target)
-        for folder in ('evidence/social_pilot', 'evidence/teacher_pilot', 'sources/stocknet',
-                       'sources/historical_science_20261012', 'tools'):
+        # Deliver current evidence and inputs; retired archives and obsolete
+        # document exports are recovered from Git history, not repackaged.
+        for folder in ('evidence', 'sources/stocknet', 'sources/historical_science_20261012', 'tools'):
             for source in (ROOT / folder).rglob('*'):
-                if source.is_file():
+                if source.is_file() and source.suffix not in ('.pyc', '.zip'):
                     target = bundle / source.relative_to(ROOT)
                     if not source.resolve().is_relative_to(ROOT / folder) or not target.resolve().is_relative_to(bundle):
-                        raise ValueError('Research artifact path escaped its declared root')
+                        raise ValueError('Delivery input escaped its declared root')
                     target.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copyfile(source, target)
         for relative in ('sources/BS-FYP-Handbook-2026_DRAFT.pdf',
-                         '.github/workflows/mideval-evidence.yml',
-                         'AGENTS.md',
-                         'sources/Investify_Proposal_Full.docx',
+                         '.github/workflows/mideval-evidence.yml', 'AGENTS.md',
+                         'sources/Investify_Proposal_Full.docx', 'sources/Investify_Concept.docx',
                          'sources/Investify Updated (1).pptx',
                          'sources/Mid_Eval/PROPOSAL_ACTION_REGISTER.md',
                          'sources/Mid_Eval/FYP-1-Mid-Assessment-Guidelines-and-Rubrics.pdf'):
             target = bundle / relative
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / relative, target)
-        for name in ('calibration_audit_20261012.json', 'current_tests_20261012.xml', 'local_llm_probe_20261012.json',
-                     'current_tests_official_policy_20261012.xml', 'profile_blend_semantics_20261012.json',
-                     'official_qwen25_acquisition_20261012.json', 'explainer_evaluation_plan_official_20261012.json',
-                     'reference_evaluability_20261012.json', 'mid_eval_evidence_brief_verification_20261012.json',
-                     'reportlab_source_runtime_20261012.json', 'pypdf_cached_runtime_20261012.json',
-                     'current_tests_teacher_20261012.xml', 'teacher_streamlit_tests_20261012.xml', 'teacher_dataset_readiness_20261012.json',
-                     'model_policy_cleanup_20261012.json'):
-            shutil.copyfile(ROOT / 'evidence' / name, bundle / 'evidence' / name)
-        for pattern in ('documentation_*', 'requirements_consolidated_*'):
-            for source in sorted((ROOT / 'evidence').glob(pattern)):
-                if source.is_file() and source.suffix == '.json':
-                    shutil.copyfile(source, bundle / source.relative_to(ROOT))
-        archive_index = ROOT / 'docs/archive/20261013_before_consolidation/INDEX.txt'
-        target_index = bundle / archive_index.relative_to(ROOT)
-        target_index.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(archive_index, target_index)
-        for source in sorted((ROOT / 'evidence').glob('background_*')):
-            if source.is_file() and source.suffix in ('.json', '.xml', '.txt'):
-                shutil.copyfile(source, bundle / 'evidence' / source.name)
-            elif source.is_dir():
-                for child in source.rglob('*'):
-                    if child.is_file() and child.suffix in ('.json', '.xml', '.txt'):
-                        target = bundle / child.relative_to(ROOT)
-                        target.parent.mkdir(parents=True, exist_ok=True)
-                        shutil.copyfile(child, target)
-        # Recovery orchestration receipts are separate from the earlier native
-        # background receipts; include their exact dated scopes in the handover.
-        for pattern in ('recovery_*', 'parallel_*', 'sentiment_v4_*'):
-            for source in sorted((ROOT / 'evidence').glob(pattern)):
-                if source.is_file() and source.suffix in ('.json', '.xml', '.txt'):
-                    shutil.copyfile(source, bundle / 'evidence' / source.name)
-        # New completed studies and the reviewed institutional draft have their
-        # own dated scopes; retain them alongside the earlier evidence.
-        for source in sorted((ROOT / 'evidence').glob('ci_replay_*')):
-            if source.is_dir():
-                for child in source.rglob('*'):
-                    if child.is_file() and child.suffix in ('.json', '.txt', '.html'):
-                        target = bundle / child.relative_to(ROOT)
-                        target.parent.mkdir(parents=True, exist_ok=True)
-                        shutil.copyfile(child, target)
-        for pattern in ('fresh_*', 'social_*', 'guided_demo_*', 'calibration_class_prior_*', 'calibration_global_bounds_*', 'calibration_bounds_native_probe_*', 'originals_preservation_browser*', 'proposal_work_division_*', 'equal_member_allocation_*', 'member_allocation_visual_*', 'fall_report_metadata_*', 'metadata_visual_*', 'technical_*', 'report_*', 'handbook_*', 'presenter_*', 'mid1_*', 'temperature_*', 'cryptobert_sanity_*', 'revision_*', 'requirement_anchor_*', 'requirements_revision_*'):
-            for source in sorted((ROOT / 'evidence').glob(pattern)):
-                if source.is_file() and source.suffix in ('.json', '.xml', '.txt', '.log'):
-                    shutil.copyfile(source, bundle / 'evidence' / source.name)
         report_receipt = json.loads(args.report_receipt.read_text(encoding='utf-8'))
         current_report = (ROOT / report_receipt['output']).resolve()
         if (not current_report.is_relative_to(ROOT / 'deliverables')
@@ -175,23 +122,13 @@ def main():
                         or hashlib.sha256(source.read_bytes()).hexdigest() != expected):
                     raise ValueError('Compiled artifact source changed since visual review: ' + relative)
         shutil.copyfile(ROOT / 'README.md', bundle / 'README.md')
-        continuation = ROOT / 'deliverables/archive/20261013/mid_eval_continuation_evidence_20261012.pdf'
-        continuation_qa = json.loads((ROOT / 'evidence/background_continuation_pdf_verification_20261012.json').read_text(encoding='utf-8'))
-        if not continuation_qa['all_pages_visually_checked'] or hashlib.sha256(continuation.read_bytes()).hexdigest() != continuation_qa['pdf_sha256']:
-            raise ValueError('Continuation brief must match its completed render/visual receipt')
-        shutil.copyfile(continuation, bundle / 'deliverables' / continuation.name)
-        brief = ROOT / 'deliverables/archive/20261013/mid_eval_evidence_brief_20261012.pdf'
-        qa = json.loads((ROOT / 'evidence/mid_eval_evidence_brief_verification_20261012.json').read_text(encoding='utf-8'))
-        if not qa['all_pages_visually_checked'] or hashlib.sha256(brief.read_bytes()).hexdigest() != qa['pdf_sha256']:
-            raise ValueError('Working brief must match its completed render/visual receipt')
-        shutil.copyfile(brief, bundle / 'deliverables' / brief.name)
         files = {str(path.relative_to(bundle)).replace('\\', '/'): hashlib.sha256(path.read_bytes()).hexdigest()
                  for path in sorted(bundle.rglob('*')) if path.is_file()}
         manifest = {'built_utc': datetime.now(timezone.utc).isoformat(), 'code_commit': commit,
                     'code_snapshot_kind': 'uncommitted_working_tree' if args.working_tree else 'clean_commit_snapshot',
-                    'files': files, 'scope': f'Current Mid-1 review with four-step Streamlit UI, calibration diagnostics, separately executed fresh Alpaca science, original CryptoBERT/Cardiff outputs and six teacher examples. Dated receipts distinguish overlapping scopes. The {report_receipt["pages"]}-page report and {deck_receipt["pages"]}-slide LaTeX/Beamer deck are compiled/layout-reviewed working drafts. Browser capture/review evidence has its own source-bound receipt; physical projector review, rehearsal, student training and human/institutional acceptance remain open. Publisher weights, E: caches and ignored raw acquisition inputs are external prerequisites for fresh inference/training replay. Private review archive; third-party corpus is not approved for public redistribution.',
+                    'files': files, 'scope': f'Current Mid-1 review with four-step Streamlit UI, calibration diagnostics, separately executed fresh Alpaca science, original CryptoBERT/Cardiff outputs and six teacher examples. Dated receipts distinguish overlapping scopes. The {report_receipt["pages"]}-page report and {deck_receipt["pages"]}-slide LaTeX/Beamer deck are compiled/layout-reviewed authored copies. Browser capture/review evidence has its own source-bound receipt; physical projector review, rehearsal, student training and human/institutional acceptance remain open. Publisher weights, E: caches and ignored raw acquisition inputs are external prerequisites for fresh inference/training replay. Private review archive; third-party corpus is not approved for public redistribution.',
                     'document_receipts': {'report': str(args.report_receipt.resolve().relative_to(ROOT)).replace('\\','/'), 'presentation': str(args.presentation_receipt.resolve().relative_to(ROOT)).replace('\\','/')},
-                    'rendered_visual_qa': False, 'institutional_report_rendered_visual_qa': True, 'beamer_presentation_rendered_visual_qa': True, 'working_evidence_brief_rendered_visual_qa': True}
+                    'rendered_visual_qa': False, 'institutional_report_rendered_visual_qa': True, 'beamer_presentation_rendered_visual_qa': True}
         (bundle / 'bundle_manifest.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8')
         output.parent.mkdir(parents=True, exist_ok=True)
         with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_DEFLATED) as archive:

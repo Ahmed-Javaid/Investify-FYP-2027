@@ -1,0 +1,199 @@
+{
+  "checked_utc": "2026-10-13T21:53:55.139294+00:00",
+  "passed": true,
+  "case_selections": [
+    {
+      "key": "temperature_frozen",
+      "dropdown_label": "Alpaca, multiclass calibration (frozen)",
+      "case_count": 186,
+      "first_session": "2023-03-29",
+      "last_session": "2023-12-21",
+      "ticker": "NVDA"
+    },
+    {
+      "key": "temperature_refit",
+      "dropdown_label": "Alpaca, multiclass calibration (refit)",
+      "case_count": 186,
+      "first_session": "2023-03-29",
+      "last_session": "2023-12-21",
+      "ticker": "NVDA"
+    },
+    {
+      "key": "fresh_frozen",
+      "dropdown_label": "Fresh Alpaca, frozen classifier",
+      "case_count": 186,
+      "first_session": "2023-03-29",
+      "last_session": "2023-12-21",
+      "ticker": "NVDA"
+    },
+    {
+      "key": "fresh_refit",
+      "dropdown_label": "Fresh Alpaca, refit classifier",
+      "case_count": 186,
+      "first_session": "2023-03-29",
+      "last_session": "2023-12-21",
+      "ticker": "NVDA"
+    },
+    {
+      "key": "alpaca",
+      "dropdown_label": "Archived Alpaca",
+      "case_count": 186,
+      "first_session": "2023-03-29",
+      "last_session": "2023-12-21",
+      "ticker": "NVDA"
+    },
+    {
+      "key": "fnspid",
+      "dropdown_label": "Archived FNSPID",
+      "case_count": 186,
+      "first_session": "2023-03-29",
+      "last_session": "2023-12-21",
+      "ticker": "NVDA"
+    }
+  ],
+  "demo_session": "2023-12-21",
+  "probabilities": {
+    "Buy": 0.333448157221532,
+    "Hold": 0.33324893345411494,
+    "Sell": 0.333302909324353
+  },
+  "features": [
+    {
+      "feature": "rsi_14",
+      "label": "Relative strength index",
+      "family": "Technical analysis",
+      "value": 58.8235294117647,
+      "value_available": true,
+      "shap_value": -0.02706979401409626,
+      "effect_on_predicted_class": "opposes",
+      "meaning": "Recent price momentum on a zero-to-one-hundred scale, calculated here over fourteen sessions.",
+      "reference": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/rsi"
+    },
+    {
+      "feature": "macd_hist",
+      "label": "MACD histogram",
+      "family": "Technical analysis",
+      "value": 0.09630441838537429,
+      "value_available": true,
+      "shap_value": 0.18738099932670593,
+      "effect_on_predicted_class": "supports",
+      "meaning": "The difference between the MACD line and its signal line; it describes a change in price momentum.",
+      "reference": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/macd"
+    },
+    {
+      "feature": "dist_sma200",
+      "label": "Distance from the long-term average",
+      "family": "Technical analysis",
+      "value": 0.22618003246285984,
+      "value_available": true,
+      "shap_value": 0.04567723348736763,
+      "effect_on_predicted_class": "supports",
+      "meaning": "The closing price's relative distance from its trailing two-hundred-session average.",
+      "reference": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/sma"
+    },
+    {
+      "feature": "bollinger_pos",
+      "label": "Position within the Bollinger bands",
+      "family": "Technical analysis",
+      "value": 0.7666879130925943,
+      "value_available": true,
+      "shap_value": -0.03988718241453171,
+      "effect_on_predicted_class": "opposes",
+      "meaning": "The closing price's position between trailing volatility bands. Values can move outside the usual band interval.",
+      "reference": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/bollinger-bands"
+    },
+    {
+      "feature": "obv_slope",
+      "label": "Volume trend",
+      "family": "Technical analysis",
+      "value": 92570766.42857143,
+      "value_available": true,
+      "shap_value": 0.14765307307243347,
+      "effect_on_predicted_class": "supports",
+      "meaning": "The average change in on-balance volume over fourteen sessions; volume is added on rising closes and subtracted on falling closes.",
+      "reference": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/obv"
+    },
+    {
+      "feature": "mean_polarity",
+      "label": "Average headline sentiment",
+      "family": "News sentiment",
+      "value": -0.1419283151626587,
+      "value_available": true,
+      "shap_value": 0.07585885375738144,
+      "effect_on_predicted_class": "supports",
+      "meaning": "Average headline polarity, calculated as the positive-class probability minus the negative-class probability.",
+      "reference": "https://huggingface.co/ProsusAI/finbert"
+    },
+    {
+      "feature": "mention_volume",
+      "label": "Headline count",
+      "family": "News sentiment",
+      "value": 10.0,
+      "value_available": true,
+      "shap_value": -0.13117915391921997,
+      "effect_on_predicted_class": "opposes",
+      "meaning": "The number of scored headlines assigned to the contributing news session.",
+      "reference": ""
+    },
+    {
+      "feature": "mom_3d",
+      "label": "Short sentiment momentum",
+      "family": "News sentiment",
+      "value": 0.21552302191654843,
+      "value_available": true,
+      "shap_value": 0.009358128532767296,
+      "effect_on_predicted_class": "supports",
+      "meaning": "The trailing three-session average headline polarity minus polarity three sessions earlier.",
+      "reference": ""
+    },
+    {
+      "feature": "mom_7d",
+      "label": "Longer sentiment momentum",
+      "family": "News sentiment",
+      "value": -0.07226132694631815,
+      "value_available": true,
+      "shap_value": 0.07431675493717194,
+      "effect_on_predicted_class": "supports",
+      "meaning": "The trailing seven-session average headline polarity minus polarity seven sessions earlier.",
+      "reference": ""
+    },
+    {
+      "feature": "volume_z",
+      "label": "Unusual news attention",
+      "family": "News sentiment",
+      "value": -0.29254099108842946,
+      "value_available": true,
+      "shap_value": -0.018216565251350403,
+      "effect_on_predicted_class": "opposes",
+      "meaning": "Headline count relative to its trailing twenty-session mean and standard deviation; it is news attention, not traded share volume.",
+      "reference": ""
+    },
+    {
+      "feature": "dispersion",
+      "label": "Variation in recent sentiment",
+      "family": "News sentiment",
+      "value": 0.2168124310756234,
+      "value_available": true,
+      "shap_value": 0.1781884729862213,
+      "effect_on_predicted_class": "supports",
+      "meaning": "The trailing five-session standard deviation of average polarity; it is variation across sessions, not disagreement among individual headlines.",
+      "reference": ""
+    }
+  ],
+  "profile_examples": [
+    {
+      "example": 0,
+      "R": 0.0,
+      "required_confidence": 0.8,
+      "outcome": "Observe"
+    },
+    {
+      "example": 2,
+      "R": 1.0,
+      "required_confidence": 0.5,
+      "outcome": "Observe"
+    }
+  ],
+  "guide": "docs/team/MID1_TEAM_GUIDE.md",
+  "scope": "Saved-artifact and formula replay used to ground the demonstration guide; browser interaction is checked separately."
+}

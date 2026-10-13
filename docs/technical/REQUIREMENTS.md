@@ -14,8 +14,9 @@ approval or participant acceptance.
 | Independent checking | Correct JSON cannot conceal wrong prose and correct prose cannot conceal wrong JSON. |
 | Recovery | Retain rejection; check fallback separately; surface fallback failure. |
 | Current verification | Changing text/settings/case removes the obsolete verdict. |
-| Explicit profile | Require every answer and reconcile restrictively with declared caps. |
-| Independent comparator | Change only the blend; refuse development dates and missing technical inputs. |
+| Explicit profile | Require five capacity and thirteen tolerance answers; reconcile restrictively with declared caps. |
+| Current risk policy | Change the required confidence; preserve model direction and probabilities; abstain on insufficient confidence. |
+| Historical comparator | Preserve earlier blend/scaling evidence; refuse development dates and missing technical inputs. |
 | Honest study replay | Only complete source/checkpoint/plan-bound outputs receive scores. |
 
 Eighteen engineering IDs have source/test anchors in the unchanged
