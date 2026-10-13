@@ -1,8 +1,12 @@
 # Investify Mid-1 LaTeX report
 
-## Current equal member allocation
+## Current Fall 2026 metadata revision
 
-Use [the current 101-page report](../deliverables/Investify_FYP1_Mid_Report_Team_Allocation_20261013.pdf) and [its delivery receipt](../evidence/handbook_report_delivery_20261013_run04.json). It assigns one-third of preparation/review/defence responsibility to each member and uses the confirmed single-supervisor cover. [Individual practice handouts](../deliverables/MEMBER_PREPARATION_PACK.md) identify the exact files, slides and demo segments. Session/cohort, coordinator, assessment date and actual review/rehearsal remain open. Earlier outputs below are preserved snapshots.
+Use [the current 101-page report](../deliverables/Investify_FYP1_Mid_Report_Fall_2026_20261013.pdf) and [its delivery receipt](../evidence/handbook_report_delivery_20261013_run05.json). The cover identifies FYP-1 Mid-Evaluation in Fall 2026, with the team-selected report date of 11 October 2026. Actual revision/test dates remain in the evidence. Equal member responsibilities and individual handouts are retained. Coordinator and real review/rehearsal remain open; the formal committee appointment is separate from the report date.
+
+## Earlier equal member allocation
+
+Use [the current 101-page report](../deliverables/Investify_FYP1_Mid_Report_Team_Allocation_20261013.pdf) and [its delivery receipt](../evidence/handbook_report_delivery_20261013_run04.json). It assigns one-third of preparation/review/defence responsibility to each member and uses the confirmed single-supervisor cover. [Individual practice handouts](../deliverables/MEMBER_PREPARATION_PACK.md) identify the exact files, slides and demo segments. Fall 2026 and the team-selected report date of 11 October 2026 are recorded. Coordinator and actual review/rehearsal remain open; the formal committee appointment is separate. Earlier outputs below are preserved snapshots.
 
 ## Earlier proposal division and CI revision
 
@@ -24,4 +28,4 @@ New native TikZ models cover conceptual and implementation domains, pipeline, co
 
 Use a new scratch directory beneath E:\AI-Tools\Temp. Existing compiler: E:\AI-Tools\Cache\tectonic-0.17.0\tectonic.exe. Set TEMP/TMP, TECTONIC_CACHE_DIR and XDG_CACHE_HOME to the E: directories. From `report`, run `tectonic --outdir <new-directory> --keep-logs --keep-intermediates main.tex`, then render and review the new output. The preamble preserves the supplied class while bridging XeTeX compression and bibliography/link issues. The final build has zero overfull boxes or unresolved citations.
 
-The [presentation](../presentation/main.tex) is also LaTeX/Beamer. Report status remains an unsigned working draft: programme session, coordinator and assessment date need confirmation, together with actual student preparation and team/supervisor review. The team confirms there is no co-supervisor. Weak prediction and all-Buy calibration are preserved.
+The [presentation](../presentation/main.tex) is also LaTeX/Beamer. Report status remains an unsigned working draft: coordinator and applicable submission details need confirmation, together with actual student preparation and team/supervisor review. The team confirms there is no co-supervisor. Weak prediction and all-Buy calibration are preserved.

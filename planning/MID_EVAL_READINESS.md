@@ -2,7 +2,7 @@
 
 ## Proposal division and executed local CI - 13 October 2026
 
-The proposal's work division is documented, and the team has assigned an equal one-third share of preparation/review/defence to each member. [Individual preparation packets](../deliverables/MEMBER_PREPARATION_PACK.md) specify four primary slides and five planned speaking minutes each. The team confirms names, roll numbers and supervisor, with no co-supervisor. Both shared CI jobs pass on the local Windows runtime. The [90%/95% route](../deliverables/MID1_90_95_ROADMAP.md) retains conditional targets of **90.25%** and **95.00%**. Current readiness remains **84.25%** pending actual criteria/baseline review, individual preparation/defence, remaining cover fields, projector review and rehearsal. Hosted CI and CD remain open.
+The proposal's work division is documented, and the team has assigned an equal one-third share of preparation/review/defence to each member. [Individual preparation packets](../deliverables/MEMBER_PREPARATION_PACK.md) specify four primary slides and five planned speaking minutes each. The team confirms names, roll numbers and supervisor, with no co-supervisor. The assessment term is Fall 2026 and the selected report date is 11 October 2026; actual execution receipts keep their dates. Both shared CI jobs pass on the local Windows runtime. The [90%/95% route](../deliverables/MID1_90_95_ROADMAP.md) retains conditional targets of **90.25%** and **95.00%**. Current readiness remains **84.25%** pending actual criteria/baseline review, individual preparation/defence, current coordinator/submission details, projector review and rehearsal. Hosted CI and CD remain open.
 
 ## Browser-review continuation - 13 October 2026
 

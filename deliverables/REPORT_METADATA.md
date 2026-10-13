@@ -1,6 +1,6 @@
 # Working report metadata and source checks
 
-The report was prepared and revised in October 2026; its preparation date is separate from the actual assessment date. The team confirms Ahmed Javaid (22I-2530), Rafay Ul Haq (22I-2520), Soban Ahmad (22I-2460) and supervisor Mr. Irfan Ullah. **There is no co-supervisor.** The programme session/cohort, current SE FYP coordinator and actual assessment/submission date remain unconfirmed. The inherited 2023-2027 session range was removed pending the correct cohort.
+Assessment: **FYP-1 Mid-Evaluation, Fall 2026**. Team-selected report date: **11 October 2026 (Sunday)**. The current revision and execution receipts retain their actual dates, including 12-13 October. This report date does not assert a committee appointment or that later tests occurred on Sunday. The team confirms Ahmed Javaid (22I-2530), Rafay Ul Haq (22I-2520), Soban Ahmad (22I-2460) and supervisor Mr. Irfan Ullah. **There is no co-supervisor.** A degree-batch range is not inferred from the assessment term. The current SE FYP coordinator remains unconfirmed.
 
 | Field | Working value and evidence |
 | --- | --- |

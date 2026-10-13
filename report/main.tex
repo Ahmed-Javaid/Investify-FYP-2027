@@ -35,8 +35,8 @@
 \authortwo{Rafay Ul Haq}{22I-2520}
 \authorthree{Soban Ahmad}{22I-2460}
 \supervisor{Mr. Irfan Ullah}
-% The inherited template session dates are not verified for this team.
-\sessionduration{Pending team confirmation}
+% Team-confirmed assessment term; a degree-batch range is not inferred.
+\sessionduration{Fall 2026 (FYP-1 Mid-Evaluation)}
 % The team confirms no co-supervisor. Use the class's single-supervisor cover.
 %\cosupervisor{}
 % University Officers page indexed excerpt checked 11 October 2026.
@@ -67,6 +67,10 @@
 \setlength{\emergencystretch}{2em}
 \setlength{\tabcolsep}{3pt}
 % The class title includes lists; defer them to the authored front matter.
+% User-selected report date. Execution/revision receipts retain their actual dates.
+\makeatletter
+\patchcmd{\maketitle}{\@degreemonth, \@degreeyear}{11 October 2026}{}{\PackageError{Investify}{Cover date patch failed}{Check the supplied title template.}}
+\makeatother
 \let\institutionalmaketitle\maketitle
 \renewcommand{\maketitle}{%
   \begingroup

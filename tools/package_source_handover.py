@@ -140,7 +140,7 @@ def main():
                         target = bundle / child.relative_to(ROOT)
                         target.parent.mkdir(parents=True, exist_ok=True)
                         shutil.copyfile(child, target)
-        for pattern in ('fresh_*', 'social_*', 'guided_demo_*', 'calibration_class_prior_*', 'calibration_global_bounds_*', 'calibration_bounds_native_probe_*', 'originals_preservation_browser*', 'proposal_work_division_*', 'equal_member_allocation_*', 'member_allocation_visual_*', 'report_*', 'handbook_*', 'presenter_*', 'mid1_*'):
+        for pattern in ('fresh_*', 'social_*', 'guided_demo_*', 'calibration_class_prior_*', 'calibration_global_bounds_*', 'calibration_bounds_native_probe_*', 'originals_preservation_browser*', 'proposal_work_division_*', 'equal_member_allocation_*', 'member_allocation_visual_*', 'fall_report_metadata_*', 'metadata_visual_*', 'report_*', 'handbook_*', 'presenter_*', 'mid1_*'):
             for source in sorted((ROOT / 'evidence').glob(pattern)):
                 if source.is_file() and source.suffix in ('.json', '.xml', '.txt', '.log'):
                     shutil.copyfile(source, bundle / 'evidence' / source.name)

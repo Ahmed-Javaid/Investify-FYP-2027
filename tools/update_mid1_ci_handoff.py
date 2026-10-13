@@ -20,6 +20,7 @@ def main():
     parser.add_argument('--delivery-run-id', default='20261013_run03')
     parser.add_argument('--archive-id', default='ci_work_division_review_20261013')
     parser.add_argument('--member-allocation', action='store_true')
+    parser.add_argument('--fall-metadata', action='store_true')
     args = parser.parse_args()
     if any(not re.fullmatch(r'[A-Za-z0-9_-]+', value) for value in (args.delivery_run_id, args.archive_id)):
         raise ValueError('Use plain dated receipt identities')
@@ -59,6 +60,13 @@ def main():
             remaining = 'session/cohort, coordinator and assessment date; actual individual review/code defence'
             allocation_line = (f'- {link("Member preparation packets", "deliverables/MEMBER_PREPARATION_PACK.md")}: equal **one-third** assigned responsibility, four primary slides and five minutes of speaking each, including shared demo segments. Three individual handouts specify files, tests and likely questions. The team confirms names/roll numbers and supervisor; **no co-supervisor** applies.\n'
                                f'- {link("Functional status", "deliverables/MID1_FUNCTIONAL_STATUS.md")}: the current recorded Mid-1 prototype is ready for practice. Predictive usefulness, student training and deployment remain unresolved or later work.\n')
+        if args.fall_metadata:
+            metadata = read('evidence/fall_report_metadata_20261013.json')
+            if metadata['report_date'] != '2026-10-11' or not metadata['execution_dates_preserved']:
+                raise ValueError('Require team-supplied report metadata with preserved execution dates')
+            heading = 'Current Fall 2026 Mid-1 report and equal member allocation'
+            remaining = 'current coordinator/submission details and actual individual review/code defence'
+            allocation_line += (f'- {link("Report metadata", "deliverables/REPORT_METADATA.md")}: **FYP-1 Mid-Evaluation, Fall 2026**. Team-selected report date: **11 October 2026 (Sunday)**. Actual revision/test dates are retained; the formal committee appointment is separate.\n')
         block = (f'{START}\n## {heading} - 13 October 2026\n\n'
                  'Mid-1 planning readiness remains **84.25%**, using the original weights. Work assignments are filled; actual member preparation and defence will be recorded during practice. Earlier dated sections below retain their historical scope.\n\n'
                  f'- {link("Current report", report["output"])}: **{report["pages"]} pages**, with the original planned work-division table, actual UI captures and local CI evidence. All pages rendered/reviewed, with no overfull boxes or fully blank pages.\n'

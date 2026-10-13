@@ -13,4 +13,4 @@ The current Mid-1 prototype is ready for team practice. The engineering work sup
 
 The remaining Mid-1 preparation includes the genuine individual walkthrough, combined rehearsal, physical projector check, cover fields and applicable supervisor/criteria review. Future FYP work includes the student programme, deployment and broader research/product acceptance. The negative predictive and small-reference findings remain visible.
 
-Cover fields still needed: programme session/cohort, FYP coordinator and confirmed assessment date. The team confirms names, roll numbers and supervisor Mr. Irfan Ullah; no co-supervisor applies. Signature/declaration pages remain unsigned until the real team reviews them.
+Assessment term: FYP-1 Mid-Evaluation, Fall 2026. Team-selected report date: 11 October 2026 (Sunday). The FYP coordinator remains to be confirmed. The formal committee appointment is separate from the report date; verification performed on 12-13 October retains its actual dates. The team confirms names, roll numbers and supervisor Mr. Irfan Ullah; no co-supervisor applies. Signature/declaration pages remain unsigned until the real team reviews them.

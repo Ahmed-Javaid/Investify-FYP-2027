@@ -4,12 +4,12 @@
   "date_prepared": "2026-10-13",
   "assessment_date": null,
   "source_entry": "presentation/main.tex",
-  "compiled_output": "deliverables/Investify_FYP1_Mid_Presentation_Team_Allocation_20261013.pdf",
+  "compiled_output": "deliverables/Investify_FYP1_Mid_Presentation_Fall_2026_20261013.pdf",
   "slides": [
     {
       "number": 1,
       "title": "Investify",
-      "speaker_notes": "Assigned presenter: Ahmed Javaid. Planned speaking: 30 seconds. Introduce the team and supervisor. The preparation date is not a confirmed assessment date. The project is an educational prototype. It does not execute orders or establish investment suitability. Working implementation, diagrams and assessment drafts include assistant contributions. Genuine student review and ownership evidence remain pending. Sources: planning/CHECKPOINT.md and report/main.tex.",
+      "speaker_notes": "Assigned presenter: Ahmed Javaid. Planned speaking: 30 seconds. Introduce the confirmed team and supervisor. This is FYP-1 Mid-Evaluation in Fall 2026. The team-selected report date is Sunday, 11 October 2026; the revision and tests retain their actual dates, including 12-13 October. The formal committee appointment is separate. The project is an educational prototype. It does not execute orders or establish investment suitability. Working implementation, diagrams and assessment drafts include assistant contributions. Genuine student review and ownership evidence remain pending. Sources: planning/CHECKPOINT.md and report/main.tex.",
       "sources": [],
       "body_source": "presentation/main.tex",
       "assigned_presenter": "Ahmed Javaid",
@@ -139,7 +139,7 @@
     {
       "number": 12,
       "title": "Equal work allocation and next steps",
-      "speaker_notes": "Assigned presenter: Soban Ahmad. Planned speaking: 30 seconds. The team has assigned equal one-third responsibility for preparation, review and defence. Each member owns four slides and five minutes of planned speaking including their demonstration segment. Read the individual preparation packets for the exact route and code. The proposal spells Soban Ahmed on slide 13; the confirmed student record uses Soban Ahmad. Historical repository authorship and assistant contributions are preserved. Personal preparation is recorded during practice. Local CI has executed both jobs; remote CI and CD remain open. The team confirms no co-supervisor. Session, coordinator and assessment date still need confirmation. Original Phi-3-mini inference and later QLoRA remain unexecuted.",
+      "speaker_notes": "Assigned presenter: Soban Ahmad. Planned speaking: 30 seconds. The team has assigned equal one-third responsibility for preparation, review and defence. Each member owns four slides and five minutes of planned speaking including their demonstration segment. Read the individual preparation packets for the exact route and code. The proposal spells Soban Ahmed on slide 13; the confirmed student record uses Soban Ahmad. Historical repository authorship and assistant contributions are preserved. Personal preparation is recorded during practice. Local CI has executed both jobs; remote CI and CD remain open. The team confirms Fall 2026 and no co-supervisor. The report date is 11 October 2026. Coordinator and formal committee appointment remain unconfirmed. Original Phi-3-mini inference and later QLoRA remain unexecuted.",
       "sources": [
         "planning/HANDBOOK_MID1_AUDIT.md; report/chapters/chapter10_fyp2_plan.tex"
       ],
@@ -151,5 +151,8 @@
   ],
   "member_share": "1/3 each, assigned preparation/review/defence",
   "planned_total_seconds": 900,
-  "delivery_receipt": "evidence/handbook_presentation_delivery_20261013_run04.json"
+  "delivery_receipt": "evidence/handbook_presentation_delivery_20261013_run05.json",
+  "report_date": "2026-10-11",
+  "assessment_term": "Fall 2026",
+  "assessment_stage": "FYP-1 Mid-Evaluation"
 }
