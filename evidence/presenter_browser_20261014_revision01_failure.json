@@ -1,6 +1,0 @@
-{
-  "status": "automation_locator_failed_after_decision_capture",
-  "reason": "Styled radio native input intercepted pointer; retry uses the visible label.",
-  "scratch_directory": "E:/AI-Tools/Temp/presenter_browser_20261014_revision01",
-  "data_or_model_failure": false
-}

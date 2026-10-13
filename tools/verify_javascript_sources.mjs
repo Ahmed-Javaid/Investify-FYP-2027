@@ -7,7 +7,7 @@ import {fileURLToPath} from 'node:url';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const checks = [];
-for (const relative of ['code/app/mideval_demo.html', 'deliverables/demo_preview.html',
+for (const relative of ['code/app/mideval_demo.html',
                          'code/app/demo_state.js', 'code/tests/test_demo_state.mjs',
                          'code/tests/test_demo_handlers.mjs']) {
   const file = path.join(root, relative);

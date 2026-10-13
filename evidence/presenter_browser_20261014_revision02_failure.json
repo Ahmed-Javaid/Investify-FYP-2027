@@ -1,6 +1,0 @@
-{
-  "status": "stale_server_modules_detected",
-  "reason": "The existing server retained the previous presenter module. It was verified and restarted with the absolute current app path.",
-  "scratch_directory": "E:/AI-Tools/Temp/presenter_browser_20261014_revision02",
-  "data_or_model_failure": false
-}

@@ -17,5 +17,6 @@ team guide and demonstration handout; source comes from GitHub. [Delivery config
 
 Application: `code/`; editable report: `report/main.tex`; editable slides:
 `presentation/main.tex`. Original references stay in `sources/`; dated checks
-stay in `evidence/`. Old outputs are under `deliverables/archive/`; retired
-notes, plans and documentation generators are under `docs/archive/`.
+stay in `evidence/`. Obsolete duplicates and archives were removed after a local
+checkpoint; tracked earlier versions remain in Git history. See the
+[cleanup audit](evidence/workspace_cleanup_20261014.json).

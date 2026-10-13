@@ -92,6 +92,7 @@ def main():
                     target.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copyfile(source, target)
         for relative in ('sources/BS-FYP-Handbook-2026_DRAFT.pdf',
+                         'sources/FAST_FYP_Student_Idea_Selection_Guide_School_of_Computing.pdf',
                          '.github/workflows/mideval-evidence.yml', 'AGENTS.md',
                          'sources/Investify_Proposal_Full.docx', 'sources/Investify_Concept.docx',
                          'sources/Investify Updated (1).pptx',

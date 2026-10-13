@@ -90,10 +90,12 @@ changed pages and publish a new dated receipt with
 ## Packaging and maintenance
 
 [Groupmate packaging](../../tools/package_groupmate_handover.py) selects the
-reviewed report/slides, original rubric and single team guide. The source delivery
+reviewed report/slides, original rubric, team guide and brief demonstration handout. The source delivery
 uses [package_source_handover.py](../../tools/package_source_handover.py) and
 [verify_source_handover.py](../../tools/verify_source_handover.py); hosted delivery
 uses [run_mid1_delivery.py](../../tools/run_mid1_delivery.py).
 
-Maintain these consolidated guides. Superseded generators and planning/checkpoint
-pages are historical snapshots under `docs/archive/`, not active entry points.
+Maintain these consolidated guides. Superseded generators, exports and planning
+pages were removed with user approval after checkpoint `5f6b6ff`; tracked earlier
+versions remain in Git history. The [cleanup audit](../../evidence/workspace_cleanup_20261014.json)
+records removal and protected current-file identities.

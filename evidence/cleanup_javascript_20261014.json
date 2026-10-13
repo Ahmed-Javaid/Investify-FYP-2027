@@ -1,0 +1,31 @@
+{
+  "checked_utc": "2026-10-13T22:22:02.753Z",
+  "node": "v22.19.0",
+  "checks": [
+    {
+      "file": "code/app/mideval_demo.html",
+      "sha256": "d2c4c77bc7192c3445291d1ffacc26ae7cae0c24bd9db428894dd03ff73a16b1",
+      "syntax": "passed",
+      "inline_scripts_parsed": 1
+    },
+    {
+      "file": "code/app/demo_state.js",
+      "sha256": "82d17d26fc8b9a2bb2b9f33e73488a26e7086cf9afc555cd9475543e4dffa150",
+      "syntax": "passed"
+    },
+    {
+      "file": "code/tests/test_demo_state.mjs",
+      "sha256": "19e4492c4c9be7d502d2320d9040124fecd6d6eb6d14847917ac45d9d6e3c60a",
+      "syntax": "passed"
+    },
+    {
+      "file": "code/tests/test_demo_handlers.mjs",
+      "sha256": "06189f2cbdf0b282ac34b9f8ef1b56401f696454993fbea088a6c8b9196e060a",
+      "syntax": "passed"
+    }
+  ],
+  "browser_visual_qa": false,
+  "browser_navigation": false,
+  "handlers_executed": false,
+  "scope": "HTML inline-script and Node source syntax only; controlled handler execution has a separate receipt."
+}
