@@ -1,5 +1,13 @@
 # Original first-mid commitments: implementation and remaining evidence
 
+## Current technical reconciliation - 13 October 2026
+
+Use the [current first-mid matrix](REQUIREMENTS_TRACEABILITY.md#current-original-first-mid-commitments) for actual implementation status. Fresh acquisition, pinned FinBERT scoring, exchange-calendar loading, ingestion-to-linear baseline and all six trained leakage arms are complete under a new Alpaca identity. Both original sentiment candidates execute the frozen 24-post comparison. The fourteen-case primary UI includes a header correction and a byte-bound global calibration diagnosis.
+
+[Fresh replay](../evidence/fresh_alpaca_science_replay_20261012_run01.json) and [global map/native probe](../evidence/calibration_bounds_native_probe_20261013.json) retain exact scope. No useful predictive signal, original September byte reproduction, actual student training or human approval is inferred. Current core remains news-only while social selection/criteria are reviewed.
+
+All dated sections below retain their historical snapshot and pending statements; they are superseded for current technical status. Member contributions, cover details, baseline review and genuine rehearsal remain open.
+
 ## Completed original-classifier study - 13 October 2026
 
 The original CryptoBERT and Cardiff candidates now complete **24/24 held-out

@@ -7,7 +7,7 @@ from streamlit.testing.v1 import AppTest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 sys.path.insert(0,str(ROOT/'src'))
-from app import presenter_data as data
+from app import presenter_data as data  # noqa: E402 - local source paths must be installed first.
 
 class PresenterUiTests(unittest.TestCase):
     def app(self):
@@ -133,5 +133,29 @@ class PresenterUiTests(unittest.TestCase):
             app.radio(key='ui_study').set_value('Sentiment comparison').run()
             self.assertTrue(any('No substitute score' in m.value for m in app.error))
             self.assertFalse(app.dataframe)
+
+    def test_fresh_calibration_diagnosis_has_the_actual_map_bounds(self):
+        app = self.walkthrough()
+        self.assertTrue(any('0.5345' in m.value and '0.3140' in m.value for m in app.markdown))
+        collection = data.load_cases('fresh_refit')
+        result = data.calibration_diagnosis(collection)
+        self.assertEqual(result['unconditionally_dominant_class'], 'Buy')
+        self.assertEqual(result['calibrated_evaluation_rows'], 186)
+        with self.assertRaises(ValueError):
+            data.calibration_diagnosis(data.load_cases('alpaca'))
+
+    def test_stale_calibration_diagnosis_is_withheld(self):
+        import copy
+        collection = data.load_cases('fresh_frozen')
+        receipt = data.read_json(ROOT.parent / 'evidence/calibration_global_bounds_20261013.json')
+        altered = copy.deepcopy(receipt)
+        altered['results']['engine_frozen_alpaca']['trace_sha256'] = '0' * 64
+        with patch('app.presenter_data.read_json', return_value=altered):
+            with self.assertRaisesRegex(ValueError, 'does not match'):
+                data.calibration_diagnosis(collection)
+        with patch('app.presenter_data.calibration_diagnosis', side_effect=ValueError('Labelled stale trace')):
+            app = self.walkthrough()
+            self.assertTrue(any('diagnosis unavailable' in m.value for m in app.info))
+            self.assertTrue(any(m.label == 'Model class' and m.value == 'Buy' for m in app.metric))
 
 if __name__=='__main__':unittest.main()

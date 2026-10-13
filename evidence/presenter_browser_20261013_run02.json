@@ -1,0 +1,15 @@
+{
+  "schema": "investify-actual-presenter-browser-v1",
+  "checked_utc": "2026-10-13T02:29:42.584177+00:00",
+  "url": "http://127.0.0.1:8507",
+  "method": "Playwright with installed headless Microsoft Edge and a fresh temporary profile",
+  "mode": "inspect",
+  "script_sha256": "39a0dac50844446642e5b4cf5b80dfd2379b4b88fce645edcfda00189395faf8",
+  "snapshots": [],
+  "page_errors": [],
+  "browser_version": "155.0.4283.45",
+  "status": "failed",
+  "error": "Page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8507/\nCall log:\n  - navigating to \"http://127.0.0.1:8507/\", waiting until \"domcontentloaded\"\n",
+  "screenshots": {},
+  "scratch_directory": "E:\\AI-Tools\\Temp\\presenter_browser_20261013_run02"
+}

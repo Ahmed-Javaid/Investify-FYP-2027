@@ -5,12 +5,11 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'src'))
 sys.path.insert(0,str(ROOT))
-from app import presenter, presenter_style
+from app import presenter, presenter_style  # noqa: E402 - local source paths must be installed first.
 st.set_page_config(page_title='Investify - Mid-1',page_icon='I',layout='wide',initial_sidebar_state='collapsed')
 presenter_style.inject()
-brand,nav = st.columns([1,3],vertical_alignment='center')
-brand.markdown('<div class="brand"><span class="brand-dot"></span>Investify</div>',unsafe_allow_html=True)
-page = nav.segmented_control('Workspace',presenter.PAGES,default='Overview',key='ui_page',label_visibility='collapsed',width='stretch')
+st.markdown('<div class="brand"><span class="brand-dot"></span>Investify</div>',unsafe_allow_html=True)
+page = st.segmented_control('Workspace',presenter.PAGES,default='Overview',key='ui_page',label_visibility='collapsed',width='stretch')
 st.caption("Recorded five-session research. Educational output only. No investment advice or order execution.")
 st.divider()
 {'Overview':presenter.overview,'Walkthrough':presenter.walkthrough,'Experiments':presenter.experiments,'Design':presenter.design}[page or 'Overview']()

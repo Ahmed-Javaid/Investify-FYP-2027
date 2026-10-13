@@ -18,6 +18,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, default=ROOT / 'deliverables/investify_mideval_source.zip')
     parser.add_argument('--working-tree', action='store_true', help='Explicit uncommitted review bundle, never a HEAD snapshot')
+    parser.add_argument('--report-receipt', type=Path, default=ROOT / 'evidence/handbook_report_delivery_20261013.json')
+    parser.add_argument('--presentation-receipt', type=Path, default=ROOT / 'evidence/handbook_presentation_delivery_20261013.json')
     args = parser.parse_args()
     output = args.output.resolve()
     if not output.is_relative_to(ROOT / 'deliverables') or output.suffix != '.zip':
@@ -25,6 +27,9 @@ def main():
     receipt_path = ROOT / 'evidence' / (output.stem + '_receipt.json' if args.working_tree or output.name != 'investify_mideval_source.zip' else 'source_bundle_receipt.json')
     if output.exists() or receipt_path.exists():
         raise ValueError('Preserve prior archives/receipts; choose a new dated output filename')
+    for path in (args.report_receipt, args.presentation_receipt):
+        if not path.resolve().is_relative_to(ROOT / 'evidence'):
+            raise ValueError('Use document review receipts within project evidence')
     dirty = subprocess.check_output(['git', '-C', str(CODE), 'status', '--porcelain'], text=True).strip()
     if dirty and not args.working_tree:
         raise ValueError('Commit/review current code before packaging; do not label a dirty tree as a commit snapshot')
@@ -67,7 +72,7 @@ def main():
                      'LLM_DESIGN.md', 'MODELS_AND_EVALUATION.md', 'DOMAIN_NOTES.md', 'SOCIAL_CORPUS_ACCESS.md', 'REPORT_METADATA.md',
                      'AI_SENTIMENT_PILOT.md', 'CALIBRATION_INVESTIGATION.md', 'OFFICIAL_MODEL_POLICY.md', 'ASSISTANT_TEACHER_PILOT.md',
                      'DEMO_AND_DEFENCE_GUIDE.md', 'CODE_WALKTHROUGH.md', 'MID1_REVIEW_QUESTIONS.md', 'REQUIREMENTS_TRACEABILITY.md',
-                     'ORIGINAL_MID_TRACEABILITY.md', 'SCIENCE_CORRECTIONS_20261012.md', 'SOCIAL_V4_RUNBOOK.md',
+                     'ORIGINAL_MID_TRACEABILITY.md', 'PANEL_RESPONSE_MATRIX.md', 'SCIENCE_CORRECTIONS_20261012.md', 'SOCIAL_V4_RUNBOOK.md',
                      'stocknet_source_access.json', 'stocknet_source_access_v2.json'):
             target = bundle / 'deliverables' / name
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -125,11 +130,11 @@ def main():
                     shutil.copyfile(source, bundle / 'evidence' / source.name)
         # New completed studies and the reviewed institutional draft have their
         # own dated scopes; retain them alongside the earlier evidence.
-        for pattern in ('fresh_*', 'social_*', 'guided_demo_*', 'calibration_class_prior_*', 'report_*', 'handbook_*', 'presenter_*', 'mid1_*'):
+        for pattern in ('fresh_*', 'social_*', 'guided_demo_*', 'calibration_class_prior_*', 'calibration_global_bounds_*', 'calibration_bounds_native_probe_*', 'originals_preservation_browser*', 'report_*', 'handbook_*', 'presenter_*', 'mid1_*'):
             for source in sorted((ROOT / 'evidence').glob(pattern)):
                 if source.is_file() and source.suffix in ('.json', '.xml', '.txt', '.log'):
                     shutil.copyfile(source, bundle / 'evidence' / source.name)
-        report_receipt = json.loads((ROOT / 'evidence/handbook_report_delivery_20261013.json').read_text(encoding='utf-8'))
+        report_receipt = json.loads(args.report_receipt.read_text(encoding='utf-8'))
         current_report = (ROOT / report_receipt['output']).resolve()
         if (not current_report.is_relative_to(ROOT / 'deliverables')
                 or not report_receipt['all_pages_visually_checked']
@@ -137,7 +142,7 @@ def main():
                 or hashlib.sha256(current_report.read_bytes()).hexdigest() != report_receipt['pdf_sha256']):
             raise ValueError('Current report must match its reviewed working-draft receipt')
         shutil.copyfile(current_report, bundle / 'deliverables' / current_report.name)
-        deck_receipt = json.loads((ROOT / 'evidence/handbook_presentation_delivery_20261013.json').read_text(encoding='utf-8'))
+        deck_receipt = json.loads(args.presentation_receipt.read_text(encoding='utf-8'))
         current_deck = (ROOT / deck_receipt['output']).resolve()
         if (not current_deck.is_relative_to(ROOT / 'deliverables')
                 or not deck_receipt['all_pages_visually_checked']
@@ -167,7 +172,8 @@ def main():
                  for path in sorted(bundle.rglob('*')) if path.is_file()}
         manifest = {'built_utc': datetime.now(timezone.utc).isoformat(), 'code_commit': commit,
                     'code_snapshot_kind': 'uncommitted_working_tree' if args.working_tree else 'clean_commit_snapshot',
-                    'files': files, 'scope': 'Current Mid-1 handbook revision with rebuilt four-step Streamlit UI, separately executed fresh Alpaca science, original CryptoBERT/Cardiff outputs and six teacher examples. Dated receipts distinguish overlapping scopes. The 95-page report and 12-slide LaTeX/Beamer deck are compiled/layout-reviewed working drafts. Browser/projector review, rehearsal, student training and human/institutional acceptance remain open. Publisher weights, E: caches and ignored raw acquisition inputs are external prerequisites for fresh inference/training replay. Private review archive; third-party corpus is not approved for public redistribution.',
+                    'files': files, 'scope': f'Current Mid-1 review with four-step Streamlit UI, calibration diagnostics, separately executed fresh Alpaca science, original CryptoBERT/Cardiff outputs and six teacher examples. Dated receipts distinguish overlapping scopes. The {report_receipt["pages"]}-page report and {deck_receipt["pages"]}-slide LaTeX/Beamer deck are compiled/layout-reviewed working drafts. Browser capture/review evidence has its own source-bound receipt; physical projector review, rehearsal, student training and human/institutional acceptance remain open. Publisher weights, E: caches and ignored raw acquisition inputs are external prerequisites for fresh inference/training replay. Private review archive; third-party corpus is not approved for public redistribution.',
+                    'document_receipts': {'report': str(args.report_receipt.resolve().relative_to(ROOT)).replace('\\','/'), 'presentation': str(args.presentation_receipt.resolve().relative_to(ROOT)).replace('\\','/')},
                     'rendered_visual_qa': False, 'institutional_report_rendered_visual_qa': True, 'beamer_presentation_rendered_visual_qa': True, 'working_evidence_brief_rendered_visual_qa': True}
         (bundle / 'bundle_manifest.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8')
         output.parent.mkdir(parents=True, exist_ok=True)

@@ -1,5 +1,9 @@
 # Mid-evaluation readiness estimate - 12 October 2026
 
+## Browser-review continuation - 13 October 2026
+
+The completed desktop browser journey, reviewed screenshots and updated PDFs close software-layout evidence gaps. The estimate is held at **84.25%**; projector review, rehearsal, actual member defence and supervisor/metadata/criteria review remain open. The unchanged category weights and targets below still apply. This is a planning judgement, not a university grade.
+
 ## Current handbook revision - 13 October 2026
 
 Current Mid-1 planning completion is **84.25%, approximately 84%**. This supersedes all estimates below. It is an effort-weighted judgement for the Mid-1 package, not an institutional grade or completion of the whole FYP. Original weights remain unchanged.

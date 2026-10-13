@@ -4,7 +4,7 @@ The rebuilt Streamlit UI opens on **Overview** and executes one workspace at a t
 
 ## Launch
 
-Current local session: **http://127.0.0.1:8507**. The task-owned server was restarted for the light theme (launcher PID 30916) and its health endpoint returned HTTP 200. Browser/projector review remains pending. For another launch from the project root, use `& '.\tools\start_guided_demo.ps1'`. The launcher keeps caches/temp on E:, disables telemetry and refuses an occupied port. Use `-Port` or `-PythonExe` when needed, and Ctrl+C for a foreground launch. Session hosting is not guaranteed unattended.
+Local address: **http://127.0.0.1:8507**. The actual Edge journey and fourteen captured views are reviewed; physical projector review and genuine rehearsal remain pending. To launch from the project root, use `& '.\tools\start_guided_demo.ps1'`. The launcher keeps caches/temp on E:, disables telemetry and refuses an occupied port. Use `-Port` or `-PythonExe` when needed, and Ctrl+C for a foreground launch. Session hosting lasts only while the server runs.
 
 ## Four-minute live route
 
@@ -33,6 +33,6 @@ The portable historical interface remains separately available from `code`: `pyt
 
 ## Before assessment
 
-Inspect the real browser/projector layout and rehearse within the handbook's recommended fifteen minutes. Each member needs an actual file/function walkthrough and contribution record. Confirm cover metadata, assessment date and applicable review/approval details. The [twelve-slide Beamer PDF](Investify_FYP1_Mid_Presentation_20261013.pdf) and [revised report](Investify_FYP1_Mid_Report_Handbook_Revision_20261013.pdf) are compiled and reviewed working drafts.
+Inspect the physical projector layout and rehearse within the handbook's recommended fifteen minutes. Each member needs an actual file/function walkthrough and contribution record. Confirm cover metadata, assessment date and applicable review/approval details. The [twelve-slide Beamer PDF](Investify_FYP1_Mid_Presentation_UI_Review_20261013.pdf) and [99-page report](Investify_FYP1_Mid_Report_UI_Review_20261013.pdf) are compiled and reviewed working drafts.
 
-Evidence: [new UI delivery](../evidence/presenter_revision_delivery_20261013.json), [combined UI scope](../evidence/presenter_and_legacy_ui_tests_20261013.xml), [fresh science](../evidence/fresh_alpaca_science_summary_20261012_run01.json), [paired sentiment](../evidence/social_study_review_20261013.json).
+Evidence: [actual browser review](../evidence/presenter_visual_review_20261013.json), [current 42-test UI scope](../evidence/presenter_delivery_tests_20261013_run03.xml), [fresh science](../evidence/fresh_alpaca_science_summary_20261012_run01.json), [paired sentiment](../evidence/social_study_review_20261013.json).

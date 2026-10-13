@@ -1,0 +1,13 @@
+{
+  "checked_utc": "2026-10-13T11:50:17.369505+00:00",
+  "files_checked": 224,
+  "relocated_originals_checked": 65,
+  "changed_originals": [
+    {
+      "original_path": "E:\\Uni_Stuff\\investify_repo\\.git\\config",
+      "checked_path": "E:\\Uni_Stuff\\investify_repo\\.git\\config"
+    }
+  ],
+  "passed": false,
+  "relocation_receipt": "E:\\Uni_Stuff\\FYP\\Investify\\evidence\\workspace_reorganization_20261012.json"
+}

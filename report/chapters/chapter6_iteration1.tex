@@ -25,7 +25,7 @@ The portable path uses standard Python. The restored isolated viewer/test enviro
 
 \section{Demonstration Evidence}
 The continuation adds an explicitly labelled feature-level causality button: nine checks on synthetic fixtures detect four centred-window mutations, with no classifier fit. Scientific input/runtime absence disables the real re-run, and a later import/data failure is reported without a fabricated experiment result. Portable reports are invalidated after candidate/settings edits; record-loading errors retain selection/retry controls. These checks are distinct from browser visual QA.
-Artifact checks cover 186 records per corpus. The live HTTP exercise passes 62 explanation/risk cases. The separate comparator audit passes 228 arithmetic checks on actual held-out rows with labelled parameter scenarios. Browser visual QA remains pending. Both saved classifiers predict Buy throughout; no predictor-performance improvement is claimed.
+Artifact checks cover 186 records per corpus. The live HTTP exercise passes 62 explanation/risk cases. The separate comparator audit passes 228 arithmetic checks on actual held-out rows with labelled parameter scenarios. Chapter~\ref{chap:manual} records the current Streamlit browser review; these older portable checks have a separate scope. Both saved classifiers predict Buy throughout; no predictor-performance improvement is claimed.
 
 \section{Iteration Outcome}
 \subsection{Versioned Scientific Corrections}
@@ -123,4 +123,11 @@ The live checking algorithm is: validate the selected record; construct maintain
 
 New UI functions use snake-case names, explicit page/step registries and small functions named for user actions. Data-boundary docstrings state their no-training/no-write role. Syntax/AST checks and focused UI tests are engineering static/dynamic evidence; the group must still explain and modify its actual owned functions during review. The source/file walkthrough is supplied separately rather than replaced with programming listings in the report.
 
-\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figures/mid1_calibration_counts.png}\caption{Observed labels, raw frozen-classifier predictions and calibrated classes on the same 186 evaluation sessions. Calibration collapses all emitted classes to Buy; this is descriptive retained-trace evidence, not a new selection or tuning experiment.}\label{fig:calibrationcounts}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=0.90\linewidth]{figures/mid1_calibration_counts.png}\caption{Observed labels, raw frozen-classifier predictions and calibrated classes on the same 186 evaluation sessions. Calibration collapses all emitted classes to Buy; this is descriptive retained-trace evidence, not a new selection or tuning experiment.}\label{fig:calibrationcounts}\end{figure}
+
+\section{Mechanism of the Fresh Calibration Collapse}
+Both fresh modes share the same clipped isotonic maps. Buy's global output minimum is 0.5344828, while Hold and Sell never exceed 0.2500000 and 0.3139535. Buy therefore leads by at least 0.2205293 before normalization. Linear interpolation with clipped endpoints stays within these bounds. Dividing every output by the same positive sum preserves argmax: these maps force Buy for every valid raw probability vector.
+
+\begin{figure}[!ht]\centering\input{figures/mid1_calibration_bounds}\caption[Global bounds of the saved calibration maps]{Global outputs of the fresh isotonic maps before normalization. Buy's minimum exceeds both competing maxima. The derivation concerns these byte-identified maps; the cause of preserved September outputs remains unproved.}\label{fig:calibration-bounds}\end{figure}
+
+Native replay reproduces 186 probability rows per mode and checks 5,151 simplex inputs per map set. Every output ranks Buy and sums to one; retained maps, labels and thresholds remain unchanged.

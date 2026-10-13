@@ -160,8 +160,8 @@ Maintenance & CI configuration, deployment diagram and setup manual\\\bottomrule
 {\color{teal}\large\url{http://127.0.0.1:8507}}
 \par\vspace{2mm}
 {\small Default case: Fresh Alpaca frozen, NVDA, 21 December 2023.}
-\source{report/chapters/chapter7_ui_manual.tex; evidence/presenter_and_legacy_ui_tests_20261013.xml}
-\note{Reserve four minutes for the live walkthrough. Open Overview and choose Open the decision walkthrough. Leave the default Fresh Alpaca frozen case on 2023-12-21. Decision shows Buy and its calibrated probabilities. On Evidence choose a technical feature and a news feature. Risk profile: the explicit cautious fictional example R=0 gives Hold, and the higher-tolerance example R=1 gives Sell in the separate comparator, while the classifier remains Buy. Clear the profile to demonstrate no assumed answers. On Explanation check choose Inject wrong probability, then Check explanation. Show candidate rejection and verified fallback. Edit the text and show that the old verdict disappears. Twelve primary-UI widget tests pass. The full 40-test scope includes 24 historical UI tests and 4 selectors and must not be described as 40 new-interface tests. Browser/projector visual review and genuine rehearsal remain pending.}
+\source{report/chapters/chapter7_ui_manual.tex; evidence/presenter_calibration_ui_tests_20261013_run02.xml}
+\note{Reserve four minutes for the live walkthrough. Open Overview and choose Open the decision walkthrough. Leave the default Fresh Alpaca frozen case on 2023-12-21. Decision shows Buy and its calibrated probabilities. On Evidence choose a technical feature and a news feature. Risk profile: the explicit cautious fictional example R=0 gives Hold, and the higher-tolerance example R=1 gives Sell in the separate comparator, while the classifier remains Buy. Clear the profile to demonstrate no assumed answers. On Explanation check choose Inject wrong probability, then Check explanation. Show candidate rejection and verified fallback. Edit the text and show that the old verdict disappears. Fourteen primary-UI widget tests pass, including calibration-diagnostic identity/refusal. The full 42-test scope includes 24 historical UI tests and 4 selectors and must not be described as 42 new-interface tests. The header correction restores 4.75 rem clearance and full-width navigation. Browser/projector visual review and genuine rehearsal remain pending.}
 \end{frame}
 
 \begin{frame}{Calibration and decision collapse}
@@ -185,9 +185,9 @@ Maintenance & CI configuration, deployment diagram and setup manual\\\bottomrule
 \end{column}
 \end{columns}
 \vspace{2mm}
-{\small All 186 calibrated cases are Buy in both frozen and refit runs.\\Lower Brier alone does not establish useful classification.}
-\source{evidence/fresh_alpaca_science_replay_20261012_run01.json; evidence/calibration_class_prior_audit_20261013.json}
-\note{These are fresh Alpaca revision-conservative results, not overwritten September metrics. The frozen and refit paths both reproduce actual model, calibration and native SHAP results. After excluding five unavailable labels, calibration has 181 rows. Frozen raw macro-F1 is 0.3182 and calibrated macro-F1 is 0.2238. Refit Brier changes from 0.7760 to 0.6078. The class-prior comparator uses calibration labels only, with Brier 0.60948945. Do not tune thresholds on this evaluation set to manufacture varied decisions. Timing: 60 seconds.}
+{\small Saved map bounds force Buy for every raw probability vector.\\Lower Brier alone does not establish useful classification.}
+\source{evidence/fresh_alpaca_science_replay_20261012_run01.json; evidence/calibration_global_bounds_20261013.json}
+\note{These are fresh Alpaca revision-conservative results, not overwritten September metrics. The frozen and refit paths both reproduce actual model, calibration and native SHAP results. After excluding five unavailable labels, calibration has 181 rows. Frozen raw macro-F1 is 0.3182 and calibrated macro-F1 is 0.2238. Refit Brier changes from 0.7760 to 0.6078. The class-prior comparator uses calibration labels only, with Brier 0.60948945. The retained maps have Buy minimum 0.5344828, Hold maximum 0.25 and Sell maximum 0.3139535. Clipped interpolation stays inside these ranges. Common positive renormalization preserves argmax, so these maps force Buy for every raw vector. A separate native engine probe exactly replays 186 rows per mode and all 5,151 simplex inputs select Buy. Sources: evidence/calibration_global_bounds_20261013.json, evidence/calibration_bounds_native_probe_20261013.json and evidence/calibration_class_prior_audit_20261013.json. This applies only to the fresh maps. Do not tune held-out thresholds to manufacture varied decisions. Timing: 60 seconds.}
 \end{frame}
 
 \begin{frame}{Temporal leakage experiment}
@@ -233,7 +233,7 @@ Maintenance & CI configuration, deployment diagram and setup manual\\\bottomrule
 
 \begin{frame}{Remaining work and review decisions}
 \begin{itemize}\setlength{\itemsep}{2.5mm}
-\item \textbf{Demo readiness}\quad Browser/projector review and timed rehearsal
+\item \textbf{Demo readiness}\quad Physical projector review and timed rehearsal
 \item \textbf{Assessment evidence}\quad Actual member walkthroughs and contributions
 \item \textbf{Report review}\quad Confirm metadata, baselines and applicable approvals
 \item \textbf{Research decisions}\quad Agree social/risk criteria and review weak prediction

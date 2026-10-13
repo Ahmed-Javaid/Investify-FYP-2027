@@ -59,6 +59,10 @@ jobs:
         run: python -B -m pip install -r requirements-demo-runtime.txt
       - name: Exercise preserved Streamlit regression scope
         run: python -B -m unittest discover -s tests -p "test_streamlit_mideval.py" -v
+      - name: Install the pinned source checker
+        run: python -B -m pip install -r requirements-quality.txt
+      - name: Check primary UI source and its tests
+        run: python -B -m ruff check --select E4,E9,F app/streamlit_app.py app/presenter.py app/presenter_data.py app/presenter_style.py tests/test_presenter_ui.py
       - name: Exercise the rebuilt focused presenter UI
         run: python -B -m unittest discover -s tests -p "test_presenter_ui.py" -v
 

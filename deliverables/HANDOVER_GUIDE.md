@@ -1,5 +1,22 @@
 > Current workspace and document versions: [current status](../planning/CURRENT_STATUS.md). Work in `E:\Uni_Stuff\FYP\Investify`; old copies are in the parent `_archives`. Earlier dated sections below retain their original scope.
 
+<!-- MID1_BROWSER_CHECKPOINT_START -->
+## Current browser-reviewed package - 13 October 2026
+
+Mid-1 planning readiness remains **84.25%, about 84%**, with unchanged weights. Earlier dated sections below retain their historical scope and are superseded for current navigation.
+
+- [Current report](Investify_FYP1_Mid_Report_UI_Review_20261013.pdf): 99 pages, actual browser screenshots and the source-bound calibration diagnosis. All pages rendered/reviewed; no fully blank pages or overfull boxes.
+- [Current LaTeX/Beamer presentation](Investify_FYP1_Mid_Presentation_UI_Review_20261013.pdf): 12 slides, rendered and reviewed, with editable source and speaker notes. Earlier PDFs remain preserved.
+- [Actual browser review](../evidence/presenter_visual_review_20261013.json): fourteen captured views, including both profiles, rejection/fallback and restored-candidate acceptance, all three recorded studies and Design. Desktop header/overflow checks pass.
+- [Current focused UI receipt](../evidence/presenter_delivery_tests_20261013_run03.xml): **42 passes** (14 primary, 24 legacy, 4 selectors). This overlaps earlier scopes. Eleven current modules pass scoped Ruff checks.
+
+The new source review archive is prepared for clean-snapshot packaging; extraction verification is still pending.
+
+Scientific findings remain unchanged: weak prediction, all-Buy fresh calibration, exploratory AI-reference sentiment results and an untrained Phi-3-mini student. Physical projector review, timed rehearsal, confirmed cover facts, actual member contributions/defence and supervisor/baseline/criteria review remain open. Prepared CI is not remote CI execution.
+
+[The preservation audit](../evidence/originals_preservation_browser_metadata_20261013.json) records 223 exact original-byte matches and one external historical Git config with an added editor bookmark. Removing only that key in memory reproduces the original hash exactly. The external config was left as found; literal 224-file equality is not claimed.
+<!-- MID1_BROWSER_CHECKPOINT_END -->
+
 ## Current handbook revision and rebuilt demo - 13 October 2026
 
 Mid-1 planning completion is **84.25%, about 84%**. The [unchanged-weight ledger](../planning/MID_EVAL_READINESS.md) corrects the earlier UI/report overestimate. All dated sections below this checkpoint describe earlier snapshots and are superseded for current navigation and deliverables.

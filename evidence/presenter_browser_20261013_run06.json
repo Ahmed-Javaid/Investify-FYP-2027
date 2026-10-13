@@ -1,0 +1,2599 @@
+{
+  "schema": "investify-actual-presenter-browser-v1",
+  "checked_utc": "2026-10-13T11:00:24.373833+00:00",
+  "url": "http://127.0.0.1:8507",
+  "method": "Playwright with installed headless Microsoft Edge and a fresh temporary profile",
+  "mode": "journey",
+  "script_sha256": "cce7c45ef464a5895ac8dd0d68256b83c43a5696e4af040f001fdf854d7f83e8",
+  "snapshots": [
+    {
+      "name": "overview-1672",
+      "capture_viewport": {
+        "width": 1672,
+        "height": 955
+      },
+      "aria": "- banner\n- text: Investify\n- radiogroup \"Workspace\":\n  - radio \"Overview\" [checked]:\n    - paragraph: Overview\n  - radio \"Walkthrough\":\n    - paragraph: Walkthrough\n  - radio \"Experiments\":\n    - paragraph: Experiments\n  - radio \"Design\":\n    - paragraph: Design\n- paragraph: Recorded five-session research. Educational output only. No investment advice or order execution.\n- separator\n- text: FYP-1 mid evaluation\n- heading \"A decision you can inspect\" [level=1]:\n  - text: A decision you can inspect\n  - link \"Link to heading\":\n    - /url: \"#a-decision-you-can-inspect\"\n- paragraph: Explore one recorded equity decision, see the evidence behind it, and test whether its explanation matches the facts.\n- button \"Open the decision walkthrough\":\n  - paragraph: Open the decision walkthrough\n- separator\n- heading \"The live demonstration\" [level=3]:\n  - text: The live demonstration\n  - link \"Link to heading\":\n    - /url: \"#the-live-demonstration\"\n- paragraph: A risk profile changes a separate comparison. A deliberately wrong explanation triggers rejection and a verified fallback. The recorded model output stays fixed.\n- paragraph: \"Suggested case: fresh Alpaca, frozen classifier, 21 December 2023.\"\n- heading \"Recorded research\" [level=3]:\n  - text: Recorded research\n  - link \"Link to heading\":\n    - /url: \"#recorded-research\"\n- paragraph: Inspect the leakage experiment, original sentiment-model comparison and teacher construction pilot.\n- button \"Explore experiments\":\n  - paragraph: Explore experiments\n- button \"View architecture and requirements\":\n  - paragraph: View architecture and requirements\n- text: The current five-session predictor has no established useful signal. All 186 fresh calibrated predictions are Buy. The demonstration exposes these limits. Five trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance.",
+      "geometry": {
+        "viewport": {
+          "width": 1672,
+          "height": 860
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1672,
+          "height": 60
+        },
+        "main": {
+          "x": 246,
+          "y": 0,
+          "width": 1180,
+          "height": 944.359375
+        },
+        "documentWidth": 1672,
+        "clientWidth": 1672,
+        "brand": {
+          "x": 326,
+          "y": 92,
+          "width": 1020,
+          "height": 35.84375
+        },
+        "mainStyle": {
+          "paddingTop": "76px",
+          "paddingBottom": "32px",
+          "classes": "stMainBlockContainer block-container st-emotion-cache-zy6yx3 e15ve43o4"
+        },
+        "customStyles": [
+          "\n    .stApp { background: #f8fafc; color: #172b43; }\n    /* Streamlit keeps a fixed header above the document. Content must clear it. */\n    .block-container { max-width: 1180px; padding-top: 4.75rem; padding-bottom: 2rem; }\n    [data-testid=\"stHeader\"] { background:#f8fafc; }\n    [data-testid=\"stSegmentedControl\"] { overflow:visible; }\n    [data-testid=\"stSegmentedControl\"] button { white-space:normal; height:auto; min-height:2.7rem; }\n    @media (max-width: 640px) {\n        .block-container { padding-top:4.75rem; padding-left:1rem; padding-right:1rem; }\n        [data-testid=\"stSegmentedControl\"] { width:100%; }\n    }\n    h1,h2,h3 { color:#172b43; letter-spacing:-.02em; font-family:Arial,sans-serif; }\n    h1 { font-size:clamp(1.85rem, 3vw, 2.4rem) !important; font-weight:700; }\n    h2 { font-size:1.65rem !important; }\n    h3 { font-size:1.15rem !important; }\n    p,li { font-family:Arial,sans-serif; line-height:1.55; }\n    .brand { font-size:1.4rem; font-weight:750; letter-spacing:-.04em; }\n    .brand-dot { display:inline-block; height:9px; width:9px; margin-right:9px; border-radius:50%; background:#267b86; }\n    .eyebrow { color:#597084; font-size:.82rem; font-weight:650; text-transform:uppercase; letter-spacing:.07em; }\n    .summary { font-size:1.08rem; max-width:700px; color:#425a70; }\n    .quiet-note { padding:.65rem .85rem; border-left:3px solid #ac6a24; background:#fff9ed"
+        ],
+        "buttons": [
+          {
+            "text": "",
+            "box": {
+              "x": 1565.03125,
+              "y": 16,
+              "width": 56.96875,
+              "height": 28
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1626,
+              "y": 15.5,
+              "width": 28,
+              "height": 28
+            }
+          },
+          {
+            "text": "Overview",
+            "box": {
+              "x": 326,
+              "y": 127.84375,
+              "width": 249.640625,
+              "height": 32
+            }
+          },
+          {
+            "text": "Walkthrough",
+            "box": {
+              "x": 574.640625,
+              "y": 127.84375,
+              "width": 269.375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Experiments",
+            "box": {
+              "x": 843.015625,
+              "y": 127.84375,
+              "width": 269.09375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Design",
+            "box": {
+              "x": 1111.109375,
+              "y": 127.84375,
+              "width": 234.890625,
+              "height": 32
+            }
+          },
+          {
+            "text": "Open the decision walkthrough",
+            "box": {
+              "x": 326,
+              "y": 447.203125,
+              "width": 218.234375,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "Explore experiments",
+            "box": {
+              "x": 970,
+              "y": 687.0625,
+              "width": 153.625,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "View architecture and requirements",
+            "box": {
+              "x": 970,
+              "y": 746.25,
+              "width": 245.96875,
+              "height": 43.1875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "decision-1672",
+      "capture_viewport": {
+        "width": 1672,
+        "height": 1413
+      },
+      "aria": "- banner\n- text: Investify\n- radiogroup \"Workspace\":\n  - radio \"Overview\":\n    - paragraph: Overview\n  - radio \"Walkthrough\" [checked]:\n    - paragraph: Walkthrough\n  - radio \"Experiments\":\n    - paragraph: Experiments\n  - radio \"Design\":\n    - paragraph: Design\n- paragraph: Recorded five-session research. Educational output only. No investment advice or order execution.\n- separator\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Case selection\n- radiogroup \"Walkthrough stage\":\n  - radio \"Decision\" [checked]\n  - paragraph: Decision\n  - radio \"Evidence\"\n  - paragraph: Evidence\n  - radio \"Risk profile\"\n  - paragraph: Risk profile\n  - radio \"Explanation check\"\n  - paragraph: Explanation check\n- heading \"Recorded decision\" [level=2]:\n  - text: Recorded decision\n  - link \"Link to heading\":\n    - /url: \"#recorded-decision\"\n- paragraph: NVDA / 2023-12-21 / 5 trading sessions / Fresh Alpaca, frozen classifier\n- paragraph: Model class\n- paragraph: Buy\n- paragraph: Calibrated probability\n- paragraph: 54.0%\n- paragraph: Probability of the recorded class, not an expected return.\n- button \"Show data\"\n- button \"Download as PNG\"\n- button \"Copy Vega-Lite spec\"\n- button \"Fullscreen\"\n- img: 0.00 0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 probability Buy Hold Sell class\n- text: All 186 fresh calibrated decisions are Buy. Better calibration loss alone does not establish useful predictions.\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Why the fresh calibration always chooses Buy\n- heading \"Largest recorded contributions\" [level=3]:\n  - text: Largest recorded contributions\n  - link \"Link to heading\":\n    - /url: \"#largest-recorded-contributions\"\n- button \"Show/hide columns\"\n- button \"Download as CSV\"\n- button \"Search\"\n- button \"Fullscreen\"\n- paragraph: TreeSHAP describes the raw model score. It does not explain an economic cause or the calibrated probability.\n- separator\n- paragraph: Step 1 of 4\n- button \"Next\":\n  - paragraph: Next\n- text: Five trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance.",
+      "geometry": {
+        "viewport": {
+          "width": 1672,
+          "height": 860
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1672,
+          "height": 60
+        },
+        "main": {
+          "x": 246,
+          "y": 0,
+          "width": 1180,
+          "height": 1402.5
+        },
+        "documentWidth": 1672,
+        "clientWidth": 1672,
+        "brand": {
+          "x": 326,
+          "y": 92,
+          "width": 1020,
+          "height": 35.84375
+        },
+        "mainStyle": {
+          "paddingTop": "76px",
+          "paddingBottom": "32px",
+          "classes": "stMainBlockContainer block-container st-emotion-cache-zy6yx3 e15ve43o4"
+        },
+        "customStyles": [
+          "\n    .stApp { background: #f8fafc; color: #172b43; }\n    /* Streamlit keeps a fixed header above the document. Content must clear it. */\n    .block-container { max-width: 1180px; padding-top: 4.75rem; padding-bottom: 2rem; }\n    [data-testid=\"stHeader\"] { background:#f8fafc; }\n    [data-testid=\"stSegmentedControl\"] { overflow:visible; }\n    [data-testid=\"stSegmentedControl\"] button { white-space:normal; height:auto; min-height:2.7rem; }\n    @media (max-width: 640px) {\n        .block-container { padding-top:4.75rem; padding-left:1rem; padding-right:1rem; }\n        [data-testid=\"stSegmentedControl\"] { width:100%; }\n    }\n    h1,h2,h3 { color:#172b43; letter-spacing:-.02em; font-family:Arial,sans-serif; }\n    h1 { font-size:clamp(1.85rem, 3vw, 2.4rem) !important; font-weight:700; }\n    h2 { font-size:1.65rem !important; }\n    h3 { font-size:1.15rem !important; }\n    p,li { font-family:Arial,sans-serif; line-height:1.55; }\n    .brand { font-size:1.4rem; font-weight:750; letter-spacing:-.04em; }\n    .brand-dot { display:inline-block; height:9px; width:9px; margin-right:9px; border-radius:50%; background:#267b86; }\n    .eyebrow { color:#597084; font-size:.82rem; font-weight:650; text-transform:uppercase; letter-spacing:.07em; }\n    .summary { font-size:1.08rem; max-width:700px; color:#425a70; }\n    .quiet-note { padding:.65rem .85rem; border-left:3px solid #ac6a24; background:#fff9ed"
+        ],
+        "buttons": [
+          {
+            "text": "",
+            "box": {
+              "x": 1565.03125,
+              "y": 16,
+              "width": 56.96875,
+              "height": 28
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1626,
+              "y": 15.5,
+              "width": 28,
+              "height": 28
+            }
+          },
+          {
+            "text": "Overview",
+            "box": {
+              "x": 326,
+              "y": 127.84375,
+              "width": 249.640625,
+              "height": 32
+            }
+          },
+          {
+            "text": "Walkthrough",
+            "box": {
+              "x": 574.640625,
+              "y": 127.84375,
+              "width": 269.375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Experiments",
+            "box": {
+              "x": 843.015625,
+              "y": 127.84375,
+              "width": 269.09375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Design",
+            "box": {
+              "x": 1111.109375,
+              "y": 127.84375,
+              "width": 234.890625,
+              "height": 32
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1296,
+              "y": 363.53125,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1296,
+              "y": 447.53125,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1252.4375,
+              "y": 487.90625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1274.828125,
+              "y": 487.90625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1297.21875,
+              "y": 487.90625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1319.609375,
+              "y": 487.90625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1252.4375,
+              "y": 930.234375,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1274.828125,
+              "y": 930.234375,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1297.21875,
+              "y": 930.234375,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1319.609375,
+              "y": 930.234375,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "Next",
+            "box": {
+              "x": 1101.671875,
+              "y": 1272.515625,
+              "width": 244.328125,
+              "height": 43.1875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "calibration-1672",
+      "capture_viewport": {
+        "width": 1672,
+        "height": 1555
+      },
+      "aria": "- banner\n- text: Investify\n- radiogroup \"Workspace\":\n  - radio \"Overview\":\n    - paragraph: Overview\n  - radio \"Walkthrough\" [checked]:\n    - paragraph: Walkthrough\n  - radio \"Experiments\":\n    - paragraph: Experiments\n  - radio \"Design\":\n    - paragraph: Design\n- paragraph: Recorded five-session research. Educational output only. No investment advice or order execution.\n- separator\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Case selection\n- radiogroup \"Walkthrough stage\":\n  - radio \"Decision\" [checked]\n  - paragraph: Decision\n  - radio \"Evidence\"\n  - paragraph: Evidence\n  - radio \"Risk profile\"\n  - paragraph: Risk profile\n  - radio \"Explanation check\"\n  - paragraph: Explanation check\n- heading \"Recorded decision\" [level=2]:\n  - text: Recorded decision\n  - link \"Link to heading\":\n    - /url: \"#recorded-decision\"\n- paragraph: NVDA / 2023-12-21 / 5 trading sessions / Fresh Alpaca, frozen classifier\n- paragraph: Model class\n- paragraph: Buy\n- paragraph: Calibrated probability\n- paragraph: 54.0%\n- paragraph: Probability of the recorded class, not an expected return.\n- button \"Show data\"\n- button \"Download as PNG\"\n- button \"Copy Vega-Lite spec\"\n- button \"Fullscreen\"\n- img: 0.00 0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 probability Buy Hold Sell class\n- text: All 186 fresh calibrated decisions are Buy. Better calibration loss alone does not establish useful predictions.\n- group:\n  - text: keyboard_arrow_down\n  - paragraph: Why the fresh calibration always chooses Buy\n  - paragraph: The saved Buy map never outputs below 0.5345, while Hold and Sell never output above 0.3140. Dividing all three outputs by the same positive total preserves their ranking. These fixed maps therefore always rank Buy first.\n  - paragraph: These bounds describe map outputs before normalization, not the final class probabilities. The result applies to these fresh maps only. Useful prediction remains unestablished.\n- heading \"Largest recorded contributions\" [level=3]:\n  - text: Largest recorded contributions\n  - link \"Link to heading\":\n    - /url: \"#largest-recorded-contributions\"\n- button \"Show/hide columns\"\n- button \"Download as CSV\"\n- button \"Search\"\n- button \"Fullscreen\"\n- paragraph: TreeSHAP describes the raw model score. It does not explain an economic cause or the calibrated probability.\n- separator\n- paragraph: Step 1 of 4\n- button \"Next\":\n  - paragraph: Next\n- text: Five trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance.",
+      "geometry": {
+        "viewport": {
+          "width": 1672,
+          "height": 860
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1672,
+          "height": 60
+        },
+        "main": {
+          "x": 246,
+          "y": 0,
+          "width": 1180,
+          "height": 1544.46875
+        },
+        "documentWidth": 1672,
+        "clientWidth": 1672,
+        "brand": {
+          "x": 326,
+          "y": 92,
+          "width": 1020,
+          "height": 35.84375
+        },
+        "mainStyle": {
+          "paddingTop": "76px",
+          "paddingBottom": "32px",
+          "classes": "stMainBlockContainer block-container st-emotion-cache-zy6yx3 e15ve43o4"
+        },
+        "customStyles": [
+          "\n    .stApp { background: #f8fafc; color: #172b43; }\n    /* Streamlit keeps a fixed header above the document. Content must clear it. */\n    .block-container { max-width: 1180px; padding-top: 4.75rem; padding-bottom: 2rem; }\n    [data-testid=\"stHeader\"] { background:#f8fafc; }\n    [data-testid=\"stSegmentedControl\"] { overflow:visible; }\n    [data-testid=\"stSegmentedControl\"] button { white-space:normal; height:auto; min-height:2.7rem; }\n    @media (max-width: 640px) {\n        .block-container { padding-top:4.75rem; padding-left:1rem; padding-right:1rem; }\n        [data-testid=\"stSegmentedControl\"] { width:100%; }\n    }\n    h1,h2,h3 { color:#172b43; letter-spacing:-.02em; font-family:Arial,sans-serif; }\n    h1 { font-size:clamp(1.85rem, 3vw, 2.4rem) !important; font-weight:700; }\n    h2 { font-size:1.65rem !important; }\n    h3 { font-size:1.15rem !important; }\n    p,li { font-family:Arial,sans-serif; line-height:1.55; }\n    .brand { font-size:1.4rem; font-weight:750; letter-spacing:-.04em; }\n    .brand-dot { display:inline-block; height:9px; width:9px; margin-right:9px; border-radius:50%; background:#267b86; }\n    .eyebrow { color:#597084; font-size:.82rem; font-weight:650; text-transform:uppercase; letter-spacing:.07em; }\n    .summary { font-size:1.08rem; max-width:700px; color:#425a70; }\n    .quiet-note { padding:.65rem .85rem; border-left:3px solid #ac6a24; background:#fff9ed"
+        ],
+        "buttons": [
+          {
+            "text": "",
+            "box": {
+              "x": 1565.03125,
+              "y": 16,
+              "width": 56.96875,
+              "height": 28
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1626,
+              "y": 15.5,
+              "width": 28,
+              "height": 28
+            }
+          },
+          {
+            "text": "Overview",
+            "box": {
+              "x": 326,
+              "y": 127.84375,
+              "width": 249.640625,
+              "height": 32
+            }
+          },
+          {
+            "text": "Walkthrough",
+            "box": {
+              "x": 574.640625,
+              "y": 127.84375,
+              "width": 269.375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Experiments",
+            "box": {
+              "x": 843.015625,
+              "y": 127.84375,
+              "width": 269.09375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Design",
+            "box": {
+              "x": 1111.109375,
+              "y": 127.84375,
+              "width": 234.890625,
+              "height": 32
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1296,
+              "y": 363.53125,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1296,
+              "y": 447.53125,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1252.4375,
+              "y": 487.90625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1274.828125,
+              "y": 487.90625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1297.21875,
+              "y": 487.90625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1319.609375,
+              "y": 487.90625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1252.4375,
+              "y": 1072.203125,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1274.828125,
+              "y": 1072.203125,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1297.21875,
+              "y": 1072.203125,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1319.609375,
+              "y": 1072.203125,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "Next",
+            "box": {
+              "x": 1101.671875,
+              "y": 1414.484375,
+              "width": 244.328125,
+              "height": 43.1875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "evidence-1672",
+      "capture_viewport": {
+        "width": 1672,
+        "height": 1224
+      },
+      "aria": "- banner\n- text: Investify\n- radiogroup \"Workspace\":\n  - radio \"Overview\":\n    - paragraph: Overview\n  - radio \"Walkthrough\" [checked]:\n    - paragraph: Walkthrough\n  - radio \"Experiments\":\n    - paragraph: Experiments\n  - radio \"Design\":\n    - paragraph: Design\n- paragraph: Recorded five-session research. Educational output only. No investment advice or order execution.\n- separator\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Case selection\n- radiogroup \"Walkthrough stage\":\n  - radio \"Decision\"\n  - paragraph: Decision\n  - radio \"Evidence\" [checked]\n  - paragraph: Evidence\n  - radio \"Risk profile\"\n  - paragraph: Risk profile\n  - radio \"Explanation check\"\n  - paragraph: Explanation check\n- heading \"Evidence behind the decision\" [level=2]:\n  - text: Evidence behind the decision\n  - link \"Link to heading\":\n    - /url: \"#evidence-behind-the-decision\"\n- paragraph: NVDA / 2023-12-21 / 5 trading sessions / Fresh Alpaca, frozen classifier\n- radiogroup \"Evidence family\":\n  - radio \"Technical analysis\" [checked]\n  - paragraph: Technical analysis\n  - radio \"News sentiment\"\n  - paragraph: News sentiment\n- group:\n  - combobox \"Inspect a feature\": Relative strength index\n  - button \"Open\"\n- paragraph: Relative strength index\n- paragraph: \"58.82\"\n- paragraph: Raw-score contribution\n- paragraph: \"-0.0271\"\n- heading \"What this input means\" [level=3]:\n  - text: What this input means\n  - link \"Link to heading\":\n    - /url: \"#what-this-input-means\"\n- paragraph: Recent price momentum on a zero-to-one-hundred scale, calculated here over fourteen sessions.\n- paragraph: opposes the recorded Buy class.\n- paragraph: News features come from headlines. The separate social study is absent from this classifier.\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: All eleven feature values and definitions\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Record provenance and raw evidence\n- separator\n- button \"Previous\":\n  - paragraph: Previous\n- paragraph: Step 2 of 4\n- button \"Next\":\n  - paragraph: Next\n- text: Five trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance.",
+      "geometry": {
+        "viewport": {
+          "width": 1672,
+          "height": 860
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1672,
+          "height": 60
+        },
+        "main": {
+          "x": 246,
+          "y": 0,
+          "width": 1180,
+          "height": 1213.328125
+        },
+        "documentWidth": 1672,
+        "clientWidth": 1672,
+        "brand": {
+          "x": 326,
+          "y": 92,
+          "width": 1020,
+          "height": 35.84375
+        },
+        "mainStyle": {
+          "paddingTop": "76px",
+          "paddingBottom": "32px",
+          "classes": "stMainBlockContainer block-container st-emotion-cache-zy6yx3 e15ve43o4"
+        },
+        "customStyles": [
+          "\n    .stApp { background: #f8fafc; color: #172b43; }\n    /* Streamlit keeps a fixed header above the document. Content must clear it. */\n    .block-container { max-width: 1180px; padding-top: 4.75rem; padding-bottom: 2rem; }\n    [data-testid=\"stHeader\"] { background:#f8fafc; }\n    [data-testid=\"stSegmentedControl\"] { overflow:visible; }\n    [data-testid=\"stSegmentedControl\"] button { white-space:normal; height:auto; min-height:2.7rem; }\n    @media (max-width: 640px) {\n        .block-container { padding-top:4.75rem; padding-left:1rem; padding-right:1rem; }\n        [data-testid=\"stSegmentedControl\"] { width:100%; }\n    }\n    h1,h2,h3 { color:#172b43; letter-spacing:-.02em; font-family:Arial,sans-serif; }\n    h1 { font-size:clamp(1.85rem, 3vw, 2.4rem) !important; font-weight:700; }\n    h2 { font-size:1.65rem !important; }\n    h3 { font-size:1.15rem !important; }\n    p,li { font-family:Arial,sans-serif; line-height:1.55; }\n    .brand { font-size:1.4rem; font-weight:750; letter-spacing:-.04em; }\n    .brand-dot { display:inline-block; height:9px; width:9px; margin-right:9px; border-radius:50%; background:#267b86; }\n    .eyebrow { color:#597084; font-size:.82rem; font-weight:650; text-transform:uppercase; letter-spacing:.07em; }\n    .summary { font-size:1.08rem; max-width:700px; color:#425a70; }\n    .quiet-note { padding:.65rem .85rem; border-left:3px solid #ac6a24; background:#fff9ed"
+        ],
+        "buttons": [
+          {
+            "text": "",
+            "box": {
+              "x": 1565.03125,
+              "y": 16,
+              "width": 56.96875,
+              "height": 28
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1626,
+              "y": 15.5,
+              "width": 28,
+              "height": 28
+            }
+          },
+          {
+            "text": "Overview",
+            "box": {
+              "x": 326,
+              "y": 127.84375,
+              "width": 249.640625,
+              "height": 32
+            }
+          },
+          {
+            "text": "Walkthrough",
+            "box": {
+              "x": 574.640625,
+              "y": 127.84375,
+              "width": 269.375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Experiments",
+            "box": {
+              "x": 843.015625,
+              "y": 127.84375,
+              "width": 269.09375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Design",
+            "box": {
+              "x": 1111.109375,
+              "y": 127.84375,
+              "width": 234.890625,
+              "height": 32
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1296,
+              "y": 363.53125,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1296,
+              "y": 447.53125,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1313,
+              "y": 604.90625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1235.4375,
+              "y": 958.34375,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1257.828125,
+              "y": 958.34375,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1280.21875,
+              "y": 958.34375,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1302.609375,
+              "y": 958.34375,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "Previous",
+            "box": {
+              "x": 326,
+              "y": 1083.34375,
+              "width": 244.328125,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "Next",
+            "box": {
+              "x": 1101.671875,
+              "y": 1083.34375,
+              "width": 244.328125,
+              "height": 43.1875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "profile-cautious-1672",
+      "capture_viewport": {
+        "width": 1672,
+        "height": 1257
+      },
+      "aria": "- banner\n- text: Investify\n- radiogroup \"Workspace\":\n  - radio \"Overview\":\n    - paragraph: Overview\n  - radio \"Walkthrough\" [checked]:\n    - paragraph: Walkthrough\n  - radio \"Experiments\":\n    - paragraph: Experiments\n  - radio \"Design\":\n    - paragraph: Design\n- paragraph: Recorded five-session research. Educational output only. No investment advice or order execution.\n- separator\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Case selection\n- radiogroup \"Walkthrough stage\":\n  - radio \"Decision\"\n  - paragraph: Decision\n  - radio \"Evidence\"\n  - paragraph: Evidence\n  - radio \"Risk profile\" [checked]\n  - paragraph: Risk profile\n  - radio \"Explanation check\"\n  - paragraph: Explanation check\n- heading \"A profile changes the comparison\" [level=2]:\n  - text: A profile changes the comparison\n  - link \"Link to heading\":\n    - /url: \"#a-profile-changes-the-comparison\"\n- paragraph: The profile weights a separate technical/news blend. It leaves the recorded classifier unchanged.\n- button \"Cautious example\":\n  - paragraph: Cautious example\n- button \"Higher-tolerance example\":\n  - paragraph: Higher-tolerance example\n- button \"Clear profile\":\n  - paragraph: Clear profile\n- paragraph: \"Fictional example: cautious. These answers are demonstration scenarios, not participant observations.\"\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Enter or edit the eight answers\n- paragraph: \"Capacity Aggressive, tolerance Conservative; reconciled R = 0.000. Binding axis: tolerance.\"\n- paragraph: Fixed comparison, R = 0.5\n- paragraph: Sell\n- paragraph: Profile comparison, R = 0.000\n- paragraph: Hold\n- paragraph: \"Recorded classifier: Buy, probability 54.0%. It does not use this prototype profile.\"\n- button \"Show/hide columns\"\n- button \"Download as CSV\"\n- button \"Search\"\n- button \"Fullscreen\"\n- paragraph: Weighted z-scores, not probabilities or expected returns. Suitability and predictive performance are unvalidated.\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Calculation and scaling details\n- separator\n- button \"Previous\":\n  - paragraph: Previous\n- paragraph: Step 3 of 4\n- button \"Next\":\n  - paragraph: Next\n- text: Five trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance.",
+      "geometry": {
+        "viewport": {
+          "width": 1672,
+          "height": 860
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1672,
+          "height": 60
+        },
+        "main": {
+          "x": 246,
+          "y": 0,
+          "width": 1180,
+          "height": 1246.90625
+        },
+        "documentWidth": 1672,
+        "clientWidth": 1672,
+        "brand": {
+          "x": 326,
+          "y": 92,
+          "width": 1020,
+          "height": 35.84375
+        },
+        "mainStyle": {
+          "paddingTop": "76px",
+          "paddingBottom": "32px",
+          "classes": "stMainBlockContainer block-container st-emotion-cache-zy6yx3 e15ve43o4"
+        },
+        "customStyles": [
+          "\n    .stApp { background: #f8fafc; color: #172b43; }\n    /* Streamlit keeps a fixed header above the document. Content must clear it. */\n    .block-container { max-width: 1180px; padding-top: 4.75rem; padding-bottom: 2rem; }\n    [data-testid=\"stHeader\"] { background:#f8fafc; }\n    [data-testid=\"stSegmentedControl\"] { overflow:visible; }\n    [data-testid=\"stSegmentedControl\"] button { white-space:normal; height:auto; min-height:2.7rem; }\n    @media (max-width: 640px) {\n        .block-container { padding-top:4.75rem; padding-left:1rem; padding-right:1rem; }\n        [data-testid=\"stSegmentedControl\"] { width:100%; }\n    }\n    h1,h2,h3 { color:#172b43; letter-spacing:-.02em; font-family:Arial,sans-serif; }\n    h1 { font-size:clamp(1.85rem, 3vw, 2.4rem) !important; font-weight:700; }\n    h2 { font-size:1.65rem !important; }\n    h3 { font-size:1.15rem !important; }\n    p,li { font-family:Arial,sans-serif; line-height:1.55; }\n    .brand { font-size:1.4rem; font-weight:750; letter-spacing:-.04em; }\n    .brand-dot { display:inline-block; height:9px; width:9px; margin-right:9px; border-radius:50%; background:#267b86; }\n    .eyebrow { color:#597084; font-size:.82rem; font-weight:650; text-transform:uppercase; letter-spacing:.07em; }\n    .summary { font-size:1.08rem; max-width:700px; color:#425a70; }\n    .quiet-note { padding:.65rem .85rem; border-left:3px solid #ac6a24; background:#fff9ed"
+        ],
+        "buttons": [
+          {
+            "text": "",
+            "box": {
+              "x": 1565.03125,
+              "y": 16,
+              "width": 56.96875,
+              "height": 28
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1626,
+              "y": 15.5,
+              "width": 28,
+              "height": 28
+            }
+          },
+          {
+            "text": "Overview",
+            "box": {
+              "x": 326,
+              "y": 127.84375,
+              "width": 249.640625,
+              "height": 32
+            }
+          },
+          {
+            "text": "Walkthrough",
+            "box": {
+              "x": 574.640625,
+              "y": 127.84375,
+              "width": 269.375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Experiments",
+            "box": {
+              "x": 843.015625,
+              "y": 127.84375,
+              "width": 269.09375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Design",
+            "box": {
+              "x": 1111.109375,
+              "y": 127.84375,
+              "width": 234.890625,
+              "height": 32
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1296,
+              "y": 363.53125,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1296,
+              "y": 447.53125,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "Cautious example",
+            "box": {
+              "x": 326,
+              "y": 495.015625,
+              "width": 138.0625,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "Higher-tolerance example",
+            "box": {
+              "x": 534,
+              "y": 495.015625,
+              "width": 186.3125,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "Clear profile",
+            "box": {
+              "x": 742,
+              "y": 495.015625,
+              "width": 101.484375,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 771,
+              "y": 692.890625,
+              "width": 24,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 795,
+              "y": 692.890625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 771,
+              "y": 776.890625,
+              "width": 24,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 795,
+              "y": 776.890625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 771,
+              "y": 860.890625,
+              "width": 24,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 795,
+              "y": 860.890625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1256,
+              "y": 692.890625,
+              "width": 24,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1280,
+              "y": 692.890625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1256,
+              "y": 776.890625,
+              "width": 24,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1280,
+              "y": 776.890625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1256,
+              "y": 944.890625,
+              "width": 24,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1280,
+              "y": 944.890625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1256,
+              "y": 1028.890625,
+              "width": 24,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1280,
+              "y": 1028.890625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1256,
+              "y": 1112.890625,
+              "width": 24,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1280,
+              "y": 1112.890625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 359,
+              "y": 1167.890625,
+              "width": 103.046875,
+              "height": 40
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1252.4375,
+              "y": 823.640625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1274.828125,
+              "y": 823.640625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1297.21875,
+              "y": 823.640625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1319.609375,
+              "y": 823.640625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "Previous",
+            "box": {
+              "x": 326,
+              "y": 1116.921875,
+              "width": 244.328125,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "Next",
+            "box": {
+              "x": 1101.671875,
+              "y": 1116.921875,
+              "width": 244.328125,
+              "height": 43.1875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "profile-tolerant-1672",
+      "capture_viewport": {
+        "width": 1672,
+        "height": 1257
+      },
+      "aria": "- banner\n- text: Investify\n- radiogroup \"Workspace\":\n  - radio \"Overview\":\n    - paragraph: Overview\n  - radio \"Walkthrough\" [checked]:\n    - paragraph: Walkthrough\n  - radio \"Experiments\":\n    - paragraph: Experiments\n  - radio \"Design\":\n    - paragraph: Design\n- paragraph: Recorded five-session research. Educational output only. No investment advice or order execution.\n- separator\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Case selection\n- radiogroup \"Walkthrough stage\":\n  - radio \"Decision\"\n  - paragraph: Decision\n  - radio \"Evidence\"\n  - paragraph: Evidence\n  - radio \"Risk profile\" [checked]\n  - paragraph: Risk profile\n  - radio \"Explanation check\"\n  - paragraph: Explanation check\n- heading \"A profile changes the comparison\" [level=2]:\n  - text: A profile changes the comparison\n  - link \"Link to heading\":\n    - /url: \"#a-profile-changes-the-comparison\"\n- paragraph: The profile weights a separate technical/news blend. It leaves the recorded classifier unchanged.\n- button \"Cautious example\":\n  - paragraph: Cautious example\n- button \"Higher-tolerance example\":\n  - paragraph: Higher-tolerance example\n- button \"Clear profile\":\n  - paragraph: Clear profile\n- paragraph: \"Fictional example: higher tolerance. These answers are demonstration scenarios, not participant observations.\"\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Enter or edit the eight answers\n- paragraph: \"Capacity Aggressive, tolerance Aggressive; reconciled R = 1.000. Binding axis: both.\"\n- paragraph: Fixed comparison, R = 0.5\n- paragraph: Sell\n- paragraph: Profile comparison, R = 1.000\n- paragraph: Sell\n- paragraph: \"Recorded classifier: Buy, probability 54.0%. It does not use this prototype profile.\"\n- button \"Show/hide columns\"\n- button \"Download as CSV\"\n- button \"Search\"\n- button \"Fullscreen\"\n- paragraph: Weighted z-scores, not probabilities or expected returns. Suitability and predictive performance are unvalidated.\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Calculation and scaling details\n- separator\n- button \"Previous\":\n  - paragraph: Previous\n- paragraph: Step 3 of 4\n- button \"Next\":\n  - paragraph: Next\n- text: Five trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance.",
+      "geometry": {
+        "viewport": {
+          "width": 1672,
+          "height": 860
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1672,
+          "height": 60
+        },
+        "main": {
+          "x": 246,
+          "y": 0,
+          "width": 1180,
+          "height": 1246.90625
+        },
+        "documentWidth": 1672,
+        "clientWidth": 1672,
+        "brand": {
+          "x": 326,
+          "y": 92,
+          "width": 1020,
+          "height": 35.84375
+        },
+        "mainStyle": {
+          "paddingTop": "76px",
+          "paddingBottom": "32px",
+          "classes": "stMainBlockContainer block-container st-emotion-cache-zy6yx3 e15ve43o4"
+        },
+        "customStyles": [
+          "\n    .stApp { background: #f8fafc; color: #172b43; }\n    /* Streamlit keeps a fixed header above the document. Content must clear it. */\n    .block-container { max-width: 1180px; padding-top: 4.75rem; padding-bottom: 2rem; }\n    [data-testid=\"stHeader\"] { background:#f8fafc; }\n    [data-testid=\"stSegmentedControl\"] { overflow:visible; }\n    [data-testid=\"stSegmentedControl\"] button { white-space:normal; height:auto; min-height:2.7rem; }\n    @media (max-width: 640px) {\n        .block-container { padding-top:4.75rem; padding-left:1rem; padding-right:1rem; }\n        [data-testid=\"stSegmentedControl\"] { width:100%; }\n    }\n    h1,h2,h3 { color:#172b43; letter-spacing:-.02em; font-family:Arial,sans-serif; }\n    h1 { font-size:clamp(1.85rem, 3vw, 2.4rem) !important; font-weight:700; }\n    h2 { font-size:1.65rem !important; }\n    h3 { font-size:1.15rem !important; }\n    p,li { font-family:Arial,sans-serif; line-height:1.55; }\n    .brand { font-size:1.4rem; font-weight:750; letter-spacing:-.04em; }\n    .brand-dot { display:inline-block; height:9px; width:9px; margin-right:9px; border-radius:50%; background:#267b86; }\n    .eyebrow { color:#597084; font-size:.82rem; font-weight:650; text-transform:uppercase; letter-spacing:.07em; }\n    .summary { font-size:1.08rem; max-width:700px; color:#425a70; }\n    .quiet-note { padding:.65rem .85rem; border-left:3px solid #ac6a24; background:#fff9ed"
+        ],
+        "buttons": [
+          {
+            "text": "",
+            "box": {
+              "x": 1565.03125,
+              "y": 16,
+              "width": 56.96875,
+              "height": 28
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1626,
+              "y": 15.5,
+              "width": 28,
+              "height": 28
+            }
+          },
+          {
+            "text": "Overview",
+            "box": {
+              "x": 326,
+              "y": 127.84375,
+              "width": 249.640625,
+              "height": 32
+            }
+          },
+          {
+            "text": "Walkthrough",
+            "box": {
+              "x": 574.640625,
+              "y": 127.84375,
+              "width": 269.375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Experiments",
+            "box": {
+              "x": 843.015625,
+              "y": 127.84375,
+              "width": 269.09375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Design",
+            "box": {
+              "x": 1111.109375,
+              "y": 127.84375,
+              "width": 234.890625,
+              "height": 32
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1296,
+              "y": 363.53125,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1296,
+              "y": 447.53125,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "Cautious example",
+            "box": {
+              "x": 326,
+              "y": 495.015625,
+              "width": 138.0625,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "Higher-tolerance example",
+            "box": {
+              "x": 534,
+              "y": 495.015625,
+              "width": 186.3125,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "Clear profile",
+            "box": {
+              "x": 742,
+              "y": 495.015625,
+              "width": 101.484375,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 771,
+              "y": 692.890625,
+              "width": 24,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 795,
+              "y": 692.890625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 771,
+              "y": 776.890625,
+              "width": 24,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 795,
+              "y": 776.890625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 771,
+              "y": 860.890625,
+              "width": 24,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 795,
+              "y": 860.890625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1256,
+              "y": 692.890625,
+              "width": 24,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1280,
+              "y": 692.890625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1256,
+              "y": 776.890625,
+              "width": 24,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1280,
+              "y": 776.890625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1256,
+              "y": 944.890625,
+              "width": 24,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1280,
+              "y": 944.890625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1256,
+              "y": 1028.890625,
+              "width": 24,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1280,
+              "y": 1028.890625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1256,
+              "y": 1112.890625,
+              "width": 24,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1280,
+              "y": 1112.890625,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 359,
+              "y": 1167.890625,
+              "width": 103.046875,
+              "height": 40
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1252.4375,
+              "y": 823.640625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1274.828125,
+              "y": 823.640625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1297.21875,
+              "y": 823.640625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1319.609375,
+              "y": 823.640625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "Previous",
+            "box": {
+              "x": 326,
+              "y": 1116.921875,
+              "width": 244.328125,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "Next",
+            "box": {
+              "x": 1101.671875,
+              "y": 1116.921875,
+              "width": 244.328125,
+              "height": 43.1875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "explanation-rejected-1672",
+      "capture_viewport": {
+        "width": 1672,
+        "height": 1617
+      },
+      "aria": "- banner\n- text: Investify\n- radiogroup \"Workspace\":\n  - radio \"Overview\":\n    - paragraph: Overview\n  - radio \"Walkthrough\" [checked]:\n    - paragraph: Walkthrough\n  - radio \"Experiments\":\n    - paragraph: Experiments\n  - radio \"Design\":\n    - paragraph: Design\n- paragraph: Recorded five-session research. Educational output only. No investment advice or order execution.\n- separator\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Case selection\n- radiogroup \"Walkthrough stage\":\n  - radio \"Decision\"\n  - paragraph: Decision\n  - radio \"Evidence\"\n  - paragraph: Evidence\n  - radio \"Risk profile\"\n  - paragraph: Risk profile\n  - radio \"Explanation check\" [checked]\n  - paragraph: Explanation check\n- heading \"An explanation must match its evidence\" [level=2]:\n  - text: An explanation must match its evidence\n  - link \"Link to heading\":\n    - /url: \"#an-explanation-must-match-its-evidence\"\n- paragraph: NVDA / 2023-12-21 / 5 trading sessions / Fresh Alpaca, frozen classifier\n- button \"Inject wrong probability\":\n  - paragraph: Inject wrong probability\n- button \"Restore record facts\":\n  - paragraph: Restore record facts\n- heading \"Editable candidate\" [level=3]:\n  - text: Editable candidate\n  - link \"Link to heading\":\n    - /url: \"#editable-candidate\"\n- textbox \"Explanation to check\":\n  - /placeholder: \"\"\n  - text: \"NVDA decision for session 2023-12-21 (5-day horizon): Buy. Calibrated confidence in this decision: 1.00%. Full probability breakdown -- Buy: 53.97%, Hold: 14.33%, Sell: 31.70%. macd_hist (value 0.0963) supports the Buy decision with a SHAP contribution of +0.1874, ranked #1 of 5. dispersion (value 0.2168) supports the Buy decision with a SHAP contribution of +0.1782, ranked #2 of 5. obv_slope (value 92570766.4286) supports the Buy decision with a SHAP contribution of +0.1477, ranked #3 of 5. mention_volume (value 10.0000) opposes the Buy decision with a SHAP contribution of -0.1312, ranked #4 of 5. mean_polarity (value -0.1419) supports the Buy decision with a SHAP contribution of +0.0759, ranked #5 of 5. Research and educational output only. Not investment advice, not a recommendation to buy or sell any security.\"\n- paragraph: The structured payload retains the correct record facts. This makes a displayed-text error observable.\n- button \"Check explanation\":\n  - paragraph: Check explanation\n- heading \"Checked output\" [level=3]:\n  - text: Checked output\n  - link \"Link to heading\":\n    - /url: \"#checked-output\"\n- alert:\n  - paragraph: Candidate rejected\n- status:\n  - paragraph: Verified fallback emitted\n- paragraph: The displayed candidate conflicts with the record. The deterministic replacement passes its own check.\n- text: \"NVDA decision for session 2023-12-21 (5-day horizon): Buy. Calibrated confidence in this decision: 53.97%. Full probability breakdown -- Buy: 53.97%, Hold: 14.33%, Sell: 31.70%. macd_hist (value 0.0963) supports the Buy decision with a SHAP contribution of +0.1874, ranked #1 of 5. dispersion (value 0.2168) supports the Buy decision with a SHAP contribution of +0.1782, ranked #2 of 5. obv_slope (value 92570766.4286) supports the Buy decision with a SHAP contribution of +0.1477, ranked #3 of 5. mention_volume (value 10.0000) opposes the Buy decision with a SHAP contribution of -0.1312, ranked #4 of 5. mean_polarity (value -0.1419) supports the Buy decision with a SHAP contribution of +0.0759, ranked #5 of 5. Research and educational output only. Not investment advice, not a recommendation to buy or sell any security.\"\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: What the verifier checked\n- paragraph: Strict checking supports maintained claim patterns and record values. Arbitrary market prose and human usefulness remain unvalidated.\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Complete deterministic indicator guide\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Optional configured language-model request\n- separator\n- button \"Previous\":\n  - paragraph: Previous\n- paragraph: Step 4 of 4\n- button \"Recorded experiments\":\n  - paragraph: Recorded experiments\n- text: Five trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance.",
+      "geometry": {
+        "viewport": {
+          "width": 1672,
+          "height": 860
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1672,
+          "height": 60
+        },
+        "main": {
+          "x": 246,
+          "y": 0,
+          "width": 1180,
+          "height": 1606.71875
+        },
+        "documentWidth": 1672,
+        "clientWidth": 1672,
+        "brand": {
+          "x": 326,
+          "y": 92,
+          "width": 1020,
+          "height": 35.84375
+        },
+        "mainStyle": {
+          "paddingTop": "76px",
+          "paddingBottom": "32px",
+          "classes": "stMainBlockContainer block-container st-emotion-cache-zy6yx3 e15ve43o4"
+        },
+        "customStyles": [
+          "\n    .stApp { background: #f8fafc; color: #172b43; }\n    /* Streamlit keeps a fixed header above the document. Content must clear it. */\n    .block-container { max-width: 1180px; padding-top: 4.75rem; padding-bottom: 2rem; }\n    [data-testid=\"stHeader\"] { background:#f8fafc; }\n    [data-testid=\"stSegmentedControl\"] { overflow:visible; }\n    [data-testid=\"stSegmentedControl\"] button { white-space:normal; height:auto; min-height:2.7rem; }\n    @media (max-width: 640px) {\n        .block-container { padding-top:4.75rem; padding-left:1rem; padding-right:1rem; }\n        [data-testid=\"stSegmentedControl\"] { width:100%; }\n    }\n    h1,h2,h3 { color:#172b43; letter-spacing:-.02em; font-family:Arial,sans-serif; }\n    h1 { font-size:clamp(1.85rem, 3vw, 2.4rem) !important; font-weight:700; }\n    h2 { font-size:1.65rem !important; }\n    h3 { font-size:1.15rem !important; }\n    p,li { font-family:Arial,sans-serif; line-height:1.55; }\n    .brand { font-size:1.4rem; font-weight:750; letter-spacing:-.04em; }\n    .brand-dot { display:inline-block; height:9px; width:9px; margin-right:9px; border-radius:50%; background:#267b86; }\n    .eyebrow { color:#597084; font-size:.82rem; font-weight:650; text-transform:uppercase; letter-spacing:.07em; }\n    .summary { font-size:1.08rem; max-width:700px; color:#425a70; }\n    .quiet-note { padding:.65rem .85rem; border-left:3px solid #ac6a24; background:#fff9ed"
+        ],
+        "buttons": [
+          {
+            "text": "",
+            "box": {
+              "x": 1565.03125,
+              "y": 16,
+              "width": 56.96875,
+              "height": 28
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1626,
+              "y": 15.5,
+              "width": 28,
+              "height": 28
+            }
+          },
+          {
+            "text": "Overview",
+            "box": {
+              "x": 326,
+              "y": 127.84375,
+              "width": 249.640625,
+              "height": 32
+            }
+          },
+          {
+            "text": "Walkthrough",
+            "box": {
+              "x": 574.640625,
+              "y": 127.84375,
+              "width": 269.375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Experiments",
+            "box": {
+              "x": 843.015625,
+              "y": 127.84375,
+              "width": 269.09375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Design",
+            "box": {
+              "x": 1111.109375,
+              "y": 127.84375,
+              "width": 234.890625,
+              "height": 32
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1296,
+              "y": 363.53125,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1296,
+              "y": 447.53125,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "Inject wrong probability",
+            "box": {
+              "x": 326,
+              "y": 491.90625,
+              "width": 169.1875,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "Restore record facts",
+            "box": {
+              "x": 535.328125,
+              "y": 491.90625,
+              "width": 152.0625,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "Check explanation",
+            "box": {
+              "x": 326,
+              "y": 996.546875,
+              "width": 141.1875,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1235.4375,
+              "y": 1258.046875,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1257.828125,
+              "y": 1258.046875,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1280.21875,
+              "y": 1258.046875,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1302.609375,
+              "y": 1258.046875,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "Previous",
+            "box": {
+              "x": 326,
+              "y": 1476.734375,
+              "width": 244.328125,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "Recorded experiments",
+            "box": {
+              "x": 1101.671875,
+              "y": 1476.734375,
+              "width": 244.328125,
+              "height": 43.1875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "explanation-accepted-1672",
+      "capture_viewport": {
+        "width": 1672,
+        "height": 1485
+      },
+      "aria": "- banner\n- text: Investify\n- radiogroup \"Workspace\":\n  - radio \"Overview\":\n    - paragraph: Overview\n  - radio \"Walkthrough\" [checked]:\n    - paragraph: Walkthrough\n  - radio \"Experiments\":\n    - paragraph: Experiments\n  - radio \"Design\":\n    - paragraph: Design\n- paragraph: Recorded five-session research. Educational output only. No investment advice or order execution.\n- separator\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Case selection\n- radiogroup \"Walkthrough stage\":\n  - radio \"Decision\"\n  - paragraph: Decision\n  - radio \"Evidence\"\n  - paragraph: Evidence\n  - radio \"Risk profile\"\n  - paragraph: Risk profile\n  - radio \"Explanation check\" [checked]\n  - paragraph: Explanation check\n- heading \"An explanation must match its evidence\" [level=2]:\n  - text: An explanation must match its evidence\n  - link \"Link to heading\":\n    - /url: \"#an-explanation-must-match-its-evidence\"\n- paragraph: NVDA / 2023-12-21 / 5 trading sessions / Fresh Alpaca, frozen classifier\n- button \"Inject wrong probability\":\n  - paragraph: Inject wrong probability\n- button \"Restore record facts\":\n  - paragraph: Restore record facts\n- heading \"Editable candidate\" [level=3]:\n  - text: Editable candidate\n  - link \"Link to heading\":\n    - /url: \"#editable-candidate\"\n- textbox \"Explanation to check\":\n  - /placeholder: \"\"\n  - text: \"NVDA decision for session 2023-12-21 (5-day horizon): Buy. Calibrated confidence in this decision: 53.97%. Full probability breakdown -- Buy: 53.97%, Hold: 14.33%, Sell: 31.70%. macd_hist (value 0.0963) supports the Buy decision with a SHAP contribution of +0.1874, ranked #1 of 5. dispersion (value 0.2168) supports the Buy decision with a SHAP contribution of +0.1782, ranked #2 of 5. obv_slope (value 92570766.4286) supports the Buy decision with a SHAP contribution of +0.1477, ranked #3 of 5. mention_volume (value 10.0000) opposes the Buy decision with a SHAP contribution of -0.1312, ranked #4 of 5. mean_polarity (value -0.1419) supports the Buy decision with a SHAP contribution of +0.0759, ranked #5 of 5. Research and educational output only. Not investment advice, not a recommendation to buy or sell any security.\"\n- paragraph: The structured payload retains the correct record facts. This makes a displayed-text error observable.\n- button \"Check explanation\":\n  - paragraph: Check explanation\n- heading \"Checked output\" [level=3]:\n  - text: Checked output\n  - link \"Link to heading\":\n    - /url: \"#checked-output\"\n- status:\n  - paragraph: Candidate accepted\n- text: \"NVDA decision for session 2023-12-21 (5-day horizon): Buy. Calibrated confidence in this decision: 53.97%. Full probability breakdown -- Buy: 53.97%, Hold: 14.33%, Sell: 31.70%. macd_hist (value 0.0963) supports the Buy decision with a SHAP contribution of +0.1874, ranked #1 of 5. dispersion (value 0.2168) supports the Buy decision with a SHAP contribution of +0.1782, ranked #2 of 5. obv_slope (value 92570766.4286) supports the Buy decision with a SHAP contribution of +0.1477, ranked #3 of 5. mention_volume (value 10.0000) opposes the Buy decision with a SHAP contribution of -0.1312, ranked #4 of 5. mean_polarity (value -0.1419) supports the Buy decision with a SHAP contribution of +0.0759, ranked #5 of 5. Research and educational output only. Not investment advice, not a recommendation to buy or sell any security.\"\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: What the verifier checked\n- paragraph: Strict checking supports maintained claim patterns and record values. Arbitrary market prose and human usefulness remain unvalidated.\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Complete deterministic indicator guide\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Optional configured language-model request\n- separator\n- button \"Previous\":\n  - paragraph: Previous\n- paragraph: Step 4 of 4\n- button \"Recorded experiments\":\n  - paragraph: Recorded experiments\n- text: Five trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance.",
+      "geometry": {
+        "viewport": {
+          "width": 1672,
+          "height": 860
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1672,
+          "height": 60
+        },
+        "main": {
+          "x": 246,
+          "y": 0,
+          "width": 1180,
+          "height": 1474.546875
+        },
+        "documentWidth": 1672,
+        "clientWidth": 1672,
+        "brand": {
+          "x": 326,
+          "y": 92,
+          "width": 1020,
+          "height": 35.84375
+        },
+        "mainStyle": {
+          "paddingTop": "76px",
+          "paddingBottom": "32px",
+          "classes": "stMainBlockContainer block-container st-emotion-cache-zy6yx3 e15ve43o4"
+        },
+        "customStyles": [
+          "\n    .stApp { background: #f8fafc; color: #172b43; }\n    /* Streamlit keeps a fixed header above the document. Content must clear it. */\n    .block-container { max-width: 1180px; padding-top: 4.75rem; padding-bottom: 2rem; }\n    [data-testid=\"stHeader\"] { background:#f8fafc; }\n    [data-testid=\"stSegmentedControl\"] { overflow:visible; }\n    [data-testid=\"stSegmentedControl\"] button { white-space:normal; height:auto; min-height:2.7rem; }\n    @media (max-width: 640px) {\n        .block-container { padding-top:4.75rem; padding-left:1rem; padding-right:1rem; }\n        [data-testid=\"stSegmentedControl\"] { width:100%; }\n    }\n    h1,h2,h3 { color:#172b43; letter-spacing:-.02em; font-family:Arial,sans-serif; }\n    h1 { font-size:clamp(1.85rem, 3vw, 2.4rem) !important; font-weight:700; }\n    h2 { font-size:1.65rem !important; }\n    h3 { font-size:1.15rem !important; }\n    p,li { font-family:Arial,sans-serif; line-height:1.55; }\n    .brand { font-size:1.4rem; font-weight:750; letter-spacing:-.04em; }\n    .brand-dot { display:inline-block; height:9px; width:9px; margin-right:9px; border-radius:50%; background:#267b86; }\n    .eyebrow { color:#597084; font-size:.82rem; font-weight:650; text-transform:uppercase; letter-spacing:.07em; }\n    .summary { font-size:1.08rem; max-width:700px; color:#425a70; }\n    .quiet-note { padding:.65rem .85rem; border-left:3px solid #ac6a24; background:#fff9ed"
+        ],
+        "buttons": [
+          {
+            "text": "",
+            "box": {
+              "x": 1565.03125,
+              "y": 16,
+              "width": 56.96875,
+              "height": 28
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1626,
+              "y": 15.5,
+              "width": 28,
+              "height": 28
+            }
+          },
+          {
+            "text": "Overview",
+            "box": {
+              "x": 326,
+              "y": 127.84375,
+              "width": 249.640625,
+              "height": 32
+            }
+          },
+          {
+            "text": "Walkthrough",
+            "box": {
+              "x": 574.640625,
+              "y": 127.84375,
+              "width": 269.375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Experiments",
+            "box": {
+              "x": 843.015625,
+              "y": 127.84375,
+              "width": 269.09375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Design",
+            "box": {
+              "x": 1111.109375,
+              "y": 127.84375,
+              "width": 234.890625,
+              "height": 32
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1296,
+              "y": 363.53125,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1296,
+              "y": 447.53125,
+              "width": 32,
+              "height": 38
+            }
+          },
+          {
+            "text": "Inject wrong probability",
+            "box": {
+              "x": 326,
+              "y": 491.90625,
+              "width": 169.1875,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "Restore record facts",
+            "box": {
+              "x": 535.328125,
+              "y": 491.90625,
+              "width": 152.0625,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "Check explanation",
+            "box": {
+              "x": 326,
+              "y": 996.546875,
+              "width": 141.1875,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1235.4375,
+              "y": 1125.875,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1257.828125,
+              "y": 1125.875,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1280.21875,
+              "y": 1125.875,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1302.609375,
+              "y": 1125.875,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 343,
+              "y": 1380.9375,
+              "width": 171.53125,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "Previous",
+            "box": {
+              "x": 326,
+              "y": 1344.5625,
+              "width": 244.328125,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "Recorded experiments",
+            "box": {
+              "x": 1101.671875,
+              "y": 1344.5625,
+              "width": 244.328125,
+              "height": 43.1875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "leakage-1672",
+      "capture_viewport": {
+        "width": 1672,
+        "height": 905
+      },
+      "aria": "- banner\n- text: Investify\n- radiogroup \"Workspace\":\n  - radio \"Overview\":\n    - paragraph: Overview\n  - radio \"Walkthrough\":\n    - paragraph: Walkthrough\n  - radio \"Experiments\" [checked]:\n    - paragraph: Experiments\n  - radio \"Design\":\n    - paragraph: Design\n- paragraph: Recorded five-session research. Educational output only. No investment advice or order execution.\n- separator\n- radiogroup \"Research study\":\n  - radio \"Leakage audit\" [checked]\n  - paragraph: Leakage audit\n  - radio \"Sentiment comparison\"\n  - paragraph: Sentiment comparison\n  - radio \"Teacher pilot\"\n  - paragraph: Teacher pilot\n- heading \"The deliberate leak fires\" [level=2]:\n  - text: The deliberate leak fires\n  - link \"Link to heading\":\n    - /url: \"#the-deliberate-leak-fires\"\n- paragraph: Clean macro-F1\n- paragraph: \"0.2843\"\n- paragraph: Random comparator\n- paragraph: \"0.3287\"\n- paragraph: Canary lift\n- paragraph: \"+0.2104\"\n- paragraph: The centred-window control deliberately looks into the future. The clean five-session arm scores below its random comparator.\n- button \"Show/hide columns\"\n- button \"Download as CSV\"\n- button \"Search\"\n- button \"Fullscreen\"\n- paragraph: Recorded 12 October experiment, six expanding folds. Revision-conservative timestamps do not prove historical vendor availability.\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: All arms, both horizons and recorded chart\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Live labelled feature-level failure check\n- text: Five trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance.",
+      "geometry": {
+        "viewport": {
+          "width": 1672,
+          "height": 860
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1672,
+          "height": 60
+        },
+        "main": {
+          "x": 246,
+          "y": 0,
+          "width": 1180,
+          "height": 894.46875
+        },
+        "documentWidth": 1672,
+        "clientWidth": 1672,
+        "brand": {
+          "x": 326,
+          "y": 92,
+          "width": 1020,
+          "height": 35.84375
+        },
+        "mainStyle": {
+          "paddingTop": "76px",
+          "paddingBottom": "32px",
+          "classes": "stMainBlockContainer block-container st-emotion-cache-zy6yx3 e15ve43o4"
+        },
+        "customStyles": [
+          "\n    .stApp { background: #f8fafc; color: #172b43; }\n    /* Streamlit keeps a fixed header above the document. Content must clear it. */\n    .block-container { max-width: 1180px; padding-top: 4.75rem; padding-bottom: 2rem; }\n    [data-testid=\"stHeader\"] { background:#f8fafc; }\n    [data-testid=\"stSegmentedControl\"] { overflow:visible; }\n    [data-testid=\"stSegmentedControl\"] button { white-space:normal; height:auto; min-height:2.7rem; }\n    @media (max-width: 640px) {\n        .block-container { padding-top:4.75rem; padding-left:1rem; padding-right:1rem; }\n        [data-testid=\"stSegmentedControl\"] { width:100%; }\n    }\n    h1,h2,h3 { color:#172b43; letter-spacing:-.02em; font-family:Arial,sans-serif; }\n    h1 { font-size:clamp(1.85rem, 3vw, 2.4rem) !important; font-weight:700; }\n    h2 { font-size:1.65rem !important; }\n    h3 { font-size:1.15rem !important; }\n    p,li { font-family:Arial,sans-serif; line-height:1.55; }\n    .brand { font-size:1.4rem; font-weight:750; letter-spacing:-.04em; }\n    .brand-dot { display:inline-block; height:9px; width:9px; margin-right:9px; border-radius:50%; background:#267b86; }\n    .eyebrow { color:#597084; font-size:.82rem; font-weight:650; text-transform:uppercase; letter-spacing:.07em; }\n    .summary { font-size:1.08rem; max-width:700px; color:#425a70; }\n    .quiet-note { padding:.65rem .85rem; border-left:3px solid #ac6a24; background:#fff9ed"
+        ],
+        "buttons": [
+          {
+            "text": "",
+            "box": {
+              "x": 1565.03125,
+              "y": 16,
+              "width": 56.96875,
+              "height": 28
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1626,
+              "y": 15.5,
+              "width": 28,
+              "height": 28
+            }
+          },
+          {
+            "text": "Overview",
+            "box": {
+              "x": 326,
+              "y": 127.84375,
+              "width": 249.640625,
+              "height": 32
+            }
+          },
+          {
+            "text": "Walkthrough",
+            "box": {
+              "x": 574.640625,
+              "y": 127.84375,
+              "width": 269.375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Experiments",
+            "box": {
+              "x": 843.015625,
+              "y": 127.84375,
+              "width": 269.09375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Design",
+            "box": {
+              "x": 1111.109375,
+              "y": 127.84375,
+              "width": 234.890625,
+              "height": 32
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1252.4375,
+              "y": 539.390625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1274.828125,
+              "y": 539.390625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1297.21875,
+              "y": 539.390625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1319.609375,
+              "y": 539.390625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1235.4375,
+              "y": 763.671875,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1257.828125,
+              "y": 763.671875,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1280.21875,
+              "y": 763.671875,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1302.609375,
+              "y": 763.671875,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1302.609375,
+              "y": 1187.265625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "social-1672",
+      "capture_viewport": {
+        "width": 1672,
+        "height": 928
+      },
+      "aria": "- banner\n- text: Investify\n- radiogroup \"Workspace\":\n  - radio \"Overview\":\n    - paragraph: Overview\n  - radio \"Walkthrough\":\n    - paragraph: Walkthrough\n  - radio \"Experiments\" [checked]:\n    - paragraph: Experiments\n  - radio \"Design\":\n    - paragraph: Design\n- paragraph: Recorded five-session research. Educational output only. No investment advice or order execution.\n- separator\n- radiogroup \"Research study\":\n  - radio \"Leakage audit\"\n  - paragraph: Leakage audit\n  - radio \"Sentiment comparison\" [checked]\n  - paragraph: Sentiment comparison\n  - radio \"Teacher pilot\"\n  - paragraph: Teacher pilot\n- heading \"Original sentiment models on the same posts\" [level=2]:\n  - text: Original sentiment models on the same posts\n  - link \"Link to heading\":\n    - /url: \"#original-sentiment-models-on-the-same-posts\"\n- paragraph: 200 acquired MSFT posts, 117 usable AI references, 24 held out.\n- button \"Show/hide columns\"\n- button \"Download as CSV\"\n- button \"Search\"\n- button \"Fullscreen\"\n- button \"Show data\"\n- button \"Download as PNG\"\n- button \"Copy Vega-Lite spec\"\n- button \"Fullscreen\"\n- img: Cardiff CryptoBERT Candidate 0.0 0.2 0.4 0.6 Macro-F1 agreement\n- alert:\n  - paragraph: Agreement with AI references. Independent human validation is unmeasured, and the held-out set has only two negative references.\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: All arms, both horizons and recorded chart\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Live labelled feature-level failure check\n- text: Five trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance.",
+      "geometry": {
+        "viewport": {
+          "width": 1672,
+          "height": 860
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1672,
+          "height": 60
+        },
+        "main": {
+          "x": 246,
+          "y": 0,
+          "width": 1180,
+          "height": 1068.09375
+        },
+        "documentWidth": 1672,
+        "clientWidth": 1672,
+        "brand": {
+          "x": 326,
+          "y": 92,
+          "width": 1020,
+          "height": 35.84375
+        },
+        "mainStyle": {
+          "paddingTop": "76px",
+          "paddingBottom": "32px",
+          "classes": "stMainBlockContainer block-container st-emotion-cache-zy6yx3 e15ve43o4"
+        },
+        "customStyles": [
+          "\n    .stApp { background: #f8fafc; color: #172b43; }\n    /* Streamlit keeps a fixed header above the document. Content must clear it. */\n    .block-container { max-width: 1180px; padding-top: 4.75rem; padding-bottom: 2rem; }\n    [data-testid=\"stHeader\"] { background:#f8fafc; }\n    [data-testid=\"stSegmentedControl\"] { overflow:visible; }\n    [data-testid=\"stSegmentedControl\"] button { white-space:normal; height:auto; min-height:2.7rem; }\n    @media (max-width: 640px) {\n        .block-container { padding-top:4.75rem; padding-left:1rem; padding-right:1rem; }\n        [data-testid=\"stSegmentedControl\"] { width:100%; }\n    }\n    h1,h2,h3 { color:#172b43; letter-spacing:-.02em; font-family:Arial,sans-serif; }\n    h1 { font-size:clamp(1.85rem, 3vw, 2.4rem) !important; font-weight:700; }\n    h2 { font-size:1.65rem !important; }\n    h3 { font-size:1.15rem !important; }\n    p,li { font-family:Arial,sans-serif; line-height:1.55; }\n    .brand { font-size:1.4rem; font-weight:750; letter-spacing:-.04em; }\n    .brand-dot { display:inline-block; height:9px; width:9px; margin-right:9px; border-radius:50%; background:#267b86; }\n    .eyebrow { color:#597084; font-size:.82rem; font-weight:650; text-transform:uppercase; letter-spacing:.07em; }\n    .summary { font-size:1.08rem; max-width:700px; color:#425a70; }\n    .quiet-note { padding:.65rem .85rem; border-left:3px solid #ac6a24; background:#fff9ed"
+        ],
+        "buttons": [
+          {
+            "text": "",
+            "box": {
+              "x": 1509.984375,
+              "y": 16,
+              "width": 47.046875,
+              "height": 28
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1565.03125,
+              "y": 16,
+              "width": 56.96875,
+              "height": 28
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1626,
+              "y": 15.5,
+              "width": 28,
+              "height": 28
+            }
+          },
+          {
+            "text": "Overview",
+            "box": {
+              "x": 326,
+              "y": 127.84375,
+              "width": 249.640625,
+              "height": 32
+            }
+          },
+          {
+            "text": "Walkthrough",
+            "box": {
+              "x": 574.640625,
+              "y": 127.84375,
+              "width": 269.375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Experiments",
+            "box": {
+              "x": 843.015625,
+              "y": 127.84375,
+              "width": 269.09375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Design",
+            "box": {
+              "x": 1111.109375,
+              "y": 127.84375,
+              "width": 234.890625,
+              "height": 32
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1252.4375,
+              "y": 431.90625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1274.828125,
+              "y": 431.90625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1297.21875,
+              "y": 431.90625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1319.609375,
+              "y": 431.90625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1252.4375,
+              "y": 562.5,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1274.828125,
+              "y": 562.5,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1297.21875,
+              "y": 562.5,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1319.609375,
+              "y": 562.5,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1235.4375,
+              "y": 937.296875,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1257.828125,
+              "y": 937.296875,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1280.21875,
+              "y": 937.296875,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1302.609375,
+              "y": 937.296875,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1302.609375,
+              "y": 1360.890625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 343,
+              "y": 1034.984375,
+              "width": 208.890625,
+              "height": 43.1875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "design-1672",
+      "capture_viewport": {
+        "width": 1672,
+        "height": 1478
+      },
+      "aria": "- banner\n- text: Investify\n- radiogroup \"Workspace\":\n  - radio \"Overview\":\n    - paragraph: Overview\n  - radio \"Walkthrough\":\n    - paragraph: Walkthrough\n  - radio \"Experiments\":\n    - paragraph: Experiments\n  - radio \"Design\" [checked]:\n    - paragraph: Design\n- paragraph: Recorded five-session research. Educational output only. No investment advice or order execution.\n- separator\n- heading \"Design connected to the code\" [level=2]:\n  - text: Design connected to the code\n  - link \"Link to heading\":\n    - /url: \"#design-connected-to-the-code\"\n- paragraph: The live UI reads recorded evidence and calls the same context, profile and verification modules used in the tests.\n- button \"Fullscreen\"\n- img \"0\"\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Domain model\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Core code walkthrough\n- paragraph: Diagram and code review remains a genuine team/supervisor task. A generated figure or commit count does not establish student ownership.\n- text: Five trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance.",
+      "geometry": {
+        "viewport": {
+          "width": 1672,
+          "height": 860
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1672,
+          "height": 60
+        },
+        "main": {
+          "x": 246,
+          "y": 0,
+          "width": 1180,
+          "height": 1467.5
+        },
+        "documentWidth": 1672,
+        "clientWidth": 1672,
+        "brand": {
+          "x": 326,
+          "y": 92,
+          "width": 1020,
+          "height": 35.84375
+        },
+        "mainStyle": {
+          "paddingTop": "76px",
+          "paddingBottom": "32px",
+          "classes": "stMainBlockContainer block-container st-emotion-cache-zy6yx3 e15ve43o4"
+        },
+        "customStyles": [
+          "\n    .stApp { background: #f8fafc; color: #172b43; }\n    /* Streamlit keeps a fixed header above the document. Content must clear it. */\n    .block-container { max-width: 1180px; padding-top: 4.75rem; padding-bottom: 2rem; }\n    [data-testid=\"stHeader\"] { background:#f8fafc; }\n    [data-testid=\"stSegmentedControl\"] { overflow:visible; }\n    [data-testid=\"stSegmentedControl\"] button { white-space:normal; height:auto; min-height:2.7rem; }\n    @media (max-width: 640px) {\n        .block-container { padding-top:4.75rem; padding-left:1rem; padding-right:1rem; }\n        [data-testid=\"stSegmentedControl\"] { width:100%; }\n    }\n    h1,h2,h3 { color:#172b43; letter-spacing:-.02em; font-family:Arial,sans-serif; }\n    h1 { font-size:clamp(1.85rem, 3vw, 2.4rem) !important; font-weight:700; }\n    h2 { font-size:1.65rem !important; }\n    h3 { font-size:1.15rem !important; }\n    p,li { font-family:Arial,sans-serif; line-height:1.55; }\n    .brand { font-size:1.4rem; font-weight:750; letter-spacing:-.04em; }\n    .brand-dot { display:inline-block; height:9px; width:9px; margin-right:9px; border-radius:50%; background:#267b86; }\n    .eyebrow { color:#597084; font-size:.82rem; font-weight:650; text-transform:uppercase; letter-spacing:.07em; }\n    .summary { font-size:1.08rem; max-width:700px; color:#425a70; }\n    .quiet-note { padding:.65rem .85rem; border-left:3px solid #ac6a24; background:#fff9ed"
+        ],
+        "buttons": [
+          {
+            "text": "",
+            "box": {
+              "x": 1565.03125,
+              "y": 16,
+              "width": 56.96875,
+              "height": 28
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1626,
+              "y": 15.5,
+              "width": 28,
+              "height": 28
+            }
+          },
+          {
+            "text": "Overview",
+            "box": {
+              "x": 326,
+              "y": 127.84375,
+              "width": 249.640625,
+              "height": 32
+            }
+          },
+          {
+            "text": "Walkthrough",
+            "box": {
+              "x": 574.640625,
+              "y": 127.84375,
+              "width": 269.375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Experiments",
+            "box": {
+              "x": 843.015625,
+              "y": 127.84375,
+              "width": 269.09375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Design",
+            "box": {
+              "x": 1111.109375,
+              "y": 127.84375,
+              "width": 234.890625,
+              "height": 32
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1199.609375,
+              "y": 379.015625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1216.609375,
+              "y": 1299.015625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "design-1366",
+      "capture_viewport": {
+        "width": 1366,
+        "height": 1478
+      },
+      "aria": "- banner\n- text: Investify\n- radiogroup \"Workspace\":\n  - radio \"Overview\":\n    - paragraph: Overview\n  - radio \"Walkthrough\":\n    - paragraph: Walkthrough\n  - radio \"Experiments\":\n    - paragraph: Experiments\n  - radio \"Design\" [checked]:\n    - paragraph: Design\n- paragraph: Recorded five-session research. Educational output only. No investment advice or order execution.\n- separator\n- heading \"Design connected to the code\" [level=2]:\n  - text: Design connected to the code\n  - link \"Link to heading\":\n    - /url: \"#design-connected-to-the-code\"\n- paragraph: The live UI reads recorded evidence and calls the same context, profile and verification modules used in the tests.\n- button \"Fullscreen\"\n- img \"0\"\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Domain model\n- group:\n  - text: keyboard_arrow_right\n  - paragraph: Core code walkthrough\n- paragraph: Diagram and code review remains a genuine team/supervisor task. A generated figure or commit count does not establish student ownership.\n- text: Five trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance.",
+      "geometry": {
+        "viewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1366,
+          "height": 60
+        },
+        "main": {
+          "x": 93,
+          "y": 0,
+          "width": 1180,
+          "height": 1467.5
+        },
+        "documentWidth": 1366,
+        "clientWidth": 1366,
+        "brand": {
+          "x": 173,
+          "y": 92,
+          "width": 1020,
+          "height": 35.84375
+        },
+        "mainStyle": {
+          "paddingTop": "76px",
+          "paddingBottom": "32px",
+          "classes": "stMainBlockContainer block-container st-emotion-cache-zy6yx3 e15ve43o4"
+        },
+        "customStyles": [
+          "\n    .stApp { background: #f8fafc; color: #172b43; }\n    /* Streamlit keeps a fixed header above the document. Content must clear it. */\n    .block-container { max-width: 1180px; padding-top: 4.75rem; padding-bottom: 2rem; }\n    [data-testid=\"stHeader\"] { background:#f8fafc; }\n    [data-testid=\"stSegmentedControl\"] { overflow:visible; }\n    [data-testid=\"stSegmentedControl\"] button { white-space:normal; height:auto; min-height:2.7rem; }\n    @media (max-width: 640px) {\n        .block-container { padding-top:4.75rem; padding-left:1rem; padding-right:1rem; }\n        [data-testid=\"stSegmentedControl\"] { width:100%; }\n    }\n    h1,h2,h3 { color:#172b43; letter-spacing:-.02em; font-family:Arial,sans-serif; }\n    h1 { font-size:clamp(1.85rem, 3vw, 2.4rem) !important; font-weight:700; }\n    h2 { font-size:1.65rem !important; }\n    h3 { font-size:1.15rem !important; }\n    p,li { font-family:Arial,sans-serif; line-height:1.55; }\n    .brand { font-size:1.4rem; font-weight:750; letter-spacing:-.04em; }\n    .brand-dot { display:inline-block; height:9px; width:9px; margin-right:9px; border-radius:50%; background:#267b86; }\n    .eyebrow { color:#597084; font-size:.82rem; font-weight:650; text-transform:uppercase; letter-spacing:.07em; }\n    .summary { font-size:1.08rem; max-width:700px; color:#425a70; }\n    .quiet-note { padding:.65rem .85rem; border-left:3px solid #ac6a24; background:#fff9ed"
+        ],
+        "buttons": [
+          {
+            "text": "",
+            "box": {
+              "x": 1259.03125,
+              "y": 16,
+              "width": 56.96875,
+              "height": 28
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1320,
+              "y": 15.5,
+              "width": 28,
+              "height": 28
+            }
+          },
+          {
+            "text": "Overview",
+            "box": {
+              "x": 173,
+              "y": 127.84375,
+              "width": 249.640625,
+              "height": 32
+            }
+          },
+          {
+            "text": "Walkthrough",
+            "box": {
+              "x": 421.640625,
+              "y": 127.84375,
+              "width": 269.375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Experiments",
+            "box": {
+              "x": 690.015625,
+              "y": 127.84375,
+              "width": 269.09375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Design",
+            "box": {
+              "x": 958.109375,
+              "y": 127.84375,
+              "width": 234.890625,
+              "height": 32
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1046.609375,
+              "y": 379.015625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1063.609375,
+              "y": 1299.015625,
+              "width": 22.390625,
+              "height": 22.390625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "overview-1366",
+      "capture_viewport": {
+        "width": 1366,
+        "height": 955
+      },
+      "aria": "- banner\n- text: Investify\n- radiogroup \"Workspace\":\n  - radio \"Overview\" [checked]:\n    - paragraph: Overview\n  - radio \"Walkthrough\":\n    - paragraph: Walkthrough\n  - radio \"Experiments\":\n    - paragraph: Experiments\n  - radio \"Design\":\n    - paragraph: Design\n- paragraph: Recorded five-session research. Educational output only. No investment advice or order execution.\n- separator\n- text: FYP-1 mid evaluation\n- heading \"A decision you can inspect\" [level=1]:\n  - text: A decision you can inspect\n  - link \"Link to heading\":\n    - /url: \"#a-decision-you-can-inspect\"\n- paragraph: Explore one recorded equity decision, see the evidence behind it, and test whether its explanation matches the facts.\n- button \"Open the decision walkthrough\":\n  - paragraph: Open the decision walkthrough\n- separator\n- heading \"The live demonstration\" [level=3]:\n  - text: The live demonstration\n  - link \"Link to heading\":\n    - /url: \"#the-live-demonstration\"\n- paragraph: A risk profile changes a separate comparison. A deliberately wrong explanation triggers rejection and a verified fallback. The recorded model output stays fixed.\n- paragraph: \"Suggested case: fresh Alpaca, frozen classifier, 21 December 2023.\"\n- heading \"Recorded research\" [level=3]:\n  - text: Recorded research\n  - link \"Link to heading\":\n    - /url: \"#recorded-research\"\n- paragraph: Inspect the leakage experiment, original sentiment-model comparison and teacher construction pilot.\n- button \"Explore experiments\":\n  - paragraph: Explore experiments\n- button \"View architecture and requirements\":\n  - paragraph: View architecture and requirements\n- text: The current five-session predictor has no established useful signal. All 186 fresh calibrated predictions are Buy. The demonstration exposes these limits. Five trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance.",
+      "geometry": {
+        "viewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1366,
+          "height": 60
+        },
+        "main": {
+          "x": 93,
+          "y": 0,
+          "width": 1180,
+          "height": 944.359375
+        },
+        "documentWidth": 1366,
+        "clientWidth": 1366,
+        "brand": {
+          "x": 173,
+          "y": 92,
+          "width": 1020,
+          "height": 35.84375
+        },
+        "mainStyle": {
+          "paddingTop": "76px",
+          "paddingBottom": "32px",
+          "classes": "stMainBlockContainer block-container st-emotion-cache-zy6yx3 e15ve43o4"
+        },
+        "customStyles": [
+          "\n    .stApp { background: #f8fafc; color: #172b43; }\n    /* Streamlit keeps a fixed header above the document. Content must clear it. */\n    .block-container { max-width: 1180px; padding-top: 4.75rem; padding-bottom: 2rem; }\n    [data-testid=\"stHeader\"] { background:#f8fafc; }\n    [data-testid=\"stSegmentedControl\"] { overflow:visible; }\n    [data-testid=\"stSegmentedControl\"] button { white-space:normal; height:auto; min-height:2.7rem; }\n    @media (max-width: 640px) {\n        .block-container { padding-top:4.75rem; padding-left:1rem; padding-right:1rem; }\n        [data-testid=\"stSegmentedControl\"] { width:100%; }\n    }\n    h1,h2,h3 { color:#172b43; letter-spacing:-.02em; font-family:Arial,sans-serif; }\n    h1 { font-size:clamp(1.85rem, 3vw, 2.4rem) !important; font-weight:700; }\n    h2 { font-size:1.65rem !important; }\n    h3 { font-size:1.15rem !important; }\n    p,li { font-family:Arial,sans-serif; line-height:1.55; }\n    .brand { font-size:1.4rem; font-weight:750; letter-spacing:-.04em; }\n    .brand-dot { display:inline-block; height:9px; width:9px; margin-right:9px; border-radius:50%; background:#267b86; }\n    .eyebrow { color:#597084; font-size:.82rem; font-weight:650; text-transform:uppercase; letter-spacing:.07em; }\n    .summary { font-size:1.08rem; max-width:700px; color:#425a70; }\n    .quiet-note { padding:.65rem .85rem; border-left:3px solid #ac6a24; background:#fff9ed"
+        ],
+        "buttons": [
+          {
+            "text": "",
+            "box": {
+              "x": 1259.03125,
+              "y": 16,
+              "width": 56.96875,
+              "height": 28
+            }
+          },
+          {
+            "text": "",
+            "box": {
+              "x": 1320,
+              "y": 15.5,
+              "width": 28,
+              "height": 28
+            }
+          },
+          {
+            "text": "Overview",
+            "box": {
+              "x": 173,
+              "y": 127.84375,
+              "width": 249.640625,
+              "height": 32
+            }
+          },
+          {
+            "text": "Walkthrough",
+            "box": {
+              "x": 421.640625,
+              "y": 127.84375,
+              "width": 269.375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Experiments",
+            "box": {
+              "x": 690.015625,
+              "y": 127.84375,
+              "width": 269.09375,
+              "height": 32
+            }
+          },
+          {
+            "text": "Design",
+            "box": {
+              "x": 958.109375,
+              "y": 127.84375,
+              "width": 234.890625,
+              "height": 32
+            }
+          },
+          {
+            "text": "Open the decision walkthrough",
+            "box": {
+              "x": 173,
+              "y": 447.203125,
+              "width": 218.234375,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "Explore experiments",
+            "box": {
+              "x": 817,
+              "y": 687.0625,
+              "width": 153.625,
+              "height": 43.1875
+            }
+          },
+          {
+            "text": "View architecture and requirements",
+            "box": {
+              "x": 817,
+              "y": 746.25,
+              "width": 245.96875,
+              "height": 43.1875
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "page_errors": [],
+  "browser_version": "155.0.4283.45",
+  "status": "captured_for_visual_review",
+  "screenshots": {
+    "calibration-1672.png": "6b60e317baeafda31a1f909d2016e2de5559cf0f49d04bbc81daa360013fc9f1",
+    "decision-1672.png": "1ddd575e71639bae5ab482165fa02acd9ac0f859c09a22041b56a6678b5415e6",
+    "design-1366.png": "4f68ba6f07a83d1d51408a12bd49196439d6e451dc3de97a204442a53b98d903",
+    "design-1672.png": "d00eb52a65520546a9c2e966d5c92ff7ce90376857bdcd9b6b0dbb908ca7fae4",
+    "evidence-1672.png": "824194e92cbee8baa093872173710c416f06bac08f06554ac55bd29ccbeb0414",
+    "explanation-accepted-1672.png": "8aa5125a352c7becd6bf5f87f499d1ea13d2585bf0f65cee4f1235812f826545",
+    "explanation-rejected-1672.png": "828374296862794296f5850be5614df6e3615b450c3d0cc842ae65098dfa5bb2",
+    "leakage-1672.png": "5d1a450542bb2c7c8d4f576d1209e57a56eb85a1766d862086486c06ed749a91",
+    "overview-1366.png": "2814c916f1b81ea9902be4b60ef37f67313e0ea8ddc2346b757043a2b24917df",
+    "overview-1672.png": "286cadfffd426196e6da6becdb17ea16a2f70e727fd758eae0f978765a932cde",
+    "profile-cautious-1672.png": "2b1dccfebfd57dced301d0975c2092a92e6c3f9dda6d3c47301a3b84e4da31f6",
+    "profile-tolerant-1672.png": "fe40229f42fe94041ca8fe0642a258c8615804ae9287e28353301c0acc2515e4",
+    "social-1672.png": "e535de7c9ff63b157c960097fb011b4860bf4c6efa16388538b841b393ac2d9d"
+  },
+  "scratch_directory": "E:\\AI-Tools\\Temp\\presenter_browser_20261013_run06"
+}

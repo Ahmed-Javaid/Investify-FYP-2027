@@ -17,7 +17,7 @@ The design list says to select models appropriate to the project. Investify uses
 | H07 | Test plan: levels and techniques | chapter8_testing; appendix_test_cases | Current unit/module/system scopes separated |
 | H08 | Development and iteration plan | chapter3_iteration_plan; chapter10_fyp2_plan | Revised plan; genuine owners/dates pending |
 | H09 | Wireframes | mid1_wireframe.tex; chapter7_ui_manual | Design wireframe present |
-| H10 | Actual UI screens and demonstrable flow | app/presenter.py; chapter7_ui_manual | Rebuilt; browser screenshots pending tooling choice |
+| H10 | Actual UI screens and demonstrable flow | app/presenter.py; chapter7_ui_manual | Actual Edge journey and fourteen captures reviewed; physical projector/rehearsal pending |
 | H11 | DEI, ethics, privacy and legal statements | chapter1_introduction; appendix_handbook | Written; rights/clearance sign-off not invented |
 | H12 | Iteration-1 implemented core module | explain/pipeline.py; risk_comparator.py | Actual live checking/profile logic; tested |
 | H13 | Domain/class model | mid1_domain.tex | Actual classes/entities and invariants explained |
@@ -28,8 +28,8 @@ The design list says to select models appropriate to the project. Investify uses
 | H18 | DB representation/schema/ERD as applicable | mid1_schema.tex; SSD data design | Artifact schema present; no implemented relational DB claimed |
 | H19 | Data structures and algorithms | chapter6_iteration1; SSD dictionary | Contracts and steps documented |
 | H20 | Comments and naming conventions | presenter_data.py; presenter.py; chapter6 | Snake-case functions and documented invariants |
-| H21 | Static code analysis | source-syntax checks; new UI tests | Syntax checked across five changed Python modules |
-| H22 | Unit/module tests and test cases | 12 new UI checks; scoped core receipts | Executed scopes retained; overlap not summed |
+| H21 | Static code analysis | source-syntax checks; new UI tests | Six current modules pass Ruff E4/E9/F checks |
+| H22 | Unit/module tests and test cases | 14 current primary UI checks; scoped core receipts | Executed scopes retained; overlap not summed |
 | H23 | CI/CD and version-control process | .github/workflows/mideval-evidence.yml | Workflow exists; remote CI/CD and member evidence pending |
 | H24 | Deployment diagram | mid1_deployment.tex | Actual localhost topology documented |
 | H25 | System-level validation/testing | portable HTTP checks; current AppTest | Executed local tests; no external-user acceptance claimed |

@@ -81,3 +81,23 @@ def leakage_results():
     if set(primary) != {'A_CLEAN','B_SHUFFLED','C_NOPURGE','D_CENTRED','D_CENTRED_SMA200','E_SAMEBAR_TEXT'}:
         raise ValueError('The recorded harness comparison is incomplete')
     return payload, primary
+
+
+def calibration_diagnosis(collection):
+    """Bind the fresh-map diagnostic to the selected source's actual trace bytes."""
+    if collection.source not in ("fresh_frozen", "fresh_refit"):
+        raise ValueError("No fresh-map diagnosis is established for this historical source")
+    key = "engine_frozen_alpaca" if collection.source == "fresh_frozen" else "engine_refit_alpaca"
+    receipt = read_json(ROOT.parent / "evidence/calibration_global_bounds_20261013.json")
+    result = receipt["results"][key]
+    trace_path = SOURCES[collection.source][1].parent / "scientific_trace.json"
+    trace_bytes = trace_path.read_bytes()
+    if sha256(trace_bytes).hexdigest() != result["trace_sha256"]:
+        raise ValueError("The diagnostic does not match this experiment's calibration trace")
+    trace = json.loads(trace_bytes)
+    sample = next(iter(collection.records.values()))
+    if (trace["provenance"]["model_version"] != sample.model_version
+            or result["calibrated_evaluation_rows"] != len(collection.records)
+            or result["unconditionally_dominant_class"] != "Buy"):
+        raise ValueError("Calibration diagnostic identity does not match the selected records")
+    return result

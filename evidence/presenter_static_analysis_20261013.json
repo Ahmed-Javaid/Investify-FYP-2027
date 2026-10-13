@@ -1,0 +1,30 @@
+{
+  "schema": "investify-scoped-static-analysis-v1",
+  "checked_utc": "2026-10-13T00:55:48.612157+00:00",
+  "tool": "Ruff",
+  "version": "0.14.0",
+  "rules": [
+    "E4",
+    "E9",
+    "F"
+  ],
+  "files_sha256": {
+    "code/app/streamlit_app.py": "f6d208c14001be783fe341fe1e9ea6cc95b3682fd406d2f2d403ffe16414ac77",
+    "code/app/presenter.py": "c528fa4481695eb5bfdd7b560e8d4ccfc8c08e86418268102501fb04be39524f",
+    "code/app/presenter_data.py": "efaca851d1b67abb4146e58a0cdda2c9238e9e7c8e122f936dc267b1fd78b835",
+    "code/app/presenter_style.py": "e4bbcabad3336de7a351f63122fa9fb37d6a741c3d4818c40f61573a971e8763",
+    "code/tests/test_presenter_ui.py": "70d994d2cc10640888d2504fa839fb878b28ca8dbd8058c7a7ba9719356b75df",
+    "tools/audit_calibration_bounds.py": "8037560faa2029b23864acb0ae13228388ec919bbd0ec2a40c21c340171e30e5"
+  },
+  "findings": [],
+  "passed": true,
+  "intentional_exceptions": [
+    "Two explicit E402 annotations for local source-path bootstrap imports"
+  ],
+  "corrections": [
+    "Removed unused html import",
+    "Removed unused exception variable"
+  ],
+  "scope": "Six current source/test/audit modules, not a whole-repository lint or scientific acceptance.",
+  "documentation": "https://docs.astral.sh/ruff/linter/"
+}

@@ -1,0 +1,81 @@
+{
+  "schema": "investify-calibration-global-bounds-v1",
+  "checked_utc": "2026-10-13T00:36:40.318734+00:00",
+  "script_sha256": "8037560faa2029b23864acb0ae13228388ec919bbd0ec2a40c21c340171e30e5",
+  "model_fitting_executed": false,
+  "threshold_or_label_changes": false,
+  "results": {
+    "engine_frozen_alpaca": {
+      "trace_sha256": "009d3b40df86338d918d6546640c57e43fa13541d592e551a5b35fc55d25304e",
+      "classes": [
+        "Buy",
+        "Hold",
+        "Sell"
+      ],
+      "calibrator_global_bounds": {
+        "Buy": {
+          "minimum": 0.5344827771186829,
+          "maximum": 1.0,
+          "knots": 5
+        },
+        "Hold": {
+          "minimum": 0.0,
+          "maximum": 0.25,
+          "knots": 8
+        },
+        "Sell": {
+          "minimum": 0.20000000298023224,
+          "maximum": 0.3139534890651703,
+          "knots": 6
+        }
+      },
+      "unconditionally_dominant_class": "Buy",
+      "minimum_pre_normalization_winner_gap": 0.22052928805351257,
+      "minimum_pre_normalization_row_sum": 0.7344827800989151,
+      "calibrated_evaluation_rows": 186,
+      "observed_class_counts": {
+        "Buy": 186,
+        "Hold": 0,
+        "Sell": 0
+      },
+      "derivation": "A monotone piecewise-linear map with clipped endpoints stays within its saved y bounds. The winning class minimum strictly exceeds every competing class maximum. Dividing every coordinate by the same positive row sum preserves argmax. The fixed maps therefore select the dominant class for every valid raw probability vector, not only the inspected evaluation rows.",
+      "boundary": "Applies to these byte-identified fresh maps only. Does not prove the cause of preserved September maps or justify any held-out threshold/map tuning."
+    },
+    "engine_refit_alpaca": {
+      "trace_sha256": "04c0f821432b5c80cfc957e115f6c06de31875159368db7ad1ef80a2c83b330e",
+      "classes": [
+        "Buy",
+        "Hold",
+        "Sell"
+      ],
+      "calibrator_global_bounds": {
+        "Buy": {
+          "minimum": 0.5344827771186829,
+          "maximum": 1.0,
+          "knots": 5
+        },
+        "Hold": {
+          "minimum": 0.0,
+          "maximum": 0.25,
+          "knots": 8
+        },
+        "Sell": {
+          "minimum": 0.20000000298023224,
+          "maximum": 0.3139534890651703,
+          "knots": 6
+        }
+      },
+      "unconditionally_dominant_class": "Buy",
+      "minimum_pre_normalization_winner_gap": 0.22052928805351257,
+      "minimum_pre_normalization_row_sum": 0.7344827800989151,
+      "calibrated_evaluation_rows": 186,
+      "observed_class_counts": {
+        "Buy": 186,
+        "Hold": 0,
+        "Sell": 0
+      },
+      "derivation": "A monotone piecewise-linear map with clipped endpoints stays within its saved y bounds. The winning class minimum strictly exceeds every competing class maximum. Dividing every coordinate by the same positive row sum preserves argmax. The fixed maps therefore select the dominant class for every valid raw probability vector, not only the inspected evaluation rows.",
+      "boundary": "Applies to these byte-identified fresh maps only. Does not prove the cause of preserved September maps or justify any held-out threshold/map tuning."
+    }
+  }
+}

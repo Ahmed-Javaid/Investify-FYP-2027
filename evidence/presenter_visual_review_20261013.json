@@ -1,0 +1,39 @@
+{
+  "schema": "investify-browser-visual-review-v1",
+  "checked_utc": "2026-10-13T12:07:52.693260+00:00",
+  "capture_receipt": "evidence/presenter_browser_20261013_run07.json",
+  "capture_receipt_sha256": "42529c79fa8e81edcbd94f0e7ae067c81d0a5475792ce46ad4e612ac1cb12a33",
+  "ui_source_sha256": {
+    "code/app/presenter.py": "9a0ebbce3644c30e08dc413ffc25c93a9fe503270d04b2dc51f7b80d15f98b2a",
+    "code/app/presenter_data.py": "f4496a3ec54437fedbc9dd9b82edba603155dcf5d0f066fc5905cf4103c830a0",
+    "code/app/presenter_style.py": "e4bbcabad3336de7a351f63122fa9fb37d6a741c3d4818c40f61573a971e8763",
+    "code/app/streamlit_app.py": "f6d208c14001be783fe341fe1e9ea6cc95b3682fd406d2f2d403ffe16414ac77"
+  },
+  "all_captured_views_visually_checked": true,
+  "views": 14,
+  "method": "Assistant reviewed four numbered QA sheets, with complete original captures of explanation failure and design also inspected individually",
+  "layout_checks": {
+    "no_horizontal_document_overflow": true,
+    "brand_clears_fixed_header": true
+  },
+  "page_errors": [],
+  "screenshot_files_sha256": {
+    "calibration-1672.png": "6b60e317baeafda31a1f909d2016e2de5559cf0f49d04bbc81daa360013fc9f1",
+    "decision-1672.png": "1ddd575e71639bae5ab482165fa02acd9ac0f859c09a22041b56a6678b5415e6",
+    "design-1366.png": "4f68ba6f07a83d1d51408a12bd49196439d6e451dc3de97a204442a53b98d903",
+    "design-1672.png": "d00eb52a65520546a9c2e966d5c92ff7ce90376857bdcd9b6b0dbb908ca7fae4",
+    "evidence-1672.png": "824194e92cbee8baa093872173710c416f06bac08f06554ac55bd29ccbeb0414",
+    "explanation-accepted-1672.png": "8aa5125a352c7becd6bf5f87f499d1ea13d2585bf0f65cee4f1235812f826545",
+    "explanation-rejected-1672.png": "828374296862794296f5850be5614df6e3615b450c3d0cc842ae65098dfa5bb2",
+    "leakage-1672.png": "5d1a450542bb2c7c8d4f576d1209e57a56eb85a1766d862086486c06ed749a91",
+    "overview-1366.png": "2814c916f1b81ea9902be4b60ef37f67313e0ea8ddc2346b757043a2b24917df",
+    "overview-1672.png": "286cadfffd426196e6da6becdb17ea16a2f70e727fd758eae0f978765a932cde",
+    "profile-cautious-1672.png": "2b1dccfebfd57dced301d0975c2092a92e6c3f9dda6d3c47301a3b84e4da31f6",
+    "profile-tolerant-1672.png": "fe40229f42fe94041ca8fe0642a258c8615804ae9287e28353301c0acc2515e4",
+    "social-1672.png": "88f4c184ddf981d99d550f5a466aafbf28d5c78279a6d5382abb88072091bf34",
+    "teacher-1672.png": "4617abc56326b450da1ef3a4acaaf68b48878efc960e54782df67dbc2d273cbf"
+  },
+  "full_content_capture": "Real desktop-width viewports temporarily grow in height to expose the Streamlit internal scroll content",
+  "human_acceptance_or_projector_review": false,
+  "scope": "Actual localhost browser journey and captured software layout. No participant understanding, projector usability, student ownership or model usefulness is inferred."
+}

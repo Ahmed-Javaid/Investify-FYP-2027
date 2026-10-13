@@ -1,6 +1,5 @@
 """One visible workspace at a time. Interactions reuse the verified core modules."""
 import hashlib
-import html
 import json
 from pathlib import Path
 
@@ -93,6 +92,18 @@ def decision_view(collection, record):
         probs = pd.DataFrame({'class':list(record.probabilities),'probability':list(record.probabilities.values())})
         st.bar_chart(probs, x='class', y='probability', horizontal=True, height=210, color='#267b86')
     st.markdown('<div class="quiet-note">All 186 fresh calibrated decisions are Buy. Better calibration loss alone does not establish useful predictions.</div>', unsafe_allow_html=True)
+    if collection.source in ('fresh_frozen', 'fresh_refit'):
+        with st.expander('Why the fresh calibration always chooses Buy'):
+            try:
+                diagnosis = data.calibration_diagnosis(collection)
+                bounds = diagnosis['calibrator_global_bounds']
+                floor = bounds['Buy']['minimum']
+                ceiling = max(bounds[c]['maximum'] for c in ('Hold', 'Sell'))
+                st.write(f'The saved Buy map never outputs below {floor:.4f}, while Hold and Sell never output above {ceiling:.4f}. Dividing all three outputs by the same positive total preserves their ranking. These fixed maps therefore always rank Buy first.')
+                st.caption('These bounds describe map outputs before normalization, not the final class probabilities. The result applies to these fresh maps only. Useful prediction remains unestablished.')
+            except (OSError, KeyError, TypeError, ValueError) as error:
+                st.info('Calibration diagnosis unavailable for this evidence identity.')
+                st.caption(str(error))
     st.subheader('Largest recorded contributions')
     context = build_context(record, corpus=collection.source)
     labels = {r['feature']:r['label'] for r in context['features']}
@@ -154,7 +165,7 @@ def profile_view(collection, record):
                 try:
                     st.session_state['ui_profile'] = score_profile(capacity,tolerance)
                     st.session_state['ui_profile_kind'] = 'User-entered prototype profile'
-                except (TypeError,ValueError) as error:
+                except (TypeError,ValueError):
                     st.session_state.pop('ui_profile',None)
                     st.error('Complete all eight answers. No defaults are assumed.')
     profile = st.session_state.get('ui_profile')

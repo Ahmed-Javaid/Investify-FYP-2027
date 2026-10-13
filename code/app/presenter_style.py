@@ -4,9 +4,17 @@ import streamlit as st
 def inject():
     st.markdown("""<style>
     .stApp { background: #f8fafc; color: #172b43; }
-    .block-container { max-width: 1180px; padding-top: 1.6rem; padding-bottom: 1.2rem; }
+    /* Streamlit keeps a fixed header above the document. Content must clear it. */
+    .block-container { max-width: 1180px; padding-top: 4.75rem; padding-bottom: 2rem; }
+    [data-testid="stHeader"] { background:#f8fafc; }
+    [data-testid="stSegmentedControl"] { overflow:visible; }
+    [data-testid="stSegmentedControl"] button { white-space:normal; height:auto; min-height:2.7rem; }
+    @media (max-width: 640px) {
+        .block-container { padding-top:4.75rem; padding-left:1rem; padding-right:1rem; }
+        [data-testid="stSegmentedControl"] { width:100%; }
+    }
     h1,h2,h3 { color:#172b43; letter-spacing:-.02em; font-family:Arial,sans-serif; }
-    h1 { font-size:2.4rem !important; font-weight:700; }
+    h1 { font-size:clamp(1.85rem, 3vw, 2.4rem) !important; font-weight:700; }
     h2 { font-size:1.65rem !important; }
     h3 { font-size:1.15rem !important; }
     p,li { font-family:Arial,sans-serif; line-height:1.55; }
@@ -19,7 +27,7 @@ def inject():
     .scope-line { color:#597084; font-size:.79rem; border-top:1px solid #d9e2ea; padding-top:.7rem; margin-top:1.4rem; }
     [data-testid="stMetric"] { padding:.7rem 0; }
     [data-testid="stMetricValue"] { font-size:1.8rem; }
-    .stButton button { min-height:2.7rem; border-radius:6px; font-weight:600; }
+    .stButton button { min-height:2.7rem; height:auto; white-space:normal; border-radius:6px; font-weight:600; }
     .stCode pre { white-space:pre-wrap; overflow-wrap:anywhere; }
     [data-testid="stToolbar"] { visibility:hidden; }
     </style>""", unsafe_allow_html=True)

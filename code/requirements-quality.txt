@@ -1,0 +1,2 @@
+# Optional source-check tool, separate from the scientific/runtime lock.
+ruff==0.14.0

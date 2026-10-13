@@ -164,10 +164,10 @@ write(OUT/'mid1_activity.tex',activity)
 wireframe=r'''\begin{tikzpicture}[x=1mm,y=1mm,font=\sffamily\footnotesize]
 \draw[gray] (0,0) rectangle (150,103);
 \node[anchor=west,font=\sffamily\bfseries\small] at (5,96){Investify};
-\node[anchor=east] at (145,96){Overview / Walkthrough / Experiments / Design};
-\draw[gray!45] (5,89)--(145,89);
-\node[anchor=west] at (5,82){Case selection (collapsed): experiment and recorded session};
-\node[anchor=west] at (5,72){Decision / Evidence / Risk profile / Explanation check};
+\node[anchor=west] at (5,88){Overview / Walkthrough / Experiments / Design};
+\draw[gray!45] (5,82)--(145,82);
+\node[anchor=west] at (5,76){Case selection (collapsed): experiment and recorded session};
+\node[anchor=west] at (5,66){Decision / Evidence / Risk profile / Explanation check};
 \draw[draw=gray!50,fill=blue!2] (5,17) rectangle (72,62);
 \draw[draw=gray!50,fill=blue!2] (78,17) rectangle (145,62);
 \node[align=left,text width=58mm] at (38,43){Editable candidate\\Displayed probability and claims\\[2mm]Inject error / restore facts\\Check explanation};
@@ -176,4 +176,4 @@ wireframe=r'''\begin{tikzpicture}[x=1mm,y=1mm,font=\sffamily\footnotesize]
 \end{tikzpicture}'''
 write(OUT/'mid1_wireframe.tex',wireframe)
 write(OUT/'mid1_design_spec.json',json.dumps({'status':'assistant-drafted project-specific design; student/supervisor review pending','scope':'Diagrams describe implemented artifacts and interfaces; no relational database or trained student is invented','diagrams':SPECS},indent=2))
-print('Built seven shared TikZ/SVG diagrams plus sequence, activity and UI wireframe sources.')
+print('Built nine shared TikZ/SVG diagrams plus sequence, activity and UI wireframe sources.')

@@ -1,5 +1,13 @@
 # Saved calibration investigation — 12 October 2026
 
+## Fresh-map mechanism established - 13 October 2026
+
+The new [global-bound audit](../evidence/calibration_global_bounds_20261013.json) explains the fresh all-Buy collapse: Buy's saved clipped isotonic map never goes below 0.5344828, while Hold/Sell never exceed 0.25/0.3139535. Common positive row normalization preserves argmax. Thus the fixed maps force Buy for every valid raw vector. This is a deterministic statement about those fresh maps, not a claim about the unknown cause of preserved September outputs.
+
+The [native engine probe](../evidence/calibration_bounds_native_probe_20261013.json) reconstructs the saved knots, exactly replays 186 saved rows per mode and checks 5,151 simplex inputs per map set. No fitting, labels, thresholds, model files or frozen outputs changed. This is a stronger mechanism than saying only that observed predictions were constant. Predictive usefulness remains unestablished. Future alternatives must use development data and a new identity.
+
+Earlier dated observations below retain their own scope.
+
 ## Fresh scientific execution - 12 October 2026
 
 The new **Alpaca revision-conservative experiment has completed and passed actual

@@ -1,0 +1,31 @@
+{
+  "schema": "investify-native-calibration-bound-probe-v1",
+  "checked_utc": "2026-10-13T00:38:26.995202+00:00",
+  "engine_source_sha256": "a601913f4a4d04c5be7326d39dc70be73e47836f82e1f1fbd1933ba4204a56ee",
+  "sklearn_version": "1.9.0",
+  "results": {
+    "engine_frozen_alpaca": {
+      "trace_sha256": "009d3b40df86338d918d6546640c57e43fa13541d592e551a5b35fc55d25304e",
+      "evaluation_rows_replayed": 186,
+      "max_replay_absolute_error": 0.0,
+      "simplex_inputs": 5151,
+      "all_argmax_buy": true,
+      "all_row_sums_one": true,
+      "engine_function": "apply_calibration",
+      "maps_reconstructed_from_saved_knots": true,
+      "model_fit_executed": false
+    },
+    "engine_refit_alpaca": {
+      "trace_sha256": "04c0f821432b5c80cfc957e115f6c06de31875159368db7ad1ef80a2c83b330e",
+      "evaluation_rows_replayed": 186,
+      "max_replay_absolute_error": 0.0,
+      "simplex_inputs": 5151,
+      "all_argmax_buy": true,
+      "all_row_sums_one": true,
+      "engine_function": "apply_calibration",
+      "maps_reconstructed_from_saved_knots": true,
+      "model_fit_executed": false
+    }
+  },
+  "scope": "Native engine apply_calibration with the byte-identified saved isotonic knots. Dense 0.01 simplex probe supplements the continuous global-bound derivation. No labels, maps, thresholds, models or frozen research outputs were modified."
+}

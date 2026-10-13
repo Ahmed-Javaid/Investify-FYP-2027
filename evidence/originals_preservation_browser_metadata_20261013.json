@@ -1,0 +1,15 @@
+{
+  "schema": "investify-original-byte-divergence-v1",
+  "checked_utc": "2026-10-13T12:07:52.694784+00:00",
+  "files_checked": 224,
+  "exact_byte_matches": 223,
+  "literal_all_originals_unchanged": false,
+  "changed_file": "E:\\Uni_Stuff\\investify_repo\\.git\\config",
+  "current_sha256": "753d2ab6b249352313219f688fdc952c0e697d641726479b3a579bee7bc4d07a",
+  "original_sha256": "2756576f3c73b4c852e2d741d0a835c855e28f75962ef27a88de3c700acb68b3",
+  "additional_key": "vscode-merge-base",
+  "in_memory_removal_reconstructs_original_bytes": true,
+  "external_configuration_modified_by_this_review": false,
+  "action": "Preserve the external checkout as found. Retain the failed literal check alongside this byte-exact explanation.",
+  "scope": "All other protected files match. This records an editor Git bookmark, without rewriting the original manifest or claiming literal 224-file equality."
+}
