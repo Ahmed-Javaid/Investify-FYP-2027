@@ -4,6 +4,9 @@ This is the team's single preparation guide: documents, setup, demonstration,
 speaking allocation, individual code reading, defence questions and remaining
 tasks. Read the shared sections, then your own member section.
 
+For the short presentation script, open [the five-minute demonstration handout](DEMONSTRATION.md).
+The explanations below provide the deeper reference when practising or answering questions.
+
 [Demo setup](#demo-setup) | [Live demonstration](#live-demonstration) |
 [Speaking schedule](#speaking-schedule) | [Ahmed](#ahmed-javaid) |
 [Rafay](#rafay-ul-haq) | [Soban](#soban-ahmad) |
