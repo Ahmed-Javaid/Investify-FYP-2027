@@ -10,7 +10,7 @@ Mid-1 planning readiness remains **84.25%, about 84%**, with unchanged weights. 
 - [Actual browser review](../evidence/presenter_visual_review_20261013.json): fourteen captured views, including both profiles, rejection/fallback and restored-candidate acceptance, all three recorded studies and Design. Desktop header/overflow checks pass.
 - [Current focused UI receipt](../evidence/presenter_delivery_tests_20261013_run03.xml): **42 passes** (14 primary, 24 legacy, 4 selectors). This overlaps earlier scopes. Eleven current modules pass scoped Ruff checks.
 
-The new source review archive is prepared for clean-snapshot packaging; extraction verification is still pending.
+The [current review ZIP](../deliverables/investify_mid1_browser_review_20261013.zip) contains 761 files and certifies clean source snapshot **a0fdf27**. [Actual extraction verification](../evidence/browser_review_20261013_clean_host_verification.json) passes 165 portable tests, 62 live HTTP checks and 372 historical records, with six teacher examples replayed. These later navigation/receipt notes are a separate documentation increment.
 
 Scientific findings remain unchanged: weak prediction, all-Buy fresh calibration, exploratory AI-reference sentiment results and an untrained Phi-3-mini student. Physical projector review, timed rehearsal, confirmed cover facts, actual member contributions/defence and supervisor/baseline/criteria review remain open. Prepared CI is not remote CI execution.
 
