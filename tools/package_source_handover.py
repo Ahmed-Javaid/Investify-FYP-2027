@@ -119,8 +119,15 @@ def main():
         for kind, reviewed in (('report', report_receipt), ('presentation', deck_receipt)):
             for relative, expected in reviewed['compiled_source_files'].items():
                 source = (ROOT / relative).resolve()
-                if (not source.is_relative_to(ROOT / kind)
-                        or hashlib.sha256(source.read_bytes()).hexdigest() != expected):
+                # Report figures can be retained scientific outputs from the
+                # code component. Require both owned and packaged bytes to match.
+                allowed = (source.is_relative_to(ROOT / kind)
+                           or kind == 'report' and source.is_relative_to(CODE / 'artifacts'))
+                packaged = (bundle / relative).resolve()
+                if (not allowed or not packaged.is_relative_to(bundle)
+                        or not source.is_file() or not packaged.is_file()
+                        or hashlib.sha256(source.read_bytes()).hexdigest() != expected
+                        or hashlib.sha256(packaged.read_bytes()).hexdigest() != expected):
                     raise ValueError('Compiled artifact source changed since visual review: ' + relative)
         shutil.copyfile(ROOT / 'README.md', bundle / 'README.md')
         files = {str(path.relative_to(bundle)).replace('\\', '/'): hashlib.sha256(path.read_bytes()).hexdigest()
