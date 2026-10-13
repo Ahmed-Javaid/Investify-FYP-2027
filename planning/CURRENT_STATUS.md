@@ -11,7 +11,7 @@ Mid-1 planning readiness remains **84.25%**, using the original weights. The pro
 - [CI/CD status](../deliverables/CI_CD_STATUS.md): both shared CI jobs execute successfully on the local Windows runtime. Portable scope: **165 tests + 7 CI guards**, 62 live HTTP checks, 372 saved records and 228 comparator probes. UI scope: **42 tests**. These scopes overlap other receipts. GitHub/Ubuntu execution and continuous deployment remain unexecuted.
 - [Route to 90% and 95%](../deliverables/MID1_90_95_ROADMAP.md): unchanged-weight conditional scenarios of **90.25%** and **95.00%**, with the genuine review/acceptance requirements listed explicitly.
 
-The new source ZIP is being prepared; extraction verification is pending.
+[Current source ZIP](../deliverables/investify_mid1_ci_work_division_review_20261013.zip): 811 files, clean snapshot **72e8363**. [Actual extraction review](../evidence/ci_work_division_review_20261013_clean_host_verification.json) passes 165 portable tests, 62 HTTP checks and 372 historical records. Later receipt/navigation notes are a separate increment.
 
 Remaining inputs: cover/session/coordinator/co-supervisor facts, actual member contributions/defence, physical projector/timed rehearsal and supervisor baseline/criteria/proposal-action review. Scientific findings, frozen inputs and labels remain unchanged; weak prediction, all-Buy calibration, AI-reference sentiment limits and untrained Phi-3-mini are still disclosed. Original PDFs/ZIPs and dated receipts remain preserved.
 <!-- MID1_BROWSER_CHECKPOINT_END -->

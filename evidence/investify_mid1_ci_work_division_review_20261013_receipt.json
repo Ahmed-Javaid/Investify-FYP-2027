@@ -1,0 +1,10 @@
+{
+  "built_utc": "2026-10-13T13:49:17.288252+00:00",
+  "code_commit": "72e83637a0499b542d4f92d03e6457fe4e4fc34e",
+  "files": 811,
+  "code_snapshot_kind": "clean_commit_snapshot",
+  "zip_bytes": 16732530,
+  "zip_sha256": "c72d48fadbf00ee04b6cb7ba3ed76fd35aa99e1f113f86be1271dd156aff87f3",
+  "scope": "Current Mid-1 review with four-step Streamlit UI, calibration diagnostics, separately executed fresh Alpaca science, original CryptoBERT/Cardiff outputs and six teacher examples. Dated receipts distinguish overlapping scopes. The 101-page report and 12-slide LaTeX/Beamer deck are compiled/layout-reviewed working drafts. Browser capture/review evidence has its own source-bound receipt; physical projector review, rehearsal, student training and human/institutional acceptance remain open. Publisher weights, E: caches and ignored raw acquisition inputs are external prerequisites for fresh inference/training replay. Private review archive; third-party corpus is not approved for public redistribution.",
+  "source_inventory_files": 257
+}
