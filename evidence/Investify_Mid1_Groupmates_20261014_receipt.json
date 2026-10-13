@@ -1,0 +1,32 @@
+{
+  "schema": "investify-groupmate-document-pack-v1",
+  "built_utc": "2026-10-13T21:21:12.769717+00:00",
+  "source_repository": "https://github.com/Ahmed-Javaid/Investify-FYP-2027",
+  "source_repository_head_at_packaging": "5089998d3d293d7422a9f9282509d2c7d70acb89",
+  "scope": "Reviewed documents and practice guides; source code is obtained from GitHub.",
+  "source_files_sha256": {
+    "deliverables/Investify_FYP1_Mid_Report_Revised_20261014.pdf": "f562b19e10da4cc1b6e396e49aac4e1a5a5af99607188554a198e1deca0fea81",
+    "deliverables/Investify_FYP1_Mid_Presentation_Revised_20261014.pdf": "047ce3279f2b2d8d86f704ff324f440e8f8608acd771d7e7bf57496431e9b4a4",
+    "sources/Mid_Eval/FYP-1-Mid-Assessment-Guidelines-and-Rubrics.pdf": "aae01fb689e5b43a03af21eaa72c1cd23a75949c9c51feac6d027cf9b3ca1a93",
+    "docs/team/MID1_TEAM_GUIDE.md": "ced86db168ac0d80d0e251620f95241aa1489fb2e0b50d9c767188a9090c83e5",
+    "docs/technical/ENGINEERING.md": "dd431ce6e0b6fc2449e2a200e6e74ed82adb8fa256b7919e860f3871b0079828",
+    "docs/technical/RESEARCH.md": "b6f7e1d0601155108b2c94790c27b5544a78659f66bab9157d03c0e00e4b1563",
+    "docs/technical/REQUIREMENTS.md": "5af40e86a3ddaae40f1d0c91d152421b9e6c22d466bdd32008c9444ce817e544"
+  },
+  "files_sha256": {
+    "Investify_Report.pdf": "f562b19e10da4cc1b6e396e49aac4e1a5a5af99607188554a198e1deca0fea81",
+    "Investify_Presentation.pdf": "047ce3279f2b2d8d86f704ff324f440e8f8608acd771d7e7bf57496431e9b4a4",
+    "Mid1_Rubric.pdf": "aae01fb689e5b43a03af21eaa72c1cd23a75949c9c51feac6d027cf9b3ca1a93",
+    "TEAM_GUIDE.md": "4b32ab40b516707a26e3588891ee43dba8c59e1c3d62496b2b495dbc1274d267",
+    "technical/ENGINEERING.md": "cc5efd2584a27647cb33082310ae3d51a153a605ecfade03cbe52b16760dcf6f",
+    "technical/RESEARCH.md": "394211d08e87b7f97f8b7a4698d76f3bd5b0d0787aed5d025b7f7bd05936b7f5",
+    "technical/REQUIREMENTS.md": "961409b3ec8900c2b19e6d979388b61271f4fcc94b66d127791bcf9f8c9b8b6e",
+    "READ_FIRST.txt": "14f9564332e4cbd1f0a0e6776636b5b040f5ff67f2fae371e9649b65cc8907a3"
+  },
+  "output": "deliverables/Investify_Mid1_Groupmates_20261014.zip",
+  "zip_sha256": "0654e8c567dd66f6ad1f102167fd1dd5aa6a415c168af6f4a80add063f734a19",
+  "zip_bytes": 1528301,
+  "file_count": 9,
+  "archive_integrity": "passed",
+  "pdfs_and_rubric_preserved_byte_for_byte": true
+}

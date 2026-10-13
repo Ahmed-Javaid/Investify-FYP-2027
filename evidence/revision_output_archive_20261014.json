@@ -1,0 +1,32 @@
+{
+    "schema":  "investify-revision-output-archive-v1",
+    "moved_utc":  "2026-10-13T21:17:30.1651362Z",
+    "all_moved_bytes_verified":  true,
+    "moved_files":  [
+                        {
+                            "from":  "deliverables/Investify_FYP1_Mid_Report_Technical_Completion_20261013.pdf",
+                            "to":  "deliverables/archive/20261014/Investify_FYP1_Mid_Report_Technical_Completion_20261013.pdf",
+                            "sha256":  "9b1ba14349786a15cf6f0bd432ba922f0ca76af602ae7205ef30c80e5b54701b"
+                        },
+                        {
+                            "from":  "deliverables/Investify_FYP1_Mid_Presentation_Technical_Completion_20261013.pdf",
+                            "to":  "deliverables/archive/20261014/Investify_FYP1_Mid_Presentation_Technical_Completion_20261013.pdf",
+                            "sha256":  "25407ca3045a29daa2a6660c9d6c331288a94e0452f3387812ee776792a8b8fd"
+                        },
+                        {
+                            "from":  "deliverables/Investify_Mid1_Groupmates_20261013_v2.zip",
+                            "to":  "deliverables/archive/20261014/Investify_Mid1_Groupmates_20261013_v2.zip",
+                            "sha256":  "0ad4dd281d76a8b060d7fd878444e2db1b17768aa0c40dc4497570070296dc25"
+                        },
+                        {
+                            "from":  "deliverables/investify_mid1_revision_validation_20261014.zip",
+                            "to":  "deliverables/archive/20261014/investify_mid1_revision_validation_20261014.zip",
+                            "sha256":  "40c194abc827ea4e3b89eeef5073b9a7f1b378ce0a6495927fc27333ce306ca3"
+                        },
+                        {
+                            "from":  "deliverables/investify_mid1_revision_validation_20261014_v2.zip",
+                            "to":  "deliverables/archive/20261014/investify_mid1_revision_validation_20261014_v2.zip",
+                            "sha256":  "214c34d6f1bcb82710841c8993573ef6781cb9560e39d621d91d35b54b4137c4"
+                        }
+                    ]
+}

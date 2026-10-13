@@ -1,0 +1,82 @@
+{
+  "schema": "investify-downloaded-delivery-check-v1",
+  "run_id": 38469231692,
+  "artifact_id": 11851735775,
+  "artifact_sha256": "1437b049798b0c22d2a74bb96f5470a560981b82baeec4fcaf8dd689a9959154",
+  "all_delivery_file_hashes_match": true,
+  "all_nested_bundle_manifest_hashes_match": true,
+  "bundled_files": 731,
+  "hosted_delivery_receipt": {
+    "schema": "investify-verified-continuous-delivery-v1",
+    "checked_utc": "2026-10-13T21:17:55.819941+00:00",
+    "status": "passed",
+    "repository_commit": "5089998d3d293d7422a9f9282509d2c7d70acb89",
+    "execution_location": "github_actions",
+    "ci_prerequisites": [
+      {
+        "job": "evidence",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "receipt_sha256": "c39420a802496a537258542b5099c50e6a8eda76cc36370166bda26b73fb2dbe",
+        "execution_location": "github_actions"
+      },
+      {
+        "job": "evidence",
+        "platform": "Windows-10-10.0.26100-SP0",
+        "receipt_sha256": "b6dcbdb7b94f2293bf142597e899ce917eeb621c7e817289412310e4274942ee",
+        "execution_location": "github_actions"
+      },
+      {
+        "job": "streamlit-ui",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "receipt_sha256": "e0a2f7a6c5ed4324e0868d2913d5417f66b060470bf7886615fae0c70cda8938",
+        "execution_location": "github_actions"
+      },
+      {
+        "job": "streamlit-ui",
+        "platform": "Windows-10-10.0.26100-SP0",
+        "receipt_sha256": "c9b3740fd5d1752aeac4317f21d2a84cf06465cf86867f60b154fc12a7712e2c",
+        "execution_location": "github_actions"
+      }
+    ],
+    "document_configuration_sha256": "969f9d86709202916b242000813fd8fcbb0486b48c6dc194d287292c702cc14f",
+    "delivery_kind": "Verified source, reviewed PDF and handover artifact; production hosting is later scope.",
+    "artifacts_sha256": {
+      "delivery_extraction_clean_host_tests.txt": "8b118772c8ff859a26aaa2689afbdddd941cf469c17236c43c3abcadff7b9d3a",
+      "delivery_extraction_clean_host_verification.json": "20e56d65c2ffbff317bd14c358b4969ce28a1a6728eea8c686bc344bf81b669a",
+      "investify_mid1_ci_delivery_5089998d3d29.zip": "6762b1d1d11f33ea40efce2eecf95803be55233f4024705df41049250642e6d7",
+      "package_receipt.json": "a7def62cf4ab30f83aa3485ce3469fce5a5284cfee18dbd2afa101e28f49670f",
+      "prerequisite_1.json": "c39420a802496a537258542b5099c50e6a8eda76cc36370166bda26b73fb2dbe",
+      "prerequisite_2.json": "b6dcbdb7b94f2293bf142597e899ce917eeb621c7e817289412310e4274942ee",
+      "prerequisite_3.json": "e0a2f7a6c5ed4324e0868d2913d5417f66b060470bf7886615fae0c70cda8938",
+      "prerequisite_4.json": "c9b3740fd5d1752aeac4317f21d2a84cf06465cf86867f60b154fc12a7712e2c"
+    }
+  },
+  "extraction_verification": {
+    "checked_utc": "2026-10-13T21:17:55.727845+00:00",
+    "archive_sha256": "6762b1d1d11f33ea40efce2eecf95803be55233f4024705df41049250642e6d7",
+    "code_commit": "5089998d3d293d7422a9f9282509d2c7d70acb89",
+    "inventory_files_verified": 731,
+    "clean_environment": "/home/runner/work/_temp/investify-portable-clean-py311",
+    "unavailable_external_packages": {
+      "numpy": false,
+      "streamlit": false,
+      "torch": false,
+      "pytest": false
+    },
+    "portable_tests_passed": 176,
+    "live_checks_passed": 62,
+    "records_validated": 372,
+    "revision_source": "checked_bundle_inventory",
+    "git_dirty": null,
+    "plan_only_status": "plan_only",
+    "real_completions": 0,
+    "browser_visual_qa": false,
+    "recorded_teacher_examples_replayed": 6,
+    "student_training_executed": false,
+    "original_social_acquisition_inputs_replayed": false,
+    "requirement_anchors_checked_against_bundled_selected_receipt": 20,
+    "streamlit_tests_executed_on_clean_host": false,
+    "scope": "Actual ZIP extraction, hash inventory, stdlib-only execution, live portable server and no-inference planning; not scientific reproduction or rendered report/deck"
+  },
+  "current_reviewed_pdfs_match": true
+}

@@ -48,7 +48,7 @@ Retained [hosted success](https://github.com/Ahmed-Javaid/Investify-FYP-2027/act
 and [download verification](../../evidence/remote_ci_delivery_download_check_20261013.json)
 prove their dated source snapshots. The previously checked main run is
 https://github.com/Ahmed-Javaid/Investify-FYP-2027/actions/runs/38428835203.
-The current revision has its local portable/UI receipts; the next hosted run must certify the matching committed source.
+The [revised-source run](https://github.com/Ahmed-Javaid/Investify-FYP-2027/actions/runs/38469231692) passed all five jobs for commit 5089998. Its delivered bundle was downloaded and its server digest, nested file manifest and current reviewed PDFs were independently checked; [download receipt](../../evidence/remote_ci_revision_download_20261014.json).
 
 CD delivers source/PDF artifacts; production hosting is later work. CI does not
 acquire current data, train/infer large models, rerun the full scientific study,
