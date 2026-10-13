@@ -19,7 +19,7 @@ decision/evidence rather than determining the class or certifying an outcome.
 | Isotonic calibration | Held-out probability mapping improves Brier while collapsing the emitted class. |
 | TreeSHAP | Attribution of raw predicted-class score, not probabilities, causes or expected returns. |
 | Template/verifier | Deterministic explanation, independent prose/JSON checks and checked fallback. |
-| Current assistant teacher | Six actual controlled-prose examples; deterministic factual JSON is disclosed hybrid supervision. |
+| OpenAI GPT-6 assistant teacher | Six actual controlled-prose examples; deterministic factual JSON is disclosed hybrid supervision. |
 | Original Phi-3-mini | Planned student; exact checkpoint/runtime, baseline inference and QLoRA remain unfinished. |
 | Mistral | Fallback option, not a completed substitute study. |
 
@@ -87,7 +87,7 @@ ranges; exact original raw-input/uv.lock restoration remains separate.
 
 Two hundred real MSFT posts produced 117 usable references and 83 exclusions.
 Labels: 31 positive, 67 neutral, 19 negative. Chronological split: 93 development,
-24 held out; held-out labels: 7 positive, 15 neutral, 2 negative. Single reference-construction pass, disclosed in report Appendix G; independent
+24 held out; held-out labels: 7 positive, 15 neutral, 2 negative. Single reference-construction pass, disclosed in report Chapter 7; independent
 validation and reliability are unmeasured.
 
 | Candidate | Macro-F1 agreement | Exact agreement | Limit |
@@ -146,4 +146,39 @@ production hosting and participant acceptance remain whole-FYP work.
 
 ## Multiclass and profile revision, 14 October 2026
 
-The new temperature experiment retains the original model/trace bytes, fits one positive parameter on 181 earlier outcomes and preserves raw classes. Its upper-bound fit approaches uniform confidence (Brier about 0.6667), so it is a diagnostic correction, not useful forecasting. Frozen class counts are 40/51/95; refit 37/50/99. The primary UI abstains on insufficient confidence and rejects directional use of archived failed calibration. Complete tolerance scoring now has thirteen items plus five capacity questions; allowance controls confidence requirements without changing direction. CryptoBERT sanity probes produce positive/negative outputs; the neutral probe is negative. Reference labels remain unchanged and their single-pass construction is disclosed in the report methods.
+The new temperature experiment retains the original model/trace bytes, fits one positive parameter on 181 earlier outcomes and preserves raw classes. Its upper-bound fit approaches uniform confidence (Brier about 0.6667), so it is a no-signal diagnosis: temperature reaches T = 1000 and Brier rounds to 0.6667, the constant one-third forecast. Frozen class counts are 40/51/95; refit 37/50/99. The primary UI abstains on insufficient confidence and rejects directional use of archived failed calibration. Complete tolerance scoring now has thirteen items plus five capacity questions; allowance controls confidence requirements without changing direction. CryptoBERT sanity probes produce positive/negative outputs; the neutral probe is negative. Reference labels remain unchanged and their single-pass construction is disclosed in the report methods.
+
+## Audit revision: baselines, gates and explanation schedule
+
+Saved `provenance.metrics` in both recovery01 engine modes gives XGBoost CV
+macro-F1 **0.2843234954**, fold SD **0.0536851075**, and linear **0.2796068787**,
+SD **0.0559261189**. The modes share this training CV result. On the final 186
+cases, isotonic XGBoost is **0.2238095238** in both; linear frozen is
+**0.1800094720**, refit **0.1896191338**. The **0.3182123510** frozen raw result
+is a separate final-case score, not the six-fold **0.2843** CV mean.
+
+Gate A remains partial: causal/unit controls and the centred canary are supported;
+the one-session clean arm is PASS, but the five-session arm is BELOW_CHANCE,
+not literal chance-level closure of the entire proposal gate. Gate B is not
+passed: a small CV lift over linear and final-case isotonic improvement do not
+establish the combined out-of-sample prediction/calibration conditions.
+
+Real temperature records all remain Observe even at maximum allowance (50%
+threshold versus about 33% confidence). Controlled 0.70-confidence fixtures
+exercise the policy separately. The implemented explainer is a deterministic
+template plus grammar-based verifier. Prompted LLM prose with constrained claims
+is scheduled for Mid-2 / Iteration 3; QLoRA is Iteration 4.
+
+C1 is the timing harness/permanent canary, C2 the deterministic verifier with
+retained rejection and checked fallback, and C3 the planned preregistered
+news/social divergence ablation. Novelty in imported sentiment/XGBoost/SHAP/QLoRA
+and profit are not claimed. See report Chapters 2 and 5 for the primary-source
+comparison, market formulas, LLM design and illustrative example.
+
+Executed revisions: FinBERT `0bc2ac10dda6929bcb1f77ccc43c7ec5c424f031`,
+CryptoBERT `9e37c910fe87727cb842a9ac55c6388256fe0f15`,
+Cardiff `3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7`. Current publisher cards
+state FinBERT weights CC BY-NC-SA 4.0, CryptoBERT MIT and Cardiff CC BY 4.0.
+The recorded teacher family is OpenAI GPT-6, with no exact serving revision.
+Phi-3-mini checkpoint and Mistral fallback are unselected; their candidate
+publisher licenses do not imply a completed project run.

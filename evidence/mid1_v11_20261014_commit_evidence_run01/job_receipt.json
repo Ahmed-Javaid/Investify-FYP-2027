@@ -1,0 +1,87 @@
+{
+  "schema": "investify-executed-ci-job-v1",
+  "started_utc": "2026-10-13T23:44:00.661577+00:00",
+  "job": "evidence",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.9",
+  "execution_location": "local_replay",
+  "runner_version": null,
+  "dependency_installation_verified_by_this_runner": false,
+  "status": "passed",
+  "steps": [
+    {
+      "name": "ci-runner-guards",
+      "exit_code": 0,
+      "elapsed_seconds": 0.219,
+      "tests_passed": 7,
+      "log_sha256": "fa3e08fbdf54fafcce4a21f0a15c4df6c14e0b2e1b3ba5140c538064bfa77c41"
+    },
+    {
+      "name": "portable-tests",
+      "exit_code": 0,
+      "elapsed_seconds": 10.281,
+      "tests_passed": 183,
+      "log_sha256": "d7d4111c086004591a7b98af37e90bb7364a973808f1b49e02fb0785d5e46ab7"
+    },
+    {
+      "name": "record-validation",
+      "exit_code": 0,
+      "elapsed_seconds": 0.859,
+      "tests_passed": null,
+      "log_sha256": "1ef48217efc68fee32ff4bfbd0d6242f5d67b194035ac8f033aafd85f8e647ba"
+    },
+    {
+      "name": "standalone-preview",
+      "exit_code": 0,
+      "elapsed_seconds": 0.328,
+      "tests_passed": null,
+      "log_sha256": "22e7e676e5be1e7f180e5f0f913d4d73fc0c8cc16c8c731bf750d847061133db"
+    },
+    {
+      "name": "plan-only",
+      "exit_code": 0,
+      "elapsed_seconds": 0.36,
+      "tests_passed": null,
+      "log_sha256": "4a281c510f9fb0700b2476aeaaf8a1459237c9958079b9c26f8414f3d133a1df"
+    },
+    {
+      "name": "risk-comparator",
+      "exit_code": 0,
+      "elapsed_seconds": 0.187,
+      "tests_passed": null,
+      "log_sha256": "4461d0f5bc10067ff96b1c89e0a9af5cc857ef63076a2a0ab790f10c19cdc66a"
+    },
+    {
+      "name": "portable-http",
+      "exit_code": 0,
+      "elapsed_seconds": 1.235,
+      "tests_passed": null,
+      "log_sha256": "8222417f1b703b7011a4c2b99e5d29ab270495976a08c7de3295511c870ce516"
+    }
+  ],
+  "scientific_training_or_llm_inference": false,
+  "deployment_executed": false,
+  "source": {
+    "repository_commit": "42fd42cf95075982db1da55f903b6c6e7f20f7ce",
+    "repository_dirty": true,
+    "code_files": 270,
+    "declared_code_inventory_sha256": "ccd6cdc6d2fc8b2d6123858d1b2c0b5b06170ce1b02a5c60a6018c90eca1712e"
+  },
+  "temporary_component_metadata_restored": true,
+  "finished_utc": "2026-10-13T23:44:15.114516+00:00",
+  "artifacts_sha256": {
+    "ci-runner-guards.txt": "fa3e08fbdf54fafcce4a21f0a15c4df6c14e0b2e1b3ba5140c538064bfa77c41",
+    "plan-only.json": "72564df160f6a081da103e2a68d0454a2c9de2cf90e25a063ca75b532eea63a8",
+    "plan-only.txt": "4a281c510f9fb0700b2476aeaaf8a1459237c9958079b9c26f8414f3d133a1df",
+    "portable-http.json": "27315fe57f548b210b850a8b9b20d4bef66c8aa943fe969d6afe552f858acea2",
+    "portable-http.txt": "8222417f1b703b7011a4c2b99e5d29ab270495976a08c7de3295511c870ce516",
+    "portable-tests.txt": "d7d4111c086004591a7b98af37e90bb7364a973808f1b49e02fb0785d5e46ab7",
+    "record-validation.json": "2e5e2013b8f468e09fe8696ad52392812d7a968507b45b34fb5d4223be8a91e4",
+    "record-validation.txt": "1ef48217efc68fee32ff4bfbd0d6242f5d67b194035ac8f033aafd85f8e647ba",
+    "risk-comparator.json": "0ed37c935d7df6c4cfed5a7e76613ff46da430d39a9e4da27df2c3618475bc66",
+    "risk-comparator.txt": "4461d0f5bc10067ff96b1c89e0a9af5cc857ef63076a2a0ab790f10c19cdc66a",
+    "source_revision.json": "ccd6cdc6d2fc8b2d6123858d1b2c0b5b06170ce1b02a5c60a6018c90eca1712e",
+    "standalone-preview.html": "d201e304437616a4769ce18a721be02893cfa72828c4199256bf3e53d02c0d19",
+    "standalone-preview.txt": "22e7e676e5be1e7f180e5f0f913d4d73fc0c8cc16c8c731bf750d847061133db"
+  }
+}

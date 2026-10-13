@@ -1,12 +1,17 @@
-\chapter{Remaining Development Plan}
+\chapter{Remaining FYP Plan}
 \section{Remaining Scope}
-The full product requires audited multi-company inputs, news/social divergence, improved prediction/calibration, population-specific profile interpretation, evaluated generated explanations, serving/deployment and participant acceptance. QLoRA is a later milestone; brokerage execution remains excluded.
-\section{Integration and Evaluation}
-The next analysis compares declared baselines and development-only model/calibration choices. We retain weak findings rather than selecting on held-out scores. Social deployment selection follows agreed adequacy criteria; the divergence contribution requires a predeclared ablation on integrated data. Student work begins with a verified original checkpoint, a scored prompted baseline and a larger filtered training set.
-\section{Operational Validation}
-Measure target latency, memory and throughput; run live/backtest parity with a pinned clock; inject unavailable/thin-history sources; and document degraded responses. Production hosting and external installation require an explicit target and reproducible service package. Hosted artifact delivery is already implemented and remains distinct from hosting.
-\section{Participant Evaluation}
-Later tasks ask participants to interpret a recommendation, its drivers, uncertainty and verifier report. Record completion, time, assistance and interpretation errors with consent. The published risk instrument motivates scoring; local wording and policy suitability still need review. Tool/fixture success is not participant acceptance.
-\section{Timeline and Final Deliverables}
-The dated ownership plan appears in Table~\ref{tab:engineering-dates} and Figure~\ref{fig:timeline}. Final deliverables include integrated source/service, reproducible acquisition/evaluation, audited explanation/profile behavior, external installation and participant records, report/presentation and handover instructions. Formal assessment dates remain distinct from internal engineering targets.
-\begin{figure}[htbp]\centering\input{figures/mid1_timeline}\caption{Dated engineering sequence from Mid-1 correction to final handover.}\label{fig:timeline}\end{figure}
+Complete the broader stock research workflow, evaluate its contributions and document its operational boundaries. Brokerage execution remains excluded.
+\section{Remaining Modules and Features}
+Add audited company coverage, paired news/social features and divergence, a service layer, prompted explanations with constrained claims and optional verified student adaptation. Review the profile wording and the actual-close timing policy.
+\section{Remaining Iterations}
+Iteration 2 completes engine/service and the preregistered divergence comparison. Iteration 3 (Mid-2) adds the prompted explainer, free-prose claim binding, NFR/parity/degraded-operation measurement and acceptance preparation. Iteration 4 compares original and QLoRA-adapted Phi-3-mini with the template and performs broader evaluation and handover.
+\section{Implementation Plan}
+First audit additional source coverage and available-label boundaries. Freeze the divergence protocol before evaluating variants. Load a verified original student checkpoint, score its raw prompted baseline, expand filtered examples and preserve the held-out set before adaptation. Integrate the tested service and interface incrementally.
+\section{Testing and Validation Plan}
+Repeat the timing/canary controls for each scientific identity. Compare macro-F1, baseline lift, Brier/reliability and class distributions under shared splits. Measure raw and gated explanation quality. Inject missing feeds/thin history and pin a historical clock for serving parity. The automated workflow is \textbf{2 jobs $\times$ 2 OS = 4 checks, then 1 gated delivery job}; local counts remain distinct from classifier or participant evidence.
+\section{Deployment Plan}
+Prepare a container and an explicit target VM, measure the required environments and deploy the research service. Test installation from the documented package on a separate machine. Current CI delivers downloadable source/PDF artifacts; it does not deploy a production service.
+\section{Tentative Timeline}
+Use the proposal's relative checkpoints in Table~\ref{tab:engineering-dates}. Formal assessment appointments have not been supplied. Engine/divergence/service work precedes the Mid-2 prompted explainer, and QLoRA follows a working prompted baseline.
+\section{Expected Final Deliverables}
+Deliver integrated source/service, source-bound experiments and ablations, timing/calibration and explanation evaluations, measured performance/degraded-operation evidence, external installation instructions, participant records where completed, and final report/presentation. Retain a defensible null-result report if the learned engine has no useful advantage.

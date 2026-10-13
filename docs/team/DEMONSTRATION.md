@@ -9,7 +9,7 @@ risk profile, and catches a false explanation.
 
 On **Overview**, click **Open the decision walkthrough**. Expand **Case
 selection**, choose **Alpaca, multiclass calibration (frozen)** and session
-**2023-12-21**. Then collapse the selector.
+**2023-12-21**. Then collapse the selector. On **Onboarding**, state the educational purpose, loss risk and that no trades are executed. Click **Next** to open **Decision**.
 
 Say: **“A session is a stock-market trading day. We are loading NVDA's saved
 decision for this date, predicting its next five trading sessions.”** Weekends
@@ -66,7 +66,7 @@ Open **Explanation check**:
 
 1. Click **Check explanation**. The unchanged candidate should be accepted.
 2. Click **Inject wrong probability**, then **Check explanation** again.
-3. Show **Candidate rejected** and **Verified fallback emitted**. The candidate
+3. Show **Candidate rejected** and **Verified fallback emitted**. The replacement retains **Policy outcome: Observe**. The candidate
    falsely says **1.00%**; the independently checked replacement restores **33.34%**.
 4. Edit the text: the old verdict becomes invalid. Finish with **Restore record
    facts → Check explanation**, leaving a clean accepted result.
@@ -91,7 +91,7 @@ Alpaca supplies market/news data; FNSPID is an alternative historical news corpu
 | **Archived FNSPID** | Original corpus baseline; timestamp precision and ticker coverage motivated the source change. |
 
 Stay on the first case during the main demonstration. The four older cases are
-ineligible for directional suggestions. The correction fixes collapsed classes;
+ineligible for directional suggestions. The temperature diagnostic preserves class order;
 it does not establish useful predictive performance.
 
 ## If asked what runs live

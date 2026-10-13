@@ -1,0 +1,43 @@
+test_abstaining_explanation_and_fallback_keep_policy_outcome (test_presenter_ui.PresenterUiTests.test_abstaining_explanation_and_fallback_keep_policy_outcome) ... 2026-10-14 04:45:04.082 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_all_feature_families_remain_inspectable (test_presenter_ui.PresenterUiTests.test_all_feature_families_remain_inspectable) ... 2026-10-14 04:45:05.774 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_both_fresh_and_preserved_experiments_are_selectable (test_presenter_ui.PresenterUiTests.test_both_fresh_and_preserved_experiments_are_selectable) ... 2026-10-14 04:45:05.979 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_candidate_edits_invalidate_the_visible_verification (test_presenter_ui.PresenterUiTests.test_candidate_edits_invalidate_the_visible_verification) ... 2026-10-14 04:45:07.288 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_case_change_resets_candidate_and_cannot_publish_stale_output (test_presenter_ui.PresenterUiTests.test_case_change_resets_candidate_and_cannot_publish_stale_output) ... 2026-10-14 04:45:07.490 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_design_names_current_profile_file_and_explainer_schedule (test_presenter_ui.PresenterUiTests.test_design_names_current_profile_file_and_explainer_schedule) ... 2026-10-14 04:45:07.692 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_each_walkthrough_step_has_advisory_date_horizon_and_limits (test_presenter_ui.PresenterUiTests.test_each_walkthrough_step_has_advisory_date_horizon_and_limits) ... 2026-10-14 04:45:07.782 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_failed_study_load_withholds_comparison_scores (test_presenter_ui.PresenterUiTests.test_failed_study_load_withholds_comparison_scores) ... 2026-10-14 04:45:08.076 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_fresh_calibration_diagnosis_has_the_actual_map_bounds (test_presenter_ui.PresenterUiTests.test_fresh_calibration_diagnosis_has_the_actual_map_bounds) ... 2026-10-14 04:45:08.261 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_invalid_records_are_visible_without_a_fake_decision (test_presenter_ui.PresenterUiTests.test_invalid_records_are_visible_without_a_fake_decision) ... 2026-10-14 04:45:08.522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_onboarding_precedes_the_decision_and_discloses_purpose_risks_and_status (test_presenter_ui.PresenterUiTests.test_onboarding_precedes_the_decision_and_discloses_purpose_risks_and_status) ... 2026-10-14 04:45:08.610 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_overview_has_one_primary_route_and_no_hidden_research_widgets (test_presenter_ui.PresenterUiTests.test_overview_has_one_primary_route_and_no_hidden_research_widgets) ... 2026-10-14 04:45:08.763 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_profile_change_invalidates_verified_explanation_context (test_presenter_ui.PresenterUiTests.test_profile_change_invalidates_verified_explanation_context) ... 2026-10-14 04:45:08.846 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_profile_policy_is_available_without_fitting_a_new_comparator (test_presenter_ui.PresenterUiTests.test_profile_policy_is_available_without_fitting_a_new_comparator) ... 2026-10-14 04:45:09.191 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_profiles_are_explicit_unanswered_and_can_be_cleared (test_presenter_ui.PresenterUiTests.test_profiles_are_explicit_unanswered_and_can_be_cleared) ... 2026-10-14 04:45:09.446 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_recorded_experiments_render_scores_without_model_inference (test_presenter_ui.PresenterUiTests.test_recorded_experiments_render_scores_without_model_inference) ... 2026-10-14 04:45:09.696 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_stale_calibration_diagnosis_is_withheld (test_presenter_ui.PresenterUiTests.test_stale_calibration_diagnosis_is_withheld) ... 2026-10-14 04:45:10.242 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_walkthrough_renders_only_the_selected_step (test_presenter_ui.PresenterUiTests.test_walkthrough_renders_only_the_selected_step) ... 2026-10-14 04:45:10.442 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_wrong_visible_probability_is_rejected_with_verified_fallback (test_presenter_ui.PresenterUiTests.test_wrong_visible_probability_is_rejected_with_verified_fallback) ... 2026-10-14 04:45:10.681 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 6.812s
+
+OK

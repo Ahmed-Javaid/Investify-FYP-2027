@@ -100,7 +100,7 @@ Source: https://github.com/Ahmed-Javaid/Investify-FYP-2027
 Clone/run instructions are in TEAM_GUIDE.md. No GPU/API keys/model downloads
 are needed for the recorded demo. Initial dependency installation needs internet.
 
-Report date: 11 October 2026; actual revisions/tests retain their dates.
+Submission date and batch/session are unconfirmed and remain blank in the PDFs.
 Predictions/studies are recorded; profile arithmetic and checking run live.
 The full FYP continues beyond this checkpoint. Print/sign after real review.
 manifest.json records hashes. Code, datasets, weights and old notes are excluded.

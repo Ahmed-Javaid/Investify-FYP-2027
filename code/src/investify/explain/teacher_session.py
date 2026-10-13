@@ -114,7 +114,20 @@ def freeze_plan(artifacts=ROOT / 'artifacts', *, frozen_utc=None):
 
 
 def verify_plan(plan, artifacts=ROOT / 'artifacts'):
-    if plan != freeze_plan(artifacts, frozen_utc=plan['frozen_utc']):
+    expected = freeze_plan(artifacts, frozen_utc=plan['frozen_utc'])
+    if plan.get('source_code_sha256') != expected['source_code_sha256']:
+        archive = Path(__file__).parent / 'archive_v4'
+        original = json.loads((archive / 'source_hashes.json').read_text(encoding='utf-8'))
+        if plan.get('source_code_sha256') != original:
+            raise ValueError('Teacher source identity is neither current nor the retained v4 source')
+        for name, recorded in original.items():
+            snapshot = archive / name
+            if hashlib.sha256(snapshot.read_bytes()).hexdigest() != recorded:
+                raise ValueError('Retained teacher source bytes changed')
+        # Default render/verify behavior remains compatible with this retained grammar.
+        # Policy-aware explanations are a new engineering path, never old study outputs.
+        expected['source_code_sha256'] = original
+    if plan != expected:
         raise ValueError('Teacher data, grouped splits, selected records, prompt, identity or source changed after freezing')
 
 

@@ -1,33 +1,57 @@
-\chapter{Research and Technical Background}
-\section{Financial Text and Prediction}
-FinBERT adapts language representations to financial sentiment and provides positive, neutral and negative scores \cite{finbert_paper,finbert_card}. Investify derives news polarity from those scores and combines it with technical indicators. The language model is an input component, not a stock-return oracle. FNSPID supplies historical financial text \cite{fnspid_paper}; source coverage and timestamp precision must be audited before aligning it to tradable sessions.
-\section{Model Selection by Text Register}
-Financial headlines and informal social posts differ in language and context. FinBERT remains the news model. CryptoBERT was proposed for social content, but its crypto-domain training does not establish equity-tweet transfer \cite{cryptobert_card}. Cardiff's Twitter sentiment model provides a relevant alternative with explicit mention/URL preprocessing \cite{twitter_sentiment_card}. Both original checkpoints were evaluated on the same frozen references. Cardiff's exploratory lead and the added sanity probes are reported in Chapter~\ref{chap:testing}; changing the social candidate is documented as an evaluated alternative to the proposal, not a replacement for FinBERT.
-\section{Attribution and Explanation Checking}
-TreeSHAP decomposes a tree model's raw score into a base value and feature contributions \cite{treeshap_paper}. These values are not calibrated probabilities or economic causes. Explanation research distinguishes faithfulness from self-consistency \cite{faithfulness_paper}; Investify therefore makes a narrow, testable claim: supported statements must match the selected record. FActScore motivates atomic-claim accounting \cite{factscore_2023}, while RARR illustrates evidence-based correction \cite{rarr_2023}. Our contribution is a bounded implementation with visible-text/JSON independence, coverage gates, retained rejection and independently checked fallback.
-\begin{longtable}{p{0.25\textwidth}p{0.31\textwidth}p{0.33\textwidth}}
-\caption{Related methods and their role in Investify.}\label{tab:related-work}\\
-\toprule Method & Relevant capability & Project distinction\\\midrule
-\endfirsthead
-\toprule Method & Relevant capability & Project distinction\\\midrule
-\endhead
-Financial sentiment models & Text-domain classification & Explicit news/social routing and transfer study\\
-TreeSHAP & Raw-score attribution & Complete feature context and additivity checks\\
-Atomic factuality evaluation & Supported-claim accounting & Numerical record, required visible facts and strict vocabulary\\
-Evidence-based revision & Correct unsupported text & Reject, retain failure, then verify deterministic recovery\\
-Chronological financial evaluation & Future-independent estimation & Endpoint purge, explicit gap and permanent fault canaries\\
+\chapter{Research and Existing Solutions}
+\label{chap:research}
+\section{Research Method / Approach}
+We reviewed the approved proposal slides, panel action register, official mid-report template and rubric. We then read primary papers, original model cards and official product descriptions, and checked the saved scientific results and implementation. Product descriptions establish advertised features; they do not establish an independently audited evaluation protocol. The unsubmitted concept document is used as design reference rather than as an approved scope change.
+\section{Existing Solutions / Products}
+Wealthfront uses a questionnaire to recommend an allocation\cite{wealthfront_product}. PortfolioPilot offers portfolio analysis and personalized recommendations\cite{portfoliopilot_product}. Danelfin exposes technical, fundamental and sentiment subscores\cite{danelfin_product}. Magnifi offers conversational investment research\cite{magnifi_product}. Bloomberg and LSEG Workspace combine professional market data and news\cite{bloomberg_product,lseg_product}. StockTwits and TradingView provide social discussion or market-charting tools\cite{stocktwits_product,tradingview_product}. These products address different user tasks; Investify evaluates an inspectable historical research path rather than trying to replace a terminal or a licensed adviser.
+
+Ruan and Jiang combine FinBERT-enhanced sentiment, XGBoost and SHAP in a published prediction pipeline\cite{ruan_jiang_2025}. This is close technical prior work, so combining these libraries is not itself our contribution. Li et al. identify training-window information leakage in LLM financial agents\cite{profit_mirage_2025}. Zhang et al.'s 2026 preprint changes one decision-time convention at a time and finds that inflation depends on the fault\cite{alpha_disappears_2026}; it is not peer reviewed. These studies motivate controlled timing comparisons and a declared null-result path.
+\section{Comparison of Existing Solutions}
+\begingroup\small
+\begin{longtable}{p{.23\textwidth}p{.12\textwidth}p{.16\textwidth}p{.13\textwidth}p{.12\textwidth}p{.13\textwidth}}
+\caption{Comparison on the five proposal criteria.}\label{tab:existing-solutions}\\\toprule Solution & Risk profile & Formal + informal sentiment & Explainable predictions & Leakage-safe evaluation & Verified natural language\\\midrule
+Wealthfront & Risk quiz & Not specified & Allocation explanation & Not assessed & Not specified\\
+PortfolioPilot & Risk preferences & Not specified as paired features & Portfolio recommendations & Not assessed & Not specified\\
+Danelfin & Low-risk score; personal profile not established & Sentiment subscore; register separation unclear & Feature subscores & Not assessed & Not specified\\
+Magnifi & Personal help & Not specified & Research chat & Not assessed & Not specified\\
+Bloomberg / LSEG & Risk tools & News; other content varies & Analytics and research & Product-dependent; not assessed & Record-level guard not established\\
+StockTwits / TradingView & Not established here & Social discussion / charts and news & Signals and charts & User-script dependent & Not established here\\
+Published FinBERT + XGBoost + SHAP & Not central & News; no paired social experiment identified & SHAP attributions & Study-specific timing & No independent claim guard identified\\
+Manual workflow & User judgement & User-selected sources & User reasoning & User-dependent & No automatic checker\\
+Investify Mid-1 & Complete score + gate & News; social evaluated separately & All-feature SHAP context & Tested controls; Gate A partial & Template grammar + checked fallback\\
+Investify planned & Same profile design & Integrated divergence ablation & SHAP + LLM prose & Broader timing/parity validation & Constrained claims, Mid-2\\
 \bottomrule\end{longtable}
-\section{Multiclass Calibration}
-Independent one-versus-rest isotonic maps need not preserve the multiclass ranking. The fresh maps make Buy's minimum exceed the other classes' maxima, creating constant output. Temperature scaling instead divides all class margins by one positive parameter and normalizes jointly \cite{guo_temperature_2017}. We fit that parameter on earlier calibration outcomes only. The observed fit approaches uniform confidence, so the interface abstains rather than treating a preserved raw class as a usable recommendation. This is a post-analysis correction. Parameters use calibration outcomes only; evaluation cases were already examined, so the new score is diagnostic rather than a first-unseen performance claim.
-\section{Risk Capacity and Tolerance}
-Capacity describes the ability to bear loss; tolerance describes willingness. Grable--Lytton uses thirteen items with a published scoring key and range 13--47 \cite{grable_retrospective_2015}. We retain the scoring and display concise paraphrases, alongside five capacity factors and explicit protective caps. The more restrictive capacity/tolerance tier binds. A normalized allowance controls required confidence; it is no longer a sentiment weight. Local questionnaire wording and the project confidence policy still require population-specific evaluation.
-\section{Market Mechanisms and Data Vintage}
-Stocks represent ownership interests and may respond to company results, financing conditions, expectations and market-wide events \cite{sec_stocks}. Technical indicators describe recent price/volume structure; sentiment describes the text, not its truth. SHAP describes how a fitted model used an input, not why the market moved.
-
-NVIDIA's four-for-one split began split-adjusted trading on 20 July 2021 \cite{nvda_split_2021}; the ten-for-one split began on 10 June 2024 \cite{nvda_split_2024}. The second event occurs after our 2018--2023 window, but a 2026 vendor snapshot can retroactively rescale earlier prices and volumes. A split changes share count and per-share scale, not holding value by itself. We state the consumed SIP split-adjusted basis and its acquisition vintage rather than describing it as original as-traded data. Dividends, action metadata and provider revisions remain distinct audit questions.
-
-Exchange holidays and early closes require a declared timing policy \cite{nyse_calendar}. The inherited baseline uses a fixed 16:00 New York cutoff, including half-days; it is not claimed as actual-close execution. Forward labels mature after five observed sessions. Label-end purging and the additional configured calendar-day gap are separate controls, explained in Chapter~6.
-\section{Teacher and Student Choice}
-The initial open-weight preference reflected anticipated restrictions on broad model distillation. For the current scoped construction pilot, a frontier assistant supplies explanatory examples; no competing general-purpose model or student adaptation is trained. The service restriction concerns competing models rather than a blanket prohibition on every educational example \cite{openai_terms_2026}. Phi-3-mini remains the planned original student and Mistral a fallback. The larger teacher/student comparison remains a later milestone. The construction method and development assistance are disclosed once in Appendix~\ref{app:handbook}.
-\section{Research Gaps}
-Useful prediction, unrestricted explanation quality, news/social divergence, multi-company generalization, population-specific risk interpretation and participant benefit remain open. The report separates those research questions from verified implementation behavior. Negative findings preserve their value as diagnostic evidence and guide the dated development plan.
+\endgroup
+``Not specified'' means the inspected public source did not establish that criterion, not that the product lacks it. The manual row describes the workflow targeted by this project, not a measured user-study baseline.
+\section{Limitations and Gaps}
+The relevant gap is the combination of time-aware evaluation and a checkable explanation. Showing an indicator, a proprietary score or fluent prose does not by itself show that the inputs were available at decision time or that each explanation claim matches the computation. Conversely, checking a claim does not establish a useful predictor. The current project limitations are consolidated in Section~\ref{sec:limitations}.
+\section{Proposed Solution}
+The learner receives the model's probabilities, full evidence and a separate risk-policy outcome. A deterministic verifier checks known claims and retains the reason for rejection before emitting a checked replacement. The planned LLM translates the same record into accessible prose. Its design and evaluation are in Section~\ref{sec:llm-design}.
+\subsection{Contribution and Evaluation}
+\begin{enumerate}
+\item \textbf{C1: Leakage-audited point-in-time harness with a permanent canary.} Implemented timing, scaling and label-end checks; evaluated by unit tests and fixed leakage arms. The centred Bollinger fault fires. Broader historical availability and the full proposal Gate A remain partial.
+\item \textbf{C2: Deterministic claim verifier with retained rejection and checked fallback.} Implemented for the template grammar; evaluated using independent prose/JSON corruptions, omission tests and the live recovery path. Free-prose extraction is a Mid-2 deliverable.
+\item \textbf{C3: Cross-register divergence features with a pre-registered ablation.} Planned. Evaluate a news-only model against news/social and divergence variants using shared chronological folds and settings, with the protocol fixed before running the comparison.
+\end{enumerate}
+As stated on proposal slide 8, no novelty is claimed in sentiment scoring, gradient boosting, SHAP-to-text or QLoRA, and no profit claim is made. The contributions concern controls and their evaluation, not the mere use of these components.
+\section{Complex Computing Problem}
+The requirement is to justify a stock-research outcome using observations that arrive on different clocks, preserve the information available at decision time, reconcile capacity with tolerance and keep every displayed claim consistent with the underlying computation. These requirements conflict when a fluent explanation or a personalized response would otherwise hide weak evidence.
+\begin{longtable}{p{.26\textwidth}p{.63\textwidth}}
+\caption{Seoul Accord characteristics applied to the project.}\label{tab:ccp}\\\toprule Characteristic & Project evidence and boundary\\\midrule
+Conflicting requirements & Readability versus checkability; capacity versus tolerance; personalization versus privacy\\
+No obvious solution & Timing and vendor revisions require an explicit information-availability model, not just a random train/test split\\
+Depth of knowledge & Label overlap, calibration, attribution and claim verification require different mathematical models\\
+Unfamiliar issues & Retroactive price adjustment, early closes and revised publication times create silent evaluation faults\\
+Beyond routine practice & Team-built fault controls and record-based rejection tests complement libraries\\
+Diverse stakeholders & Learner, operator and supervisor have different criteria, but the current operating roles are modest\\
+Significant consequences & Unfounded certainty may mislead a non-expert interpreting a stock signal\\
+Interdependence & Store, feature construction and evaluation are coupled; much of the pipeline is still sequential\\
+Ill-defined requirements & Whether short-horizon predictive information exists must be discovered rather than assumed\\
+\bottomrule\end{longtable}
+This is a requirement-level argument adapted from concept Section 5. It does not treat every characteristic as equally strong.
+\section{Technical Challenges}
+The main challenges are timestamp precision, available-label boundaries, calibration collapse, social-domain transfer and consistent text/JSON claims. XGBoost\cite{xgboost_2016} and SHAP\cite{shap_2017,treeshap_paper} supply algorithms; the project must control how their inputs, outputs and claims are evaluated. Purged evaluation is motivated by overlapping financial labels\cite{deprado_2018}.
+\section{Research Findings and Design Decisions}
+The FNSPID precision audit led to a separate timestamped Alpaca/Benzinga experiment. Isotonic calibration collapsed the final classes; the subsequent bounded temperature fit produced near-uniform probabilities and motivated abstention. The full profile is used as a confidence gate rather than changing model direction. The social study motivates evaluating equity transfer before adding divergence. The current template verifier precedes any prompted LLM or QLoRA work\cite{qlora_2023,phi3_2024}.
+\input{chapters/market_background}
+\input{chapters/model_inventory}

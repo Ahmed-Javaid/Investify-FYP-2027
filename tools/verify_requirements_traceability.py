@@ -69,8 +69,8 @@ def main():
                     executed = True
                 row['checked_anchors'].append(dict(anchor, kind=kind, line=line, executed_pass=executed))
         rows.append(row)
-    if ids != {f'MID-FR-{i:02d}' for i in range(1, 21)}:
-        raise ValueError('Traceability must cover the declared 20 engineering requirements')
+    if ids != {f'MID-FR-{i:02d}' for i in range(1, 24)}:
+        raise ValueError('Traceability must cover the declared 23 engineering requirements')
     report = {'schema': 'investify-requirements-traceability-receipt-v1',
               'checked_utc': datetime.now(timezone.utc).isoformat(),
               'requirements_checked': len(rows), 'selected_tests_passed': len(cases),

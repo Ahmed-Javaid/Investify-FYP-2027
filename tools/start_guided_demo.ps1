@@ -17,7 +17,7 @@ if ($LASTEXITCODE -ne 0) { throw 'The viewer dependency check failed.' }
 Write-Output "Guided demo: http://127.0.0.1:$Port ; stop with Ctrl+C."
 Push-Location -LiteralPath $codePath
 try {
-    & $PythonExe -B -m streamlit run app/streamlit_app.py --server.address=127.0.0.1 --server.port=$Port --server.headless=true --browser.gatherUsageStats=false
+    & $PythonExe -B -m streamlit run app/streamlit_app.py --server.address=127.0.0.1 --server.port=$Port --theme.base=light --server.headless=true --browser.gatherUsageStats=false
 } finally {
     Pop-Location
 }

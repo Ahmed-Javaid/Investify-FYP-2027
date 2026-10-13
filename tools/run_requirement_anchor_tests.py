@@ -1,5 +1,6 @@
 """Execute the named requirement regressions and retain real JUnit XML results."""
 from datetime import datetime, timezone
+import argparse
 import hashlib
 import importlib
 import json
@@ -16,7 +17,12 @@ sys.path.insert(0, str(ROOT / 'code/tests'))
 
 
 def main():
-    output = ROOT / 'evidence/requirement_anchor_tests_20261014.xml'
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output', type=Path, required=True)
+    args = parser.parse_args()
+    output = args.output.resolve()
+    if output.parent != ROOT / 'evidence' or output.suffix != '.xml':
+        raise ValueError('Use a new XML test receipt directly under project evidence')
     if output.exists():
         raise ValueError('Preserve existing test evidence')
     manifest = json.loads((ROOT / 'code/docs/requirements_traceability_v2.json').read_text())
@@ -58,7 +64,7 @@ def main():
     receipt = {'checked_utc': datetime.now(timezone.utc).isoformat(), 'tests_executed': result.testsRun,
                'passed': result.wasSuccessful() and not result.skipped, 'xml_sha256': hashlib.sha256(output.read_bytes()).hexdigest(),
                'scope': 'Named requirement regressions; overlaps broader CI suites and is not added to their totals.'}
-    with (ROOT / 'evidence/requirement_anchor_tests_20261014.json').open('x', encoding='utf-8') as stream:
+    with output.with_suffix('.json').open('x', encoding='utf-8') as stream:
         json.dump(receipt, stream, indent=2)
     print(json.dumps(receipt))
     if not receipt['passed']:

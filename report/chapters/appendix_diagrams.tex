@@ -1,2 +1,7 @@
-\chapter{Design Model Reference}
-The use-case, architecture, class, file-schema, sequence, activity, state, risk, deployment and timeline figures are presented beside their explanations in Chapters~4--7 and 10. They are not repeated with unlabeled connectors in this appendix. Native editable TikZ sources are retained under \nolinkurl{report/figures}; code-linked responsibilities appear in the requirements matrix.
+\chapter{Additional Design Diagrams}
+The main use-case, architecture, domain/schema, sequence and deployment diagrams are in Chapters 4--6. This appendix contains supporting data-flow, activity, state, layering and future-wireframe models. All are editable TikZ sources.
+\begin{figure}[htbp]\centering\begin{minipage}{.82\linewidth}\input{figures/mid1_dataflow}\end{minipage}\caption{Data flow through case, profile and explanation checks.}\label{fig:dataflow}\end{figure}
+\begin{figure}[htbp]\centering\input{figures/mid1_activity}\caption{Checking activity and failure branches.}\label{fig:activity}\end{figure}
+\begin{figure}[htbp]\centering\input{figures/mid1_state}\caption{Verification state and stale-result invalidation.}\label{fig:state}\end{figure}
+\begin{figure}[htbp]\centering\input{figures/mid1_layers}\caption{Current presentation, application, domain and storage layers.}\label{fig:layers}\end{figure}
+\begin{figure}[htbp]\centering\input{figures/mid1_final_wireframes}\caption{Planned full-product interfaces; not completed software.}\label{fig:final-wireframes}\end{figure}

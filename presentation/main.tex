@@ -19,105 +19,234 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{itemize items}{\small\color{teal}\textbullet}
 \setbeamertemplate{frametitle}{\vspace{3mm}\insertframetitle\par\vspace{2mm}}
-\setbeamertemplate{footline}{\hspace{9mm}\color{muted}\fontsize{6.5}{8}\selectfont Investify\quad FYP-1 Mid-Evaluation\hfill Fall 2026\quad Report date: 11 October 2026\quad\insertframenumber/\inserttotalframenumber\hspace{9mm}\vspace{3mm}}
+\setbeamertemplate{footline}{\hspace{9mm}\color{muted}\fontsize{7}{9}\selectfont Investify\quad FYP-1 Mid-Evaluation\hfill\insertframenumber/\inserttotalframenumber\hspace{9mm}\vspace{3mm}}
 \setbeameroption{hide notes}
 \hypersetup{pdftitle={Investify FYP-1 Mid-1},pdfauthor={Investify project team},colorlinks=true,urlcolor=teal}
 \newcommand{\source}[1]{\par\vspace{2mm}{\color{muted}\fontsize{6.5}{8}\selectfont Evidence: \nolinkurl{#1}\par}}
 \newcommand{\lead}[1]{{\color{teal}\bfseries #1}\par\vspace{2mm}}
 \tikzset{nodebox/.style={draw=teal,fill=pale,align=center,inner sep=2mm,font=\fontsize{10}{12}\selectfont},flow/.style={-{Stealth[length=2mm]},thick,draw=teal},plain/.style={align=left,font=\fontsize{10}{12}\selectfont}}
+\input{../report/submission_metadata}
+
+
 \begin{document}
 
 \begin{frame}[plain]
-\vspace{5mm}
-{\color{teal}\large F26-003\quad FYP-1 Mid-Evaluation}\par\vspace{5mm}
-{\fontsize{38}{42}\selectfont\bfseries Investify}\par\vspace{3mm}
-{\Large Educational equity decisions\\with evidence and checked explanations}\par\vspace{7mm}
+
+
+\vspace{2mm}{\color{teal}\large F26-003\quad FYP-1 Mid-Evaluation}\par\vspace{4mm}
+{\fontsize{36}{40}\selectfont\bfseries Investify}\par\vspace{3mm}
+{\Large Educational stock research\\with evidence and checked explanations}\par\vspace{5mm}
 {\small Ahmed Javaid (22I-2530)\quad Rafay Ul Haq (22I-2520)\\Soban Ahmad (22I-2460)}\par\vspace{2mm}
 {\small Supervisor: Mr. Irfan Ullah}\par\vspace{3mm}
-{\color{muted}\footnotesize Fall 2026\quad Report date: 11 October 2026}
-\note{Assigned presenter: Ahmed Javaid. Planned speaking: 30 seconds. Introduce the confirmed team and supervisor. This is FYP-1 Mid-Evaluation in Fall 2026. The team-selected report date is Sunday, 11 October 2026; the revision and tests retain their actual dates, including 12-13 October. The formal committee appointment is separate. The project is an educational prototype. It does not execute orders or establish investment suitability. The team delivered its assigned module parts and continues practice. Development assistance is disclosed in the report. Sources: report/main.tex and docs/team/MID1_TEAM_GUIDE.md.}
+{\footnotesize Fall 2026\qquad Submission date: \submissiondate}
+
+
+\note{Assigned presenter: Ahmed Javaid. Planned speaking: 20 seconds. Introduce the team and the educational purpose. No trades are executed. The actual submission date remains blank because it was not supplied. Source: report/main.tex.}
+
 \end{frame}
 
-\begin{frame}{Problem and research contribution}
-\lead{Make decisions and explanations inspectable.}
-\begin{itemize}\setlength{\itemsep}{3mm}
-\item Temporal evaluation: use only information available at decision time.
-\item Evidence: inspect technical/news values and raw-score contributions.
-\item Checking: reject contradictory visible claims and verify recovery.
+\begin{frame}{Problem}
+
+
+\begin{itemize}\setlength{\itemsep}{4mm}
+\item News, price indicators and social discussion can disagree.
+\item A weak signal needs confidence and a record of its inputs.
+\item Historical leakage can inflate results before the user sees them.
+\item Fluent explanations can invent a number or a market cause.
 \end{itemize}
-\vspace{3mm}{\small News/social divergence and user-comprehension evaluation remain later work.}
-\note{Rafay, 60 seconds. Explain the implemented temporal and verification contributions; distinguish planned divergence and human outcomes.}
+\vspace{2mm}\lead{The learner needs evidence they can inspect.}
+
+
+\note{Assigned presenter: Rafay Ul Haq. Planned speaking: 40 seconds. Describe the retail task and the harder leakage/unchecked-text problem. Avoid claiming all commercial products share these failures. Source: report Chapter 1; concept Section 2 is reference.}
+
 \end{frame}
 
-\begin{frame}{Scope and acceptance checks}
-\begin{columns}[T,onlytextwidth]\begin{column}{.48\textwidth}\lead{Current scope}\begin{itemize}\item Historical NVDA, five sessions\item Five technical + six news inputs\item Complete capacity/tolerance score\item Low-confidence abstention\end{itemize}\end{column}\begin{column}{.48\textwidth}\lead{Observable acceptance}\begin{itemize}\item Validate source/case identity\item Preserve model direction\item Reject wrong prose / JSON\item Check fallback independently\end{itemize}\end{column}\end{columns}
-\note{Ahmed, 60 seconds. New multiclass records are separate from preserved isotonic failures. The full FYP and useful forecasting are distinct goals.}
+\begin{frame}{Panel feedback and actions}
+
+
+\small\begin{tabular}{@{}p{.21\textwidth}p{.58\textwidth}p{.13\textwidth}@{}}\toprule Feedback & Response & Status\\\midrule
+PF-01 & C1 harness, C2 verifier, C3 planned divergence & Partial\\[.8mm]
+PF-02/03 & Defined layer, eleven features, worked example & Partial\\[.8mm]
+PF-04/05 & Refined problem and pinned inventory & Closed\\[.8mm]
+PF-06 & Definitions, targets and observed results & Partial\\[.8mm]
+PF-07 & Profile, corruption and checked recovery & Closed\\[.8mm]
+PF-08 & Onboarding, Observe and per-step disclosures & Partial\\[.8mm]
+PF-09 & Mechanisms and design implications & Closed\\\bottomrule\end{tabular}
+\vspace{1.5mm}{\footnotesize Status describes the technical response; remaining evaluation stays in the plan.}
+
+
+\note{Assigned presenter: Ahmed Javaid. Planned speaking: 45 seconds. Explain that documentation closure is separate from supervisor sign-off. LLM, divergence and participant benefit are not completed. Source: report Table panel-actions and original proposal action register.}
+
 \end{frame}
 
-\begin{frame}{Mid-1 deliverables}
-\small
-\begin{tabular}{@{}p{.25\textwidth}p{.69\textwidth}@{}}\toprule\textbf{Area}&\textbf{Evidence}\\\midrule
-Report & Detailed use cases, grouped requirements, metrics and individual tests\\[3mm]
-Design & Six-module architecture, keys/cardinalities and behavioral models\\[3mm]
-Live core & Evidence, eighteen-answer profile, uncertainty and checking/recovery\\[3mm]
-Process & Member delivery, dated plan, Windows/Ubuntu CI and verified artifacts\\\bottomrule\end{tabular}\par
-\vspace{4mm}{\small Supervisor checkpoint; planned presentation/demo duration: fifteen minutes.}
-\note{Ahmed, 70 seconds. Connect the report artifacts to code. Hosted receipts prove their committed snapshots; current local source needs its matching new delivery.}
+\begin{frame}{Contributions C1--C3}
+
+
+\begin{itemize}\setlength{\itemsep}{4mm}
+\item \textbf{C1: Timing harness and permanent canary.} Implemented; fault and boundary tests. Gate A remains partial.
+\item \textbf{C2: Deterministic verifier and checked fallback.} Implemented for template grammar; independent prose/JSON tests.
+\item \textbf{C3: News/social divergence ablation.} Planned; protocol fixed before the comparison.
+\end{itemize}
+\vspace{3mm}{\small No novelty claim in sentiment, XGBoost, SHAP-to-text or QLoRA. No profit claim.}
+
+
+\note{Assigned presenter: Soban Ahmad. Planned speaking: 45 seconds. State both evaluation and status for each contribution. Proposal slide 8 explicitly excludes novelty in imported methods and profit claims. Sources: approved proposal slide 8; report Section 2.5.}
+
 \end{frame}
 
-\begin{frame}{System architecture}
+\begin{frame}{Market background and design decisions}
+
+
+\small\begin{tabular}{@{}p{.43\textwidth}p{.49\textwidth}@{}}\toprule Market mechanism & Design implication\\\midrule
+Sessions and timestamps & Exchange calendar; backward joins\\[1.5mm]
+Earnings, macro and flows & Eleven features; no causal valuation model\\[1.5mm]
+Absorption and noise & Baselines and null-result reporting\\[1.5mm]
+Splits and changing regimes & Pin price basis and fit/evaluation periods\\[1.5mm]
+News tone versus model effect & Definitions beside SHAP effects\\\bottomrule\end{tabular}
+
+
+\note{Assigned presenter: Rafay Ul Haq. Planned speaking: 45 seconds. Give one concrete implication per row. A positive headline or SHAP value is not proof of profit or causation. Sources: Investor.gov orders/execution, NYSE calendar, Fidelity indicator guides, Fama 1970, NVIDIA split FAQs; report market-background section.}
+
+\end{frame}
+
+\begin{frame}{Model inventory and status}
+
+
+\small\begin{tabular}{@{}p{.31\textwidth}p{.35\textwidth}p{.26\textwidth}@{}}\toprule Component & Task & Status\\\midrule
+ProsusAI FinBERT & Financial-headline sentiment & Executed, pinned original\\[.8mm]
+CryptoBERT / Cardiff & Social sentiment comparison & Same frozen 24 posts\\[.8mm]
+Project XGBoost & Eleven features to classes & Trained and evaluated\\[.8mm]
+OpenAI GPT-6 teacher & Controlled prose examples & Six recorded; JSON assembled\\[.8mm]
+Phi-3-mini & Local prompted explainer & Planned: Mid-2\\[.8mm]
+Mistral & Explainer fallback & Planned, unexecuted\\[.8mm]
+QLoRA & Student adaptation & Iteration 4\\\bottomrule\end{tabular}
+
+
+\note{Assigned presenter: Rafay Ul Haq. Planned speaking: 40 seconds. Name the teacher from the frozen packet plan. Exact serving revision is unavailable. The full model table gives tasks, revisions, licenses and adaptation status. Sources: report model-inventory table; research reference; social and teacher receipts.}
+
+\end{frame}
+
+\begin{frame}{Architecture with the planned LLM layer}
+
+
 \centering\begin{tikzpicture}[x=1mm,y=1mm]
-\node[nodebox,text width=29mm] (data) at (17,40){Data / sentiment};\node[nodebox,text width=32mm] (model) at (68,40){Model / calibration};\node[nodebox,text width=29mm] (context) at (119,40){SHAP / context};
-\node[nodebox,text width=29mm] (profile) at (17,10){Profile / confidence};\node[nodebox,text width=32mm] (guard) at (68,10){Verifier / fallback};\node[nodebox,text width=29mm] (ui) at (119,10){Interface / service};
-\draw[flow](data)--(model);\draw[flow](model)--(context);\draw[flow](context.south)--(119,25)--(68,25)--(guard.north);\draw[flow](profile)--(guard);\draw[flow](guard)--(ui);
-\end{tikzpicture}\par\vspace{3mm}{\small Model probabilities remain fixed during profile calculation and explanation checking.}
-\note{Soban, 50 seconds. Describe the six product modules and the implemented historical slice. Social divergence, student serving and hosting remain later integrations.}
+\node[nodebox,text width=29mm] (data) at (17,47){Data / sentiment};
+\node[nodebox,text width=31mm] (model) at (67,47){Model / calibration};
+\node[nodebox,text width=29mm] (context) at (117,47){SHAP / context};
+\node[nodebox,text width=29mm,dashed] (llm) at (117,15){Explanation layer (LLM)\\Mid-2};
+\node[nodebox,text width=31mm] (guard) at (67,15){Verifier / fallback};
+\node[nodebox,text width=29mm] (ui) at (17,15){Profile / interface};
+\draw[flow](data)--(model);\draw[flow](model)--(context);\draw[flow,dashed](context)--(llm);\draw[flow,dashed](llm)--(guard);\draw[flow](guard)--(ui);
+\draw[flow](context.south west)--(67,31)--node[left,font=\scriptsize]{current template}(guard.north);
+\end{tikzpicture}
+\par\vspace{3mm}{\small LLM prose and claims must preserve the trusted record and risk-policy outcome.}
+
+
+\note{Assigned presenter: Soban Ahmad. Planned speaking: 40 seconds. Follow context to either the current deterministic template or the dashed planned LLM. The verifier is not itself an LLM. Profile supplies a trusted policy outcome. Sources: report Chapter 5; template/verifier/pipeline modules.}
+
 \end{frame}
 
-\begin{frame}{Domain model and file schema}
-\begin{itemize}\setlength{\itemsep}{3mm}\item Experiment identity: source + artifact digest\item Case identity: experiment + session\item Record: class, probabilities, feature/SHAP maps and model hashes\item Profile/candidate/result: local state with current identity binding\end{itemize}\vspace{3mm}{\small The report supplies attributes, keys and cardinalities. Storage uses file/session contracts; no SQL database is claimed.}
-\note{Rafay, 60 seconds. Show the actual file and session relationships and explain why a changed case/profile invalidates the previous candidate result.}
-\end{frame}
+\begin{frame}{Requirements and metric targets}
 
-\begin{frame}{Explanation check and recovery}
-\begin{enumerate}\setlength{\itemsep}{3mm}\item Read the current record and visible candidate.\item Verify prose and structured claims independently.\item Retain candidate rejection; construct deterministic fallback.\item Verify fallback, then show current output or an explicit error.\end{enumerate}\vspace{3mm}{\small Correct JSON cannot conceal an incorrect displayed probability.}
-\note{Soban, 45 seconds. Trace emit and verify. The sequence/activity models include the click, alternative branches and fallback failure.}
+
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.49\textwidth}\lead{Observable acceptance}\begin{itemize}\item All eleven features inspectable\item Complete profile; fixed probabilities\item Wrong prose/JSON rejected\item Observe headline and policy fallback\item Date, horizon, confidence and limits\end{itemize}\end{column}
+\begin{column}{.47\textwidth}\lead{Planned explanation targets}\begin{tabular}{@{}lr@{}}Numeric fidelity &$\geq0.98$\\[2mm]Direction consistency &$\geq0.95$\\[2mm]Claim recall &$\geq0.80$\\[2mm]Unverifiable rate &$\leq0.15$\\\end{tabular}\par\vspace{3mm}{\small Prediction: macro-F1 lift, Brier/reliability. Social: F1/recall/kappa. Users: time/errors/completion.}\end{column}\end{columns}
+
+
+\note{Assigned presenter: Ahmed Javaid. Planned speaking: 40 seconds. These are proposal targets, not new measured LLM scores. The current strict grammar checker has additional contradiction and required-claim gates. Independent annotation kappa and participant results are unmeasured. Sources: report requirements and metrics matrix.}
+
 \end{frame}
 
 \begin{frame}{Live demonstration}
-\begin{enumerate}\setlength{\itemsep}{3mm}\item \textbf{Decision}: diagnostic class/probabilities and uncertainty\item \textbf{Evidence}: technical and news feature meaning/effect\item \textbf{Risk}: published tolerance score, allowance and confidence requirement\item \textbf{Explanation}: inject 1.00\%, reject and verify fallback\end{enumerate}\vspace{3mm}{\small Multiclass frozen NVDA / 21 December 2023. Calculations/checking run live; model outputs are recorded.}
-\note{Shared, 240 seconds: Rafay opens 20; Soban Decision 40; Ahmed Evidence 40; Rafay Risk 60; Soban Explanation 80. Both profile extremes abstain on weak real evidence; show the changing score/threshold without claiming fabricated prediction quality.}
+
+
+\begin{enumerate}\setlength{\itemsep}{3mm}
+\item \textbf{Onboarding / Decision}: purpose, Observe headline and diagnostic probabilities
+\item \textbf{Evidence}: MACD value, meaning and SHAP effect; news tone versus effect
+\item \textbf{Risk profile}: cautious/higher-tolerance thresholds, both Observe
+\item \textbf{Explanation}: accept, inject 1.00\%, reject and check fallback
+\end{enumerate}
+\vspace{3mm}{\small Frozen multiclass NVDA / 21 December 2023. Profile and checking run live; model outputs are saved.}
+
+
+\note{Assigned presenter: Shared. Planned speaking: 180 seconds. Ahmed 50 seconds: open onboarding and evidence. Rafay 50 seconds: score profile and show both abstain. Soban 80 seconds: show policy/diagnostic class, valid candidate, probability corruption, retained rejection and checked Observe fallback. End with restored valid facts. Sources: demonstration handout and presenter.}
+
 \end{frame}
 
-\begin{frame}{Calibration correction and abstention}
-\begin{tabular}{@{}lrr@{}}\toprule\textbf{Frozen mode}&\textbf{Buy/Hold/Sell}&\textbf{Macro-F1}\\\midrule
-Raw model & 40 / 51 / 95 & 0.3182\\[3mm]
-Independent isotonic & 186 / 0 / 0 & 0.2238\\[3mm]
-Global temperature & 40 / 51 / 95 & 0.3182\\\bottomrule\end{tabular}\par
-\vspace{4mm}\lead{The correction preserves order, not useful signal.}
-{\small Temperature reaches its upper bound; probabilities approach one-third. The interface withholds directional suggestions.}
-\note{Soban, 55 seconds. Explain the isotonic global bounds, calibration-only temperature fit and why near-uniform confidence requires abstention. Do not describe this as useful forecasting.}
+\begin{frame}{Leakage experiment and linear baseline}
+
+
+\small\begin{tabular}{@{}lrr@{}}\toprule Five-session CV & Macro-F1 & SD / lift\\\midrule
+Clean XGBoost & 0.2843 & SD 0.0537\\[2mm]
+Linear & 0.2796 & SD 0.0559\\[2mm]
+Stratified random & 0.3287 & XGBoost lift -0.0444\\[2mm]
+Centred Bollinger fault & 0.5390 & Lift +0.2104\\\bottomrule\end{tabular}\par
+\vspace{3mm}{\small Final 186 cases, isotonic: XGBoost 0.2238; linear frozen 0.1800 / refit 0.1896.}
+\vspace{3mm}\lead{Canary fires; clean prediction has no established useful advantage.}
+
+
+\note{Assigned presenter: Ahmed Javaid. Planned speaking: 50 seconds. The six-fold mean and fold SD differ from final-case evaluation. Raw frozen final macro-F1 is 0.3182, not another CV score. Gate A is partial and Gate B not passed. Sources: saved recovery01 engine_frozen_alpaca and engine_refit_alpaca metrics; harness results.}
+
 \end{frame}
 
-\begin{frame}{Temporal leakage experiment}
-\begin{tabular}{@{}lrr@{}}\toprule\textbf{Five-session arm}&\textbf{Macro-F1}&\textbf{Lift}\\\midrule
-Clean & 0.2843 & -0.0444\\[3mm]
-Shuffled & 0.4457 & +0.1142\\[3mm]
-Centred Bollinger & 0.5390 & +0.2104\\\bottomrule\end{tabular}\par
-\vspace{4mm}{\small No-purge and same-bar variants do not guarantee inflation. Endpoint purge and the configured calendar-day gap are distinct controls.}
-\note{Ahmed, 100 seconds. Explain actual label availability, how the canary fires, and why a weak no-purge/lag variation is not proof that every leakage mechanism is absent. State the FNSPID precision/coverage reason for the timestamped source.}
+\begin{frame}{Calibration and abstention}
+
+
+\small\begin{tabular}{@{}lrr@{}}\toprule Frozen mode & Buy / Hold / Sell & Brier\\\midrule
+Raw & 40 / 51 / 95 & 0.7929\\[2mm]
+Isotonic & 186 / 0 / 0 & 0.6105\\[2mm]
+Temperature & 40 / 51 / 95 & 0.6667\\\bottomrule\end{tabular}\par
+\vspace{4mm}\lead{T = 1000: confidence approaches one-third.}
+\begin{itemize}\item Brier $2/3$ is the constant one-third forecast.\item Best profile threshold is 50\%; real confidence is about 33\%.\item Both profile examples stay Observe. Controlled 0.70 fixtures show the gate behavior.\end{itemize}
+
+
+\note{Assigned presenter: Soban Ahmad. Planned speaking: 30 seconds. Explain plainly that this is a no-signal diagnosis. Preserved class ranking is not usable confidence. The policy is post-hoc and does not personalize XGBoost. Source: saved temperature summary and risk-policy tests.}
+
 \end{frame}
 
-\begin{frame}{Sentiment and teacher studies}
-\begin{columns}[T,onlytextwidth]\begin{column}{.48\textwidth}\lead{Social comparison}{\small Same 24 held-out references}\par\vspace{3mm}\begin{tabular}{@{}lr@{}}\toprule Candidate&Macro-F1\\\midrule CryptoBERT&0.2564\\Cardiff&0.6016\\\bottomrule\end{tabular}\par\par\vspace{3mm}{\small Crypto probes return positive/negative; equity outputs remain all neutral.}\end{column}\begin{column}{.48\textwidth}\lead{Teacher construction}\begin{itemize}\item Actual recorded prose\item Deterministic factual targets\item Student remains untrained\item Larger comparison is later\end{itemize}\end{column}\end{columns}\vspace{3mm}{\small Small reference sample; independent validation and deployment selection remain open.}
-\note{Rafay, 100 seconds. FinBERT still scores news. CryptoBERT/Cardiff are social candidates. Sanity probes are separate authored diagnostics, not benchmark accuracy. Teacher/student method is disclosed once in the report.}
+\begin{frame}{Illustrative explanation and claim checks}
+
+
+{\small\textbf{Illustrative design example, not a system output:} Hold 58\%; news +0.31 and social -0.18 disagree; divergence SHAP +0.14 supports Hold; RSI SHAP -0.06 opposes Hold.}
+\vspace{1.5mm}\small\begin{tabular}{@{}p{.46\textwidth}p{.46\textwidth}@{}}\toprule Claim & Planned check\\\midrule
+Hold at 58\% & Record class and probability\\[.8mm]
+News/social values & Recorded feature values and coverage\\[.8mm]
+Divergence supports Hold & Selected-class SHAP sign\\[.8mm]
+RSI opposes Hold & Does not establish support for Buy\\[.8mm]
+Volatility caused the move & Refuse unsupported causal claim\\\bottomrule\end{tabular}
+\vspace{0mm}{\footnotesize Current checker: template grammar only. Free-prose claim binding: Mid-2.}
+
+
+\note{Assigned presenter: Soban Ahmad. Planned speaking: 25 seconds. Do not present this hypothetical integrated-social paragraph as current model output or report hypothetical metric scores. The constrained payload must remain bound to displayed prose. Sources: concept 10.8 and report LLM-design subsection.}
+
 \end{frame}
 
-\begin{frame}{Delivered work and next milestones}
-\small
-\begin{tabular}{@{}p{.23\textwidth}p{.70\textwidth}@{}}\toprule\textbf{Member}&\textbf{Delivered part / continuation}\\\midrule Ahmed&Temporal data, leakage and CI/delivery; parity/deployment next\\[3mm]
-Rafay&Interface, profile and sentiment; divergence/acceptance next\\[3mm]
-Soban&Engine, calibration, SHAP and verifier; student/QLoRA next\\\bottomrule\end{tabular}\par\vspace{4mm}{\small One-third responsibility and five minutes each. Internal dated targets are in the report; current code practice continues.}
-\note{Soban, 30 seconds. Confirm delivered responsibilities and shared allocation. Future research/hosting and participant work are distinct from this checkpoint.}
+\begin{frame}{Testing and CI/CD}
+
+
+\begin{columns}[T,onlytextwidth]\begin{column}{.48\textwidth}\lead{Observed local tests}\begin{tabular}{@{}lr@{}}Portable &183\\CI guards &7\\Legacy UI &24\\Presenter &19\\Study selectors &4\\\end{tabular}\end{column}
+\begin{column}{.48\textwidth}\lead{Hosted delivery}\begin{itemize}\item 2 jobs $\times$ 2 OS = 4 checks\item 1 gated delivery job\item Same-commit source/PDF checks\item Downloadable artifact; hosting later\end{itemize}\end{column}\end{columns}
+\vspace{4mm}{\footnotesize Counts are distinct scopes, not a synthetic total. Actual commit/run: report Appendix D.}
+
+
+\note{Assigned presenter: Ahmed Javaid. Planned speaking: 15 seconds. State actual runner counts and the five-job workflow structure. CI does not rerun full science or compile the PDF. A screenshot is unnecessary because the run is directly linked in Appendix D. Sources: new local job receipts and workflow file.}
+
 \end{frame}
+
+\begin{frame}{Remaining plan and Q\&A}
+
+
+\small\begin{tabular}{@{}p{.24\textwidth}p{.68\textwidth}@{}}\toprule Stage & Remaining work\\\midrule
+Final-1 / Iteration 2 & Broader data, divergence ablation, engine/service and deployment\\[3mm]
+Mid-2 / Iteration 3 & Prompted explainer, constrained claims, NFR/parity and acceptance preparation\\[3mm]
+Final-2 / Iteration 4 & QLoRA comparison, broader evaluation and participant/external-install evidence\\\bottomrule\end{tabular}\par
+\vspace{4mm}{\small Implemented: template + verifier. Predictor usefulness and user benefit remain evaluation questions.}
+\vspace{4mm}\lead{Questions}
+
+
+\note{Assigned presenter: Rafay Ul Haq. Planned speaking: 45 seconds. Summarize the staged plan and invite questions. The scheduled 660 seconds exclude Q&A. Each member receives 220 seconds with shared demonstration allocation. Source: report Chapter 9 and team guide.}
+
+\end{frame}
+
 \end{document}

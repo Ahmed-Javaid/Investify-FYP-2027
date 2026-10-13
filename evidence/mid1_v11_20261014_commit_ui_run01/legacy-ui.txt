@@ -1,0 +1,54 @@
+test_actual_fixture_causality_button_detects_centred_mutations_without_claiming_a_market_run (test_streamlit_mideval.StreamlitMidEvalTests.test_actual_fixture_causality_button_detects_centred_mutations_without_claiming_a_market_run) ... 2026-10-14 04:44:34.878 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_actual_teacher_view_replays_examples_and_preserves_student_pending_state (test_streamlit_mideval.StreamlitMidEvalTests.test_actual_teacher_view_replays_examples_and_preserves_student_pending_state) ... 2026-10-14 04:44:38.729 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_ai_fixture_reference_discloses_single_pass_and_does_not_claim_human_validation (test_streamlit_mideval.StreamlitMidEvalTests.test_ai_fixture_reference_discloses_single_pass_and_does_not_claim_human_validation) ... 2026-10-14 04:44:39.690 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_both_fresh_calibration_modes_show_current_identity (test_streamlit_mideval.StreamlitMidEvalTests.test_both_fresh_calibration_modes_show_current_identity) ... 2026-10-14 04:44:40.128 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_development_session_refuses_a_comparator_and_cannot_leave_a_stale_result (test_streamlit_mideval.StreamlitMidEvalTests.test_development_session_refuses_a_comparator_and_cannot_leave_a_stale_result) ... 2026-10-14 04:44:41.538 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_failed_scientific_import_after_preflight_has_a_visible_failure_without_a_fake_result (test_streamlit_mideval.StreamlitMidEvalTests.test_failed_scientific_import_after_preflight_has_a_visible_failure_without_a_fake_result) ... 2026-10-14 04:44:42.920 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_fictional_examples_change_comparator_then_clear_all_answers (test_streamlit_mideval.StreamlitMidEvalTests.test_fictional_examples_change_comparator_then_clear_all_answers) ... 2026-10-14 04:44:44.349 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_guided_navigation_keeps_the_selected_case_and_profile (test_streamlit_mideval.StreamlitMidEvalTests.test_guided_navigation_keeps_the_selected_case_and_profile) ... 2026-10-14 04:44:46.149 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_invalid_historical_records_show_an_error_instead_of_a_decision (test_streamlit_mideval.StreamlitMidEvalTests.test_invalid_historical_records_show_an_error_instead_of_a_decision) ... 2026-10-14 04:44:48.373 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_invalid_response_timeout_refuses_generator_configuration_before_a_request (test_streamlit_mideval.StreamlitMidEvalTests.test_invalid_response_timeout_refuses_generator_configuration_before_a_request) ... 2026-10-14 04:44:48.865 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_invalid_social_benchmark_is_refused_in_the_actual_ui (test_streamlit_mideval.StreamlitMidEvalTests.test_invalid_social_benchmark_is_refused_in_the_actual_ui) ... 2026-10-14 04:44:49.362 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_leakage_view_labels_saved_results_and_limits_preflight_claims (test_streamlit_mideval.StreamlitMidEvalTests.test_leakage_view_labels_saved_results_and_limits_preflight_claims) ... 2026-10-14 04:44:49.797 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_live_ui_renders_evidence_for_each_corpus (test_streamlit_mideval.StreamlitMidEvalTests.test_live_ui_renders_evidence_for_each_corpus) ... 2026-10-14 04:44:51.218 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_missing_harness_inputs_disable_the_rerun (test_streamlit_mideval.StreamlitMidEvalTests.test_missing_harness_inputs_disable_the_rerun) ... 2026-10-14 04:44:52.676 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_missing_or_invalid_teacher_evidence_cannot_offer_training_downloads (test_streamlit_mideval.StreamlitMidEvalTests.test_missing_or_invalid_teacher_evidence_cannot_offer_training_downloads) ... 2026-10-14 04:44:53.627 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-14 04:44:53.879 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_partial_fixture_study_retains_errors_and_refuses_paired_comparison (test_streamlit_mideval.StreamlitMidEvalTests.test_partial_fixture_study_retains_errors_and_refuses_paired_comparison) ... 2026-10-14 04:44:54.139 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_profile_actually_changes_the_separate_comparator_in_both_corpora (test_streamlit_mideval.StreamlitMidEvalTests.test_profile_actually_changes_the_separate_comparator_in_both_corpora) ... 2026-10-14 04:44:54.590 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_recorded_original_candidate_scores_show_reference_limits_and_download (test_streamlit_mideval.StreamlitMidEvalTests.test_recorded_original_candidate_scores_show_reference_limits_and_download) ... 2026-10-14 04:44:58.174 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_risk_profile_does_not_assume_answers_or_emit_a_comparator_decision (test_streamlit_mideval.StreamlitMidEvalTests.test_risk_profile_does_not_assume_answers_or_emit_a_comparator_decision) ... 2026-10-14 04:44:58.680 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_social_study_discloses_missing_real_benchmark_without_quality_scores (test_streamlit_mideval.StreamlitMidEvalTests.test_social_study_discloses_missing_real_benchmark_without_quality_scores) ... 2026-10-14 04:44:59.174 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_supplementary_fixture_scores_preserve_the_pending_original_classifier_study (test_streamlit_mideval.StreamlitMidEvalTests.test_supplementary_fixture_scores_preserve_the_pending_original_classifier_study) ... 2026-10-14 04:44:59.669 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_unconfigured_generator_displays_the_real_verified_comparator (test_streamlit_mideval.StreamlitMidEvalTests.test_unconfigured_generator_displays_the_real_verified_comparator) ... 2026-10-14 04:45:00.194 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_valid_fixture_study_renders_metrics_and_download_without_inference (test_streamlit_mideval.StreamlitMidEvalTests.test_valid_fixture_study_renders_metrics_and_download_without_inference) ... 2026-10-14 04:45:01.124 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_wrong_displayed_probability_triggers_real_ui_fallback (test_streamlit_mideval.StreamlitMidEvalTests.test_wrong_displayed_probability_triggers_real_ui_fallback) ... 2026-10-14 04:45:01.620 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 28.117s
+
+OK

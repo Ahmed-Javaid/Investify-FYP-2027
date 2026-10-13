@@ -25,6 +25,7 @@
 % For e.g., usually there are 3 students in a group, so leave authorone,
 % authortwo, and authorthree, and delete authorfour.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{submission_metadata}
 \department{FAST School of Computing}
 \faculty{Software Engineering}
 \degreeyear{2026}
@@ -36,7 +37,7 @@
 \authorthree{Soban Ahmad}{22I-2460}
 \supervisor{Mr. Irfan Ullah}
 % Team-confirmed assessment term; a degree-batch range is not inferred.
-\sessionduration{Fall 2026 (FYP-1 Mid-Evaluation)}
+\sessionduration{\batchsession}
 % The team confirms no co-supervisor. Use the class's single-supervisor cover.
 %\cosupervisor{}
 % University Officers page indexed excerpt checked 11 October 2026.
@@ -53,6 +54,7 @@
 \newcommand{\studentone}{\@authoronename{} (\@authoroneroll)}
 \newcommand{\studenttwo}{\@authortwoname{} (\@authortworoll)}
 \newcommand{\studentthree}{\@authorthreename{} (\@authorthreeroll)}
+\newenvironment{inlinefigure}{\par\noindent\begin{minipage}{\linewidth}\centering\def\@captype{figure}}{\end{minipage}\par\medskip}
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -64,12 +66,15 @@
 % The review PDF is single-sided; chapter transitions must not insert empty versos.
 \let\cleardoublepage\clearpage
 
-\setlength{\emergencystretch}{2em}
+\setlength{\emergencystretch}{3em}
+\raggedbottom
+\setcounter{topnumber}{4}\setcounter{bottomnumber}{3}\setcounter{totalnumber}{6}
+\renewcommand{\topfraction}{.95}\renewcommand{\bottomfraction}{.9}\renewcommand{\textfraction}{.05}\renewcommand{\floatpagefraction}{.7}
 \setlength{\tabcolsep}{3pt}
 % The class title includes lists; defer them to the authored front matter.
 % User-selected report date. Execution/revision receipts retain their actual dates.
 \makeatletter
-\patchcmd{\maketitle}{\@degreemonth, \@degreeyear}{11 October 2026}{}{\PackageError{Investify}{Cover date patch failed}{Check the supplied title template.}}
+\patchcmd{\maketitle}{\@degreemonth, \@degreeyear}{Submission date: \submissiondate}{}{\PackageError{Investify}{Cover date patch failed}{Check the supplied title template.}}
 \makeatother
 \let\institutionalmaketitle\maketitle
 \renewcommand{\maketitle}{%
@@ -89,7 +94,7 @@
 %\end{acknowledgements}
 
 %\begin{abstract}
-%Briefly state the (1) research problem, (2) methodology, (3) key results, and (4) conclusion. Generally, abstracts are between 150 and 200 words–roughly 10-15 sentences.
+%Briefly state the (1) research problem, (2) methodology, (3) key results, and (4) conclusion. Generally, abstracts are between 150 and 200 wordsâ€“roughly 10-15 sentences.
 %\end{abstract}
 
 \cleardoublepage
@@ -109,9 +114,9 @@
 \tableofcontents
 \endgroup
 \cleardoublepage
-\listoffigures
+\begingroup\small\setstretch{1}\setlength{\parskip}{0pt}\listoffigures\endgroup
 \cleardoublepage
-\listoftables
+\begingroup\small\setstretch{1}\setlength{\parskip}{0pt}\listoftables\endgroup
 \cleardoublepage
 \input{chapters/07_abbreviations}
 
@@ -123,7 +128,6 @@
 \input{chapters/chapter4_requirements}
 \input{chapters/chapter5_design}
 \input{chapters/chapter6_iteration1}
-\input{chapters/chapter7_ui_manual}
 \input{chapters/chapter8_testing}
 \input{chapters/chapter9_development_evidence}
 \input{chapters/chapter10_fyp2_plan}
@@ -136,7 +140,6 @@
 \input{chapters/appendix_repository}
 \input{chapters/appendix_diagrams}
 \input{chapters/appendix_meetings}
-\input{chapters/appendix_handbook}
 
 \bibliographystyle{IEEEtran}
 \bibliography{references/references}

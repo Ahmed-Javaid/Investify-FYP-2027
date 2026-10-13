@@ -80,7 +80,7 @@ PROB_TOLERANCE = PROB_TOLERANCE_PP / 100.0
 # below the latter, so it discriminates "rounding" from "wrong" cleanly.
 SHAP_EPSILON = 1e-3
 FEATURE_VALUE_EPSILON = 1e-3
-VERIFIER_CONTRACT_VERSION = "mideval-complete-evidence-v4"
+VERIFIER_CONTRACT_VERSION = "mideval-policy-evidence-v5"
 
 VERIFIABLE_CORRECT = "verifiable-correct"
 VERIFIABLE_INCORRECT = "verifiable-incorrect"
@@ -145,9 +145,10 @@ class _RawClaim:
 
 
 _DECISION_RE = re.compile(
-    r"^(?P<ticker>\S+) decision for session (?P<session_date>\S+) "
+    r"^(?P<ticker>\S+) (?:decision|diagnostic class) for session (?P<session_date>\S+) "
     r"\((?P<horizon>\d+)-day horizon\): (?P<decision>Buy|Hold|Sell)\.$"
 )
+_POLICY_RE = re.compile(r"^Policy outcome: (?P<action>Observe|Buy|Hold|Sell)\.$")
 _CONFIDENCE_RE = re.compile(
     r"^Calibrated confidence in this decision: (?P<pct>-?\d+\.\d+)%\.$"
 )
@@ -157,7 +158,7 @@ _PROBABILITY_RE = re.compile(
 )
 _FEATURE_RE = re.compile(
     r"^(?P<name>\S+) \(value (?P<value>-?\d+\.\d+|missing)\) "
-    r"(?P<direction>supports|opposes) the (?P<decision>Buy|Hold|Sell) decision "
+    r"(?P<direction>supports|opposes) the (?P<decision>Buy|Hold|Sell) (?:decision|diagnostic class) "
     r"with a SHAP contribution of (?P<shap>[+-]?\d+\.\d+), "
     r"ranked #(?P<rank>\d+) of (?P<n>\d+)\.$"
 )
@@ -193,6 +194,10 @@ def _match_known_line(line: str, record: DecisionRecord) -> list[_RawClaim] | No
         return [_RawClaim(kind="notice", subject=None, claimed=line, span=line)]
     if line == ATTRIBUTION_SCOPE:
         return [_RawClaim("attribution_scope", None, line, line)]
+
+    policy = _POLICY_RE.match(line)
+    if policy:
+        return [_RawClaim("policy_outcome", None, policy.group("action"), line)]
 
     m = _EVIDENCE_RE.match(line)
     if m:
@@ -277,7 +282,9 @@ def _validate_payload(payload: dict) -> None:
         raise ValueError("payload must be an object")
     allowed = {"ticker", "session_date", "decision", "horizon_days", "confidence",
                "probabilities", "contributions", "non_advice_notice", "definitions",
-               "feature_evidence", "family_contributions", "attribution_scope"}
+               "feature_evidence", "family_contributions", "attribution_scope", "policy_outcome"}
+    if "policy_outcome" in payload and payload["policy_outcome"] not in ("Observe", "Buy", "Hold", "Sell"):
+        raise ValueError("Unknown policy outcome")
     if set(payload) - allowed:
         raise ValueError("payload contains unsupported fields")
     for field in ("ticker", "session_date", "decision", "non_advice_notice"):
@@ -351,6 +358,8 @@ def _claims_from_payload(payload: dict) -> list[_RawClaim]:
         ),
         _RawClaim(kind="confidence", subject=None, claimed=payload["confidence"], span="(payload) confidence"),
     ]
+    if "policy_outcome" in payload:
+        claims.append(_RawClaim("policy_outcome", None, payload["policy_outcome"], "(payload) policy"))
     for cls in DECISION_CLASSES:
         claims.append(
             _RawClaim(
@@ -581,7 +590,12 @@ def _verify_feature_claim(raw: _RawClaim, record: DecisionRecord) -> Claim:
     )
 
 
-def _verify(raw: _RawClaim, record: DecisionRecord) -> Claim:
+def _verify(raw: _RawClaim, record: DecisionRecord, policy_action: str | None = None) -> Claim:
+    if raw.kind == "policy_outcome":
+        correct = policy_action is not None and raw.claimed == policy_action
+        return Claim(raw.kind, None, raw.claimed, policy_action,
+                     VERIFIABLE_CORRECT if correct else VERIFIABLE_INCORRECT,
+                     "" if correct else "policy outcome differs from the trusted policy result", raw.span)
     if raw.kind == "decision":
         return _verify_decision(raw, record)
     if raw.kind == "confidence":
@@ -656,7 +670,7 @@ def _expected_slots(record: DecisionRecord) -> set[tuple[str, str | None]]:
 
 
 def verify(record: DecisionRecord, text: str, payload: dict | None = None,
-           *, strict_prose: bool = False) -> VerificationResult:
+           *, strict_prose: bool = False, policy_action: str | None = None) -> VerificationResult:
     """Run all six checks against `text` (and `payload`, if given).
 
     The displayed prose determines coverage and unverifiable rate. Numeric
@@ -666,7 +680,7 @@ def verify(record: DecisionRecord, text: str, payload: dict | None = None,
     rejects any line outside the supported template grammar; it does not
     claim to verify arbitrary natural-language market commentary.
     """
-    prose_claims = tuple(_verify(raw, record) for raw in
+    prose_claims = tuple(_verify(raw, record, policy_action) for raw in
                          _claims_from_prose(text, record) + _vague_claims(text, record))
     payload_claims = ()
     if payload is not None:
@@ -674,7 +688,7 @@ def verify(record: DecisionRecord, text: str, payload: dict | None = None,
             payload_raw = _claims_from_payload(payload)
         except (KeyError, TypeError, ValueError, OverflowError) as error:
             payload_raw = [_RawClaim("invalid_payload", None, str(error), "(payload) schema")]
-        payload_claims = tuple(_verify(raw, record) for raw in payload_raw)
+        payload_claims = tuple(_verify(raw, record, policy_action) for raw in payload_raw)
     claims = prose_claims + payload_claims
 
     def fidelity(source, kinds):
@@ -687,6 +701,8 @@ def verify(record: DecisionRecord, text: str, payload: dict | None = None,
     directional_consistency = min(fidelity(source, {"shap_direction", "family_direction"}) for source in sources)
 
     expected = _expected_slots(record)
+    if policy_action is not None:
+        expected.add(("policy_outcome", None))
     covered = {
         (c.kind, c.subject) for c in prose_claims if c.verdict == VERIFIABLE_CORRECT and (c.kind, c.subject) in expected
     }
@@ -708,6 +724,8 @@ def verify(record: DecisionRecord, text: str, payload: dict | None = None,
         failed_metrics.append("contradictory_claim")
     required = {(kind, None) for kind in ("decision", "confidence", "notice")}
     required.update(("probability", cls) for cls in DECISION_CLASSES)
+    if policy_action is not None:
+        required.add(("policy_outcome", None))
     if not required.issubset(covered):
         failed_metrics.append("missing_required_claims")
     if strict_prose and any(c.verdict == UNVERIFIABLE for c in prose_claims):
