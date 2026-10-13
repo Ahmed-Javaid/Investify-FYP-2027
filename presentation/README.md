@@ -1,6 +1,8 @@
 # Investify LaTeX Mid-1 presentation
 
-Latest output: [proposal-division and CI revision](../deliverables/Investify_FYP1_Mid_Presentation_Work_Division_CI_20261013.pdf), with [matching delivery receipt](../evidence/handbook_presentation_delivery_20261013_run03.json). All twelve slides are rendered/reviewed; the final slide carries the proposal assignments and remaining review. Earlier PDFs remain preserved.
+Latest output: [equal team allocation revision](../deliverables/Investify_FYP1_Mid_Presentation_Team_Allocation_20261013.pdf), with [matching delivery receipt](../evidence/handbook_presentation_delivery_20261013_run04.json). The twelve-slide source and mirrored notes assign four primary slides and five minutes of speaking to each member, including shared demo segments. [Individual handouts and schedule](../deliverables/MEMBER_PREPARATION_PACK.md) are ready for practice. Earlier PDFs remain preserved.
+
+Earlier output: [proposal-division and CI revision](../deliverables/Investify_FYP1_Mid_Presentation_Work_Division_CI_20261013.pdf), with [matching delivery receipt](../evidence/handbook_presentation_delivery_20261013_run03.json). All twelve slides are rendered/reviewed; the final slide carries the proposal assignments and remaining review. Earlier PDFs remain preserved.
 
 Current output: [reviewed twelve-slide PDF](../deliverables/Investify_FYP1_Mid_Presentation_UI_Review_20261013.pdf), with [source-bound delivery receipt](../evidence/handbook_presentation_delivery_20261013_run02.json). The earlier presentation PDF remains preserved. Actual desktop browser review is complete; physical projector inspection and genuine rehearsal remain open.
 

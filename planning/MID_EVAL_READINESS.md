@@ -2,7 +2,7 @@
 
 ## Proposal division and executed local CI - 13 October 2026
 
-The proposal's planned work division is now documented for all three members, and both shared CI jobs have executed successfully on the local Windows runtime. The [90%/95% route](../deliverables/MID1_90_95_ROADMAP.md) gives unchanged-weight conditional targets of **90.25%** and **95.00%**. Current readiness remains **84.25%** pending genuine criteria/baseline review, member completion/defence evidence, cover facts, physical projector checks and rehearsal. Local replay is distinct from the still-unexecuted GitHub/Ubuntu and CD stages. No human-review credit follows from the planned assignment table or additional overlapping test runs.
+The proposal's work division is documented, and the team has assigned an equal one-third share of preparation/review/defence to each member. [Individual preparation packets](../deliverables/MEMBER_PREPARATION_PACK.md) specify four primary slides and five planned speaking minutes each. The team confirms names, roll numbers and supervisor, with no co-supervisor. Both shared CI jobs pass on the local Windows runtime. The [90%/95% route](../deliverables/MID1_90_95_ROADMAP.md) retains conditional targets of **90.25%** and **95.00%**. Current readiness remains **84.25%** pending actual criteria/baseline review, individual preparation/defence, remaining cover fields, projector review and rehearsal. Hosted CI and CD remain open.
 
 ## Browser-review continuation - 13 October 2026
 

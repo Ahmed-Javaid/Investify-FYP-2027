@@ -17,7 +17,7 @@ The target columns are conditional judgements. Creating files, making commits or
 
 For about **90%**, close these concrete gaps:
 
-- Confirm programme session, coordinator, co-supervisor applicability and assessment date. Review the current report and applicable unsigned declarations with the team/supervisor.
+- Confirm programme session, coordinator and assessment date. Team names/roll numbers, supervisor and absence of a co-supervisor are confirmed. Review the current report and applicable unsigned declarations with the team/supervisor.
 - Complete a physical projector check and a timed rehearsal. Each member must explain their assigned functions and the demonstrated failure/fallback path.
 - Review the negative scientific findings, temporal controls and class-prior/calibration comparison against agreed criteria. A weak result can be an honest completed study; useful prediction remains unproved.
 - Review the original proposal actions and SRS/SSD baseline with the supervisor. Record the actual decisions and unresolved limitations.

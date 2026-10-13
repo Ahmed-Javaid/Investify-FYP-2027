@@ -17,7 +17,7 @@ These are planned rehearsal allocations, not measured participant timings. In th
 | Risk profile, 60 sec | Click **Cautious example**, then **Higher-tolerance example**, then **Clear profile**. | Explicit fictional R=0 and R=1 profiles change the separate comparator from Hold to Sell while XGBoost stays Buy. Clear removes the profile result. Eight custom answers are optional and have no defaults. Suitability/performance remain unvalidated. |
 | Explanation check, 80 sec | Click **Inject wrong probability**, then **Check explanation**. Edit the text after checking. | Visible confidence becomes 1.00% beside correct JSON. The verifier rejects the candidate and independently verifies fallback. Editing hides the old verdict. A changed source/session resets the candidate. |
 
-The primary UI has twelve passing actual widget cases. The combined 40-test receipt includes those twelve, 24 preserved legacy UI cases and four study selectors. Do not call all forty new-UI tests or sum overlapping scopes as research evidence.
+The current primary UI has fourteen passing actual widget cases. The combined 42-test scope includes those fourteen, 24 preserved legacy UI cases and four study selectors. These scopes overlap earlier receipts and do not establish scientific performance.
 
 ## Optional research and design questions
 
@@ -33,6 +33,6 @@ The portable historical interface remains separately available from `code`: `pyt
 
 ## Before assessment
 
-Inspect the physical projector layout and rehearse within the handbook's recommended fifteen minutes. Each member needs an actual file/function walkthrough and contribution record. Confirm cover metadata, assessment date and applicable review/approval details. The [twelve-slide Beamer PDF](Investify_FYP1_Mid_Presentation_UI_Review_20261013.pdf) and [99-page report](Investify_FYP1_Mid_Report_UI_Review_20261013.pdf) are compiled and reviewed working drafts.
+Use the [equal member schedule and individual handouts](MEMBER_PREPARATION_PACK.md): four primary slides and five minutes of speaking each, including the shared demo. Inspect the physical projector layout and complete one combined timed rehearsal. Each member records their actual file/function review and personal changes. The [current Beamer PDF](Investify_FYP1_Mid_Presentation_Team_Allocation_20261013.pdf) and [current report](Investify_FYP1_Mid_Report_Team_Allocation_20261013.pdf) are working drafts. Team and supervisor names are confirmed and no co-supervisor applies; session/cohort, coordinator and assessment date remain open.
 
 Evidence: [actual browser review](../evidence/presenter_visual_review_20261013.json), [current 42-test UI scope](../evidence/presenter_delivery_tests_20261013_run03.xml), [fresh science](../evidence/fresh_alpaca_science_summary_20261012_run01.json), [paired sentiment](../evidence/social_study_review_20261013.json).

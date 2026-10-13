@@ -1,6 +1,10 @@
 # Investify Mid-1 LaTeX report
 
-## Current proposal division and CI revision
+## Current equal member allocation
+
+Use [the current 101-page report](../deliverables/Investify_FYP1_Mid_Report_Team_Allocation_20261013.pdf) and [its delivery receipt](../evidence/handbook_report_delivery_20261013_run04.json). It assigns one-third of preparation/review/defence responsibility to each member and uses the confirmed single-supervisor cover. [Individual practice handouts](../deliverables/MEMBER_PREPARATION_PACK.md) identify the exact files, slides and demo segments. Session/cohort, coordinator, assessment date and actual review/rehearsal remain open. Earlier outputs below are preserved snapshots.
+
+## Earlier proposal division and CI revision
 
 Use [the current 101-page report](../deliverables/Investify_FYP1_Mid_Report_Work_Division_CI_20261013.pdf) and [its matching source-bound delivery receipt](../evidence/handbook_report_delivery_20261013_run03.json). It includes the proposal's exact planned assignments, actual UI captures and the executed local CI scopes. All pages are rendered/reviewed with zero overfull boxes, unresolved citations or fully blank pages. The earlier PDFs below remain preserved snapshots. Actual member completion, metadata/approvals and physical rehearsal remain open.
 
@@ -20,4 +24,4 @@ New native TikZ models cover conceptual and implementation domains, pipeline, co
 
 Use a new scratch directory beneath E:\AI-Tools\Temp. Existing compiler: E:\AI-Tools\Cache\tectonic-0.17.0\tectonic.exe. Set TEMP/TMP, TECTONIC_CACHE_DIR and XDG_CACHE_HOME to the E: directories. From `report`, run `tectonic --outdir <new-directory> --keep-logs --keep-intermediates main.tex`, then render and review the new output. The preamble preserves the supplied class while bridging XeTeX compression and bibliography/link issues. The final build has zero overfull boxes or unresolved citations.
 
-The [presentation](../presentation/main.tex) is also LaTeX/Beamer. Report status remains an unsigned working draft: programme session, co-supervisor applicability and coordinator details need confirmation, together with real student declarations/contributions and genuine team/supervisor review. Weak prediction and all-Buy calibration are preserved. No approval is inferred.
+The [presentation](../presentation/main.tex) is also LaTeX/Beamer. Report status remains an unsigned working draft: programme session, coordinator and assessment date need confirmation, together with actual student preparation and team/supervisor review. The team confirms there is no co-supervisor. Weak prediction and all-Buy calibration are preserved.

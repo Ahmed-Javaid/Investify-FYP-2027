@@ -1,0 +1,59 @@
+{
+  "schema": "investify-equal-member-allocation-v1",
+  "checked_utc": "2026-10-13T14:07:36.962319+00:00",
+  "authorization": "Team instruction: equal allocation, followed by individual study and practice.",
+  "allocation_scope": "Assigned preparation, review and defence; no retrospective authorship or completed practice asserted.",
+  "assigned_share": {
+    "numerator": 1,
+    "denominator": 3
+  },
+  "members": [
+    {
+      "name": "Ahmed Javaid",
+      "roll": "22I-2530",
+      "slides": [
+        1,
+        3,
+        4,
+        10
+      ],
+      "planned_speaking_seconds": 300,
+      "handout": "deliverables/MEMBER_PREPARATION_AHMED_JAVAID.md"
+    },
+    {
+      "name": "Rafay Ul Haq",
+      "roll": "22I-2520",
+      "slides": [
+        2,
+        6,
+        8,
+        11
+      ],
+      "planned_speaking_seconds": 300,
+      "handout": "deliverables/MEMBER_PREPARATION_RAFAY_UL_HAQ.md"
+    },
+    {
+      "name": "Soban Ahmad",
+      "roll": "22I-2460",
+      "slides": [
+        5,
+        7,
+        9,
+        12
+      ],
+      "planned_speaking_seconds": 300,
+      "handout": "deliverables/MEMBER_PREPARATION_SOBAN_AHMAD.md"
+    }
+  ],
+  "confirmed_metadata": {
+    "supervisor": "Mr. Irfan Ullah",
+    "cosupervisor": null,
+    "team_names_and_roll_numbers": true
+  },
+  "pending_metadata": [
+    "programme session/cohort",
+    "FYP coordinator",
+    "assessment date"
+  ],
+  "proposal_receipt_sha256": "41ef2356744c9e91dd0893f06239b7227e7ff5face1457217bbc1f271350119b"
+}

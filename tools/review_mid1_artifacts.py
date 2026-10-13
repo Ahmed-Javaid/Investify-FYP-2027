@@ -74,6 +74,8 @@ def publish(args):
     if not args.visually_reviewed:
         raise ValueError('Inspect every rendered page before setting --visually-reviewed')
     inputs = json.loads(args.inputs.read_text(encoding='utf-8'))
+    visual_receipt = (json.loads(args.visual_review_receipt.read_text(encoding='utf-8'))
+                      if args.visual_review_receipt else None)
     for kind, build, rendered, output in (
             ('report', args.report_build, args.report_render, args.report_output),
             ('presentation', args.deck_build, args.deck_render, args.deck_output)):
@@ -99,6 +101,11 @@ def publish(args):
                              or float(rect[3]) > float(box.top) + 1):
                     outside.append(i + 1)
         images = sorted(rendered.glob('page-*.png'))
+        if visual_receipt:
+            reviewed = visual_receipt[kind]
+            if (not reviewed['all_pages_reviewed'] or reviewed['rendered_pages'] !=
+                    {p.name: digest(p) for p in images}):
+                raise ValueError('Visual review receipt does not match current rendered pages')
         log = (build / 'main.log').read_text(encoding='utf-8', errors='replace')
         overfull = len(re.findall(r'Overfull \\[hv]box', log))
         unresolved = len(re.findall(r'(?:Citation|Reference) .+ undefined|There were undefined', log))
@@ -132,6 +139,10 @@ def publish(args):
         if kind == 'presentation':
             receipt.update(slides=pages, format_requested='LaTeX/Beamer',
                            editable_diagrams_and_charts=True, notes_embedded_in_tex=True)
+        if visual_receipt:
+            receipt['visual_review_method'] = reviewed['method']
+            receipt['visual_review_receipt'] = args.visual_review_receipt.resolve().relative_to(ROOT).as_posix()
+            receipt['visual_review_receipt_sha256'] = digest(args.visual_review_receipt)
         path = ROOT / 'evidence' / f'handbook_{kind}_delivery_{args.run_id}.json'
         new_json(path, receipt)
         print(f'{kind}: {pages} pages, {output.name}, receipt {path.name}')
@@ -153,6 +164,7 @@ def main():
         p.add_argument('--' + name, type=Path, required=True)
     p.add_argument('--run-id', required=True)
     p.add_argument('--visually-reviewed', action='store_true')
+    p.add_argument('--visual-review-receipt', type=Path)
     args = parser.parse_args()
     if args.command == 'montage':
         montage(args.source, args.output)

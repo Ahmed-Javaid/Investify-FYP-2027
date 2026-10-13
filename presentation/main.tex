@@ -35,7 +35,7 @@
 {\small Ahmed Javaid (22I-2530)\quad Rafay Ul Haq (22I-2520)\\Soban Ahmad (22I-2460)}\par\vspace{2mm}
 {\small Supervisor: Mr. Irfan Ullah}\par\vspace{3mm}
 {\color{muted}\footnotesize Working draft prepared 13 October 2026}
-\note{Introduce the team and supervisor. The preparation date is not a confirmed assessment date. The project is an educational prototype. It does not execute orders or establish investment suitability. Working implementation, diagrams and assessment drafts include assistant contributions. Genuine student review and ownership evidence remain pending. Sources: planning/CHECKPOINT.md and report/main.tex. Timing: 30 seconds.}
+\note{Assigned presenter: Ahmed Javaid. Planned speaking: 30 seconds. Introduce the team and supervisor. The preparation date is not a confirmed assessment date. The project is an educational prototype. It does not execute orders or establish investment suitability. Working implementation, diagrams and assessment drafts include assistant contributions. Genuine student review and ownership evidence remain pending. Sources: planning/CHECKPOINT.md and report/main.tex.}
 \end{frame}
 
 \begin{frame}{Problem and research contribution}
@@ -50,7 +50,7 @@
 Investify adds temporal controls and a checked explanation path.\\
 Predictive usefulness and user understanding require separate evidence.}
 \source{report/chapters/chapter2_research.tex; deliverables/PROBLEM_AND_CONTRIBUTION.md}
-\note{FinBERT provides news sentiment, XGBoost classifies the feature vector, and TreeSHAP supplies model attributions. Explain the engineering contribution without claiming invention of these methods or established research novelty. An explanation can be numerically consistent without being useful or causal. The related-work chapter compares the research components and discusses the remaining novelty review. Research sources in that chapter include FinBERT arXiv:1908.10063 and TreeSHAP arXiv:1802.03888. Timing: 60 seconds.}
+\note{Assigned presenter: Rafay Ul Haq. Planned speaking: 60 seconds. FinBERT provides news sentiment, XGBoost classifies the feature vector, and TreeSHAP supplies model attributions. Explain the engineering contribution without claiming invention of these methods or established research novelty. An explanation can be numerically consistent without being useful or causal. The related-work chapter compares the research components and discusses the remaining novelty review. Research sources in that chapter include FinBERT arXiv:1908.10063 and TreeSHAP arXiv:1802.03888.}
 \end{frame}
 
 \begin{frame}{Scope and acceptance checks}
@@ -77,7 +77,7 @@ Predictive usefulness and user understanding require separate evidence.}
 \vspace{4mm}
 {\small The social study remains separate. Phi-3-mini adaptation is later work.}
 \source{report/chapters/chapter4_requirements.tex; code/tests/test_presenter_ui.py}
-\note{The four record collections preserve historical and fresh frozen/refit identities. There are 186 decisions in each evaluation collection, not independent experiments to sum as a single sample. The risk-dependent blend is a separate retrospective prototype and does not modify the classifier probabilities. No default questionnaire responses are supplied. Social inputs have not been integrated into the news-only core. Original Phi-3-mini inference and QLoRA training remain unmeasured. Timing: 60 seconds.}
+\note{Assigned presenter: Ahmed Javaid. Planned speaking: 60 seconds. The four record collections preserve historical and fresh frozen/refit identities. There are 186 decisions in each evaluation collection, not independent experiments to sum as a single sample. The risk-dependent blend is a separate retrospective prototype and does not modify the classifier probabilities. No default questionnaire responses are supplied. Social inputs have not been integrated into the news-only core. Original Phi-3-mini inference and QLoRA training remain unmeasured.}
 \end{frame}
 
 \begin{frame}{Mid-1 deliverables}
@@ -95,7 +95,7 @@ Maintenance & CI configuration, deployment diagram and setup manual\\\bottomrule
 \vspace{3mm}
 {\small Genuine team contributions, baseline review and applicable approvals remain open.}
 \source{sources/BS-FYP-Handbook-2026_DRAFT.pdf pp.11,27,37-38; planning/HANDBOOK_MID1_AUDIT.md}
-\note{Table 1a asks for report version 1.0 and suitable design artifacts rather than every listed alternative. The audit maps 34 requirements to actual evidence or an explicit open condition. Mid-1 contributes 20 percent of FYP-1. The 45 percent implementation expectation belongs to Final-1, not this checkpoint. Show the report and explain why file schemas rather than a SQL database describe this iteration. Form 2 also asks for a genuine member code walkthrough and contribution evidence. Generated files do not establish that ownership. Timing: 60 seconds.}
+\note{Assigned presenter: Ahmed Javaid. Planned speaking: 70 seconds. Table 1a asks for report version 1.0 and suitable design artifacts rather than every listed alternative. The audit maps 34 requirements to actual evidence or an explicit open condition. Mid-1 contributes 20 percent of FYP-1. The 45 percent implementation expectation belongs to Final-1, not this checkpoint. Show the report and explain why file schemas rather than a SQL database describe this iteration. Form 2 also asks for a genuine member code walkthrough and contribution evidence. Generated files do not establish that ownership.}
 \end{frame}
 
 \begin{frame}{System architecture}
@@ -112,7 +112,7 @@ Maintenance & CI configuration, deployment diagram and setup manual\\\bottomrule
 \node[plain,text width=130mm] at (70,-3) {Offline research creates the retained artifacts. The live demo reads them and checks explanations.};
 \end{tikzpicture}
 \source{report/figures/mid1_pipeline.tex; code/app/presenter_data.py}
-\note{Trace one concrete artifact from offline scientific output to CaseCollection, DecisionRecord and FeatureContext. Model fitting and actual SHAP replay happened offline and have dated receipts. Opening the UI does not train a model, fetch market data or request an unconfigured LLM. The optional local generation adapter is implemented but candidate student performance remains pending. The separate social study has its own inputs and labels. Timing: 70 seconds.}
+\note{Assigned presenter: Soban Ahmad. Planned speaking: 50 seconds. Trace one concrete artifact from offline scientific output to CaseCollection, DecisionRecord and FeatureContext. Model fitting and actual SHAP replay happened offline and have dated receipts. Opening the UI does not train a model, fetch market data or request an unconfigured LLM. The optional local generation adapter is implemented but candidate student performance remains pending. The separate social study has its own inputs and labels.}
 \end{frame}
 
 \begin{frame}{Domain model and file schema}
@@ -130,7 +130,7 @@ Maintenance & CI configuration, deployment diagram and setup manual\\\bottomrule
 \vspace{1mm}
 {\small File schemas bind cases to source/session and model identity.\\Current storage uses JSON/CSV artifacts. A SQL database is unnecessary here.}
 \source{report/figures/mid1_equity_domain.tex; report/figures/mid1_schema.tex}
-\note{This is the conceptual domain, not a claim that all conceptual nouns are Python classes. The report also includes a concrete implementation domain/class diagram, field dictionary and file schema. Explain the relationship between a corpus, a validated DecisionRecord, its FeatureContext and explanation output. The loader rejects duplicate sessions, non-finite values and mismatched context, model or horizon. There is no fabricated database implementation. Timing: 60 seconds.}
+\note{Assigned presenter: Rafay Ul Haq. Planned speaking: 60 seconds. This is the conceptual domain, not a claim that all conceptual nouns are Python classes. The report also includes a concrete implementation domain/class diagram, field dictionary and file schema. Explain the relationship between a corpus, a validated DecisionRecord, its FeatureContext and explanation output. The loader rejects duplicate sessions, non-finite values and mismatched context, model or horizon. There is no fabricated database implementation.}
 \end{frame}
 
 \begin{frame}{Explanation check and recovery}
@@ -146,7 +146,7 @@ Maintenance & CI configuration, deployment diagram and setup manual\\\bottomrule
 {\small\textbf{Demonstrable defect}}\par
 {\small Correct JSON beside a wrong visible confidence must fail.\\The UI retains the candidate rejection and the separate fallback verdict.}
 \source{code/src/investify/explain/verifier.py; code/tests/test_presenter_ui.py}
-\note{An earlier verifier accepted facts from the payload even when the visible sentence contradicted them. The current verifier checks both independently. In the live demo, inject the labelled wrong probability of 1.00 percent. Explain that this deliberately corrupted text is a failure demonstration, not a forecast. The report sequence and state diagrams show rejection, fallback and invalidation after edits. Numerical consistency does not establish causal validity or human comprehension. Timing: 60 seconds.}
+\note{Assigned presenter: Soban Ahmad. Planned speaking: 45 seconds. An earlier verifier accepted facts from the payload even when the visible sentence contradicted them. The current verifier checks both independently. In the live demo, inject the labelled wrong probability of 1.00 percent. Explain that this deliberately corrupted text is a failure demonstration, not a forecast. The report sequence and state diagrams show rejection, fallback and invalidation after edits. Numerical consistency does not establish causal validity or human comprehension.}
 \end{frame}
 
 \begin{frame}{Live demonstration}
@@ -161,7 +161,7 @@ Maintenance & CI configuration, deployment diagram and setup manual\\\bottomrule
 \par\vspace{2mm}
 {\small Default case: Fresh Alpaca frozen, NVDA, 21 December 2023.}
 \source{report/chapters/chapter7_ui_manual.tex; evidence/presenter_calibration_ui_tests_20261013_run02.xml}
-\note{Reserve four minutes for the live walkthrough. Open Overview and choose Open the decision walkthrough. Leave the default Fresh Alpaca frozen case on 2023-12-21. Decision shows Buy and its calibrated probabilities. On Evidence choose a technical feature and a news feature. Risk profile: the explicit cautious fictional example R=0 gives Hold, and the higher-tolerance example R=1 gives Sell in the separate comparator, while the classifier remains Buy. Clear the profile to demonstrate no assumed answers. On Explanation check choose Inject wrong probability, then Check explanation. Show candidate rejection and verified fallback. Edit the text and show that the old verdict disappears. Fourteen primary-UI widget tests pass, including calibration-diagnostic identity/refusal. The full 42-test scope includes 24 historical UI tests and 4 selectors and must not be described as 42 new-interface tests. The header correction restores 4.75 rem clearance and full-width navigation. Browser/projector visual review and genuine rehearsal remain pending.}
+\note{Shared demo: Rafay opens for 20 seconds, Soban Decision 40, Ahmed Evidence 40, Rafay Risk 60, Soban Explanation 80. Reserve four minutes for the live walkthrough. Open Overview and choose Open the decision walkthrough. Leave the default Fresh Alpaca frozen case on 2023-12-21. Decision shows Buy and its calibrated probabilities. On Evidence choose a technical feature and a news feature. Risk profile: the explicit cautious fictional example R=0 gives Hold, and the higher-tolerance example R=1 gives Sell in the separate comparator, while the classifier remains Buy. Clear the profile to demonstrate no assumed answers. On Explanation check choose Inject wrong probability, then Check explanation. Show candidate rejection and verified fallback. Edit the text and show that the old verdict disappears. Fourteen primary-UI widget tests pass, including calibration-diagnostic identity/refusal. The full 42-test scope includes 24 historical UI tests and 4 selectors and must not be described as 42 new-interface tests. The header correction restores 4.75 rem clearance and full-width navigation. The actual browser journey is reviewed; physical projector review and genuine rehearsal remain pending.}
 \end{frame}
 
 \begin{frame}{Calibration and decision collapse}
@@ -187,7 +187,7 @@ Maintenance & CI configuration, deployment diagram and setup manual\\\bottomrule
 \vspace{2mm}
 {\small Saved map bounds force Buy for every raw probability vector.\\Lower Brier alone does not establish useful classification.}
 \source{evidence/fresh_alpaca_science_replay_20261012_run01.json; evidence/calibration_global_bounds_20261013.json}
-\note{These are fresh Alpaca revision-conservative results, not overwritten September metrics. The frozen and refit paths both reproduce actual model, calibration and native SHAP results. After excluding five unavailable labels, calibration has 181 rows. Frozen raw macro-F1 is 0.3182 and calibrated macro-F1 is 0.2238. Refit Brier changes from 0.7760 to 0.6078. The class-prior comparator uses calibration labels only, with Brier 0.60948945. The retained maps have Buy minimum 0.5344828, Hold maximum 0.25 and Sell maximum 0.3139535. Clipped interpolation stays inside these ranges. Common positive renormalization preserves argmax, so these maps force Buy for every raw vector. A separate native engine probe exactly replays 186 rows per mode and all 5,151 simplex inputs select Buy. Sources: evidence/calibration_global_bounds_20261013.json, evidence/calibration_bounds_native_probe_20261013.json and evidence/calibration_class_prior_audit_20261013.json. This applies only to the fresh maps. Do not tune held-out thresholds to manufacture varied decisions. Timing: 60 seconds.}
+\note{Assigned presenter: Soban Ahmad. Planned speaking: 55 seconds. These are fresh Alpaca revision-conservative results, not overwritten September metrics. The frozen and refit paths both reproduce actual model, calibration and native SHAP results. After excluding five unavailable labels, calibration has 181 rows. Frozen raw macro-F1 is 0.3182 and calibrated macro-F1 is 0.2238. Refit Brier changes from 0.7760 to 0.6078. The class-prior comparator uses calibration labels only, with Brier 0.60948945. The retained maps have Buy minimum 0.5344828, Hold maximum 0.25 and Sell maximum 0.3139535. Clipped interpolation stays inside these ranges. Common positive renormalization preserves argmax, so these maps force Buy for every raw vector. A separate native engine probe exactly replays 186 rows per mode and all 5,151 simplex inputs select Buy. Sources: evidence/calibration_global_bounds_20261013.json, evidence/calibration_bounds_native_probe_20261013.json and evidence/calibration_class_prior_audit_20261013.json. This applies only to the fresh maps. Do not tune held-out thresholds to manufacture varied decisions.}
 \end{frame}
 
 \begin{frame}{Temporal leakage experiment}
@@ -203,7 +203,7 @@ Maintenance & CI configuration, deployment diagram and setup manual\\\bottomrule
 \vspace{2mm}
 {\small Five-session macro-F1, mean across six folds.\\Clean lift: $-0.0444$\quad 95\% fold-bootstrap CI [$-0.0855,-0.0121$].}
 \source{evidence/fresh_alpaca_science_summary_20261012_run01.json}
-\note{The fresh study executes six arms, two horizons and six folds. The centered Bollinger variant deliberately uses future information and is a leakage demonstration. Its five-session lift is plus 0.2104, with fold-bootstrap interval plus 0.1698 to plus 0.2421. It is not a valid trading strategy. The clean arm is below the training-distribution random comparator. The intervals summarize fold resampling, not guaranteed future returns. Preserve the negative finding. The source vintage and full chronological September reproduction remain separate limitations. Timing: 60 seconds.}
+\note{Assigned presenter: Ahmed Javaid. Planned speaking: 100 seconds. The fresh study executes six arms, two horizons and six folds. The centered Bollinger variant deliberately uses future information and is a leakage demonstration. Its five-session lift is plus 0.2104, with fold-bootstrap interval plus 0.1698 to plus 0.2421. It is not a valid trading strategy. The clean arm is below the training-distribution random comparator. The intervals summarize fold resampling, not guaranteed future returns. Preserve the negative finding. The source vintage and full chronological September reproduction remain separate limitations.}
 \end{frame}
 
 \begin{frame}{Sentiment and teacher studies}
@@ -228,13 +228,13 @@ Maintenance & CI configuration, deployment diagram and setup manual\\\bottomrule
 \end{column}
 \end{columns}
 \source{evidence/social_study_review_20261013.json; deliverables/ASSISTANT_TEACHER_PILOT.md}
-\note{Both original publisher sentiment candidates run against unchanged AI references. CryptoBERT predicts only neutral. The 200 acquired MSFT posts yielded 117 usable references and 83 exclusions, frozen into 93 development and 24 held-out examples. These labels are not independently human validated. One held-out decision changes exact agreement by 4.17 percentage points. Do not infer NVDA transfer, profitability, significance or pretraining independence. The teacher prose is actual assistant output with deterministic factual JSON assembled from records. The exact serving revision is unavailable. Six examples do not establish adequate training data, student efficacy or user benefit. Timing: 60 seconds.}
+\note{Assigned presenter: Rafay Ul Haq. Planned speaking: 100 seconds. Both original publisher sentiment candidates run against unchanged AI references. CryptoBERT predicts only neutral. The 200 acquired MSFT posts yielded 117 usable references and 83 exclusions, frozen into 93 development and 24 held-out examples. These labels are not independently human validated. One held-out decision changes exact agreement by 4.17 percentage points. Do not infer NVDA transfer, profitability, significance or pretraining independence. The teacher prose is actual assistant output with deterministic factual JSON assembled from records. The exact serving revision is unavailable. Six examples do not establish adequate training data, student efficacy or user benefit.}
 \end{frame}
 
-\begin{frame}{Work division and remaining review}
+\begin{frame}{Equal work allocation and next steps}
 \begin{columns}[T,onlytextwidth]
 \begin{column}{.55\textwidth}
-\lead{Proposal-assigned responsibilities}
+\lead{One-third responsibility each}
 {\fontsize{11}{14}\selectfont
 \textbf{Ahmed Javaid}\\
 Point-in-time harness, leakage tests,\\dual timestamps, parity test, deployment\par\vspace{2mm}
@@ -254,8 +254,8 @@ Remote CI and deployment\par}
 \end{column}
 \end{columns}
 \vspace{1mm}
-{\color{teal}\footnotesize Proposal assignments guide the work. Actual completion needs member evidence.}
+{\color{teal}\footnotesize Four slides and five minutes per member, including live demonstration.}
 \source{sources/Investify Updated (1).pptx, slide 13; deliverables/WORK_DIVISION.md}
-\note{Read the preserved proposal's SmartArt parent/child assignments. It spells Soban Ahmed on slide 13; the cover/student record uses Soban Ahmad, retained here. The planned harness responsibility belongs to Ahmed, while historical repo work associated with Soban is preserved. These assignments do not establish who wrote the current assistant-supported modules. Record each member's actual files, review, tests and ability to explain a change. Local CI has executed the portable evidence job and 42 UI cases; no configured GitHub remote means no remote run or CD deployment is claimed. Confirm cover/session/co-supervisor/coordinator facts and agree bounded social/risk criteria with the supervisor. Original Phi-3-mini inference and later QLoRA remain unexecuted. Timing: 60 seconds plus discussion.}
+\note{Assigned presenter: Soban Ahmad. Planned speaking: 30 seconds. The team has assigned equal one-third responsibility for preparation, review and defence. Each member owns four slides and five minutes of planned speaking including their demonstration segment. Read the individual preparation packets for the exact route and code. The proposal spells Soban Ahmed on slide 13; the confirmed student record uses Soban Ahmad. Historical repository authorship and assistant contributions are preserved. Personal preparation is recorded during practice. Local CI has executed both jobs; remote CI and CD remain open. The team confirms no co-supervisor. Session, coordinator and assessment date still need confirmation. Original Phi-3-mini inference and later QLoRA remain unexecuted.}
 \end{frame}
 \end{document}
