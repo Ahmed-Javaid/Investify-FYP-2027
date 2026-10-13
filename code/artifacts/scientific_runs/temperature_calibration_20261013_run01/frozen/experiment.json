@@ -1,0 +1,57 @@
+{
+  "schema": "investify-temperature-experiment-v1",
+  "mode": "frozen",
+  "fit": {
+    "version": "multiclass-temperature-v1",
+    "temperature": 999.9999999999998,
+    "fit_rows": 181,
+    "fit_first": "2022-07-01",
+    "fit_last": "2023-03-21",
+    "evaluation_start": "2023-03-29",
+    "objective": "Calibration negative log likelihood; bounded log-temperature search",
+    "search_bounds": [
+      0.05,
+      1000.0
+    ],
+    "iterations": 120,
+    "calibration_nll_before": 1.3503311924175998,
+    "calibration_nll_after": 1.0986413519031288,
+    "evaluation_labels_used_for_fit": false,
+    "scope": "Post-analysis calibration correction; preserves raw argmax, not proof of useful prediction."
+  },
+  "original_records_sha256": "33a3690ab073c9fb5511e53befe5fba522d8120abf25cbf6cb95497b8ef3a0e2",
+  "original_trace_sha256": "009d3b40df86338d918d6546640c57e43fa13541d592e551a5b35fc55d25304e",
+  "builder_sha256": "ef590023959a2b764b479341493719fdce8d17023d720d361a2a503e1baf12a5",
+  "original_model_sha256": "afcce3fc43dbdb5391f0adee89d00c9e0336147757617de26d39a7034542198c",
+  "raw": {
+    "macro_f1": 0.31821235099958256,
+    "brier": 0.7929202034954362,
+    "class_counts": {
+      "Hold": 51,
+      "Buy": 40,
+      "Sell": 95
+    }
+  },
+  "isotonic": {
+    "macro_f1": 0.2238095238095238,
+    "brier": 0.6104969395473469,
+    "class_counts": {
+      "Buy": 186
+    }
+  },
+  "temperature": {
+    "macro_f1": 0.31821235099958256,
+    "brier": 0.6666939163264386,
+    "class_counts": {
+      "Hold": 51,
+      "Buy": 40,
+      "Sell": 95
+    }
+  },
+  "evaluation_first": "2023-03-29",
+  "evaluation_last": "2023-12-21",
+  "raw_model_replay_passed": true,
+  "argmax_preserved_rows": 186,
+  "native_shap_and_two_explanation_styles_checked": 186,
+  "scope": "Post-analysis engineering correction; same recorded inputs, new calibration identity."
+}

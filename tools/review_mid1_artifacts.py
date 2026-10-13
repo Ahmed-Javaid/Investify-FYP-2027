@@ -117,7 +117,7 @@ def publish(args):
         receipt = {
             'schema': 'investify-document-delivery-v3',
             'checked_utc': datetime.now(timezone.utc).isoformat(),
-            'status': 'compiled_and_layout_reviewed_unsigned_working_draft',
+            'status': 'compiled_and_layout_reviewed_submission_copy',
             'output': output.relative_to(ROOT).as_posix(), 'pdf_sha256': digest(output),
             'pages': pages, 'empty_text_pages': empty, 'outside_page_annotations': outside,
             'source_entry': f'{kind}/main.tex', 'compiled_source_files': source,
@@ -133,7 +133,7 @@ def publish(args):
             'human_review_or_institutional_approval': False,
             'browser_ui_screenshots_included': kind == 'report',
             'pending': ['physical projector review', 'genuine rehearsal',
-                        'actual student code defence/contributions', 'metadata and applicable approvals'],
+                        'independent student code defence', 'printing/signatures and supervisor review'],
             'previous_outputs_preserved': True,
         }
         if kind == 'presentation':

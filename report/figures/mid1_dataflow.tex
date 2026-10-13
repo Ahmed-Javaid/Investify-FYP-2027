@@ -1,17 +1,8 @@
-\begin{tikzpicture}[x=1mm,y=1mm,box/.style={draw=blue!45!black,fill=blue!2,rounded corners=1mm,align=center,text width=39mm,minimum height=22mm,inner sep=2mm,font=\sffamily\footnotesize},link/.style={->,>=stealth,draw=blue!50!black,thick}]
-\node[box] (reviewer) at (75,143) {\textbf{Reviewer}\\[1mm]session and source choice\\candidate text; profile answers};
-\node[box] (load) at (75,108) {\textbf{P1 Validate case}\\[1mm]record schema and hash\\one available recorded session};
-\node[box] (store) at (23,108) {\textbf{D1 Recorded decisions}\\[1mm]classifier probabilities\\raw features and attributions};
-\node[box] (context) at (23,67) {\textbf{P2 Build context}\\[1mm]feature meanings and units\\explicit absent inputs};
-\node[box] (verify) at (75,67) {\textbf{P3 Check explanation}\\[1mm]visible prose and JSON\\against the selected record};
-\node[box] (blend) at (127,67) {\textbf{P4 Compare profile}\\[1mm]earlier scaling rows only\\separate fixed/profile blend};
-\node[box] (output) at (75,26) {\textbf{Reviewed output}\\[1mm]class and source evidence\\checked text or verified fallback};
-\draw[link] (reviewer.south) -- ++(0,-6) -| (load.north) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{choice};
-\draw[link] (store.east) -- (load.west) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{read};
-\draw[link] (load.south) -- ++(0,-6) -| (context.north);
-\draw[link] (load.south) -- ++(0,-6) -| (verify.north);
-\draw[link] (load.south) -- ++(0,-6) -| (blend.north);
-\draw[link] (context.south) -- ++(0,-6) -| (output.north);
-\draw[link] (verify.south) -- ++(0,-6) -| (output.north);
-\draw[link] (blend.south) -- ++(0,-6) -| (output.north);
-\end{tikzpicture}
+\resizebox{\linewidth}{!}{\begin{tikzpicture}[x=1mm,y=1mm,b/.style={draw,rounded corners,text width=49mm,minimum height=24mm,align=center,font=\sffamily\footnotesize},store/.style={draw,double,text width=49mm,minimum height=19mm,align=center,font=\sffamily\footnotesize},>=Stealth]
+\node[b] (user) at (75,146){User: selection, answers and candidate};\node[b] (loader) at (32,106){P1: load/validate\\Case + source identity};\node[b] (profile) at (118,106){P2: score profile/policy\\Capacity, tolerance, allowance};
+\node[b] (check) at (32,61){P3: verify claims\\Candidate and source independently};\node[b] (emit) at (118,61){P4: emit current result\\Accepted, fallback or error};
+\node[store] (files) at (32,13){D1: recorded artifacts / receipts};\node[store] (state) at (118,13){D2: session profile / result identity};
+\draw[->](user.south)-|node[pos=.35,above,font=\scriptsize]{case/text}(loader.north);\draw[->](user.south)-|node[pos=.35,above,font=\scriptsize]{18 answers}(profile.north);
+\draw[->](files.west)--(-5,13)--node[left,font=\scriptsize]{record}(-5,106)--(loader.west);\draw[->](loader)--(check);\draw[->](check)--node[above,font=\scriptsize]{verdict}(emit);\draw[->](profile)--node[right,font=\scriptsize]{policy result}(emit);\draw[->](emit)--(state);
+\draw[->](emit.east)--(153,61)--(153,146)--node[above,font=\scriptsize]{current display}(user.east);
+\end{tikzpicture}}

@@ -3,12 +3,13 @@ import argparse
 import ast
 import hashlib
 import json
+import os
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST = ROOT / 'code/docs/requirements_traceability.json'
+MANIFEST = ROOT / 'code/docs/requirements_traceability_v2.json'
 
 
 def symbols(path):
@@ -33,8 +34,8 @@ def main():
     output = args.output.resolve()
     if not output.is_relative_to(ROOT / 'evidence') or output.exists():
         raise ValueError('Use a new evidence receipt')
-    if args.markdown and not args.markdown.resolve().is_relative_to(ROOT / 'deliverables'):
-        raise ValueError('Traceability Markdown must remain under deliverables')
+    if args.markdown and args.markdown.resolve() != ROOT / 'docs/technical/REQUIREMENTS.md':
+        raise ValueError('Update the consolidated technical requirements document')
     xml = ET.parse(args.tests)
     cases = xml.findall('.//testcase')
     if not cases or any(xml.findall('.//' + tag) for tag in ('failure', 'error', 'skipped')):
@@ -68,8 +69,8 @@ def main():
                     executed = True
                 row['checked_anchors'].append(dict(anchor, kind=kind, line=line, executed_pass=executed))
         rows.append(row)
-    if ids != {f'MID-FR-{i:02d}' for i in range(1, 19)}:
-        raise ValueError('Traceability must cover the declared 18 engineering requirements')
+    if ids != {f'MID-FR-{i:02d}' for i in range(1, 21)}:
+        raise ValueError('Traceability must cover the declared 20 engineering requirements')
     report = {'schema': 'investify-requirements-traceability-receipt-v1',
               'checked_utc': datetime.now(timezone.utc).isoformat(),
               'requirements_checked': len(rows), 'selected_tests_passed': len(cases),
@@ -79,29 +80,27 @@ def main():
               'scope': manifest['scope'], 'institutional_acceptance_claimed': False}
     output.write_text(json.dumps(report, indent=2), encoding='utf-8')
     if args.markdown:
-        lines = ['# Current requirements, source and test traceability', '', manifest['scope'], '',
-                 f'The matching receipt checks **{len(rows)} requirement IDs** against source symbols and named passing tests '
-                 f'in the **{len(cases)}-test** selected suite. These are existence/execution checks, not a test-coverage '
-                 'percentage or supervisor acceptance.', '',
-                 f'[Matching dated receipt](../evidence/{output.name}). Re-run the checker after changing anchors or source; '
-                 'an older receipt proves its matching hashes only.', '',
-                 '| ID / acceptance criterion | Source and actual passing regression | Evidence boundary |',
+        path = args.markdown.resolve()
+        def link(relative):
+            return os.path.relpath(ROOT / relative, path.parent).replace(chr(92), '/')
+        lines = [f'Checked {len(rows)} IDs against source symbols and {len(cases)} passing tests in '
+                 f'[the dated input receipt]({link(args.tests.resolve().relative_to(ROOT))}). '
+                 'This is anchor execution, not coverage or institutional acceptance.', '',
+                 f'[Matching checker receipt]({link(output.relative_to(ROOT))}).', '',
+                 '| ID / acceptance | Source and named passing regression | Evidence boundary |',
                  '| --- | --- | --- |']
         for row in rows:
-            anchors = [f"[{a['symbol']}](../{a['path']}#L{a['line']})" for a in row['checked_anchors']]
-            lines.append(f"| {row['id']}: {row['acceptance']} | " + '<br>'.join(anchors) + f" | {row['evidence_boundary']} |")
-        lines += ['', '## Original first-mid commitments', '',
-                  '| Proposal commitment | Current source/evidence | Still needed |', '| --- | --- | --- |',
-                  '| Ingestion, two calendars, indicators and news sentiment | Historical ingest/features/calendar/store modules and saved results; structural input preflight | Original data/cache and scientific runtime; fresh ingestion-to-feature run and current scientific tests. |',
-                  '| Interpretable linear baseline end to end | Separate saved-feature profile comparator is checked | Complete ingestion-to-linear-baseline run; the retrospective comparator does not reproduce it. |',
-                  '| Social-model selection | 200 acquired posts, 117 frozen AI references; validated runners/evaluator | Actual paired original candidate inference and scoped selection or declared news-only deviation. |',
-                  '| Leakage suite and deliberate mutation | Historical harness results and current UI refusal | Fresh scientific suite and actual canary run; portable explanation checks are a separate suite. |',
-                  '| Thin interface slice | Actual Streamlit widgets and portable endpoints, failure/fallback paths | Live supervisor demonstration, browser visual review and genuine student defence. |',
-                  '| Baselined requirements/design | Engineering anchors above, report/figure sources | Full-proposal reconciliation, institutional metadata/review, compilation and rendered QA. |', '',
-                  'The teacher pilot advances later research and addresses the worked-explanation discussion. '
-                  'QLoRA is not a first-mid prerequisite. Team ownership, agreed dates, meeting records and approvals '
-                  'are pending genuine inputs; this matrix assigns none.', '']
-        args.markdown.write_text('\n'.join(lines), encoding='utf-8')
+            anchors = [f"[{anchor['symbol']}]({link(anchor['path'])}#L{anchor['line']})"
+                       for anchor in row['checked_anchors']]
+            lines.append(f"| {row['id']}: {row['acceptance']} | " + '<br>'.join(anchors)
+                         + f" | {row['evidence_boundary']} |")
+        start, end = '<!-- REQUIREMENT_ANCHORS_START -->', '<!-- REQUIREMENT_ANCHORS_END -->'
+        content = path.read_text(encoding='utf-8')
+        if content.count(start) != 1 or content.count(end) != 1:
+            raise ValueError('The consolidated requirements document needs one anchor block')
+        first, rest = content.split(start, 1)
+        _, last = rest.split(end, 1)
+        path.write_text(first + start + '\n\n' + '\n'.join(lines) + '\n\n' + end + last, encoding='utf-8')
     print(f'Traceability: {len(rows)} requirement IDs, {len(cases)} passing selected tests; source/test anchors verified')
 
 

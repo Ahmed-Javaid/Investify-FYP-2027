@@ -40,6 +40,10 @@ def declare_revision():
         path = (CODE / name).resolve()
         if not path.is_relative_to(CODE) or path.name.startswith('.env') or path.suffix in ('.gguf', '.safetensors', '.pyc'):
             raise ValueError('Unexpected path, credential or model file in the CI source inventory')
+        if not path.is_file():
+            if dirty and not path.exists():
+                continue  # An explicitly dirty checkout may include an unstaged deletion.
+            raise ValueError('A declared source path is not a file')
         files[name.replace('\\', '/')] = sha(path)
     metadata = {'schema': 'investify-working-source-revision-v2' if dirty else 'investify-source-revision-v1',
                 'commit': commit, 'files': files}

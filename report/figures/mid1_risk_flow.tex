@@ -1,0 +1,10 @@
+\resizebox{\linewidth}{!}{\begin{tikzpicture}[x=1mm,y=1mm,b/.style={draw,rounded corners,text width=58mm,minimum height=20mm,align=center,font=\sffamily\footnotesize},d/.style={draw,diamond,aspect=2.6,align=center,font=\sffamily\scriptsize},>=Stealth]
+\node[b] (capacity) at (35,156){Five capacity answers\\Weighted capacity + protective caps};\node[b] (tolerance) at (115,156){Thirteen tolerance choices\\Published score $G=13..47$};
+\node[b] (reconcile) at (75,114){$T_r=(G-13)/34$, $R=\min(C,T_r)$\\More restrictive tier/axis binds};
+\node[b] (confidence) at (75,76){Read fixed model class/confidence\\Required confidence $\tau=0.80-0.30R$};
+\node[d] (gate) at (75,43){Directional and\\confidence sufficient?};
+\node[b] (allow) at (30,7){Retain model direction\\Never flip Buy/Sell};\node[b] (observe) at (120,7){Observe / non-directional Hold\\Weak evidence remains withheld};
+\draw[->](capacity.south)|-(reconcile.west);\draw[->](tolerance.south)|-(reconcile.east);\draw[->](reconcile)--(confidence);\draw[->](confidence)--(gate);
+\draw[->](gate.west)-|node[pos=.2,above]{yes}(allow.north);\draw[->](gate.east)-|node[pos=.2,above]{no}(observe.north);
+\node[font=\sffamily\scriptsize,align=center] at (75,-21){Model probabilities and raw-score attributions stay unchanged.\\Archived failed calibration is not eligible for a directional suggestion.};
+\end{tikzpicture}}

@@ -105,7 +105,10 @@ def main():
             teacher_replayed = teacher['accepted']
         requirement_anchors = 0
         if (code / 'docs/requirements_traceability.json').exists():
-            run('../tools/verify_requirements_traceability.py', '--tests', '../evidence/current_tests.xml',
+            anchor_receipts = sorted((bundle / 'evidence').glob('requirement_anchor_tests_*.xml'))
+            selected_tests = (anchor_receipts[-1] if anchor_receipts
+                              else bundle / 'evidence/current_tests.xml')
+            run('../tools/verify_requirements_traceability.py', '--tests', str(selected_tests),
                 '--output', '../evidence/clean_host_requirement_anchors.json')
             trace = json.loads((bundle / 'evidence/clean_host_requirement_anchors.json').read_text(encoding='utf-8'))
             requirement_anchors = trace['requirements_checked']

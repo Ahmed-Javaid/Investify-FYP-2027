@@ -1,87 +1,117 @@
 \chapter{Software Requirements}
-\section{User Interactions / Use Cases}
-The increment lets a reviewer select a historical corpus/session, inspect all technical/news evidence, check explanations, inspect rejection/fallback, complete an explicit prototype risk profile, and compare a separate profile-dependent linear blend. It identifies absent social features, historical data, unchanged classifier probabilities and constant-Buy behaviour. The final retail-user journey remains broader than this demonstration.
+\section{User Interactions}
+The learner selects a historical case, inspects evidence, completes a risk profile and checks an explanation. The operator installs the viewer and inspects input failures. Research views expose source-bound studies. The current workflow is historical and educational; the final conversational service remains later scope.
 \section{Use Case Diagram}
-The implemented interactions are Select Historical Decision, Inspect Evidence, Check Explanation, Inspect Rejection/Fallback, Calculate Prototype Profile, Compare Separate Blend, and Inspect Social Study Evidence. The diagram represents the current reviewer/operator journey, not a complete approved retail-product design.
-\begin{figure}[htbp]\centering
-\input{figures/mideval_use_cases}
-\caption{Implemented mid-evaluation reviewer/operator interactions and explicit study dependencies.}
-\end{figure}
+Figure~\ref{fig:usecases} uses actors outside the system boundary, oval use cases and labelled include/extend relationships. Study preparation is an operator task, not an unimplemented student actor.
+\begin{figure}[htbp]\centering\input{figures/mideval_use_cases}\caption{Implemented learner/operator use cases.}\label{fig:usecases}\end{figure}
 \section{Detailed Use Cases}
-For Check Explanation, the precondition is an available, validated record. The user submits visible text and optional JSON claims. Both are checked against the record. A contradiction, missing essential display claim, malformed payload, or unsupported sentence in strict mode causes rejection and a verified deterministic fallback. An unavailable record produces an explicit error instead of a substituted decision.
-\section{Functional Requirements}
-These identifiers document this increment; they do not replace the full proposal baseline or imply supervisor approval of a scope change.
-\begin{longtable}{p{0.15\textwidth}p{0.56\textwidth}p{0.18\textwidth}}
-\toprule Identifier & Requirement & Status\\\midrule
-MID-FR-01 & Load real saved decisions; disclose unavailable/invalid inputs. & Implemented\\
-MID-FR-02 & Show all technical/news features with values, attributions, meanings, and limitations. & Implemented\\
-MID-FR-03 & Check visible prose and JSON independently against the record. & Implemented\\
-MID-FR-04 & Reject known contradictions and missing essential claims; verify the fallback. & Implemented\\
-MID-FR-05 & Retain the candidate's rejection report separately from the fallback report. & Implemented\\
-MID-FR-06 & Reject unparsed sentences in strict mode. & Implemented\\
-MID-FR-07 & Disable scientific re-runs when input files are absent, empty, unreadable or structurally invalid, or runtime modules are missing. & Structural preflight tested\\
-MID-FR-08 & Request only an explicitly configured local generator; bound retries/timeouts and disclose fallback. & Adapter tested; real model pending\\
-MID-FR-09 & Check complete maintained feature definitions in both visible text and JSON. & Implemented\\
-MID-FR-10 & Preserve raw/failed attempts and frozen evaluation selection; report no model-quality score without completions. & Implemented; plan recorded\\
-MID-FR-11 & Check every feature's value, SHAP magnitude/direction/target, family totals and attribution scope in both guided representations. & Implemented\\
-MID-FR-12 & Require all profile answers; expose capacity/tolerance reconciliation and matched/binding project caps. & Implemented prototype\\
-MID-FR-13 & Fit comparator scaling on earlier development rows; refuse development-session decisions and missing technical inputs. & Implemented\\
-MID-FR-14 & Show the profile-dependent blend beside a fixed reference, preserving saved classifier probabilities and disclosing unvalidated assumptions. & Implemented prototype\\
-MID-FR-15 & Validate social-post provenance, declared AI or human initial labels and annotation provenance, adjudication/exclusions and a frozen chronological study plan. & Frozen AI reference; paired runs recorded\\
-MID-FR-16 & Require matching code/data/checkpoint/preprocessing and complete paired held-out outputs for sentiment comparison; preserve failures/raw runs. & Actual paired study; review pending\\
-MID-FR-17 & Run a declared social classifier only from existing local weights with explicit class/text/token mapping; retain logits, truncation and failures. & Both original classifiers executed\\
-MID-FR-18 & Retain actual teacher prose and provenance; verify it independently of assembled JSON; exclude test dates and export training/validation separately. & Six-example construction pilot; student pending\\
-\bottomrule
-\end{longtable}
+\subsection{UC-01: Select a Historical Decision}
+\begin{description}
+\item[Actor] Learner.
+\item[Precondition] The viewer runs and a registered experiment exists.
+\item[Trigger] Select an experiment and session.
+\item[Main flow] The loader reads the declared artifact, validates schema and unique sessions, binds its digest and displays class/probabilities for the chosen case.
+\item[Exceptions] Missing, malformed or changed evidence produces an error without a substituted decision.
+\item[Postcondition] One source/date/digest identifies the active case; an obsolete explanation result is cleared.
+\end{description}
+\subsection{UC-02: Inspect Technical and News Evidence}
+\begin{description}
+\item[Actor] Learner.
+\item[Precondition] A valid case is selected.
+\item[Trigger] Open Evidence and choose a family/feature.
+\item[Main flow] Display the recorded value, maintained meaning, raw-score contribution and selected-class direction; expose all eleven inputs in detail.
+\item[Exceptions] A missing value remains explicitly missing; an absent social signal is not fabricated.
+\item[Postcondition] The learner can trace each displayed feature to the active record.
+\end{description}
+\subsection{UC-03: Complete the Risk Profile}
+\begin{description}
+\item[Actor] Learner.
+\item[Precondition] Profile form is available.
+\item[Trigger] Submit five capacity and thirteen tolerance answers.
+\item[Main flow] Validate all choices, sum published tolerance weights, calculate capacity/caps and reconcile the more restrictive tier. Display the binding axis and allowance $R$.
+\item[Exceptions] Any unanswered/invalid choice withholds the result. Explicit fictional examples are labelled; Clear removes the profile.
+\item[Postcondition] A versioned profile is held only in the local session.
+\end{description}
+\subsection{UC-04: Apply the Confidence Policy}
+\begin{description}
+\item[Actor] Learner.
+\item[Precondition] Valid case and complete profile.
+\item[Trigger] Apply/change the profile or selected case.
+\item[Main flow] Calculate $\tau(R)=0.80-0.30R$ and compare the recorded class confidence. Withhold a directional suggestion below the threshold; never reverse its market direction.
+\item[Exceptions] Low allowance/confidence produces Observe; an existing Hold signal remains non-directional.
+\item[Postcondition] The profile outcome is displayed separately from unchanged model probabilities and SHAP.
+\end{description}
+\subsection{UC-05: Check an Explanation and Recover}
+\begin{description}
+\item[Actor] Learner.
+\item[Precondition] Valid selected record and current candidate text.
+\item[Trigger] Click Check explanation.
+\item[Main flow] Check visible and structured claims independently. If accepted, show the current candidate and report. If rejected, retain its failed report, render a deterministic fallback and check it independently.
+\item[Exceptions] Contradictory, missing, malformed or unsupported claims fail. A fallback/checker failure displays an error, not a successful output.
+\item[Postcondition] Only a result matching the current case/text is shown; edits invalidate it.
+\end{description}
+\subsection{UC-06: Inspect a Recorded Study}
+\begin{description}
+\item[Actor] Learner or supervisor.
+\item[Precondition] Retained study receipts and outputs are available.
+\item[Trigger] Select leakage, sentiment or teacher study.
+\item[Main flow] Validate identities and coverage, recompute supported summary values and expose sample/scope limits.
+\item[Exceptions] Changed, incomplete or unavailable evidence withholds replacement scores.
+\item[Postcondition] Recorded findings are displayed without a page-load model call.
+\end{description}
+\subsection{UC-07: Install and Run the Demo}
+\begin{description}
+\item[Actor] Operator or group member.
+\item[Precondition] Git/Python 3.11 and initial package access.
+\item[Trigger] Follow the setup manual.
+\item[Main flow] Clone source, create an environment, install pinned viewer dependencies, restore reviewed checkout bytes and start Streamlit on loopback.
+\item[Exceptions] Missing runtime or occupied port produces an actionable setup error; existing processes are not stopped automatically.
+\item[Postcondition] The historical workflow runs without model downloads or brokerage credentials.
+\end{description}
+\section{Functional Requirements by Module}
+The IDs preserve traceability while grouping the implementation by responsibility. Profile/calibration revisions are explicitly versioned; the earlier blend remains a historical comparator.
+\subsection{Data, Decision and Evidence}
+\begin{longtable}{p{0.15\textwidth}p{0.52\textwidth}p{0.22\textwidth}}
+\caption{Data/decision functional requirements.}\label{tab:fr-data}\\\toprule ID & Requirement & Acceptance\\\midrule
+MID-FR-01 & Load saved cases; refuse invalid/unavailable records & No synthetic replacement class\\
+MID-FR-02 & Expose all technical/news values, meanings and attribution & Five technical and six news inputs inspectable\\
+MID-FR-07 & Refuse scientific reruns when structural input/runtime preflight fails & Failure state precedes execution\\
+MID-FR-19 & Apply one positive multiclass temperature using earlier outcomes only & Raw argmax preserved; low confidence disclosed\\
+\bottomrule\end{longtable}
+\subsection{Risk Profiling}
+\begin{longtable}{p{0.15\textwidth}p{0.52\textwidth}p{0.22\textwidth}}
+\caption{Profile and policy functional requirements.}\label{tab:fr-risk}\\\toprule ID & Requirement & Acceptance\\\midrule
+MID-FR-12 & Require complete capacity/tolerance answers and expose restrictive reconciliation & No defaults; binding caps/tier displayed\\
+MID-FR-13 & Keep historical comparator scaling chronological & Earlier fit only; unsuitable historical sessions refused\\
+MID-FR-14 & Keep current risk policy independent of model direction/probabilities & Allowance changes confidence requirement, not Buy/Sell direction\\
+MID-FR-20 & Implement all thirteen published tolerance scoring items & Explicit choices; total 13--47; min/max tests pass\\
+\bottomrule\end{longtable}
+\subsection{Explanation and Recovery}
+\begin{longtable}{p{0.15\textwidth}p{0.52\textwidth}p{0.22\textwidth}}
+\caption{Explanation-verification functional requirements.}\label{tab:fr-explain}\\\toprule ID & Requirement & Acceptance\\\midrule
+MID-FR-03/04 & Check prose/JSON independently and reject contradictions/omissions & Correct payload cannot hide wrong prose\\
+MID-FR-05/06 & Retain failed report; reject unsupported strict-mode sentences & Candidate/fallback verdicts remain separate\\
+MID-FR-08 & Bound explicitly configured generator retries/timeouts & Failure is recorded; fallback labelled\\
+MID-FR-09/11 & Check maintained meanings, all-feature values/effects and raw-score scope & Both representations cover required facts\\
+MID-FR-10 & Preserve frozen selection and failed/raw attempts & No quality score without actual outputs\\
+\bottomrule\end{longtable}
+\subsection{Research Studies}
+\begin{longtable}{p{0.15\textwidth}p{0.52\textwidth}p{0.22\textwidth}}
+\caption{Study provenance and comparison requirements.}\label{tab:fr-study}\\\toprule ID & Requirement & Acceptance\\\midrule
+MID-FR-15 & Validate post/reference provenance, exclusions and chronological plan & Declared reference method and fixed identities\\
+MID-FR-16/17 & Require complete matching original-classifier outputs and mappings & Partial failures withhold paired metrics\\
+MID-FR-18 & Preserve actual teacher prose, independent checking and grouped exports & Test dates excluded; student training separate\\
+\bottomrule\end{longtable}
 \section{Non-Functional Requirements}
-The original quantitative NFRs remain separate from this increment's scoped engineering contracts. None of these planned performance bounds is accepted from template, fixture, HTTP health or import tests alone.
-\begin{longtable}{p{0.12\textwidth}p{0.62\textwidth}p{0.15\textwidth}}
-\toprule ID & Preserved original acceptance target & Current status\\\midrule
-NFR-1 & Feature assembly, inference, TreeSHAP and verification below 800 ms at p95; target VM, warm cache; excludes generation. & Unmeasured\\
-NFR-2 & Sentiment throughput at least 150 documents/s on 16 GB GPU, fp16 and 128-token input. & Unmeasured\\
-NFR-3 & TreeSHAP below 50 ms on CPU. & Unmeasured\\
-NFR-4 & Peak resident inference memory below 4 GB on the target VM. & Unmeasured\\
-NFR-5 & QLoRA within four GPU hours on the 16 GB envelope; later milestone. & Unexecuted\\
-NFR-6 & Explanation including verification below five seconds; target VM, CPU. & Unmeasured; reconcile\\
-NFR-7 & Nightly incremental ingest and scoring over the full universe below 30 minutes; GPU and local store. & Unexecuted\\
-NFR-8 & Full purged walk-forward sweep and hyperparameter search below 90 minutes on CPU. & Unmeasured\\
+\begin{longtable}{p{0.14\textwidth}p{0.51\textwidth}p{0.24\textwidth}}
+\caption{Quantitative product targets and current measurement boundary.}\label{tab:nfr-targets}\\\toprule ID & Target & Status\\\midrule
+NFR-1 & Decision/attribution/verification below 800 ms p95 on target VM & Target measurement remains\\
+NFR-2/3 & Sentiment at least 150 documents/s on specified GPU; CPU SHAP below 50 ms & Target environment measurement remains\\
+NFR-4 & Inference memory below 4 GB & Target measurement remains\\
+NFR-5 & Later QLoRA within four GPU hours on 16 GB envelope & Later training milestone\\
+NFR-6 & Explanation including verification below five seconds & Whole-request measurement remains\\
+NFR-7/8 & Nightly ingest below 30 minutes; walk-forward/search below 90 minutes & Operational measurement remains\\
 \bottomrule\end{longtable}
-The local adapter's 20-second default socket timeout, configurable upper bound and two attempts do not establish a five-second whole-request deadline. Its bounded-failure behaviour is tested separately; NFR-6 is pending reconciliation and measurement. The inspected GPU has 10,240 MiB, so the proposal's 16 GB targets are not assumed satisfied. The separate recovered classifier runtime is CPU-only and is not a QLoRA environment.
-
-\begin{longtable}{p{0.15\textwidth}p{0.51\textwidth}p{0.23\textwidth}}
-\toprule Scoped ID & Testable increment acceptance & Evidence/status\\\midrule
-MID-NFR-01 & Preserve rejected-candidate reporting and verify fallback independently. & Verifier, emission and HTTP regressions\\
-MID-NFR-02 & Show explicit unavailable-data/refusal states without fabricated decisions or experiment results. & Record, readiness and widget tests\\
-MID-NFR-03 & Local generator requests use loopback, bounded attempts/socket timeouts and retain failures. & Transport/adapter fixtures; whole deadline unmeasured\\
-MID-NFR-04 & Expose only declared local routes, reject malformed/nonfinite/oversized requests and redact credentials. & HTTP/transport tests; prototype scope\\
-MID-NFR-05 & Git-free delivery verifies included inventory and reports uncommitted identity explicitly. & Source/handover tests and archive receipts\\
-MID-NFR-06 & A visible verification report must match the current record, text, JSON-inclusion and strict setting; obsolete record, source, profile and result requests cannot publish or release a newer request. & Eight pure-state assertions and twelve controlled Node handler cases; browser QA pending\\
-\bottomrule\end{longtable}
-These contracts do not replace the original NFRs or certify participant comprehension, deployment security or scientific accuracy.
-\subsection{Reliability}
-Missing inputs do not produce invented decisions. A template failing its own verifier raises an error. The portable server calls the real pipeline rather than simulating generation.
-\subsection{Usability}
-Candidate and emitted text are labelled separately. Feature meanings, raw-score attribution units, and unsupported capabilities are disclosed. Visual QA and participant comprehension checks remain pending.
-\subsection{Performance}
-Interactions perform no training or corpus scoring. HTTP duration is recorded in the live evidence JSON; it is not a browser-rendering or full-system latency measurement.
-\subsection{Security}
-The portable server binds to loopback and serves a single page, one explicit state script and declared APIs. It does not expose arbitrary project files or provide brokerage access, authentication, or production deployment.
-\section{Acceptance Criteria}
-Both corpora retain their recorded facts and accepted templates. Correct JSON cannot hide wrong visible prose; correct prose cannot hide wrong JSON. Rejection yields the verified template and retained failed report. Missing inputs are disclosed without synthetic replacement. Strict mode rejects unsupported sentences while preserving correct templates.
-\section{Requirements Traceability}
-The appendix and the machine-checked working traceability matrix map these 18 identifiers to exact source symbols and named executed tests. The check establishes anchor existence and execution, not a coverage percentage or institutional acceptance. Full proposal requirements still need reconciliation with agreed owners, approved iteration dates, social-study evidence, risk semantics, LLM evaluation, and deployment.
-
-\section{Mid-1 Priorities and Acceptance Matrix}
-The SRS remains a review draft. The following priorities select the implemented Mid-1 demonstration without silently removing broader proposal requirements. Must items define the live core module; Should items strengthen its explanation and evidence presentation; later items remain in the preserved proposal plan. Stakeholder/supervisor approval is not inferred.
-\begin{longtable}{p{0.15\textwidth}p{0.15\textwidth}p{0.33\textwidth}p{0.27\textwidth}}\toprule ID & Priority & Observable acceptance & Source/check\\\midrule
-MID-FR-01 & Must & Unknown/invalid case displays no substituted class. & \nolinkurl{load_cases} and invalid-record UI check\\
-MID-FR-02 & Must & Five technical/six news features remain inspectable with meanings and missing-value status. & \nolinkurl{build_context}; both-family UI check\\
-MID-FR-03/04 & Must & Correct JSON cannot conceal visible 1.00\% confidence; reject and check fallback. & verify/emit; injected-probability UI check\\
-MID-FR-12/14 & Should & No unanswered default; example profiles change comparator while classifier stays fixed. & \nolinkurl{score_profile}; profile/reset UI check\\
-MID-FR-15/17 & Should & Both candidate scores use the same frozen 24 AI-reference posts and complete bound receipts. & \nolinkurl{recorded_receipt_comparison}\\
-MID-FR-18 & Should & Actual teacher prose and four/two exports remain separate from student training. & \nolinkurl{load_study}; teacher viewer\\
-MID-NFR-06 & Must & Editing text or changing case hides the previous accepted verdict. & identity-bound UI checks\\
-UI-NFR-01 & Must & Exactly one workspace and one walkthrough step executes per interaction. & current presenter UI test\\
-UI-NFR-02 & Should & No primary screen depends on remote fonts, corpus downloads or page-load model training. & offline styling and explicit action boundary\\
-\bottomrule\end{longtable}
-UI-NFR-01/02 are newly proposed presentation-quality acceptance conditions, not a change to the frozen scientific evaluation criteria. Full predictive/latency targets above stay unchanged. The observable checks demonstrate engineering behavior; human comprehension, projector usability and baseline approval require genuine review.
+The configured retry/socket bounds do not establish a whole-request latency guarantee. Reliability acceptance requires explicit unavailable/error states and current-identity results. Local routes reject malformed/nonfinite input and retain no brokerage credentials. Installation tests and hosted artifact delivery establish reproducibility of their scoped paths, not production security or participant comprehension.
+\section{Acceptance and Traceability}
+Positive cases and deliberate failures are paired: a correct explanation passes; its corrupted visible probability fails despite correct JSON; fallback passes independently; an edit clears the old verdict. The risk layer refuses incomplete inputs and preserves market direction. The source/test matrix in Appendix~\ref{app:requirements} maps the twenty requirement IDs to implementation and named checks.

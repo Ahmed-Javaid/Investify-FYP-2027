@@ -1,0 +1,18 @@
+{
+  "schema": "investify-consolidated-documentation-validation-v1",
+  "checked_utc": "2026-10-13T18:31:04.777471+00:00",
+  "active_documents": [
+    "README.md",
+    "docs/team/MID1_TEAM_GUIDE.md",
+    "docs/technical/ENGINEERING.md",
+    "docs/technical/RESEARCH.md",
+    "docs/technical/REQUIREMENTS.md",
+    "docs/handoffs/AGENT_HANDOFF.md"
+  ],
+  "local_links_checked": 156,
+  "archived_files_checked": 126,
+  "protected_files_checked": 808,
+  "reviewed_pdf_sources_unchanged": true,
+  "failures": [],
+  "passed": true
+}

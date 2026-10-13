@@ -1,25 +1,33 @@
-\chapter{Detailed Requirements}
-\begin{longtable}{p{0.16\textwidth}p{0.34\textwidth}p{0.39\textwidth}}
-\toprule Requirement & Component & Evidence\\\midrule
-MID-FR-01 & Schema/catalogue/input handling & Actual-record and missing/invalid-input checks\\
-MID-FR-02 & Context and both interfaces & All 372 records; complete coverage tests\\
-MID-FR-03 & Verifier & Prose/payload contradiction regressions\\
-MID-FR-04 & Verifier/emission & Hard gates, omissions, malformed claims, verified fallback\\
-MID-FR-05 & Emission/reporting & Retained failed report and HTTP assertions\\
-MID-FR-06 & Strict prose gate & Clean acceptance and unsupported-sentence rejection\\
-MID-FR-07 & Structural readiness/UI control & Missing, empty, truncated, invalid-type and read-denied fixtures; module discovery and actual widget checks\\
-MID-FR-08 & Local adapter and interfaces & Retry, unavailable-provider, malformed/truncated output, loopback transport and fallback tests\\
-MID-FR-09 & Guided template and verifier & All 372 guided records; modified-definition and coverage checks\\
-MID-FR-10 & Evaluation command & Disjoint chronological selection, plan-only and zero-completion tests\\
-MID-FR-11 & Complete guided contract & Non-top-k, missing/zero, family, target, scope and two-source coverage tests\\
-MID-FR-12 & Prototype profile/form & All 32,400 answer combinations; cap, incomplete-answer and actual widget tests\\
-MID-FR-13 & Retrospective scaling & Both 148/38 splits, held-out perturbation and development/missing-input refusal\\
-MID-FR-14 & Separate comparator & Actual HTTP/AppTest independence; 228 real-row/labelled-scenario arithmetic checks\\
-MID-FR-15 & Social-study provenance/plan & Fixture provenance checks plus the actual frozen 200-post/117-reference AI study\\
-MID-FR-16 & Sentiment comparison tool & Matched-plan, per-model coverage/refusal, null partial metrics and explicit ties/raw-output tests; actual paired 24-post scores recorded\\
-MID-FR-17 & Offline classifier runner & Eight backend-fixture checks; head/mapping/weight refusal, no label inputs, raw/error/truncation retention; both pinned original classifiers executed\\
-MID-FR-18 & Recorded teacher import/export & Seven fixture tests plus actual evidence replay and viewer checks; six real examples, hybrid target disclosure and separate exports\\
-\bottomrule
-\end{longtable}
-Mapping to the complete proposal baseline and final acceptance study remains pending.
-Exact functions and named passing tests are retained in \nolinkurl{code/docs/requirements_traceability.json}; \nolinkurl{tools/verify_requirements_traceability.py} checks their existence and matching selected-suite execution. The working Markdown matrix also distinguishes each original first-mid commitment from downstream saved-record engineering evidence.
+\chapter{Detailed Requirements Traceability}
+\label{app:requirements}
+The versioned matrix maps requirements to actual source symbols and named regressions. It verifies implementation/test anchors; scientific quality and participant acceptance remain separate.
+\begingroup\small
+\begin{longtable}{p{0.13\textwidth}p{0.39\textwidth}p{0.37\textwidth}}
+\caption{Functional requirement, implementation and regression traceability.}\label{tab:traceability}\\
+\toprule ID & Implementation & Named check\\\midrule
+\endfirsthead
+\toprule ID & Implementation & Named check\\\midrule
+\endhead
+MID-FR-01 & \nolinkurl{DecisionRecord.from_dict} & \nolinkurl{test_nonfinite_out_of_range_or_boolean_probabilities_are_rejected}\\
+MID-FR-02 & \nolinkurl{build_context} & \nolinkurl{test_all_real_records_keep_their_facts_and_validate}\\
+MID-FR-03 & \nolinkurl{verify} & \nolinkurl{test_correct_payload_cannot_hide_wrong_displayed_probability}\\
+MID-FR-04 & \nolinkurl{verify} & \nolinkurl{test_payload_cannot_supply_facts_or_notice_absent_from_displayed_text}\\
+MID-FR-05 & \nolinkurl{emit} & \nolinkurl{test_fallback_retains_the_rejected_candidate_report}\\
+MID-FR-06 & \nolinkurl{verify} & \nolinkurl{test_strict_mode_rejects_unparsed_text_and_preserves_clean_template}\\
+MID-FR-07 & \nolinkurl{harness_input_report} & \nolinkurl{test_empty_partition_directories_do_not_enable_a_rerun; test_leakage_view_labels_saved_results_and_limits_preflight_claims}\\
+MID-FR-08 & \nolinkurl{LocalExplainer.explain; verify_runtime} & \nolinkurl{test_unavailable_provider_fails_fast_with_explicit_fallback; test_all_shards_are_required_and_changed_bytes_fail_before_inference}\\
+MID-FR-09 & \nolinkurl{verify_generated} & \nolinkurl{test_wrong_reviewed_definitions_in_text_or_json_are_rejected}\\
+MID-FR-10 & \nolinkurl{evaluate} & \nolinkurl{test_plan_drift_is_rejected_before_any_provider_request}\\
+MID-FR-11 & \nolinkurl{verify_generated} & \nolinkurl{test_every_feature_has_a_value_magnitude_direction_and_target_in_both_sources}\\
+MID-FR-12 & \nolinkurl{score_profile} & \nolinkurl{test_incomplete_or_boolean_tolerance_answers_are_refused; test_capacity_caps_bind_despite_high_tolerance}\\
+MID-FR-13 & \nolinkurl{build_comparator} & \nolinkurl{test_changing_heldout_feature_values_cannot_change_scaling_statistics}\\
+MID-FR-14 & \nolinkurl{apply_risk_policy} & \nolinkurl{test_risk_allowance_changes_abstention_without_reversing_direction}\\
+MID-FR-15 & \nolinkurl{validate_benchmark} & \nolinkurl{test_one_ai_pass_has_null_agreement_and_explicit_reference_scope}\\
+MID-FR-16 & \nolinkurl{evaluate_predictions} & \nolinkurl{test_no_runs_or_one_candidate_never_manufactures_a_model_selection}\\
+MID-FR-17 & \nolinkurl{run_inference} & \nolinkurl{test_actual_loader_refuses_missing_weights_without_a_download}\\
+MID-FR-18 & \nolinkurl{import_responses} & \nolinkurl{test_actual_exports_keep_validation_out_of_training_and_disclose_hybrid_targets; test_actual_teacher_view_replays_examples_and_preserves_student_pending_state}\\
+MID-FR-19 & \nolinkurl{fit_temperature; softmax_temperature} & \nolinkurl{test_calibration_refuses_unavailable_labels; test_real_calibration_replay_preserves_all_raw_classes_and_probabilities}\\
+MID-FR-20 & \nolinkurl{score_profile} & \nolinkurl{test_thirteen_published_item_scores_have_exact_minimum_and_maximum}\\
+\bottomrule\end{longtable}
+\endgroup
+The machine-readable matrix is \nolinkurl{code/docs/requirements_traceability_v2.json}. The earlier eighteen-ID matrix remains preserved.

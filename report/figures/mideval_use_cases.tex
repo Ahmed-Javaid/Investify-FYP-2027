@@ -1,20 +1,15 @@
-\begin{tikzpicture}[
-box/.style={draw,rounded corners,align=center,text width=37mm,minimum height=13mm,font=\small},
-pending/.style={box,dashed},node distance=9mm and 12mm]
-\node[box] (actor) {Reviewer / operator};
-\node[box,right=of actor] (record) {Select and inspect\\historical evidence};
-\node[box,below=of actor] (profile) {Complete explicit\\prototype profile};
-\node[box,right=of profile] (blend) {Compare separate\\held-out linear blend};
-\node[box,below=of profile] (verify) {Check edited or\\guided explanation};
-\node[box,right=of verify] (result) {Inspect candidate failure\\and verified emission};
-\node[box,below=of verify] (study) {Inspect real study input\\readiness/comparison};
-\node[pending,right=of study] (inputs) {Validated student\\and deployment review};
-\draw[->] (actor) -- (record);
-\draw[->] (actor) -- (profile);
-\draw[->] (profile) -- (blend);
-\draw[->] (record) -- (blend);
-\draw[->] (verify) -- (result);
-\draw[->] (actor.west) -- ++(-5mm,0) |- (verify.west);
-\draw[->] (actor.west) -- ++(-9mm,0) |- (study.west);
-\draw[->,dashed] (inputs) -- (study);
-\end{tikzpicture}
+\resizebox{\linewidth}{!}{\begin{tikzpicture}[x=1mm,y=1mm,font=\sffamily\footnotesize,uc/.style={draw,ellipse,text width=31mm,align=center,minimum height=20mm,inner sep=1mm},>=Stealth]
+\draw[rounded corners] (37,3) rectangle (157,145);\node at (97,140){\textbf{Investify historical workflow}};
+\draw (10,117) circle (2);\draw (10,115)--(10,106) (5,112)--(15,112) (10,106)--(5,100) (10,106)--(15,100);\node[align=center] at (10,95){Learner /\\supervisor};
+\draw (10,37) circle (2);\draw (10,35)--(10,26) (5,32)--(15,32) (10,26)--(5,20) (10,26)--(15,20);\node at (10,15){Operator};
+\node[uc] (load) at (70,121){Load a historical case};\node[uc] (evidence) at (125,121){Inspect feature evidence};
+\node[uc] (profile) at (70,87){Complete risk profile};\node[uc] (policy) at (125,87){Assess confidence};
+\node[uc] (check) at (70,53){Check explanation};\node[uc] (fallback) at (125,53){Recover verified fallback};
+\node[uc] (study) at (70,19){Inspect recorded study};\node[uc] (install) at (125,19){Install / run viewer};
+\draw (18,110)--(load.west);\draw (18,108)--(profile.west);\draw (18,106)--(check.west);
+\draw (18,110)--(27,110)--(27,132)--(125,132)--(evidence.north);
+\draw (18,29)--(study.west);\draw (18,27)--(28,27)--(28,5)--(125,5)--(install.south);
+\draw[->,dashed] (profile.north)--(70,105)--node[above,font=\scriptsize,fill=white,inner sep=.5mm]{\textless\textless include\textgreater\textgreater}(125,105)--(policy.north);
+\draw[->,dashed] (fallback.north)--(125,70)--node[above,font=\scriptsize,fill=white,inner sep=.5mm]{\textless\textless extend\textgreater\textgreater}(70,70)--(check.north);
+\node[font=\scriptsize] at (125,39){[candidate rejected]};
+\end{tikzpicture}}

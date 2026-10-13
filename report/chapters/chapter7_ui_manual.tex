@@ -1,50 +1,42 @@
 \chapter{Interface Design and Setup Manual}
 \label{chap:manual}
-\section{The Demonstration Journey}
-The redesigned interface has four workspaces: Overview, Walkthrough, Experiments and Design. Only the selected workspace executes. The core Walkthrough has four steps: Decision, Evidence, Risk profile and Explanation check. Technical tables, record provenance and optional model requests stay behind explicit detail controls. A persistent educational notice identifies the historical five-session research scope.
-
-\begin{figure}[htbp]\centering\input{figures/mid1_wireframe}\caption[Focused explanation-check wireframe]{Design wireframe of the focused explanation-check step. This is a wireframe, not a browser screenshot; the report separately identifies actual captures when available.}\label{fig:wireframe}\end{figure}
-\section{Core User Actions}
-\begin{longtable}{p{0.21\textwidth}p{0.35\textwidth}p{0.34\textwidth}}\toprule Step & User action & Visible response\\\midrule
-Decision & Select a recorded source/session. & Recorded class/probabilities and ranked raw-score contributions; all-Buy limitation visible.\\
-Evidence & Choose technical or news family, then one feature. & Value, definition and contribution with absent social/freshness limits; all features remain inspectable.\\
-Risk profile & Choose a labelled fictional example or complete eight answers. & Separate fixed/profile comparison; classifier remains unchanged; clearing removes profile output.\\
-Explanation & Edit the candidate, inject wrong probability, then check. & Current candidate accepted, or rejected with independently checked fallback and retained report.\\
-Experiments & Select leakage, original sentiment or teacher study. & Recorded outcomes and limitations; no page-load model inference.\\
-\bottomrule\end{longtable}
-
-\section{Local Setup}
-The current project root is \nolinkurl{E:/Uni_Stuff/FYP/Investify}. The viewer requires Python 3.11 and the separate demo dependencies, including Streamlit 1.63 or later. The restored viewer interpreter is on E:; it is separate from the scientific environment and does not imply restoration of the original scientific lock.
+\section{Current and Planned Interface}
+The implemented interface has Overview, Walkthrough, Experiments and Design. The four walkthrough steps are Decision, Evidence, Risk profile and Explanation check. Only one workspace/step executes at a time. Figure~\ref{fig:wireframe} shows the implemented slice; Figure~\ref{fig:final-wireframes} shows the planned end-user progression without presenting it as completed software.
+\begin{figure}[htbp]\centering\input{figures/mid1_wireframe}\caption{Current explanation-check interface wireframe.}\label{fig:wireframe}\end{figure}
+\begin{figure}[p]\centering\input{figures/mid1_final_wireframes}\caption{Planned onboarding, profile, company, evidence and follow-up interfaces.}\label{fig:final-wireframes}\end{figure}
+\section{Local Installation}
+Install Git and Python 3.11, clone the repository, create a virtual environment and install \nolinkurl{code/requirements-demo-runtime.txt}. Restore reviewed checkout bytes with \nolinkurl{tools/restore_ci_checkout.py}. Start the app from the repository root:
 \begin{quote}\small\begin{verbatim}
-& '.\tools\start_guided_demo.ps1'
+python -m streamlit run code/app/streamlit_app.py
+  --server.address=127.0.0.1 --server.port=8507
 \end{verbatim}\end{quote}
-The launcher checks its interpreter and an available port, then binds \nolinkurl{127.0.0.1:8507}. Supply \texttt{-Port} for another free port and \texttt{-PythonExe} for an explicitly prepared interpreter. It keeps cache/temp on E: and disables usage telemetry. A foreground launch stops with Ctrl+C; session hosting is not guaranteed after the process stops.
-
-\section{A Reproducible Failure Demonstration}
-Open the Walkthrough and keep fresh Alpaca frozen-classifier records with 21 December 2023. In Risk profile, the explicitly fictional cautious example has $R=0$ and yields Hold in the separate comparator; the higher-tolerance example has $R=1$ and yields Sell. The stored classifier remains Buy. The weighting is a prototype assumption, not a validated risk instrument.
-
-In Explanation check, Inject wrong probability changes visible confidence to 1.00\% while the structured payload retains the correct facts. Check explanation executes the same \texttt{emit}/\texttt{verify} functions used by the core tests. The candidate fails; the UI displays the independently verified fallback and keeps its rejection report. Editing text or changing the case invalidates the visible verdict. Restore record facts returns the factual candidate. Unsupported arbitrary prose can fail the strict maintained-claim grammar.
-
-\section{Recovery and Boundaries}
-Missing or invalid recorded data yields an explicit error rather than a different synthetic decision. A development-block session refuses the profile comparator. Incomplete questions produce no assumed profile. Invalid study evidence withholds comparison scores. A failed checker claims no verified output. The optional local-model control makes a request only when explicitly invoked; an unconfigured model returns a labelled deterministic guide. Broker orders, accounts, profile persistence and trained-student inference are absent.
-
-The portable historical interface remains a separately scoped alternative. Its old source/extraction/HTTP receipts certify their own snapshot; they do not prove visual quality of the rebuilt Streamlit app. The current headless Edge journey checks the implemented UI and retains original captures. Physical projector review and genuine rehearsal remain open.
-
-An earlier browser capture exposed navigation beneath Streamlit's fixed header. The correction restores 4.75 rem clearance and full-width navigation. Fourteen current primary widget checks pass, including the optional source-bound calibration diagnosis. Their behavioral scope is separate from actual browser geometry and projector review.
-
-\section{Actual Browser Captures}
-The following figures are actual captures of the local Streamlit app on 13 October 2026. The desktop journey opens every walkthrough step, compares both fictional profiles, rejects the injected 1.00\% confidence, and accepts the restored factual candidate. It also opens the recorded leakage, social and teacher studies and the Design view. The captured software layouts clear the fixed header and have no horizontal document overflow at the tested desktop widths. Tall capture viewports expose the complete content panel; they do not establish physical projector legibility or participant usability. Original-resolution PNGs and their hashes accompany the review bundle.
+The command should be entered on one line. Open \url{http://127.0.0.1:8507} and keep the terminal open. No GPU, model download or API key is needed for recorded viewing. The prepared project laptop can use \nolinkurl{tools/start_guided_demo.ps1}; a different machine should follow the portable setup. An occupied port or missing runtime produces an error; use an available port/environment rather than stopping an unrelated process.
+\section{Live Route and Observable Results}
+\begin{longtable}{p{0.20\textwidth}p{0.38\textwidth}p{0.31\textwidth}}
+\caption{Current user actions and observable responses.}\label{tab:ui-actions}\\\toprule Step & Action & Response\\\midrule
+Decision & Select multiclass-calibrated frozen NVDA case, 21 Dec 2023 & Raw class and probabilities; insufficient-confidence state\\
+Evidence & Select technical/news feature & Recorded value, meaning and raw-score effect\\
+Risk & Complete eighteen answers or choose labelled example & Published tolerance total, capacity limit, allowance and confidence gate\\
+Explanation & Inject 1.00\%, then Check explanation & Rejection and separately checked factual fallback\\
+Recovery & Edit candidate or change case & Obsolete verification cleared\\
+Studies & Select retained experiment & Source-bound results and limitations, without inference\\
+\bottomrule\end{longtable}
+Both example profiles abstain on near-uniform real evidence; a higher allowance lowers the required confidence rather than reversing the market class. Controlled policy tests exercise qualifying Buy/Sell cases separately. The preserved isotonic choices are labelled diagnosed failures and are not eligible for directional suggestions.
+\section{Failure Handling}
+Missing records, invalid profiles, inconsistent study identities and checker errors withhold substitute outputs. A failed fallback produces an error. The optional generator is called only by explicit action, and its absence is labelled. Brokerage accounts, orders and trained-student serving remain outside this prototype.
+\section{Actual Interface Captures}
+The revised captures show the decision/abstention, complete-profile result and rejection/fallback panels at readable scale. They are actual browser panels, not wireframes. Captures are produced after code verification and remain distinct from a physical projector check.
+% Current panel captures are inserted after the revised browser journey.
 
 \begin{figure}[p]\centering
-\includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figures/presenter_browser_20261013_run07/calibration-1672.png}
-\caption[Actual decision and calibration-diagnosis screen]{Actual decision screen with the fresh frozen-classifier diagnosis expanded. The displayed decision is Buy at 54.0\% rounded confidence. The Buy map's pre-normalization minimum exceeds the other maps' maxima, explaining the constant class without establishing useful prediction.}\label{fig:browser-decision}
+\includegraphics[width=\linewidth]{figures/presenter_browser_20261014_revision05/decision.png}
+\caption{Actual revised decision panel: approximately 33.3\% confidence and explicit abstention.}\label{fig:browser-decision}
 \end{figure}
 \begin{figure}[p]\centering
-\includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figures/presenter_browser_20261013_run07/profile-cautious-1672.png}
-\caption[Actual fictional-profile comparison screen]{Actual cautious fictional profile: $R=0$ produces Hold in the separate comparator while the fixed $R=0.5$ comparison is Sell. The higher-tolerance $R=1$ example produces Sell. The recorded classifier remains Buy at 54.0\%; these prototype comparisons are not validated suitability results.}\label{fig:browser-profile}
+\includegraphics[width=\linewidth]{figures/presenter_browser_20261014_revision05/profile.png}
+\caption{Actual complete-profile result: published total 13/47, allowance zero and an 80\% confidence requirement.}\label{fig:browser-profile}
 \end{figure}
 \begin{figure}[p]\centering
-\includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figures/presenter_browser_20261013_run07/explanation-rejected-1672.png}
-\caption[Actual explanation rejection and recovery screen]{Actual explanation-check failure: visible confidence is deliberately changed to 1.00\% while the JSON retains the record facts. The candidate is rejected and the independently checked fallback restores 53.97\%. Restoring the facts and checking again produces an accepted candidate.}\label{fig:browser-fallback}
+\includegraphics[width=\linewidth]{figures/presenter_browser_20261014_revision05/explanation.png}
+\caption{Actual visible 1.00\% corruption rejected; independently checked fallback restores 33.34\%.}\label{fig:browser-fallback}
 \end{figure}
-\clearpage

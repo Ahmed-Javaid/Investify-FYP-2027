@@ -1,0 +1,7 @@
+{
+  "checked_utc": "2026-10-13T20:40:49.679242+00:00",
+  "tests_executed": 25,
+  "passed": true,
+  "xml_sha256": "b3ded701462dda2ccdf31034b0046069f2523dbc4912a878a9387f4a669a2d93",
+  "scope": "Named requirement regressions; overlaps broader CI suites and is not added to their totals."
+}

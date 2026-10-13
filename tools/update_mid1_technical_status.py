@@ -2,7 +2,6 @@
 import argparse
 import hashlib
 import json
-import os
 from pathlib import Path
 import re
 
@@ -20,12 +19,9 @@ def main():
     parser.add_argument('--verified', action='store_true')
     parser.add_argument('--hosted-receipt', type=Path)
     args = parser.parse_args()
-    if args.hosted_receipt is None:
-        retained_hosted = ROOT / 'evidence/remote_ci_delivery_20261013_run02.json'
-        if retained_hosted.exists():
-            args.hosted_receipt = retained_hosted
-    report = read('evidence/handbook_report_delivery_20261013_run06.json')
-    deck = read('evidence/handbook_presentation_delivery_20261013_run06.json')
+    config = read('deliverables/current_delivery.json')
+    report = read(config['report_receipt'])
+    deck = read(config['presentation_receipt'])
     for value in (report, deck):
         if not value['all_pages_visually_checked'] or hashlib.sha256((ROOT / value['output']).read_bytes()).hexdigest() != value['pdf_sha256']:
             raise ValueError('Require current visually reviewed PDFs')
@@ -40,60 +36,40 @@ def main():
                'report': 'complete authored content, compiled and visually reviewed',
                'required_modules': 'implemented with separate execution evidence',
                'ci_cd': 'hosted tests and artifact delivery passed' if hosted else 'configured; hosted verification pending',
-               'excluded_team_todo': 'deliverables/MID1_TEAM_TODO.md',
+               'excluded_team_todo': 'docs/team/MID1_TEAM_GUIDE.md#team-tasks',
                'report_output': report['output'], 'presentation_output': deck['output'],
                'hosted_run': hosted['html_url'] if hosted else None,
                'limits': ['Mid-1 technical completion, not full FYP completion or a university grade.',
-                          'Negative prediction, all-Buy calibration and AI-reference sentiment limits remain disclosed.',
+                          'Weak prediction, historical isotonic collapse, current uncertainty/abstention and reference-label limits remain disclosed.',
                           'No signatures, supervisor approval, participant benefit or completed student training inferred.']}
     (ROOT / 'evidence/mid1_technical_completion_current.json').write_text(json.dumps(current, indent=2) + '\n', encoding='utf-8')
     summary = '**100% technical Mid-1 completion**' if hosted else '**Technical scope implemented; hosted CI/CD verification pending**'
-    docs = ['README.md', 'code/README.md', 'deliverables/README.md', 'planning/CURRENT_STATUS.md',
-            'planning/HANDOFF_20261012.md', 'deliverables/HANDOVER_GUIDE.md']
-    for name in docs:
-        path = ROOT / name
-        def link(label, relative):
-            return f'[{label}]({os.path.relpath(ROOT / relative, path.parent).replace(chr(92), "/")})'
-        delivery = 'A new source handover archive is being prepared. GitHub automatically delivers the reviewed PDFs/source only after all four test jobs pass.'
-        if args.verified:
-            archive = read('evidence/investify_mid1_technical_review_20261013_receipt.json')
-            checked = read('evidence/technical_review_20261013_clean_host_verification.json')
-            if archive['zip_sha256'] != checked['archive_sha256']:
-                raise ValueError('Archive/extraction receipt mismatch')
-            delivery = (f'{link("Verified source archive", "deliverables/investify_mid1_technical_review_20261013.zip")}: '
-                        f'{archive["files"]} files, source snapshot **{archive["code_commit"][:7]}**, '
-                        f'{checked["portable_tests_passed"]} portable tests, {checked["live_checks_passed"]} HTTP checks and '
-                        f'{checked["records_validated"]} records validated. Later navigation receipts are a separate increment.')
-        run = (f'[Hosted CI/CD run]({hosted["html_url"]}) passes all five jobs and produces the verified delivery artifact.'
-               if hosted else 'Hosted CI/CD is pending the authorized push/run. The two test jobs and nine delivery guards are checked locally; hosted Windows/Ubuntu execution is not inferred.')
-        block = (f'{START}\n## Current technical Mid-1 completion - 13 October 2026\n\n'
-                 f'{summary}. Completion now means working code, a complete report, working CI/CD and required Mid-1 modules. '
-                 'The earlier **84.25%** mixed preparation estimate is historical and no longer governs current completion. Its original weights/receipts remain preserved below.\n\n'
-                 f'- {link("Current report", report["output"])}: **{report["pages"]} pages**, coordinator omitted, Fall 2026 and report date 11 October 2026 retained. Current source/PDF/render hashes and visual review match.\n'
-                 f'- {link("Current presentation", deck["output"])}: **12 reviewed LaTeX/Beamer slides**, editable source and synchronized member notes.\n'
-                 f'- {link("Required modules and technical scope", "deliverables/MID1_TECHNICAL_COMPLETION.md")}: ingestion/calendar/features, baseline/leakage, sentiment comparison, decision/calibration/SHAP, profile comparator and explanation/fallback interfaces have execution evidence.\n'
-                 f'- {link("CI/CD status", "deliverables/CI_CD_STATUS.md")}: cross-platform validation followed by gated, extraction-verified source/PDF artifact delivery. {run}\n'
-                 f'- {link("Equal member packets", "deliverables/MEMBER_PREPARATION_PACK.md")}: one-third responsibility, four primary slides and five planned speaking minutes each.\n'
-                 f'- {link("Team todo", "deliverables/MID1_TEAM_TODO.md")}: printing/signatures, supervisor review, code walkthrough and rehearsal/projector check remain outside this percentage.\n\n'
-                 f'{delivery}\n\n'
-                 'Scientific limits remain explicit: weak prediction, all-Buy calibration, AI-reference sentiment, no measured user benefit and untrained student. QLoRA and production hosting are later milestones. No human review or signature is inferred.\n'
-                 f'{END}')
-        content = path.read_text(encoding='utf-8')
-        if START in content:
-            first, rest = content.split(START, 1)
-            _, last = rest.split(END, 1)
-            content = first + block + last
-        else:
-            first, rest = content.split('\n', 1)
-            content = first + '\n\n' + block + '\n' + rest
-        path.write_text(content, encoding='utf-8')
+    path = ROOT / 'docs/handoffs/AGENT_HANDOFF.md'
+    run = (f'[Retained hosted run]({hosted["html_url"]}) passes all five jobs.'
+           if hosted else 'Hosted execution remains pending; configuration is not execution evidence.')
+    if args.verified:
+        archive = read('evidence/investify_mid1_technical_review_20261013_receipt.json')
+        checked = read('evidence/technical_review_20261013_clean_host_verification.json')
+        if archive['zip_sha256'] != checked['archive_sha256']:
+            raise ValueError('Archive/extraction receipt mismatch')
+    block = (f'{START}\n{summary} under the user-defined code/report/CI-CD/module scope. '
+             'This is not whole-FYP completion, useful prediction or a grade. '
+             f'{run} Later working-tree changes need their own checks.\n'
+             '[Machine status](../../evidence/mid1_technical_completion_current.json).\n'
+             f'{END}')
+    content = path.read_text(encoding='utf-8')
+    if content.count(START) != 1 or content.count(END) != 1:
+        raise ValueError('The consolidated handoff must contain one status block')
+    first, rest = content.split(START, 1)
+    _, last = rest.split(END, 1)
+    path.write_text(first + block + last, encoding='utf-8')
     outline = read('deliverables/presentation_outline.json')
     notes = re.findall(r'\\note\{(.*?)\}\s*\\end\{frame\}', (ROOT / 'presentation/main.tex').read_text(), re.S)
     assert len(notes) == len(outline['slides']) == 12
     for item, note in zip(outline['slides'], notes):
         item['speaker_notes'] = note
     outline.update(compiled_output=deck['output'], status='Compiled and layout reviewed technical Mid-1 deck; team tasks remain separate.',
-                   delivery_receipt='evidence/handbook_presentation_delivery_20261013_run06.json')
+                   delivery_receipt=config['presentation_receipt'])
     (ROOT / 'deliverables/presentation_outline.json').write_text(json.dumps(outline, indent=2) + '\n', encoding='utf-8')
     print(f'Updated technical completion navigation; completion percent={percent}, team todo separate.')
 

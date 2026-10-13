@@ -1,45 +1,42 @@
 \chapter{Proposal Feedback and Iteration Plan}
-\section{Proposal Feedback Summary}
-Project F26-003-Investify was approved with minor modifications. The panel requested clearer contributions beyond leakage, the LLM's user benefit, technical/sentiment explanations, refined problem/model descriptions, explicit metrics, an improved PoC, user transparency, and deeper market understanding.
-
-\section{Proposal Action Register}
-The working register preserves the full supplied wording. These identifiers organize project actions; owners and dates require team agreement.
-\begin{longtable}{p{0.08\textwidth}p{0.39\textwidth}p{0.36\textwidth}}
-\toprule
-ID & Required response & Current evidence/status\\
-\midrule
-PF-01 & Clarify contribution & Revised statement drafted; related-work comparison pending.\\
-PF-02 & Explain LLM benefit & Six actual recorded teacher examples; live inference and demonstrated user benefit pending.\\
-PF-03 & Explain technical/sentiment evidence & Complete technical/news context and recorded social comparison; live LLM benefit pending.\\
-PF-04 & Refine problem statement & Working revision drafted.\\
-PF-05 & Clarify pretrained models & Original classifiers compared; deployment criteria and live LLM evaluation pending.\\
-PF-06 & Identify metrics & Matrix and current checks documented.\\
-PF-07 & Improve PoC beyond leakage & Corrected verifier and browser journey checked; supervisor demonstration pending.\\
-PF-08 & Transparency throughout journey & Data, coverage and risk limits exposed; current failure/fallback paths tested; human understanding pending.\\
-PF-09 & Market understanding & Referenced notes begun; broader research pending.\\
-\bottomrule
-\end{longtable}
-
+\section{Proposal Feedback}
+The project was approved with minor modifications. The panel requested clearer contributions and model choices, an explanation of the LLM's user benefit, technical/sentiment evidence, explicit metrics, an improved PoC, transparency and deeper market understanding. Appendix~\ref{app:actions} links each action to the current response and remaining evaluation.
 \section{Iteration Strategy}
-Each increment supplies a working path, tests, and evidence. The independent code copy retains Git history and uses base commit 1dc24e0. Existing documents and the original checkout remain protected. Upstream access failure is recorded rather than taken to mean no new work exists.
-
-\section{Iteration 1 Plan}
-Original commitments cover ingestion, calendar mapping, indicators, news sentiment, social-model selection, the linear baseline, leakage tests/mutation detection, an interface slice, and requirements/design. The first new increment establishes artifact validation and complete evidence presentation. Next work connects and evaluates a real prompted explainer, then addresses failure behavior and risk semantics.
-
-\section{Iteration 2 Plan}
-Later work follows the proposal's engine, divergence, deployment, grammar, language-model comparison, runtime, and acceptance milestones. The feedback does not itself require the entire QLoRA programme at this mid.
-
-\section{Work Breakdown and Responsibilities}
+Each increment delivers runnable behavior, source-linked tests and retained evidence. New experiments use new identities so earlier inputs and findings remain reproducible. The prototype distinguishes implemented controls from unproven predictive or participant outcomes.
+\section{Original Milestones and Current Progress}
+\begin{longtable}{p{0.18\textwidth}p{0.38\textwidth}p{0.33\textwidth}}
+\caption{Progress against the four proposal iterations.}\label{tab:iterations}\\
+\toprule Stage & Commitment & Current position\\\midrule
+\endfirsthead
+\toprule Stage & Commitment & Current position\\\midrule
+\endhead
+Mid-1, week 7 & Data/calendar/features, social selection, baseline, leakage suite and thin interface & Core paths execute; report response and uncertainty/risk corrections included\\
+Final-1, week 12 & Engine/calibration/SHAP, divergence, service and initial deployment & Engine/attribution built early; social integration and service work remain\\
+Mid-2, week 18 & Prompted explainer, filtered data, NFRs, parity, degraded operation and acceptance preparation & Verifier/adapter groundwork present; full measurements and integration remain\\
+Final-2, week 24 & QLoRA comparison, broader evaluation, participant sessions and external installation & Later development and evaluation\\
+\bottomrule\end{longtable}
+The cohort rubric places Mid-1 around week eight; proposal week numbers are relative planning milestones. One completed checkpoint does not imply a fixed whole-project percentage.
+\section{Work Breakdown and Delivered Responsibilities}
 \label{sec:planned-work-division}
-The work division follows slide 13 of the preserved proposal, including its SmartArt parent/child assignments. The team has assigned each member an equal one-third share of preparation, review and defence responsibility. The table retains the proposal's responsibilities, including later milestones. The current student-record spelling is Soban Ahmad; the source slide spells Soban Ahmed.
+The proposal allocation is retained, with each member delivering the relevant Mid-1 part into the integrated package. Chapter~9 distinguishes delivered work from later responsibilities. Members continue learning and practising the code they will defend. The shared presentation allocation remains one-third each.
 \input{chapters/proposal_work_division}
-The proposal assigns the harness to Ahmed, while historical repository records associate baseline work with Soban. Historical authorship remains preserved. Each member's preparation packet identifies code to review, test boundaries, presentation slides and a live demonstration segment. Actual review, practice and changes can then be recorded against that assignment. QLoRA distillation remains later work.
-
-\section{Progress Against Plan}
-The earlier 12 October selected suite has 212 passes and no skips, including 20 actual Streamlit cases. All 372 records/complete-guided templates, 62 live HTTP checks and 228 separate comparator arithmetic probes validate. A prototype profile/blend, restored viewer, social-study validator/evaluator/view and offline classifier runner are implemented. Six actual assistant-teacher explanations pass the bounded verifier; this does not establish added explanatory content or user benefit. The source-handover verification is refreshed after each archive change and recorded separately; it excludes external scientific/UI packages. Fresh science and original sentiment-candidate results are now recorded. Student inference remains later work. Hosted CI/CD has separate execution receipts; supervisor review and member practice remain team tasks outside technical completion.
-
-\section{First-Mid Boundary}
-The supplied rubric evaluates the planned milestone, a meaningful live core module, requirements/design, testing, process evidence, report and student ownership. It sets no fixed whole-project implementation percentage. The preserved proposal places the scored prompted baseline and filtered training set at Mid-2 (week 18), and QLoRA with the three-way comparison at Final-2 (week 24). The first-mid commitments remain distinct from cached-record replay. Fresh ingestion-to-baseline/leakage execution and the original social comparison now provide actual evidence; unresolved scope, selection and review issues still need explicit closure.
-
-\section{Delays, Deviations and Recovery Plan}
-Repository access, original September bytes and exact-lock restoration still constrain historical reproduction; the new separately identified experiments execute. The portable artifact path permits tested explanation work while those inputs are restored. The assessment date is unconfirmed. The full mid package is estimated at 45--75 person-hours, subject to data and human-study access.
+\section{Deviations and Recovery}
+FNSPID's timestamp precision and ticker gaps prompted a bounded NVDA study and a new Alpaca/Benzinga snapshot. FinBERT remains the headline model; Cardiff is an evaluated social alternative. The isotonic collapse prompted a separately identified multiclass revision and abstention guard. The original sentiment-weight profile was replaced in the main interface by complete tolerance scoring and a direction-preserving confidence policy. Earlier records and labels remain unchanged.
+\section{Dated Engineering Targets}
+Dates below are internal delivery targets; they do not replace university assessment appointments.
+\begin{longtable}{p{0.16\textwidth}p{0.51\textwidth}p{0.22\textwidth}}
+\caption{Engineering milestones, ownership and target dates.}\label{tab:engineering-dates}\\
+\toprule Target & Deliverable/check & Owner\\\midrule
+\endfirsthead
+\toprule Target & Deliverable/check & Owner\\\midrule
+\endhead
+14 Oct 2026 & Mid-1 report response, risk/calibration corrections and revised demonstration & All three\\
+21 Oct 2026 & Broader calibration/baseline analysis and risk wording review & Soban, Rafay\\
+4 Nov 2026 & Multi-company data audit and news/social divergence integration & Ahmed, Rafay\\
+18 Nov 2026 & Service parity, container setup and degraded-operation tests & Ahmed, Soban, Rafay\\
+2 Dec 2026 & Integrated FYP-1 prototype and measured comparison evidence & All three\\
+17 Feb 2027 & Student checkpoint, prompted baseline and verified training-data expansion & Soban\\
+17 Mar 2027 & QLoRA and three-way explanation comparison & Soban, Rafay\\
+14 Apr 2027 & Participant tasks, external installation and final handover & All three\\
+\bottomrule\end{longtable}
+The next action for weak prediction is baseline/data/model analysis, not held-out tuning to force a positive result. If useful prediction remains absent, the temporal harness and explanation guard remain the evaluated contributions.

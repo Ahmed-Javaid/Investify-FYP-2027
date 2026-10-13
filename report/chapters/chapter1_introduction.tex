@@ -1,47 +1,26 @@
-\chapter{Introduction and Project Vision}
+\chapter{Introduction}
 \section{Project Overview}
-Investify (F26-003-Investify) is an educational investment advisory project for retail investors. The planned system combines technical indicators, news and social sentiment, and risk information to present a one-week Buy, Hold, or Sell view with understandable, checkable evidence. The proposal was approved with minor modifications concerning contribution clarity, the language-model role, evaluation, transparency, and domain understanding.
-
+Investify is an educational equity decision-support system. It combines technical indicators and financial-news sentiment, presents the evidence behind a model output, and checks explanations against that evidence. The prototype serves historical research cases; it does not connect to brokerage accounts or execute orders.
 \section{Problem Statement}
-A retail investor evaluating a company must interpret historical price indicators and a large volume of news and social commentary. A decision label alone does not explain which signals influenced it, how conflicting evidence was handled, how uncertain it is, or whether an action fits the investor's risk constraints. A fluent explanation can misstate recorded values or attributions, while an evaluation using information unavailable at decision time can overstate model quality.
-
-Investify addresses these issues through a temporally controlled evaluation pipeline and explanations tied to recorded inputs and model attributions. Its outputs are educational and advisory; predictive usefulness must be established against explicit comparators, and the system does not execute transactions.
-
-\section{Problem Context and Motivation}
-The baseline contains a historical NVDA experiment using technical indicators and financial-news sentiment. It found no demonstrated predictive signal, and its calibrated evaluation records all select Buy. Explaining those records makes the computation and its limitations inspectable; it does not establish a useful trading signal. Financial-text classification supplies evidence about text tone rather than the truth of a headline or a promised return \cite{finbert_card}.
-
-\section{Project Vision}
-The user can inspect a view's evidence, understand its uncertainty and coverage, and ask questions without receiving invented values or unsupported causes. The LLM communicates the recorded decision. A separate claim verifier and deterministic fallback govern supported factual statements.
-
-\section{Project Objectives}
-Objectives cover point-in-time alignment, engine/baseline comparison, equity social-model transfer and news/social disagreement, capacity/tolerance reconciliation, verified explanations and user understanding, and a reproducible measured system. Implemented components, measured findings, and planned objectives are reported separately.
-
-\section{Project Scope}
-The current prototype covers preserved NVDA artifacts plus a freshly executed Alpaca news/price experiment at one- and five-session horizons. A separate original-classifier selection study uses frozen MSFT social posts. Full scope targets a small equity universe, a one-week user horizon, social sentiment, genuine risk conditioning, and a verified LLM. Price-only continuously traded assets provide a later calendar experiment. Brokerage integration and trading execution are excluded.
-
-\section{Project Modules}
-Modules cover ingestion/storage, calendar/as-of alignment, feature/sentiment construction, evaluation/controls, prediction/calibration/attribution, risk profiling, explanations/verification, and interface/deployment. The new increment adds complete evidence context at the explanation/interface boundary.
-
-\section{Stakeholders and User Classes}
-The primary user seeks educational analysis. The operator maintains data/runtime health. The supervisor evaluates scope and evidence. Each team member must explain and modify their actual work and disclose external assistance and components.
-
-\section{Success Criteria}
-Criteria include causal alignment checks, injected faults, held-out predictive/calibration metrics, explanation measures, interpretation tasks, and runtime/installability checks. Existing explanation targets are numeric fidelity at least 0.98, directional consistency at least 0.95, recall at least 0.80, and unverifiable rate at most 0.15. Planned bounds are not measurements.
-
-\section{Constraints and Assumptions}
-The original September training store/raw corpora remain unavailable, and fresh upstream changes are unverified. A new Alpaca scientific run and the original social-candidate comparison now execute with separate identities. Live LLM/student inference and comprehension evaluation remain pending. Six recorded teacher examples demonstrate construction under a bounded contract. The prototype questionnaire affects a separate technical/news comparator; it does not condition the saved XGBoost predictions or implement the proposal's validated risk instrument. Context/verification checks can run without the training stack.
-
-\section{Ethical, Legal and DEI Considerations}
-The interface must explain data age, coverage, uncertainty, actual profile effect, and failure states. An AI explanation is not a guaranteed prediction \cite{sec_ai_alert}. Personal data, annotations, and acceptance work require appropriate privacy, licensing, consent, and truthful records. The advisory boundary must remain clear throughout the journey.
-
-\section{Stakeholder Goals and Educational Opportunity}
-\begin{longtable}{p{0.21\textwidth}p{0.34\textwidth}p{0.35\textwidth}}\toprule Role & Need/problem & Current boundary\\\midrule
-Retail learner/reviewer & Understand a recorded class, its input values and uncertainty. & Historical educational case; no useful live trading signal or investor suitability claim.\\
-Supervisor & Trace requirements/design to a working module and discuss a failure. & Live checking/profile arithmetic and honest recorded research; actual baseline/action approval requires review.\\
-Maintainer/team & Reproduce a case and identify changed or unavailable evidence. & Explicit source registries, digests, retained receipts and local setup instructions.\\
-Research evaluator & Distinguish model quality from explanation fidelity. & Separate chronological/scientific and bounded-explanation results; human comprehension remains unmeasured.\\
+An investor must interpret price indicators, news, uncertainty and personal risk constraints. A Buy/Hold/Sell label alone does not show which inputs influenced the result. Historical evaluations can also overstate performance when features or training outcomes become available after the decision time. Finally, fluent explanations can misstate numerical values or attribution directions. We address temporal evaluation and explanation consistency as explicit engineering problems.
+\section{Objectives and Contributions}
+Our implemented contributions are a leakage-audited evaluation pipeline and a record-grounded explanation-verification path. The former checks availability, chronological processing and deliberate faults; the latter exposes all available feature evidence, checks displayed and structured claims independently, and verifies recovery. Risk profiling and uncertainty gating connect these controls to the interface. News/social divergence remains a planned ablation rather than a completed result.
+\section{Scope and Modules}
+The full product targets the proposal's seven-company equity universe. The current research path is bounded to NVDA over 2018--2023, with a separate MSFT social-model comparison. The exposed prediction horizon is five trading sessions. Figure~\ref{fig:planned-architecture} distinguishes the six product modules and their current interfaces. Broader social integration, trained-student explanations and production serving remain later work.
+\begin{longtable}{p{0.20\textwidth}p{0.39\textwidth}p{0.30\textwidth}}
+\caption{Product modules and current Mid-1 boundaries.}\label{tab:modules}\\
+\toprule Module & Delivered behavior & Remaining integration\\\midrule
+\endfirsthead
+\toprule Module & Delivered behavior & Remaining integration\\\midrule
+\endhead
+Investor profiling & Five capacity factors, thirteen tolerance items and restrictive reconciliation & Population-specific wording/suitability evaluation\\
+Sentiment and data & Versioned prices/news, FinBERT features and separate social comparison & Multi-company coverage and news/social divergence\\
+Predictive model & XGBoost records, calibration diagnosis and multiclass revision & Useful predictive skill and broader validation\\
+Explainability & Complete feature context and native TreeSHAP & Participant interpretation of explanations\\
+Explanation verifier & Independent claim checks, rejection and checked fallback & Larger real-generation comparison\\
+Interface and service & Live Streamlit workflow and automated artifact delivery & Production service, follow-up chat and hosting\\
 \bottomrule\end{longtable}
-The opportunity is educational decision transparency: combining maintained indicator meanings with observable checking of a recorded explanation. No customer demand, business adoption or revenue evidence has been collected. The intended user roles are specified, but stakeholder consultation and a named real client/approver must be recorded by the team; no invented external client is inserted.
-
-\subsection{DEI and Ethical/Legal Design Implications}
-The interface exposes dates, missing evidence and units, supports keyboard controls and uses text verdicts alongside color. Prototype age/capacity weights need fairness review.
+\section{Stakeholders and Success Criteria}
+The retail learner inspects evidence and uncertainty; the operator maintains data and runtime health; the supervisor assesses the implementation and the team defends its modules. Success is assessed through causal-alignment checks, deliberate-fault detection, held-out prediction/calibration results, explanation consistency, reproducible setup and later participant tasks. Software correctness and predictive usefulness are reported separately.
+\section{Constraints, Privacy and Accessibility}
+The historical demonstration uses versioned public market material and local profile answers. API credentials remain outside source control and report artifacts. Profile data is kept in the local session and is not sent to a brokerage. Text labels accompany colors, controls are keyboard accessible and evidence remains inspectable without a GPU. The interface withholds directional suggestions when predictive confidence is insufficient. Population-specific risk assumptions, data vintage and eventual user acceptance require further evaluation.

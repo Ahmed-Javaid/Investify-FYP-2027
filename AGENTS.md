@@ -1,8 +1,11 @@
 # Current Investify workspace
 
-Work in this consolidated repository. Start with `README.md`,
-`planning/CURRENT_STATUS.md`, `planning/HANDOFF_20261012.md` and
-`deliverables/README.md`. Code commands run from `code`; the Git root is here.
+Work in this consolidated repository. Start with `README.md` and
+`docs/handoffs/AGENT_HANDOFF.md`. Team preparation belongs only in
+`docs/team/MID1_TEAM_GUIDE.md`; implementation, research and requirements belong
+in `docs/technical/`. Code commands run from `code`; the Git root is here.
+Do not recreate the old per-folder READMEs, member handouts, planning checkpoints
+or duplicated status pages. Update the relevant consolidated document.
 
 The current report draft is `report/main.tex`; current presentation entry is
 `presentation/main.tex`, with notes mirrored in `deliverables/presentation_outline.json`. `sources` contains preserved reference

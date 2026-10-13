@@ -1,0 +1,10 @@
+\resizebox{\linewidth}{!}{\begin{tikzpicture}[x=1mm,y=1mm,b/.style={draw,rounded corners,text width=60mm,minimum height=45mm,align=left,font=\sffamily\footnotesize,inner sep=2mm},>=Stealth]
+\node[b] (onboard) at (34,156){\textbf{1. Onboarding}\\Educational purpose / limits\\Data and privacy controls\\Start analysis};
+\node[b] (profile) at (116,156){\textbf{2. Profile}\\Capacity + 13 tolerance items\\Binding tier / risk allowance\\Required confidence};
+\node[b] (company) at (116,88){\textbf{3. Company selection}\\Audited company universe\\Data-age/coverage status\\Choose horizon};
+\node[b] (decision) at (34,88){\textbf{4. Decision and evidence}\\Qualified signal or abstention\\Probability / SHAP / inputs\\Open feature detail};
+\node[b] (check) at (34,20){\textbf{5. Explanation/checking}\\User-facing explanation\\Claim report and recovery\\Explicit confidence limitations};
+\node[b,dashed] (chat) at (116,20){\textbf{6. Follow-up (planned)}\\Question about current evidence\\Rolling context / citations\\Source-bound verified response};
+\draw[->](onboard)--(profile);\draw[->](profile)--(company);\draw[->](company)--(decision);\draw[->](decision)--(check);\draw[->,dashed](check)--(chat);
+\node[align=center,font=\scriptsize,text width=143mm] at (75,-23){Wireframes describe the product journey. Dashed follow-up and multi-company/service integrations are future scope; actual screenshots are shown separately.};
+\end{tikzpicture}}

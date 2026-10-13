@@ -1,13 +1,24 @@
-\begin{tikzpicture}[x=1mm,y=1mm,box/.style={draw=blue!45!black,fill=blue!2,rounded corners=1mm,align=center,text width=39mm,minimum height=22mm,inner sep=2mm,font=\sffamily\footnotesize},link/.style={->,>=stealth,draw=blue!50!black,thick}]
-\node[box] (selected) at (75,135) {\textbf{Case selected}\\[1mm]candidate initialized\\case and artifact identity};
-\node[box] (edited) at (75,99) {\textbf{Text edited}\\[1mm]verification becomes stale\\no accepted result displayed};
-\node[box] (checking) at (75,63) {\textbf{Checking}\\[1mm]strict supported-claim gates\\current case and text hash};
-\node[box] (accepted) at (23,27) {\textbf{Candidate accepted}\\[1mm]current verified text\\retained metrics};
-\node[box] (fallback) at (75,27) {\textbf{Fallback verified}\\[1mm]rejected candidate retained\\replacement checked separately};
-\node[box] (error) at (127,27) {\textbf{Unavailable or failed}\\[1mm]no verified output claimed\\explicit retry or selection};
-\draw[link] (selected.south) -- ++(0,-6) -| (edited.north) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{edit};
-\draw[link] (edited.south) -- ++(0,-6) -| (checking.north) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{check};
-\draw[link] (checking.south) -- ++(0,-6) -| (accepted.north) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{pass};
-\draw[link] (checking.south) -- ++(0,-6) -| (fallback.north) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{reject};
-\draw[link] (checking.south) -- ++(0,-6) -| (error.north) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{error};
-\end{tikzpicture}
+\resizebox{\linewidth}{!}{\begin{tikzpicture}[x=1mm,y=1mm,b/.style={draw,rounded corners,text width=38mm,minimum height=16mm,align=center,font=\sffamily\footnotesize},>=Stealth]
+\node[circle,fill,minimum size=3mm,inner sep=0] (start) at (90,204){};
+\node[b] (selected) at (90,180){Case loaded; candidate initialized};
+\node[b] (edited) at (90,140){Candidate edited; previous verdict stale};
+\node[b] (checking) at (90,100){Checking current identity};
+\node[b] (accepted) at (30,55){Candidate accepted};
+\node[b] (error) at (150,55){Input, check or fallback failed};
+\node[b] (fallback) at (90,20){Fallback checked};
+\node[circle,draw,double,fill=black,minimum size=4mm,inner sep=0] (end) at (90,-25){};
+\draw[->](start)--(selected);
+\draw[->](selected.east)--(125,180)--node[right,font=\scriptsize]{Check}(125,100)--(checking.east);
+\draw[->](selected)--node[right,font=\scriptsize]{edit}(edited);
+\draw[->](edited)--node[right,font=\scriptsize]{click Check}(checking);
+\draw[->](checking.south west)--node[above left,font=\scriptsize]{pass}(30,83)--(accepted.north);
+\draw[->](checking.south)--node[right,align=left,font=\scriptsize]{rejected;\\fallback passes}(fallback.north);
+\draw[->](checking.south east)--node[above right,font=\scriptsize]{error}(150,83)--(error.north);
+\draw[->](accepted.west)--(0,55)--(0,140)--node[above,font=\scriptsize]{edit}(edited.west);
+\draw[->](fallback.west)--(0,20)--(0,140);
+
+\draw[->](error.east)--(180,55)--node[right,font=\scriptsize]{retry / new case}(180,180)--(selected.east);
+\draw[->](accepted.south)--(30,-25)--node[above,font=\scriptsize]{close}(end.west);
+\draw[->](fallback)--node[right,font=\scriptsize]{close}(end);
+\draw[->](error.south)--(150,-25)--node[above,font=\scriptsize]{close}(end.east);
+\end{tikzpicture}}

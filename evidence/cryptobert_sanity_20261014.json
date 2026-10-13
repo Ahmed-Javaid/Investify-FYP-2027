@@ -1,0 +1,121 @@
+{
+  "schema": "investify-cryptobert-diagnostic-v1",
+  "checked_utc": "2026-10-13T19:15:15.645838+00:00",
+  "model_id": "ElKulako/cryptobert",
+  "revision": "9e37c910fe87727cb842a9ac55c6388256fe0f15",
+  "backend": {
+    "torch": "2.12.0+cpu",
+    "transformers": "5.12.1",
+    "config_sha256": "b8692615f3f78d0f074c82c9c0708fd5130caa9ce252bcfd448c25fb5b1eafcb",
+    "input_files_sha256": {
+      "config.json": "b8692615f3f78d0f074c82c9c0708fd5130caa9ce252bcfd448c25fb5b1eafcb",
+      "merges.txt": "fe36cab26d4f4421ed725e10a2e9ddb7f799449c603a96e7f29b5a3c82a95862",
+      "model.safetensors": "fe34ba09b3d701ff2b4ee69205e42c8143fcee1f89fe3a0cf10444988634a3c9",
+      "special_tokens_map.json": "8293ae960b0a0852d4d3813118030a1149a3ed9fe37bc2e1e7b3c2e62eb2d4b7",
+      "tokenizer.json": "783c7e86aedf79dd0aae603805c9591f397ca4475620b58f9a9b78151e2cfb7c",
+      "tokenizer_config.json": "e6d01bdb677a7b1b487070e0666a68da88922ff87ccb95999dbd5e23b8718360",
+      "vocab.json": "ed19656ea1707df69134c4af35c8ceda2cc9860bf2c3495026153a133670ab5e"
+    },
+    "local_files_only": true,
+    "trust_remote_code": false,
+    "use_safetensors": true,
+    "device": "cpu",
+    "head_weights_complete": true
+  },
+  "catalog_sha256": "acfbc49b95f624fdd8cd07397fe413a0a1c3ff8631a63ed5a855d78ebecb51cc",
+  "source_sha256": "3d7a8d952b04fce165e169778a4dbe1847c3f58f6e7474d0c119ef8fd16a7ccc",
+  "probes": [
+    {
+      "text": "Bitcoin is breaking out. I'm buying more BTC and holding for the next rally. Huge upside ahead!",
+      "intended_sentiment": "positive",
+      "predicted_sentiment": "positive",
+      "probabilities": {
+        "negative": 0.0003820672041353681,
+        "neutral": 0.2540059895225354,
+        "positive": 0.7456119432733291
+      },
+      "logits": [
+        -4.812145233154297,
+        1.6873713731765747,
+        2.764218807220459
+      ],
+      "input_tokens": 23,
+      "truncated": false
+    },
+    {
+      "text": "Bitcoin is collapsing. I sold all my BTC. This market is a disaster and prices will fall further.",
+      "intended_sentiment": "negative",
+      "predicted_sentiment": "negative",
+      "probabilities": {
+        "negative": 0.9402026624376204,
+        "neutral": 0.05496327349711117,
+        "positive": 0.004834064065268523
+      },
+      "logits": [
+        2.699037790298462,
+        -0.1403924524784088,
+        -2.5713701248168945
+      ],
+      "input_tokens": 23,
+      "truncated": false
+    },
+    {
+      "text": "Bitcoin currently trades around 40000 dollars. The daily trading volume was reported.",
+      "intended_sentiment": "neutral",
+      "predicted_sentiment": "negative",
+      "probabilities": {
+        "negative": 0.691792517836116,
+        "neutral": 0.18203779646648147,
+        "positive": 0.12616968569740253
+      },
+      "logits": [
+        1.1029363870620728,
+        -0.2321353554725647,
+        -0.598721981048584
+      ],
+      "input_tokens": 17,
+      "truncated": false
+    },
+    {
+      "text": "ETH to the moon! Bullish on Ethereum. I bought the dip, staking ETH and never selling.",
+      "intended_sentiment": "positive",
+      "predicted_sentiment": "positive",
+      "probabilities": {
+        "negative": 0.005962408177040191,
+        "neutral": 0.28295745494526797,
+        "positive": 0.7110801368776918
+      },
+      "logits": [
+        -2.865154504776001,
+        0.9946675896644592,
+        1.9161561727523804
+      ],
+      "input_tokens": 24,
+      "truncated": false
+    },
+    {
+      "text": "Bearish on Ethereum. Dumping my ETH now. The crash is getting worse and this token is heading down.",
+      "intended_sentiment": "negative",
+      "predicted_sentiment": "negative",
+      "probabilities": {
+        "negative": 0.9715210046630002,
+        "neutral": 0.026523668631748768,
+        "positive": 0.0019553267052509703
+      },
+      "logits": [
+        3.2726809978485107,
+        -0.3281444013118744,
+        -2.935624599456787
+      ],
+      "input_tokens": 25,
+      "truncated": false
+    }
+  ],
+  "classes_observed": [
+    "negative",
+    "positive"
+  ],
+  "frozen_benchmark_or_labels_modified": false,
+  "network_requests": 0,
+  "scope": "Authored sanity probes, not held-out benchmark accuracy or independent human labels."
+}

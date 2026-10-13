@@ -1,13 +1,17 @@
-\begin{tikzpicture}[x=.985mm,y=1mm,font=\sffamily\footnotesize,>=stealth]
-\foreach \x/\n in {12/Reviewer,53/Streamlit UI,94/Record service,135/Verify and emit}{
-\node[draw,fill=blue!3,text width=25mm,align=center,minimum height=10mm] at (\x,122){\n};
-\draw[dashed,gray] (\x,116)--(\x,8);}
-\draw[->] (12,105)--node[above]{1. Select case}(53,105);
-\draw[->] (53,93)--node[above]{2. Load and validate}(94,93);
-\draw[->,dashed] (94,81)--node[above]{3. Record and context}(53,81);
-\draw[->] (12,69)--node[above]{4. Edit candidate}(53,69);
-\draw[->] (53,57)--node[above]{5. Record, visible text and JSON}(135,57);
-\node[align=left,text width=65mm,fill=blue!2,draw] at (100,39){6. Check both representations.\\If rejected, retain its report and independently verify the template.};
-\draw[->,dashed] (135,21)--node[above]{7. Accepted text or verified fallback}(53,21);
-\draw[->,dashed] (53,10)--node[above]{8. Show current result}(12,10);
-\end{tikzpicture}
+\resizebox{\linewidth}{!}{\begin{tikzpicture}[x=1mm,y=1mm,font=\sffamily\footnotesize,>=Stealth]
+\foreach \x/\name in {8/User,38/UI,73/Pipeline,108/Verifier,145/Template}{\node[draw,minimum width=23mm,minimum height=10mm] at (\x,171){\name};\draw[dashed](\x,166)--(\x,0);}
+\draw[->](8,153)--node[above]{1. Click Check explanation}(38,153);
+\draw[->](38,138)--node[above]{2. emit(record, candidate)}(73,138);
+\draw[->](73,123)--node[above]{3. verify(text and JSON)}(108,123);
+\draw[->,dashed](108,111)--node[above]{4. candidate report}(73,111);
+\draw (25,99) rectangle (157,10);\draw (25,99)--(38,99)--(38,92)--(25,92);\node at (31,95){alt};
+\node[anchor=west] at (42,95){[candidate accepted]};
+\draw[->,dashed](73,83)--node[above]{5a. accepted text/report}(38,83);
+\draw[dashed](25,74)--(157,74);\node[anchor=west] at (29,70){[candidate rejected]};
+\draw[->](73,59)--node[above]{5b. render grounded fallback}(145,59);
+\draw[->,dashed](145,48)--node[above]{6. fallback text / claims}(73,48);
+\draw[->](73,37)--node[above]{7. verify fallback}(108,37);
+\draw[->,dashed](108,26)--node[above]{8. fallback report}(73,26);
+\draw[->,dashed](73,15)--node[above]{9. checked output or error}(38,15);
+\draw[->,dashed](38,3)--node[above]{10. current result}(8,3);
+\end{tikzpicture}}

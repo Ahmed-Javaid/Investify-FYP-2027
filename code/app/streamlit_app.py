@@ -9,7 +9,9 @@ from app import presenter, presenter_style  # noqa: E402 - local source paths mu
 st.set_page_config(page_title='Investify - Mid-1',page_icon='I',layout='wide',initial_sidebar_state='collapsed')
 presenter_style.inject()
 st.markdown('<div class="brand"><span class="brand-dot"></span>Investify</div>',unsafe_allow_html=True)
-page = st.segmented_control('Workspace',presenter.PAGES,default='Overview',key='ui_page',label_visibility='collapsed',width='stretch')
+if st.session_state.get('ui_page') not in presenter.PAGES:
+    st.session_state['ui_page'] = 'Overview'
+page = st.segmented_control('Workspace',presenter.PAGES,default=None,key='ui_page',label_visibility='collapsed',width='stretch')
 st.caption("Recorded five-session research. Educational output only. No investment advice or order execution.")
 st.divider()
 {'Overview':presenter.overview,'Walkthrough':presenter.walkthrough,'Experiments':presenter.experiments,'Design':presenter.design}[page or 'Overview']()

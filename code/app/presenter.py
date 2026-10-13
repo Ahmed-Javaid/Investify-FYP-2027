@@ -1,6 +1,7 @@
 """One visible workspace at a time. Interactions reuse the verified core modules."""
 import hashlib
 import json
+from dataclasses import replace
 from pathlib import Path
 
 import pandas as pd
@@ -10,7 +11,7 @@ from app import presenter_data as data
 from investify.explain.context import build_context
 from investify.explain.template import Explanation, render, render_guided
 from investify.explain.pipeline import emit
-from investify.risk_profile import CAPACITY_OPTIONS, TOLERANCE_QUESTIONS, score_profile
+from investify.risk_profile_gl import CAPACITY_OPTIONS, GL_ITEMS, score_profile, example_answers, apply_risk_policy
 
 PAGES = ('Overview', 'Walkthrough', 'Experiments', 'Design')
 STEPS = ('Decision', 'Evidence', 'Risk profile', 'Explanation check')
@@ -26,18 +27,21 @@ def navigate(page, step=None):
         st.session_state['ui_step'] = step
 
 def profile_example(index):
+    st.session_state['ui_profile_epoch'] = st.session_state.get('ui_profile_epoch', 0) + 1
     values = {'horizon':'5+ years','buffer':'6+ months','stability':'Salaried and stable','dependants':'0','age':'18-30'}
     for key, value in values.items():
         st.session_state['ui_profile_' + key] = value
-    for i, (_, options) in enumerate(TOLERANCE_QUESTIONS):
-        st.session_state[f'ui_tolerance_{i}'] = options[index]
-    st.session_state['ui_profile'] = score_profile(values, [index]*3)
+    answers = example_answers(index)
+    for i, (_, options, _) in enumerate(GL_ITEMS):
+        st.session_state[f'ui_tolerance_{i}'] = options[answers[i]]
+    st.session_state['ui_profile'] = score_profile(values, answers)
     st.session_state['ui_profile_kind'] = 'Fictional example: cautious' if index == 0 else 'Fictional example: higher tolerance'
 
 def clear_profile():
+    st.session_state['ui_profile_epoch'] = st.session_state.get('ui_profile_epoch', 0) + 1
     for name in CAPACITY_OPTIONS:
         st.session_state['ui_profile_' + name] = None
-    for i in range(3):
+    for i in range(len(GL_ITEMS)):
         st.session_state[f'ui_tolerance_{i}'] = None
     st.session_state.pop('ui_profile', None)
     st.session_state.pop('ui_profile_kind', None)
@@ -71,14 +75,14 @@ def overview():
     left, right = st.columns([3,2], gap='large')
     with left:
         st.subheader('The live demonstration')
-        st.write('A risk profile changes a separate comparison. A deliberately wrong explanation triggers rejection and a verified fallback. The recorded model output stays fixed.')
-        st.caption('Suggested case: fresh Alpaca, frozen classifier, 21 December 2023.')
+        st.write('A complete risk profile controls the confidence required for a directional suggestion. An incorrect explanation triggers rejection and checked fallback. Recorded probabilities remain fixed.')
+        st.caption('Suggested case: Alpaca multiclass calibration, frozen classifier, 21 December 2023.')
     with right:
         st.subheader('Recorded research')
         st.write('Inspect the leakage experiment, original sentiment-model comparison and teacher construction pilot.')
         st.button('Explore experiments', key='ui_open_experiments', on_click=navigate, args=('Experiments',))
         st.button('View architecture and requirements', key='ui_open_design', on_click=navigate, args=('Design',))
-    st.markdown('<div class="quiet-note">The current five-session predictor has no established useful signal. All 186 fresh calibrated predictions are Buy. The demonstration exposes these limits.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="quiet-note">The predictor has no established useful signal. Multiclass calibration preserves varied raw classes, but nearly uniform probabilities require abstention.</div>', unsafe_allow_html=True)
 
 def decision_view(collection, record):
     st.header('Recorded decision')
@@ -87,11 +91,21 @@ def decision_view(collection, record):
     with left:
         st.metric('Model class', record.decision)
         st.metric('Calibrated probability', f'{record.confidence:.1%}')
-        st.caption('Probability of the recorded class, not an expected return.')
+        st.caption('Largest recorded class probability, not an expected return or a suitability guarantee.')
     with right:
         probs = pd.DataFrame({'class':list(record.probabilities),'probability':list(record.probabilities.values())})
         st.bar_chart(probs, x='class', y='probability', horizontal=True, height=210, color='#267b86')
-    st.markdown('<div class="quiet-note">All 186 fresh calibrated decisions are Buy. Better calibration loss alone does not establish useful predictions.</div>', unsafe_allow_html=True)
+    if collection.source.startswith('temperature_'):
+        if record.confidence < .5:
+            st.warning('Insufficient predictive confidence: no directional recommendation. The raw class is shown for diagnosis.')
+        with st.expander('Multiclass calibration and abstention'):
+            diagnosis = data.temperature_diagnosis(collection)
+            st.write('One positive temperature scales all three margins, preserving the raw class order. It is fitted only on 181 earlier calibration outcomes.')
+            st.json({'temperature': diagnosis['fit']['temperature'], 'class_counts': diagnosis['temperature']['class_counts'],
+                     'macro_f1': diagnosis['temperature']['macro_f1'], 'brier': diagnosis['temperature']['brier']})
+            st.caption('The fit reaches the configured upper bound and probabilities approach one-third. Calibration does not create predictive information.')
+    else:
+        st.markdown('<div class="quiet-note">This preserved isotonic experiment emits Buy throughout. It is retained as the diagnosed failure, not the active recommendation path.</div>', unsafe_allow_html=True)
     if collection.source in ('fresh_frozen', 'fresh_refit'):
         with st.expander('Why the fresh calibration always chooses Buy'):
             try:
@@ -142,61 +156,59 @@ def evidence_view(collection, record):
         st.json({'artifact_sha256':collection.sha256,'model':record.model_version,'seed':record.seed,'record':record.to_dict()})
 
 def profile_view(collection, record):
-    st.header('A profile changes the comparison')
-    st.write('The profile weights a separate technical/news blend. It leaves the recorded classifier unchanged.')
-    actions = st.columns([1,1,1,2])
+    st.header('Risk capacity and tolerance')
+    st.write('The profile sets a risk allowance and confidence requirement. It does not reweight news or reverse the model direction.')
+    actions = st.columns([1, 1, 1])
     actions[0].button('Cautious example', key='ui_cautious', on_click=profile_example, args=(0,))
     actions[1].button('Higher-tolerance example', key='ui_tolerant', on_click=profile_example, args=(2,))
     actions[2].button('Clear profile', key='ui_clear_profile', on_click=clear_profile)
     if st.session_state.get('ui_profile_kind'):
-        st.caption(st.session_state['ui_profile_kind'] + '. These answers are demonstration scenarios, not participant observations.')
-    with st.expander('Enter or edit the eight answers'):
+        st.caption(st.session_state['ui_profile_kind'] + '. Fictional demonstration answers.')
+    with st.expander('Complete the five capacity and thirteen tolerance answers'):
+        st.caption('Grable-Lytton item scoring uses concise paraphrases. No unanswered choice is defaulted.')
         with st.form('ui_profile_form'):
             columns = st.columns(2)
-            labels = {'horizon':'When will you need this money?','buffer':'Emergency expenses buffer','stability':'Income stability','dependants':'Financial dependants','age':'Age band'}
+            labels = {'horizon': 'When will you need this money?', 'buffer': 'Emergency expenses buffer',
+                      'stability': 'Income stability', 'dependants': 'Financial dependants', 'age': 'Age band'}
             capacity = {}
-            for i,(name,options) in enumerate(CAPACITY_OPTIONS.items()):
-                capacity[name] = columns[i%2].selectbox(labels[name],list(options),index=None,key='ui_profile_'+name)
-            tolerance = []
-            for i,(question,options) in enumerate(TOLERANCE_QUESTIONS):
-                answer = st.selectbox(question,options,index=None,key=f'ui_tolerance_{i}')
-                tolerance.append(options.index(answer) if answer is not None else None)
+            for i, (name, choices) in enumerate(CAPACITY_OPTIONS.items()):
+                capacity[name] = columns[i % 2].selectbox(labels[name], list(choices), index=None, key='ui_profile_' + name)
+            answers = []
+            for i, (question, options, _) in enumerate(GL_ITEMS):
+                answer = st.selectbox(str(i + 1) + '. ' + question, list(options), index=None, key=f'ui_tolerance_{i}')
+                answers.append(options.index(answer) if answer is not None else None)
             if st.form_submit_button('Apply profile'):
+                st.session_state['ui_profile_epoch'] = st.session_state.get('ui_profile_epoch', 0) + 1
                 try:
-                    st.session_state['ui_profile'] = score_profile(capacity,tolerance)
-                    st.session_state['ui_profile_kind'] = 'User-entered prototype profile'
-                except (TypeError,ValueError):
-                    st.session_state.pop('ui_profile',None)
-                    st.error('Complete all eight answers. No defaults are assumed.')
+                    st.session_state['ui_profile'] = score_profile(capacity, answers)
+                    st.session_state['ui_profile_kind'] = 'User-entered profile'
+                except (TypeError, ValueError):
+                    st.session_state.pop('ui_profile', None)
+                    st.error('Complete all eighteen answers. No defaults are assumed.')
     profile = st.session_state.get('ui_profile')
     if profile is None:
-        st.info('Choose a labelled example or enter all eight answers to compare profiles.')
+        st.info('Choose an example or complete all eighteen answers.')
         return
-    st.caption(f'Capacity {profile.capacity_tier}, tolerance {profile.tolerance_tier}; reconciled R = {profile.score:.3f}. Binding axis: {profile.binding_axis}.')
-    try:
-        comparator = data.comparator_for(collection)
-        if record.session_date not in comparator.manifest['heldout_sessions']:
-            st.info('This session belongs to the scaling-development block. Choose a later session to score the comparator.')
-            return
-        result = comparator.score(record.session_date,profile)
-    except (OSError,KeyError,TypeError,ValueError,OverflowError) as error:
-        st.error('Profile comparison unavailable. The recorded decision remains unchanged.')
-        st.caption(str(error));return
-    left,right = st.columns(2)
-    left.metric('Fixed comparison, R = 0.5',result['reference']['decision'])
-    right.metric(f'Profile comparison, R = {profile.score:.3f}',result['profile_conditioned']['decision'])
-    st.caption(f"Recorded classifier: {record.decision}, probability {record.confidence:.1%}. It does not use this prototype profile.")
-    table = [{'Comparison':name,'News term':item['sentiment_term'],'Technical term':item['technical_term'],'Total score':item['score']} for name,item in [('Fixed',result['reference']),('Profile',result['profile_conditioned'])]]
-    st.dataframe(table,hide_index=True,width='stretch')
-    st.caption('Weighted z-scores, not probabilities or expected returns. Suitability and predictive performance are unvalidated.')
-    with st.expander('Calculation and scaling details'):
-        st.write('C = R*S + (1-R)*T. Sell at C <= -0.5; Hold at -0.5 < C <= 0.5; Buy at C > 0.5.')
-        st.write('R changes the news weight. A smaller R need not produce a more conservative action.')
-        st.json({'fit_end':comparator.manifest['fit_end'],'fit_rows':comparator.manifest['fit_rows'],'profile':profile.to_dict(),'scaled_inputs':result['scaled_inputs']})
-        if result['missing_sentiment']:st.warning(result['missing_policy'])
+    if getattr(profile, 'version', '') != 'grable-lytton-capacity-policy-v2':
+        clear_profile()
+        st.info('The profile method changed. Enter the eighteen answers again.')
+        return
+    result = apply_risk_policy(record, profile, eligible_model=collection.source.startswith('temperature_'))
+    left, right = st.columns(2)
+    left.metric('Risk allowance R', f'{profile.score:.3f}')
+    right.metric('Profile outcome', result['profile_action'])
+    st.caption(f'Grable-Lytton total {profile.tolerance_raw}/47 ({profile.tolerance_band}); capacity {profile.capacity_tier}; reconciled tier {profile.tier}.')
+    st.caption(f'Required confidence {result["minimum_confidence"]:.1%}; recorded confidence {record.confidence:.1%}; model class {record.decision}.')
+    st.write(result['reason'])
+    st.caption('Higher allowance lowers the confidence requirement. It never changes Buy to Sell or Sell to Buy. Weak evidence still abstains.')
+    with st.expander('Scoring and policy details'):
+        st.write('Tolerance = (published item total - 13)/34. R = min(capacity, tolerance). Required confidence = 0.80 - 0.30*R.')
+        st.json(result)
+        st.caption('Capacity weights, tier reconciliation and the confidence gate are explicit project policies. Local wording and suitability have not been independently validated.')
+
 
 def candidate_identity(collection, record, text):
-    return collection.identity(record.session_date) + ':' + hashlib.sha256(text.encode()).hexdigest()
+    return collection.identity(record.session_date) + ':' + record.data_hashes.get('profile_digest', 'no-profile') + ':' + record.data_hashes.get('profile_epoch', '0') + ':' + hashlib.sha256(text.encode()).hexdigest()
 
 def set_candidate(collection, record, fail=False):
     base = render(record)
@@ -206,11 +218,21 @@ def set_candidate(collection, record, fail=False):
 def explanation_view(collection, record):
     st.header('An explanation must match its evidence')
     case_caption(collection,record)
-    record_id = collection.identity(record.session_date)
+    record = replace(record, data_hashes=dict(record.data_hashes, profile_epoch=str(st.session_state.get('ui_profile_epoch', 0))))
+    profile = st.session_state.get('ui_profile')
+    if getattr(profile, 'version', '') == 'grable-lytton-capacity-policy-v2':
+        policy = apply_risk_policy(record, profile, eligible_model=collection.source.startswith('temperature_'))
+        st.caption('Profile outcome: ' + policy['profile_action'] + '. The model class below is diagnostic; its probabilities are unchanged.')
+        profile_digest = hashlib.sha256(json.dumps(profile.to_dict(), sort_keys=True).encode()).hexdigest()
+        record = replace(record, risk_tier=profile.tier,
+                         data_hashes=dict(record.data_hashes, profile_digest=profile_digest))
+    else:
+        st.caption('No personal profile is attached. The record risk tier is experiment metadata.')
+    record_id = collection.identity(record.session_date) + ':' + record.data_hashes.get('profile_digest', 'no-profile') + ':' + record.data_hashes.get('profile_epoch', '0')
     if st.session_state.get('ui_candidate_record') != record_id:
         st.session_state['ui_candidate_record'] = record_id
         set_candidate(collection,record)
-    top = st.columns([1,1,3])
+    top = st.columns([1,1])
     top[0].button('Inject wrong probability',key='ui_inject',on_click=set_candidate,args=(collection,record,True))
     top[1].button('Restore record facts',key='ui_restore',on_click=set_candidate,args=(collection,record,False))
     left,right = st.columns(2,gap='large')
@@ -241,7 +263,7 @@ def explanation_view(collection, record):
             st.text(result.text)
             with st.expander('What the verifier checked'):
                 report = result.rejected_verification or result.verification
-                st.dataframe(report.as_table(),hide_index=True,width='stretch')
+                st.dataframe([{key: (json.dumps(value, ensure_ascii=False) if isinstance(value, (dict, list)) else '' if value is None else str(value)) for key, value in row.items()} for row in report.as_table()],hide_index=True,width='stretch')
                 st.json({'numeric_fidelity':report.numeric_fidelity,'directional_consistency':report.directional_consistency,'claim_recall':report.claim_recall,'unverifiable_rate':report.unverifiable_rate,'failed_metrics':report.failed_metrics,'fallback_passed':result.verification.passed})
     st.caption('Strict checking supports maintained claim patterns and record values. Arbitrary market prose and human usefulness remain unvalidated.')
     with st.expander('Complete deterministic indicator guide'):
@@ -291,14 +313,14 @@ def leakage_view():
 def social_view():
     st.header('Original sentiment models on the same posts')
     benchmark,usable,result = data.social_comparison()
-    st.caption(f"{len(benchmark['posts'])} acquired MSFT posts, {len(usable)} usable AI references, {result['heldout_posts']} held out.")
+    st.caption(f"{len(benchmark['posts'])} acquired MSFT posts, {len(usable)} usable reference labels, {result['heldout_posts']} held out.")
     if not result['comparison_ready']:
         st.warning('Paired comparison unavailable. Failed/missing outputs are not neutral predictions.')
         return
     rows = [{'Candidate':'CryptoBERT' if c['model_id']=='ElKulako/cryptobert' else 'Cardiff','Macro-F1 agreement':c['quality_metrics']['macro_f1'],'Coverage':f"{c['completed_posts']}/{result['heldout_posts']}",'Errors':c['error_posts']} for c in result['results']]
     st.dataframe(rows,hide_index=True,width='stretch')
     st.bar_chart(pd.DataFrame(rows),x='Candidate',y='Macro-F1 agreement',color='#267b86',height=230)
-    st.warning('Agreement with AI references. Independent human validation is unmeasured, and the held-out set has only two negative references.')
+    st.warning('Reference-label agreement from a single labeling pass. Independent validation is unmeasured; only two held-out references are negative.')
     st.write('Cardiff leads this exploratory comparison. Deployment selection remains open.')
     with st.expander('Original identities, receipts and limits'):
         st.json(result)

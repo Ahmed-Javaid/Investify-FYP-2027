@@ -9,7 +9,7 @@ The current Mid-1 prototype is ready for team practice. The engineering work sup
 | Risk profile | Explicit questionnaire, fictional examples, clear/reset and separate retrospective comparator | Profile assumptions, suitability and performance require review |
 | Explanation checks | Independent visible-text and JSON verification, retained rejection, verified fallback and edit invalidation | Human comprehension and live student-model usefulness unmeasured |
 | Research evidence | Fresh baseline/leakage execution, original sentiment comparison and six recorded teacher examples | Social reference/selection criteria remain open; student inference and QLoRA later |
-| Process and handover | Local CI jobs, source guards, reviewed report/deck and extraction-verified source archive | Actual remote CI and continuous deployment not implemented/executed |
+| Process and handover | Passing hosted Windows/Ubuntu CI, source guards, reviewed report/deck and extraction-verified artifact delivery | Production hosting remains later work |
 
 Individual walkthroughs, rehearsal/projector review, printing/signatures and supervisor review remain on the team todo and are excluded from technical completion. Future FYP work includes the student programme, deployment and broader research/product acceptance. The negative predictive and small-reference findings remain visible.
 

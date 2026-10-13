@@ -1,0 +1,22 @@
+{
+  "schema": "investify-cleanup-validation-v1",
+  "checked_utc": "2026-10-13T18:01:00.364165+00:00",
+  "groupmate_zip": "deliverables/Investify_Mid1_Groupmates_20261013.zip",
+  "groupmate_receipt": "evidence/Investify_Mid1_Groupmates_20261013_receipt.json",
+  "cleanup_receipt": "evidence/deliverables_cleanup_20261013.json",
+  "existing_delivery_guard_tests_passed": 9,
+  "navigation_links_checked": 93,
+  "missing_navigation_links": [],
+  "protected_files_unchanged": 670,
+  "clean_host_receipt": "evidence/cleanup_20261013_clean_host_verification.json",
+  "validation_archive_original_path": "deliverables/investify_cleanup_validation_20261013.zip",
+  "validation_archive_path": "deliverables/archive/20261013/investify_cleanup_validation_20261013.zip",
+  "validation_archive_sha256": "1b01df570886008173a40f21b6ad0c67cc1674ed9f238a5f93b5c9414d8a62ac",
+  "test_lint_caches_moved_to": "E:/AI-Tools/Cache/investify-cleanup-20261013",
+  "cache_directories_moved": [
+    ".ruff_cache",
+    "code/.ruff_cache",
+    "code/.pytest_cache"
+  ],
+  "report_and_presentation_sources_unchanged": true
+}

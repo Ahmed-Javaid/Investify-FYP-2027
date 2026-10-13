@@ -1,0 +1,38 @@
+{
+  "schema": "investify-groupmate-document-pack-v1",
+  "built_utc": "2026-10-13T17:55:50.372034+00:00",
+  "source_repository": "https://github.com/Ahmed-Javaid/Investify-FYP-2027",
+  "source_repository_head_at_packaging": "70bf0e367fd663e12ed9d01883f40a58450e1d97",
+  "scope": "Reviewed documents and practice guides; source code is obtained from GitHub.",
+  "source_files_sha256": {
+    "deliverables/Investify_FYP1_Mid_Report_Technical_Completion_20261013.pdf": "9b1ba14349786a15cf6f0bd432ba922f0ca76af602ae7205ef30c80e5b54701b",
+    "deliverables/Investify_FYP1_Mid_Presentation_Technical_Completion_20261013.pdf": "25407ca3045a29daa2a6660c9d6c331288a94e0452f3387812ee776792a8b8fd",
+    "sources/Mid_Eval/FYP-1-Mid-Assessment-Guidelines-and-Rubrics.pdf": "aae01fb689e5b43a03af21eaa72c1cd23a75949c9c51feac6d027cf9b3ca1a93",
+    "deliverables/MEMBER_PREPARATION_PACK.md": "9ec9170f887d88ad1de2f481d2cde38a85a0003baf2fb7b2915fe39462bece7f",
+    "deliverables/MEMBER_PREPARATION_AHMED_JAVAID.md": "982f6d75ae9ce5595fced9c24bf846583be1956ead7a4abc09401e0c23e172f5",
+    "deliverables/MEMBER_PREPARATION_RAFAY_UL_HAQ.md": "5b316f437e45f9cb3b26c2be5d06aadacb3db3b15f66f35c458f7cceb7f661c4",
+    "deliverables/MEMBER_PREPARATION_SOBAN_AHMAD.md": "6ab4c780713bd59c511d883c234c3698879eabea2e8096df85f03df5ae6bd60c",
+    "deliverables/WORK_DIVISION.md": "16ff5cec41b485bca41ad13a4d53782c9466b911370ee199058b7ed9926b024a",
+    "deliverables/DEMO_AND_DEFENCE_GUIDE.md": "1b9656fe159b50887e351f88ce7c0c9a372086678a898eb18eeb269578c4a735",
+    "deliverables/CODE_WALKTHROUGH.md": "7e30a60dc3195dae7cb524a779403426deafc3ae6d5cfaa90d12215cbb47fada"
+  },
+  "files_sha256": {
+    "Investify_Report.pdf": "9b1ba14349786a15cf6f0bd432ba922f0ca76af602ae7205ef30c80e5b54701b",
+    "Investify_Presentation.pdf": "25407ca3045a29daa2a6660c9d6c331288a94e0452f3387812ee776792a8b8fd",
+    "Mid1_Rubric.pdf": "aae01fb689e5b43a03af21eaa72c1cd23a75949c9c51feac6d027cf9b3ca1a93",
+    "MEMBER_PREPARATION_PACK.md": "39e32a5271628c64401af8efa7fc4a96fadebc8929ca68459ff2222d11647ff7",
+    "MEMBER_PREPARATION_AHMED_JAVAID.md": "7a6b52b44a725d8c2996a962fd912f94176628b6941a341c4c737c2947712ae4",
+    "MEMBER_PREPARATION_RAFAY_UL_HAQ.md": "b5090ae869b3c2f54dcb3797be5dbba25738f4ead02af3de243899b4b7964eb6",
+    "MEMBER_PREPARATION_SOBAN_AHMAD.md": "5c13813a7c241920ad006a68a784ee2280f443161d08e9bb8827c3f258c00d0a",
+    "WORK_DIVISION.md": "dae68d9499a7120ca59e205cdea86b24221566b19c6dc924d73bf336147fb53c",
+    "DEMO_AND_DEFENCE_GUIDE.md": "db73e3b0001aa70b0ccdbe005fc4e37509b9fb43ae9aa55a63d76eeceb1c3043",
+    "CODE_WALKTHROUGH.md": "7e30a60dc3195dae7cb524a779403426deafc3ae6d5cfaa90d12215cbb47fada",
+    "READ_FIRST.txt": "f1b7512a7d35720957ea2f81b236f9431418b87add3ba08694bbcd1d2f779eb1"
+  },
+  "output": "deliverables/Investify_Mid1_Groupmates_20261013.zip",
+  "zip_sha256": "2cf01c2ce87513f214adb3dd7f891adef18e257d8db68a803cb603bcffda4c3b",
+  "zip_bytes": 1901358,
+  "file_count": 12,
+  "archive_integrity": "passed",
+  "pdfs_and_rubric_preserved_byte_for_byte": true
+}

@@ -1,0 +1,6 @@
+Documentation before consolidation, 13 October 2026.
+
+Original bytes and dated scope are retained. The moved-file/path/hash map is
+evidence/documentation_consolidation_20261013.json at the project root.
+Old documentation generators here are historical snapshots; active tools use
+the consolidated documentation. Do not run these archived generators.

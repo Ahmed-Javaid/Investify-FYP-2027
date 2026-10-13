@@ -1,133 +1,52 @@
-\chapter{Iteration 1: Design and Implementation}
-\section{Iteration Objectives}
-Preserve the existing project, validate the cached decision/explanation path, and make technical/news evidence inspectable. Establish the LLM input boundary and replay six recorded assistant-teacher examples; a live generator and measured user-comprehension benefit remain pending.
+\chapter{Iteration 1: Implementation and Scientific Execution}
+\section{Implemented Pipeline}
+The pipeline validates versioned price/news snapshots, maps timestamps to exchange sessions, builds causal indicators and news aggregates, and trains/evaluates a fixed XGBoost configuration. Each decision record retains identity, probabilities, complete feature/SHAP maps, raw score, model version and input digests. The interface reads those records; the verifier and risk calculations execute live.
+\section{Data Interval and Source Decision}
+\begin{longtable}{p{0.25\textwidth}p{0.35\textwidth}p{0.29\textwidth}}
+\caption{Consumed historical data and final evaluation interval.}\label{tab:data-interval}\\\toprule Input & Interval/count & Policy\\\midrule
+NVDA daily prices & 2 Jan 2018--29 Dec 2023; 1,509 sessions & SIP split-adjusted snapshot; cash dividends not adjusted\\
+Alpaca/Benzinga news & 2018--2023; 6,768 retained rows, 5,748 distinct headlines & Availability is later creation/update time\\
+Model evaluation & 29 Mar--21 Dec 2023; 186 decisions per mode & Five observed-session outcomes\\
+Calibration & 181 available earlier outcomes & Five outcomes crossing evaluation start excluded\\
+\bottomrule\end{longtable}
+FNSPID remains a preserved historical comparator. Its original audit found that 99.78\% of the selected NVDA rows carried midnight-only timestamps, with only 26 genuinely intraday-timed rows; AAPL/TSLA also had material year gaps. Those limitations cannot support a broad precise-publication alignment claim. Alpaca/Benzinga was used for the new timestamped study, consistent with the original repository's documented recovery. The scope remains NVDA until multi-company coverage is audited. Current-vintage data is not claimed as a byte-identical September reproduction.
+\section{Temporal Controls and Terminology}
+The target spans five observed trading sessions. Purging excludes a training label whose actual endpoint reaches the evaluation start. The configured five-day embargo is an additional calendar-day gap: these are different rules. Replacing endpoint logic with calendar subtraction retained 18 invalid endpoints on the boundary fixture, while the corrected purge retained zero. The explanation of this distinction resolves the proposal/report terminology difference rather than treating the two terms as synonyms.
 
-\section{Selected Use Cases / Features}
-Select a historical corpus/session, inspect the decision/probabilities, read every feature's meaning and attribution, and inspect coverage/limitations. Fault checks reject corrupted confidence and show verified fallback.
+The no-purge arm retains an additional gap and may show no detectable performance inflation when only a few boundary outcomes are affected. The same-bar branch remains a lag ablation under the strict-prior join, not a guaranteed future leak. A centred window explicitly consumes future observations and is the permanent canary. The shuffled split breaks chronological evaluation. Each arm has a different fault geometry; not every deliberate variation must inflate the measured score.
+\section{Baseline and Leakage Results}
+\begin{longtable}{p{0.29\textwidth}p{0.18\textwidth}p{0.19\textwidth}p{0.23\textwidth}}
+\caption{Actual five-session walk-forward/control results.}\label{tab:leakage-results}\\\toprule Arm & Macro-F1 & Lift over random & Interpretation\\\midrule
+Clean & 0.2843 & -0.0444 & Below random comparator\\
+Shuffled folds & 0.4457 & +0.1142 & Chronological fault shows signal\\
+No purge & 0.3022 & -0.0267 & No measured inflation under this geometry\\
+Centred Bollinger & 0.5390 & +0.2104 & Explicit future-information canary\\
+Centred SMA200 & 0.3333 & +0.0046 & No detectable uplift for this variation\\
+Same-bar text & 0.2651 & -0.0636 & Lag ablation, not evidence of future access\\
+\bottomrule\end{longtable}
+The centred-Bollinger lift interval is [+0.1698,+0.2421]. Results use fixed settings, shared row masks and six folds. Weak clean performance is retained; the experiment does not establish a useful forecasting strategy.
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{../code/artifacts/scientific_runs/alpaca_revision_conservative_20261012_run01/recovery01/harness_alpaca/arms_lift_alpaca.png}\caption{Retained leakage-arm lift and intervals; centred and shuffled faults fire, while other variations do not produce guaranteed uplift.}\label{fig:leakage-arms}\end{figure}
+\section{Calibration Diagnosis and Correction}
+Independent isotonic maps force Buy because its pre-normalization minimum 0.5344828 exceeds Hold maximum 0.2500000 and Sell maximum 0.3139535. Normalizing by a common positive sum preserves that ordering. We retain those records as the diagnosed failure and construct a new global-temperature experiment from the same immutable model bytes, scaler, margins and input rows.
+\begin{longtable}{p{0.29\textwidth}p{0.23\textwidth}p{0.18\textwidth}p{0.19\textwidth}}
+\caption{Held-out calibration behavior on the same 186 evaluation cases.}\label{tab:calibration-results}\\\toprule Method & Buy/Hold/Sell & Macro-F1 & Brier\\\midrule
+Frozen raw & 40 / 51 / 95 & 0.3182 & 0.7929\\
+Frozen isotonic & 186 / 0 / 0 & 0.2238 & 0.6105\\
+Frozen temperature & 40 / 51 / 95 & 0.3182 & 0.6667\\
+Refit raw & 37 / 50 / 99 & 0.3116 & 0.7760\\
+Refit isotonic & 186 / 0 / 0 & 0.2238 & 0.6078\\
+Refit temperature & 37 / 50 / 99 & 0.3116 & 0.6667\\
+\bottomrule\end{longtable}
+The single temperature is selected by negative log likelihood on the 181 earlier calibration outcomes; evaluation labels do not fit it. Its optimum reaches the configured upper bound of 1,000, making probabilities nearly uniform. Rank preservation removes the artificial all-Buy collapse, but does not add predictive information. The interface therefore exposes the diagnostic class and withholds a directional recommendation at insufficient confidence. Brier and classification metrics are reported together; the correction is not marketed as a profitable or well-calibrated predictor.
 
-\section{Design}
-The frozen decision record remains the prediction source. A new builder combines its facts with reviewed definitions and implementation limitations. Streamlit and the standalone explorer reuse that context. Existing template verification remains the baseline.
+Native XGBoost replay reproduces the retained margins. TreeSHAP is recalculated for each newly selected raw class and checked for additivity. Both numeric and complete-guided explanations are checked on all newly generated records. The new model identity keeps the original classifier and calibration findings traceable.
+\section{Complete Risk Profiling and Policy}
+Five capacity factors use retained weights: horizon/buffer 0.30 each, income stability 0.20, dependants/age 0.10 each. Protective caps handle no buffer, short horizon and unstable income with thin reserves. Thirteen Grable--Lytton item scores produce $G\in[13,47]$ and normalized tolerance $T_r=(G-13)/34$. The risk allowance is $R=\min(C,T_r)$; the more restrictive capacity/tolerance tier is displayed.
 
-\section{Implementation}
-The active consolidated repository is on \texttt{main}; the earlier isolated branch is preserved in history. New code in \nolinkurl{src/investify/explain/context.py} covers every feature, handles missing values, rejects non-finite attributions/probabilities, and identifies unreviewed definitions. The Decision tab renders the context; the exporter uses the same records.
-
-\section{Completed Features / Module}
-The context, artifact tools, complete-guided verifier, report-retaining fallback, both live interfaces, prototype profile and separate retrospective risk comparator are implemented. Actual Streamlit widget tests pass. Six actual teacher explanations are saved and replayed in Teacher Study. Original social-candidate comparison now executes with recorded results in Chapter~\ref{chap:testing}. Live LLM inference, social features in the saved predictor, personalized classifier predictions and remote GitHub execution remain pending.
-
-\section{Technical Implementation Details}
-Feature values and predicted-class SHAP contributions are separate. Family totals retain raw-score units. The verifier checks prose and JSON independently, including feature values and attribution targets. Displayed-text coverage, essential disclosures and hard contradiction gates prevent a correct payload from hiding an incorrect display. Strict mode rejects unsupported sentences. Evidence tools check schemas/context/templates/distributions/additivity and record artifact/runtime/source hashes.
-
-\section{Algorithms and Technical Decisions}
-Definitions follow actual features: dispersion is trailing variation of session-average polarity, and news attention is a headline-count z-score. Missing data stays missing. Indicator meaning and its use by this model are distinct \cite{fidelity_rsi,fidelity_macd,fidelity_obv}.
-
-\section{Tools, Frameworks and Technologies}
-The portable path uses standard Python. The restored isolated viewer/test environment yields 212 selected passes and no skips; it is not the locked scientific environment. CI targets Python 3.11 on Windows/Linux with portable checks, frozen plans, comparator audits and a separate Streamlit AppTest job. Remote jobs have not run.
-
-\section{Demonstration Evidence}
-The continuation adds an explicitly labelled feature-level causality button: nine checks on synthetic fixtures detect four centred-window mutations, with no classifier fit. Scientific input/runtime absence disables the real re-run, and a later import/data failure is reported without a fabricated experiment result. Portable reports are invalidated after candidate/settings edits; record-loading errors retain selection/retry controls. These checks are distinct from browser visual QA.
-Artifact checks cover 186 records per corpus. The live HTTP exercise passes 62 explanation/risk cases. The separate comparator audit passes 228 arithmetic checks on actual held-out rows with labelled parameter scenarios. Chapter~\ref{chap:manual} records the current Streamlit browser review; these older portable checks have a separate scope. Both saved classifiers predict Buy throughout; no predictor-performance improvement is claimed.
-
-\section{Iteration Outcome}
-\subsection{Versioned Scientific Corrections}
-The historical purger used calendar-day subtraction for observed-row labels. On the same labelled business-day fixture/test blocks it retains 18 training-label endpoints reaching the evaluation blocks; the corrected \texttt{observed-label-end-purge-v2} retains zero. Actual endpoints are calculated before feature filtering and carried to folds. Calibration candidates ending on/after first evaluation are excluded; a future-price shock leaves retained fixture inputs unchanged. Explicit frozen-classifier and refit-transfer modes now support a fair source-level comparison, with a genuine fresh Alpaca fitted comparison now recorded below.
-
-Original scientific source/results are preserved. Cache joins refuse duplicate document keys or inconsistent probabilities, RSI edge windows have explicit behaviour, datetime units are normalized for the as-of join, and input ranges/ticker/revision/calendar contracts fail visibly. New outputs/cache directories are isolated. Full score/margin/truth arrays, calibration knots, scaler/model bytes and source/input identity are retained by the new trace mechanism. These earlier source/fixture repairs alone do not establish changed historical performance; the fresh-run findings below are separate. E\_SAMEBAR\_TEXT is a lag-rule ablation under the retained strict-prior join.
-The increment improves evidence coverage and transparency over the top-k numeric template and supplies a tested LLM input contract. It does not yet establish LLM usefulness, predictive skill, complete mid readiness, or deployment.
-
-\section{Recorded Assistant Teacher Construction Pilot}
+The primary policy requires confidence $\tau(R)=0.80-0.30R$ for a directional suggestion. A higher allowance lowers that threshold but cannot change Buy into Sell or Sell into Buy. Weak evidence remains Observe; an existing Hold class remains non-directional. The old $C=wS+(1-w)T$ blend remains a historical baseline with explicit weighting, not the meaning of the current risk score. The published scoring is implemented; local paraphrases and the confidence policy require further suitability evaluation.
+\begin{figure}[htbp]\centering\input{figures/mid1_risk_flow}\caption{Risk capacity/tolerance calculation and direction-preserving confidence policy.}\label{fig:risk-flow}\end{figure}
+\section{Explanation Checking and Teacher Construction}
 \label{sec:teacher-pilot}
-Under the user's latest direction, the current assistant supplies teacher examples before an alternative API is considered. The planned student remains Phi-3-mini; no additional Qwen teacher download is required. Six actual explanations were written from frozen historical NVDA records, and all six pass the current strict verifier. Input packets contain facts, reviewed definitions and controlled sentence patterns without a completed reference answer.
+The checker validates actual visible prose independently of JSON, including probabilities, values, feature names, attribution direction/rank, coverage and maintained meanings. Known contradictions fail before rate-based metrics can dilute them. Rejection preserves the failed report and triggers an independently checked deterministic fallback.
 
-The supervision is hybrid: prose is actually assistant-generated, while the factual JSON payload is assembled deterministically from the original record. Both are checked, but the payload is not claimed as a teacher completion. Exact serving model ID/revision, decoding, token usage and per-example inference latency are unavailable and recorded as null.
-
-Both corpora share date groups: 118 training dates, 30 validation dates and 38 preserved held-out test dates. The actual pilot has four training and two validation examples; test records are excluded. All saved source decisions are Buy, so neither class generalization nor adequate QLoRA data is established. Some held-out examples were previously explored; no first-ever untouched-test claim is made. Copied evidence replays original hash-bound raw persistence times and exact exports.
-
-Original-student inference, QLoRA training, student quality and user understanding remain unmeasured. The inspected GPU has 10,240 MiB; the proposal's 16 GB envelope does not establish current-machine feasibility. Required training libraries, exact student checkpoint/tokenizer and measured token/VRAM budgets remain pending. Earlier Qwen-specific local pilot choices are inactive for the selected teacher/student workflow.
-
-
-\section{Fresh Alpaca Scientific Execution}
-On 12 October 2026 a separately identified, genuine Alpaca experiment executed
-the corrected pipeline. All 1,509 requested NYSE price sessions were present.
-The 6,768 revision-conservative news rows contain 5,748 distinct headlines,
-scored offline with original ProsusAI/finbert revision
-\nolinkurl{0bc2ac10dda6929bcb1f77ccc43c7ec5c424f031}.
-The selected price basis is current-vintage SIP split adjustment, without cash
-dividend adjustment. News availability uses the later creation/update timestamp.
-Neither policy proves historical vendor availability. No FNSPID was downloaded;
-this run does not replace the preserved September results or reproduce their bytes.
-
-Six arms at two horizons ran on shared row sets (1,309 one-day and 1,305
-five-day rows), with six folds, fixed seed and unchanged model settings.
-The clean five-day macro-F1 is 0.2843 versus the training-distribution
-stratified-random baseline 0.3287, giving lift -0.0444
-(95\% fold-bootstrap interval [-0.0855,-0.0121]).
-The centred-Bollinger mutation gives five-day macro-F1 0.5390 and lift +0.2104
-(interval [+0.1698,+0.2421]), demonstrating the deliberate canary.
-The one-day clean arm passes the configured control rule; the five-day
-clean arm remains below chance. E\_SAMEBAR\_TEXT remains a lag ablation.
-
-\begin{table}[htbp]
-\centering
-\small
-\begin{tabular}{lrrrr}
-\toprule
-Calibration mode & Eval. rows & Macro-F1 & Brier before & Brier after \\
-\midrule
-Frozen classifier & 186 & 0.2238 & 0.7929 & 0.6105 \\
-Refit transfer & 186 & 0.2238 & 0.7760 & 0.6078 \\
-\bottomrule
-\end{tabular}
-\caption{Fresh revision-conservative Alpaca experiment, five-day held-out evaluation.}
-\end{table}
-
-Five of 186 candidate calibration labels ended on or after evaluation start and
-were excluded. The 181 retained rows fit isotonic mappings; 186 evaluation
-sessions span 29 March--21 December 2023. Both current modes produce 186 Buy
-decisions. Before calibration, the frozen model predicts Buy 40, Hold 51 and
-Sell 95. Its fitted isotonic mappings make Buy largest on every evaluation row.
-Raw held-out macro-F1 is 0.3182 in frozen mode and 0.3116 in refit mode;
-calibration reduces both to 0.2238 despite improving Brier.
-A fixed class-prior comparator estimated from the 181 available calibration
-labels has Brier 0.6095 on the same evaluation rows, versus frozen 0.6105 and
-refit 0.6078. This descriptive comparison does not establish a useful learned
-forecast; its probabilities use no evaluation labels.
-Thus classifier refitting is not necessary for the observed fresh-run collapse.
-This is an observation about the current experiment, not proof of the historical
-cause. Lower Brier and all-Buy classifications must be reported together.
-
-Actual inference from retained model bytes/scalers exactly reproduces the stored
-raw scores. Independent native XGBoost TreeSHAP matches every exported
-contribution and bias; the maximum frozen additivity residual is about
-$1.02\times10^{-6}$ against the unchanged $10^{-4}$ tolerance.
-Calibration, labels/endpoints and metric replay pass. Complete guided
-explanations verify on all 372 new records, separately from the historical 372.
-
-The current source/input/runtime identities and execution logs are retained in
-\nolinkurl{code/artifacts/scientific_runs/} and dated evidence receipts.
-The restored Python 3.11 runtime satisfies declared dependency ranges; it is
-not exact restoration of \nolinkurl{uv.lock}. Engineering contracts record
-179 passes and six legacy-input skips, with eight separate admission-refusal
-passes. No independently validated social accuracy, trading return, human
-benefit, student training or institutional approval is established.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\textwidth]{../code/artifacts/scientific_runs/alpaca_revision_conservative_20261012_run01/recovery01/harness_alpaca/arms_lift_alpaca.png}
-\caption{Actual fresh Alpaca leakage harness: lift relative to a training-distribution random baseline.}
-\end{figure}
-
-\section{Data Structures, Algorithms and Code Conventions}
-The implementation keeps records indexed by session inside a source/digest-bound collection. Feature/probability/SHAP mappings retain named keys; ranked contribution objects preserve magnitude, value and direction. Context materializes JSON-safe feature rows without replacing absent inputs with neutral observations. Frozen plans and receipts use explicit SHA256 relationships rather than model-name assumptions.
-
-The live checking algorithm is: validate the selected record; construct maintained context; read the current candidate and canonical facts; verify visible and structured claims independently; retain any rejected report; render and independently verify fallback; display only a result whose case/text identity still matches. The profile algorithm validates eight answers, computes weighted capacity/caps and tolerance, reconciles the smaller score, then scores only held-out comparator sessions using earlier scaling statistics. Neither algorithm updates the classifier.
-
-New UI functions use snake-case names, explicit page/step registries and small functions named for user actions. Data-boundary docstrings state their no-training/no-write role. Syntax/AST checks and focused UI tests are engineering static/dynamic evidence; the group must still explain and modify its actual owned functions during review. The source/file walkthrough is supplied separately rather than replaced with programming listings in the report.
-
-\begin{figure}[htbp]\centering\includegraphics[width=0.90\linewidth]{figures/mid1_calibration_counts.png}\caption{Observed labels, raw frozen-classifier predictions and calibrated classes on the same 186 evaluation sessions. Calibration collapses all emitted classes to Buy; this is descriptive retained-trace evidence, not a new selection or tuning experiment.}\label{fig:calibrationcounts}\end{figure}
-
-\section{Mechanism of the Fresh Calibration Collapse}
-Both fresh modes share the same clipped isotonic maps. Buy's global output minimum is 0.5344828, while Hold and Sell never exceed 0.2500000 and 0.3139535. Buy therefore leads by at least 0.2205293 before normalization. Linear interpolation with clipped endpoints stays within these bounds. Dividing every output by the same positive sum preserves argmax: these maps force Buy for every valid raw probability vector.
-
-\begin{figure}[!ht]\centering\input{figures/mid1_calibration_bounds}\caption[Global bounds of the saved calibration maps]{Global outputs of the fresh isotonic maps before normalization. Buy's minimum exceeds both competing maxima. The derivation concerns these byte-identified maps; the cause of preserved September outputs remains unproved.}\label{fig:calibration-bounds}\end{figure}
-
-Native replay reproduces 186 probability rows per mode and checks 5,151 simplex inputs per map set. Every output ranks Buy and sums to one; retained maps, labels and thresholds remain unchanged.
+The teacher construction pilot contains six actual recorded explanations: four training and two validation exports. Factual JSON is assembled from the source record and is distinct from generated prose. Grouped dates keep test sessions outside the pilot. This establishes example construction and bounded checking, not trained-student efficacy or participant understanding. The larger prompted/student/teacher evaluation remains a later milestone.

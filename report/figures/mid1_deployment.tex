@@ -1,15 +1,9 @@
-\begin{tikzpicture}[x=1mm,y=1mm,box/.style={draw=blue!45!black,fill=blue!2,rounded corners=1mm,align=center,text width=39mm,minimum height=22mm,inner sep=2mm,font=\sffamily\footnotesize},link/.style={->,>=stealth,draw=blue!50!black,thick}]
-\node[box] (browser) at (75,135) {\textbf{User browser}\\[1mm]127.0.0.1:8507\\Streamlit websocket and UI};
-\node[box] (viewer) at (75,97) {\textbf{Viewer Python 3.11}\\[1mm]isolated E: environment\\no import-time model training};
-\node[box] (project) at (23,59) {\textbf{Project artifacts}\\[1mm]Investify/code and receipts\\read recorded JSON evidence};
-\node[box] (core) at (75,59) {\textbf{Core modules}\\[1mm]context, verifier, pipeline\\profile and comparator};
-\node[box] (optional) at (127,59) {\textbf{Optional local LLM}\\[1mm]explicit configured request\\verified original checkpoint};
-\node[box] (science) at (23,21) {\textbf{Scientific environment}\\[1mm]separate offline/recovery run\\verified prices/news/model cache};
-\node[box] (cache) at (127,21) {\textbf{E: caches and scratch}\\[1mm]original publisher weights\\temporary builds and QA};
-\draw[link] (browser.south) -- ++(0,-6) -| (viewer.north);
-\draw[link] (viewer.south) -- ++(0,-6) -| (project.north);
-\draw[link] (viewer.south) -- ++(0,-6) -| (core.north);
-\draw[link] (viewer.south) -- ++(0,-6) -| (optional.north) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{optional};
-\draw[link] (science.north) -- ++(0,6) -| (project.south) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{new outputs};
-\draw[link] (optional.south) -- ++(0,-6) -| (cache.north) node[pos=.5,above,fill=white,inner sep=.5mm,font=\scriptsize]{weights};
-\end{tikzpicture}
+\resizebox{\linewidth}{!}{\begin{tikzpicture}[x=1mm,y=1mm,b/.style={draw,rounded corners,text width=62mm,minimum height=27mm,align=center,font=\sffamily\footnotesize},>=Stealth]
+\node[b] (browser) at (75,146){\textless\textless device\textgreater\textgreater\\Browser on project/groupmate laptop};
+\node[b] (server) at (75,96){\textless\textless execution environment\textgreater\textgreater\\Python 3.11 / Streamlit, loopback 8507\\Presenter + core context/profile/verifier};
+\node[b] (files) at (33,40){\textless\textless artifact\textgreater\textgreater\\Recorded cases, traces and study receipts};\node[b] (memory) at (117,40){\textless\textless session state\textgreater\textgreater\\Profile, candidate and current result};
+\draw[->](browser)--node[right,font=\scriptsize]{HTTP / WebSocket}(server);
+\draw[->](server.south)-|node[pos=.25,above,font=\scriptsize]{core reads}(files.north);\draw[->](server.south)-|node[pos=.25,above,font=\scriptsize]{local state}(memory.north);
+\node[draw,dashed,text width=137mm,align=center,font=\sffamily\footnotesize,inner sep=3mm] (ci) at (75,-5){GitHub Actions: Windows/Ubuntu checks $\rightarrow$ verified downloadable source/PDF artifact. Production hosting and trained-student serving are later deployment targets.};
+\draw[->,dashed](ci.north west)--node[left,font=\scriptsize]{clone / extract}(files.south west);
+\end{tikzpicture}}

@@ -63,22 +63,36 @@ class PresenterUiTests(unittest.TestCase):
         self.assertTrue(all(app.selectbox(key='ui_profile_'+k).value is None for k in ('horizon','buffer','stability','dependants','age')))
         self.assertFalse(any('Profile comparison' in m.label for m in app.metric))
         app.button(key='ui_cautious').click().run()
-        self.assertTrue(any(m.label=='Profile comparison, R = 0.000' and m.value=='Hold' for m in app.metric))
+        self.assertTrue(any(m.label=='Risk allowance R' and m.value=='0.000' for m in app.metric))
+        self.assertTrue(any(m.label=='Profile outcome' and m.value=='Observe' for m in app.metric))
         app.button(key='ui_tolerant').click().run()
-        self.assertTrue(any(m.label=='Profile comparison, R = 1.000' and m.value=='Sell' for m in app.metric))
-        self.assertTrue(any('Recorded classifier: Buy' in c.value for c in app.caption))
+        self.assertTrue(any(m.label=='Risk allowance R' and m.value=='1.000' for m in app.metric))
+        self.assertTrue(any('Required confidence 50.0%' in c.value for c in app.caption))
+        self.assertTrue(any('model class Buy' in c.value for c in app.caption))
         app.button(key='ui_clear_profile').click().run()
         self.assertFalse(any('Profile comparison' in m.label for m in app.metric))
         self.assertFalse(app.exception)
 
-    def test_development_case_refuses_profile_scoring(self):
+    def test_profile_change_invalidates_verified_explanation_context(self):
         app = self.walkthrough('Risk profile')
         app.button(key='ui_cautious').click().run()
-        widget=app.selectbox(key='ui_session')
+        app.radio(key='ui_step').set_value('Explanation check').run()
+        app.button(key='ui_verify').click().run()
+        self.assertTrue(any(item.value == 'Candidate accepted' for item in app.success))
+        app.radio(key='ui_step').set_value('Risk profile').run()
+        app.button(key='ui_tolerant').click().run()
+        app.radio(key='ui_step').set_value('Explanation check').run()
+        self.assertFalse(any(item.value == 'Candidate accepted' for item in app.success))
+        self.assertFalse(app.exception)
+
+    def test_profile_policy_is_available_without_fitting_a_new_comparator(self):
+        app = self.walkthrough('Risk profile')
+        app.button(key='ui_tolerant').click().run()
+        widget = app.selectbox(key='ui_session')
         widget.set_value(widget.options[0]).run()
         self.assertFalse(app.exception)
-        self.assertTrue(any('scaling-development' in m.value for m in app.info))
-        self.assertFalse(any('Profile comparison' in m.label for m in app.metric))
+        self.assertTrue(any(m.label == 'Risk allowance R' and m.value == '1.000' for m in app.metric))
+        self.assertTrue(any(m.label == 'Profile outcome' for m in app.metric))
 
     def test_wrong_visible_probability_is_rejected_with_verified_fallback(self):
         app = self.walkthrough('Explanation check')
@@ -119,7 +133,7 @@ class PresenterUiTests(unittest.TestCase):
         self.assertTrue(any(m.label=='Clean macro-F1' and m.value=='0.2843' for m in app.metric))
         app.radio(key='ui_study').set_value('Sentiment comparison').run()
         self.assertFalse(app.exception)
-        self.assertTrue(any('Independent human validation is unmeasured' in m.value for m in app.warning))
+        self.assertTrue(any('Independent validation is unmeasured' in m.value for m in app.warning))
         table=next(t.value for t in app.dataframe if 'Macro-F1 agreement' in t.value.columns)
         self.assertAlmostEqual(table.iloc[0]['Macro-F1 agreement'],0.25641025641025644)
         self.assertAlmostEqual(table.iloc[1]['Macro-F1 agreement'],0.6015873015873016)
@@ -136,6 +150,7 @@ class PresenterUiTests(unittest.TestCase):
 
     def test_fresh_calibration_diagnosis_has_the_actual_map_bounds(self):
         app = self.walkthrough()
+        app.selectbox(key='ui_source').set_value('fresh_frozen').run()
         self.assertTrue(any('0.5345' in m.value and '0.3140' in m.value for m in app.markdown))
         collection = data.load_cases('fresh_refit')
         result = data.calibration_diagnosis(collection)
@@ -155,6 +170,7 @@ class PresenterUiTests(unittest.TestCase):
                 data.calibration_diagnosis(collection)
         with patch('app.presenter_data.calibration_diagnosis', side_effect=ValueError('Labelled stale trace')):
             app = self.walkthrough()
+            app.selectbox(key='ui_source').set_value('fresh_frozen').run()
             self.assertTrue(any('diagnosis unavailable' in m.value for m in app.info))
             self.assertTrue(any(m.label == 'Model class' and m.value == 'Buy' for m in app.metric))
 

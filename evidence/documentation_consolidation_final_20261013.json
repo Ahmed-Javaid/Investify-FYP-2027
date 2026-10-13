@@ -1,0 +1,23 @@
+{
+  "schema": "investify-documentation-consolidation-final-v1",
+  "checked_utc": "2026-10-13T18:34:14.563105+00:00",
+  "active_entry_documents": 6,
+  "retired_loose_markdown_documents": 44,
+  "retired_folder_readmes": 4,
+  "retired_documentation_generators": 18,
+  "team_guide": "docs/team/MID1_TEAM_GUIDE.md",
+  "technical_directory": "docs/technical",
+  "agent_handoff": "docs/handoffs/AGENT_HANDOFF.md",
+  "groupmate_zip": "deliverables/Investify_Mid1_Groupmates_20261013_v2.zip",
+  "groupmate_file_count": 9,
+  "layout_validation": "evidence/documentation_layout_20261013_run02.json",
+  "groupmate_validation": "evidence/Investify_Mid1_Groupmates_20261013_v2_receipt.json",
+  "existing_delivery_guards_passed": 9,
+  "source_extraction_validation": "evidence/docs_consolidation_20261013_clean_host_verification.json",
+  "validation_archive": "deliverables/archive/20261013/investify_docs_consolidation_validation_20261013.zip",
+  "validation_archive_sha256": "f11d0bbfee00834c8d7d4b8e948a899c2d6a0d3d0e49077f5b7dfa7310bdfed7",
+  "old_groupmate_zip_archived": "deliverables/archive/20261013/Investify_Mid1_Groupmates_20261013.zip",
+  "protected_source_and_evidence_files_unchanged": 808,
+  "report_and_presentation_sources_unchanged": true,
+  "publication_status": "local_uncommitted_changes"
+}

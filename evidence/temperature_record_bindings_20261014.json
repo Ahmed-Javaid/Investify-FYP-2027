@@ -1,0 +1,14 @@
+{
+  "schema": "investify-temperature-record-bindings-v1",
+  "checked_utc": "2026-10-13T20:03:01.173554+00:00",
+  "modes": {
+    "frozen": {
+      "records_sha256": "f2ae9e68a3441e9c0237efff39aceb0db0b87aab66c862a46479760fce98a965",
+      "experiment_sha256": "44c33a65d2843a495be1dd7704775c5f889781e0c608efc9770019109751718e"
+    },
+    "refit": {
+      "records_sha256": "19825e7bcbe4cdf542847ab43a94b1039c9e4d14709ace956fac56011cc41436",
+      "experiment_sha256": "f7beae29283170b5bceafa25663d46d9cd4b6361834c81c090ec1a4d026d03ea"
+    }
+  }
+}

@@ -1,122 +1,36 @@
 \chapter{Testing and Early Validation}
 \label{chap:testing}
-\section{Testing Strategy}
-Positive acceptance and labelled corruptions are both tested. Actual saved decisions support integration checks. Missing-input and corruption fixtures are test inputs, not synthetic substitutes for historical news or real LLM generations.
-\section{Test Levels and Techniques}
-Unit checks cover claim/schema validation, strict mode and fallback. Integration checks cover all 372 records. Local HTTP checks exercise the actual server and verification endpoint. Separate Streamlit AppTest cases exercise real widgets when its runtime is installed \cite{streamlit_apptest}.
-\section{Test Cases}
-Important cases include correct JSON beside wrong displayed confidence, direction, value or class, correct prose beside wrong JSON, omitted essential claims, malformed/non-finite payloads, padding around a contradiction, unsupported sentences, and missing data/runtime. The appendix maps groups to requirements.
-\section{Test Results}
-Separate continuation core contracts have 153 passes with three shuffled-KFold cases excluded in the Python 3.11 viewer runtime. They use explicitly labelled fixtures, including actual temporary Parquet writes and mocked model seams; they are not a full scientific or original-data suite. Six real-corpus loader cases remain skipped because their CSVs are absent. New V4 byte/receipt refusal and CPU tensor-serialization tests retain their own dated scopes; those earlier fixture receipts did not execute original weights; the genuine comparison below is separate.
-On 12 October 2026, the selected suite completed with \textbf{212 passed and zero skipped}, including 20 actual Streamlit AppTest cases. All 372 records retain schema/context/numeric-template and complete-guided-template acceptance. The live HTTP run passed 62 checks, including explanation and separate risk/refusal probes. The comparator audit passed 228 arithmetic/chronology/immutability checks on 76 actual held-out rows and three labelled profile scenarios. Runtime/source hashes and duration are in evidence JSON. This is not the complete scientific suite, a participant study or predictor-performance evaluation.
-
-The default-mode fixture study has 112 cases: 80 corruptions rejected, 16 clean cases accepted, 16 vague-sentence cases accepted, and zero clean cases rejected. Vague-sentence acceptance remains a rate-threshold limitation. Strict mode rejects unsupported sentences but restricts accepted prose to the supported grammar.
-\section{Acceptance Testing / Validation}
-Programmatic acceptance is demonstrated for the explanation and prototype-comparator paths, including actual Streamlit widgets and HTTP health. The actual browser journey has reviewed layout evidence. Hosted CI/CD has separate Actions and delivery receipts. Physical projector review and member walkthroughs remain team tasks outside technical completion; participant comprehension and authorship are not assumed.
-
-The Social Study view's complete/partial flows are also exercised with clearly labelled benchmark/run fixtures: complete data exposes metrics and downloadable evidence; failed outcomes retain coverage/errors and refuse a paired comparison. Those widget tests do not establish actual sentiment-model quality.
-\section{Edge and Failure Cases}
-Correct JSON cannot hide empty text, an omitted decision or missing notice. Invalid claim structure selects verified fallback. Missing/zero feature evidence is preserved; non-finite authoritative probabilities or attributions are rejected. Missing records return errors; absent training inputs disable re-runs. The local adapter's unavailable-provider, malformed/truncated output and retry/fallback paths are tested with labelled fixtures. Incomplete profiles, development-date comparator requests and missing technical inputs are refused. Actual-model behaviour still requires real generations.
-\section{Defects and Corrective Actions}
-Additional regressions expose the calendar-day/session-label purge mismatch, calibration outcomes reaching evaluation, Pandas 3 join-key resolution skew, in-batch duplicate persistence, delimiter-hash ambiguity, start-only news-bound exclusion, implicit UTC assumptions, cache-key row expansion, RSI all-rising missing values and stale portable reports. Corrections preserve historical source and raw/frozen evidence. Current package and trace receipts must match their exact source snapshot; earlier passing XML is not proof for later edits.
-New regressions reproduced payload-over-prose acceptance, unchecked feature values/target class, payload-supplied display coverage, and dilution by repeated correct claims. Independent checking and hard gates correct these defects. The old test requiring correct JSON to override wrong prose was replaced with the corrected regression. Rejection reporting now retains the failed candidate's metrics instead of showing fallback success as the rejection reason.
-\section{Current Validation Status}
-Nine social-selection unit tests use explicitly generated fixtures. They check declared post/annotation provenance, exclusions, chronological freezing, code/data/model identity, initial-label agreement, full paired outputs and null metrics on failures. The actual AI reference pilot contains 200 real MSFT tweets: 117 usable labels (31 positive, 67 neutral, 19 negative) and 83 explicit exclusions. Its frozen split is 93 development/24 held out, with only two negative held-out references. One session pass is recorded with full prompt/input/raw-output/timing and declared model-identity provenance; agreement/kappa are null and independent human validation is absent. The later original-publisher paired comparison is recorded below. These tests are not sentiment-model study results, and schema validation cannot authenticate human independence.
-
-Eight offline-inference tests use a labelled backend fixture. They check actual held-out text routing without human labels, declared preprocessing/class mapping, stable softmax, rejected incomplete/mismatched heads, unknown plans/models, missing weights and retained errors/truncation. Those early fixtures did not execute original weights; actual publisher-byte-bound Torch/Transformers inference now completes both candidates, as recorded below.
-
-Python 3.11.9 and an isolated viewer environment were used, not the locked scientific environment. The viewer was restored from existing E: cached wheels plus two unchanged vendor pure-Python dependency sources/fallbacks, with provenance/licenses retained. Streamlit 1.63.0, NumPy 2.4.6 and Pandas 3.0.6 are frozen separately; dependency consistency passes. The original September raw/store inputs remain absent; a separately identified fresh Alpaca experiment now executes on restored genuine inputs. Local model probes returned no available identifier/completion; no LLM generation is claimed by those probes. The separate fresh science and original social-classifier runs retain actual execution evidence. The report is compiled as an unsigned working draft with layout inspection recorded separately; institutional review is incomplete. Both saved classifier folds remain constant-Buy.
-
-\section{AI Reference Pilot and Saved Calibration Audit}
-The actual AI reference pilot contains 200 real MSFT tweets: 117 usable labels (31 positive, 67 neutral, 19 negative) and 83 explicit exclusions. Its frozen split is 93 development/24 held out, with only two negative held-out references. One session pass is recorded with full prompt/input/raw-output/timing and declared model-identity provenance; agreement/kappa are null and independent human validation is absent. The later original-publisher paired comparison is recorded below.
-Ten additional annotation/import unit tests use labelled fixtures to check raw packet coverage, input/prompt tampering, single-pass null agreement, optional cross-checks and explicit exclusions. The actual raw-label batches are separate research artifacts. The Social Study widget also checks the AI-reference disclosure and missing-inference state.
-
-The saved-artifact audit independently summarizes the preserved 372 historical
-records, all Buy; their historical cause remains unproven. The later genuine
-revision-conservative Alpaca experiment executes both corrected calibration
-modes on matching evaluation dates. Each still produces 186 Buy decisions.
-Actual retained-model, isotonic, label-endpoint, metric and native-TreeSHAP
-replay passes, and every new guided explanation verifies. The raw frozen
-classifier's diverse decisions collapse after its fitted isotonic mappings;
-refit transfer is therefore not required for the fresh observation.
-Five unavailable calibration targets are excluded. The new experiment's clean
-five-day score is below its random baseline, while the deliberate centred
-feature canary fires. Chapter 6 records exact metrics, input/runtime limits and
-the distinction from September results.
-
-The frozen-reference evaluability audit selects neutral as the development-majority comparator, obtaining 15/24 exact held-out AI-reference agreement and macro-F1 0.256410, with zero positive/negative recall. This deterministic comparator is not candidate inference or independently human-validated accuracy. One held-out prediction changes exact agreement by 4.17 percentage points; negative recall moves in 50-point steps. No pair meets the declared token-Jaccard 0.8/minimum five-token heuristic, which does not establish independence or exclude shared events/pretraining overlap. Reference and split hashes are unchanged. The separate generative-model replacement remains pending verified weights and available access; the original-classifier study below is complete.
-
-\section{Teacher Pilot Evidence}
-The six recorded examples, four-training/two-validation split, serving-identity limitations and untrained Phi-3-mini student are documented once in Section~\ref{sec:teacher-pilot}. No training efficacy or human-comprehension result is inferred.
-
-\section{Executed Original-Publisher Social Comparison}
-On 13 October 2026 both pinned original classifiers completed the same 24
-chronologically held-out MSFT posts. The frozen reference contains 7 positive,
-15 neutral and 2 negative AI labels. Source posts, reference labels, exclusions,
-candidate identities, preprocessing and the original V3 split are unchanged.
-
-\begin{table}[htbp]
-\centering
-\small
-\begin{tabular}{lrrrr}
-\toprule
-Candidate & Macro-F1 & Exact agreement & Positive recall & Negative recall \\
-\midrule
-CryptoBERT & 0.2564 & 15/24 & 0/7 & 0/2 \\
-Cardiff & 0.6016 & 16/24 & 4/7 & 1/2 \\
-\bottomrule
-\end{tabular}
-\caption{Agreement with frozen AI reference labels; not independently human-validated accuracy.}
-\end{table}
-
-CryptoBERT predicts neutral on all 24 posts, matching the development-majority
-neutral comparator. Cardiff is the exploratory benchmark leader. A single
-prediction changes exact agreement by 4.17 percentage points, and negative
-recall changes in 50-point steps. Public-post pretraining overlap and shared
-events remain unexcluded. These results do not establish NVDA transfer, return
-prediction, significance, suitability or deployment readiness.
-No predeclared adequacy threshold exists in the retained plan, and the
-deployment selection remains unset pending actual criteria and review.
-
-Both original publisher revisions, weight hashes and all loading-affecting
-tokenizer/config files are verified. Original Cardiff BIN weights were
-losslessly serialized: all 204 tensor keys, dtypes, shapes and raw bytes match.
-Its two unused native pooler parameters are retained during modern loading,
-with exact classifier-logit parity verified. No classifier head is missing,
-mismatched, substituted or randomly initialized. Modern set-valued loader
-diagnostics are normalized for recording; nonempty diagnostics still refuse
-inference.
-
-The first Cardiff loading refusal is retained. Both models reran under a new
-source-bound plan, retaining per-post raw logits, processed-text hashes,
-token counts, truncation, runtime identity and probability outputs.
-Independent receipt/logit comparison reproduces the reported table; repeated
-CryptoBERT outputs are identical. The Social Study view displays recomputed
-recorded scores with AI-reference limitations and download evidence.
-The earlier recorded-social scope has 25 viewer/selector passes, including 21 Streamlit cases; the later guided-demo scope has 28 passes, including 24 AppTest cases. These are overlapping suites;
-37 current loader/pooler checks and nine subtests pass on their declared scopes.
-These scopes overlap earlier evidence and are not summed as a full-suite total.
-
-\section{Current Rebuilt Interface Validation}
-The new one-workspace interface has its own current AppTest scope, separate from the retired mounted-tab interface. Twelve tests exercise route isolation, both fresh and archived sources, both feature families, explicit/cleared profiles, development-session refusal, visible-probability corruption and fallback, stale text/case results, invalid records, actual recorded research scores and failed-study refusal. The first current run has twelve passes. Browser/projector inspection is separately recorded when performed; no participant acceptance is inferred.
-
-\subsection{Test Plan and Release Checks}
-\begin{longtable}{p{0.18\textwidth}p{0.30\textwidth}p{0.42\textwidth}}\toprule Level & Technique & Planned/retained evidence\\\midrule
-Unit/domain & Equivalence partitions and boundaries & Finite probabilities, class argmax, attribution consistency, malformed claims and profile combinations.\\
-Module & Controlled fault injection & Correct JSON beside wrong visible confidence; missing essential claims, unsupported prose and fallback failures.\\
-Integration & Real recorded inputs & Context/template checks on retained records; current case identities and unchanged classifier facts across profile actions.\\
-System & Actual UI and local HTTP & Current AppTest interactions and separately dated portable server endpoint/transport checks.\\
-Scientific & Chronological controlled comparisons & Fixed seed and row sets, six folds/two horizons, deliberate canary, model/scaler/calibration/native-SHAP replay.\\
-Usability and accessibility & Browser/projector walkthrough & Inspect screen density, readable labels and complete flow; genuine person/rehearsal evidence remains pending.\\
-Acceptance & Supervisor/member walkthrough & Confirm baseline, actual ownership and proposal-action closure; no automated test substitutes for these approvals.\\
+\section{Strategy and Test Levels}
+Unit tests exercise validation, formulas and hard rejection gates. Module tests combine records, evidence, profiles and emitted explanations. Streamlit AppTest exercises actual widgets; a localhost HTTP exercise validates the portable pipeline. Source/receipt guards and clean extraction verify artifact reproducibility. Scientific execution and classifier sanity probes are separate from software fixtures.
+\section{Evaluation Metrics Matrix}
+\begin{longtable}{p{0.18\textwidth}p{0.27\textwidth}p{0.26\textwidth}p{0.18\textwidth}}
+\caption{Metrics, evaluation population and measured/planned status.}\label{tab:metrics-matrix}\\\toprule Area & Measures & Evaluation population/protocol & Status\\\midrule
+Prediction & Macro-F1, per-class precision/recall, baseline lift & NVDA chronological folds; random and linear comparators & Measured; weak signal\\
+Calibration & Brier, class distribution, negative log likelihood & Earlier calibration labels; same 186 evaluation cases & Measured; abstention required\\
+Leakage & Control lift/intervals, boundary/fault detection & Six arms, two horizons, fixed folds/settings & Measured; labelled canary fires\\
+Explanation & Numeric/directional fidelity, recall, unverifiable rate; rejection/fallback & Saved cases, deliberate corruptions and construction pilot & Bounded behavior measured; larger generation study later\\
+Social sentiment & Macro-F1 agreement, per-class recall, coverage & Same 24 held-out target-equity references & Exploratory comparison measured\\
+User understanding & Task completion/time, interpretation errors, top-driver identification & Planned participant tasks and expert review & Later evaluation\\
+System & Latency, memory, throughput, parity and setup & Specified target environment and clean-host paths & Setup/path checks measured; target NFRs later\\
 \bottomrule\end{longtable}
-Before delivering a revision: check source syntax, execute relevant changed-path tests, verify evidence/source hashes and secret exclusion, compile/render the report and inspect every changed page, inspect actual UI captures when available, and create a new source snapshot. Old receipts are not overwritten or summed into a full-suite number.
+\section{Current Software Checks}
+The current revision adds calibration-availability/rank tests and full-profile scoring/policy tests. Existing corruption, record, transport and interface regressions remain. Named input/expected/actual cases are listed in Appendix~\ref{app:tests}; final scoped receipts record the exact executed counts. Historical counts are not repeated as if they were one current suite. The hosted matrix proves its committed snapshot; new local changes require their own checks before publication.
+\section{Social Study and Diagnostic Probes}
+\begin{longtable}{p{0.32\textwidth}p{0.28\textwidth}p{0.29\textwidth}}
+\caption{Social study population, split and original-classifier outcomes.}\label{tab:social-study}\\\toprule Item & Value & Interpretation\\\midrule
+Acquired / usable / excluded & 200 / 117 / 83 & Exclusions are retained with reasons\\
+Usable reference classes & 31 positive / 67 neutral / 19 negative & Imbalanced target-equity references\\
+Development / held out & 93 / 24 & Frozen chronological selection\\
+Held-out classes & 7 positive / 15 neutral / 2 negative & Negative recall moves in 50-point steps\\
+CryptoBERT & Macro-F1 0.2564; exact 15/24 & All held-out predictions neutral\\
+Cardiff & Macro-F1 0.6016; exact 16/24 & Exploratory leader, not final deployment selection\\
+\bottomrule\end{longtable}
+The reference-construction method is disclosed in Appendix~\ref{app:handbook}. Scores measure agreement with that reference, not independent human-validated accuracy or NVDA return prediction.
 
-\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figures/mid1_social_agreement.png}\caption{Original-candidate macro-F1 agreement against the same 24 frozen AI references. Only two negative references and absent independent human validation limit interpretation; deployment selection remains open.}\end{figure}
-
-\subsection{Header and Calibration-Diagnosis Revision}
-The current scope has 42 passes: fourteen primary-interface cases, twenty-four preserved legacy cases and four recorded-social selectors. Added checks expose actual map bounds and refuse stale trace identities. Earlier receipts retain their own sources and are not summed into this total.
-
-Ruff 0.14.0 checks the current UI modules and tests, together with the calibration, browser, packaging and delivery tools. E4, E9 and F rules have zero unresolved findings. Two E402 annotations explain source-path bootstrap imports. Hosted CI uses the pinned checker; actual run results are recorded separately. Genuine member acceptance remains a team task.
-
-The separate actual Edge journey captures the four-step walkthrough, two explicit profile examples, explanation rejection/fallback and restored-candidate acceptance, the recorded studies and Design. Desktop document widths and header clearance are checked; original PNGs are visually reviewed. This supplements AppTest without adding those interactions to the 42-test count. It does not establish physical projector legibility, participant usability, human understanding or supervisor acceptance.
+A new offline sanity check uses five authored crypto-text probes, kept separate from the frozen equity benchmark. The original CryptoBERT checkpoint returns both positive and negative classes: the two intended-positive and two intended-negative probes match their diagnostic direction. The nominal neutral probe returns negative. This rules out an invariant neutral output on every input, while showing the probes are not a validated accuracy set. We retain the original 24-post result and do not relabel the benchmark to improve it.
+\section{Failure and Recovery Evidence}
+The demonstration pairs correct factual text with a deliberately incorrect visible probability beside correct JSON. The candidate fails and the checked fallback retains the authoritative probability. Edits/case changes remove stale verification. Missing records, partial model outputs and invalid profiles withhold replacements. Temperature calibration preserves raw class order; actual near-uniform confidence abstains under both profile extremes. Controlled 0.70-confidence Buy/Sell cases demonstrate that allowance changes abstention without reversing direction or mutating probabilities.
+\section{Defects Corrected}
+Corrections address payload-over-prose acceptance, missing/non-top-k evidence checks, retained rejection reporting, stale state, label-endpoint purging, calibration-outcome availability, and platform-specific provenance-path handling. The present revision adds multiclass diagnosis/abstention and replaces risk-dependent sentiment weighting in the primary interface. Old model/data/label artifacts remain separately identified.
+\section{Validation Boundary}
+The live module and engineered failures are observable and tested. Predictor usefulness, unrestricted generated-text quality, population-specific suitability and participant comprehension are separate evaluation goals. Physical rehearsal/projector checks and formal meeting/signature records remain team activities.

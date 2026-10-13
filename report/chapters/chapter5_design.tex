@@ -1,79 +1,28 @@
 \chapter{Software Design Specification}
 \label{chap:design}
-\section{Design Scope and Rationale}
-This design specification describes the implemented Mid-1 record, evidence, profile and explanation-checking module. The handbook permits the design models appropriate to the project; the selected component, domain, layered, data-flow, sequence, activity, state and deployment models answer different implementation questions. A relational database is not implemented: the schema diagram describes the actual JSON/Parquet artifact contracts and digest relationships. No screen or diagram implies a trained student, a production service or supervisor approval.
-
-The key decision is to keep recorded classifier facts authoritative. A profile changes a separate retrospective comparator, and an explanation cannot overwrite model probabilities. The input validator checks probabilities, class argmax, feature/attribution consistency and missing values before a view appears. The verifier checks displayed text and structured claims independently; the emission path retains a rejected candidate while checking its replacement.
-
-\section{Overall Pipeline and Conceptual Domain}
-\begin{figure}[htbp]\centering\input{figures/mid1_pipeline}\caption[Scientific pipeline and live-module boundary]{Current end-to-end boundary: separately executed price/news preparation, sentiment/features, observed-label evaluation and model traces feed recorded artifacts; the live module checks their explanations. Social/teacher studies remain separate.}\end{figure}
-The fresh scientific increment establishes a real input-to-model path, rather than only an interface replay. Price/news admission, exchange calendars, strict-prior joins, label-end purge, fixed leakage arms, model/calibration and native SHAP produce retained outputs. The current presentation consumes those outputs without fitting a classifier. Original September bytes and historical vendor availability are not implied.
-
-\begin{figure}[htbp]\centering\input{figures/mid1_equity_domain}\caption[Conceptual equity-to-explanation domain]{Conceptual equity-to-explanation domain. The current implementation realizes these concepts through typed records and file contracts; the following class model gives the concrete live-module objects.}\end{figure}
-An equity study has dated market observations, derived feature evidence and a model run. A recorded decision case connects probabilities and attributions to a particular session/source. Explanation checking consumes that case. The prototype profile is an independent comparison, as the concrete class model below shows; no investor account or personalized classifier is invented.
-
-\section{Component and Layer Design}
-\begin{figure}[htbp]\centering\input{figures/mid1_components}\caption[Implemented components and interfaces]{Implemented component dependencies. The presentation controller calls the recorded-data adapter, verification pipeline and independent profile comparator.}\label{fig:components}\end{figure}
-The main entry point is \nolinkurl{app/streamlit_app.py}. \nolinkurl{app/presenter.py} renders only the selected workspace and walkthrough step. \nolinkurl{app/presenter_data.py} reads a fixed source registry, validates every recorded decision and refuses duplicate sessions, inconsistent model collections or changed bytes. A collection identity includes the full artifact hash; this prevents a check for one source revision from appearing as a check for another.
-
-\begin{figure}[htbp]\centering\input{figures/mid1_layers}\caption[Layer responsibilities]{Responsibilities from presentation through application and domain contracts to recorded artifacts. Offline scientific execution is separate from page rendering.}\end{figure}
-Streamlit provides the current presentation interface; the original standard-library HTTP demonstration remains an alternate historical interface. Neither opening the UI nor reading a study runs model training. Scientific execution uses its separately prepared runtime and original verified publisher weights, while the current interface reads completed results.
-
-\section{Domain Model}
-\begin{figure}[htbp]\centering\input{figures/mid1_domain}\caption[Live-module class/domain model]{Implemented domain objects and their principal associations. A case collection owns session-indexed records; each record contains ranked feature contributions. Research-study evidence remains separate from the live classifier.}\label{fig:domain}\end{figure}
-\texttt{DecisionRecord} is the factual boundary. Its dataclass rejects impossible probability or attribution states; nested dictionaries remain ordinary mappings and downstream functions treat them as read-only. \texttt{Explanation} contains visible text and an optional claim payload. \texttt{VerificationResult} retains per-claim verdicts and four metrics. \texttt{EmittedExplanation} carries accepted or verified fallback output plus the rejected candidate/report when present. A \texttt{RiskProfile} contains capacity, tolerance, caps and the reconciled score; its result is a separate comparison rather than a new prediction.
-
-\section{Data Flow and Artifact Schema}
-\begin{figure}[htbp]\centering\input{figures/mid1_dataflow}\caption[Live-module logical data flow]{Logical data flow for a selected case. The current text and JSON meet at the verifier; profile answers flow to a separate comparator.}\label{fig:dataflow}\end{figure}
-The reviewer supplies a source/session choice, optional profile answers and a candidate explanation. Validation reads the recorded data store, context supplies maintained meanings, verification checks the selected record, and the comparator uses earlier scaling rows. These paths return visible evidence, checked prose and comparison outputs. Social/teacher data is read only in its own research workspace.
-
-\begin{figure}[htbp]\centering\input{figures/mid1_schema}\caption[Artifact schema and digest relationships]{Actual artifact relationships expressed through source, plan, model and run digests. This is a file-schema design, not a claim of an implemented SQL database.}\label{fig:schema}\end{figure}
-A scientific run binds input, configuration, source and runtime identities. Its model, scaler and calibration traces and decision records are retained under a new run directory. The social benchmark binds a frozen plan; each candidate bundle binds that plan, model revision, raw logits and execution receipts. Teacher packets bind record facts and split identities; accepted prose is exported to training/validation with held-out test dates excluded.
-
-\subsection{Data Dictionary}
-\begin{longtable}{p{0.25\textwidth}p{0.29\textwidth}p{0.36\textwidth}}\toprule Item & Representation & Rule and meaning\\\midrule
-Record identity & Source, session, artifact SHA256 & One ticker/horizon/model per collection; sessions unique.\\
-Class probabilities & Buy/Hold/Sell mapping & Finite nonnegative values sum to one within $10^{-6}$; class equals argmax.\\
-Feature vector & Named numeric/missing values & Five technical and six news features; absent evidence remains absent.\\
-SHAP vector & Named raw-score contributions & Same feature keys; base plus contributions reconstruct raw output within $10^{-4}$.\\
-Top contributors & Ranked contribution objects & Nonzero contributions agree with feature values, magnitude order and direction.\\
-Candidate explanation & Text and optional JSON & Visible prose and payload checked separately; known contradictions cannot be diluted.\\
-Verification & Claim checks and metrics & Numeric fidelity, direction, coverage and unverifiable rate plus hard failures.\\
-Profile & Five capacity and three tolerance answers & No unanswered default; caps and smaller-axis reconciliation disclosed.\\
-Comparator & Scaling manifest and two scores & Earlier 80\% rows fit scaling; later rows scored; no outcome accuracy implied.\\
-Study reference & Post ID, text, label/exclusion & AI provenance declared; no independent human-label claim.\\
-Publisher/run identity & Revision, SHA256, logits, receipts & Missing/changed weights, partial runs and incompatible metadata refuse comparison.\\
-\bottomrule\end{longtable}
-
-\section{Behavior and Sequence Design}
-\begin{figure}[htbp]\centering\input{figures/mid1_sequence}\caption[Explanation-check system sequence]{System sequence for the live explanation check, including the retained rejection and independently checked fallback.}\label{fig:ssd}\end{figure}
-The controller receives the current candidate, not an earlier cached result. \nolinkurl{explain/pipeline.py:emit} invokes \nolinkurl{explain/verifier.py:verify}. A passing candidate is emitted; a failure keeps its report, renders the deterministic template and verifies it independently. If the template check itself fails, the operation raises an error and the UI claims no verified output.
-
-\begin{figure}[htbp]\centering\input{figures/mid1_activity}\caption[Accepted and fallback activity flow]{Activity flow and the two visible success paths. The failure path does not silently accept the candidate.}\end{figure}
-\begin{figure}[htbp]\centering\input{figures/mid1_state}\caption[Explanation-view state transitions]{Explanation-view state machine. A case or text edit invalidates the visible check; only a result for the current identity can appear as accepted.}\end{figure}
-The candidate cache identity combines source, session, artifact digest and text digest. Changing cases resets the candidate to that record's template; editing text hides a previous verdict until checking runs again. Independent profile state can persist between steps without altering classifier facts.
-
-\section{Interface and Failure Contracts}
-\begin{longtable}{p{0.26\textwidth}p{0.34\textwidth}p{0.30\textwidth}}\toprule Operation & Result & Failure behavior\\\midrule
-Select recorded case & Validated record/context & Missing, duplicate, inconsistent or changed input shows an error; no substituted case.\\
-Check explanation & Candidate/report or verified fallback & Known contradiction, malformed claims, missing essential claims and strict unsupported prose reject.\\
-Apply profile & Reconciled profile and separate blend & Incomplete answers produce no score; development sessions refuse comparison.\\
-Read study & Recomputed receipt-bound metrics & Invalid/partial evidence withholds comparison; no neutral substitute for failures.\\
-Optional local generation & Explicit model request and checked output & Unconfigured model gives labelled deterministic guide; retry/timeout/identity limits remain explicit.\\
-\bottomrule\end{longtable}
-The portable historical API additionally exposes catalogue, record, verification, guide and profile/comparator endpoints. It rejects unknown routes, malformed/nonfinite JSON and oversized bodies. Those contracts and their live HTTP checks remain in the dated source handover; they do not establish browser visual quality or production security.
-
-\section{Deployment and Security Design}
-\begin{figure}[htbp]\centering\input{figures/mid1_deployment}\caption[Local deployment topology]{Current local topology. The viewer binds loopback; publisher weights and temporary builds stay on E:. Scientific execution and optional generation are distinct operations.}\end{figure}
-The launch script binds \nolinkurl{127.0.0.1:8507}, disables usage telemetry and keeps cache/scratch on E:. It refuses an occupied port. The UI has no broker/account access, authentication or transaction path. Profiles stay in session memory; no profile database is implemented. Credentials stay in ignored local configuration and are excluded from review archives. This is a local review topology; a production target and authentication/deployment threat model remain later work.
-
-\section{Alternatives and Design Evolution}
-\begin{longtable}{p{0.22\textwidth}p{0.32\textwidth}p{0.36\textwidth}}\toprule Decision & Alternative considered & Rationale and remaining limitation\\\midrule
-One active workspace & All tabs mounted at once & Reduces competing controls and unnecessary hidden work; preserves explicit movement through the core demonstration.\\
-Independent prose/JSON checks & Trust structured claims alone & A wrong displayed probability can coexist with correct JSON; the regression and live failure demonstrate the corrected boundary.\\
-Deterministic fallback & Emit a failed candidate & Keeps supported record facts visible and retains the failure report; arbitrary language understanding is unproven.\\
-Separate profile comparator & Relabel saved model output & Demonstrates prototype weighting without falsely claiming personalized XGBoost or suitable investor actions.\\
-Artifact storage & Introduce SQL persistence & Actual interfaces consume immutable study files and transient profiles; adding a database would imply unsupported implementation.\\
-Recorded studies in separate workspace & Train during presentation & Preserves reproducible source identities and a short core demonstration; live generation/training is not inferred.\\
-\bottomrule\end{longtable}
-The previous UI exposed four densely populated research tabs, then a guided wrapper. User review identified clutter; the present revision isolates the four-step case walkthrough and moves study details to their own workspace. This is an authorized presentation/design change. Scientific inputs, labels, model identities, thresholds and historical evidence remain unchanged.
+\section{Product Architecture and Current Slice}
+Figure~\ref{fig:planned-architecture} shows the six-module product design and marks later integrations. The current slice executes record loading, evidence presentation, profile/policy calculation and explanation recovery. Recorded scientific outputs enter through explicit artifact contracts; model training is not a page-load action.
+\begin{figure}[htbp]\centering\input{figures/mid1_planned_architecture}\caption{Six-module product architecture; dashed elements represent later integration.}\label{fig:planned-architecture}\end{figure}
+\begin{figure}[htbp]\centering\input{figures/mid1_pipeline}\caption{Current data-to-record and record-to-interface pipeline.}\label{fig:pipeline}\end{figure}
+\section{Components and Layers}
+The interface calls context, profile and verification services. Scientific routines produce the versioned records read by those services. Local adapters and study readers use declared identities rather than silent substitution.
+\begin{figure}[htbp]\centering\input{figures/mid1_components}\caption{Implemented components and their interfaces.}\label{fig:components}\end{figure}
+\begin{figure}[htbp]\centering\input{figures/mid1_layers}\caption{Presentation, application, domain and artifact layers.}\label{fig:layers}\end{figure}
+\section{Domain and Class Model}
+The class model includes attributes and operations used by the code. Multiplicities distinguish a collection of records, a record's contributions and candidate/verification relationships. Profile evaluation is a dependency on a record, not a mutation of classifier probabilities.
+\begin{figure}[p]\centering\input{figures/mid1_domain}\caption{Implementation class model with attributes, operations and multiplicities.}\label{fig:classes}\end{figure}
+\section{Data Flow and File Schema}
+The schema identifies experiment and composite case identities, keyed feature maps, candidate digests and result ownership. These are JSON/file/session contracts, not a claimed SQL database. Relationship labels and cardinalities express how the actual loader and checker bind their data.
+\begin{figure}[htbp]\centering\input{figures/mid1_dataflow}\caption{Data flow through the current checking and policy path.}\label{fig:dataflow}\end{figure}
+\begin{figure}[p]\centering\input{figures/mid1_schema}\caption{Artifact/session schema with keys and relationship cardinalities.}\label{fig:schema}\end{figure}
+\section{Behavioral Design}
+The sequence starts with the actual Check explanation click and uses alternative fragments for acceptance and recovery. The activity includes invalid input and fallback-verification failure. The state model includes initialization, stale results, errors and session termination.
+\begin{figure}[p]\centering\input{figures/mid1_sequence}\caption{Explanation-check sequence with explicit user trigger and alternative outcomes.}\label{fig:sequence}\end{figure}
+\begin{figure}[p]\centering\input{figures/mid1_activity}\caption{Checking activity, including verified fallback and error termination.}\label{fig:activity}\end{figure}
+\begin{figure}[p]\centering\input{figures/mid1_state}\caption{Case/candidate verification state transitions.}\label{fig:state}\end{figure}
+\section{Deployment and Design Evolution}
+The localhost browser communicates with Streamlit. Core modules read registered artifacts and retain profile/candidate state in memory. CI produces downloadable review artifacts; it does not host the application. The revised deployment model includes the core-to-artifact link.
+\begin{figure}[htbp]\centering\input{figures/mid1_deployment}\caption{Current localhost deployment and artifact-delivery boundary.}\label{fig:deployment}\end{figure}
+The proposal's broad product design is retained, while the implemented slice now has complete evidence, independent prose/JSON checks, a full scored profile and uncertainty gating. The prior risk-dependent sentiment blend and isotonic outputs remain historical comparisons. Broader conversation, social divergence and production service work are explicitly scheduled.
+\section{Algorithms and Contracts}
+Record validation precedes display. Checking retains candidate errors, constructs fallback and verifies it independently. Temperature fitting admits only earlier-matured calibration labels. Profile scoring validates every answer, calculates weighted capacity/caps and published item totals, reconciles restrictive limits and evaluates confidence without changing direction. Each boundary carries identity and failure conditions used by its tests.

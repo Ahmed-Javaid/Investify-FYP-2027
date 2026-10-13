@@ -42,6 +42,9 @@ def main():
     if args.working_tree:
         listing += ['--cached', '--others', '--exclude-standard']
     tracked = subprocess.check_output(listing).decode().split('\0')
+    if args.working_tree:
+        deleted = set(subprocess.check_output(['git', '-C', str(CODE), 'ls-files', '-z', '--deleted']).decode().split('\0'))
+        tracked = [relative for relative in tracked if relative not in deleted]
     tracked = [relative for relative in tracked if relative and relative != 'source_revision.json']
     with tempfile.TemporaryDirectory(prefix='investify-package-', dir=scratch) as directory:
         stage = Path(directory).resolve()
@@ -63,7 +66,7 @@ def main():
         if args.working_tree:
             revision.update(schema='investify-working-source-revision-v2', working_tree=True)
         (bundle / 'code/source_revision.json').write_text(json.dumps(revision, indent=2), encoding='utf-8')
-        for folder in ('report', 'planning', 'presentation'):
+        for folder in ('report', 'presentation', 'docs/team', 'docs/technical', 'docs/handoffs'):
             for source in (ROOT / folder).rglob('*'):
                 if source.is_file() and source.suffix not in ('.aux', '.log', '.out', '.toc', '.synctex'):
                     relative = source.relative_to(ROOT)
@@ -72,14 +75,7 @@ def main():
                         raise ValueError('Report/planning path escapes its declared root')
                     target.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copyfile(source, target)
-        for name in ('presentation_outline.json', 'social_annotation_protocol.json', 'PROBLEM_AND_CONTRIBUTION.md',
-                     'LLM_DESIGN.md', 'MODELS_AND_EVALUATION.md', 'DOMAIN_NOTES.md', 'SOCIAL_CORPUS_ACCESS.md', 'REPORT_METADATA.md',
-                     'AI_SENTIMENT_PILOT.md', 'CALIBRATION_INVESTIGATION.md', 'OFFICIAL_MODEL_POLICY.md', 'ASSISTANT_TEACHER_PILOT.md',
-                     'DEMO_AND_DEFENCE_GUIDE.md', 'CODE_WALKTHROUGH.md', 'MID1_REVIEW_QUESTIONS.md', 'REQUIREMENTS_TRACEABILITY.md',
-                     'ORIGINAL_MID_TRACEABILITY.md', 'PANEL_RESPONSE_MATRIX.md', 'WORK_DIVISION.md', 'CI_CD_STATUS.md', 'MID1_90_95_ROADMAP.md',
-                     'MEMBER_PREPARATION_PACK.md', 'MEMBER_PREPARATION_AHMED_JAVAID.md', 'MEMBER_PREPARATION_RAFAY_UL_HAQ.md',
-                     'MEMBER_PREPARATION_SOBAN_AHMAD.md', 'MID1_FUNCTIONAL_STATUS.md', 'SCIENCE_CORRECTIONS_20261012.md', 'SOCIAL_V4_RUNBOOK.md',
-                     'MID1_TECHNICAL_COMPLETION.md', 'MID1_TEAM_TODO.md', 'current_delivery.json',
+        for name in ('presentation_outline.json', 'social_annotation_protocol.json', 'current_delivery.json',
                      'stocknet_source_access.json', 'stocknet_source_access_v2.json'):
             target = bundle / 'deliverables' / name
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -121,6 +117,14 @@ def main():
                      'current_tests_teacher_20261012.xml', 'teacher_streamlit_tests_20261012.xml', 'teacher_dataset_readiness_20261012.json',
                      'model_policy_cleanup_20261012.json'):
             shutil.copyfile(ROOT / 'evidence' / name, bundle / 'evidence' / name)
+        for pattern in ('documentation_*', 'requirements_consolidated_*'):
+            for source in sorted((ROOT / 'evidence').glob(pattern)):
+                if source.is_file() and source.suffix == '.json':
+                    shutil.copyfile(source, bundle / source.relative_to(ROOT))
+        archive_index = ROOT / 'docs/archive/20261013_before_consolidation/INDEX.txt'
+        target_index = bundle / archive_index.relative_to(ROOT)
+        target_index.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(archive_index, target_index)
         for source in sorted((ROOT / 'evidence').glob('background_*')):
             if source.is_file() and source.suffix in ('.json', '.xml', '.txt'):
                 shutil.copyfile(source, bundle / 'evidence' / source.name)
@@ -145,7 +149,7 @@ def main():
                         target = bundle / child.relative_to(ROOT)
                         target.parent.mkdir(parents=True, exist_ok=True)
                         shutil.copyfile(child, target)
-        for pattern in ('fresh_*', 'social_*', 'guided_demo_*', 'calibration_class_prior_*', 'calibration_global_bounds_*', 'calibration_bounds_native_probe_*', 'originals_preservation_browser*', 'proposal_work_division_*', 'equal_member_allocation_*', 'member_allocation_visual_*', 'fall_report_metadata_*', 'metadata_visual_*', 'technical_*', 'report_*', 'handbook_*', 'presenter_*', 'mid1_*'):
+        for pattern in ('fresh_*', 'social_*', 'guided_demo_*', 'calibration_class_prior_*', 'calibration_global_bounds_*', 'calibration_bounds_native_probe_*', 'originals_preservation_browser*', 'proposal_work_division_*', 'equal_member_allocation_*', 'member_allocation_visual_*', 'fall_report_metadata_*', 'metadata_visual_*', 'technical_*', 'report_*', 'handbook_*', 'presenter_*', 'mid1_*', 'temperature_*', 'cryptobert_sanity_*', 'revision_*', 'requirement_anchor_*', 'requirements_revision_*'):
             for source in sorted((ROOT / 'evidence').glob(pattern)):
                 if source.is_file() and source.suffix in ('.json', '.xml', '.txt', '.log'):
                     shutil.copyfile(source, bundle / 'evidence' / source.name)
@@ -153,9 +157,9 @@ def main():
         current_report = (ROOT / report_receipt['output']).resolve()
         if (not current_report.is_relative_to(ROOT / 'deliverables')
                 or not report_receipt['all_pages_visually_checked']
-                or report_receipt['status'] != 'compiled_and_layout_reviewed_unsigned_working_draft'
+                or report_receipt['status'] not in ('compiled_and_layout_reviewed_unsigned_working_draft', 'compiled_and_layout_reviewed_submission_copy')
                 or hashlib.sha256(current_report.read_bytes()).hexdigest() != report_receipt['pdf_sha256']):
-            raise ValueError('Current report must match its reviewed working-draft receipt')
+            raise ValueError('Current report must match its reviewed source/PDF receipt')
         shutil.copyfile(current_report, bundle / 'deliverables' / current_report.name)
         deck_receipt = json.loads(args.presentation_receipt.read_text(encoding='utf-8'))
         current_deck = (ROOT / deck_receipt['output']).resolve()
@@ -171,14 +175,12 @@ def main():
                         or hashlib.sha256(source.read_bytes()).hexdigest() != expected):
                     raise ValueError('Compiled artifact source changed since visual review: ' + relative)
         shutil.copyfile(ROOT / 'README.md', bundle / 'README.md')
-        shutil.copyfile(ROOT / 'deliverables/README.md', bundle / 'deliverables/README.md')
-        continuation = ROOT / 'deliverables/mid_eval_continuation_evidence_20261012.pdf'
+        continuation = ROOT / 'deliverables/archive/20261013/mid_eval_continuation_evidence_20261012.pdf'
         continuation_qa = json.loads((ROOT / 'evidence/background_continuation_pdf_verification_20261012.json').read_text(encoding='utf-8'))
         if not continuation_qa['all_pages_visually_checked'] or hashlib.sha256(continuation.read_bytes()).hexdigest() != continuation_qa['pdf_sha256']:
             raise ValueError('Continuation brief must match its completed render/visual receipt')
         shutil.copyfile(continuation, bundle / 'deliverables' / continuation.name)
-        shutil.copyfile(ROOT / 'deliverables/HANDOVER_GUIDE.md', bundle / 'HANDOVER.md')
-        brief = ROOT / 'deliverables/mid_eval_evidence_brief_20261012.pdf'
+        brief = ROOT / 'deliverables/archive/20261013/mid_eval_evidence_brief_20261012.pdf'
         qa = json.loads((ROOT / 'evidence/mid_eval_evidence_brief_verification_20261012.json').read_text(encoding='utf-8'))
         if not qa['all_pages_visually_checked'] or hashlib.sha256(brief.read_bytes()).hexdigest() != qa['pdf_sha256']:
             raise ValueError('Working brief must match its completed render/visual receipt')

@@ -10,12 +10,32 @@ from investify.risk_comparator import build_comparator
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACTS = ROOT / 'artifacts'
 FRESH = ARTIFACTS / 'scientific_runs/alpaca_revision_conservative_20261012_run01/recovery01'
+TEMPERATURE = ARTIFACTS / 'scientific_runs/temperature_calibration_20261013_run01'
 SOURCES = {
+    'temperature_frozen': ('Alpaca, multiclass calibration (frozen)', TEMPERATURE / 'frozen/decision_records.json'),
+    'temperature_refit': ('Alpaca, multiclass calibration (refit)', TEMPERATURE / 'refit/decision_records.json'),
     'fresh_frozen': ('Fresh Alpaca, frozen classifier', FRESH / 'engine_frozen_alpaca/decision_records.json'),
     'fresh_refit': ('Fresh Alpaca, refit classifier', FRESH / 'engine_refit_alpaca/decision_records.json'),
     'alpaca': ('Archived Alpaca', ARTIFACTS / 'decision_records_alpaca.json'),
     'fnspid': ('Archived FNSPID', ARTIFACTS / 'decision_records.json'),
 }
+
+
+def temperature_diagnosis(collection):
+    if collection.source not in ('temperature_frozen', 'temperature_refit'):
+        raise ValueError('No temperature experiment for this case')
+    mode = 'frozen' if collection.source == 'temperature_frozen' else 'refit'
+    path = TEMPERATURE / mode / 'experiment.json'
+    bindings = read_json(ROOT.parent / 'evidence/temperature_record_bindings_20261014.json')['modes'][mode]
+    if sha256(path.read_bytes()).hexdigest() != bindings['experiment_sha256'] or collection.sha256 != bindings['records_sha256']:
+        raise ValueError('Temperature diagnosis does not match verified record/experiment bytes')
+    result = read_json(path)
+    trace = FRESH / ('engine_frozen_alpaca' if mode == 'frozen' else 'engine_refit_alpaca') / 'scientific_trace.json'
+    if result['original_trace_sha256'] != sha256(trace.read_bytes()).hexdigest():
+        raise ValueError('Temperature diagnosis differs from its original source')
+    if result['argmax_preserved_rows'] != len(collection.records):
+        raise ValueError('Temperature diagnosis row count differs')
+    return result
 
 @dataclass(frozen=True)
 class CaseCollection:
@@ -42,6 +62,11 @@ def load_cases(source):
         raise ValueError('Unknown experiment source')
     path = SOURCES[source][1]
     raw = path.read_bytes()
+    if source.startswith('temperature_'):
+        mode = 'frozen' if source == 'temperature_frozen' else 'refit'
+        bindings = read_json(ROOT.parent / 'evidence/temperature_record_bindings_20261014.json')['modes'][mode]
+        if sha256(raw).hexdigest() != bindings['records_sha256']:
+            raise ValueError('Corrected calibration records differ from their verified identity')
     payload = read_json(path)
     rows = payload['decision_records']
     if not rows:

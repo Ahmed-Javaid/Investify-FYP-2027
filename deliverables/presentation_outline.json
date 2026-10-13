@@ -1,16 +1,19 @@
 {
   "title": "Investify FYP-1 Mid-1",
   "status": "Compiled and layout reviewed technical Mid-1 deck; team tasks remain separate.",
-  "date_prepared": "2026-10-13",
+  "date_prepared": "2026-10-14",
   "assessment_date": null,
   "source_entry": "presentation/main.tex",
-  "compiled_output": "deliverables/Investify_FYP1_Mid_Presentation_Technical_Completion_20261013.pdf",
+  "compiled_output": "deliverables/Investify_FYP1_Mid_Presentation_Revised_20261014.pdf",
   "slides": [
     {
       "number": 1,
       "title": "Investify",
-      "speaker_notes": "Assigned presenter: Ahmed Javaid. Planned speaking: 30 seconds. Introduce the confirmed team and supervisor. This is FYP-1 Mid-Evaluation in Fall 2026. The team-selected report date is Sunday, 11 October 2026; the revision and tests retain their actual dates, including 12-13 October. The formal committee appointment is separate. The project is an educational prototype. It does not execute orders or establish investment suitability. Working implementation, diagrams and assessment drafts include assistant contributions. Genuine student review and ownership evidence remain pending. Sources: planning/CHECKPOINT.md and report/main.tex.",
-      "sources": [],
+      "speaker_notes": "Assigned presenter: Ahmed Javaid. Planned speaking: 30 seconds. Introduce the confirmed team and supervisor. This is FYP-1 Mid-Evaluation in Fall 2026. The team-selected report date is Sunday, 11 October 2026; the revision and tests retain their actual dates, including 12-13 October. The formal committee appointment is separate. The project is an educational prototype. It does not execute orders or establish investment suitability. The team delivered its assigned module parts and continues practice. Development assistance is disclosed in the report. Sources: report/main.tex and docs/team/MID1_TEAM_GUIDE.md.",
+      "sources": [
+        "report/main.tex",
+        "docs/team/MID1_TEAM_GUIDE.md"
+      ],
       "body_source": "presentation/main.tex",
       "assigned_presenter": "Ahmed Javaid",
       "planned_seconds": 30,
@@ -19,9 +22,10 @@
     {
       "number": 2,
       "title": "Problem and research contribution",
-      "speaker_notes": "Assigned presenter: Rafay Ul Haq. Planned speaking: 60 seconds. FinBERT provides news sentiment, XGBoost classifies the feature vector, and TreeSHAP supplies model attributions. Explain the engineering contribution without claiming invention of these methods or established research novelty. An explanation can be numerically consistent without being useful or causal. The related-work chapter compares the research components and discusses the remaining novelty review. Research sources in that chapter include FinBERT arXiv:1908.10063 and TreeSHAP arXiv:1802.03888.",
+      "speaker_notes": "Rafay, 60 seconds. Explain the implemented temporal and verification contributions; distinguish planned divergence and human outcomes.",
       "sources": [
-        "report/chapters/chapter2_research.tex; deliverables/PROBLEM_AND_CONTRIBUTION.md"
+        "report/chapters/chapter1_introduction.tex",
+        "report/chapters/chapter2_research.tex"
       ],
       "body_source": "presentation/main.tex",
       "assigned_presenter": "Rafay Ul Haq",
@@ -31,9 +35,9 @@
     {
       "number": 3,
       "title": "Scope and acceptance checks",
-      "speaker_notes": "Assigned presenter: Ahmed Javaid. Planned speaking: 60 seconds. The four record collections preserve historical and fresh frozen/refit identities. There are 186 decisions in each evaluation collection, not independent experiments to sum as a single sample. The risk-dependent blend is a separate retrospective prototype and does not modify the classifier probabilities. No default questionnaire responses are supplied. Social inputs have not been integrated into the news-only core. Original Phi-3-mini inference and QLoRA training remain unmeasured.",
+      "speaker_notes": "Ahmed, 60 seconds. New multiclass records are separate from preserved isotonic failures. The full FYP and useful forecasting are distinct goals.",
       "sources": [
-        "report/chapters/chapter4_requirements.tex; code/tests/test_presenter_ui.py"
+        "report/chapters/chapter4_requirements.tex"
       ],
       "body_source": "presentation/main.tex",
       "assigned_presenter": "Ahmed Javaid",
@@ -43,9 +47,10 @@
     {
       "number": 4,
       "title": "Mid-1 deliverables",
-      "speaker_notes": "Assigned presenter: Ahmed Javaid. Planned speaking: 70 seconds. Table 1a asks for report version 1.0 and suitable design artifacts rather than every listed alternative. The audit maps 34 requirements to actual evidence or an explicit open condition. Mid-1 contributes 20 percent of FYP-1. The 45 percent implementation expectation belongs to Final-1, not this checkpoint. Show the report and explain why file schemas rather than a SQL database describe this iteration. Form 2 also asks for a genuine member code walkthrough and contribution evidence. Generated files do not establish that ownership.",
+      "speaker_notes": "Ahmed, 70 seconds. Connect the report artifacts to code. Hosted receipts prove their committed snapshots; current local source needs its matching new delivery.",
       "sources": [
-        "sources/BS-FYP-Handbook-2026_DRAFT.pdf pp.11,27,37-38; planning/HANDBOOK_MID1_AUDIT.md"
+        "sources/Mid_Eval/FYP-1-Mid-Assessment-Guidelines-and-Rubrics.pdf",
+        "evidence/handbook_mid1_audit_20261013.json"
       ],
       "body_source": "presentation/main.tex",
       "assigned_presenter": "Ahmed Javaid",
@@ -55,9 +60,9 @@
     {
       "number": 5,
       "title": "System architecture",
-      "speaker_notes": "Assigned presenter: Soban Ahmad. Planned speaking: 50 seconds. Trace one concrete artifact from offline scientific output to CaseCollection, DecisionRecord and FeatureContext. Model fitting and actual SHAP replay happened offline and have dated receipts. Opening the UI does not train a model, fetch market data or request an unconfigured LLM. The optional local generation adapter is implemented but candidate student performance remains pending. The separate social study has its own inputs and labels.",
+      "speaker_notes": "Soban, 50 seconds. Describe the six product modules and the implemented historical slice. Social divergence, student serving and hosting remain later integrations.",
       "sources": [
-        "report/figures/mid1_pipeline.tex; code/app/presenter_data.py"
+        "report/figures/mid1_planned_architecture.tex"
       ],
       "body_source": "presentation/main.tex",
       "assigned_presenter": "Soban Ahmad",
@@ -67,9 +72,10 @@
     {
       "number": 6,
       "title": "Domain model and file schema",
-      "speaker_notes": "Assigned presenter: Rafay Ul Haq. Planned speaking: 60 seconds. This is the conceptual domain, not a claim that all conceptual nouns are Python classes. The report also includes a concrete implementation domain/class diagram, field dictionary and file schema. Explain the relationship between a corpus, a validated DecisionRecord, its FeatureContext and explanation output. The loader rejects duplicate sessions, non-finite values and mismatched context, model or horizon. There is no fabricated database implementation.",
+      "speaker_notes": "Rafay, 60 seconds. Show the actual file and session relationships and explain why a changed case/profile invalidates the previous candidate result.",
       "sources": [
-        "report/figures/mid1_equity_domain.tex; report/figures/mid1_schema.tex"
+        "report/figures/mid1_domain.tex",
+        "report/figures/mid1_schema.tex"
       ],
       "body_source": "presentation/main.tex",
       "assigned_presenter": "Rafay Ul Haq",
@@ -79,9 +85,10 @@
     {
       "number": 7,
       "title": "Explanation check and recovery",
-      "speaker_notes": "Assigned presenter: Soban Ahmad. Planned speaking: 45 seconds. An earlier verifier accepted facts from the payload even when the visible sentence contradicted them. The current verifier checks both independently. In the live demo, inject the labelled wrong probability of 1.00 percent. Explain that this deliberately corrupted text is a failure demonstration, not a forecast. The report sequence and state diagrams show rejection, fallback and invalidation after edits. Numerical consistency does not establish causal validity or human comprehension.",
+      "speaker_notes": "Soban, 45 seconds. Trace emit and verify. The sequence/activity models include the click, alternative branches and fallback failure.",
       "sources": [
-        "code/src/investify/explain/verifier.py; code/tests/test_presenter_ui.py"
+        "report/figures/mid1_sequence.tex",
+        "report/figures/mid1_activity.tex"
       ],
       "body_source": "presentation/main.tex",
       "assigned_presenter": "Soban Ahmad",
@@ -91,9 +98,10 @@
     {
       "number": 8,
       "title": "Live demonstration",
-      "speaker_notes": "Shared demo: Rafay opens for 20 seconds, Soban Decision 40, Ahmed Evidence 40, Rafay Risk 60, Soban Explanation 80. Reserve four minutes for the live walkthrough. Open Overview and choose Open the decision walkthrough. Leave the default Fresh Alpaca frozen case on 2023-12-21. Decision shows Buy and its calibrated probabilities. On Evidence choose a technical feature and a news feature. Risk profile: the explicit cautious fictional example R=0 gives Hold, and the higher-tolerance example R=1 gives Sell in the separate comparator, while the classifier remains Buy. Clear the profile to demonstrate no assumed answers. On Explanation check choose Inject wrong probability, then Check explanation. Show candidate rejection and verified fallback. Edit the text and show that the old verdict disappears. Fourteen primary-UI widget tests pass, including calibration-diagnostic identity/refusal. The full 42-test scope includes 24 historical UI tests and 4 selectors and must not be described as 42 new-interface tests. The header correction restores 4.75 rem clearance and full-width navigation. The actual browser journey is reviewed; physical projector review and genuine rehearsal remain pending.",
+      "speaker_notes": "Shared, 240 seconds: Rafay opens 20; Soban Decision 40; Ahmed Evidence 40; Rafay Risk 60; Soban Explanation 80. Both profile extremes abstain on weak real evidence; show the changing score/threshold without claiming fabricated prediction quality.",
       "sources": [
-        "report/chapters/chapter7_ui_manual.tex; evidence/presenter_and_legacy_ui_tests_20261013.xml"
+        "code/app/presenter.py",
+        "docs/team/MID1_TEAM_GUIDE.md"
       ],
       "body_source": "presentation/main.tex",
       "assigned_presenter": "Shared",
@@ -102,10 +110,11 @@
     },
     {
       "number": 9,
-      "title": "Calibration and decision collapse",
-      "speaker_notes": "Assigned presenter: Soban Ahmad. Planned speaking: 55 seconds. These are fresh Alpaca revision-conservative results, not overwritten September metrics. The frozen and refit paths both reproduce actual model, calibration and native SHAP results. After excluding five unavailable labels, calibration has 181 rows. Frozen raw macro-F1 is 0.3182 and calibrated macro-F1 is 0.2238. Refit Brier changes from 0.7760 to 0.6078. The class-prior comparator uses calibration labels only, with Brier 0.60948945. The retained maps have Buy minimum 0.5344828, Hold maximum 0.25 and Sell maximum 0.3139535. Clipped interpolation stays inside these ranges. Common positive renormalization preserves argmax, so these maps force Buy for every raw vector. A separate native engine probe exactly replays 186 rows per mode and all 5,151 simplex inputs select Buy. Sources: evidence/calibration_global_bounds_20261013.json, evidence/calibration_bounds_native_probe_20261013.json and evidence/calibration_class_prior_audit_20261013.json. This applies only to the fresh maps. Do not tune held-out thresholds to manufacture varied decisions.",
+      "title": "Calibration correction and abstention",
+      "speaker_notes": "Soban, 55 seconds. Explain the isotonic global bounds, calibration-only temperature fit and why near-uniform confidence requires abstention. Do not describe this as useful forecasting.",
       "sources": [
-        "evidence/fresh_alpaca_science_replay_20261012_run01.json; evidence/calibration_class_prior_audit_20261013.json"
+        "code/src/investify/multiclass_calibration.py",
+        "code/artifacts/scientific_runs/temperature_calibration_20261013_run01/summary.json"
       ],
       "body_source": "presentation/main.tex",
       "assigned_presenter": "Soban Ahmad",
@@ -115,9 +124,9 @@
     {
       "number": 10,
       "title": "Temporal leakage experiment",
-      "speaker_notes": "Assigned presenter: Ahmed Javaid. Planned speaking: 100 seconds. The fresh study executes six arms, two horizons and six folds. The centered Bollinger variant deliberately uses future information and is a leakage demonstration. Its five-session lift is plus 0.2104, with fold-bootstrap interval plus 0.1698 to plus 0.2421. It is not a valid trading strategy. The clean arm is below the training-distribution random comparator. The intervals summarize fold resampling, not guaranteed future returns. Preserve the negative finding. The source vintage and full chronological September reproduction remain separate limitations.",
+      "speaker_notes": "Ahmed, 100 seconds. Explain actual label availability, how the canary fires, and why a weak no-purge/lag variation is not proof that every leakage mechanism is absent. State the FNSPID precision/coverage reason for the timestamped source.",
       "sources": [
-        "evidence/fresh_alpaca_science_summary_20261012_run01.json"
+        "report/chapters/chapter6_iteration1.tex"
       ],
       "body_source": "presentation/main.tex",
       "assigned_presenter": "Ahmed Javaid",
@@ -127,9 +136,10 @@
     {
       "number": 11,
       "title": "Sentiment and teacher studies",
-      "speaker_notes": "Assigned presenter: Rafay Ul Haq. Planned speaking: 100 seconds. Both original publisher sentiment candidates run against unchanged AI references. CryptoBERT predicts only neutral. The 200 acquired MSFT posts yielded 117 usable references and 83 exclusions, frozen into 93 development and 24 held-out examples. These labels are not independently human validated. One held-out decision changes exact agreement by 4.17 percentage points. Do not infer NVDA transfer, profitability, significance or pretraining independence. The teacher prose is actual assistant output with deterministic factual JSON assembled from records. The exact serving revision is unavailable. Six examples do not establish adequate training data, student efficacy or user benefit.",
+      "speaker_notes": "Rafay, 100 seconds. FinBERT still scores news. CryptoBERT/Cardiff are social candidates. Sanity probes are separate authored diagnostics, not benchmark accuracy. Teacher/student method is disclosed once in the report.",
       "sources": [
-        "evidence/social_study_review_20261013.json; deliverables/ASSISTANT_TEACHER_PILOT.md"
+        "evidence/social_study_review_20261013.json",
+        "evidence/cryptobert_sanity_20261014.json"
       ],
       "body_source": "presentation/main.tex",
       "assigned_presenter": "Rafay Ul Haq",
@@ -138,10 +148,11 @@
     },
     {
       "number": 12,
-      "title": "Equal work allocation and next steps",
-      "speaker_notes": "Assigned presenter: Soban Ahmad. Planned speaking: 30 seconds. The team has assigned equal one-third responsibility for preparation, review and defence. Each member owns four slides and five minutes of planned speaking including their demonstration segment. Read the individual preparation packets for the exact route and code. Historical repository authorship and assistant contributions are preserved. Technical completion means working code, the complete report, CI/CD and required Mid-1 modules. Printing/signatures, supervisor review, member walkthroughs and rehearsal remain a separate team todo and do not reduce that percentage. CI/CD uses cross-platform test jobs followed by a verified source/PDF delivery artifact. The publication destination is Ahmed-Javaid/Investify-FYP-2027; actual hosted execution is documented in Actions and receipts. The report is for Fall 2026, dated 11 October 2026, with no co-supervisor. Original Phi-3-mini inference and later QLoRA remain later work.",
+      "title": "Delivered work and next milestones",
+      "speaker_notes": "Soban, 30 seconds. Confirm delivered responsibilities and shared allocation. Future research/hosting and participant work are distinct from this checkpoint.",
       "sources": [
-        "planning/HANDBOOK_MID1_AUDIT.md; report/chapters/chapter10_fyp2_plan.tex"
+        "report/chapters/chapter9_development_evidence.tex",
+        "report/chapters/chapter3_iteration_plan.tex"
       ],
       "body_source": "presentation/main.tex",
       "assigned_presenter": "Soban Ahmad",
@@ -151,7 +162,7 @@
   ],
   "member_share": "1/3 each, assigned preparation/review/defence",
   "planned_total_seconds": 900,
-  "delivery_receipt": "evidence/handbook_presentation_delivery_20261013_run06.json",
+  "delivery_receipt": "evidence/handbook_presentation_delivery_20261014_revision05.json",
   "report_date": "2026-10-11",
   "assessment_term": "Fall 2026",
   "assessment_stage": "FYP-1 Mid-Evaluation"
