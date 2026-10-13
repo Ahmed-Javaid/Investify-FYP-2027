@@ -1,0 +1,57 @@
+{
+  "schema": "investify-document-delivery-v3",
+  "checked_utc": "2026-10-13T15:28:35.384992+00:00",
+  "status": "compiled_and_layout_reviewed_unsigned_working_draft",
+  "output": "deliverables/Investify_FYP1_Mid_Presentation_Technical_Completion_20261013.pdf",
+  "pdf_sha256": "25407ca3045a29daa2a6660c9d6c331288a94e0452f3387812ee776792a8b8fd",
+  "pages": 12,
+  "empty_text_pages": [],
+  "outside_page_annotations": [],
+  "source_entry": "presentation/main.tex",
+  "compiled_source_files": {
+    "presentation/main.tex": "9da841e7666bb57a1bce814ef8f7afcca8d3dd4f7bfd8812ed13e2d2030a55bf"
+  },
+  "source_inventory_scope": "Conservative inventory of authored source/assets, including auxiliary figures",
+  "compiler": {
+    "path": "E:/AI-Tools/Cache/tectonic-0.17.0/tectonic.exe",
+    "sha256": "99ffcfdbf1ebf8bdda9e791942e3d06aedb12463fddc33f07de6f5211c8bf08d",
+    "version": "0.17.0",
+    "engine": "Tectonic XeTeX"
+  },
+  "build_directory": "E:\\AI-Tools\\Temp\\investify-report-build-presentation-20261013-technical-run03",
+  "compile_log_sha256": "01bbf868323dc8d04c1b639168590583aeb50fc4aac037d40054391cde4ccffa",
+  "render_directory": "E:\\AI-Tools\\Temp\\investify-presentation-qa-20261013-technical-run03",
+  "rendered_pages": {
+    "page-01.png": "56a7762a6866678337a6d05e595df2ac0da00d0725b0c0c5f6c4ee1858db2138",
+    "page-02.png": "582aca8e1d30ec8ad3b90f3b7b26a7ff94991ccae352a4fdc51f0451f81271ed",
+    "page-03.png": "7d0dd12f64e60d2b55a522d4e4c4261b2185864d56ae2425ed4a53ec440a4ac3",
+    "page-04.png": "51be3080d7f1339eeff33e628124640e2596b7012009b36d90dac0c0725fd5c5",
+    "page-05.png": "8879a525d113311feea5eea88faa21f7b20fc47090b8d6adac92677b2a7586b6",
+    "page-06.png": "0bb0a12900fed9f13af1ee83470020ed76cb4ecbc90264627cb6bad5b6683b4c",
+    "page-07.png": "4831e802f1d939af4107989a08dc81669fe55a1d4c81c9382cb61adfb60fd04d",
+    "page-08.png": "d8943b901052ac00759bdd49c1be90fe0f5dc52a97c16c4e9aeedaa0f90806fd",
+    "page-09.png": "400b41dc15f673c53a95f113c466f861ff9ffdebddb71850f3342a9d246191bf",
+    "page-10.png": "422c0640221448bf6a36e043f8e7cb7bcce989720c7dc3d1384ffaa256003d58",
+    "page-11.png": "abb23d892078c48462a1490c62f9bc466903dc1c27ceba13bb170fbd41841ce4",
+    "page-12.png": "667368eb255a966fce50d643ae49b20d9c7a66ee3ce8f44f4a56ca702b8fa78d"
+  },
+  "all_pages_visually_checked": true,
+  "visual_review_method": "Assistant inspected all changed numbered QA sheets and the closing slide, rechecking CI/repository/team-todo pages after final edits. Unchanged PNG hashes exactly match the previous fully reviewed delivery.",
+  "overfull_boxes": 0,
+  "unresolved_citations": 0,
+  "human_review_or_institutional_approval": false,
+  "browser_ui_screenshots_included": false,
+  "pending": [
+    "physical projector review",
+    "genuine rehearsal",
+    "actual student code defence/contributions",
+    "metadata and applicable approvals"
+  ],
+  "previous_outputs_preserved": true,
+  "slides": 12,
+  "format_requested": "LaTeX/Beamer",
+  "editable_diagrams_and_charts": true,
+  "notes_embedded_in_tex": true,
+  "visual_review_receipt": "evidence/technical_visual_review_20261013.json",
+  "visual_review_receipt_sha256": "e3385fe27ed2a8e8641038e4fab72272d398472d15badce44dc4acf1cbb238cd"
+}

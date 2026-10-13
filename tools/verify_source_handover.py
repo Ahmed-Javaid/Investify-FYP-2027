@@ -1,7 +1,6 @@
 """Exercise the delivered source ZIP in an isolated standard-library-only host."""
 import hashlib
 import argparse
-import importlib.util
 import json
 import os
 import re
@@ -26,14 +25,23 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--archive', type=Path, default=ARCHIVE)
     parser.add_argument('--receipt-prefix', default='source_bundle')
+    parser.add_argument('--scratch-directory', type=Path, default=Path('E:/AI-Tools/Temp'))
+    parser.add_argument('--receipt-directory', type=Path, default=ROOT / 'evidence')
     args = parser.parse_args()
+    global SCRATCH, ENVIRONMENT
+    SCRATCH = args.scratch_directory.resolve()
+    ENVIRONMENT = SCRATCH / 'investify-portable-clean-py311'
+    receipts = args.receipt_directory.resolve()
+    if not SCRATCH.is_dir() or not (receipts == ROOT / 'evidence' or receipts.is_relative_to(ROOT / 'code/artifacts/ci_evidence')):
+        raise ValueError('Use prepared scratch and this project\'s evidence directory')
+    receipts.mkdir(parents=True, exist_ok=True)
     archive_path = args.archive.resolve()
     if not archive_path.is_relative_to(ROOT / 'deliverables') or not re.fullmatch('[a-zA-Z0-9_-]+', args.receipt_prefix):
         raise ValueError('Use a local deliverable archive and plain receipt prefix')
-    if any((ROOT / 'evidence' / (args.receipt_prefix + suffix)).exists()
+    if any((receipts / (args.receipt_prefix + suffix)).exists()
            for suffix in ('_clean_host_tests.txt', '_clean_host_verification.json')):
         raise ValueError('Preserve prior clean-host receipts; choose a new dated prefix')
-    interpreter = ENVIRONMENT / 'Scripts/python.exe'
+    interpreter = ENVIRONMENT / ('Scripts/python.exe' if os.name == 'nt' else 'bin/python')
     if not interpreter.exists():
         subprocess.run([sys.executable, '-B', '-m', 'venv', '--without-pip', str(ENVIRONMENT)], check=True)
     env = dict(os.environ, TEMP=str(SCRATCH), TMP=str(SCRATCH), PYTHONDONTWRITEBYTECODE='1')
@@ -85,8 +93,11 @@ def main():
             raise ValueError('Uncommitted review sources must remain explicitly labelled')
         if plan['status'] != 'plan_only' or plan['raw_completions'] != 0:
             raise ValueError('Clean-host plan-only command must not call a model')
+        original_source_replayed = False
         if (bundle / 'tools/verify_ai_pilot_evidence.py').exists():
-            run('../tools/verify_ai_pilot_evidence.py')
+            original_source_replayed = (bundle / 'sources/stocknet/acquisition_manifest.json').exists()
+            extra = [] if original_source_replayed else ['--saved-only']
+            run('../tools/verify_ai_pilot_evidence.py', *extra)
         teacher_replayed = 0
         if (bundle / 'evidence/teacher_pilot/assistant_20261012/verified/verification.json').exists():
             run('../tools/verify_teacher_pilot_evidence.py')
@@ -136,11 +147,12 @@ def main():
                    'revision_source': artifacts['revision_source'], 'git_dirty': artifacts['git_dirty'],
                    'plan_only_status': plan['status'], 'real_completions': 0, 'browser_visual_qa': False,
                    'recorded_teacher_examples_replayed': teacher_replayed, 'student_training_executed': False,
+                   'original_social_acquisition_inputs_replayed': original_source_replayed,
                    'requirement_anchors_checked_against_bundled_selected_receipt': requirement_anchors,
                    'streamlit_tests_executed_on_clean_host': False,
                    'scope': 'Actual ZIP extraction, hash inventory, stdlib-only execution, live portable server and no-inference planning; not scientific reproduction or rendered report/deck'}
-        (ROOT / 'evidence' / (args.receipt_prefix + '_clean_host_tests.txt')).write_text(log, encoding='utf-8')
-        (ROOT / 'evidence' / (args.receipt_prefix + '_clean_host_verification.json')).write_text(json.dumps(receipt, indent=2), encoding='utf-8')
+        (receipts / (args.receipt_prefix + '_clean_host_tests.txt')).write_text(log, encoding='utf-8')
+        (receipts / (args.receipt_prefix + '_clean_host_verification.json')).write_text(json.dumps(receipt, indent=2), encoding='utf-8')
         print(f"Clean source handover: {receipt['portable_tests_passed']} tests, {receipt['live_checks_passed']} live checks, {receipt['records_validated']} records; no external packages/model calls")
 
 

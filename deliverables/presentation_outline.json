@@ -1,10 +1,10 @@
 {
   "title": "Investify FYP-1 Mid-1",
-  "status": "Twelve-slide equal-allocation PDF compiled and layout reviewed; individual practice and rehearsal remain pending.",
+  "status": "Compiled and layout reviewed technical Mid-1 deck; team tasks remain separate.",
   "date_prepared": "2026-10-13",
   "assessment_date": null,
   "source_entry": "presentation/main.tex",
-  "compiled_output": "deliverables/Investify_FYP1_Mid_Presentation_Fall_2026_20261013.pdf",
+  "compiled_output": "deliverables/Investify_FYP1_Mid_Presentation_Technical_Completion_20261013.pdf",
   "slides": [
     {
       "number": 1,
@@ -139,7 +139,7 @@
     {
       "number": 12,
       "title": "Equal work allocation and next steps",
-      "speaker_notes": "Assigned presenter: Soban Ahmad. Planned speaking: 30 seconds. The team has assigned equal one-third responsibility for preparation, review and defence. Each member owns four slides and five minutes of planned speaking including their demonstration segment. Read the individual preparation packets for the exact route and code. The proposal spells Soban Ahmed on slide 13; the confirmed student record uses Soban Ahmad. Historical repository authorship and assistant contributions are preserved. Personal preparation is recorded during practice. Local CI has executed both jobs; remote CI and CD remain open. The team confirms Fall 2026 and no co-supervisor. The report date is 11 October 2026. Coordinator and formal committee appointment remain unconfirmed. Original Phi-3-mini inference and later QLoRA remain unexecuted.",
+      "speaker_notes": "Assigned presenter: Soban Ahmad. Planned speaking: 30 seconds. The team has assigned equal one-third responsibility for preparation, review and defence. Each member owns four slides and five minutes of planned speaking including their demonstration segment. Read the individual preparation packets for the exact route and code. Historical repository authorship and assistant contributions are preserved. Technical completion means working code, the complete report, CI/CD and required Mid-1 modules. Printing/signatures, supervisor review, member walkthroughs and rehearsal remain a separate team todo and do not reduce that percentage. CI/CD uses cross-platform test jobs followed by a verified source/PDF delivery artifact. The publication destination is Ahmed-Javaid/Investify-FYP-2027; actual hosted execution is documented in Actions and receipts. The report is for Fall 2026, dated 11 October 2026, with no co-supervisor. Original Phi-3-mini inference and later QLoRA remain later work.",
       "sources": [
         "planning/HANDBOOK_MID1_AUDIT.md; report/chapters/chapter10_fyp2_plan.tex"
       ],
@@ -151,7 +151,7 @@
   ],
   "member_share": "1/3 each, assigned preparation/review/defence",
   "planned_total_seconds": 900,
-  "delivery_receipt": "evidence/handbook_presentation_delivery_20261013_run05.json",
+  "delivery_receipt": "evidence/handbook_presentation_delivery_20261013_run06.json",
   "report_date": "2026-10-11",
   "assessment_term": "Fall 2026",
   "assessment_stage": "FYP-1 Mid-Evaluation"

@@ -1,5 +1,9 @@
 # Investify Mid-1 LaTeX report
 
+Current output: [102-page technical Mid-1 report](../deliverables/Investify_FYP1_Mid_Report_Technical_Completion_20261013.pdf), with [delivery receipt](../evidence/handbook_report_delivery_20261013_run06.json). Coordinator omitted. Team review, print signatures and practice remain separate todos outside technical completion. All changed pages were rendered and reviewed.
+
+Earlier dated outputs below retain their historical scope.
+
 ## Current Fall 2026 metadata revision
 
 Use [the current 101-page report](../deliverables/Investify_FYP1_Mid_Report_Fall_2026_20261013.pdf) and [its delivery receipt](../evidence/handbook_report_delivery_20261013_run05.json). The cover identifies FYP-1 Mid-Evaluation in Fall 2026, with the team-selected report date of 11 October 2026. Actual revision/test dates remain in the evidence. Equal member responsibilities and individual handouts are retained. Coordinator and real review/rehearsal remain open; the formal committee appointment is separate from the report date.

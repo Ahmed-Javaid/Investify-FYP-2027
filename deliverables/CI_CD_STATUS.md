@@ -1,25 +1,16 @@
-# Implemented CI and delivery status
+# CI/CD implementation and execution
 
-The project has a GitHub Actions **CI workflow** and a shared executable validation runner. It has **no continuous deployment stage**, configured hosting target or recorded GitHub run. The consolidated repository currently has no remote configured.
+The [GitHub workflow](../.github/workflows/mideval-evidence.yml) executes two Python 3.11 test jobs on **Windows and Ubuntu**, followed by a dependent **continuous-delivery job**. Pushes to main/gpt/**, pull requests and manual dispatch trigger it. Permissions are read-only; credentials are not persisted; timeouts, duplicate-run cancellation and 14-day artifact retention are configured.
 
-The workflow starts on a push to `main`/`gpt/**`, a pull request or manual dispatch. It uses Python 3.11 with Windows and Ubuntu jobs, read-only repository permissions, finite timeouts, duplicate-run cancellation and disabled persistence of checkout credentials.
-
-| Job | Implemented checks | Current execution evidence |
+| Stage | Implemented checks | Execution boundary |
 | --- | --- | --- |
-| Portable evidence | Source ownership and metadata admission/cleanup guards; standard-library regressions; 372 saved-record/context/template validations; standalone HTML preview; no-inference explainer plan; 228 comparator probes; real localhost HTTP checks | Windows local replay passed: 165 portable tests, 7 CI guards, 62 HTTP checks. |
-| Streamlit UI | Scoped Ruff source checks; preserved UI; current presenter; recorded-study selectors | Windows local replay passed: 24 legacy, 14 presenter and 4 selector tests. |
-| Review artifact retention | Workflow uploads each job's output/log directory and source-bound receipt, including available failure logs, for 14 days | Configured; no GitHub artifact upload/run has occurred. |
-| Continuous deployment | No deploy command, cloud hosting, broker/order execution or production release | Not implemented. Deployment is later scope and needs a chosen target. |
+| Portable evidence, Windows/Ubuntu | 165 portable tests, seven source/metadata guards, 372 saved records, 228 comparator probes, preview, no-inference plan and 62 live HTTP checks | Shared runner passes locally; hosted results recorded in Actions |
+| Streamlit UI, Windows/Ubuntu | Ruff source check, 24 legacy UI, 14 presenter UI and four recorded-study selectors | 42 UI tests in separate overlapping scopes |
+| Delivery, Ubuntu | Nine delivery/checkout guards; four same-commit CI receipts required; source/log hashes checked; reviewed PDF/source archive packaged; extraction, portable tests and HTTP checks replayed | Successful delivery uploads the verified artifact |
+| Reviewed byte restoration | Restore newline-only Git translations to reviewed source/artifact hashes; content/binary changes refused | Windows/Ubuntu compatible with frozen evidence; originals unchanged |
 
-Both hosted jobs and local replay call [the same runner](../code/scripts/run_mid1_ci.py). [The workflow](../.github/workflows/mideval-evidence.yml) installs the pinned viewer/runtime and source checker on hosted runners. Local replay uses prepared E: runtimes, so it does not certify fresh package installation, Ubuntu execution, remote GitHub CI, prediction quality or user acceptance.
+Target: [Ahmed-Javaid/Investify-FYP-2027 Actions](https://github.com/Ahmed-Javaid/Investify-FYP-2027/actions). Hosted execution is claimed after an actual successful run. [Current completion receipt](../evidence/mid1_technical_completion_current.json) records that run when verified.
 
-Receipts: [portable job](../evidence/ci_replay_20261013_run02/evidence/job_receipt.json), [UI job](../evidence/ci_replay_20261013_run02/streamlit-ui/job_receipt.json). Their source identity is explicitly declared for the code component; no unrelated ancestor repository supplies an automatic identity. Job declarations are kept with the artifacts and temporary checkout metadata is restored afterward. Earlier archive/test receipts retain their own snapshots.
+Continuous delivery produces the tested source/PDF/handover artifact. **Production hosting is later FYP scope.** CI/CD performs no paid inference or student training. Publisher weights and raw acquisition inputs remain separate prerequisites for fresh scientific replay. If original acquisition inputs are absent, delivery verifies retained corpus/label/plan consistency and explicitly records that raw-source reconstruction was not executed.
 
-To rerun locally, choose new output directories, from `code`:
-
-```powershell
-& 'E:\AI-Tools\Temp\investify-ui-py311\Scripts\python.exe' -B scripts/run_mid1_ci.py --job evidence --output ../evidence/ci_replay_NEW/evidence
-& 'E:\AI-Tools\Temp\investify-ui-py311\Scripts\python.exe' -B scripts/run_mid1_ci.py --job streamlit-ui --output ../evidence/ci_replay_NEW/streamlit-ui --ruff-executable E:/AI-Tools/Work/investify-quality-tools/bin/ruff.exe
-```
-
-A real GitHub run needs an agreed repository/remote and an authorized push or dispatch. That external step is still pending. The current package can demonstrate the CI logic and actual local checks without claiming remote CI or CD.
+Local replay uses prepared E: runtimes; hosted jobs install pinned viewer/source-check dependencies. Source declarations are retained in artifacts and prior metadata is restored afterward. Dated receipts preserve their own snapshots.

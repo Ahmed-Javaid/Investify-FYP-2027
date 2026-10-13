@@ -1,5 +1,9 @@
 # Investify LaTeX Mid-1 presentation
 
+Current output: [12-slide technical Mid-1 deck](../deliverables/Investify_FYP1_Mid_Presentation_Technical_Completion_20261013.pdf), with [delivery receipt](../evidence/handbook_presentation_delivery_20261013_run06.json). Equal allocations and synchronized notes are retained. Team tasks are outside the technical completion percentage.
+
+Earlier dated outputs below retain their historical scope.
+
 Latest output: [Fall 2026/report-date revision](../deliverables/Investify_FYP1_Mid_Presentation_Fall_2026_20261013.pdf), with [matching delivery receipt](../evidence/handbook_presentation_delivery_20261013_run05.json). All twelve slides are rendered and reviewed. The title and footers identify Fall 2026 and report date 11 October 2026. Speaker notes preserve actual execution/revision dates and the equal allocations.
 
 Earlier output: [equal team allocation revision](../deliverables/Investify_FYP1_Mid_Presentation_Team_Allocation_20261013.pdf), with [matching delivery receipt](../evidence/handbook_presentation_delivery_20261013_run04.json). The twelve-slide source and mirrored notes assign four primary slides and five minutes of speaking to each member, including shared demo segments. [Individual handouts and schedule](../deliverables/MEMBER_PREPARATION_PACK.md) are ready for practice. Earlier PDFs remain preserved.

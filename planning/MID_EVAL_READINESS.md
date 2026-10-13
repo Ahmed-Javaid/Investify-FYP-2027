@@ -1,5 +1,11 @@
 # Mid-evaluation readiness estimate - 12 October 2026
 
+## Current user-defined technical completion
+
+The team's current completion definition is **working code, complete authored report, working CI/CD and required Mid-1 modules**. Printing/signatures, supervisor review, member walkthroughs, rehearsal and projector observation remain in [the team todo](../deliverables/MID1_TEAM_TODO.md), outside this percentage. The coordinator is omitted from the report. [Technical gates](../deliverables/MID1_TECHNICAL_COMPLETION.md) and source-bound execution receipts govern current status.
+
+All older weighted readiness estimates below are retained as historical planning records. Their weights are unchanged; they measure a different scope and are superseded for current completion reporting by the user's explicit definition.
+
 ## Proposal division and executed local CI - 13 October 2026
 
 The proposal's work division is documented, and the team has assigned an equal one-third share of preparation/review/defence to each member. [Individual preparation packets](../deliverables/MEMBER_PREPARATION_PACK.md) specify four primary slides and five planned speaking minutes each. The team confirms names, roll numbers and supervisor, with no co-supervisor. The assessment term is Fall 2026 and the selected report date is 11 October 2026; actual execution receipts keep their dates. Both shared CI jobs pass on the local Windows runtime. The [90%/95% route](../deliverables/MID1_90_95_ROADMAP.md) retains conditional targets of **90.25%** and **95.00%**. Current readiness remains **84.25%** pending actual criteria/baseline review, individual preparation/defence, current coordinator/submission details, projector review and rehearsal. Hosted CI and CD remain open.

@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 defaults:
   run:
@@ -28,12 +29,20 @@ jobs:
     env:
       PYTHONDONTWRITEBYTECODE: '1'
     steps:
+      - name: Keep Git checkout translation explicit
+        working-directory: .
+        run: git config --global core.autocrlf false
       - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
       - uses: actions/setup-python@v7.0.0
         with:
           python-version: '3.11'
+      - name: Restore reviewed source and frozen artifact newline bytes
+        working-directory: .
+        run: |
+          python -B tools/restore_ci_checkout.py
+          git config core.autocrlf true
       - name: Execute portable validation, preview, plan and localhost integration
         run: python -B scripts/run_mid1_ci.py --job evidence --output artifacts/ci_evidence/evidence
       - name: Keep the generated evidence for review
@@ -55,12 +64,20 @@ jobs:
     env:
       PYTHONDONTWRITEBYTECODE: '1'
     steps:
+      - name: Keep Git checkout translation explicit
+        working-directory: .
+        run: git config --global core.autocrlf false
       - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
       - uses: actions/setup-python@v7.0.0
         with:
           python-version: '3.11'
+      - name: Restore reviewed source and frozen artifact newline bytes
+        working-directory: .
+        run: |
+          python -B tools/restore_ci_checkout.py
+          git config core.autocrlf true
       - name: Install the historical demo runtime
         run: python -B -m pip install -r requirements-demo-runtime.txt
       - name: Install the pinned source checker
@@ -76,7 +93,45 @@ jobs:
           if-no-files-found: warn
           retention-days: 14
 
-# This job covers the artifact-backed explanation increment. The full training
-# suite needs its pinned environment and acquired datasets. Deployment/delivery
-# publication is pending a chosen target and repository access; this workflow
-# does not claim a running CD deployment or evaluation of a language model.
+  delivery:
+    needs: [evidence, streamlit-ui]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: .
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Keep Git checkout translation explicit
+        run: git config --global core.autocrlf false
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.11'
+      - name: Restore reviewed inputs
+        run: |
+          python -B tools/restore_ci_checkout.py
+          git config core.autocrlf true
+      - name: Check delivery admission and checkout preservation
+        run: python -B -m unittest discover -s code/tests -p test_delivery_pipeline.py -v
+      - name: Download this run's four CI prerequisites
+        uses: actions/download-artifact@v8.0.1
+        with:
+          pattern: mid-eval-*
+          path: ${{ runner.temp }}/mid1-prerequisites
+          merge-multiple: false
+      - name: Package and verify source, PDFs and handover
+        run: python -B tools/run_mid1_delivery.py --ci-root "${{ runner.temp }}/mid1-prerequisites" --output code/artifacts/ci_evidence/delivery
+      - name: Deliver the verified bundle and source-bound receipt
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: investify-mid1-delivery-${{ github.sha }}
+          path: code/artifacts/ci_evidence/delivery/
+          if-no-files-found: error
+          retention-days: 14
+
+# Delivery is the tested source/PDF artifact. Production hosting, paid inference
+# and student training are later scope and are not run by this workflow.

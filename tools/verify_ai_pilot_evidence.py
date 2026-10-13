@@ -1,6 +1,5 @@
 """Audit actual corpus/source/raw-label/freeze identities without generating data."""
 import argparse
-import hashlib
 import json
 import sys
 from collections import Counter
@@ -10,9 +9,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'code/src'))
 sys.path.insert(0, str(ROOT / 'code/scripts'))
-from investify.sentiment_selection import digest, validate_benchmark, freeze_plan, classification_metrics
-from investify.sentiment_annotation import attach_session_annotations
-from prepare_stocknet_pilot import prepare
+# These imports use the explicit checkout paths above, not an installed package.
+from investify.sentiment_selection import digest, validate_benchmark, freeze_plan, classification_metrics  # noqa: E402
+from investify.sentiment_annotation import attach_session_annotations  # noqa: E402
+from prepare_stocknet_pilot import prepare  # noqa: E402
 
 
 def read(path):
@@ -22,6 +22,7 @@ def read(path):
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--output', type=Path,
                     default=ROOT / 'evidence/social_pilot/reference_evidence_verification.json')
+parser.add_argument('--saved-only', action='store_true', help='Check retained corpus/labels without external raw acquisition inputs')
 args = parser.parse_args()
 output = args.output.resolve()
 if not output.is_relative_to(ROOT / 'evidence'):
@@ -29,8 +30,12 @@ if not output.is_relative_to(ROOT / 'evidence'):
 
 pilot = ROOT / 'evidence/social_pilot'
 source = ROOT / 'sources/stocknet'
-corpus, source_receipt = prepare(read(ROOT / 'deliverables/stocknet_source_access_v2.json'),
-                                read(source / 'acquisition_manifest.json'), source)
+if args.saved_only:
+    corpus = read(pilot / 'msft_stocknet_unannotated.json')
+    source_receipt = None
+else:
+    corpus, source_receipt = prepare(read(ROOT / 'deliverables/stocknet_source_access_v2.json'),
+                                    read(source / 'acquisition_manifest.json'), source)
 if corpus != read(pilot / 'msft_stocknet_unannotated.json'):
     raise ValueError('Actual corpus does not reproduce from original preserved source files')
 receipt = read(pilot / 'annotation_freeze_receipt.json')
@@ -50,10 +55,12 @@ if datetime.fromisoformat(receipt['frozen_utc']) > datetime.fromisoformat(plan['
 usable = validate_benchmark(saved)
 heldout = {post['post_id']: post['gold_label'] for post in usable if post['post_id'] in plan['heldout_post_ids']}
 actual = [heldout[key] for key in plan['heldout_post_ids']]
-checks = {'source_git_blobs': len(source_receipt['source_files']), 'selected_original_posts': len(corpus['posts']),
+checks = {'source_git_blobs': len(source_receipt['source_files']) if source_receipt else None,
+          'original_acquisition_inputs_replayed': not args.saved_only, 'selected_original_posts': len(corpus['posts']),
           'raw_batches': len(imported['raw_batches']), 'complete_input_bound_ai_annotations': len(benchmark['posts']),
           'benchmark_and_plan_match': True, 'labels_frozen_before_candidate_plan': True}
-report = {'checked_utc': datetime.now(timezone.utc).isoformat(), 'status': 'actual_reference_evidence_verified',
+report = {'checked_utc': datetime.now(timezone.utc).isoformat(),
+          'status': 'saved_reference_evidence_verified' if args.saved_only else 'actual_reference_evidence_verified',
           'checks': checks, 'benchmark_sha256': digest(saved), 'plan_sha256': digest(plan),
           'annotation_method': 'model_generated', 'usable_posts': len(usable), 'excluded_posts': len(saved['posts']) - len(usable),
           'reference_labels': dict(Counter(post['gold_label'] for post in usable)),

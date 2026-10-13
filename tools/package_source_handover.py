@@ -20,7 +20,11 @@ def main():
     parser.add_argument('--working-tree', action='store_true', help='Explicit uncommitted review bundle, never a HEAD snapshot')
     parser.add_argument('--report-receipt', type=Path, default=ROOT / 'evidence/handbook_report_delivery_20261013.json')
     parser.add_argument('--presentation-receipt', type=Path, default=ROOT / 'evidence/handbook_presentation_delivery_20261013.json')
+    parser.add_argument('--scratch-directory', type=Path, default=Path('E:/AI-Tools/Temp'))
     args = parser.parse_args()
+    scratch = args.scratch_directory.resolve()
+    if not scratch.is_dir():
+        raise ValueError('Prepared scratch directory is unavailable')
     output = args.output.resolve()
     if not output.is_relative_to(ROOT / 'deliverables') or output.suffix != '.zip':
         raise ValueError('Deliverable ZIP must remain in this workspace deliverables directory')
@@ -39,9 +43,9 @@ def main():
         listing += ['--cached', '--others', '--exclude-standard']
     tracked = subprocess.check_output(listing).decode().split('\0')
     tracked = [relative for relative in tracked if relative and relative != 'source_revision.json']
-    with tempfile.TemporaryDirectory(prefix='investify-package-', dir=SCRATCH) as directory:
+    with tempfile.TemporaryDirectory(prefix='investify-package-', dir=scratch) as directory:
         stage = Path(directory).resolve()
-        if not stage.is_relative_to(SCRATCH) or not stage.name.startswith('investify-package-'):
+        if not stage.is_relative_to(scratch) or not stage.name.startswith('investify-package-'):
             raise ValueError('Scratch path failed storage/cleanup validation')
         bundle = stage / 'InvestifyMidEval'
         code_inventory = {}
@@ -75,6 +79,7 @@ def main():
                      'ORIGINAL_MID_TRACEABILITY.md', 'PANEL_RESPONSE_MATRIX.md', 'WORK_DIVISION.md', 'CI_CD_STATUS.md', 'MID1_90_95_ROADMAP.md',
                      'MEMBER_PREPARATION_PACK.md', 'MEMBER_PREPARATION_AHMED_JAVAID.md', 'MEMBER_PREPARATION_RAFAY_UL_HAQ.md',
                      'MEMBER_PREPARATION_SOBAN_AHMAD.md', 'MID1_FUNCTIONAL_STATUS.md', 'SCIENCE_CORRECTIONS_20261012.md', 'SOCIAL_V4_RUNBOOK.md',
+                     'MID1_TECHNICAL_COMPLETION.md', 'MID1_TEAM_TODO.md', 'current_delivery.json',
                      'stocknet_source_access.json', 'stocknet_source_access_v2.json'):
             target = bundle / 'deliverables' / name
             target.parent.mkdir(parents=True, exist_ok=True)

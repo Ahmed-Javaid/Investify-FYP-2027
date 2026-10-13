@@ -1,5 +1,7 @@
 # What would justify 90% or 95% Mid-1 readiness
 
+**Historical roadmap, superseded for current completion reporting.** The team now measures working code, complete report, working CI/CD and required Mid-1 modules. Human review/signatures/walkthrough/rehearsal remain on the team todo, outside the percentage. See [technical completion](MID1_TECHNICAL_COMPLETION.md). Earlier weights/scenarios below remain unchanged as historical records.
+
 Current planning readiness is **84.25%**. The original weights stay fixed. These figures describe preparation of the Mid-1 package, not a university grade or completion of the entire FYP.
 
 | Area | Weight | Current | Example 90% route | Example 95% route |

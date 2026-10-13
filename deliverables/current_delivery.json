@@ -1,0 +1,8 @@
+{
+  "schema": "investify-current-reviewed-delivery-v1",
+  "report_receipt": "evidence/handbook_report_delivery_20261013_run06.json",
+  "presentation_receipt": "evidence/handbook_presentation_delivery_20261013_run06.json",
+  "repository": "Ahmed-Javaid/Investify-FYP-2027",
+  "technical_completion_scope": ["working Mid-1 code", "complete authored report", "working CI and verified artifact delivery", "required Mid-1 modules"],
+  "excluded_from_percentage": ["printing and signatures", "supervisor review", "member walkthrough", "rehearsal and physical projector check"]
+}

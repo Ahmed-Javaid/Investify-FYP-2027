@@ -1,23 +1,20 @@
 # Investify working project
 
 <!-- MID1_BROWSER_CHECKPOINT_START -->
-## Current Fall 2026 Mid-1 report and equal member allocation - 13 October 2026
+## Current technical Mid-1 completion - 13 October 2026
 
-Mid-1 planning readiness remains **84.25%**, using the original weights. Work assignments are filled; actual member preparation and defence will be recorded during practice. Earlier dated sections below retain their historical scope.
+**Technical scope implemented; hosted CI/CD verification pending**. Completion now means working code, a complete report, working CI/CD and required Mid-1 modules. The earlier **84.25%** mixed preparation estimate is historical and no longer governs current completion. Its original weights/receipts remain preserved below.
 
-- [Current report](deliverables/Investify_FYP1_Mid_Report_Fall_2026_20261013.pdf): **101 pages**, with the original planned work-division table, actual UI captures and local CI evidence. All pages rendered/reviewed, with no overfull boxes or fully blank pages.
-- [Current presentation](deliverables/Investify_FYP1_Mid_Presentation_Fall_2026_20261013.pdf): **12 LaTeX/Beamer slides**, including the proposal assignments on the final slide. Source and speaker notes remain editable.
-- [Work division](deliverables/WORK_DIVISION.md): three members and fifteen exact responsibilities recovered from proposal slide 13 using SmartArt parent/child connections. Planned harness ownership and historical authorship remain distinct.
-- [CI/CD status](deliverables/CI_CD_STATUS.md): both shared CI jobs execute successfully on the local Windows runtime. Portable scope: **165 tests + 7 CI guards**, 62 live HTTP checks, 372 saved records and 228 comparator probes. UI scope: **42 tests**. These scopes overlap other receipts. GitHub/Ubuntu execution and continuous deployment remain unexecuted.
-- [Route to 90% and 95%](deliverables/MID1_90_95_ROADMAP.md): unchanged-weight conditional scenarios of **90.25%** and **95.00%**, with the genuine review/acceptance requirements listed explicitly.
+- [Current report](deliverables/Investify_FYP1_Mid_Report_Technical_Completion_20261013.pdf): **102 pages**, coordinator omitted, Fall 2026 and report date 11 October 2026 retained. Current source/PDF/render hashes and visual review match.
+- [Current presentation](deliverables/Investify_FYP1_Mid_Presentation_Technical_Completion_20261013.pdf): **12 reviewed LaTeX/Beamer slides**, editable source and synchronized member notes.
+- [Required modules and technical scope](deliverables/MID1_TECHNICAL_COMPLETION.md): ingestion/calendar/features, baseline/leakage, sentiment comparison, decision/calibration/SHAP, profile comparator and explanation/fallback interfaces have execution evidence.
+- [CI/CD status](deliverables/CI_CD_STATUS.md): cross-platform validation followed by gated, extraction-verified source/PDF artifact delivery. Hosted CI/CD is pending the authorized push/run. The two test jobs and nine delivery guards are checked locally; hosted Windows/Ubuntu execution is not inferred.
+- [Equal member packets](deliverables/MEMBER_PREPARATION_PACK.md): one-third responsibility, four primary slides and five planned speaking minutes each.
+- [Team todo](deliverables/MID1_TEAM_TODO.md): printing/signatures, supervisor review, code walkthrough and rehearsal/projector check remain outside this percentage.
 
-- [Member preparation packets](deliverables/MEMBER_PREPARATION_PACK.md): equal **one-third** assigned responsibility, four primary slides and five minutes of speaking each, including shared demo segments. Three individual handouts specify files, tests and likely questions. The team confirms names/roll numbers and supervisor; **no co-supervisor** applies.
-- [Functional status](deliverables/MID1_FUNCTIONAL_STATUS.md): the current recorded Mid-1 prototype is ready for practice. Predictive usefulness, student training and deployment remain unresolved or later work.
-- [Report metadata](deliverables/REPORT_METADATA.md): **FYP-1 Mid-Evaluation, Fall 2026**. Team-selected report date: **11 October 2026 (Sunday)**. Actual revision/test dates are retained; the formal committee appointment is separate.
+A new source handover archive is being prepared. GitHub automatically delivers the reviewed PDFs/source only after all four test jobs pass.
 
-[Current source ZIP](deliverables/investify_mid1_fall_2026_review_20261013.zip): 829 files, clean snapshot **73c9162**. [Actual extraction review](evidence/fall_2026_review_20261013_clean_host_verification.json) passes 165 portable tests, 62 HTTP checks and 372 historical records. Later receipt/navigation notes are a separate increment.
-
-Remaining inputs: current coordinator/submission details and actual individual review/code defence, physical projector/timed rehearsal and supervisor baseline/criteria/proposal-action review. Scientific findings, frozen inputs and labels remain unchanged; weak prediction, all-Buy calibration, AI-reference sentiment limits and untrained Phi-3-mini are still disclosed. Original PDFs/ZIPs and dated receipts remain preserved.
+Scientific limits remain explicit: weak prediction, all-Buy calibration, AI-reference sentiment, no measured user benefit and untrained student. QLoRA and production hosting are later milestones. No human review or signature is inferred.
 <!-- MID1_BROWSER_CHECKPOINT_END -->
 
 ## Current handbook revision and rebuilt demo - 13 October 2026
