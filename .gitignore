@@ -12,6 +12,8 @@
 **/*.zip
 code/data/raw/
 code/data/store/
+code/source_revision.json
+code/artifacts/ci_evidence/
 original_materials/
 sources/stocknet/
 evidence/social_pilot/source/

@@ -1,0 +1,128 @@
+test_all_feature_families_remain_inspectable (test_presenter_ui.PresenterUiTests.test_all_feature_families_remain_inspectable) ... 2026-10-13 18:11:59.043 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-13 18:12:00.815 The widget with key "ui_page" was created with a default value but also had its value set via the Session State API.
+Stack (most recent call last):
+  File "C:\Users\Habibi\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Habibi\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Habibi\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 399, in _run_script_thread
+    self._run_script(request.rerun_data)
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 852, in _run_script
+    ) = exec_func_with_error_handling(code_to_exec, ctx)
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\streamlit\runtime\scriptrunner\exec_code.py", line 136, in exec_func_with_error_handling
+    result = func()
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 827, in code_to_exec
+    exec(code, module.__dict__)  # noqa: S102
+  File "E:\Uni_Stuff\FYP\Investify\code\app\streamlit_app.py", line 12, in <module>
+    page = st.segmented_control('Workspace',presenter.PAGES,default='Overview',key='ui_page',label_visibility='collapsed',width='stretch')
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\streamlit\runtime\metrics_util.py", line 725, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\streamlit\elements\widgets\button_group.py", line 1111, in segmented_control
+    return self._internal_button_group(
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\streamlit\runtime\metrics_util.py", line 725, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\streamlit\elements\widgets\button_group.py", line 1269, in _internal_button_group
+    result: RegisterWidgetResult[Any] = self._button_group(
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\streamlit\elements\widgets\button_group.py", line 1365, in _button_group
+    check_widget_policies(self.dg, key, on_change, default_value=_default)
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\streamlit\elements\lib\policies.py", line 146, in check_widget_policies
+    check_session_state_rules(
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\streamlit\elements\lib\policies.py", line 90, in check_session_state_rules
+    _LOGGER.warning(
+ok
+test_both_fresh_and_preserved_experiments_are_selectable (test_presenter_ui.PresenterUiTests.test_both_fresh_and_preserved_experiments_are_selectable) ... 2026-10-13 18:12:01.666 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_candidate_edits_invalidate_the_visible_verification (test_presenter_ui.PresenterUiTests.test_candidate_edits_invalidate_the_visible_verification) ... 2026-10-13 18:12:02.087 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-13 18:12:02.314 Serialization of dataframe to Arrow table was unsuccessful. Applying automatic fixes for column types to make the dataframe Arrow-compatible.
+Traceback (most recent call last):
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\streamlit\dataframe_util.py", line 947, in convert_pandas_df_to_arrow_table
+    return pa.Table.from_pandas(df, preserve_index=preserve_index)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/table.pxi", line 4769, in pyarrow.lib.Table.from_pandas
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\pyarrow\pandas_compat.py", line 656, in dataframe_to_arrays
+    arrays = [convert_column(c, f)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\pyarrow\pandas_compat.py", line 656, in <listcomp>
+    arrays = [convert_column(c, f)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\pyarrow\pandas_compat.py", line 644, in convert_column
+    raise e
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\pyarrow\pandas_compat.py", line 638, in convert_column
+    result = pa.array(col, type=type_, from_pandas=True, safe=safe)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/array.pxi", line 408, in pyarrow.lib.array
+  File "pyarrow/array.pxi", line 91, in pyarrow.lib._ndarray_to_array
+  File "pyarrow/error.pxi", line 92, in pyarrow.lib.check_status
+pyarrow.lib.ArrowInvalid: ('cannot mix struct and non-struct, non-null values', 'Conversion failed for column claimed with type object')
+ok
+test_case_change_resets_candidate_and_cannot_publish_stale_output (test_presenter_ui.PresenterUiTests.test_case_change_resets_candidate_and_cannot_publish_stale_output) ... 2026-10-13 18:12:02.352 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-13 18:12:02.548 Serialization of dataframe to Arrow table was unsuccessful. Applying automatic fixes for column types to make the dataframe Arrow-compatible.
+Traceback (most recent call last):
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\streamlit\dataframe_util.py", line 947, in convert_pandas_df_to_arrow_table
+    return pa.Table.from_pandas(df, preserve_index=preserve_index)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/table.pxi", line 4769, in pyarrow.lib.Table.from_pandas
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\pyarrow\pandas_compat.py", line 656, in dataframe_to_arrays
+    arrays = [convert_column(c, f)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\pyarrow\pandas_compat.py", line 656, in <listcomp>
+    arrays = [convert_column(c, f)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\pyarrow\pandas_compat.py", line 644, in convert_column
+    raise e
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\pyarrow\pandas_compat.py", line 638, in convert_column
+    result = pa.array(col, type=type_, from_pandas=True, safe=safe)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/array.pxi", line 408, in pyarrow.lib.array
+  File "pyarrow/array.pxi", line 91, in pyarrow.lib._ndarray_to_array
+  File "pyarrow/error.pxi", line 92, in pyarrow.lib.check_status
+pyarrow.lib.ArrowInvalid: ('cannot mix struct and non-struct, non-null values', 'Conversion failed for column claimed with type object')
+ok
+test_development_case_refuses_profile_scoring (test_presenter_ui.PresenterUiTests.test_development_case_refuses_profile_scoring) ... 2026-10-13 18:12:02.584 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_failed_study_load_withholds_comparison_scores (test_presenter_ui.PresenterUiTests.test_failed_study_load_withholds_comparison_scores) ... 2026-10-13 18:12:02.895 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_fresh_calibration_diagnosis_has_the_actual_map_bounds (test_presenter_ui.PresenterUiTests.test_fresh_calibration_diagnosis_has_the_actual_map_bounds) ... 2026-10-13 18:12:03.082 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_invalid_records_are_visible_without_a_fake_decision (test_presenter_ui.PresenterUiTests.test_invalid_records_are_visible_without_a_fake_decision) ... 2026-10-13 18:12:03.268 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_overview_has_one_primary_route_and_no_hidden_research_widgets (test_presenter_ui.PresenterUiTests.test_overview_has_one_primary_route_and_no_hidden_research_widgets) ... 2026-10-13 18:12:03.354 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_profiles_are_explicit_unanswered_and_can_be_cleared (test_presenter_ui.PresenterUiTests.test_profiles_are_explicit_unanswered_and_can_be_cleared) ... 2026-10-13 18:12:03.437 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_recorded_experiments_render_scores_without_model_inference (test_presenter_ui.PresenterUiTests.test_recorded_experiments_render_scores_without_model_inference) ... 2026-10-13 18:12:03.739 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_stale_calibration_diagnosis_is_withheld (test_presenter_ui.PresenterUiTests.test_stale_calibration_diagnosis_is_withheld) ... 2026-10-13 18:12:04.345 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_walkthrough_renders_only_the_selected_step (test_presenter_ui.PresenterUiTests.test_walkthrough_renders_only_the_selected_step) ... 2026-10-13 18:12:04.470 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_wrong_visible_probability_is_rejected_with_verified_fallback (test_presenter_ui.PresenterUiTests.test_wrong_visible_probability_is_rejected_with_verified_fallback) ... 2026-10-13 18:12:04.691 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-13 18:12:04.921 Serialization of dataframe to Arrow table was unsuccessful. Applying automatic fixes for column types to make the dataframe Arrow-compatible.
+Traceback (most recent call last):
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\streamlit\dataframe_util.py", line 947, in convert_pandas_df_to_arrow_table
+    return pa.Table.from_pandas(df, preserve_index=preserve_index)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/table.pxi", line 4769, in pyarrow.lib.Table.from_pandas
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\pyarrow\pandas_compat.py", line 656, in dataframe_to_arrays
+    arrays = [convert_column(c, f)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\pyarrow\pandas_compat.py", line 656, in <listcomp>
+    arrays = [convert_column(c, f)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\pyarrow\pandas_compat.py", line 644, in convert_column
+    raise e
+  File "E:\AI-Tools\Temp\investify-ui-py311\Lib\site-packages\pyarrow\pandas_compat.py", line 638, in convert_column
+    result = pa.array(col, type=type_, from_pandas=True, safe=safe)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/array.pxi", line 408, in pyarrow.lib.array
+  File "pyarrow/array.pxi", line 91, in pyarrow.lib._ndarray_to_array
+  File "pyarrow/error.pxi", line 92, in pyarrow.lib.check_status
+pyarrow.lib.ArrowInvalid: ('cannot mix struct and non-struct, non-null values', 'Conversion failed for column claimed with type object')
+ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 5.883s
+
+OK

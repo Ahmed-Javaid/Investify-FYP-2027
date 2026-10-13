@@ -1,0 +1,67 @@
+"""Point current navigation to the proposal-division and executed-CI review."""
+import argparse
+import json
+import os
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+START = '<!-- MID1_BROWSER_CHECKPOINT_START -->'
+END = '<!-- MID1_BROWSER_CHECKPOINT_END -->'
+
+
+def read(name):
+    return json.loads((ROOT / name).read_text(encoding='utf-8'))
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--verified', action='store_true')
+    args = parser.parse_args()
+    report = read('evidence/handbook_report_delivery_20261013_run03.json')
+    deck = read('evidence/handbook_presentation_delivery_20261013_run03.json')
+    portable = read('evidence/ci_replay_20261013_run02/evidence/job_receipt.json')
+    ui = read('evidence/ci_replay_20261013_run02/streamlit-ui/job_receipt.json')
+    if any(r['status'] != 'passed' or r['execution_location'] != 'local_replay'
+           or not r['temporary_component_metadata_restored'] for r in (portable, ui)):
+        raise ValueError('Require completed local CI jobs with restored temporary declarations')
+    docs = ['README.md', 'code/README.md', 'deliverables/README.md', 'planning/CURRENT_STATUS.md',
+            'planning/HANDOFF_20261012.md', 'deliverables/HANDOVER_GUIDE.md']
+    for name in docs:
+        path = ROOT / name
+        def link(label, relative):
+            return f'[{label}]({os.path.relpath(ROOT / relative, path.parent).replace(chr(92), "/")})'
+        archive_line = 'The new source ZIP is being prepared; extraction verification is pending.'
+        if args.verified:
+            archive = read('evidence/investify_mid1_ci_work_division_review_20261013_receipt.json')
+            verification = read('evidence/ci_work_division_review_20261013_clean_host_verification.json')
+            if archive['zip_sha256'] != verification['archive_sha256']:
+                raise ValueError('Archive and extraction evidence disagree')
+            archive_line = (f'{link("Current source ZIP", "deliverables/investify_mid1_ci_work_division_review_20261013.zip")}: '
+                            f'{archive["files"]} files, clean snapshot **{archive["code_commit"][:7]}**. '
+                            f'{link("Actual extraction review", "evidence/ci_work_division_review_20261013_clean_host_verification.json")} '
+                            f'passes {verification["portable_tests_passed"]} portable tests, {verification["live_checks_passed"]} HTTP checks '
+                            f'and {verification["records_validated"]} historical records. Later receipt/navigation notes are a separate increment.')
+        block = (f'{START}\n## Current proposal division and local CI - 13 October 2026\n\n'
+                 'Mid-1 planning readiness remains **84.25%**, using the original weights. The proposal-based division is now filled; actual completed contributions and member code defence still need genuine evidence. Earlier dated sections below retain their historical scope.\n\n'
+                 f'- {link("Current report", report["output"])}: **{report["pages"]} pages**, with the original planned work-division table, actual UI captures and local CI evidence. All pages rendered/reviewed, with no overfull boxes or fully blank pages.\n'
+                 f'- {link("Current presentation", deck["output"])}: **{deck["pages"]} LaTeX/Beamer slides**, including the proposal assignments on the final slide. Source and speaker notes remain editable.\n'
+                 f'- {link("Work division", "deliverables/WORK_DIVISION.md")}: three members and fifteen exact responsibilities recovered from proposal slide 13 using SmartArt parent/child connections. Planned harness ownership and historical authorship remain distinct.\n'
+                 f'- {link("CI/CD status", "deliverables/CI_CD_STATUS.md")}: both shared CI jobs execute successfully on the local Windows runtime. Portable scope: **165 tests + 7 CI guards**, 62 live HTTP checks, 372 saved records and 228 comparator probes. UI scope: **42 tests**. These scopes overlap other receipts. GitHub/Ubuntu execution and continuous deployment remain unexecuted.\n'
+                 f'- {link("Route to 90% and 95%", "deliverables/MID1_90_95_ROADMAP.md")}: unchanged-weight conditional scenarios of **90.25%** and **95.00%**, with the genuine review/acceptance requirements listed explicitly.\n\n'
+                 f'{archive_line}\n\n'
+                 'Remaining inputs: cover/session/coordinator/co-supervisor facts, actual member contributions/defence, physical projector/timed rehearsal and supervisor baseline/criteria/proposal-action review. Scientific findings, frozen inputs and labels remain unchanged; weak prediction, all-Buy calibration, AI-reference sentiment limits and untrained Phi-3-mini are still disclosed. Original PDFs/ZIPs and dated receipts remain preserved.\n'
+                 f'{END}')
+        text = path.read_text(encoding='utf-8')
+        if START in text:
+            first, rest = text.split(START, 1)
+            _, last = rest.split(END, 1)
+            text = first + block + last
+        else:
+            first, rest = text.split('\n', 1)
+            text = first + '\n\n' + block + '\n' + rest
+        path.write_text(text, encoding='utf-8')
+    print('Updated current report/deck, proposal assignments, local CI evidence and conditional readiness routes.')
+
+
+if __name__ == '__main__':
+    main()

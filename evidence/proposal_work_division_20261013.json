@@ -1,0 +1,50 @@
+{
+  "schema": "investify-proposal-work-division-v1",
+  "checked_utc": "2026-10-13T13:00:41.312855+00:00",
+  "source": "sources/Investify Updated (1).pptx",
+  "source_sha256": "56e6f8fae9b8dc172f9ca1cf484181f41456c5e864519abc6501b90172c2ec5c",
+  "slide": 13,
+  "smartart_part": "ppt/diagrams/data2.xml",
+  "smartart_sha256": "563b19f9517d485103f04c555f02bb5da7d566720fcde0b1fad87b8aa46569e6",
+  "method": "Read the original SmartArt parent/child connections and source ordering, not slide-text order alone",
+  "assignments": [
+    {
+      "source_name": "Ahmed Javaid",
+      "member": "Ahmed Javaid",
+      "planned_tasks": [
+        "point-in-time harness",
+        "leakage tests",
+        "dual-timestamp schema",
+        "parity test",
+        "deployment"
+      ],
+      "actual_completion_or_authorship_established": false
+    },
+    {
+      "source_name": "Rafay Ul Haq",
+      "member": "Rafay Ul Haq",
+      "planned_tasks": [
+        "risk profiling",
+        "sentiment pipeline",
+        "degraded operation",
+        "acceptance testing",
+        "frontend"
+      ],
+      "actual_completion_or_authorship_established": false
+    },
+    {
+      "source_name": "Soban Ahmed",
+      "member": "Soban Ahmad",
+      "planned_tasks": [
+        "decision engine",
+        "Calibration",
+        "SHAP",
+        "Verifier",
+        "QLoRA distillation"
+      ],
+      "actual_completion_or_authorship_established": false
+    }
+  ],
+  "name_reconciliation": "Slide 13 spells Soban Ahmed. The supplied cover/student record uses Soban Ahmad (22I-2460), retained in the current report.",
+  "scope": "Original planned work division. It does not certify who authored or completed current assistant-supported modules."
+}

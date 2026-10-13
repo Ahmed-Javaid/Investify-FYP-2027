@@ -1,5 +1,9 @@
 # Mid-evaluation readiness estimate - 12 October 2026
 
+## Proposal division and executed local CI - 13 October 2026
+
+The proposal's planned work division is now documented for all three members, and both shared CI jobs have executed successfully on the local Windows runtime. The [90%/95% route](../deliverables/MID1_90_95_ROADMAP.md) gives unchanged-weight conditional targets of **90.25%** and **95.00%**. Current readiness remains **84.25%** pending genuine criteria/baseline review, member completion/defence evidence, cover facts, physical projector checks and rehearsal. Local replay is distinct from the still-unexecuted GitHub/Ubuntu and CD stages. No human-review credit follows from the planned assignment table or additional overlapping test runs.
+
 ## Browser-review continuation - 13 October 2026
 
 The completed desktop browser journey, reviewed screenshots and updated PDFs close software-layout evidence gaps. The estimate is held at **84.25%**; projector review, rehearsal, actual member defence and supervisor/metadata/criteria review remain open. The unchanged category weights and targets below still apply. This is a planning judgement, not a university grade.

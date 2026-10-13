@@ -1,0 +1,58 @@
+{
+  "schema": "investify-executed-ci-job-v1",
+  "started_utc": "2026-10-13T13:11:26.930233+00:00",
+  "job": "streamlit-ui",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.9",
+  "execution_location": "local_replay",
+  "runner_version": null,
+  "dependency_installation_verified_by_this_runner": false,
+  "status": "passed",
+  "steps": [
+    {
+      "name": "ui-source-check",
+      "exit_code": 0,
+      "elapsed_seconds": 0.031,
+      "tests_passed": null,
+      "log_sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0"
+    },
+    {
+      "name": "legacy-ui",
+      "exit_code": 0,
+      "elapsed_seconds": 30.813,
+      "tests_passed": 24,
+      "log_sha256": "2779bf6fa9caa8ff1e7df3f13f753da16a3c7abd11ff237d7fb6038a9caed044"
+    },
+    {
+      "name": "primary-ui",
+      "exit_code": 0,
+      "elapsed_seconds": 7.015,
+      "tests_passed": 14,
+      "log_sha256": "4743866153a600f3441a4916381bcad96ec33d2f5dcb04716aaeb357a1376c4d"
+    },
+    {
+      "name": "recorded-study-selectors",
+      "exit_code": 0,
+      "elapsed_seconds": 1.062,
+      "tests_passed": 4,
+      "log_sha256": "a0af32cc0a9ed4660eefd41bb21b65c49e0540e5d01ac37f119598b28f343bf0"
+    }
+  ],
+  "scientific_training_or_llm_inference": false,
+  "deployment_executed": false,
+  "source": {
+    "repository_commit": "703e073c1b4b80c1aaca615e0e6a438852a6f7cd",
+    "repository_dirty": true,
+    "code_files": 257,
+    "declared_code_inventory_sha256": "2b4000ffa13dbbb6ce481d5b68c9989ff74776c227ffe96123865723ae6abcd4"
+  },
+  "temporary_component_metadata_restored": true,
+  "finished_utc": "2026-10-13T13:12:06.304385+00:00",
+  "artifacts_sha256": {
+    "legacy-ui.txt": "2779bf6fa9caa8ff1e7df3f13f753da16a3c7abd11ff237d7fb6038a9caed044",
+    "primary-ui.txt": "4743866153a600f3441a4916381bcad96ec33d2f5dcb04716aaeb357a1376c4d",
+    "recorded-study-selectors.txt": "a0af32cc0a9ed4660eefd41bb21b65c49e0540e5d01ac37f119598b28f343bf0",
+    "source_revision.json": "2b4000ffa13dbbb6ce481d5b68c9989ff74776c227ffe96123865723ae6abcd4",
+    "ui-source-check.txt": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0"
+  }
+}

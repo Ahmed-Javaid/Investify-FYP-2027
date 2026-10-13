@@ -1,5 +1,7 @@
 # Investify LaTeX Mid-1 presentation
 
+Latest output: [proposal-division and CI revision](../deliverables/Investify_FYP1_Mid_Presentation_Work_Division_CI_20261013.pdf), with [matching delivery receipt](../evidence/handbook_presentation_delivery_20261013_run03.json). All twelve slides are rendered/reviewed; the final slide carries the proposal assignments and remaining review. Earlier PDFs remain preserved.
+
 Current output: [reviewed twelve-slide PDF](../deliverables/Investify_FYP1_Mid_Presentation_UI_Review_20261013.pdf), with [source-bound delivery receipt](../evidence/handbook_presentation_delivery_20261013_run02.json). The earlier presentation PDF remains preserved. Actual desktop browser review is complete; physical projector inspection and genuine rehearsal remain open.
 
 Editable entry: `main.tex`. Twelve slides, 16:9, with source-native diagrams and data charts. Speaker notes are retained in `\note{}` and hidden in the presentation PDF. The preparation date is not a confirmed assessment date.

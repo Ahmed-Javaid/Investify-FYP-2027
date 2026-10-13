@@ -72,7 +72,7 @@ def main():
                      'LLM_DESIGN.md', 'MODELS_AND_EVALUATION.md', 'DOMAIN_NOTES.md', 'SOCIAL_CORPUS_ACCESS.md', 'REPORT_METADATA.md',
                      'AI_SENTIMENT_PILOT.md', 'CALIBRATION_INVESTIGATION.md', 'OFFICIAL_MODEL_POLICY.md', 'ASSISTANT_TEACHER_PILOT.md',
                      'DEMO_AND_DEFENCE_GUIDE.md', 'CODE_WALKTHROUGH.md', 'MID1_REVIEW_QUESTIONS.md', 'REQUIREMENTS_TRACEABILITY.md',
-                     'ORIGINAL_MID_TRACEABILITY.md', 'PANEL_RESPONSE_MATRIX.md', 'SCIENCE_CORRECTIONS_20261012.md', 'SOCIAL_V4_RUNBOOK.md',
+                     'ORIGINAL_MID_TRACEABILITY.md', 'PANEL_RESPONSE_MATRIX.md', 'WORK_DIVISION.md', 'CI_CD_STATUS.md', 'MID1_90_95_ROADMAP.md', 'SCIENCE_CORRECTIONS_20261012.md', 'SOCIAL_V4_RUNBOOK.md',
                      'stocknet_source_access.json', 'stocknet_source_access_v2.json'):
             target = bundle / 'deliverables' / name
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -100,6 +100,7 @@ def main():
                          '.github/workflows/mideval-evidence.yml',
                          'AGENTS.md',
                          'sources/Investify_Proposal_Full.docx',
+                         'sources/Investify Updated (1).pptx',
                          'sources/Mid_Eval/PROPOSAL_ACTION_REGISTER.md',
                          'sources/Mid_Eval/FYP-1-Mid-Assessment-Guidelines-and-Rubrics.pdf'):
             target = bundle / relative
@@ -130,7 +131,14 @@ def main():
                     shutil.copyfile(source, bundle / 'evidence' / source.name)
         # New completed studies and the reviewed institutional draft have their
         # own dated scopes; retain them alongside the earlier evidence.
-        for pattern in ('fresh_*', 'social_*', 'guided_demo_*', 'calibration_class_prior_*', 'calibration_global_bounds_*', 'calibration_bounds_native_probe_*', 'originals_preservation_browser*', 'report_*', 'handbook_*', 'presenter_*', 'mid1_*'):
+        for source in sorted((ROOT / 'evidence').glob('ci_replay_*')):
+            if source.is_dir():
+                for child in source.rglob('*'):
+                    if child.is_file() and child.suffix in ('.json', '.txt', '.html'):
+                        target = bundle / child.relative_to(ROOT)
+                        target.parent.mkdir(parents=True, exist_ok=True)
+                        shutil.copyfile(child, target)
+        for pattern in ('fresh_*', 'social_*', 'guided_demo_*', 'calibration_class_prior_*', 'calibration_global_bounds_*', 'calibration_bounds_native_probe_*', 'originals_preservation_browser*', 'proposal_work_division_*', 'report_*', 'handbook_*', 'presenter_*', 'mid1_*'):
             for source in sorted((ROOT / 'evidence').glob(pattern)):
                 if source.is_file() and source.suffix in ('.json', '.xml', '.txt', '.log'):
                     shutil.copyfile(source, bundle / 'evidence' / source.name)

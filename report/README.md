@@ -1,5 +1,9 @@
 # Investify Mid-1 LaTeX report
 
+## Current proposal division and CI revision
+
+Use [the current 101-page report](../deliverables/Investify_FYP1_Mid_Report_Work_Division_CI_20261013.pdf) and [its matching source-bound delivery receipt](../evidence/handbook_report_delivery_20261013_run03.json). It includes the proposal's exact planned assignments, actual UI captures and the executed local CI scopes. All pages are rendered/reviewed with zero overfull boxes, unresolved citations or fully blank pages. The earlier PDFs below remain preserved snapshots. Actual member completion, metadata/approvals and physical rehearsal remain open.
+
 ## Current browser review - 13 October 2026
 
 Use [the current 99-page report](../deliverables/Investify_FYP1_Mid_Report_UI_Review_20261013.pdf) and [its source-bound review receipt](../evidence/handbook_report_delivery_20261013_run02.json). All pages are rendered and reviewed, with zero fully blank pages, overfull boxes or unresolved citations. It includes actual browser captures and the fresh calibration-map diagnosis. The 95-page PDF described below remains a preserved earlier snapshot. Cover facts, applicable signatures and genuine team/supervisor review remain pending.

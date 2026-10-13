@@ -1,5 +1,9 @@
 name: MidEval evidence checks
 
+concurrency:
+  group: mideval-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
     branches: [main, 'gpt/**']
@@ -16,55 +20,61 @@ defaults:
 jobs:
   evidence:
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
     env:
       PYTHONDONTWRITEBYTECODE: '1'
     steps:
       - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v7.0.0
         with:
           python-version: '3.11'
-      - name: Test historical-record explanations and failure handling
-        run: python -B -m unittest discover -s tests -p "test_mideval*.py" -v
-      - name: Validate both corpora and record evidence hashes
-        run: python -B scripts/verify_demo_artifacts.py --output artifacts/ci_evidence/verification.json
-      - name: Build the standalone evidence preview
-        run: python -B scripts/export_mideval_preview.py --output artifacts/ci_evidence/evidence_preview.html
-      - name: Freeze the explainer selection without inference
-        run: python -B scripts/evaluate_mideval_llm.py --plan-only --output artifacts/ci_evidence/explainer_evaluation_plan.json
-      - name: Audit separate risk comparator on held-out saved features
-        run: python -B scripts/verify_risk_comparator.py --output artifacts/ci_evidence/risk_comparator_verification.json
+      - name: Execute portable validation, preview, plan and localhost integration
+        run: python -B scripts/run_mid1_ci.py --job evidence --output artifacts/ci_evidence/evidence
       - name: Keep the generated evidence for review
+        if: always()
         uses: actions/upload-artifact@v7.0.2
         with:
           name: mid-eval-evidence-${{ matrix.os }}
-          path: code/artifacts/ci_evidence/
+          path: code/artifacts/ci_evidence/evidence/
+          if-no-files-found: warn
           retention-days: 14
 
   streamlit-ui:
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
     env:
       PYTHONDONTWRITEBYTECODE: '1'
     steps:
       - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v7.0.0
         with:
           python-version: '3.11'
       - name: Install the historical demo runtime
         run: python -B -m pip install -r requirements-demo-runtime.txt
-      - name: Exercise preserved Streamlit regression scope
-        run: python -B -m unittest discover -s tests -p "test_streamlit_mideval.py" -v
       - name: Install the pinned source checker
         run: python -B -m pip install -r requirements-quality.txt
-      - name: Check primary UI source and its tests
-        run: python -B -m ruff check --select E4,E9,F app/streamlit_app.py app/presenter.py app/presenter_data.py app/presenter_style.py tests/test_presenter_ui.py
-      - name: Exercise the rebuilt focused presenter UI
-        run: python -B -m unittest discover -s tests -p "test_presenter_ui.py" -v
+      - name: Execute source checks and all current recorded UI scopes
+        run: python -B scripts/run_mid1_ci.py --job streamlit-ui --output artifacts/ci_evidence/streamlit-ui
+      - name: Keep UI logs and their source-bound receipt
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: mid-eval-ui-${{ matrix.os }}
+          path: code/artifacts/ci_evidence/streamlit-ui/
+          if-no-files-found: warn
+          retention-days: 14
 
 # This job covers the artifact-backed explanation increment. The full training
 # suite needs its pinned environment and acquired datasets. Deployment/delivery
