@@ -1,26 +1,44 @@
-\chapter{Introduction}
+\chapter{Introduction and Project Vision}
+\label{chap:introduction}
 \section{Project Overview}
-Investify is an educational equity decision-support system. It combines technical indicators and financial-news sentiment, presents the evidence behind a model output, and checks explanations against that evidence. The prototype serves historical research cases; it does not connect to brokerage accounts or execute orders.
+Investify is an educational stock research prototype. A learner selects a historical company decision, inspects the technical and news inputs, completes a risk profile, and checks whether an explanation agrees with the saved evidence. The current interface demonstrates NVDA at a five-trading-session horizon. Price prediction and sentiment scoring were performed offline; profile scoring, explanation checking and recovery run during the demonstration.
 \section{Problem Statement}
-An investor must interpret price indicators, news, uncertainty and personal risk constraints. A Buy/Hold/Sell label alone does not show which inputs influenced the result. Historical evaluations can also overstate performance when features or training outcomes become available after the decision time. Finally, fluent explanations can misstate numerical values or attribution directions. We address temporal evaluation and explanation consistency as explicit engineering problems.
-\section{Objectives and Contributions}
-Our implemented contributions are a leakage-audited evaluation pipeline and a record-grounded explanation-verification path. The former checks availability, chronological processing and deliberate faults; the latter exposes all available feature evidence, checks displayed and structured claims independently, and verifies recovery. Risk profiling and uncertainty gating connect these controls to the interface. News/social divergence remains a planned ablation rather than a completed result.
-\section{Scope and Modules}
-The full product targets the proposal's seven-company equity universe. The current research path is bounded to NVDA over 2018--2023, with a separate MSFT social-model comparison. The exposed prediction horizon is five trading sessions. Figure~\ref{fig:planned-architecture} distinguishes the six product modules and their current interfaces. Broader social integration, trained-student explanations and production serving remain later work.
-\begin{longtable}{p{0.20\textwidth}p{0.39\textwidth}p{0.30\textwidth}}
-\caption{Product modules and current Mid-1 boundaries.}\label{tab:modules}\\
-\toprule Module & Delivered behavior & Remaining integration\\\midrule
-\endfirsthead
-\toprule Module & Delivered behavior & Remaining integration\\\midrule
-\endhead
-Investor profiling & Five capacity factors, thirteen tolerance items and restrictive reconciliation & Population-specific wording/suitability evaluation\\
-Sentiment and data & Versioned prices/news, FinBERT features and separate social comparison & Multi-company coverage and news/social divergence\\
-Predictive model & XGBoost records, calibration diagnosis and multiclass revision & Useful predictive skill and broader validation\\
-Explainability & Complete feature context and native TreeSHAP & Participant interpretation of explanations\\
-Explanation verifier & Independent claim checks, rejection and checked fallback & Larger real-generation comparison\\
-Interface and service & Live Streamlit workflow and automated artifact delivery & Production service, follow-up chat and hosting\\
+A retail investor must interpret price history, chart indicators and a large volume of news and social commentary. These signals differ in reliability and can disagree. Without a stated confidence or a record of the inputs, a weak opinion can look as convincing as a strong one, and the investor cannot check how it was formed.
+
+The harder software problem is that historical evaluation can silently use information unavailable at the decision time. A language model can then make that result sound persuasive while inventing a number, a driver or a causal story. Investify addresses these problems through an explicit timing policy, controlled evaluation and explanations checked against the underlying record. Personal financial capacity and willingness to bear loss are considered separately.
+\section{Problem Context and Motivation}
+The primary user is a learner who understands basic stock-market terms but needs help interpreting model evidence. The operator needs a reproducible installation and a clear failure state when inputs are unavailable. The supervisor needs a demonstrable core module and traceable results. The proposal panel specifically requested contribution clarity, a defined LLM role and transparency throughout the journey.
+\section{Project Vision}
+Provide a stock research workflow in which the user can inspect the evidence, see uncertainty, understand the role of the risk profile and detect a false explanation. The final product is intended to combine formal news and informal social signals without hiding timing assumptions or replacing weak evidence with fluent certainty.
+\section{Project Objectives}
+\begin{enumerate}
+\item Build an evaluation harness whose causal joins, training-only scaling and label-end purging pass named tests, and whose permanent centred-window canary detects deliberately introduced future information.
+\item Compare the learned engine with stratified-random and linear baselines using macro-F1, fold variation and probability calibration.
+\item Make all five technical and six news features, their definitions and their selected-class SHAP contributions inspectable.
+\item Meet the planned explanation targets: numeric fidelity at least 0.98, directional consistency at least 0.95, claim recall at least 0.80 and unverifiable-claim rate at most 0.15, with zero known contradictory emitted claims.
+\item Score all thirteen tolerance items and five capacity answers, apply the more restrictive constraint, and preserve the recorded class and probabilities when the profile changes.
+\item Evaluate whether intended users can identify the strongest driver, distinguish confidence from return and recognize abstention. These participant measurements belong to the remaining plan.
+\end{enumerate}
+\section{Project Scope}
+\subsection*{Included}
+The delivered slice includes historical NVDA data, news sentiment, the temporal harness, an XGBoost/linear comparison, SHAP, calibration diagnosis, a full profile, a deterministic template and verifier, and a Streamlit demonstration. A separate MSFT social study compares the original CryptoBERT and Cardiff checkpoints.
+\subsection*{Excluded}
+Brokerage connections, financial transactions and order execution are excluded. Multi-company coverage, integrated social divergence, a prompted LLM explainer, QLoRA, production hosting and participant evaluation are remaining work. The seven equities named in the approved proposal slides remain the intended broader universe.
+\section{Project Modules}
+\begin{longtable}{p{.26\textwidth}p{.63\textwidth}}
+\caption{Project modules and responsibilities.}\label{tab:modules}\\\toprule Module & Responsibility\\\midrule
+Investor profiling & Capacity, tolerance, restrictive reconciliation and confidence threshold\\
+Sentiment analysis & Headline scoring; social model comparison; future news/social divergence\\
+Predictive model & Causal features, chronological evaluation and class probabilities\\
+Explainability & SHAP, all-feature context, maintained definitions and planned LLM explanation\\
+Explanation verifier & Independent text/claim checks, retained rejection and checked fallback\\
+Conversational interface & Current historical Streamlit flow; future service and follow-up interaction\\
 \bottomrule\end{longtable}
-\section{Stakeholders and Success Criteria}
-The retail learner inspects evidence and uncertainty; the operator maintains data and runtime health; the supervisor assesses the implementation and the team defends its modules. Success is assessed through causal-alignment checks, deliberate-fault detection, held-out prediction/calibration results, explanation consistency, reproducible setup and later participant tasks. Software correctness and predictive usefulness are reported separately.
-\section{Constraints, Privacy and Accessibility}
-The historical demonstration uses versioned public market material and local profile answers. API credentials remain outside source control and report artifacts. Profile data is kept in the local session and is not sent to a brokerage. Text labels accompany colors, controls are keyboard accessible and evidence remains inspectable without a GPU. The interface withholds directional suggestions when predictive confidence is insufficient. Population-specific risk assumptions, data vintage and eventual user acceptance require further evaluation.
+\section{Stakeholders and User Classes}
+The learner operates the evidence and profile screens. The operator installs and maintains the application. Group members prepare the demonstration and continue their assigned modules. The supervisor reviews scope, methodology and deliverables; a supervisor is not a separate software permission role in the current viewer.
+\section{Success Criteria}
+The demonstration must load valid records, refuse invalid records, show all eleven features, reject supported corruption types, verify its fallback independently and clear stale results after changes. Every walkthrough result must display educational status, date/horizon and limitations. The prediction gate requires out-of-sample evidence against both baselines and calibration; passing software tests alone does not close that gate. Table~\ref{tab:metrics-matrix} states the measurable evaluation targets.
+\section{Constraints and Assumptions}
+The available study uses daily historical NVDA prices and headline data from 2018--2023. Source event and acquisition times have different meanings. The saved risk policy is a separate confidence gate and does not personalize the fitted classifier. The scientific environment and recorded-viewer environment are installed separately. Proposal GPU targets use a 16 GB-class device; the inspected local GPU has 10,240 MiB and is a different measurement environment.
+\section{Ethical, Legal and DEI Considerations}
+The viewer explains that it is an educational prototype and executes no trades. Profile answers remain in local session memory. Source terms and model licenses are recorded before redistribution or later adaptation. Clear wording, explicit unanswered fields and labelled fictional examples reduce dependence on financial literacy. Accessibility and participant consent will be evaluated with the future user study. The combined current limitations are stated once in Section~\ref{sec:limitations}.

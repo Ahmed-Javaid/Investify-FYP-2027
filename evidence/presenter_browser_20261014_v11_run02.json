@@ -1,0 +1,61 @@
+{
+  "schema": "investify-revised-panel-capture-v1",
+  "checked_utc": "2026-10-13T23:23:00.615287+00:00",
+  "scratch_directory": "E:\\AI-Tools\\Temp\\presenter_browser_20261014_v11_run02",
+  "page_errors": [],
+  "panels": {
+    "onboarding": {
+      "clip": {
+        "x": 72,
+        "y": 382.53125,
+        "width": 736,
+        "height": 503.90625
+      },
+      "visible_text": "Investify\n\nOverview\n\nWalkthrough\n\nExperiments\n\nDesign\n\nRecorded five-session research. Educational output only. No investment advice or order execution.\n\nkeyboard_arrow_right\n\nCase selection\n\nOnboarding\n\nDecision\n\nEvidence\n\nRisk profile\n\nExplanation check\n\nPurpose and limits\n\nInvestify is an educational stock research prototype. It does not execute trades or connect to a brokerage.\n\nNVDA / 2023-12-21 / 5 trading sessions / Alpaca, multiclass calibration (frozen)\n\nThese are historical records. No useful predictive signal has been established. You can lose money if you act on a model label.\n\nThe profile controls a confidence threshold. The current explanation is a deterministic template checked against the record; a prompted LLM explainer is planned for Mid-2.\n\nWhat this means / limits: use this walkthrough to inspect evidence and failures, not to obtain personal financial advice.\n\nHistorical data date: 2023-12-21; horizon: 5 trading sessions; calibrated confidence: 33.34%; advisory status: educational research; no trades.\n\nStep 1 of 5\n\nNext\n\nFive trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance."
+    },
+    "decision": {
+      "clip": {
+        "x": 72,
+        "y": 382.53125,
+        "width": 736,
+        "height": 663.53125
+      },
+      "visible_text": "Investify\n\nOverview\n\nWalkthrough\n\nExperiments\n\nDesign\n\nRecorded five-session research. Educational output only. No investment advice or order execution.\n\nkeyboard_arrow_right\n\nCase selection\n\nOnboarding\n\nDecision\n\nEvidence\n\nRisk profile\n\nExplanation check\n\nRecorded decision\n\nNVDA / 2023-12-21 / 5 trading sessions / Alpaca, multiclass calibration (frozen)\n\nPolicy outcome\n\nNo recommendation (Observe)\n\nDiagnostic class: Buy\n\nEducational advisory status: historical research only; no trades are executed.\n\nCalibrated probability\n\n33.3%\n\nLargest recorded class probability, not an expected return or a suitability guarantee.\n\n0.00\n0.05\n0.10\n0.15\n0.20\n0.25\n0.30\n0.35\nprobability\nBuy\nHold\nSell\nclass\n\nInsufficient predictive confidence: no directional recommendation. The raw class is shown for diagnosis.\n\nkeyboard_arrow_right\n\nMulticlass calibration and abstention\n\nLargest recorded contributions\n\nTreeSHAP describes the raw model score. It does not explain an economic cause or the calibrated probability.\n\nWhat this means / limits: Read the policy outcome first. The diagnostic class is not advice; confidence does not predict a return.\n\nHistorical data date: 2023-12-21; horizon: 5 trading sessions; calibrated confidence: 33.34%; advisory status: educational research; no trades.\n\nPrevious\n\nStep 2 of 5\n\nNext\n\nFive trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance."
+    },
+    "profile": {
+      "clip": {
+        "x": 72,
+        "y": 382.53125,
+        "width": 736,
+        "height": 791.828125
+      },
+      "visible_text": "Investify\n\nOverview\n\nWalkthrough\n\nExperiments\n\nDesign\n\nRecorded five-session research. Educational output only. No investment advice or order execution.\n\nkeyboard_arrow_right\n\nCase selection\n\nOnboarding\n\nDecision\n\nEvidence\n\nRisk profile\n\nExplanation check\n\nRisk capacity and tolerance\n\nThe profile sets a risk allowance and confidence requirement. It does not reweight news or reverse the model direction.\n\nCautious example\n\nHigher-tolerance example\n\nClear profile\n\nFictional example: cautious. Fictional demonstration answers.\n\nkeyboard_arrow_right\n\nComplete the five capacity and thirteen tolerance answers\n\nRisk allowance R\n\n0.000\n\nProfile outcome\n\nObserve\n\nGrable-Lytton total 13/47 (Low); capacity Aggressive; reconciled tier Conservative.\n\nRequired confidence 80.0%; recorded confidence 33.3%; model class Buy.\n\nWithhold a directional suggestion at this profile allowance/confidence.\n\nHigher allowance lowers the confidence requirement. It never changes Buy to Sell or Sell to Buy. Weak evidence still abstains.\n\nkeyboard_arrow_right\n\nScoring and policy details\n\nWhat this means / limits: Capacity and tolerance set the confidence threshold. Both profile extremes abstain on these weak real records.\n\nHistorical data date: 2023-12-21; horizon: 5 trading sessions; calibrated confidence: 33.34%; advisory status: educational research; no trades.\n\nPrevious\n\nStep 4 of 5\n\nNext\n\nFive trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance."
+    },
+    "explanation": {
+      "clip": {
+        "x": 72,
+        "y": 382.53125,
+        "width": 736,
+        "height": 590
+      },
+      "visible_text": "Investify\n\nOverview\n\nWalkthrough\n\nExperiments\n\nDesign\n\nRecorded five-session research. Educational output only. No investment advice or order execution.\n\nkeyboard_arrow_right\n\nCase selection\n\nOnboarding\n\nDecision\n\nEvidence\n\nRisk profile\n\nExplanation check\n\nAn explanation must match its evidence\n\nNVDA / 2023-12-21 / 5 trading sessions / Alpaca, multiclass calibration (frozen)\n\nProfile outcome: Observe. The model class below is diagnostic; its probabilities are unchanged.\n\nInject wrong probability\n\nRestore record facts\n\nEditable candidate\n\nThe structured payload retains the correct record facts. This makes a displayed-text error observable.\n\nCheck explanation\n\nChecked output\n\nCandidate rejected\n\nVerified fallback emitted\n\nThe displayed candidate conflicts with the record. The deterministic replacement passes its own check.\n\nNVDA diagnostic class for session 2023-12-21 (5-day horizon): Buy.\nPolicy outcome: Observe.\nCalibrated confidence in this decision: 33.34%.\nFull probability breakdown -- Buy: 33.34%, Hold: 33.32%, Sell: 33.33%.\nmacd_hist (value 0.0963) supports the Buy diagnostic class with a SHAP contribution of +0.1874, ranked #1 of 5.\ndispersion (value 0.2168) supports the Buy diagnostic class with a SHAP contribution of +0.1782, ranked #2 of 5.\nobv_slope (value 92570766.4286) supports the Buy diagnostic class with a SHAP contribution of +0.1477, ranked #3 of 5.\nmention_volume (value 10.0000) opposes the Buy diagnostic class with a SHAP contribution of -0.1312, ranked #4 of 5.\nmean_polarity (value -0.1419) supports the Buy diagnostic class with a SHAP contribution of +0.0759, ranked #5 of 5.\nResearch and educational output only. Not investment advice, not a recommendation to buy or sell any security.\nkeyboard_arrow_right\n\nWhat the verifier checked\n\nStrict checking supports maintained claim patterns and record values. Arbitrary market prose and human usefulness remain unvalidated.\n\nkeyboard_arrow_right\n\nComplete deterministic indicator guide\n\nPrompted LLM explanations and constrained claim payloads are scheduled for Iteration 3 (Mid-2); QLoRA for Iteration 4.\n\nWhat this means / limits: The checker supports template sentence patterns. It does not verify arbitrary prose or the wisdom of a market decision.\n\nHistorical data date: 2023-12-21; horizon: 5 trading sessions; calibrated confidence: 33.34%; advisory status: educational research; no trades.\n\nPrevious\n\nStep 5 of 5\n\nRecorded experiments\n\nFive trading-session horizon. Research and educational output only. No investment advice or order execution. Recorded model results do not establish useful predictive performance."
+    }
+  },
+  "method": "Actual headless Edge screenshots; focused panels use native browser clip, not image alteration.",
+  "status": "captured_for_visual_review",
+  "screenshots": {
+    "decision-raw.png": "b2f42e8d2b8ac5d035505ee46373d0907231363fd903fab56438156ec62e8547",
+    "decision.png": "b8a1e9005a0100c041eea8a7cbbc9d9ce391709a1f44ad085a3b4f67affff38e",
+    "explanation-raw.png": "5ec0296a7b11eb82be6ef91b3ae2d11f8845f00d032c1060b4d8fc08cb200c26",
+    "explanation.png": "05b9139c8286ba52cd9c211e50ea2140d5d1d6481342bfc7014b66c971258c86",
+    "onboarding-raw.png": "9d0edfb1f4278977c4afb268401c50a726ce4aeef57bb0114acfeed698814cc4",
+    "onboarding.png": "f3bbe488bf0b1d8f7bdeb90ad456acb56195fb600dc64d6b677ceac45acb223c",
+    "profile-raw.png": "2729fc6a784d9f65d2daf986f5456451d09eb1f75db574bec78d6e7d20cf81d1",
+    "profile.png": "fcc81e2807e8bdd6abd2b508d304722b3937bbb28a3a80046377fb4cebca0332"
+  },
+  "ui_source_sha256": {
+    "code/app/presenter.py": "b37b38cc157dadbe3d71e13f7fae04e950405968218d9a13caa0b6a6d2bea9af",
+    "code/app/presenter_data.py": "cbc99055257c2bd43d2789077691d8ff8d6800b8c70ab7836f6e30e73a673783",
+    "code/app/presenter_style.py": "e4bbcabad3336de7a351f63122fa9fb37d6a741c3d4818c40f61573a971e8763"
+  }
+}

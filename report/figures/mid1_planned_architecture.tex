@@ -1,16 +1,17 @@
-\resizebox{\linewidth}{!}{\begin{tikzpicture}[x=1mm,y=1mm,b/.style={draw,rounded corners,text width=41mm,minimum height=28mm,align=center,font=\sffamily\footnotesize},later/.style={b,dashed,fill=gray!5},>=Stealth]
-\node[b] (profile) at (24,111){\textbf{1. Investor profiling}\\Capacity + 13-item tolerance\\Confidence policy};
-\node[b] (sentiment) at (78,111){\textbf{2. Sentiment/data}\\Prices + news + social study\\\textit{Divergence integration later}};
-\node[b] (engine) at (132,111){\textbf{3. Predictive model}\\XGBoost + multiclass calibration\\Uncertainty handling};
-\node[b] (explain) at (132,56){\textbf{4. Explainability}\\Native SHAP + full context\\\textit{Student generator later}};
-\node[b] (verify) at (78,56){\textbf{5. Explanation verifier}\\Independent claims\\Checked recovery};
-\node[b] (ui) at (24,56){\textbf{6. Interface/service}\\Current Streamlit workflow\\\textit{Chat/hosting later}};
-\draw[->](sentiment.east)--node[above,font=\scriptsize]{features}(engine.west);
-\draw[->](engine.south)--node[right,font=\scriptsize]{record}(explain.north);
-\draw[->](explain.west)--node[above,font=\scriptsize]{claims}(verify.east);
-\draw[->](verify.west)--node[above,font=\scriptsize]{result}(ui.east);
-\draw[->](profile.south)--node[left,font=\scriptsize]{allowance}(ui.north);
-\draw[->](ui.north east)--node[below,sloped,font=\scriptsize]{selected case}(sentiment.south west);
-\node[later,text width=126mm,minimum height=18mm] (future) at (78,9){Later integrations: seven-company coverage, news/social divergence, generated follow-up explanations and production service. Dashed boundary marks future integration; current modules have measured scoped evidence.};
-\draw[->,dashed](future.north)--node[right,font=\scriptsize]{integration milestones}(verify.south);
+\resizebox{\linewidth}{!}{\begin{tikzpicture}[x=1mm,y=1mm,b/.style={draw,text width=39mm,minimum height=18mm,align=center,font=\sffamily\small},planned/.style={b,dashed,fill=gray!7},>=Stealth]
+\node[b] (data) at (23,91){Data / sentiment\\Prices + news; social study};
+\node[b] (engine) at (78,91){Predictive model\\XGBoost / calibration};
+\node[b] (context) at (133,91){SHAP / context\\All values and definitions};
+\node[b] (template) at (78,53){Current explanation\\Deterministic template};
+\node[planned] (llm) at (133,53){Explanation layer (LLM)\\Planned: Mid-2};
+\node[b] (profile) at (23,53){Investor profiling\\Trusted policy outcome};
+\node[b] (guard) at (78,15){Explanation verifier\\Retain rejection / fallback};
+\node[b] (ui) at (23,15){Interface / service\\Streamlit; service later};
+\draw[->](data)--(engine);\draw[->](engine)--(context);
+\draw[->](context.south west)--(template.north east);
+\draw[->,dashed](context)--(llm);
+\draw[->](template)--(guard);\draw[->,dashed](llm.south)--(133,15)--(guard.east);
+\draw[->](profile)--(template);\draw[->,dashed](profile.north)--(23,68)--(133,68)--(llm.north);
+\draw[->](profile.south)--(23,34)--(56,34)--(guard.north west);
+\draw[->](guard)--(ui);
 \end{tikzpicture}}

@@ -1,7 +1,0 @@
-Preserved outputs superseded by the reviewed 14 October revision.
-
-The report_sources_before_revision.zip retains native pre-edit sources.
-Technical_Completion_20261013 PDFs and the earlier groupmate ZIP are historical.
-Revision validation ZIPs retain explicit uncommitted test snapshots.
-See evidence/revision_output_archive_20261014.json for exact moved paths and hashes.
-Current deliverables are selected by deliverables/current_delivery.json.

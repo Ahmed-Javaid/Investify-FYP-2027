@@ -1,5 +1,5 @@
 \chapter{Software Requirements}
-\section{User Interactions}
+\section{User Interactions / Use Cases}
 The learner selects a historical case, inspects evidence, completes a risk profile and checks an explanation. The operator installs the viewer and inspects input failures. Research views expose source-bound studies. The current workflow is historical and educational; the final conversational service remains later scope.
 \section{Use Case Diagram}
 Figure~\ref{fig:usecases} uses actors outside the system boundary, oval use cases and labelled include/extend relationships. Study preparation is an operator task, not an unimplemented student actor.
@@ -57,18 +57,18 @@ Figure~\ref{fig:usecases} uses actors outside the system boundary, oval use case
 \item[Trigger] Select leakage, sentiment or teacher study.
 \item[Main flow] Validate identities and coverage, recompute supported summary values and expose sample/scope limits.
 \item[Exceptions] Changed, incomplete or unavailable evidence withholds replacement scores.
-\item[Postcondition] Recorded findings are displayed without a page-load model call.
+\item[Postcondition] Recorded findings are displayed without running model inference.
 \end{description}
 \subsection{UC-07: Install and Run the Demo}
 \begin{description}
 \item[Actor] Operator or group member.
 \item[Precondition] Git/Python 3.11 and initial package access.
 \item[Trigger] Follow the setup manual.
-\item[Main flow] Clone source, create an environment, install pinned viewer dependencies, restore reviewed checkout bytes and start Streamlit on loopback.
+\item[Main flow] Clone source, create an environment, install pinned viewer dependencies, restore the documented file line endings and start Streamlit on loopback.
 \item[Exceptions] Missing runtime or occupied port produces an actionable setup error; existing processes are not stopped automatically.
 \item[Postcondition] The historical workflow runs without model downloads or brokerage credentials.
 \end{description}
-\section{Functional Requirements by Module}
+\section{Functional Requirements}
 The IDs preserve traceability while grouping the implementation by responsibility. Profile/calibration revisions are explicitly versioned; the earlier blend remains a historical comparator.
 \subsection{Data, Decision and Evidence}
 \begin{longtable}{p{0.15\textwidth}p{0.52\textwidth}p{0.22\textwidth}}
@@ -102,16 +102,35 @@ MID-FR-15 & Validate post/reference provenance, exclusions and chronological pla
 MID-FR-16/17 & Require complete matching original-classifier outputs and mappings & Partial failures withhold paired metrics\\
 MID-FR-18 & Preserve actual teacher prose, independent checking and grouped exports & Test dates excluded; student training separate\\
 \bottomrule\end{longtable}
-\section{Non-Functional Requirements}
-\begin{longtable}{p{0.14\textwidth}p{0.51\textwidth}p{0.24\textwidth}}
-\caption{Quantitative product targets and current measurement boundary.}\label{tab:nfr-targets}\\\toprule ID & Target & Status\\\midrule
-NFR-1 & Decision/attribution/verification below 800 ms p95 on target VM & Target measurement remains\\
-NFR-2/3 & Sentiment at least 150 documents/s on specified GPU; CPU SHAP below 50 ms & Target environment measurement remains\\
-NFR-4 & Inference memory below 4 GB & Target measurement remains\\
-NFR-5 & Later QLoRA within four GPU hours on 16 GB envelope & Later training milestone\\
-NFR-6 & Explanation including verification below five seconds & Whole-request measurement remains\\
-NFR-7/8 & Nightly ingest below 30 minutes; walk-forward/search below 90 minutes & Operational measurement remains\\
+
+\subsection{Transparency}
+\begin{longtable}{p{.15\textwidth}p{.48\textwidth}p{.26\textwidth}}
+\caption{User transparency requirements and acceptance tests.}\label{tab:transparency-fr}\\\toprule ID & Requirement & Acceptance test\\\midrule
+MID-FR-21 & Onboarding states purpose, risks and that no trades are executed & Presenter test checks the first stage and the disclosure before Decision\\
+MID-FR-22 & Each result step shows advisory status, confidence, historical date/horizon and limits & Presenter test visits Decision, Evidence, Risk profile and Explanation check and checks captions\\
+MID-FR-23 & An abstaining case headlines Observe; explanations and fallback preserve the trusted policy outcome & Presenter and policy tests check diagnostic caption, wrong policy prose/JSON and checked recovery\\
 \bottomrule\end{longtable}
-The configured retry/socket bounds do not establish a whole-request latency guarantee. Reliability acceptance requires explicit unavailable/error states and current-identity results. Local routes reject malformed/nonfinite input and retain no brokerage credentials. Installation tests and hosted artifact delivery establish reproducibility of their scoped paths, not production security or participant comprehension.
-\section{Acceptance and Traceability}
-Positive cases and deliberate failures are paired: a correct explanation passes; its corrupted visible probability fails despite correct JSON; fallback passes independently; an edit clears the old verdict. The risk layer refuses incomplete inputs and preserves market direction. The source/test matrix in Appendix~\ref{app:requirements} maps the twenty requirement IDs to implementation and named checks.
+\section{Non-Functional Requirements}
+\subsection{Reliability}
+Invalid records, missing inputs and failed verification must produce explicit error states. Case, candidate and profile changes invalidate old results. No known contradictory candidate may be emitted as a verified result.
+\subsection{Usability}
+Each walkthrough step must state what the displayed value means and its limits. Questions begin unanswered, and fictional examples are labelled. Participant acceptance will measure completion, time and interpretation errors.
+\subsection{Performance}
+\begin{longtable}{p{.12\textwidth}p{.46\textwidth}p{.31\textwidth}}
+\caption{Preserved proposal NFR identifiers, targets and environments.}\label{tab:nfr-targets}\\\toprule ID & Target & Environment/status\\\midrule
+NFR-1 & Decision, attribution and checking below 800 ms p95 & Target VM, warm cache; unmeasured\\
+NFR-2 & Sentiment at least 150 documents/s & 16 GB-class GPU, fp16, 128 tokens; unmeasured\\
+NFR-3 & TreeSHAP below 50 ms per prediction & CPU; target measurement pending\\
+NFR-4 & Peak inference memory below 4 GB & Target VM; unmeasured\\
+NFR-5 & QLoRA at most four GPU-hours within 16 GB & Iteration 4; local 10,240 MiB GPU is a different budget, not evidence that this target was met\\
+NFR-6 & Explanation including verification below five seconds & Target VM CPU; prompted path unimplemented\\
+NFR-7 & Nightly full-universe ingest below 30 minutes & GPU plus local store; operational task pending\\
+NFR-8 & Purged walk-forward/search below 90 minutes & CPU; full target sweep pending\\
+\bottomrule\end{longtable}
+The scientific \nolinkurl{pyproject.toml} uses NumPy 1/pandas 2; the recorded viewer's pinned requirements use NumPy 2/pandas 3. They are separate environments. A short test run is not a benchmark of the specified NFR workload.
+\subsection{Security}
+Profile answers are local to the session; secrets and model caches are excluded from packaged source. Loopback is the default network binding. Production authentication, threat modelling and source-rights review are remaining service requirements.
+\section{Acceptance Criteria}
+A correct supported explanation passes; wrong visible prose fails beside correct JSON; a rejected candidate retains its report and produces an independently checked fallback. Unanswered profiles withhold results. Profile changes preserve the model direction/probabilities and invalidate prior explanations. An unavailable study withholds replacement scores.
+\section{Requirements Traceability}
+Appendix B maps source functions and named tests to the Mid-1 IDs and maps the fifteen concept-reference FRs to the delivered slice. MID-FR-21--23 add observable transparency acceptance. Counts in Chapter 7 come from executed suites rather than from the number of requirement rows.

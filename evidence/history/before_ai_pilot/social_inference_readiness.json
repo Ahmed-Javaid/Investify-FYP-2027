@@ -1,8 +1,0 @@
-{
-  "protocol": "mideval-equity-social-selection-v2",
-  "status": "blocked",
-  "reason": "[Errno 2] No such file or directory: 'artifacts\\\\mid_eval\\\\social_benchmark.json'",
-  "model_downloads": 0,
-  "model_outputs": 0,
-  "quality_metrics": null
-}

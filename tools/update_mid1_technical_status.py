@@ -17,8 +17,17 @@ def read(name):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--verified', action='store_true')
+    parser.add_argument('--package-receipt', type=Path)
+    parser.add_argument('--extraction-receipt', type=Path)
     parser.add_argument('--hosted-receipt', type=Path)
     args = parser.parse_args()
+    if args.verified:
+        if not args.package_receipt or not args.extraction_receipt:
+            parser.error('--verified requires --package-receipt and --extraction-receipt')
+        archive = json.loads(args.package_receipt.read_text(encoding='utf-8'))
+        checked = json.loads(args.extraction_receipt.read_text(encoding='utf-8'))
+        if archive['zip_sha256'] != checked['archive_sha256']:
+            raise ValueError('Archive/extraction receipt mismatch')
     config = read('deliverables/current_delivery.json')
     report = read(config['report_receipt'])
     deck = read(config['presentation_receipt'])
@@ -47,11 +56,6 @@ def main():
     path = ROOT / 'docs/handoffs/AGENT_HANDOFF.md'
     run = (f'[Retained hosted run]({hosted["html_url"]}) passes all five jobs.'
            if hosted else 'Hosted execution remains pending; configuration is not execution evidence.')
-    if args.verified:
-        archive = read('evidence/investify_mid1_technical_review_20261013_receipt.json')
-        checked = read('evidence/technical_review_20261013_clean_host_verification.json')
-        if archive['zip_sha256'] != checked['archive_sha256']:
-            raise ValueError('Archive/extraction receipt mismatch')
     block = (f'{START}\n{summary} under the user-defined code/report/CI-CD/module scope. '
              'This is not whole-FYP completion, useful prediction or a grade. '
              f'{run} Later working-tree changes need their own checks.\n'

@@ -27,6 +27,9 @@ def inject():
     .scope-line { color:#597084; font-size:.79rem; border-top:1px solid #d9e2ea; padding-top:.7rem; margin-top:1.4rem; }
     [data-testid="stMetric"] { padding:.7rem 0; }
     [data-testid="stMetricValue"] { font-size:1.8rem; }
+    [data-testid="stMetricValue"], [data-testid="stMetricValue"] > div {
+        white-space:normal !important; overflow:visible !important; text-overflow:clip !important; line-height:1.3;
+    }
     .stButton button { min-height:2.7rem; height:auto; white-space:normal; border-radius:6px; font-weight:600; }
     .stCode pre { white-space:pre-wrap; overflow-wrap:anywhere; }
     [data-testid="stToolbar"] { visibility:hidden; }

@@ -1,6 +1,6 @@
 {
   "schema": "investify-requirement-anchors-v2",
-  "scope": "Mid-1 revision: complete risk scoring, direction-preserving policy, multiclass calibration and uncertainty handling.",
+  "scope": "Mid-1 audit revision: retained scientific identities, policy-aware template verification, onboarding and per-step transparency.",
   "requirements": [
     {
       "id": "MID-FR-01",
@@ -288,7 +288,7 @@
           "symbol": "SentimentSelectionTests.test_no_runs_or_one_candidate_never_manufactures_a_model_selection"
         }
       ],
-      "evidence_boundary": "Candidate inference/selection remains pending; agreement is against AI references."
+      "evidence_boundary": "Original candidates executed on the frozen 24-post held-out set; agreement is against AI references, not independently human-validated accuracy. Deployment selection remains open."
     },
     {
       "id": "MID-FR-17",
@@ -305,7 +305,7 @@
           "symbol": "SentimentInferenceTests.test_actual_loader_refuses_missing_weights_without_a_download"
         }
       ],
-      "evidence_boundary": "Real model loading/inference unexecuted; compatible official weights/runtime missing."
+      "evidence_boundary": "Original candidates executed on the frozen 24-post held-out set; agreement is against AI references, not independently human-validated accuracy. Deployment selection remains open."
     },
     {
       "id": "MID-FR-18",
@@ -351,7 +351,7 @@
           "symbol": "CalibrationRiskV2Tests.test_real_calibration_replay_preserves_all_raw_classes_and_probabilities"
         }
       ],
-      "evidence_boundary": "Post-analysis correction; rank preservation does not establish useful prediction."
+      "evidence_boundary": "Post-analysis temperature diagnosis; T reaches 1000 and confidence is near one-third, so the policy abstains."
     },
     {
       "id": "MID-FR-20",
@@ -369,6 +369,61 @@
         }
       ],
       "evidence_boundary": "Scoring correctness, not population-specific psychometric validation."
+    },
+    {
+      "id": "MID-FR-21",
+      "acceptance": "Onboarding states purpose, risks and no trade execution",
+      "implementation": [
+        {
+          "path": "code/app/presenter.py",
+          "symbol": "onboarding_view"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_presenter_ui.py",
+          "symbol": "PresenterUiTests.test_onboarding_precedes_the_decision_and_discloses_purpose_risks_and_status"
+        }
+      ],
+      "evidence_boundary": "Current historical UI only; participant understanding is unmeasured."
+    },
+    {
+      "id": "MID-FR-22",
+      "acceptance": "Every result step shows advisory status, confidence, date/horizon and limits",
+      "implementation": [
+        {
+          "path": "code/app/presenter.py",
+          "symbol": "walkthrough"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_presenter_ui.py",
+          "symbol": "PresenterUiTests.test_each_walkthrough_step_has_advisory_date_horizon_and_limits"
+        }
+      ],
+      "evidence_boundary": "Walkthrough result steps; later service responses need the same acceptance."
+    },
+    {
+      "id": "MID-FR-23",
+      "acceptance": "Observe headlines and verified explanations preserve the trusted policy",
+      "implementation": [
+        {
+          "path": "code/app/presenter.py",
+          "symbol": "decision_view"
+        }
+      ],
+      "tests": [
+        {
+          "path": "code/tests/test_presenter_ui.py",
+          "symbol": "PresenterUiTests.test_walkthrough_renders_only_the_selected_step"
+        },
+        {
+          "path": "code/tests/test_presenter_ui.py",
+          "symbol": "PresenterUiTests.test_abstaining_explanation_and_fallback_keep_policy_outcome"
+        }
+      ],
+      "evidence_boundary": "Raw class remains diagnostic; current template grammar only."
     }
   ]
 }

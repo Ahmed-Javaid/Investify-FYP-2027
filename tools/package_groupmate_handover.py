@@ -12,7 +12,8 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = 'https://github.com/Ahmed-Javaid/Investify-FYP-2027'
-GUIDES = {'docs/team/MID1_TEAM_GUIDE.md': 'TEAM_GUIDE.md',
+GUIDES = {'docs/team/DEMONSTRATION.md': 'DEMONSTRATION.md',
+          'docs/team/MID1_TEAM_GUIDE.md': 'TEAM_GUIDE.md',
           'docs/technical/ENGINEERING.md': 'technical/ENGINEERING.md',
           'docs/technical/RESEARCH.md': 'technical/RESEARCH.md',
           'docs/technical/REQUIREMENTS.md': 'technical/REQUIREMENTS.md'}
@@ -86,8 +87,9 @@ def main():
         contents[name] = text.encode('utf-8')
     contents['READ_FIRST.txt'] = (f'''INVESTIFY MID-1 GROUPMATE PACK
 
-Extract this ZIP. Start with TEAM_GUIDE.md for setup, demo, speaking schedule,
-your member section, code reading, questions and the team todo.
+Extract this ZIP. Start with DEMONSTRATION.md for the five-minute click script.
+TEAM_GUIDE.md has setup, the speaking schedule, your member section, code reading,
+questions and the team todo.
 
 Investify_Report.pdf: current {page_counts['report']}-page report.
 Investify_Presentation.pdf: current {page_counts['presentation']}-slide deck.
@@ -98,7 +100,7 @@ Source: https://github.com/Ahmed-Javaid/Investify-FYP-2027
 Clone/run instructions are in TEAM_GUIDE.md. No GPU/API keys/model downloads
 are needed for the recorded demo. Initial dependency installation needs internet.
 
-Report date: 11 October 2026; actual revisions/tests retain their dates.
+Submission date and batch/session are unconfirmed and remain blank in the PDFs.
 Predictions/studies are recorded; profile arithmetic and checking run live.
 The full FYP continues beyond this checkpoint. Print/sign after real review.
 manifest.json records hashes. Code, datasets, weights and old notes are excluded.

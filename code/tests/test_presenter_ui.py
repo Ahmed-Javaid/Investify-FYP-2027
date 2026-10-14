@@ -18,7 +18,8 @@ class PresenterUiTests(unittest.TestCase):
     def walkthrough(self,step='Decision'):
         app = self.app()
         app.button(key='ui_begin').click().run()
-        if step != 'Decision':app.radio(key='ui_step').set_value(step).run()
+        if any(r.key == 'ui_step' for r in app.radio):
+            app.radio(key='ui_step').set_value(step).run()
         self.assertFalse(app.exception)
         return app
 
@@ -31,11 +32,12 @@ class PresenterUiTests(unittest.TestCase):
 
     def test_walkthrough_renders_only_the_selected_step(self):
         app = self.walkthrough()
-        self.assertTrue(any(m.label=='Model class' and m.value=='Buy' for m in app.metric))
+        self.assertTrue(any(m.label=='Policy outcome' and m.value=='No recommendation (Observe)' for m in app.metric))
+        self.assertTrue(any(c.value=='Diagnostic class: Buy' for c in app.caption))
         self.assertFalse(any(b.key=='ui_verify' for b in app.button))
         app.button(key='ui_next').click().run()
         self.assertEqual(app.radio(key='ui_step').value,'Evidence')
-        self.assertFalse(any(m.label=='Model class' for m in app.metric))
+        self.assertFalse(any(m.label=='Policy outcome' for m in app.metric))
         self.assertEqual(len(app.selectbox(key='ui_feature').options),5)
         app.button(key='ui_previous').click().run()
         self.assertEqual(app.radio(key='ui_step').value,'Decision')
@@ -125,7 +127,7 @@ class PresenterUiTests(unittest.TestCase):
         with patch('app.presenter_data.load_cases',side_effect=ValueError('Labelled invalid input')):
             app = self.walkthrough()
             self.assertTrue(any('Recorded evidence unavailable' in m.value for m in app.error))
-            self.assertFalse(any(m.label=='Model class' for m in app.metric))
+            self.assertFalse(any(m.label=='Policy outcome' for m in app.metric))
 
     def test_recorded_experiments_render_scores_without_model_inference(self):
         app = self.app()
@@ -172,6 +174,43 @@ class PresenterUiTests(unittest.TestCase):
             app = self.walkthrough()
             app.selectbox(key='ui_source').set_value('fresh_frozen').run()
             self.assertTrue(any('diagnosis unavailable' in m.value for m in app.info))
-            self.assertTrue(any(m.label == 'Model class' and m.value == 'Buy' for m in app.metric))
+            self.assertTrue(any(c.value == 'Diagnostic class: Buy' for c in app.caption))
+
+    def test_onboarding_precedes_the_decision_and_discloses_purpose_risks_and_status(self):
+        app = self.app()
+        app.button(key='ui_begin').click().run()
+        self.assertEqual(app.radio(key='ui_step').value, 'Onboarding')
+        self.assertTrue(any('does not execute trades' in m.value for m in app.markdown))
+        self.assertTrue(any('lose money' in w.value for w in app.warning))
+        app.button(key='ui_next').click().run()
+        self.assertEqual(app.radio(key='ui_step').value, 'Decision')
+
+    def test_each_walkthrough_step_has_advisory_date_horizon_and_limits(self):
+        app = self.walkthrough()
+        for step in ('Decision', 'Evidence', 'Risk profile', 'Explanation check'):
+            app.radio(key='ui_step').set_value(step).run()
+            self.assertFalse(app.exception)
+            captions = '\n'.join(c.value for c in app.caption)
+            self.assertIn('What this means / limits:', captions)
+            self.assertIn('Historical data date:', captions)
+            self.assertIn('trading sessions; calibrated confidence:', captions)
+            self.assertIn('advisory status: educational research; no trades.', captions)
+
+    def test_abstaining_explanation_and_fallback_keep_policy_outcome(self):
+        app = self.walkthrough('Explanation check')
+        self.assertIn('Policy outcome: Observe.', app.text_area(key='ui_candidate_text').value)
+        self.assertIn('diagnostic class for session', app.text_area(key='ui_candidate_text').value)
+        app.button(key='ui_inject').click().run()
+        app.button(key='ui_verify').click().run()
+        self.assertTrue(any('Policy outcome: Observe.' in t.value for t in app.text))
+        self.assertFalse(app.exception)
+
+    def test_design_names_current_profile_file_and_explainer_schedule(self):
+        app = self.app()
+        app.button(key='ui_open_design').click().run()
+        text = '\n'.join(m.value for m in app.markdown)
+        self.assertIn('risk_profile_gl.py', text)
+        self.assertNotIn('risk_comparator.py', text)
+        self.assertFalse(any('student ownership' in c.value for c in app.caption))
 
 if __name__=='__main__':unittest.main()

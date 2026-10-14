@@ -1,80 +1,103 @@
 # Investify agent handoff
 
-Single continuation entry for agents/maintainers. Team reading belongs in
-[MID1_TEAM_GUIDE.md](../team/MID1_TEAM_GUIDE.md); technical references live in
-`../technical/`. Keep the root README short; update existing guides instead of
-creating another status page or member handout.
+Start here for development continuation. Team preparation is in
+[MID1_TEAM_GUIDE.md](../team/MID1_TEAM_GUIDE.md), with the short click script in
+[DEMONSTRATION.md](../team/DEMONSTRATION.md). Technical references are in
+`../technical/`. Keep the root README short and update the existing guides.
 
 ## Current state
 
 <!-- MID1_BROWSER_CHECKPOINT_START -->
-**100% technical Mid-1 completion** under the user-defined code/report/CI-CD/module scope. This is not whole-FYP completion, useful prediction or a grade. [Retained hosted run](https://github.com/Ahmed-Javaid/Investify-FYP-2027/actions/runs/38469231692) passes all five jobs. Later working-tree changes need their own checks.
-[Machine status](../../evidence/mid1_technical_completion_current.json).
+The **v1.1 audit revision** follows the official ten-chapter template and addresses PF-01--PF-09 with explicit implementation/evaluation status. Current report: 95 pages; deck: 14 slides, 660 planned seconds. Both local CI jobs pass: 183 portable tests, 7 guards, and UI scopes 24/19/4. The 23 requirements have 29 passing selected anchors; 9 delivery guards pass. Implementation commit 8bd6e09 was pushed in PR 1; Actions run 38487127348 passed all five jobs. The final delivery update and mid1-v1.1 tag resolve the revised release source. Older hosted runs certify their own earlier snapshots.
+[Selected delivery](../../deliverables/current_delivery.json) ? [Local evidence receipt](../../evidence/mid1_v11_20261014_final_evidence_run01/job_receipt.json) ? [UI receipt](../../evidence/mid1_v11_20261014_final_ui_run01/job_receipt.json).
 <!-- MID1_BROWSER_CHECKPOINT_END -->
 
-- Canonical repository: `E:\Uni_Stuff\FYP\Investify`; code commands run from `code`.
-- Remote: https://github.com/Ahmed-Javaid/Investify-FYP-2027. Revised code/report published at `5089998`; its hosted five-job run passed.
-- Documentation and technical revision are checked locally and by the revised-source hosted run. New receipts retain their exact committed snapshots.
-- Current report: Revised_20261014, 82 pages; current presentation: 12 slides. [Delivery configuration](../../deliverables/current_delivery.json).
-- Editable entries: [report/main.tex](../../report/main.tex), [presentation/main.tex](../../presentation/main.tex); current PDF receipts bind the revised sources and reviewed page renders.
-- Recorded demo URL: http://127.0.0.1:8507 while the server runs. Check health before claiming it is running; launch with [start_guided_demo.ps1](../../tools/start_guided_demo.ps1).
-- The compact team ZIP contains report, presentation, rubric and one team guide. Members obtain source from GitHub.
+- Repository: `E:\Uni_Stuff\FYP\Investify`; remote: https://github.com/Ahmed-Javaid/Investify-FYP-2027. Code commands run from `code`.
+- Current reviewed report: 95 pages; presentation: 14 slides. [Delivery configuration](../../deliverables/current_delivery.json) selects current review/custody receipts.
+- Editable entries: [report/main.tex](../../report/main.tex), [presentation/main.tex](../../presentation/main.tex). Removing unused assets did not alter PDF bytes or actual compiler inputs.
+- Demo URL: http://127.0.0.1:8507 while the server runs. Check health before claiming it is running; launch with [start_guided_demo.ps1](../../tools/start_guided_demo.ps1).
+- The compact groupmate ZIP contains report, slides, rubric, demonstration handout and preparation/technical guides. Members obtain source from GitHub.
 
-## Constraints and remaining work
+## Scope and remaining work
 
-Current assistant is teacher, original Phi-3-mini the untrained planned student,
-Mistral fallback. FinBERT scores news; social comparison is separate. Preserve
-weak prediction, historical isotonic collapse, current uncertainty/abstention and reference-label limits and absent measured
-user benefit. New experiments need new identities; preserve frozen data, labels,
-model/source identities, archived outputs and dated evidence.
+Temperature calibration preserves raw classes but yields near-uniform confidence,
+so the primary viewer abstains. Grable-Lytton scoring uses thirteen tolerance and
+five capacity answers; the confidence gate preserves raw direction/probabilities.
+The four older failed-calibration cases remain inspectable but cannot produce
+directional suggestions.
 
-Remaining whole-FYP work: social/news divergence integration, population-specific profile
-validation, useful prediction/calibration evaluation, student inference and
-QLoRA comparison, performance/parity/degraded-operation checks, production
-hosting, participant acceptance and external installation. Real walkthroughs,
-rehearsal/projector review, signatures and supervisor review are team tasks,
-excluded from the user's technical completion percentage.
+FinBERT scores headline tone; CryptoBERT/Cardiff are a separate social comparison.
+Reference labels, model bytes and frozen source identities remain unchanged.
+Template/checker use the policy-aware v5 grammar; retained archive_v4 sources keep original teacher packet replay tested. The frozen explanation context module must stay byte-identical for the recorded
+teacher packet to replay. Current assistant is teacher; original Phi-3-mini is
+the untrained planned student; Mistral is fallback. New experiments need separate
+identities.
 
-Confirmed metadata: Fall 2026, report date 11 October 2026, existing names/roll
-numbers, Mr. Irfan Ullah, no co-supervisor, coordinator omitted. Keep actual
-execution dates separate from the report date. Do not infer human acceptance,
-institutional review or student authorship from automated checks.
+Remaining whole-FYP work: divergence integration, population-specific profile
+validation, useful prediction/calibration evaluation, student inference and QLoRA
+comparison, performance/parity/degraded-operation checks, production hosting and
+participant acceptance. Rehearsal, projector checks, signatures and supervisor
+review are team tasks outside the technical completion percentage.
 
-## Active tools
+Confirmed metadata: FYP-1 Mid-Evaluation, Fall 2026; actual submission date and batch/session have not been supplied and remain blank;
+Ahmed Javaid 22I-2530, Rafay Ul Haq 22I-2520, Soban Ahmad 22I-2460; equal delivered
+contributions confirmed by the user; supervisor Mr. Irfan Ullah; no co-supervisor;
+coordinator omitted. Keep actual execution dates separate. Do not infer student
+understanding, institutional approval or predictive usefulness from tests.
 
-- `package_groupmate_handover.py`: build a new compact ZIP; preserve prior ZIP/receipt pairs.
-- `package_source_handover.py`, `verify_source_handover.py`: source/PDF packaging and actual extraction validation; use new filenames/prefixes.
-- `code/scripts/run_mid1_ci.py`, `tools/run_mid1_delivery.py`: shared CI and hosted delivery.
-- `update_mid1_technical_status.py`: machine status plus this handoff's status block only.
-- `verify_requirements_traceability.py`: source/test anchors; Markdown goes into the technical requirements block.
-- `verify_documentation_layout.py`: active links, archived identities and protected source/PDF bytes.
-- `write_ci_checkout_inventory.py`: refresh reviewed identities after validated changes.
-- Build/render/publication tools remain active. Eighteen superseded documentation generators are archived and must not recreate old pages.
+Meeting evidence was requested before compilation. No records were supplied;
+Appendix F has an explicitly empty meeting form. The latest user direction is to leave unconfirmed fields blank, without HUMAN todo markers.
+Incorporate actual details if later supplied.
 
-Retain the original tracked `code/source_revision.json`: CI checks/restores its
-temporary declaration. Newline-only restoration can reproduce reviewed hashes;
-actual content drift must fail. Hosted delivery needs a clean same-commit matrix.
+## Tools and validation
 
-## Storage and archives
+- `package_groupmate_handover.py`: compact document/practice ZIP using current reviewed PDFs and the preserved rubric.
+- `package_source_handover.py`, `verify_source_handover.py`: source/PDF packaging and actual isolated extraction validation.
+- `code/scripts/run_mid1_ci.py`, `tools/run_mid1_delivery.py`: portable/UI CI and verified hosted artifact delivery.
+- `verify_requirements_traceability.py`: requirements and test/source anchors.
+- `verify_documentation_layout.py --check-preservation`: links, reviewed PDF/source identities and the cleanup's 347 protected files.
+- `write_ci_checkout_inventory.py`: refresh cross-platform reviewed identities after final edits and new tracked receipts.
+- `update_mid1_technical_status.py`: machine status and this handoff's status block.
+- Build/render/publication tools remain active; retired generators must not recreate obsolete pages.
 
-Cache/temp/scratch: E:\AI-Tools\Cache, Temp, Work. `code/.env` is local/ignored;
-never print/package credential values. Publisher weights and raw acquisition
-are separate demo/science prerequisites. Preserve compatibility junctions.
-Codex migration is unfinished unless E:\AI-Tools\finish-codex.log says COMPLETE.
+Preserve exact tracked `code/source_revision.json` bytes. CI temporarily declares
+source identity and restores them; run local shared CI jobs sequentially because
+they use this same file. Hosted delivery requires four passing, clean, same-commit
+matrix receipts. See [Engineering](../technical/ENGINEERING.md) for commands and scope.
 
-Older PDF/source ZIP outputs: `deliverables/archive/20261013`. Retired notes,
-planning history and generators: [archive index](../archive/20261013_before_consolidation/INDEX.txt).
-[Consolidation receipt](../../evidence/documentation_consolidation_20261013.json)
-maps former paths to exact archived bytes. Original sources and parent `_archives`
-remain preserved. Historical code/docs/CLAUDE instructions describe earlier work;
-this handoff and current user instructions govern continuation.
+## Cleanup and storage
 
-## Revision checkpoint 14 October 2026
+The user explicitly approved removal after a local commit. Checkpoint **5f6b6ff**
+contains the short handout and approval record before deletion. The
+[cleanup audit](../../evidence/workspace_cleanup_20261014.json) records 1,317
+removed files, approximately 405.8 MiB, 348 published Git recovery identities and
+347 unchanged protected files. Current references, six-case data and scientific
+inputs remain. Obsolete archives, duplicate exports and retired notes are gone;
+tracked earlier versions remain in Git history. This approval supersedes the
+old requirement to keep obsolete ZIPs/archives locally.
 
-New temperature records preserve raw classes but fit near-uniform confidence, so the primary viewer abstains. Grable-Lytton scoring has thirteen tolerance/five capacity inputs and a direction-preserving confidence gate; old blend remains historical. Source/risk/model fields and all original labels remain preserved. CryptoBERT sanity probes produce positive/negative outcomes; the neutral probe fails. Report sources remove draft voice, expand use cases/FRs/tests/metrics, record team-delivered responsibilities and redraw all used diagrams. PDF edit marker ran exactly once for two outputs. Meeting question was asked before compilation; no reply yet. The first and subsequent QA renders use the brief no-records note already allowed by the user. Incorporate actual details if supplied. Focused real browser captures: presenter_browser_20261014_revision05. Shared code validation: revision_20261014_evidence01 and revision_20261014_ui03; anchor XML/receipt: requirement_anchor_tests_20261014. Original PDF and source snapshot remain archived. Revised source/report pushed at 5089998; all five hosted jobs passed and the delivered artifact was downloaded and hash-checked.
+Cache/temp/scratch: `E:\AI-Tools\Cache`, `Temp`, `Work`. `code/.env` is local/ignored;
+never print or package its values. Preserve compatibility junctions. Codex
+migration is unfinished unless `E:\AI-Tools\finish-codex.log` says COMPLETE.
 
-## Demo instruction and cleanup request
+## Audit revision continuation
 
-The team guide explains all six cases, trading sessions, five technical/six news inputs, real sample values, exact demo clicks and optional research screens. Current-UI risk/code captions are corrected. The frozen context module remains byte-identical because teacher packet identity requires it. Current checks: demo_guide_cleanup_20261014_evidence02 and demo_guide_cleanup_20261014_ui03. The refreshed groupmate ZIP is Investify_Mid1_Groupmates_20261014_v2.zip.
+The requested `E:\AI-Tools\Work\investify-mid1-v11\CONTINUE.md` was absent.
+The user then supplied the audit prompt in full and authorized report/deck/UI/docs,
+PDF review/delivery, feature-branch commit, PR, passing Actions, merge and tag
+`mid1-v1.1`. The existing `feature/mid1-report-revision` branch and edits were retained.
+Current workspace write access succeeded without escalation; revision scratch
+writes were denied, while `E:\AI-Tools\Temp` was writable. Scratch scripts/builds/renders
+are under that Temp directory. Missing cached TeX font and headless Edge tests
+required scoped approved execution; no original scientific output or existing
+evidence JSON was changed.
 
-Bulk deletion awaits explicit approval: automatic review rejected the audited 1,317-file (405.8 MiB) operation twice and requires approval of the exact irreversible scope. No audited target was deleted. The asynchronous approval question is pending. Plan, file hashes, Git recovery identities and protected current files are in evidence/workspace_cleanup_20261014.json. Do not execute that deletion while approval remains pending.
+Use the report's Section 3.2 action/status table and 8.11 limitations. C1 harness
+and C2 template verifier are implemented; C3 divergence is planned. Gate A is
+partial and Gate B not passed. T=1000 produces near-uniform confidence/Brier
+about 0.6667, and every real temperature case stays Observe. Prompted LLM is
+Iteration 3 / Mid-2; QLoRA is Iteration 4. The retained teacher is OpenAI GPT-6,
+with no exact serving revision. Official template PDF was used; the ZIP named
+in the audit was unavailable. Signatures, submission date/batch and meetings
+remain blank. The institutional class/logo and 256 pre-revision scientific,
+evidence and metadata identities were verified unchanged.

@@ -37,7 +37,7 @@ class EmittedExplanation:
 
 
 def emit(record: DecisionRecord, candidate: Explanation | None = None,
-         *, strict_prose: bool = False) -> EmittedExplanation:
+         *, strict_prose: bool = False, policy_action: str | None = None) -> EmittedExplanation:
     """Verify `candidate` and emit it, or fall back to the deterministic
     template. With no candidate, emit the verified template directly.
 
@@ -46,15 +46,15 @@ def emit(record: DecisionRecord, candidate: Explanation | None = None,
     certify arbitrary natural-language statements.
     """
     if candidate is not None:
-        result = verify(record, candidate.text, candidate.payload, strict_prose=strict_prose)
+        result = verify(record, candidate.text, candidate.payload, strict_prose=strict_prose, policy_action=policy_action)
         if result.passed:
             return EmittedExplanation(
                 explanation=candidate,
                 verification=result,
                 replaced_by_template=False,
             )
-        fallback = render(record)
-        fallback_result = verify(record, fallback.text, fallback.payload)
+        fallback = render(record, policy_action=policy_action)
+        fallback_result = verify(record, fallback.text, fallback.payload, policy_action=policy_action)
         _assert_template_verifies(record, fallback_result)
         return EmittedExplanation(
             explanation=fallback,
@@ -64,8 +64,8 @@ def emit(record: DecisionRecord, candidate: Explanation | None = None,
             rejected_verification=result,
         )
 
-    explanation = render(record)
-    result = verify(record, explanation.text, explanation.payload)
+    explanation = render(record, policy_action=policy_action)
+    result = verify(record, explanation.text, explanation.payload, policy_action=policy_action)
     _assert_template_verifies(record, result)
     return EmittedExplanation(
         explanation=explanation,

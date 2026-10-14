@@ -1,169 +1,145 @@
 {
   "title": "Investify FYP-1 Mid-1",
-  "status": "Compiled and layout reviewed technical Mid-1 deck; team tasks remain separate.",
-  "date_prepared": "2026-10-14",
-  "assessment_date": null,
+  "status": "Compiled and visually reviewed fourteen-slide audit revision; 660 planned seconds plus Q&A.",
   "source_entry": "presentation/main.tex",
-  "compiled_output": "deliverables/Investify_FYP1_Mid_Presentation_Revised_20261014.pdf",
+  "assessment_date": null,
+  "planned_seconds": 660,
+  "member_seconds": {
+    "Ahmed Javaid": 220,
+    "Rafay Ul Haq": 220,
+    "Soban Ahmad": 220
+  },
   "slides": [
     {
       "number": 1,
       "title": "Investify",
-      "speaker_notes": "Assigned presenter: Ahmed Javaid. Planned speaking: 30 seconds. Introduce the confirmed team and supervisor. This is FYP-1 Mid-Evaluation in Fall 2026. The team-selected report date is Sunday, 11 October 2026; the revision and tests retain their actual dates, including 12-13 October. The formal committee appointment is separate. The project is an educational prototype. It does not execute orders or establish investment suitability. The team delivered its assigned module parts and continues practice. Development assistance is disclosed in the report. Sources: report/main.tex and docs/team/MID1_TEAM_GUIDE.md.",
-      "sources": [
-        "report/main.tex",
-        "docs/team/MID1_TEAM_GUIDE.md"
-      ],
-      "body_source": "presentation/main.tex",
+      "speaker_notes": "Introduce the team and the educational purpose. No trades are executed. The actual submission date remains blank because it was not supplied. Source: report/main.tex.",
+      "planned_seconds": 20,
       "assigned_presenter": "Ahmed Javaid",
-      "planned_seconds": 30,
-      "primary_presenter": "Ahmed Javaid"
+      "shared_seconds": null,
+      "body_source": "presentation/main.tex"
     },
     {
       "number": 2,
-      "title": "Problem and research contribution",
-      "speaker_notes": "Rafay, 60 seconds. Explain the implemented temporal and verification contributions; distinguish planned divergence and human outcomes.",
-      "sources": [
-        "report/chapters/chapter1_introduction.tex",
-        "report/chapters/chapter2_research.tex"
-      ],
-      "body_source": "presentation/main.tex",
+      "title": "Problem",
+      "speaker_notes": "Describe the retail task and the harder leakage/unchecked-text problem. Avoid claiming all commercial products share these failures. Source: report Chapter 1; concept Section 2 is reference.",
+      "planned_seconds": 40,
       "assigned_presenter": "Rafay Ul Haq",
-      "planned_seconds": 60,
-      "primary_presenter": "Rafay Ul Haq"
+      "shared_seconds": null,
+      "body_source": "presentation/main.tex"
     },
     {
       "number": 3,
-      "title": "Scope and acceptance checks",
-      "speaker_notes": "Ahmed, 60 seconds. New multiclass records are separate from preserved isotonic failures. The full FYP and useful forecasting are distinct goals.",
-      "sources": [
-        "report/chapters/chapter4_requirements.tex"
-      ],
-      "body_source": "presentation/main.tex",
+      "title": "Panel feedback and actions",
+      "speaker_notes": "Explain that documentation closure is separate from supervisor sign-off. LLM, divergence and participant benefit are not completed. Source: report Table panel-actions and original proposal action register.",
+      "planned_seconds": 45,
       "assigned_presenter": "Ahmed Javaid",
-      "planned_seconds": 60,
-      "primary_presenter": "Ahmed Javaid"
+      "shared_seconds": null,
+      "body_source": "presentation/main.tex"
     },
     {
       "number": 4,
-      "title": "Mid-1 deliverables",
-      "speaker_notes": "Ahmed, 70 seconds. Connect the report artifacts to code. Hosted receipts prove their committed snapshots; current local source needs its matching new delivery.",
-      "sources": [
-        "sources/Mid_Eval/FYP-1-Mid-Assessment-Guidelines-and-Rubrics.pdf",
-        "evidence/handbook_mid1_audit_20261013.json"
-      ],
-      "body_source": "presentation/main.tex",
-      "assigned_presenter": "Ahmed Javaid",
-      "planned_seconds": 70,
-      "primary_presenter": "Ahmed Javaid"
+      "title": "Contributions C1--C3",
+      "speaker_notes": "State both evaluation and status for each contribution. Proposal slide 8 explicitly excludes novelty in imported methods and profit claims. Sources: approved proposal slide 8; report Section 2.5.",
+      "planned_seconds": 45,
+      "assigned_presenter": "Soban Ahmad",
+      "shared_seconds": null,
+      "body_source": "presentation/main.tex"
     },
     {
       "number": 5,
-      "title": "System architecture",
-      "speaker_notes": "Soban, 50 seconds. Describe the six product modules and the implemented historical slice. Social divergence, student serving and hosting remain later integrations.",
-      "sources": [
-        "report/figures/mid1_planned_architecture.tex"
-      ],
-      "body_source": "presentation/main.tex",
-      "assigned_presenter": "Soban Ahmad",
-      "planned_seconds": 50,
-      "primary_presenter": "Soban Ahmad"
+      "title": "Market background and design decisions",
+      "speaker_notes": "Give one concrete implication per row. A positive headline or SHAP value is not proof of profit or causation. Sources: Investor.gov orders/execution, NYSE calendar, Fidelity indicator guides, Fama 1970, NVIDIA split FAQs; report market-background section.",
+      "planned_seconds": 45,
+      "assigned_presenter": "Rafay Ul Haq",
+      "shared_seconds": null,
+      "body_source": "presentation/main.tex"
     },
     {
       "number": 6,
-      "title": "Domain model and file schema",
-      "speaker_notes": "Rafay, 60 seconds. Show the actual file and session relationships and explain why a changed case/profile invalidates the previous candidate result.",
-      "sources": [
-        "report/figures/mid1_domain.tex",
-        "report/figures/mid1_schema.tex"
-      ],
-      "body_source": "presentation/main.tex",
+      "title": "Model inventory and status",
+      "speaker_notes": "Name the teacher from the frozen packet plan. Exact serving revision is unavailable. The full model table gives tasks, revisions, licenses and adaptation status. Sources: report model-inventory table; research reference; social and teacher receipts.",
+      "planned_seconds": 40,
       "assigned_presenter": "Rafay Ul Haq",
-      "planned_seconds": 60,
-      "primary_presenter": "Rafay Ul Haq"
+      "shared_seconds": null,
+      "body_source": "presentation/main.tex"
     },
     {
       "number": 7,
-      "title": "Explanation check and recovery",
-      "speaker_notes": "Soban, 45 seconds. Trace emit and verify. The sequence/activity models include the click, alternative branches and fallback failure.",
-      "sources": [
-        "report/figures/mid1_sequence.tex",
-        "report/figures/mid1_activity.tex"
-      ],
-      "body_source": "presentation/main.tex",
+      "title": "Architecture with the planned LLM layer",
+      "speaker_notes": "Follow context to either the current deterministic template or the dashed planned LLM. The verifier is not itself an LLM. Profile supplies a trusted policy outcome. Sources: report Chapter 5; template/verifier/pipeline modules.",
+      "planned_seconds": 40,
       "assigned_presenter": "Soban Ahmad",
-      "planned_seconds": 45,
-      "primary_presenter": "Soban Ahmad"
+      "shared_seconds": null,
+      "body_source": "presentation/main.tex"
     },
     {
       "number": 8,
-      "title": "Live demonstration",
-      "speaker_notes": "Shared, 240 seconds: Rafay opens 20; Soban Decision 40; Ahmed Evidence 40; Rafay Risk 60; Soban Explanation 80. Both profile extremes abstain on weak real evidence; show the changing score/threshold without claiming fabricated prediction quality.",
-      "sources": [
-        "code/app/presenter.py",
-        "docs/team/MID1_TEAM_GUIDE.md"
-      ],
-      "body_source": "presentation/main.tex",
-      "assigned_presenter": "Shared",
-      "planned_seconds": 240,
-      "primary_presenter": "Rafay Ul Haq"
+      "title": "Requirements and metric targets",
+      "speaker_notes": "These are proposal targets, not new measured LLM scores. The current strict grammar checker has additional contradiction and required-claim gates. Independent annotation kappa and participant results are unmeasured. Sources: report requirements and metrics matrix.",
+      "planned_seconds": 40,
+      "assigned_presenter": "Ahmed Javaid",
+      "shared_seconds": null,
+      "body_source": "presentation/main.tex"
     },
     {
       "number": 9,
-      "title": "Calibration correction and abstention",
-      "speaker_notes": "Soban, 55 seconds. Explain the isotonic global bounds, calibration-only temperature fit and why near-uniform confidence requires abstention. Do not describe this as useful forecasting.",
-      "sources": [
-        "code/src/investify/multiclass_calibration.py",
-        "code/artifacts/scientific_runs/temperature_calibration_20261013_run01/summary.json"
-      ],
-      "body_source": "presentation/main.tex",
-      "assigned_presenter": "Soban Ahmad",
-      "planned_seconds": 55,
-      "primary_presenter": "Soban Ahmad"
+      "title": "Live demonstration",
+      "speaker_notes": "Ahmed 50 seconds: open onboarding and evidence. Rafay 50 seconds: score profile and show both abstain. Soban 80 seconds: show policy/diagnostic class, valid candidate, probability corruption, retained rejection and checked Observe fallback. End with restored valid facts. Sources: demonstration handout and presenter.",
+      "planned_seconds": 180,
+      "assigned_presenter": "Shared",
+      "shared_seconds": {
+        "Ahmed Javaid": 50,
+        "Rafay Ul Haq": 50,
+        "Soban Ahmad": 80
+      },
+      "body_source": "presentation/main.tex"
     },
     {
       "number": 10,
-      "title": "Temporal leakage experiment",
-      "speaker_notes": "Ahmed, 100 seconds. Explain actual label availability, how the canary fires, and why a weak no-purge/lag variation is not proof that every leakage mechanism is absent. State the FNSPID precision/coverage reason for the timestamped source.",
-      "sources": [
-        "report/chapters/chapter6_iteration1.tex"
-      ],
-      "body_source": "presentation/main.tex",
+      "title": "Leakage experiment and linear baseline",
+      "speaker_notes": "The six-fold mean and fold SD differ from final-case evaluation. Raw frozen final macro-F1 is 0.3182, not another CV score. Gate A is partial and Gate B not passed. Sources: saved recovery01 engine_frozen_alpaca and engine_refit_alpaca metrics; harness results.",
+      "planned_seconds": 50,
       "assigned_presenter": "Ahmed Javaid",
-      "planned_seconds": 100,
-      "primary_presenter": "Ahmed Javaid"
+      "shared_seconds": null,
+      "body_source": "presentation/main.tex"
     },
     {
       "number": 11,
-      "title": "Sentiment and teacher studies",
-      "speaker_notes": "Rafay, 100 seconds. FinBERT still scores news. CryptoBERT/Cardiff are social candidates. Sanity probes are separate authored diagnostics, not benchmark accuracy. Teacher/student method is disclosed once in the report.",
-      "sources": [
-        "evidence/social_study_review_20261013.json",
-        "evidence/cryptobert_sanity_20261014.json"
-      ],
-      "body_source": "presentation/main.tex",
-      "assigned_presenter": "Rafay Ul Haq",
-      "planned_seconds": 100,
-      "primary_presenter": "Rafay Ul Haq"
+      "title": "Calibration and abstention",
+      "speaker_notes": "Explain plainly that this is a no-signal diagnosis. Preserved class ranking is not usable confidence. The policy is post-hoc and does not personalize XGBoost. Source: saved temperature summary and risk-policy tests.",
+      "planned_seconds": 30,
+      "assigned_presenter": "Soban Ahmad",
+      "shared_seconds": null,
+      "body_source": "presentation/main.tex"
     },
     {
       "number": 12,
-      "title": "Delivered work and next milestones",
-      "speaker_notes": "Soban, 30 seconds. Confirm delivered responsibilities and shared allocation. Future research/hosting and participant work are distinct from this checkpoint.",
-      "sources": [
-        "report/chapters/chapter9_development_evidence.tex",
-        "report/chapters/chapter3_iteration_plan.tex"
-      ],
-      "body_source": "presentation/main.tex",
+      "title": "Illustrative explanation and claim checks",
+      "speaker_notes": "Do not present this hypothetical integrated-social paragraph as current model output or report hypothetical metric scores. The constrained payload must remain bound to displayed prose. Sources: concept 10.8 and report LLM-design subsection.",
+      "planned_seconds": 25,
       "assigned_presenter": "Soban Ahmad",
-      "planned_seconds": 30,
-      "primary_presenter": "Soban Ahmad"
+      "shared_seconds": null,
+      "body_source": "presentation/main.tex"
+    },
+    {
+      "number": 13,
+      "title": "Testing and CI/CD",
+      "speaker_notes": "State actual runner counts and the five-job workflow structure. CI does not rerun full science or compile the PDF. A screenshot is unnecessary because the run is directly linked in Appendix D. Sources: new local job receipts and workflow file.",
+      "planned_seconds": 15,
+      "assigned_presenter": "Ahmed Javaid",
+      "shared_seconds": null,
+      "body_source": "presentation/main.tex"
+    },
+    {
+      "number": 14,
+      "title": "Remaining plan and Q\\&A",
+      "speaker_notes": "Summarize the staged plan and invite questions. The scheduled 660 seconds exclude Q&A. Each member receives 220 seconds with shared demonstration allocation. Source: report Chapter 9 and team guide.",
+      "planned_seconds": 45,
+      "assigned_presenter": "Rafay Ul Haq",
+      "shared_seconds": null,
+      "body_source": "presentation/main.tex"
     }
   ],
-  "member_share": "1/3 each, assigned preparation/review/defence",
-  "planned_total_seconds": 900,
-  "delivery_receipt": "evidence/handbook_presentation_delivery_20261014_revision05.json",
-  "report_date": "2026-10-11",
-  "assessment_term": "Fall 2026",
-  "assessment_stage": "FYP-1 Mid-Evaluation"
+  "compiled_output": "deliverables/Investify_FYP1_Mid_Presentation_v1_1_20261014_release.pdf"
 }

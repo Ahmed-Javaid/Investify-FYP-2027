@@ -8,7 +8,7 @@ import re
 from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
-DOCUMENTS = ('README.md', 'docs/team/MID1_TEAM_GUIDE.md', 'docs/technical/ENGINEERING.md',
+DOCUMENTS = ('README.md', 'docs/team/DEMONSTRATION.md', 'docs/team/MID1_TEAM_GUIDE.md', 'docs/technical/ENGINEERING.md',
              'docs/technical/RESEARCH.md', 'docs/technical/REQUIREMENTS.md',
              'docs/handoffs/AGENT_HANDOFF.md')
 

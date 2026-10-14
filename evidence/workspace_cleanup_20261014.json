@@ -1,6 +1,6 @@
 {
   "schema": "investify-authorized-workspace-cleanup-v1",
-  "status": "planned",
+  "status": "completed",
   "requested_scope": "User explicitly requested deletion of obsolete archives, redundant copies and unneeded project files.",
   "published_recovery_commit": "a1930c9bb4af89b30f59e0338ee2337b345900fc",
   "published_recovery_url": "https://github.com/Ahmed-Javaid/Investify-FYP-2027/tree/a1930c9bb4af89b30f59e0338ee2337b345900fc",
@@ -8142,10 +8142,46 @@
   "planned_files": 1317,
   "planned_bytes": 425515549,
   "verified_published_files": 348,
-  "approval_status": "awaiting_explicit_approval_for_the_audited_bulk_deletion",
-  "deletion_executed": false,
+  "approval_status": "explicitly_approved_by_user",
+  "deletion_executed": true,
   "automatic_review_rejections": [
     "Standing archive-preservation instruction and broad deletion scope cited.",
     "Exact 1,317-file irreversible scope requires explicit approval."
-  ]
+  ],
+  "explicit_user_approval": "locally commit stuff before removal and then remove it, i approve",
+  "approval_recorded_utc": "2026-10-13T22:14:57.852576+00:00",
+  "pre_removal_checkpoint_required": true,
+  "pre_removal_commit": "5f6b6ffea99f1461c96a0fc8f06f07176796178c",
+  "completed_utc": "2026-10-13T22:17:49.4366114Z",
+  "removed_files": 1317,
+  "removed_bytes": 425515549,
+  "locked_paths": [],
+  "excluded_hidden_office_lock": "_archives/legacy_fyp_20261012/~$Investify Updated (1).pptx",
+  "all_approved_targets_absent": true,
+  "relocated_current_references": [
+    {
+      "from": "code/docs/FAST_FYP_Student_Idea_Selection_Guide_School_of_Computing.pdf",
+      "to": "sources/FAST_FYP_Student_Idea_Selection_Guide_School_of_Computing.pdf",
+      "sha256": "bb157c78066352ac26cc7c5c2044589cea70f04353f42c6fa957f0ec943d987a",
+      "bytes_unchanged": true
+    }
+  ],
+  "superseded_package_cleanup": {
+    "reason": "The verified v3 package adds the user-requested short demonstration handout and replaces v2; no second obsolete share ZIP is needed.",
+    "replacement": "deliverables/Investify_Mid1_Groupmates_20261014_v3.zip",
+    "pre_removal_commit": "5f6b6ffea99f1461c96a0fc8f06f07176796178c",
+    "files": [
+      {
+        "workspace_path": "Investify/deliverables/Investify_Mid1_Groupmates_20261014_v2.zip",
+        "bytes": 1532443,
+        "sha256": "01feb596c7f903ddd1bf27e7b07aacc9b70a771b005de417d80a36760d1b5cb4"
+      },
+      {
+        "workspace_path": "Investify/evidence/Investify_Mid1_Groupmates_20261014_v2_receipt.json",
+        "bytes": 2326,
+        "sha256": "d31a2c313f7b5422d921a956a667fcb9a5eb0fdcb6633b8c022747fbfa17ba81"
+      }
+    ],
+    "deletion_executed": true
+  }
 }

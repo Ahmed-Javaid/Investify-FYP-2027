@@ -1,28 +1,56 @@
-\chapter{Software Design Specification}
+\chapter{System Design}
 \label{chap:design}
-\section{Product Architecture and Current Slice}
-Figure~\ref{fig:planned-architecture} shows the six-module product design and marks later integrations. The current slice executes record loading, evidence presentation, profile/policy calculation and explanation recovery. Recorded scientific outputs enter through explicit artifact contracts; model training is not a page-load action.
-\begin{figure}[htbp]\centering\input{figures/mid1_planned_architecture}\caption{Six-module product architecture; dashed elements represent later integration.}\label{fig:planned-architecture}\end{figure}
-\begin{figure}[htbp]\centering\input{figures/mid1_pipeline}\caption{Current data-to-record and record-to-interface pipeline.}\label{fig:pipeline}\end{figure}
-\section{Components and Layers}
-The interface calls context, profile and verification services. Scientific routines produce the versioned records read by those services. Local adapters and study readers use declared identities rather than silent substitution.
-\begin{figure}[htbp]\centering\input{figures/mid1_components}\caption{Implemented components and their interfaces.}\label{fig:components}\end{figure}
-\begin{figure}[htbp]\centering\input{figures/mid1_layers}\caption{Presentation, application, domain and artifact layers.}\label{fig:layers}\end{figure}
-\section{Domain and Class Model}
-The class model includes attributes and operations used by the code. Multiplicities distinguish a collection of records, a record's contributions and candidate/verification relationships. Profile evaluation is a dependency on a record, not a mutation of classifier probabilities.
-\begin{figure}[p]\centering\input{figures/mid1_domain}\caption{Implementation class model with attributes, operations and multiplicities.}\label{fig:classes}\end{figure}
-\section{Data Flow and File Schema}
-The schema identifies experiment and composite case identities, keyed feature maps, candidate digests and result ownership. These are JSON/file/session contracts, not a claimed SQL database. Relationship labels and cardinalities express how the actual loader and checker bind their data.
-\begin{figure}[htbp]\centering\input{figures/mid1_dataflow}\caption{Data flow through the current checking and policy path.}\label{fig:dataflow}\end{figure}
-\begin{figure}[p]\centering\input{figures/mid1_schema}\caption{Artifact/session schema with keys and relationship cardinalities.}\label{fig:schema}\end{figure}
-\section{Behavioral Design}
-The sequence starts with the actual Check explanation click and uses alternative fragments for acceptance and recovery. The activity includes invalid input and fallback-verification failure. The state model includes initialization, stale results, errors and session termination.
-\begin{figure}[p]\centering\input{figures/mid1_sequence}\caption{Explanation-check sequence with explicit user trigger and alternative outcomes.}\label{fig:sequence}\end{figure}
-\begin{figure}[p]\centering\input{figures/mid1_activity}\caption{Checking activity, including verified fallback and error termination.}\label{fig:activity}\end{figure}
-\begin{figure}[p]\centering\input{figures/mid1_state}\caption{Case/candidate verification state transitions.}\label{fig:state}\end{figure}
-\section{Deployment and Design Evolution}
-The localhost browser communicates with Streamlit. Core modules read registered artifacts and retain profile/candidate state in memory. CI produces downloadable review artifacts; it does not host the application. The revised deployment model includes the core-to-artifact link.
-\begin{figure}[htbp]\centering\input{figures/mid1_deployment}\caption{Current localhost deployment and artifact-delivery boundary.}\label{fig:deployment}\end{figure}
-The proposal's broad product design is retained, while the implemented slice now has complete evidence, independent prose/JSON checks, a full scored profile and uncertainty gating. The prior risk-dependent sentiment blend and isotonic outputs remain historical comparisons. Broader conversation, social divergence and production service work are explicitly scheduled.
-\section{Algorithms and Contracts}
-Record validation precedes display. Checking retains candidate errors, constructs fallback and verifies it independently. Temperature fitting admits only earlier-matured calibration labels. Profile scoring validates every answer, calculates weighted capacity/caps and published item totals, reconciles restrictive limits and evaluates confidence without changing direction. Each boundary carries identity and failure conditions used by its tests.
+\section{System Architecture}
+The product architecture separates data/sentiment, prediction, SHAP/context, explanation, verification, profile policy and the interface. The implemented path uses the deterministic template. The dashed Explanation layer (LLM) is scheduled for Mid-2 between context and the verifier.
+\begin{figure}[htbp]\centering\input{figures/mid1_planned_architecture}\caption{Architecture with the planned LLM layer and the current template path.}\label{fig:planned-architecture}\end{figure}
+\begin{figure}[htbp]\centering\input{figures/mid1_pipeline}\caption{Offline record production and interactive explanation/profile checking.}\label{fig:pipeline}\end{figure}
+\section{Architectural Components}
+The loader validates saved records. Context exposes eleven values, SHAP and maintained definitions. Profile scoring computes allowance; the confidence policy produces an independent outcome. The template and verifier operate on the same record. The UI binds visible results to the current case/profile/text.
+\begin{figure}[htbp]\centering\input{figures/mid1_components}\caption{Implemented components and their calls.}\label{fig:components}\end{figure}
+\section{Interfaces and Dependencies}
+\begin{longtable}{p{.25\textwidth}p{.35\textwidth}p{.29\textwidth}}
+\caption{Module inputs, outputs and failure conditions.}\label{tab:interfaces}\\\toprule Interface & Input/output & Failure condition\\\midrule
+Record loader & JSON to validated DecisionRecord collection & Missing, malformed or inconsistent source\\
+Evidence context & Record to values/definitions/SHAP map & Missing values remain explicit\\
+Risk policy & Record + complete profile to Observe/Buy/Hold/Sell & Ineligible model or inadequate confidence\\
+Template/checker & Record, text/claims, trusted policy to claim verdicts & Wrong, missing or unsupported claims\\
+Emission & Candidate and verification to accepted text or checked fallback & Fallback failure is an error\\
+Planned LLM & Context + policy to prose and constrained payload & Invalid output is rejected; no alternate decision invented\\
+\bottomrule\end{longtable}
+The viewer depends on Streamlit and the core Python modules. Scientific execution separately depends on pandas, XGBoost, native SHAP, calendars and publisher sentiment weights. No model download is required to inspect saved records.
+\section{Architecture Decisions and Rationale}
+Saved historical outputs keep the demonstration reproducible. A strict prior-session join makes the timing rule inspectable. Label endpoints and calibration availability prevent future outcomes from entering fit stages. The profile is a separate gate so it cannot reverse the recorded market class. The verifier is deterministic so an LLM does not grade its own claims. Rejection and fallback have separate reports so a successful replacement cannot conceal the original error.
+\subsection{Explanation Layer (LLM) Design}
+\label{sec:llm-design}
+\textbf{Inputs:} company/session/horizon, class probabilities, all eleven technical/news values, selected-class SHAP values and ranks, maintained feature definitions, missing-data flags and the trusted risk-policy outcome. Future integrated records may add news/social divergence; absent social evidence must remain absent.
+
+\textbf{Outputs:} plain-language prose plus a structured claims payload with record keys, claim types and the corresponding prose spans. The LLM must explain technical and sentiment signals, opposing contributions, uncertainty and what the data does not show. It cannot choose a new class, change the policy outcome or add a market fact not supported by the record.
+
+\textbf{Permitted claims:} recorded values/probabilities, maintained indicator meanings, SHAP support/opposition for the selected raw class, missing coverage and the policy outcome. \textbf{Forbidden claims:} guaranteed returns, causal assertions from SHAP alone, confidence as profit, invented headline/social content, personal suitability or trades being executed.
+
+\textbf{Verification and fallback:} check numbers, directions, ranks, feature names and policy against trusted inputs; reject contradictory or missing essential claims. Bound regeneration attempts and separately verify the deterministic replacement. The current verifier parses only the template sentence grammar. Extracting and binding claims from free prose through a constrained payload is the Mid-2 deliverable, not a current capability.
+
+\textbf{Planned evaluation:} compare deterministic template, raw prompted Phi-3-mini and later adapted student on the same frozen cases. Score raw output before filtering and emitted output after filtering; report the four proposal metrics, contradictions, retries, fallback rate and whole-request latency. Participant tasks test whether prose improves interpretation beyond the template. QLoRA is scheduled for Iteration 4.
+\subsection{Illustrative Design Example, Not a System Output}
+This adapted concept Section 10.8 example uses hypothetical inputs: Hold probability 0.58, news polarity +0.31, social polarity -0.18 and RSI 38.2. Suppose divergence contributes +0.14 and RSI contributes -0.06 to the raw Hold score. A future explanation could say: ``The diagnostic class is Hold with 58\% confidence. News and social tone disagree. The recorded divergence supports Hold, while the RSI contribution opposes Hold. These are model effects; they do not establish what caused the price to move.'' The displayed policy must come from a separately supplied trusted policy result.
+\begin{longtable}{p{.38\textwidth}p{.29\textwidth}p{.22\textwidth}}
+\caption{Illustrative claim checks; no measured model/verifier output.}\label{tab:illustrative-claims}\\\toprule Claim & Planned check & Design judgement\\\midrule
+Hold at 58\% & Class/probability versus record & Supported if inputs match\\
+News +0.31; social -0.18 & Feature values and coverage & Supported only with integrated inputs\\
+Divergence supports Hold & Selected-class SHAP sign +0.14 & Supported model-effect wording\\
+RSI opposes Hold & Selected-class SHAP sign -0.06 & Does not prove support for Buy\\
+Volatility caused the move & No causal evidence supplied & Refuse unsupported claim\\
+\bottomrule\end{longtable}
+The current template checker does not accept this unrestricted paragraph. No hypothetical pass rate or fidelity score is reported for it.
+\section{Design Evolution}
+The proposal's broader conversational pipeline remains the destination. The delivered slice adds complete evidence, independent text/JSON checking, a full profile and abstention. Isotonic failures and the earlier risk/sentiment blend are retained as historical comparisons. Generated explanations and divergence require separate integration/evaluation.
+\section{Domain Model}
+The classes identify record collections, individual feature contributions, explanations and verification results. A profile depends on a record through the policy; it does not mutate classifier probabilities.
+\begin{figure}[htbp]\centering\input{figures/mid1_domain}\caption{Code-linked classes, operations and multiplicities.}\label{fig:classes}\end{figure}
+\section{Data Design}
+Experiment source/digest and session jointly identify a case. Feature maps retain names, values and contributions. Candidate/profile digests bind verification to the current state. JSON files and session memory are the current storage; no relational database is implemented.
+\begin{figure}[htbp]\centering\input{figures/mid1_schema}\caption{File and session relationships.}\label{fig:schema}\end{figure}
+\section{Process / Behavior Design}
+The sequence starts at Check explanation and has acceptance, rejection/fallback and failure branches. The activity and state models also represent invalid input and stale verification. The extra diagrams are collected in Appendix E.
+\begin{figure}[htbp]\centering\input{figures/mid1_sequence}\caption{Verification and independently checked recovery.}\label{fig:sequence}\end{figure}
+\begin{figure}[htbp]\centering\input{figures/mid1_deployment}\caption{Current localhost deployment and downloadable CI output.}\label{fig:deployment}\end{figure}

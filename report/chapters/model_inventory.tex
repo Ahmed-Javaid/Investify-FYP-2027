@@ -1,0 +1,16 @@
+\section*{Model Inventory and Adaptation}
+\addcontentsline{toc}{section}{Model Inventory and Adaptation}
+\label{sec:model-inventory}
+\begingroup\small
+\begin{longtable}{p{.23\textwidth}p{.29\textwidth}p{.37\textwidth}}
+\caption{Checkpoints, tasks, choices, adaptation, licenses and status.}\label{tab:model-inventory}\\\toprule Model/checkpoint & Task, domain and inputs/outputs & Choice, adaptation, license and status\\\midrule
+\nolinkurl{ProsusAI/finbert} & Financial headlines to positive/neutral/negative probabilities; polarity is positive minus negative & Chosen for financial text. Original weights, no project fine-tune. News inference completed. Current publisher weights card states CC BY-NC-SA 4.0; pinned-source license context retained.\\
+\nolinkurl{ElKulako/cryptobert} & Crypto-social text to three-class sentiment; equity transfer evaluated & Original checkpoint, no project adaptation. MIT model card. Executed on frozen 24-post MSFT held-out set; macro-F1 0.2564.\\
+\nolinkurl{cardiffnlp/twitter-roberta-base-sentiment-latest} & Twitter text to three-class sentiment & Alternative social domain. No project adaptation. CC BY 4.0 model card. Same 24 posts; macro-F1 0.6016.\\
+XGBoost project model & Eleven price/news features to Buy/Hold/Sell scores and probabilities & Trained by the project; chronological validation. XGBoost software Apache 2.0. Retained frozen/refit model hashes in scientific receipts.\\
+OpenAI GPT-6 assistant teacher & Saved record/context to controlled prose; six pilot examples & Teacher name comes from frozen plan. Exact serving revision unavailable. Proprietary service terms. JSON targets assembled deterministically; student not trained.\\
+Microsoft Phi-3-mini & Planned local record/context-to-prose student & Original publisher family; exact project checkpoint not selected. MIT publisher model card. Prompted baseline Mid-2; QLoRA Iteration 4\cite{phi3_2024,qlora_2023}.\\
+Mistral & Planned fallback local explainer & Exact fallback checkpoint unselected; Mistral-7B-Instruct-v0.3 is an Apache 2.0 publisher candidate. No executed fallback study.\\
+\bottomrule\end{longtable}
+\endgroup
+The executed revisions are \nolinkurl{0bc2ac10dda6929bcb1f77ccc43c7ec5c424f031} (FinBERT), \nolinkurl{9e37c910fe87727cb842a9ac55c6388256fe0f15} (CryptoBERT), and \nolinkurl{3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7} (Cardiff). These are read from the research reference and paired study receipt. Model cards describe domain and licenses\cite{cryptobert_card,twitter_sentiment_card,phi3_card,mistral_card}; licenses are not inferred from the library used to load a model.

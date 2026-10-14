@@ -1,36 +1,48 @@
 \chapter{Testing and Early Validation}
 \label{chap:testing}
-\section{Strategy and Test Levels}
-Unit tests exercise validation, formulas and hard rejection gates. Module tests combine records, evidence, profiles and emitted explanations. Streamlit AppTest exercises actual widgets; a localhost HTTP exercise validates the portable pipeline. Source/receipt guards and clean extraction verify artifact reproducibility. Scientific execution and classifier sanity probes are separate from software fixtures.
-\section{Evaluation Metrics Matrix}
-\begin{longtable}{p{0.18\textwidth}p{0.27\textwidth}p{0.26\textwidth}p{0.18\textwidth}}
-\caption{Metrics, evaluation population and measured/planned status.}\label{tab:metrics-matrix}\\\toprule Area & Measures & Evaluation population/protocol & Status\\\midrule
-Prediction & Macro-F1, per-class precision/recall, baseline lift & NVDA chronological folds; random and linear comparators & Measured; weak signal\\
-Calibration & Brier, class distribution, negative log likelihood & Earlier calibration labels; same 186 evaluation cases & Measured; abstention required\\
-Leakage & Control lift/intervals, boundary/fault detection & Six arms, two horizons, fixed folds/settings & Measured; labelled canary fires\\
-Explanation & Numeric/directional fidelity, recall, unverifiable rate; rejection/fallback & Saved cases, deliberate corruptions and construction pilot & Bounded behavior measured; larger generation study later\\
-Social sentiment & Macro-F1 agreement, per-class recall, coverage & Same 24 held-out target-equity references & Exploratory comparison measured\\
-User understanding & Task completion/time, interpretation errors, top-driver identification & Planned participant tasks and expert review & Later evaluation\\
-System & Latency, memory, throughput, parity and setup & Specified target environment and clean-host paths & Setup/path checks measured; target NFRs later\\
+\section{Testing Strategy}
+Pair expected behavior with deliberate errors and retain exact logs. Software tests check consistency and failure handling; scientific evaluation checks prediction/calibration on declared populations. Neither is a participant study.
+\section{Test Levels and Techniques}
+Unit tests cover record invariants, formulas, omissions and malformed input. Module tests combine context/profile/template/checker. Streamlit AppTest exercises widgets and state; localhost HTTP checks exercise the portable service. Receipt and extraction guards check source/PDF packaging. Scientific fault arms and authored classifier probes have their own population and interpretation.
+\section{Test Cases}
+Appendix C lists input, expected behavior and named checks. The live demonstration emphasizes probability corruption, while fixture tests also cover values, signs, ranks, unknown features, missing claims, wrong policy and stale state.
+\subsection{Evaluation Metrics and Targets}
+\begingroup\small
+\begin{longtable}{p{.24\textwidth}p{.34\textwidth}p{.31\textwidth}}
+\caption{Definitions, targets and current measurement scope.}\label{tab:metrics-matrix}\\\toprule Metric & Definition / target & Scope and status\\\midrule
+Numeric fidelity & Correct verifiable numeric claims / verifiable numeric claims; $\geq0.98$ & Template/corruption checks executed; generated-model held-out evaluation planned\\
+Directional consistency & Correct SHAP direction claims / verifiable direction claims; $\geq0.95$ & Selected-class effects; not price causation\\
+Claim recall & Correct displayed expected slots / all expected slots; $\geq0.80$ & Essential displayed claims also have a hard missing-claim gate\\
+Unverifiable-claim rate & Unsupported claims / all displayed claims; $\leq0.15$ & Current strict UI rejects every unparsed line\\
+Contradictory emission & Known contradictory emitted claims; target zero across 200 held-out explanations & The proposed 200 generated explanations are not completed\\
+Macro-F1 and lift & Mean of class F1, $F1_k=2P_kR_k/(P_k+R_k)$; lift versus random and linear & Six-fold NVDA and final 186 cases measured; Gate B not passed\\
+Brier and reliability & $N^{-1}\sum_i\sum_k(p_{ik}-y_{ik})^2$; bin predicted confidence versus observed frequency & Brier measured; lower is better; comprehensive reliability assessment remains\\
+Social macro-F1/recall & Mean class F1; $R_k=TP_k/(TP_k+FN_k)$ & Original classifiers on frozen 24-post held-out references\\
+Annotation kappa & $\kappa=(p_o-p_e)/(1-p_e)$ for independent raters & No independent second rater; no measured kappa\\
+User study & Completion rate, time, assistance, interpretation errors and top-driver identification & Participant evaluation planned; no invented success target/result\\
+Runtime NFRs & p95 latency, peak memory and documents/s & Proposal environments and targets in Table~\ref{tab:nfr-targets}; unmeasured\\
+\bottomrule\end{longtable}\endgroup
+Raw generated output and filtered emitted output must be scored separately; a fallback must not hide a weak generator. Numeric rounding tolerances are defined in the verifier and are separate from whole-set targets.
+\section{Test Results}
+The local Mid-1 runner executes both jobs from \nolinkurl{code/} into new evidence directories. Its actual unittest logs report the following scopes. They overlap with individually selected tests and must not be summed with earlier receipts.
+\begin{longtable}{p{.38\textwidth}p{.22\textwidth}p{.29\textwidth}}
+\caption{Observed local unittest scopes for this revision.}\label{tab:test-counts}\\\toprule Scope & Actual ``Ran N tests'' & Result\\\midrule
+CI source/metadata guards & 7 & Pass\\
+Portable \nolinkurl{test_mideval*.py} & 183 & Pass\\
+Legacy Streamlit & 24 & Pass\\
+Current presenter & 19 & Pass\\
+Recorded-study selectors & 4 & Pass\\
 \bottomrule\end{longtable}
-\section{Current Software Checks}
-The current revision adds calibration-availability/rank tests and full-profile scoring/policy tests. Existing corruption, record, transport and interface regressions remain. Named input/expected/actual cases are listed in Appendix~\ref{app:tests}; final scoped receipts record the exact executed counts. Historical counts are not repeated as if they were one current suite. The hosted matrix proves its committed snapshot; new local changes require their own checks before publication.
-\section{Social Study and Diagnostic Probes}
-\begin{longtable}{p{0.32\textwidth}p{0.28\textwidth}p{0.29\textwidth}}
-\caption{Social study population, split and original-classifier outcomes.}\label{tab:social-study}\\\toprule Item & Value & Interpretation\\\midrule
-Acquired / usable / excluded & 200 / 117 / 83 & Exclusions are retained with reasons\\
-Usable reference classes & 31 positive / 67 neutral / 19 negative & Imbalanced target-equity references\\
-Development / held out & 93 / 24 & Frozen chronological selection\\
-Held-out classes & 7 positive / 15 neutral / 2 negative & Negative recall moves in 50-point steps\\
-CryptoBERT & Macro-F1 0.2564; exact 15/24 & All held-out predictions neutral\\
-Cardiff & Macro-F1 0.6016; exact 16/24 & Exploratory leader, not final deployment selection\\
-\bottomrule\end{longtable}
-The reference-construction method is disclosed in Appendix~\ref{app:handbook}. Scores measure agreement with that reference, not independent human-validated accuracy or NVDA return prediction.
+Ruff, record validation, preview/plan-only, risk comparison and real localhost HTTP checks also passed; they are not additional unittest counts. New final receipts retain the exact commands, source digests and logs. CI restores the original tracked source-metadata bytes after execution.
+\subsection{Social Results and Reference Construction}
+The saved study acquired 200 MSFT posts, retaining 117 references and 83 exclusions. The chronological split is 93 development/24 held out; held-out classes are 7 positive, 15 neutral and 2 negative. CryptoBERT macro-F1 is 0.2564 with exact agreement 15/24, all predictions neutral. Cardiff macro-F1 is 0.6016 with exact agreement 16/24, positive recall 4/7 and negative recall 1/2.
 
-A new offline sanity check uses five authored crypto-text probes, kept separate from the frozen equity benchmark. The original CryptoBERT checkpoint returns both positive and negative classes: the two intended-positive and two intended-negative probes match their diagnostic direction. The nominal neutral probe returns negative. This rules out an invariant neutral output on every input, while showing the probes are not a validated accuracy set. We retain the original 24-post result and do not relabel the benchmark to improve it.
-\section{Failure and Recovery Evidence}
-The demonstration pairs correct factual text with a deliberately incorrect visible probability beside correct JSON. The candidate fails and the checked fallback retains the authoritative probability. Edits/case changes remove stale verification. Missing records, partial model outputs and invalid profiles withhold replacements. Temperature calibration preserves raw class order; actual near-uniform confidence abstains under both profile extremes. Controlled 0.70-confidence Buy/Sell cases demonstrate that allowance changes abstention without reversing direction or mutating probabilities.
-\section{Defects Corrected}
-Corrections address payload-over-prose acceptance, missing/non-top-k evidence checks, retained rejection reporting, stale state, label-endpoint purging, calibration-outcome availability, and platform-specific provenance-path handling. The present revision adds multiclass diagnosis/abstention and replaces risk-dependent sentiment weighting in the primary interface. Old model/data/label artifacts remain separately identified.
-\section{Validation Boundary}
-The live module and engineered failures are observable and tested. Predictor usefulness, unrestricted generated-text quality, population-specific suitability and participant comprehension are separate evaluation goals. Physical rehearsal/projector checks and formal meeting/signature records remain team activities.
+References were constructed in one model-assisted pass declared as OpenAI/Codex GPT-6.1 Sol configuration, without an independently authenticated serving revision. No human annotation or inter-rater agreement was measured. Scores describe agreement with those references. Five separate authored CryptoBERT probes produce positive and negative outputs; the nominal neutral probe is negative. These diagnostic probes do not replace the held-out benchmark.
+\section{Acceptance Testing / Validation}
+The engineering acceptance path is case selection, evidence, complete profile, policy, checking and recovery. The transparency tests verify onboarding, captions and an Observe headline. Participant acceptance, independent external installation and formal supervisor review have not been observed.
+\section{Edge and Failure Cases}
+Missing/malformed records withhold replacement decisions. Incomplete profiles withhold scoring. Nonfinite values, unknown features, missing essential claims, conflicting prose/JSON and wrong policy fail. Changing the source/session/profile/text clears the verdict. Failed fallback is surfaced as an error. Real uniform-confidence cases remain Observe under both example profiles; controlled 0.70 fixtures exercise qualifying directional cases separately.
+\section{Defects and Corrective Actions}
+Corrections include payload-over-prose acceptance, omitted evidence, stale state, label-end purging, unavailable calibration labels and portable provenance paths. This revision aligns the Observe headline and explanation policy, adds onboarding/step disclosures and fixes an indentation error left in a UI test. Template and verifier patterns change together, while original teacher packets remain replayable.
+\section{Current Validation Status}
+The local checks establish the bounded software path. The successful hosted matrix and delivery are identified in Appendix D. Predictor usefulness, generated prose, population-specific profiling and human acceptance are evaluated separately in the remaining plan.

@@ -1,4 +1,5 @@
 # Tested historical-viewer runtime, restored on E: in Python 3.11.
+# Recorded viewer only: pandas 3 / NumPy 2; do not install the scientific project into this environment.
 # Separate from the original scientific uv.lock. Vendor-source variants are recorded in evidence.
 altair==6.2.2
 anyio==4.15.1

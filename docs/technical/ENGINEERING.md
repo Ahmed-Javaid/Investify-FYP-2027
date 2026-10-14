@@ -40,8 +40,8 @@ duplicate-run cancellation and fourteen-day retention are configured.
 
 | Stage | Scope |
 | --- | --- |
-| Portable, both platforms | 176 portable tests, seven metadata/source guards, 372 archived records, 228 comparator probes, preview/plan-only and 62 real HTTP checks. |
-| UI, both platforms | Ruff plus 24 legacy, 15 presenter and four selector tests: 43 UI tests. |
+| Portable, both platforms | 183 portable tests, seven metadata/source guards, 372 archived records, 228 comparator probes, preview/plan-only and 62 real HTTP checks. |
+| UI, both platforms | Ruff plus 24 legacy, 19 presenter and four selector tests: 47 UI tests. |
 | Delivery | Nine guards; four same-commit passing receipts; source/log identities; reviewed PDF packaging and isolated extraction verification. |
 
 Retained [hosted success](https://github.com/Ahmed-Javaid/Investify-FYP-2027/actions/runs/38426650755)
@@ -49,6 +49,8 @@ and [download verification](../../evidence/remote_ci_delivery_download_check_202
 prove their dated source snapshots. The previously checked main run is
 https://github.com/Ahmed-Javaid/Investify-FYP-2027/actions/runs/38428835203.
 The [revised-source run](https://github.com/Ahmed-Javaid/Investify-FYP-2027/actions/runs/38469231692) passed all five jobs for commit 5089998. Its delivered bundle was downloaded and its server digest, nested file manifest and current reviewed PDFs were independently checked; [download receipt](../../evidence/remote_ci_revision_download_20261014.json).
+
+The v1.1 implementation [commit 8bd6e09](https://github.com/Ahmed-Javaid/Investify-FYP-2027/commit/8bd6e09827052213f8f0d1fbde1ae63c1fdbf86a) passed all five jobs in [PR run 38487127348](https://github.com/Ahmed-Javaid/Investify-FYP-2027/actions/runs/38487127348). The [release tag](https://github.com/Ahmed-Javaid/Investify-FYP-2027/tree/mid1-v1.1) resolves the final source with publication evidence.
 
 CD delivers source/PDF artifacts; production hosting is later work. CI does not
 acquire current data, train/infer large models, rerun the full scientific study,
@@ -79,7 +81,7 @@ identity and restores the original tracked `code/source_revision.json` bytes.
 Entries: [report/main.tex](../../report/main.tex) and
 [presentation/main.tex](../../presentation/main.tex). Reviewed PDF/source hashes:
 [current_delivery.json](../../deliverables/current_delivery.json). Current PDFs
-have 82 pages and 12 slides. The revised PDFs are bound to the current reviewed sources.
+are selected by the delivery configuration; this revision has 14 slides. Read the matching new review receipt for the report page count.
 
 Use prepared Tectonic with TEMP/TMP and compiler cache under E:\AI-Tools. From
 each source folder: `tectonic --outdir <new-directory> --keep-logs --keep-intermediates main.tex`.
@@ -90,10 +92,27 @@ changed pages and publish a new dated receipt with
 ## Packaging and maintenance
 
 [Groupmate packaging](../../tools/package_groupmate_handover.py) selects the
-reviewed report/slides, original rubric and single team guide. The source delivery
+reviewed report/slides, original rubric, team guide and brief demonstration handout. The source delivery
 uses [package_source_handover.py](../../tools/package_source_handover.py) and
 [verify_source_handover.py](../../tools/verify_source_handover.py); hosted delivery
 uses [run_mid1_delivery.py](../../tools/run_mid1_delivery.py).
 
-Maintain these consolidated guides. Superseded generators and planning/checkpoint
-pages are historical snapshots under `docs/archive/`, not active entry points.
+Maintain these consolidated guides. Superseded generators, exports and planning
+pages were removed with user approval after checkpoint `5f6b6ff`; tracked earlier
+versions remain in Git history. The [cleanup audit](../../evidence/workspace_cleanup_20261014.json)
+records removal and protected current-file identities.
+
+## Audit revision environments and checks
+
+`code/pyproject.toml` and `uv.lock` describe scientific training (NumPy 1/pandas 2).
+`code/requirements-demo-runtime.txt` is the separate recorded viewer (NumPy 2/pandas 3).
+Do not combine them. The proposed NFR-5 uses a 16 GB-class GPU; the recorded local
+10,240 MiB device is a different environment. No QLoRA timing or memory target
+is claimed as met.
+
+The institutional class/logo are unchanged. This workstation has prepared
+Tectonic 0.17.0 (XeTeX and bibliography processing); standalone xelatex/bibtex
+executables are unavailable. Build with `python -B tools/build_mid1_pdfs.py --run-id NEW`
+from the repository root, then render and inspect before publishing new PDFs.
+Use `--expected-slides 14` with the publication reviewer. Original evidence JSON
+and scientific run files must remain unchanged; new receipts get fresh identities.

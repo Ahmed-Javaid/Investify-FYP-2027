@@ -92,6 +92,7 @@ def main():
                     target.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copyfile(source, target)
         for relative in ('sources/BS-FYP-Handbook-2026_DRAFT.pdf',
+                         'sources/FAST_FYP_Student_Idea_Selection_Guide_School_of_Computing.pdf',
                          '.github/workflows/mideval-evidence.yml', 'AGENTS.md',
                          'sources/Investify_Proposal_Full.docx', 'sources/Investify_Concept.docx',
                          'sources/Investify Updated (1).pptx',
@@ -118,15 +119,23 @@ def main():
         for kind, reviewed in (('report', report_receipt), ('presentation', deck_receipt)):
             for relative, expected in reviewed['compiled_source_files'].items():
                 source = (ROOT / relative).resolve()
-                if (not source.is_relative_to(ROOT / kind)
-                        or hashlib.sha256(source.read_bytes()).hexdigest() != expected):
+                # Report figures can be retained scientific outputs from the
+                # code component. Require both owned and packaged bytes to match.
+                allowed = (source.is_relative_to(ROOT / kind)
+                           or kind == 'report' and source.is_relative_to(CODE / 'artifacts')
+                           or kind == 'presentation' and source == ROOT / 'report/submission_metadata.tex')
+                packaged = (bundle / relative).resolve()
+                if (not allowed or not packaged.is_relative_to(bundle)
+                        or not source.is_file() or not packaged.is_file()
+                        or hashlib.sha256(source.read_bytes()).hexdigest() != expected
+                        or hashlib.sha256(packaged.read_bytes()).hexdigest() != expected):
                     raise ValueError('Compiled artifact source changed since visual review: ' + relative)
         shutil.copyfile(ROOT / 'README.md', bundle / 'README.md')
         files = {str(path.relative_to(bundle)).replace('\\', '/'): hashlib.sha256(path.read_bytes()).hexdigest()
                  for path in sorted(bundle.rglob('*')) if path.is_file()}
         manifest = {'built_utc': datetime.now(timezone.utc).isoformat(), 'code_commit': commit,
                     'code_snapshot_kind': 'uncommitted_working_tree' if args.working_tree else 'clean_commit_snapshot',
-                    'files': files, 'scope': f'Current Mid-1 review with four-step Streamlit UI, calibration diagnostics, separately executed fresh Alpaca science, original CryptoBERT/Cardiff outputs and six teacher examples. Dated receipts distinguish overlapping scopes. The {report_receipt["pages"]}-page report and {deck_receipt["pages"]}-slide LaTeX/Beamer deck are compiled/layout-reviewed authored copies. Browser capture/review evidence has its own source-bound receipt; physical projector review, rehearsal, student training and human/institutional acceptance remain open. Publisher weights, E: caches and ignored raw acquisition inputs are external prerequisites for fresh inference/training replay. Private review archive; third-party corpus is not approved for public redistribution.',
+                    'files': files, 'scope': f'Current Mid-1 review with five-step Streamlit UI, calibration diagnostics, separately executed fresh Alpaca science, original CryptoBERT/Cardiff outputs and six teacher examples. Dated receipts distinguish overlapping scopes. The {report_receipt["pages"]}-page report and {deck_receipt["pages"]}-slide LaTeX/Beamer deck are compiled/layout-reviewed authored copies. Browser capture/review evidence has its own source-bound receipt; physical projector review, rehearsal, student training and human/institutional acceptance remain open. Publisher weights, E: caches and ignored raw acquisition inputs are external prerequisites for fresh inference/training replay. Private review archive; third-party corpus is not approved for public redistribution.',
                     'document_receipts': {'report': str(args.report_receipt.resolve().relative_to(ROOT)).replace('\\','/'), 'presentation': str(args.presentation_receipt.resolve().relative_to(ROOT)).replace('\\','/')},
                     'rendered_visual_qa': False, 'institutional_report_rendered_visual_qa': True, 'beamer_presentation_rendered_visual_qa': True}
         (bundle / 'bundle_manifest.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8')

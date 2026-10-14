@@ -1,42 +1,7 @@
-\chapter{Interface Design and Setup Manual}
-\label{chap:manual}
-\section{Current and Planned Interface}
-The implemented interface has Overview, Walkthrough, Experiments and Design. The four walkthrough steps are Decision, Evidence, Risk profile and Explanation check. Only one workspace/step executes at a time. Figure~\ref{fig:wireframe} shows the implemented slice; Figure~\ref{fig:final-wireframes} shows the planned end-user progression without presenting it as completed software.
-\begin{figure}[htbp]\centering\input{figures/mid1_wireframe}\caption{Current explanation-check interface wireframe.}\label{fig:wireframe}\end{figure}
-\begin{figure}[p]\centering\input{figures/mid1_final_wireframes}\caption{Planned onboarding, profile, company, evidence and follow-up interfaces.}\label{fig:final-wireframes}\end{figure}
-\section{Local Installation}
-Install Git and Python 3.11, clone the repository, create a virtual environment and install \nolinkurl{code/requirements-demo-runtime.txt}. Restore reviewed checkout bytes with \nolinkurl{tools/restore_ci_checkout.py}. Start the app from the repository root:
-\begin{quote}\small\begin{verbatim}
-python -m streamlit run code/app/streamlit_app.py
-  --server.address=127.0.0.1 --server.port=8507
-\end{verbatim}\end{quote}
-The command should be entered on one line. Open \url{http://127.0.0.1:8507} and keep the terminal open. No GPU, model download or API key is needed for recorded viewing. The prepared project laptop can use \nolinkurl{tools/start_guided_demo.ps1}; a different machine should follow the portable setup. An occupied port or missing runtime produces an error; use an available port/environment rather than stopping an unrelated process.
-\section{Live Route and Observable Results}
-\begin{longtable}{p{0.20\textwidth}p{0.38\textwidth}p{0.31\textwidth}}
-\caption{Current user actions and observable responses.}\label{tab:ui-actions}\\\toprule Step & Action & Response\\\midrule
-Decision & Select multiclass-calibrated frozen NVDA case, 21 Dec 2023 & Raw class and probabilities; insufficient-confidence state\\
-Evidence & Select technical/news feature & Recorded value, meaning and raw-score effect\\
-Risk & Complete eighteen answers or choose labelled example & Published tolerance total, capacity limit, allowance and confidence gate\\
-Explanation & Inject 1.00\%, then Check explanation & Rejection and separately checked factual fallback\\
-Recovery & Edit candidate or change case & Obsolete verification cleared\\
-Studies & Select retained experiment & Source-bound results and limitations, without inference\\
-\bottomrule\end{longtable}
-Both example profiles abstain on near-uniform real evidence; a higher allowance lowers the required confidence rather than reversing the market class. Controlled policy tests exercise qualifying Buy/Sell cases separately. The preserved isotonic choices are labelled diagnosed failures and are not eligible for directional suggestions.
-\section{Failure Handling}
-Missing records, invalid profiles, inconsistent study identities and checker errors withhold substitute outputs. A failed fallback produces an error. The optional generator is called only by explicit action, and its absence is labelled. Brokerage accounts, orders and trained-student serving remain outside this prototype.
-\section{Actual Interface Captures}
-The revised captures show the decision/abstention, complete-profile result and rejection/fallback panels at readable scale. They are actual browser panels, not wireframes. Captures are produced after code verification and remain distinct from a physical projector check.
-% Current panel captures are inserted after the revised browser journey.
-
-\begin{figure}[p]\centering
-\includegraphics[width=\linewidth]{figures/presenter_browser_20261014_revision05/decision.png}
-\caption{Actual revised decision panel: approximately 33.3\% confidence and explicit abstention.}\label{fig:browser-decision}
-\end{figure}
-\begin{figure}[p]\centering
-\includegraphics[width=\linewidth]{figures/presenter_browser_20261014_revision05/profile.png}
-\caption{Actual complete-profile result: published total 13/47, allowance zero and an 80\% confidence requirement.}\label{fig:browser-profile}
-\end{figure}
-\begin{figure}[p]\centering
-\includegraphics[width=\linewidth]{figures/presenter_browser_20261014_revision05/explanation.png}
-\caption{Actual visible 1.00\% corruption rejected; independently checked fallback restores 33.34\%.}\label{fig:browser-fallback}
-\end{figure}
+\subsection{Current Interface and Actual Captures}
+Only the selected step runs its widgets. Decision shows the policy result and probabilities. Evidence shows a feature value, maintained definition and selected-class SHAP effect. Risk profile shows capacity, the tolerance total, binding constraint and required confidence. Explanation check shows the candidate, claim report and separately verified output. Each step includes historical date/horizon, confidence and a short interpretation note.
+\begin{inlinefigure}\centering\includegraphics[width=\linewidth]{figures/presenter_browser_20261014_v11_run04/onboarding.png}\caption{Current onboarding purpose, risks, date/horizon and confidence.}\label{fig:browser-onboarding}\end{inlinefigure}
+The captures below are actual views from the revised browser journey. They show the current Observe headline, profile threshold and policy-aware fallback; the capture receipt records their source files and image hashes.
+\begin{inlinefigure}\centering\includegraphics[width=\linewidth]{figures/presenter_browser_20261014_v11_run04/decision.png}\caption{Current decision panel with the full Observe headline and a secondary diagnostic class.}\label{fig:browser-decision}\end{inlinefigure}
+\begin{inlinefigure}\centering\includegraphics[width=\linewidth]{figures/presenter_browser_20261014_v11_run04/profile.png}\caption{Current cautious profile: tolerance 13/47, allowance zero and 80\% required confidence.}\label{fig:browser-profile}\end{inlinefigure}
+\begin{inlinefigure}\centering\includegraphics[width=\linewidth]{figures/presenter_browser_20261014_v11_run04/explanation.png}\caption{Current displayed-probability corruption and checked Observe fallback.}\label{fig:browser-fallback}\end{inlinefigure}

@@ -14,7 +14,7 @@ from investify.explain.pipeline import emit
 from investify.risk_profile_gl import CAPACITY_OPTIONS, GL_ITEMS, score_profile, example_answers, apply_risk_policy
 
 PAGES = ('Overview', 'Walkthrough', 'Experiments', 'Design')
-STEPS = ('Decision', 'Evidence', 'Risk profile', 'Explanation check')
+STEPS = ('Onboarding', 'Decision', 'Evidence', 'Risk profile', 'Explanation check')
 ASSETS = Path(__file__).parent / 'assets'
 
 def navigate(page, step=None):
@@ -70,7 +70,7 @@ def overview():
     st.markdown('<div class="eyebrow">FYP-1 mid evaluation</div>', unsafe_allow_html=True)
     st.title('A decision you can inspect')
     st.markdown('<p class="summary">Explore one recorded equity decision, see the evidence behind it, and test whether its explanation matches the facts.</p>', unsafe_allow_html=True)
-    st.button('Open the decision walkthrough', type='primary', key='ui_begin', on_click=navigate, args=('Walkthrough','Decision'))
+    st.button('Open the decision walkthrough', type='primary', key='ui_begin', on_click=navigate, args=('Walkthrough','Onboarding'))
     st.divider()
     left, right = st.columns([3,2], gap='large')
     with left:
@@ -84,12 +84,31 @@ def overview():
         st.button('View architecture and requirements', key='ui_open_design', on_click=navigate, args=('Design',))
     st.markdown('<div class="quiet-note">The predictor has no established useful signal. Multiclass calibration preserves varied raw classes, but nearly uniform probabilities require abstention.</div>', unsafe_allow_html=True)
 
+def active_policy(collection, record):
+    profile = st.session_state.get('ui_profile')
+    if getattr(profile, 'version', '') == 'grable-lytton-capacity-policy-v2':
+        return apply_risk_policy(record, profile, eligible_model=collection.source.startswith('temperature_'))['profile_action']
+    return 'Observe'
+
+
+def onboarding_view(collection, record):
+    st.header('Purpose and limits')
+    st.write('Investify is an educational stock research prototype. It does not execute trades or connect to a brokerage.')
+    case_caption(collection, record)
+    st.warning('These are historical records. No useful predictive signal has been established. You can lose money if you act on a model label.')
+    st.write('The profile controls a confidence threshold. The current explanation is a deterministic template checked against the record; a prompted LLM explainer is planned for Mid-2.')
+    st.caption('What this means / limits: use this walkthrough to inspect evidence and failures, not to obtain personal financial advice.')
+
+
 def decision_view(collection, record):
     st.header('Recorded decision')
     case_caption(collection, record)
+    action = active_policy(collection, record)
+    st.metric('Policy outcome', 'No recommendation (Observe)' if action == 'Observe' else action)
     left, right = st.columns([1,2], gap='large')
     with left:
-        st.metric('Model class', record.decision)
+        st.caption('Diagnostic class: ' + record.decision)
+        st.caption('Educational advisory status: historical research only; no trades are executed.')
         st.metric('Calibrated probability', f'{record.confidence:.1%}')
         st.caption('Largest recorded class probability, not an expected return or a suitability guarantee.')
     with right:
@@ -211,7 +230,7 @@ def candidate_identity(collection, record, text):
     return collection.identity(record.session_date) + ':' + record.data_hashes.get('profile_digest', 'no-profile') + ':' + record.data_hashes.get('profile_epoch', '0') + ':' + hashlib.sha256(text.encode()).hexdigest()
 
 def set_candidate(collection, record, fail=False):
-    base = render(record)
+    base = render(record, policy_action=active_policy(collection, record))
     st.session_state['ui_candidate_text'] = base.text.replace(f'{record.confidence*100:.2f}%','1.00%',1) if fail else base.text
     st.session_state.pop('ui_verification',None)
 
@@ -242,7 +261,8 @@ def explanation_view(collection, record):
         st.caption('The structured payload retains the correct record facts. This makes a displayed-text error observable.')
         if st.button('Check explanation',type='primary',key='ui_verify'):
             try:
-                result = emit(record,candidate=Explanation(text,render(record).payload),strict_prose=True)
+                result = emit(record,candidate=Explanation(text,render(record, policy_action=active_policy(collection, record)).payload),strict_prose=True,
+                              policy_action=active_policy(collection, record))
                 st.session_state['ui_verification'] = (candidate_identity(collection,record,text),result)
             except (TypeError,ValueError,RuntimeError) as error:
                 st.session_state.pop('ui_verification',None)
@@ -267,17 +287,24 @@ def explanation_view(collection, record):
                 st.json({'numeric_fidelity':report.numeric_fidelity,'directional_consistency':report.directional_consistency,'claim_recall':report.claim_recall,'unverifiable_rate':report.unverifiable_rate,'failed_metrics':report.failed_metrics,'fallback_passed':result.verification.passed})
     st.caption('Strict checking supports maintained claim patterns and record values. Arbitrary market prose and human usefulness remain unvalidated.')
     with st.expander('Complete deterministic indicator guide'):
-        st.text(render_guided(record).text)
+        st.text(render_guided(record, policy_action=active_policy(collection, record)).text)
         st.caption('This guide uses the maintained definitions. No local language model is configured or called by opening this view.')
-    with st.expander('Optional configured language-model request'):
-        from app.tabs.decision import _render_guided_explanation
-        _render_guided_explanation(record,collection.source)
+    st.caption('Prompted LLM explanations and constrained claim payloads are scheduled for Iteration 3 (Mid-2); QLoRA for Iteration 4.')
 
 def walkthrough():
     collection,record = choose_case()
     if collection is None:return
     step = st.radio('Walkthrough stage',STEPS,horizontal=True,key='ui_step',label_visibility='collapsed')
-    {'Decision':decision_view,'Evidence':evidence_view,'Risk profile':profile_view,'Explanation check':explanation_view}[step](collection,record)
+    {'Onboarding':onboarding_view,'Decision':decision_view,'Evidence':evidence_view,'Risk profile':profile_view,'Explanation check':explanation_view}[step](collection,record)
+    notes = {
+        'Decision': 'Read the policy outcome first. The diagnostic class is not advice; confidence does not predict a return.',
+        'Evidence': 'Feature values and SHAP describe model inputs and raw-score effects. News tone does not prove news is true or explain a price move.',
+        'Risk profile': 'Capacity and tolerance set the confidence threshold. Both profile extremes abstain on these weak real records.',
+        'Explanation check': 'The checker supports template sentence patterns. It does not verify arbitrary prose or the wisdom of a market decision.',
+    }
+    if step in notes:
+        st.caption('What this means / limits: ' + notes[step])
+    st.caption(f'Historical data date: {record.session_date}; horizon: {record.horizon_days} trading sessions; calibrated confidence: {record.confidence:.2%}; advisory status: educational research; no trades.')
     st.divider()
     index = STEPS.index(step)
     left,middle,right = st.columns([1,2,1])
@@ -359,5 +386,5 @@ def design():
 - `explain/verifier.py`: checks displayed claims and JSON independently.
 - `explain/pipeline.py`: retains rejection and verifies fallback.
 - `risk_profile_gl.py`: score five capacity and thirteen tolerance answers; apply a separate confidence requirement.
-- `risk_comparator.py`: retain the earlier blend as a historical comparison.""")
-    st.caption('Diagram and code review remains a genuine team/supervisor task. A generated figure or commit count does not establish student ownership.')
+- `multiclass_calibration.py`: fit one temperature on available earlier outcomes.""")
+    st.caption('The report explains the architecture decisions and remaining integrations.')

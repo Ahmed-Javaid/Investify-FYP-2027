@@ -20,8 +20,12 @@ def digest(path):
 
 def inventory(folder):
     suffixes = {'.tex', '.cls', '.sty', '.bib', '.png', '.jpg', '.jpeg', '.svg'}
-    return {p.relative_to(ROOT).as_posix(): digest(p) for p in sorted(folder.rglob('*'))
-            if p.is_file() and p.suffix.lower() in suffixes}
+    files = {p.relative_to(ROOT).as_posix(): digest(p) for p in sorted(folder.rglob('*'))
+             if p.is_file() and p.suffix.lower() in suffixes}
+    if folder.resolve() == (ROOT / 'presentation').resolve():
+        shared = ROOT / 'report/submission_metadata.tex'
+        files[shared.relative_to(ROOT).as_posix()] = digest(shared)
+    return files
 
 
 def new_json(path, value):
@@ -111,8 +115,8 @@ def publish(args):
         unresolved = len(re.findall(r'(?:Citation|Reference) .+ undefined|There were undefined', log))
         if empty or outside or overfull or unresolved or len(images) != pages:
             raise ValueError(f'{kind} QA failed: pages={pages}, renders={len(images)}, empty={empty}, annotations={outside}, overfull={overfull}, unresolved={unresolved}')
-        if kind == 'presentation' and pages != 12:
-            raise ValueError('Preserve the twelve-slide presentation')
+        if kind == 'presentation' and pages != args.expected_slides:
+            raise ValueError(f'Expected {args.expected_slides} presentation slides, found {pages}')
         shutil.copyfile(pdf, output)
         receipt = {
             'schema': 'investify-document-delivery-v3',
@@ -165,6 +169,7 @@ def main():
     p.add_argument('--run-id', required=True)
     p.add_argument('--visually-reviewed', action='store_true')
     p.add_argument('--visual-review-receipt', type=Path)
+    p.add_argument('--expected-slides', type=int, default=14)
     args = parser.parse_args()
     if args.command == 'montage':
         montage(args.source, args.output)

@@ -1,42 +1,57 @@
 \chapter{Proposal Feedback and Iteration Plan}
-\section{Proposal Feedback}
-The project was approved with minor modifications. The panel requested clearer contributions and model choices, an explanation of the LLM's user benefit, technical/sentiment evidence, explicit metrics, an improved PoC, transparency and deeper market understanding. Appendix~\ref{app:actions} links each action to the current response and remaining evaluation.
+\section{Proposal Feedback Summary}
+The panel approved the project with minor modifications. PF-01--PF-09 organize the supplied comments into contribution, LLM role, evidence explanation, problem statement, models, metrics, PoC, transparency and market background. The approved slides provide the proposal claims; the unsubmitted concept supplies additional reference design. Status below describes the technical response, not a supervisor closure decision.
+\section{Proposal Action Register}
+\label{sec:actions}\label{app:actions}
+\begingroup\small
+\begin{longtable}{p{.07\textwidth}p{.16\textwidth}p{.35\textwidth}p{.10\textwidth}p{.18\textwidth}}
+\caption{Panel feedback, action, status and evidence.}\label{tab:panel-actions}\\\toprule No. & Feedback & Action Taken & Status & Evidence\\\midrule
+PF-01 & Clear contribution & C1 harness, C2 verifier and planned C3 divergence separated from library inputs & Partial & Section 2.5; leakage results in 6.7\\
+PF-02 & Explain LLM benefit & Inputs/outputs, permitted claims, worked example and comparison plan specified & Partial & Section~\ref{sec:llm-design}; prompted evaluation Mid-2\\
+PF-03 & Explain technical and sentiment signals & All eleven values/definitions and contributions; conflicts and missing social data explained & Partial & Section~\ref{sec:market-background}; \nolinkurl{test_mideval_context.py}\\
+PF-04 & Refine problem & Retail workflow, confidence, records, leakage and unchecked fluent text described & Closed & Section 1.2\\
+PF-05 & Model clarity & Executed revisions, tasks, domains, adaptation and licenses listed & Closed & Table~\ref{tab:model-inventory}; frozen study receipts\\
+PF-06 & Metrics & Definitions, thresholds and measured/planned populations separated & Partial & Table~\ref{tab:metrics-matrix}; broader evaluation pending\\
+PF-07 & Improve PoC & Full profile, independent checks, supported corruptions and checked recovery demonstrated & Closed & Section 6.9; \nolinkurl{test_mideval_policy_explanation.py}\\
+PF-08 & Transparency & Onboarding, per-step status/date/confidence/limits and Observe headline requirements added & Partial & MID-FR-21--23; presenter tests; user comprehension pending\\
+PF-09 & Market understanding & Price formation, drivers, eleven formulas, absorption, regimes and actions connected to design & Closed & Section~\ref{sec:market-background}\\
+\bottomrule\end{longtable}\endgroup
+``Closed'' indicates that the requested document/software response is present. PF-01--03 remain partial because divergence, prompted free prose and user benefit are still planned. Appendix A identifies the preserved original feedback.
 \section{Iteration Strategy}
-Each increment delivers runnable behavior, source-linked tests and retained evidence. New experiments use new identities so earlier inputs and findings remain reproducible. The prototype distinguishes implemented controls from unproven predictive or participant outcomes.
-\section{Original Milestones and Current Progress}
-\begin{longtable}{p{0.18\textwidth}p{0.38\textwidth}p{0.33\textwidth}}
-\caption{Progress against the four proposal iterations.}\label{tab:iterations}\\
-\toprule Stage & Commitment & Current position\\\midrule
-\endfirsthead
-\toprule Stage & Commitment & Current position\\\midrule
-\endhead
-Mid-1, week 7 & Data/calendar/features, social selection, baseline, leakage suite and thin interface & Core paths execute; report response and uncertainty/risk corrections included\\
-Final-1, week 12 & Engine/calibration/SHAP, divergence, service and initial deployment & Engine/attribution built early; social integration and service work remain\\
-Mid-2, week 18 & Prompted explainer, filtered data, NFRs, parity, degraded operation and acceptance preparation & Verifier/adapter groundwork present; full measurements and integration remain\\
-Final-2, week 24 & QLoRA comparison, broader evaluation, participant sessions and external installation & Later development and evaluation\\
-\bottomrule\end{longtable}
-The cohort rubric places Mid-1 around week eight; proposal week numbers are relative planning milestones. One completed checkpoint does not imply a fixed whole-project percentage.
-\section{Work Breakdown and Delivered Responsibilities}
+Each iteration delivers runnable modules and tests with a separately identified result set. Iteration 1 establishes the data/harness/viewer baseline; Iteration 2 extends engine and services; Iteration 3 adds prompted explanations and measured operations; Iteration 4 compares the adapted student. Weak prediction is a reportable outcome under the proposal gates.
+\section{Iteration 1 Plan}
+The reference plan calls for hardened ingestion, two-calendar mapping, technical indicators, news features, social selection, an end-to-end linear baseline, a green leakage suite with a firing mutation test, a thin one-company Streamlit view and baselined requirements/design. Table~\ref{tab:proposal-delivered} records the actual outcome of each item.
+\section{Iteration 2 Plan}
+Extend multi-company data, evaluate XGBoost/calibration/SHAP against the baseline, preregister the divergence ablation, integrate the service and attempt deployment. The engine and deterministic verifier were built early, while usable prediction, integrated divergence and hosting remain open.
+\section{Work Breakdown and Responsibilities}
 \label{sec:planned-work-division}
-The proposal allocation is retained, with each member delivering the relevant Mid-1 part into the integrated package. Chapter~9 distinguishes delivered work from later responsibilities. Members continue learning and practising the code they will defend. The shared presentation allocation remains one-third each.
+Ahmed owns temporal data, the leakage harness and CI/delivery; Rafay owns the interface, profile and sentiment path; Soban owns the decision engine, calibration, attribution and verifier/student work. The user confirmed equal delivered contributions. Chapter 8 records delivery and continuing responsibility.
 \input{chapters/proposal_work_division}
-\section{Deviations and Recovery}
-FNSPID's timestamp precision and ticker gaps prompted a bounded NVDA study and a new Alpaca/Benzinga snapshot. FinBERT remains the headline model; Cardiff is an evaluated social alternative. The isotonic collapse prompted a separately identified multiclass revision and abstention guard. The original sentiment-weight profile was replaced in the main interface by complete tolerance scoring and a direction-preserving confidence policy. Earlier records and labels remain unchanged.
-\section{Dated Engineering Targets}
-Dates below are internal delivery targets; they do not replace university assessment appointments.
-\begin{longtable}{p{0.16\textwidth}p{0.51\textwidth}p{0.22\textwidth}}
-\caption{Engineering milestones, ownership and target dates.}\label{tab:engineering-dates}\\
-\toprule Target & Deliverable/check & Owner\\\midrule
-\endfirsthead
-\toprule Target & Deliverable/check & Owner\\\midrule
-\endhead
-14 Oct 2026 & Mid-1 report response, risk/calibration corrections and revised demonstration & All three\\
-21 Oct 2026 & Broader calibration/baseline analysis and risk wording review & Soban, Rafay\\
-4 Nov 2026 & Multi-company data audit and news/social divergence integration & Ahmed, Rafay\\
-18 Nov 2026 & Service parity, container setup and degraded-operation tests & Ahmed, Soban, Rafay\\
-2 Dec 2026 & Integrated FYP-1 prototype and measured comparison evidence & All three\\
-17 Feb 2027 & Student checkpoint, prompted baseline and verified training-data expansion & Soban\\
-17 Mar 2027 & QLoRA and three-way explanation comparison & Soban, Rafay\\
-14 Apr 2027 & Participant tasks, external installation and final handover & All three\\
+\section{Progress Against Plan}
+\begingroup\small
+\begin{longtable}{p{.25\textwidth}p{.30\textwidth}p{.34\textwidth}}
+\caption{Proposal versus delivered Iteration 1 and recorded deviations.}\label{tab:proposal-delivered}\\\toprule Reference item & Delivered status & Deviation / reason\\\midrule
+Hardened ingestion & Timestamp/dedup/store code and versioned inputs & Current-vintage vendor availability is not historically proven\\
+Two-calendar mapping & Equity/continuous calendar code and tests & Scientific execution is NVDA only; no crypto generalization study\\
+Technical indicators & Five causal indicators & Centred variants exist only as labelled faults\\
+News sentiment features & Six FinBERT headline aggregates & FNSPID/yfinance path replaced for new study by Alpaca/Benzinga/SIP because of timestamp gaps and acquisition recovery\\
+Social selection study & Two original classifiers executed on 24 held-out MSFT posts & AI reference labels replace the proposed hand-labelled sample; independent human agreement absent\\
+Linear baseline end to end & Recorded training/CV/final linear results & UI focuses on saved XGBoost cases; linear result is documented comparison\\
+Leakage suite and mutation & Timing tests and centred Bollinger canary & Gate A partial: five-session clean result is below chance, not literal chance-level closure\\
+Thin Streamlit slice & Five-step historical evidence/profile/checking flow & Expanded beyond original baseline verdict/status slice\\
+Requirements/design baseline & Numbered acceptance and design documents & Formal supervisor approval is not recorded\\
+Asset coverage & NVDA model study; separate MSFT social benchmark & Seven equities in approved slides remain future coverage\\
+Calibration & Isotonic failure retained; temperature diagnostic added & Temperature reaches its bound and gives no usable confidence signal\\
+Risk as model inputs & Full capacity/tolerance calculation and post-hoc gate & Risk is not a classifier feature; $\lambda=2.25$ from concept was dropped because no loss-aversion utility model is implemented\\
+Teacher construction & Six OpenAI GPT-6 assistant prose examples, deterministic JSON targets & Concept open-weight teacher replaced by recorded assistant session; prompted student and adaptation unexecuted\\
+\bottomrule\end{longtable}\endgroup
+\section{Delays, Deviations and Recovery Plan}
+Timestamp precision, acquisition/runtime recovery, weak clean prediction and calibration collapse caused deviations. Recovery keeps old results, creates separate experiments and prevents a misleading recommendation. Gate A and Gate B outcomes are stated in Section~\ref{sec:gates}; broader modelling should proceed only with the unmet gate conditions addressed and the null result retained.
+\begin{longtable}{p{.18\textwidth}p{.48\textwidth}p{.23\textwidth}}
+\caption{Reference iteration milestones and current work.}\label{tab:engineering-dates}\\\toprule Relative checkpoint & Planned deliverable & Owner\\\midrule
+Mid-1, week 7 / rubric around week 8 & Data/harness, thin UI and this report & All three\\
+Final-1, week 12 & Engine/service and divergence evaluation & Ahmed, Rafay, Soban\\
+Mid-2, week 18 & Prompted explainer, constrained claims, NFRs/parity and acceptance preparation & Soban, Rafay\\
+Final-2, week 24 & QLoRA comparison, external installation and participant evaluation & All three\\
 \bottomrule\end{longtable}
-The next action for weak prediction is baseline/data/model analysis, not held-out tuning to force a positive result. If useful prediction remains absent, the temporal harness and explanation guard remain the evaluated contributions.
+These are proposal-relative milestones, not invented calendar appointments.

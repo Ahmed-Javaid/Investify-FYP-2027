@@ -54,9 +54,9 @@ class Explanation:
     payload: dict | None
 
 
-def _decision_line(record: DecisionRecord) -> str:
+def _decision_line(record: DecisionRecord, policy_action: str | None = None) -> str:
     return (
-        f"{record.ticker} decision for session {record.session_date} "
+        f"{record.ticker} {'diagnostic class' if policy_action is not None else 'decision'} for session {record.session_date} "
         f"({record.horizon_days}-day horizon): {record.decision}."
     )
 
@@ -91,7 +91,8 @@ def _notice_line(record: DecisionRecord) -> str:
     return record.non_advice_notice
 
 
-def render(record: DecisionRecord, *, include_payload: bool = True) -> Explanation:
+def render(record: DecisionRecord, *, include_payload: bool = True,
+           policy_action: str | None = None) -> Explanation:
     """Render the deterministic explanation for `record`.
 
     Every top-k contributor gets its own line, in the record's own
@@ -104,13 +105,19 @@ def render(record: DecisionRecord, *, include_payload: bool = True) -> Explanati
     `tests/test_verifier.py` calls it explicitly to prove that path is
     real code, not dead code.
     """
+    if policy_action is not None and policy_action not in ("Observe", "Buy", "Hold", "Sell"):
+        raise ValueError("Unknown policy outcome")
     lines = [
-        _decision_line(record),
+        _decision_line(record, policy_action),
         _confidence_line(record),
         _probability_line(record),
         *[_feature_line(record, c) for c in record.top_k],
         _notice_line(record),
     ]
+    if policy_action is not None:
+        lines.insert(1, f"Policy outcome: {policy_action}.")
+        lines = [line.replace(f"the {record.decision} decision with",
+                              f"the {record.decision} diagnostic class with") for line in lines]
     text = "\n".join(lines)
 
     if not include_payload:
@@ -135,16 +142,18 @@ def render(record: DecisionRecord, *, include_payload: bool = True) -> Explanati
         ],
         "non_advice_notice": record.non_advice_notice,
     }
+    if policy_action is not None:
+        payload["policy_outcome"] = policy_action
     return Explanation(text=text, payload=payload)
 
 
-def render_guided(record: DecisionRecord) -> Explanation:
+def render_guided(record: DecisionRecord, *, policy_action: str | None = None) -> Explanation:
     """Deterministic comparator covering every feature and family contribution.
 
     A local LLM receives the same definitions, so this is a necessary
     comparator for claims about its added value over a numeric template.
     """
-    baseline = render(record)
+    baseline = render(record, policy_action=policy_action)
     context = build_context(record, corpus="guided explanation")
     evidence = [{"name": row["feature"], "value": row["value"],
                  "shap_value": row["shap_value"], "direction": row["effect_on_predicted_class"]}

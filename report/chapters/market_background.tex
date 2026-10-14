@@ -1,0 +1,43 @@
+\section*{Stock Market Background and Design Implications}
+\addcontentsline{toc}{section}{Stock Market Background and Design Implications}
+\label{sec:market-background}
+\subsection*{Price Formation, Liquidity and Trading Sessions}
+A share represents an ownership interest in a company\cite{sec_stocks}. Secondary-market prices arise when buyers and sellers transact through trading venues. A bid is an offered buying price and an ask is an offered selling price; their difference is the spread. Market orders seek execution at available prices, while limit orders restrict the acceptable price. A daily close summarizes completed trading and is not a guarantee that a later order can be filled at that price\cite{sec_orders,sec_execution,sec_participants}. A model trained on daily bars cannot infer an intraday order book or assume unlimited liquidity.
+
+Trading takes place on a calendar. US equity sessions contain holidays and early closes; five trading sessions can span more than five calendar days\cite{nyse_calendar}. An announcement after the close belongs to a different information set from one received before it. Our labels use observed price-session endpoints. The inherited fixed 16:00 New York news cutoff is recorded, including its early-close limitation.
+
+\textbf{Design implication:} use an exchange calendar, preserve event and acquisition times and join completed news sessions backward to prices. Evaluate execution assumptions separately before any future trading claim. The present UI reports a historical date and horizon and has no order-execution path.
+\subsection*{Price Drivers and the Short-Horizon Noise Problem}
+Earnings and guidance can change expectations of future cash flows; valuation also depends on the return investors demand. Monetary policy and interest rates can affect discount rates, financing costs and alternatives to equities. Sector and index movements, institutional flows and liquidity can move a stock alongside its own news\cite{sec_stocks,fidelity_business_cycle}. These are reasons to avoid explaining a price change from a single headline. The project's eleven inputs contain price/volume summaries and headline sentiment; they are not a complete valuation or macroeconomic model.
+
+Market efficiency treats prices as responding to available information\cite{fama_1970}. It does not prove that every market is always efficient or that no prediction can work. It does explain why widely observed short-horizon signals can have little remaining advantage once information, costs and timing are handled correctly. Positive historical performance requires a meaningful comparator and an out-of-sample protocol.
+
+\textbf{Design implication:} compare with stratified-random and linear baselines, preserve weak findings and keep SHAP statements about model use separate from economic causation. A probability is a class estimate, not an expected return. The current no-signal result is a reason to abstain rather than to claim market insight.
+\subsection*{The Five Technical Inputs}
+Let $P_t$ be the completed closing price, $V_t$ traded share volume, and $\Delta P_t=P_t-P_{t-1}$. All windows below end at $t$; no centred window is allowed in the clean features. Indicator guides describe their usual interpretation\cite{fidelity_rsi,fidelity_macd,fidelity_obv}; the exact implemented formulas are in \nolinkurl{features/indicators.py}.
+\begin{description}
+\item[RSI(14)] With $g_t=\max(\Delta P_t,0)$ and $\ell_t=\max(-\Delta P_t,0)$, the implementation uses simple fourteen-session averages: $RS=\overline g_{14}/\overline\ell_{14}$ and $RSI=100-100/(1+RS)$. Completed all-gain/all-loss windows yield 100/0; a completed flat window yields 50. Warm-up remains missing.
+\item[MACD histogram] $M_t=EMA_{12}(P)_t-EMA_{26}(P)_t$ and $H_t=M_t-EMA_9(M)_t$, where $EMA$ uses $\alpha=2/(n+1)$. This measures components of price momentum; its sign does not prescribe a trade.
+\item[Distance from SMA200] $D_t=(P_t-SMA_{200,t})/SMA_{200,t}$. The long window means early rows do not have a complete value.
+\item[Bollinger position] $B_t=(P_t-L_t)/(U_t-L_t)$, with $L_t=\overline P_{20}-2s_{20}$ and $U_t=\overline P_{20}+2s_{20}$. The sample standard deviation describes trailing variability. Values can lie outside $[0,1]$; a zero-width band is missing.
+\item[OBV slope] $OBV_t=OBV_{t-1}+\operatorname{sign}(\Delta P_t)V_t$ and $O_t=(OBV_t-OBV_{t-14})/14$. This is a price-associated volume summary, not an observation of investors' intentions.
+\end{description}
+\textbf{Design implication:} expose the maintained definition and actual recorded value beside its SHAP effect. A value's sign and its attribution sign answer different questions. Direct perturbation checks verify that changing a future price cannot change an earlier clean feature.
+\subsection*{The Six News Inputs, Absorption and Manipulation}
+FinBERT assigns positive, neutral and negative headline probabilities\cite{finbert_paper,finbert_card}. For headline $i$, polarity is $q_i=p_i^{+}-p_i^{-}$. Let $n_t$ be the scored-headline count and $a_t$ the contributing session's average polarity. The implemented six news features are:
+\begin{align*}
+\text{mean\_polarity}_t &= a_t=\frac{1}{n_t}\sum_{i=1}^{n_t}q_i, & \text{mention\_volume}_t &= n_t,\\
+\text{mom\_3d}_t &= \overline a_{3,t}-a_{t-3}, & \text{mom\_7d}_t &= \overline a_{7,t}-a_{t-7},\\
+\text{volume\_z}_t &= \frac{n_t-\overline n_{20,t}}{s_{n,20,t}}, & \text{dispersion}_t &= s_{a,5,t}.
+\end{align*}
+Momentum allows shorter initial rolling windows but still needs the shifted prior value. Attention z-score needs at least five observations and a nonzero standard deviation; dispersion needs at least two. Dispersion is variation in session-average tone, not disagreement between individual headlines. Headline count is news attention, not traded share volume.
+
+News can be anticipated, absorbed quickly or overwhelmed by other information. Tone can also reflect rumours, selective reporting or coordinated discussion. Neither a positive headline nor social agreement proves truth or price impact\cite{sec_ai_alert}. The paired social study therefore measures sentiment agreement on its frozen sample rather than investment performance. Cross-register divergence is planned and will be tested with shared evaluation settings.
+
+\textbf{Design implication:} store the later creation/update timestamp for the new news snapshot, disclose coverage and missing features, and use a strict prior-session join. The future explainer must describe conflicting model contributions without inventing absent social values or claiming that a headline caused a return.
+\subsection*{Volatility Regimes and Corporate Actions}
+The distribution of returns and the usefulness of a signal may change between quiet and volatile periods. The same indicator value need not imply the same future outcome. Calibration fitted on one period may transfer poorly to a later refitted classifier, so mode and period identities remain visible.
+
+Splits change share count and price units. NVIDIA's four-for-one 2021 split and ten-for-one 2024 split are documented by the issuer\cite{nvda_split_2021,nvda_split_2024}. The new historical prices use a current-vintage SIP split adjustment, including the vendor's action vintage, without cash-dividend adjustment. A discontinuity in raw prices must not be mistaken for an economic return; adjusted close and total return are different conventions.
+
+\textbf{Design implication:} pin adjustment policy and data vintage, preserve issuer-action references and assess regimes and dividend treatment separately. Compare calibration on its declared fit/evaluation periods. The present model's uniform-confidence outcome supports no directional recommendation across either example profile.

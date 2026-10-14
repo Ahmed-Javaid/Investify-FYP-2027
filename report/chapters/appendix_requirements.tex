@@ -31,3 +31,26 @@ MID-FR-20 & \nolinkurl{score_profile} & \nolinkurl{test_thirteen_published_item_
 \bottomrule\end{longtable}
 \endgroup
 The machine-readable matrix is \nolinkurl{code/docs/requirements_traceability_v2.json}. The earlier eighteen-ID matrix remains preserved.
+
+\section{Transparency Acceptance Anchors}
+MID-FR-21 uses \nolinkurl{test_onboarding_precedes_the_decision_and_discloses_purpose_risks_and_status}. MID-FR-22 uses \nolinkurl{test_each_walkthrough_step_has_advisory_date_horizon_and_limits}. MID-FR-23 uses \nolinkurl{test_walkthrough_renders_only_the_selected_step}, \nolinkurl{test_abstaining_explanation_and_fallback_keep_policy_outcome}, and independent prose/payload policy tests.
+\section{Proposal FR-1--FR-15 to Mid-1 Mapping}
+\begingroup\small
+\begin{longtable}{p{.08\textwidth}p{.32\textwidth}p{.22\textwidth}p{.27\textwidth}}
+\caption{Reference FR acceptance and delivered boundary.}\label{tab:proposal-fr-mapping}\\\toprule ID & Reference requirement & Mid-1 mapping & Status / remaining work\\\midrule
+FR-1 & Append-only dual timestamps/dedup & MID-FR-01, 07; store/ingest tests & Partial: code exists; historical availability unproven\\
+FR-2 & Session and continuous-window mapping & MID-FR-07; calendar tests & Partial: code/tests; broader calendar study pending\\
+FR-3 & Strict backward as-of join and controls & MID-FR-07; causality/split controls & Partial: Gate A not fully closed\\
+FR-4 & Training-fold normalization & MID-FR-13; scientific scaling & Implemented; comparator and engine scopes separate\\
+FR-5 & Calibrated five-session decision & MID-FR-01, 19 & Partial: class/probability exists; useful calibration failed\\
+FR-6 & Additive TreeSHAP & MID-FR-02; native replay/additivity & Implemented on retained records\\
+FR-7 & Restrictive capacity/tolerance tier & MID-FR-12, 20 & Implemented scoring; population validation pending\\
+FR-8 & Verified explanations over 200 cases & MID-FR-03--05, 23 & Partial: template guard; generated 200-case study pending\\
+FR-9 & Per-claim score/report & MID-FR-03--05 & Implemented for supported claims\\
+FR-10 & Controls on every evaluation and CI & MID-FR-07; canary suite & Partial: portable CI does not rerun full science\\
+FR-11 & Pinned-clock live/backtest parity & No completed Mid-1 acceptance & Open: service parity study\\
+FR-12 & Feed/history degraded state & MID-FR-01, 07, 11 & Partial: saved-input refusal; live-feed fault injection pending\\
+FR-13 & Persist source/model/data identity & MID-FR-01, 11, 18, 19 & Implemented saved records/replay; future service persistence\\
+FR-14 & Notice/horizon on every response & MID-FR-21--23 & Implemented current walkthrough; future service paths pending\\
+FR-15 & Install by a person outside team & Setup and extraction checks & Partial: automated checks; independent person not observed\\
+\bottomrule\end{longtable}\endgroup

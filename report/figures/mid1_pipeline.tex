@@ -1,5 +1,13 @@
-\resizebox{\linewidth}{!}{\begin{tikzpicture}[x=1mm,y=1mm,b/.style={draw,rounded corners,text width=63mm,minimum height=21mm,align=center,font=\sffamily\footnotesize},>=Stealth]
-\node[b] (inputs) at (35,119){Versioned price/news snapshots\\Source, event and acquisition identity};\node[b] (features) at (35,83){Calendar/as-of alignment\\Causal indicators + FinBERT aggregates};\node[b] (science) at (35,47){Chronological model/calibration\\Available-label purge + controls};\node[b] (records) at (115,47){Validated decision records\\Probabilities, SHAP, values and hashes};\node[b] (services) at (115,83){Evidence, profile and claim services\\Confidence gate + checked recovery};\node[b] (view) at (115,119){Historical Streamlit workflow\\Current case/result identity};
-\draw[->](inputs)--(features);\draw[->](features)--(science);\draw[->](science)--node[above,font=\scriptsize]{new identified outputs}(records);\draw[->](records)--(services);\draw[->](services)--(view);
-\node[align=center,font=\sffamily\footnotesize] at (75,8){Offline scientific execution produces records.\\Interactive checking/profile logic uses them without retraining.};
+\resizebox{\linewidth}{!}{\begin{tikzpicture}[x=1mm,y=1mm,b/.style={draw,text width=42mm,minimum height=18mm,align=center,font=\sffamily\small},>=Stealth]
+\node[b] (inputs) at (25,84){Versioned price/news\\Calendar / backward joins};
+\node[b] (science) at (80,84){Offline model and controls\\Available labels / SHAP};
+\node[b] (records) at (135,84){Saved decision record\\Probabilities / all features};
+\node[b] (context) at (135,44){SHAP / context + policy\\Maintained definitions};
+\node[b] (template) at (80,44){Current template\\Supported prose + claims};
+\node[b,dashed] (llm) at (25,44){Explanation layer (LLM)\\Mid-2 prose + payload};
+\node[b] (guard) at (80,6){Verifier / checked fallback};
+\node[b] (view) at (135,6){Historical interface\\Observe / current verdict};
+\draw[->](inputs)--(science);\draw[->](science)--(records);\draw[->](records)--(context);\draw[->](context)--(template);
+\draw[->,dashed](context.south)--(135,27)--(25,27)--(llm.south);
+\draw[->](template)--(guard);\draw[->,dashed](llm.south east)--(guard.north west);\draw[->](guard)--(view);
 \end{tikzpicture}}

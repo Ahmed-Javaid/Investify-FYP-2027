@@ -1,9 +1,41 @@
-\chapter{Repository and Reproduction}
-\section{Source and Artifacts}
-Repository: \url{https://github.com/Ahmed-Javaid/Investify-FYP-2027}. The current delivery configuration selects the reviewed report/presentation. Dated receipts certify their exact code/input/output snapshots. Original source and experimental freezes remain preserved; subsequent revisions receive new identities.
+\chapter{Repository and Contribution Evidence}
+\label{app:repository}
+\section{Repository, Revision and CI Evidence}
+Repository: \url{https://github.com/Ahmed-Javaid/Investify-FYP-2027}. The release preserves the existing feature branch and identifies its pull request, successful hosted checks and release source below.
+\input{publication_evidence}
 \section{Demo Setup}
-Use Git and Python 3.11. Install \nolinkurl{code/requirements-demo-runtime.txt}, restore reviewed checkout bytes and run the Streamlit entry described in Chapter~\ref{chap:manual}. The complete team guide is \nolinkurl{docs/team/MID1_TEAM_GUIDE.md}; technical references and the agent handoff are separate under \nolinkurl{docs/technical} and \nolinkurl{docs/handoffs}. Source code comes from GitHub; the compact groupmate ZIP contains report, slides, rubric and the consolidated guide.
+Use Git and Python 3.11. Create a separate recorded-viewer environment and install \nolinkurl{code/requirements-demo-runtime.txt}; do not install the scientific \nolinkurl{pyproject.toml} into it. From the repository root, restore only documented newline translations with \nolinkurl{tools/restore_ci_checkout.py}, then enter this command on one line:
+\begin{quote}\small\begin{verbatim}
+python -m streamlit run code/app/streamlit_app.py
+ --server.address=127.0.0.1 --server.port=8507
+ --theme.base=light --server.headless=true
+\end{verbatim}\end{quote}
+Open \url{http://127.0.0.1:8507} and keep the server terminal open. The prepared laptop can use \nolinkurl{tools/start_guided_demo.ps1}. On another machine use the documented Python path. If the port is occupied, choose another port; do not stop an unrelated process. The team guide supplies the click script and troubleshooting.
 \section{Scientific Reproduction}
-The original fresh snapshot is \nolinkurl{code/artifacts/scientific_runs/alpaca_revision_conservative_20261012_run01}. The new calibration correction is \nolinkurl{code/artifacts/scientific_runs/temperature_calibration_20261013_run01}. The temperature builder replays immutable model/scaler/margin inputs and creates new records; it does not replace the original calibration. The social study retains original models, plan, reference labels and paired output receipts. The added sanity probes have a separate receipt.
+The original Alpaca study remains in \nolinkurl{code/artifacts/scientific_runs/alpaca_revision_conservative_20261012_run01}. The temperature diagnostic is separately identified in \nolinkurl{code/artifacts/scientific_runs/temperature_calibration_20261013_run01}. Replaying saved records is distinct from reacquiring source data or rerunning original publisher inference. Social plan, reference labels, checkpoints and original outputs remain unchanged.
+\section{Local CI Commands}
+From \nolinkurl{code/}, choose new output directories:
+\begin{quote}\small\begin{verbatim}
+python -B scripts/run_mid1_ci.py --job evidence
+ --output ../evidence/NEW_evidence
+python -B scripts/run_mid1_ci.py --job streamlit-ui
+ --output ../evidence/NEW_ui
+\end{verbatim}\end{quote}
+Each command is one line. Run shared local jobs sequentially because they temporarily declare source identity and restore the prior tracked bytes. Hosted Windows/Ubuntu jobs run in independent checkouts. Four passing same-commit checks gate the fifth delivery job.
+\clearpage
+\section{Document Control and Disclosures}
+\label{app:handbook}
+\begin{longtable}{p{.28\textwidth}p{.61\textwidth}}
+\caption{Document control for the revised submission.}\label{tab:document-control}\\\toprule Field & Value\\\midrule
+Project & Investify, F26-003\\
+Assessment & FYP-1 Mid-Evaluation, Fall 2026\\
+Submission date & \submissiondate\\
+Batch/session & \batchsession\\
+Version & 1.1\\
+Authors & Ahmed Javaid, Rafay Ul Haq, Soban Ahmad\\
+Supervisor & Mr. Irfan Ullah; no co-supervisor\\
+Source authority & Official F26 template/rubric and approved proposal slides; concept is reference\\
+\bottomrule\end{longtable}
+The supplied official template PDF was available; the named template ZIP is not present in the current workspace. The unchanged institutional class/logo and headings were checked against that PDF. Coding assistants and the teacher/reference construction are disclosed in Chapters 7--8. Blank date/session/signature fields and the empty meeting form are intentionally unfilled.
 \section{Build and Delivery}
-The institutional class/logo remain unchanged. Compile sources into a new scratch directory, render and inspect the resulting pages, then publish a new source/PDF receipt. CI packages only matching reviewed documents and clean same-commit prerequisite receipts. Installation and extraction checks establish their scoped engineering behavior; production serving and participant acceptance remain separate milestones.
+Compile report and Beamer sources in fresh E: scratch directories, process citations, render every page and inspect the output before selecting new deliverables. New source/PDF receipts identify the reviewed outputs. CI source delivery checks those identities and performs isolated extraction. Earlier receipt JSON and scientific outputs remain unchanged.
