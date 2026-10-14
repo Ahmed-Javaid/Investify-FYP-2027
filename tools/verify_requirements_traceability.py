@@ -34,7 +34,7 @@ def main():
     output = args.output.resolve()
     if not output.is_relative_to(ROOT / 'evidence') or output.exists():
         raise ValueError('Use a new evidence receipt')
-    if args.markdown and args.markdown.resolve() != ROOT / 'docs/technical/REQUIREMENTS.md':
+    if args.markdown and args.markdown.resolve() != ROOT / 'docs/REQUIREMENTS.md':
         raise ValueError('Update the consolidated technical requirements document')
     xml = ET.parse(args.tests)
     cases = xml.findall('.//testcase')

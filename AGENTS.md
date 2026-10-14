@@ -1,12 +1,13 @@
 # Current Investify workspace
 
 Work in this consolidated repository. Start with `README.md` and
-`docs/handoffs/AGENT_HANDOFF.md`. Team preparation belongs in
-`docs/team/MID1_TEAM_GUIDE.md`, with the user-requested short click script in
-`docs/team/DEMONSTRATION.md`; implementation, research and requirements belong
-in `docs/technical/`. Code commands run from `code`; the Git root is here.
-Do not recreate the old per-folder READMEs, member handouts, planning checkpoints
-or duplicated status pages. Update the relevant consolidated document.
+`docs/AGENT_HANDOFF.md`. Team preparation belongs in `docs/TEAM_GUIDE.md`, with
+the user-requested short click script in `docs/DEMONSTRATION.md`; implementation,
+research and requirements belong in `docs/ENGINEERING.md`, `docs/RESEARCH.md` and
+`docs/REQUIREMENTS.md`. Code commands run from `code`; the Git root is here.
+Do not recreate the old per-folder READMEs, member handouts, planning checkpoints,
+per-audience document folders or duplicated status pages. Update the relevant
+consolidated document.
 
 The current report source is `report/main.tex`; current presentation entry is
 `presentation/main.tex`, with notes mirrored in `deliverables/presentation_outline.json`. `sources` contains preserved reference
@@ -38,3 +39,27 @@ The current assistant is teacher; Phi-3-mini is the planned student; Mistral is
 fallback. Use original publisher models. QLoRA remains later work. The previous
 native tasks and completed worker assignments are historical; do not restart
 them as competing writers or assume unattended execution is guaranteed.
+
+## Code component (`code/`)
+
+Commands for this component run from `code`; the Git root is its parent. The
+September proposal-spike instructions and phase stops are historical and were
+superseded by the user's Mid-1 continuation and cleanup directions. The spike's
+own write-ups stay in `code/POC_REPORT.md` and `code/artifacts/phase*_report.md`
+as historical records with protected bytes; do not rewrite or merge them.
+
+Preserve active frozen datasets, labels, models, source identities and scientific
+receipts. Record new experiments separately. Never fabricate results, silently
+hide missing inputs, or present fixtures as market-performance evidence. The
+historical demo uses recorded predictions; profile scoring and explanation
+verification execute live. Whole-FYP development continues beyond this checkpoint.
+
+## Evidence folder
+
+`evidence/` holds only dated checks that code, documents, tools or
+`deliverables/current_delivery.json` actually read. Superseded single-use
+receipts were collapsed into `evidence/receipt_index.json`, which records each
+removed receipt's name, date, schema, result and SHA-256 plus the commit that
+still carries its bytes. Do not restore those files to disk; cite the index, or
+recover one receipt with `git show <commit>:evidence/<name>` when a check needs
+it. New receipts get fresh dated identities directly under `evidence/`.

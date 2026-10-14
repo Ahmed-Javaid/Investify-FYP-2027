@@ -1,8 +1,0 @@
-{
-  "protocol": "mideval-social-receipt-gate-v4",
-  "status": "blocked",
-  "reason": "Complete pinned original config/tokenizer/weight metadata is required; catalog remains incomplete",
-  "quality_metrics": null,
-  "model_downloads": 0,
-  "scope": "Failure retained; no fabricated model outputs, publisher metadata or study winner"
-}

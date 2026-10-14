@@ -48,6 +48,6 @@ app:
 	$(PY) streamlit run app/streamlit_app.py
 
 # Deliberately does NOT delete artifacts/ -- that directory is committed
-# evidence, not scratch (see CLAUDE.md). Removes only derived local state.
+# evidence, not scratch (see ../AGENTS.md). Removes only derived local state.
 clean-artifacts:
 	rm -f data/store/feature_matrix.parquet data/store/feature_matrix_alpaca.parquet

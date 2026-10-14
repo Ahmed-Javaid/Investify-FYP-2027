@@ -45,7 +45,7 @@ def main():
                'report': 'complete authored content, compiled and visually reviewed',
                'required_modules': 'implemented with separate execution evidence',
                'ci_cd': 'hosted tests and artifact delivery passed' if hosted else 'configured; hosted verification pending',
-               'excluded_team_todo': 'docs/team/MID1_TEAM_GUIDE.md#team-tasks',
+               'excluded_team_todo': 'docs/TEAM_GUIDE.md#team-tasks',
                'report_output': report['output'], 'presentation_output': deck['output'],
                'hosted_run': hosted['html_url'] if hosted else None,
                'limits': ['Mid-1 technical completion, not full FYP completion or a university grade.',
@@ -53,13 +53,13 @@ def main():
                           'No signatures, supervisor approval, participant benefit or completed student training inferred.']}
     (ROOT / 'evidence/mid1_technical_completion_current.json').write_text(json.dumps(current, indent=2) + '\n', encoding='utf-8')
     summary = '**100% technical Mid-1 completion**' if hosted else '**Technical scope implemented; hosted CI/CD verification pending**'
-    path = ROOT / 'docs/handoffs/AGENT_HANDOFF.md'
+    path = ROOT / 'docs/AGENT_HANDOFF.md'
     run = (f'[Retained hosted run]({hosted["html_url"]}) passes all five jobs.'
            if hosted else 'Hosted execution remains pending; configuration is not execution evidence.')
     block = (f'{START}\n{summary} under the user-defined code/report/CI-CD/module scope. '
              'This is not whole-FYP completion, useful prediction or a grade. '
              f'{run} Later working-tree changes need their own checks.\n'
-             '[Machine status](../../evidence/mid1_technical_completion_current.json).\n'
+             '[Machine status](../evidence/mid1_technical_completion_current.json).\n'
              f'{END}')
     content = path.read_text(encoding='utf-8')
     if content.count(START) != 1 or content.count(END) != 1:

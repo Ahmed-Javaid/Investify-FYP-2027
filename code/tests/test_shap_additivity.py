@@ -16,7 +16,7 @@ otherwise-real field values from an actual trained model, must raise.
 Uses the real trained model and real NVDA data end-to-end (via
 `engine.run_engine`), never synthetic SHAP numbers -- this is exactly
 the kind of "every number comes from a run that actually happened" case
-CLAUDE.md is strict about.
+AGENTS.md is strict about.
 """
 import dataclasses
 import sys

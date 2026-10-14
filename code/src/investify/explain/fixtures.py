@@ -25,7 +25,7 @@ not by accident of some other, unrelated mistake.
 
 **These are labelled synthetic fixtures for testing the verifier.** They
 are not, and must never be mistaken for, real model output -- the project
-rules (CLAUDE.md) permit synthetic text for unit tests only, never in
+rules (AGENTS.md) permit synthetic text for unit tests only, never in
 place of a real generation. `tests/test_verifier.py` is the only consumer
 of this module.
 """

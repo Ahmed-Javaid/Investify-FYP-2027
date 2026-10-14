@@ -67,7 +67,7 @@ def main():
         if args.working_tree:
             revision.update(schema='investify-working-source-revision-v2', working_tree=True)
         (bundle / 'code/source_revision.json').write_text(json.dumps(revision, indent=2), encoding='utf-8')
-        for folder in ('report', 'presentation', 'docs/team', 'docs/technical', 'docs/handoffs'):
+        for folder in ('report', 'presentation', 'docs'):
             for source in (ROOT / folder).rglob('*'):
                 if source.is_file() and source.suffix not in ('.aux', '.log', '.out', '.toc', '.synctex'):
                     relative = source.relative_to(ROOT)

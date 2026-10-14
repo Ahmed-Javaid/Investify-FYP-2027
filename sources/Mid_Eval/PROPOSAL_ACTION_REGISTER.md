@@ -14,14 +14,14 @@ The supplied feedback below is unchanged. The original proposed status column is
 
 | ID | Current implementation/evidence | Remaining closure |
 | --- | --- | --- |
-| PF-01 | [Problem/contribution](../../deliverables/PROBLEM_AND_CONTRIBUTION.md), architecture and closest-work comparison distinguish team-built controls/checking from external models. | Review novelty/comparison claims and align the rendered report/presentation. |
-| PF-02 | Local adapter/fallback and fair deterministic comparators exist; six actual assistant-teacher explanations are recorded. [Teacher pilot](../../deliverables/ASSISTANT_TEACHER_PILOT.md). | No real student inference, additional explanatory content or comprehension benefit is established; same sentence-line multisets constrain the pilot. |
-| PF-03 | Five technical/six news values, attributions, exact maintained definitions, family totals, missing/zero evidence and raw-score scope are implemented and checked in prose/JSON. [Traceability](../../deliverables/REQUIREMENTS_TRACEABILITY.md). | Integrated social evidence is absent; unrestricted wording and human understanding remain unverified. |
+| PF-01 | [Problem/contribution](../../docs/RESEARCH.md), architecture and closest-work comparison distinguish team-built controls/checking from external models. | Review novelty/comparison claims and align the rendered report/presentation. |
+| PF-02 | Local adapter/fallback and fair deterministic comparators exist; six actual assistant-teacher explanations are recorded. [Teacher pilot](../../docs/RESEARCH.md). | No real student inference, additional explanatory content or comprehension benefit is established; same sentence-line multisets constrain the pilot. |
+| PF-03 | Five technical/six news values, attributions, exact maintained definitions, family totals, missing/zero evidence and raw-score scope are implemented and checked in prose/JSON. [Traceability](../../docs/REQUIREMENTS.md). | Integrated social evidence is absent; unrestricted wording and human understanding remain unverified. |
 | PF-04 | Revised educational retail-investor problem statement is in the introduction and contribution material. | Team/supervisor agreement and final source/render consistency. |
 | PF-05 | Current assistant teacher, planned original Microsoft Phi-3-mini student, Mistral fallback, historical FinBERT, and pending CryptoBERT/Cardiff candidate study are disclosed. Qwen configurations are inactive optional history. | Exact student checkpoint/runtime and actual candidate selection; teacher exact serving identity remains unavailable. No withdrawn variants are reinstated. |
 | PF-06 | Scoped prediction/calibration/sentiment/explanation/user/runtime matrix and dated engineering receipts exist. The actual social pilot has 200 acquired posts, 117 usable AI references and 24 held-out references. | Candidate metrics are null; single-pass reliability/human validation, predictor reproduction, user study and student quality remain unmeasured. |
-| PF-07 | Corrected payload-over-prose checking, retained rejection evidence, verified fallback, real local interfaces and structural re-run refusal. Portable source/profile retry and request ownership have twelve controlled Node handler cases. [Demo/defence guide](../../deliverables/DEMO_AND_DEFENCE_GUIDE.md). | Supervisor live demonstration, browser review, honest repository/CI evidence and student defence. Node fixtures are not a live model or browser review. |
-| PF-08 | Historical/constant-Buy/news-only/profile limitations and candidate/fallback states are displayed and widget-tested. Portable edits/failed-source recovery discard obsolete results while preserving independent current output; [scoped client evidence](../../deliverables/REQUIREMENTS_TRACEABILITY.md). | Full retail-user journey and actual comprehension/suitability evidence; no trading execution or institutional closure. |
+| PF-07 | Corrected payload-over-prose checking, retained rejection evidence, verified fallback, real local interfaces and structural re-run refusal. Portable source/profile retry and request ownership have twelve controlled Node handler cases. [Demo/defence guide](../../docs/TEAM_GUIDE.md). | Supervisor live demonstration, browser review, honest repository/CI evidence and student defence. Node fixtures are not a live model or browser review. |
+| PF-08 | Historical/constant-Buy/news-only/profile limitations and candidate/fallback states are displayed and widget-tested. Portable edits/failed-source recovery discard obsolete results while preserving independent current output; [scoped client evidence](../../docs/REQUIREMENTS.md). | Full retail-user journey and actual comprehension/suitability evidence; no trading execution or institutional closure. |
 | PF-09 | Referenced domain/research notes relate indicators, news, market timing and profile distinctions to design. The guide explains SHAP units and limitations. | Independent content review and each member's genuine defence; no comprehension certification is implied. |
 
 The social methodology changed under user direction from the proposal's hand-label assumption to recorded AI reference annotation. The active teacher changed from an unspecified open-weight provider to this assistant session; factual JSON targets are deterministically assembled as disclosed hybrid supervision. Original proposal commitments remain preserved. QLoRA and the three-way student comparison remain later milestones.
@@ -116,9 +116,9 @@ The feedback's reference to financial transactions needs explicit scope clarific
 
 - [Current proposal](../Investify_Proposal_Full.docx).
 - [Official mid rubric](FYP-1-Mid-Assessment-Guidelines-and-Rubrics.pdf).
-- [Official report template](F26_FYP1_Mid_Report_LaTeX_Complete.zip).
+- [Official report template](F26_FYP1_Mid_Report_LaTeX_Complete.pdf).
 - [Preserved historical implementation findings](../../code/POC_REPORT.md).
 - [Current isolated explanation code](../../code/src/investify/explain/).
-- [Project status and file map](../PROJECT_STATUS.md).
+- [Project status and file map](../../docs/AGENT_HANDOFF.md).
 
 This register records the supplied decision and proposed responses. It does not mark the modifications as completed, change the approved trading boundary, choose new checkpoints, or assign new team responsibilities.

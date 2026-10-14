@@ -1,0 +1,20 @@
+{
+  "schema": "investify-consolidated-documentation-validation-v1",
+  "checked_utc": "2026-10-14T19:37:33.428289+00:00",
+  "active_documents": [
+    "README.md",
+    "AGENTS.md",
+    "docs/DEMONSTRATION.md",
+    "docs/TEAM_GUIDE.md",
+    "docs/ENGINEERING.md",
+    "docs/RESEARCH.md",
+    "docs/REQUIREMENTS.md",
+    "docs/AGENT_HANDOFF.md"
+  ],
+  "local_links_checked": 147,
+  "cleanup_receipt": "evidence\\workspace_cleanup_20261014.json",
+  "protected_files_checked": 347,
+  "reviewed_pdf_sources_unchanged": true,
+  "failures": [],
+  "passed": true
+}

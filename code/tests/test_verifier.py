@@ -2,7 +2,7 @@
 explain/verifier.py, explain/fixtures.py.
 
 Every `DecisionRecord` here is HAND-CONSTRUCTED via `make_record` below --
-a LABELLED FIXTURE, never a real model output (CLAUDE.md: synthetic text
+a LABELLED FIXTURE, never a real model output (AGENTS.md: synthetic text
 is fine for unit tests, never for the real experiment). Likewise every
 corrupted explanation comes from `explain/fixtures.py`, whose own
 docstring carries the same label.

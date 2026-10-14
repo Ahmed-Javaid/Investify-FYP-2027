@@ -8,9 +8,9 @@ import re
 from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
-DOCUMENTS = ('README.md', 'docs/team/DEMONSTRATION.md', 'docs/team/MID1_TEAM_GUIDE.md', 'docs/technical/ENGINEERING.md',
-             'docs/technical/RESEARCH.md', 'docs/technical/REQUIREMENTS.md',
-             'docs/handoffs/AGENT_HANDOFF.md')
+DOCUMENTS = ('README.md', 'AGENTS.md', 'docs/DEMONSTRATION.md', 'docs/TEAM_GUIDE.md',
+             'docs/ENGINEERING.md', 'docs/RESEARCH.md', 'docs/REQUIREMENTS.md',
+             'docs/AGENT_HANDOFF.md')
 
 
 def sha(path):

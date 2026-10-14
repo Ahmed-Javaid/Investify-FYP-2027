@@ -11,7 +11,7 @@ than applying the 16:00 ET cutoff -- the mistake published pipelines make
 when they align by calendar date instead of publication time.
 
 All price series and headline timestamps in this file are SYNTHETIC
-FIXTURES for unit testing only, per CLAUDE.md's rule that synthetic text
+FIXTURES for unit testing only, per AGENTS.md's rule that synthetic text
 never substitutes for real dated headlines in the real experiment.
 """
 import sys

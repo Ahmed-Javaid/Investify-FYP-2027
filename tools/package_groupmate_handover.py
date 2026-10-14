@@ -12,11 +12,11 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = 'https://github.com/Ahmed-Javaid/Investify-FYP-2027'
-GUIDES = {'docs/team/DEMONSTRATION.md': 'DEMONSTRATION.md',
-          'docs/team/MID1_TEAM_GUIDE.md': 'TEAM_GUIDE.md',
-          'docs/technical/ENGINEERING.md': 'technical/ENGINEERING.md',
-          'docs/technical/RESEARCH.md': 'technical/RESEARCH.md',
-          'docs/technical/REQUIREMENTS.md': 'technical/REQUIREMENTS.md'}
+GUIDES = {'docs/DEMONSTRATION.md': 'DEMONSTRATION.md',
+          'docs/TEAM_GUIDE.md': 'TEAM_GUIDE.md',
+          'docs/ENGINEERING.md': 'ENGINEERING.md',
+          'docs/RESEARCH.md': 'RESEARCH.md',
+          'docs/REQUIREMENTS.md': 'REQUIREMENTS.md'}
 
 
 def sha(data):

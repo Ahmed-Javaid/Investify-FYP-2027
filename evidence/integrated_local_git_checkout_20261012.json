@@ -1,6 +1,0 @@
-{
-  "scope": "Explicit filesystem-local clone/checkout; no network transport or remote CI",
-  "clone_returncode": 128,
-  "passed": false,
-  "error": "      0 [main] sh (27508) C:\\Program Files\\Git\\usr\\bin\\sh.exe: *** fatal error - couldn't create signal pipe, Win32 error 5\nfatal: Could not read from remote repository.\n\nPlease make sure you have the correct access rights\nand the repository exists.\n"
-}

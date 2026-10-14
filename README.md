@@ -4,12 +4,12 @@ Source repository: https://github.com/Ahmed-Javaid/Investify-FYP-2027.
 
 | What you need | Open |
 | --- | --- |
-| Give the five-minute demonstration | [Demonstration handout](docs/team/DEMONSTRATION.md) |
-| Prepare, run the demo, divide the talk and practise | [Team guide](docs/team/MID1_TEAM_GUIDE.md) |
-| Setup, implementation, tests, CI/CD and PDF builds | [Engineering](docs/technical/ENGINEERING.md) |
-| Models, datasets, results and research limitations | [Research](docs/technical/RESEARCH.md) |
-| Requirements, acceptance criteria and test links | [Requirements](docs/technical/REQUIREMENTS.md) |
-| Continue development or hand work to an agent | [Agent handoff](docs/handoffs/AGENT_HANDOFF.md) |
+| Give the five-minute demonstration | [Demonstration handout](docs/DEMONSTRATION.md) |
+| Prepare, run the demo, divide the talk and practise | [Team guide](docs/TEAM_GUIDE.md) |
+| Setup, implementation, tests, CI/CD and PDF builds | [Engineering](docs/ENGINEERING.md) |
+| Models, datasets, results and research limitations | [Research](docs/RESEARCH.md) |
+| Requirements, acceptance criteria and test links | [Requirements](docs/REQUIREMENTS.md) |
+| Continue development or hand work to an agent | [Agent handoff](docs/AGENT_HANDOFF.md) |
 
 Current report/presentation PDFs and the latest groupmate ZIP are in
 `deliverables/`. The share ZIP contains those PDFs, the rubric and the single
