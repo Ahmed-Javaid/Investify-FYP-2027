@@ -20,8 +20,12 @@ def digest(path):
 
 def inventory(folder):
     suffixes = {'.tex', '.cls', '.sty', '.bib', '.png', '.jpg', '.jpeg', '.svg'}
-    return {p.relative_to(ROOT).as_posix(): digest(p) for p in sorted(folder.rglob('*'))
-            if p.is_file() and p.suffix.lower() in suffixes}
+    files = {p.relative_to(ROOT).as_posix(): digest(p) for p in sorted(folder.rglob('*'))
+             if p.is_file() and p.suffix.lower() in suffixes}
+    if folder.resolve() == (ROOT / 'presentation').resolve():
+        shared = ROOT / 'report/submission_metadata.tex'
+        files[shared.relative_to(ROOT).as_posix()] = digest(shared)
+    return files
 
 
 def new_json(path, value):

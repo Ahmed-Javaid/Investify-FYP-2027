@@ -8,7 +8,7 @@ Start here for development continuation. Team preparation is in
 ## Current state
 
 <!-- MID1_BROWSER_CHECKPOINT_START -->
-The **v1.1 audit revision** follows the official ten-chapter template and addresses PF-01--PF-09 with explicit implementation/evaluation status. Current report: 95 pages; deck: 14 slides, 660 planned seconds. Both local CI jobs pass: 183 portable tests, 7 guards, and UI scopes 24/19/4. The 23 requirements have 29 passing selected anchors; 9 delivery guards pass. Hosted publication of this revision is pending; older hosted runs certify their own earlier snapshots.
+The **v1.1 audit revision** follows the official ten-chapter template and addresses PF-01--PF-09 with explicit implementation/evaluation status. Current report: 95 pages; deck: 14 slides, 660 planned seconds. Both local CI jobs pass: 183 portable tests, 7 guards, and UI scopes 24/19/4. The 23 requirements have 29 passing selected anchors; 9 delivery guards pass. Implementation commit 8bd6e09 was pushed in PR 1; Actions run 38487127348 passed all five jobs. The final delivery update and mid1-v1.1 tag resolve the revised release source. Older hosted runs certify their own earlier snapshots.
 [Selected delivery](../../deliverables/current_delivery.json) ? [Local evidence receipt](../../evidence/mid1_v11_20261014_final_evidence_run01/job_receipt.json) ? [UI receipt](../../evidence/mid1_v11_20261014_final_ui_run01/job_receipt.json).
 <!-- MID1_BROWSER_CHECKPOINT_END -->
 

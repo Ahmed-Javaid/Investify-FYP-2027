@@ -122,7 +122,8 @@ def main():
                 # Report figures can be retained scientific outputs from the
                 # code component. Require both owned and packaged bytes to match.
                 allowed = (source.is_relative_to(ROOT / kind)
-                           or kind == 'report' and source.is_relative_to(CODE / 'artifacts'))
+                           or kind == 'report' and source.is_relative_to(CODE / 'artifacts')
+                           or kind == 'presentation' and source == ROOT / 'report/submission_metadata.tex')
                 packaged = (bundle / relative).resolve()
                 if (not allowed or not packaged.is_relative_to(bundle)
                         or not source.is_file() or not packaged.is_file()

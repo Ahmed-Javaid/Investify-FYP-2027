@@ -1,7 +1,7 @@
 {
   "schema": "investify-current-reviewed-delivery-v1",
-  "report_receipt": "evidence/handbook_report_delivery_20261014_v11_run06.json",
-  "presentation_receipt": "evidence/handbook_presentation_delivery_20261014_v11_run06.json",
+  "report_receipt": "evidence/handbook_report_delivery_20261014_v11_run07.json",
+  "presentation_receipt": "evidence/handbook_presentation_delivery_20261014_v11_run07.json",
   "repository": "Ahmed-Javaid/Investify-FYP-2027",
   "technical_completion_scope": [
     "working Mid-1 code",

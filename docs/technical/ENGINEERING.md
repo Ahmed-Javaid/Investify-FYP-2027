@@ -50,6 +50,8 @@ prove their dated source snapshots. The previously checked main run is
 https://github.com/Ahmed-Javaid/Investify-FYP-2027/actions/runs/38428835203.
 The [revised-source run](https://github.com/Ahmed-Javaid/Investify-FYP-2027/actions/runs/38469231692) passed all five jobs for commit 5089998. Its delivered bundle was downloaded and its server digest, nested file manifest and current reviewed PDFs were independently checked; [download receipt](../../evidence/remote_ci_revision_download_20261014.json).
 
+The v1.1 implementation [commit 8bd6e09](https://github.com/Ahmed-Javaid/Investify-FYP-2027/commit/8bd6e09827052213f8f0d1fbde1ae63c1fdbf86a) passed all five jobs in [PR run 38487127348](https://github.com/Ahmed-Javaid/Investify-FYP-2027/actions/runs/38487127348). The [release tag](https://github.com/Ahmed-Javaid/Investify-FYP-2027/tree/mid1-v1.1) resolves the final source with publication evidence.
+
 CD delivers source/PDF artifacts; production hosting is later work. CI does not
 acquire current data, train/infer large models, rerun the full scientific study,
 measure participant benefit or automatically render PDFs. Corpus/label/plan
