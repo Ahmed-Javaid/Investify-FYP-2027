@@ -78,6 +78,18 @@ inputs remain. Obsolete archives, duplicate exports and retired notes are gone;
 tracked earlier versions remain in Git history. This approval supersedes the
 old requirement to keep obsolete ZIPs/archives locally.
 
+On 15 October 2026 the member allocation table was added to Section 8.4 as
+Table~8.2, against Form 2 Criterion 6 of the Mid-1 rubric, which wants member
+ownership visible rather than deferred to the team guide. The table previously
+existed as an uncompiled file holding a stale twelve-slide split; it now matches
+the fourteen-slide schedule at 220 seconds each. Report and deck were rebuilt
+(`--run-id 20261015allocation`): still 95 pages and 14 slides, zero overfull
+boxes and zero unresolved references, and exactly five pages differ as rendered
+rasters from the previous reviewed PDF (10, 13, 69, 70, 71), all inspected. The
+`*_v1_1_20261015` pair is now selected by `deliverables/current_delivery.json`.
+A stale `== 12` slide assertion in `update_mid1_technical_status.py` was
+corrected to 14.
+
 A second approved pass on 15 October 2026 removed the documentation and receipt
 clutter that survived the first one. The six consolidated guides moved flat into
 `docs/`, `code/CLAUDE.md` folded into [AGENTS.md](../AGENTS.md), and 311

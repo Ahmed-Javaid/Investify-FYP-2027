@@ -69,7 +69,7 @@ def main():
     path.write_text(first + block + last, encoding='utf-8')
     outline = read('deliverables/presentation_outline.json')
     notes = re.findall(r'\\note\{(.*?)\}\s*\\end\{frame\}', (ROOT / 'presentation/main.tex').read_text(), re.S)
-    assert len(notes) == len(outline['slides']) == 12
+    assert len(notes) == len(outline['slides']) == 14
     for item, note in zip(outline['slides'], notes):
         item['speaker_notes'] = note
     outline.update(compiled_output=deck['output'], status='Compiled and layout reviewed technical Mid-1 deck; team tasks remain separate.',

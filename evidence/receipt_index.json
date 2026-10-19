@@ -1,12 +1,12 @@
 {
   "schema": "investify-superseded-artifact-index-v2",
   "purpose": "One record for each superseded single-use receipt and dead delivery artifact removed from evidence/ and deliverables/. Nothing in the repository read any of them. Tracked entries are recoverable at their byte identity from Git history at the commit named below.",
-  "created_utc": "2026-10-14T19:37:32.447069+00:00",
+  "created_utc": "2026-10-14T20:35:31.484780+00:00",
   "recoverable_from_commit": "5caa00ca518dc3aacfb8bdd91f776202a27fe6b3",
   "recovery_command": "git show <commit>:evidence/<name>",
   "retained_receipts_note": "Receipts still cited by code, documents, tools or the delivery configuration stay as files under evidence/.",
   "removed_count": 312,
-  "removed_bytes": 11583172,
+  "removed_bytes": 12282586,
   "receipts": [
     {
       "name": "Investify_Mid1_Groupmates_20261014_v3_receipt.json",
@@ -2334,7 +2334,7 @@
     "evidence/recovery_social_declaration_20261012"
   ],
   "superseded_deliverables": {
-    "note": "Dead intermediate PDFs between the protected *_Revised_20261014 pair and the current *_v1_1_20261014_release pair that deliverables/current_delivery.json selects. Recoverable from Git history at the commit above.",
+    "note": "Dead intermediate and superseded delivery artifacts. The protected *_Revised_20261014 pair stays as history; deliverables/current_delivery.json selects the *_v1_1_20261015 pair published after the member-allocation table was added. All are recoverable from Git history at the commits noted here.",
     "files": [
       {
         "name": "deliverables/Investify_FYP1_Mid_Report_v1_1_20261014.pdf",
@@ -2345,6 +2345,30 @@
         "name": "deliverables/Investify_FYP1_Mid_Presentation_v1_1_20261014.pdf",
         "bytes": 75336,
         "sha256": "722812e1814022938680038af04083edf466d09994eafb71421e673f2b620b58"
+      },
+      {
+        "name": "deliverables/Investify_FYP1_Mid_Report_v1_1_20261014_release.pdf",
+        "bytes": 600088,
+        "sha256": "592b8ec6c6d6cadc6a9002d855950e79bcd745a5b5376fcbd92afd7aa048ce3d",
+        "superseded_by": "the 20261015allocation delivery"
+      },
+      {
+        "name": "deliverables/Investify_FYP1_Mid_Presentation_v1_1_20261014_release.pdf",
+        "bytes": 75336,
+        "sha256": "9b38faf067c665b038fc9a8f81e41aa4035b9e184c741451f36394f6be534e16",
+        "superseded_by": "the 20261015allocation delivery"
+      },
+      {
+        "name": "evidence/handbook_report_delivery_20261014_v11_run07.json",
+        "bytes": 20463,
+        "sha256": "36039bdca85a3180594b801dd7f9073c4f94d8cfa84135be4f520c22f8d31b08",
+        "superseded_by": "the 20261015allocation delivery"
+      },
+      {
+        "name": "evidence/handbook_presentation_delivery_20261014_v11_run07.json",
+        "bytes": 3527,
+        "sha256": "569bdfc5bbe108ee1e5a88d946e836cc9d150a58a72fb33d2c7d60410b9de5ee",
+        "superseded_by": "the 20261015allocation delivery"
       }
     ]
   },
